@@ -1,19 +1,20 @@
 *{ padding:0;margin:0;}
 body{font-family:Century Gothic !important;}
-.top-content-container{background-color:#F2F2F2;height:90px;position:relative;}
+.top-content-container{background-color:#0a3151;height:90px;position:relative;}
 .border-right-all{border-right: 1px solid #BFBFBF; }.display-inline-block-all{display:inline-block !important;}
-.top-location-img{width:20%;}.top-location-img-content{padding-left:10px;}
+.top-location-img{width:20%;}
+.header-top ul li a i{padding-right:10px; color:white;}
 .float-r{float:right !important}.float-l{float:left !important}
 .text-color-w{color:#fff !important;}
 .padding-left-none{padding-left: 0px !important;}
 .search-group{margin-top:-5px !important;}
 .no-border-radius-all{border:none !important;border-radius:0px;}
 .input-group-addon1{background-color:#2268B5 !important; color:#fff; border-radius:0px;}
-.shopping-img-top{width: 43px;margin-top: -3px;}
+.shopping-img-top{width: 43px;margin-top: -3px; float:right;}
 .border-none-r{border-right: none !important;}
 .header-top{padding:5px;}
 .logo-img{width:85%;margin-top: -6px;}
-.header-top ul li{list-style:none;display:inline-block !important;padding-left:12px;padding-right:12px;text-align:center;border-right: 1px solid #BFBFBF; }
+.header-top ul li{list-style:none;display:inline-block !important;padding-left:15px;padding-right:15px;text-align:center;border-right: 1px solid #BFBFBF; }
 .header-top ul li a{text-decoration:none;display:inline-block !important;text-align:center;color:#7F7F7F;}
 .menu-list-icon{margin-top:-8px;}
 /* nav bar */
@@ -27,13 +28,13 @@ body{font-family:Century Gothic !important;}
 .img-box-all{background-color:#F2F2F2;}
 
 /* media query */
-@media only screen and (min-width: 768px) and (max-width:1224px){
+@media only screen and (min-width: 768px) and (max-width:1024px){
 	.header-top ul li {list-style: none;display: inline-block !important;padding-left:10px;padding-right:10px;text-align: center;border-right: 1px solid #BFBFBF;font-size:13px;}
 	.navigation-menu ul li {display:inline-block;padding-left:10px !important;padding-right:30px;color:#fff;border-right: 1px solid #BFBFBF;margin-top:6px;}
 	
 	.logo-img{width:85%;margin-top: 3px;}
 }
-@media only screen and  (max-width:768px){
+@media only screen and  (max-width:767px){
 	.header-top ul li {list-style: none;display: inline-block !important;padding-left:10px;padding-right:10px;text-align: center;border-right: 1px solid #BFBFBF;font-size:13px;}
 	.navigation-menu ul li {display:inline-block;padding-left:3px !important;padding-right:10px;color:#fff;border-right: 1px solid #BFBFBF;margin-top:6px;}
 	

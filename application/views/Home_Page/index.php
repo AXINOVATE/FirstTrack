@@ -20,21 +20,24 @@ $prefix=$this->config->item('prefix');
 	<div class="top-content-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 hidden-xs col-sm-3"></div>
-				<div class="col-md-6 col-xs-12 col-sm-12">				
+				<div class="col-md-4 hidden-xs col-sm-3"></div>
+				<div class="col-md-8 col-xs-12 col-sm-12">				
 					<div class="header-top">
 						<ul>
-							<li><a href="#"><span><img src="<?php echo $assetpath;?>/images/location.png" alt="location png" class="top-location-img"></span><span class="top-location-img-content">Bangalore</span></a></li>
-							<li><a href="#"><span>24X7 Customer Care</span></a></li>
+							<li><a href="#"><i class="fa fa-map-marker"></i>Bangalore</a></li>
+							<li><a href="#"><i class="fa fa-tags"></i>Deals</a></li>
+							<li><a href="#">24X7 Customer Care</a></li>
+							<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
+							<li><a href="#"><i class="fa fa-bell"></i></a></li>
 							<li><a href="#"><span>Signup</span></a></li>
-							<li class="border-none-r"><a href="#"><span>Login</span></a></li>
+							<li class="border-none-r"><a href="#">Login</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="search-group">		
 			<div class="row">
-				<div class="col-md-3 hidden-xs col-sm-3">
+				<div class="col-md-4 hidden-xs col-sm-3">
 					<img src="<?php echo $assetpath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO">
 				</div>
 				<div class="col-md-7 col-xs-10 col-sm-7">
@@ -43,7 +46,7 @@ $prefix=$this->config->item('prefix');
 					  <span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
 					</div>					
 				</div>
-				<div class="col-md-2 col-sm-2 col-xs-2">
+				<div class="col-md-1 col-sm-2 col-xs-2">
 					<div class="shopping-img-top">
 						<img src="<?php echo $assetpath;?>/images/shopping.png" class=" shopping-img-top"></img>
 					</div>
