@@ -13,6 +13,7 @@ body{font-family:Century Gothic !important;}
 .border-none-r{border-right: none !important;}
 .header-top{padding:5px;}
 .logo-img{width:85%;margin-top: -6px;}
+.border-all-lite{border:1px solid #D9D9D9 !important;}
 .header-top ul li{list-style:none;display:inline-block !important;padding-left:12px;padding-right:12px;text-align:center;border-right: 1px solid #BFBFBF; }
 .header-top ul li a{text-decoration:none;display:inline-block !important;text-align:center;color:#7F7F7F;}
 .menu-list-icon{margin-top:-8px;}
@@ -22,9 +23,13 @@ body{font-family:Century Gothic !important;}
 .navigation-menu ul li {display:inline-block;padding-left:50px;padding-right:50px;color:#fff;border-right: 1px solid #BFBFBF;margin-top:6px;}
 .navigation-menu ul li a{color:#fff;text-decoration:none;}
 /* end nav bar */
+
 .categories-list-container{margin-top:10px;}
-.categories-list{border:1px solid #D9D9D9;}
-.img-box-all{background-color:#F2F2F2;}
+.categories-list{padding:2px;}
+.categori-icon{width: 58%;}
+.categori-box{height:90px;}
+.img-box-1{background-color:#2268B5;color:#fff;border:1px solid #ccc;}
+.img-box-all{background-color:#F2F2F2;border:1px solid #ccc;}
 
 /* media query */
 @media only screen and (min-width: 768px) and (max-width:1224px){

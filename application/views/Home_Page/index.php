@@ -66,19 +66,62 @@ $prefix=$this->config->item('prefix');
 	<div class="categories-list-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 border-all-lite ">
 					<div class="categories-list">
 						<div class="row">
-							<div class="col-md-4">
-								<div class="img-box-all"></div>
+							<div class="col-md-4 col-sm-4 col-xs-4 img-box-1">
+								<div class="categori-box">
+									<div >
+									<center>
+									<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+									<div><center><h6>Car</h6></center></div>
+									</center>
+									</div>
+									
+								</div>
 							</div>
-							<div class="col-md-4"></div>
-							<div class="col-md-4"></div>
+							<div class="col-md-4 col-sm-4 col-xs-4 img-box-all">
+								<div class="categori-box">
+									<div>
+									<center>
+									<img src="<?php echo $assetpath;?>/images/bike1.png" class="" alt="car">
+									<div><center><h6>Bike</h6></center></div>
+									</center>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 img-box-all">
+								<div class="categori-box">
+									<div>
+									<center>
+									<img src="<?php echo $assetpath;?>/images/more1.png" class="" alt="car">
+									<div><center><h6>More</h6></center></div>
+									<center>
+									</div>
+								</div>
+							</div>
 						</div>
-						
 					</div>
+					<h4>Body Type</h4>
+					<div class="col-md-6 border-all-lite">
+						<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+					</div>
+					
+					<div class="col-md-6 border-all-lite">
+						<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+					</div>
+					
 				</div>
-				<div class="col-md-8"></div>
+				<div class="col-md-8">
+				sadasdasasd
+				asd
+				asdasd
+				asdasd</br>
+				asdasd</br>
+				asdasd</br>
+				asdasd</br>
+				asdasd</br>
+				</div>
 			</div>
 		</div>
 	</div>
