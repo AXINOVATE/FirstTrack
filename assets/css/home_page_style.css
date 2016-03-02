@@ -9,12 +9,11 @@ body{font-family:Century Gothic !important;}
 .padding-left-none{padding-left: 0px !important;}
 .search-group{margin-top:-5px !important;}
 .no-border-radius-all{border:none !important;border-radius:0px;}
-.input-group-addon1{background-color:#2268B5 !important; color:#fff; border-radius:0px;}
+.input-group-addon1{background-color:#FFD400 !important; color:#fff; border-radius:0px; padding-left: 40px; padding-right: 40px;}
 .shopping-img-top{width: 43px;margin-top: -3px; float:right;}
 .border-none-r{border-right: none !important;}
 .header-top{padding:5px;}
 .logo-img{width:85%;margin-top: 25px;}
-.border-all-lite{border:1px solid #D9D9D9 !important;}
 .header-top ul li{list-style:none;display:inline-block !important;padding-left:15px;padding-right:15px;text-align:center;border-right: 1px solid #BFBFBF; }
 .header-top ul li a{text-decoration:none;display:inline-block !important;text-align:center;color:#fff;}
 .menu-list-icon{margin-top:-8px;}
@@ -26,11 +25,7 @@ body{font-family:Century Gothic !important;}
 /* end nav bar */
 
 .categories-list-container{margin-top:10px;}
-.categories-list{padding:2px;}
 .categori-icon{width: 58%;}
-.categori-box{height:90px;}
-.img-box-1{background-color:#2268B5;color:#fff;border:1px solid #ccc;}
-.img-box-all{background-color:#F2F2F2;border:1px solid #ccc;}
 .bg-lightblue{background-color:#027cd5;}
 .txt_white{color:#ffffff;}
 .pd-tp-3{padding-top:3px !important; padding-bottom:3px !Important;}
@@ -78,3 +73,20 @@ body{font-family:Century Gothic !important;}
 	#second-header>li { height: 28px; text-align: left; width: 100%;}
 	/* end */
 }
+
+/* Home page CSS starts here	*/
+.border-lt-grey{border:1px solid #e7e7e7;}
+.border-lt-blue{border:1px solid #027cd5;}
+.cat-box{padding-left: 0px; padding-right: 0px;}
+.bg-lightgrey{background-color:#F4F4F4;}
+.cat-img{width:100%;}
+.mt-10{margin-top:10px;}
+.mt-20{margin-top:20px;}
+.mb-10{margin-bottom:10px;}
+.mr-m5{margin-right:-5px;}
+.mr-m10{margin-right:-10px;}
+.ml-m5{margin-left:-5px;}
+.ml-m10{margin-left:-10px;}
+.car-type-name{text-align:center; font-size:12px; color:#7F7E7A; padding-bottom:5px;}
+.search-btn{display:block; width:100%; height:40px; text-align:center; color:white; background-color:#027cd5; padding:10px; font-size:14px; text-decoration:none !important; border-radius:2px;}
+/* Home page CSS ends here	*/

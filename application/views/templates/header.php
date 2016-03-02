@@ -12,11 +12,11 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9 ">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker"></i>Bangalore</a></li>
+						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker" style="color:#FFD400;"></i>Bangalore</a></li>
 						<li style="background-color:#FFD400;"><a href="#" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="#">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
-						<li><a href="#"><i class="fa fa-bell"></i></a></li>
+						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
 						<li><a href="#"><span>Signup</span></a></li>
 						<li class="border-none-r"><a href="#">Login</a></li>
 					</ul>
@@ -38,7 +38,7 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 </div>
-<nav class="navbar navbar-default navbar-static-top" style="min-height:30px;">
+<nav class="navbar navbar-default navbar-static-top" style="min-height:28px;">
 	<div class="navbar-header visible-xs">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 			<span class="sr-only">Toggle navigation</span>
