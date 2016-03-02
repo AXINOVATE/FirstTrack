@@ -9,7 +9,7 @@ $prefix=$this->config->item('prefix');
 	<meta charset="utf-8">
 	<title>Welcome First Track</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetsPath;?>/css/home_page_style.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<style type="text/css">
 
