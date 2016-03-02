@@ -1,31 +1,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$assetpath=$this->config->item('asset_path'); 
+$assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome Fast Track</title>
-	<link href="<?php echo $assetpath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetpath;?>/css/bootstrap.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetpath;?>/css/home_page_style.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetpath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<title>Welcome First Track</title>
+	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/home_page_style.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<style type="text/css">
 
 	</style>
 </head>
 <body>
-	<div class="top-content-container">
+	<?php echo $header;?>
+	<!--div class="top-content-container hidden-xs" >
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 hidden-xs col-sm-3"></div>
-				<div class="col-md-8 col-xs-12 col-sm-12">				
+				<div class="col-md-3 col-sm-3 col-xs-3">
+					<img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO">
+				</div>
+				<div class="col-md-9 col-sm-9 col-xs-9 ">				
 					<div class="header-top">
-						<ul>
-							<li><a href="#"><i class="fa fa-map-marker"></i>Bangalore</a></li>
-							<li><a href="#"><i class="fa fa-tags"></i>Deals</a></li>
+						<ul style="display:block; float:right;">
+							<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker"></i>Bangalore</a></li>
+							<li style="background-color:#FFD400;"><a href="#" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 							<li><a href="#">24X7 Customer Care</a></li>
 							<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
 							<li><a href="#"><i class="fa fa-bell"></i></a></li>
@@ -33,40 +35,53 @@ $prefix=$this->config->item('prefix');
 							<li class="border-none-r"><a href="#">Login</a></li>
 						</ul>
 					</div>
-				</div>
-			</div>
-			<div class="search-group">		
-			<div class="row">
-				<div class="col-md-4 hidden-xs col-sm-3">
-					<img src="<?php echo $assetpath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO">
-				</div>
-				<div class="col-md-7 col-xs-10 col-sm-7">
-					<div class="input-group">
-					  <input type="text" class="form-control no-border-radius-all " placeholder="Find your vehicle here" aria-describedby="basic-addon2">
-					  <span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
-					</div>					
-				</div>
-				<div class="col-md-1 col-sm-2 col-xs-2">
-					<div class="shopping-img-top">
-						<img src="<?php echo $assetpath;?>/images/shopping.png" class=" shopping-img-top"></img>
+					<div class="row">
+						<div class="col-md-11 col-sm-10 col-xs-12">
+							<div class="input-group">
+								<input type="text" class="form-control no-border-radius-all " placeholder="Find your vehicle here" aria-describedby="basic-addon2" />
+								<span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
+							</div>	
+						</div>
+						<div class="col-md-1 col-sm-2 col-xs-12">
+							<div class="shopping-img-top">
+								<img src="<?php echo $assetsPath;?>/images/shopping.png" class=" shopping-img-top"></img>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default navbar-static-top" style="min-height:30px;">
+		<div class="navbar-header visible-xs">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse bg-lightblue">
+			<div class="container">
+				<ul class="nav navbar-nav" id="second-header">
+					<li class="active"><a href="#" class="pd-tp-3">Latest Models</a></li>
+					<li><a href="#about" class="pd-tp-3">Popular Models</a></li>
+					<li><a href="#contact" class="pd-tp-3">Upcoming Models</a></li>
+					<li><a href="#compare" class="pd-tp-3">Compare Models</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Service 1</a></li>
+							<li><a href="#">Service 2</a></li>
+							<li><a href="#">Service 3</a></li>
+						</ul>
+					</li>
+				</ul> 
 			</div>
 		</div>
-	</div>
-	<div class="navigation-menu">
-		<div class="container">
-			<ul>
-				<li class="padding-left-none"><a href="#"><span><img src="<?php echo $assetpath;?>/images/menu-list.png" alt="location png" class="top-location-img"></span><span class="top-location-img-content">Categories</span></a></li>
-				<li><a href="#"><span>Latest Cars</span></a></li>
-				<li><a href="#"><span>Popular Cars</span></a></li>
-				<li class=""><a href="#"><span>Upcoming Cars</span></a></li>
-				<li class="border-none-r"><a href="#"><span>Compare Cars</span></a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="categories-list-container">
+	</nav-->
+	
+	<div class="body-container">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 border-all-lite ">
@@ -74,20 +89,19 @@ $prefix=$this->config->item('prefix');
 						<div class="row">
 							<div class="col-md-4 col-sm-4 col-xs-4 img-box-1">
 								<div class="categori-box">
-									<div >
+									<div>
 									<center>
-									<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+									<img src="<?php echo $assetsPath;?>/images/car1.png" class="" alt="car" />
 									<div><center><h6>Car</h6></center></div>
 									</center>
 									</div>
-									
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 img-box-all">
 								<div class="categori-box">
 									<div>
 									<center>
-									<img src="<?php echo $assetpath;?>/images/bike1.png" class="" alt="car">
+									<img src="<?php echo $assetsPath;?>/images/bike1.png" class="" alt="car">
 									<div><center><h6>Bike</h6></center></div>
 									</center>
 									</div>
@@ -97,9 +111,9 @@ $prefix=$this->config->item('prefix');
 								<div class="categori-box">
 									<div>
 									<center>
-									<img src="<?php echo $assetpath;?>/images/more1.png" class="" alt="car">
+									<img src="<?php echo $assetsPath;?>/images/more1.png" class="" alt="car" />
 									<div><center><h6>More</h6></center></div>
-									<center>
+									</center>
 									</div>
 								</div>
 							</div>
@@ -107,11 +121,11 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<h4>Body Type</h4>
 					<div class="col-md-6 border-all-lite">
-						<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+						<img src="<?php echo $assetsPath;?>/images/car1.png" class="" alt="car" />
 					</div>
 					
 					<div class="col-md-6 border-all-lite">
-						<img src="<?php echo $assetpath;?>/images/car1.png" class="" alt="car">
+						<img src="<?php echo $assetsPath;?>/images/car1.png" class="" alt="car" />
 					</div>
 					
 				</div>
@@ -126,10 +140,12 @@ $prefix=$this->config->item('prefix');
 				asdasd</br>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 		
 	
-
+<script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>
