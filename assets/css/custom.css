@@ -206,6 +206,7 @@ body{font-family:Century Gothic !important;}
 .text-align-left{text-align:left !important;}
 .Specification-padding-20{padding:20px !important;}
 .float-right{float:right !important;}
+.border-all{border:1px solid #f3f3f3;}
 .bootstrap-switch-handle-off {
     color: #000;
     background: #BD4038 !important;
