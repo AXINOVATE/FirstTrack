@@ -60,10 +60,16 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/compare',$data);
 	}
+	public function detailed_comparison()
+	{
+		$pageData['currentPage'] = 'COMPARE';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/detailed_comparison',$data);
+	}
 	public function edit_product()
 	{
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('Home_Page/edit_products',$data);
+		$this->load->view('admin/products/edit_products',$data);
 	}
 }
