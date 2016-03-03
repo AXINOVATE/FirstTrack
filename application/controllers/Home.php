@@ -22,7 +22,25 @@ class Home extends CI_Controller {
 	{		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('Home_Page/index',$data);
+		$this->load->view('home/index',$data);
+	}
+	public function cars()
+	{
+		$pageData['currentPage'] = 'CARS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/cars',$data);
+	}
+	public function news()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/news',$data);
+	}
+	public function compare()
+	{
+		$pageData['currentPage'] = 'COMPARE';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/compare',$data);
 	}
 	public function edit_product()
 	{

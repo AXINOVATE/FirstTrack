@@ -520,4 +520,4 @@ $config['proxy_ips'] = '';
 |
 */
 $config['asset_path'] = '/FirstTrack/Assets';
-$config['prefix'] = '/FirstTrack/';
+$config['prefix'] = '/FirstTrack';
