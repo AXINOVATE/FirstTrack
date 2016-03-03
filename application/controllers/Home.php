@@ -19,9 +19,15 @@ class Home extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('Home_Page/index',$data);
+	}
+	public function edit_product()
+	{
+		$pageData['currentPage'] = 'HOME';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('Home_Page/edit_products',$data);
 	}
 }
