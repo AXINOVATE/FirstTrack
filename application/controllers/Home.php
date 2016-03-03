@@ -26,8 +26,14 @@ class Home extends CI_Controller {
 	}
 	public function cars()
 	{
-		$pageData['currentPage'] = 'CARS';
+		$pageData['currentPage'] = 'LIST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('home/cars',$data);
+		$this->load->view('home/list',$data);
+	}
+	public function details()
+	{
+		$pageData['currentPage'] = 'LIST';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/details',$data);
 	}
 }
