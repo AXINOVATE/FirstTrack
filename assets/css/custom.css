@@ -143,3 +143,140 @@ body{font-family:Century Gothic !important;}
 	.compare-box{margin: 0 auto; width:100%;}
 }
 /* Compare page CSS ends here	*/
+
+
+/*edit product css */
+.nav-tabs1{background-color:#2268B5 !important; color: #FFF;}
+.nav-tabs1>li{width:auto !important;};
+.nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover{
+    color: #FFF !important;
+    cursor: default;
+    background-color:#2268B5;
+    border-top:5px solid #eb8104 !important;
+    border-bottom-color: transparent;
+}
+.nav-tabs1>li>a {
+    margin-right: 2px !important;
+    line-height: 1.42857143;
+	background-color:#2268B5;
+    border: none !important;
+    border-radius:0 !important;
+	color: #FFF;
+	border-top: 2px solid #eb8104;
+	padding-right:45px;
+	padding-left:45px;
+	
+}
+.nav-tabs1>li>a:focus, .nav-tabs1>li>a:hover {
+    text-decoration: none;
+    background-color: #2268B5;
+}
+.edit-product-panel>.panel-heading {
+    color: #333;
+    background-color: #fff !important;
+    border-color: #ddd !important;
+	
+}
+.border-color-white{border-color: #fff;}
+.nav-tabs1>li{margin-bottom: 0px !important;}
+.nav-tabs1{border-bottom:none !important}
+.well-container{background-color:#fff !important ; padding:10px;}
+.Picture-Preview{padding:20px;width:86%;}
+.btn-default:hover, .btn:hover, .circle_icon :hover {
+    background-color: #0A2B3D;
+    color: #fff;
+}
+.img-thumnile-bg{
+	background-color: #2268B5 !important;
+    padding: 10px !important;
+    border-radius: 50px !important;
+	color:#fff;
+	
+	}
+.padding-right-8{padding-right:8px;}
+.basic-detail-save-btn{padding-right:88px;}
+.picture-color-edit th{background-color:#2268B5 !important;color:#fff;}
+.picture-color-edit tr>td>a{text-decoration:none;}
+.delete-box-color{color:#984807 !important;}
+.picture-color-edit tr>td,.picture-color-edit th{text-align:center;}
+.padding-right-10{padding-right:10px;}
+.picture-padding-right-10{padding-right:10px;}
+.padding-left-10{padding-left:10px;}
+.font-size-16{font-size:16px !important}
+.padding-10{padding:10px;}
+.text-align-left{text-align:left !important;}
+.Specification-padding-20{padding:20px !important;}
+.float-right{float:right !important;}
+.bootstrap-switch-handle-off {
+    color: #000;
+    background: #BD4038 !important;
+}
+.bootstrap-switch-handle-on {
+    color: #000;
+    background:#008f00 !important;
+}
+
+@media only screen and (min-width: 1025px) and (max-width:1200px){
+	.nav-tabs1>li>a {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		background-color:#2268B5;
+		border: none !important;
+		border-radius:0 !important;
+		color: #FFF;
+		border-top: 2px solid #eb8104;
+		padding-right:25px !important;
+		padding-left:25px !important;
+	}
+}
+@media only screen and (min-width: 651px) and (max-width:998px){
+	.nav-tabs1>li>a {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		background-color:#2268B5;
+		border: none !important;
+		border-radius:0 !important;
+		color: #FFF;
+		border-top: 2px solid #eb8104;
+		padding-right:15px !important;
+		padding-left:15px !important;
+	}
+	
+}
+@media only screen and (min-width: 992px) and (max-width:1024px){
+	.nav-tabs1>li>a {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		background-color:#2268B5;
+		border: none !important;
+		border-radius:0 !important;
+		color: #FFF;
+		border-top: 2px solid #eb8104;
+		padding-right:25px !important;
+		padding-left:25px !important;
+	}
+}
+@media only screen and (min-width: 481px) and (max-width:767px){
+	.nav-tabs1>li>a {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		background-color:#2268B5;
+		border: none !important;
+		border-radius:0 !important;
+		color: #FFF;
+		border-top: 2px solid #eb8104;
+		padding-right:5px !important;
+		padding-left:5px !important;
+	}
+	.basic-detail-save-btn{padding-right:0px !important;}
+}
+@media (max-width: 480px){
+	.basic-detail-save-btn{padding-right:0px !important;}
+	.Picture-Preview {
+		padding: 20px;
+		width: 100%;		
+	}
+	.picture-padding-right-10{padding-right:0px !important;}
+	.Specification-padding-20{padding:0px !important;}
+}
+/* end product edit css */
