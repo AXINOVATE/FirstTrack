@@ -42,6 +42,12 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/compare',$data);
 	}
+	public function detailed_comparison()
+	{
+		$pageData['currentPage'] = 'COMPARE';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/detailed_comparison',$data);
+	}
 	public function edit_product()
 	{
 		$pageData['currentPage'] = 'HOME';
