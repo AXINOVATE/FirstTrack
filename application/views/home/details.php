@@ -14,56 +14,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		.item-img{border:1px solid #EEE;padding:10px;text-align: center;display: inline-block;}
-		.item-img img{width:85%;margin-bottom:5px;}
-		.item-name .fa{color:#DC5452;}
-		.item-location{ display: inline-block; width: 100%;}
-		.item-location .dropdown{ font-size: 15px; }
-		.item-location span{ color: #777; }
-		.item-hr{margin-top:10px;margin-bottom:10px;border-color:#EEE;}
-		.item-price span{font-size:34px;color:#DC5452;}
-		.br-right{border-right:1px solid #EEE;}
-		.item-price{height: 100px; display: table-cell; vertical-align: middle;}
-		.item-subprice{height:50px;line-height:40px;}
-		.item-subprice span{width: 120px; display: block; float: left;}
-		.item-action{text-align:center;}
-		.item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
-		.item-colors ul{list-style-type:none;margin-bottom:0px;}
-		.item-colors li{display: inline-block; border:1px solid #EEE; cursor: pointer;padding:2px;}
-		.item-colors li div{width: 25px; height: 25px}
-		.item-colors span{line-height: 30px; font-size:16px;}
-		.item-benfit{background-color: yellow; padding: 10px; font-size: 20px; text-align: center;width:30%;float:left;}
-		.item-benfits{border: 1px solid #027CD5; padding: 9px; font-size: 20px; text-align: center; float:left;width:17%;margin-left:5px;} 	
-		.item-feature{border: 1px solid #EEE; padding: 10px; text-align: center; float:left;width:190px;height:90px;} 	
-		.item-features ul{background-color: #027CD5;  border: 0px;} 	
-		.item-features li{ margin-bottom: -5px;border-right:1px solid #CCC;width: 20%; text-align: center;} 	
-		.item-features li a{border-radius: 0px;  background-color: #027CD5;  border: 0px; color: #fff;margin-right:0px; } 	
-		.item-features li a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid yellow;} 	
-		.item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid yellow;} 	
-		.item-features .tab-content{border: 1px solid #EEE;  padding: 10px;}
-		.item-rating{text-align:right;}
-		@media (max-width: 1024px){
-			.item-feature{width:240px;}
-			.item-benfit{padding: 6px; font-size: 16px; width: 35%;}
-			.item-benfits{padding: 5px; font-size: 16px;width: 112px;}
-		}
-		@media (max-width: 768px){
-			.item-name{margin-top:10px;}
-			.item-rating{padding-right:25px;}
-			.item-feature{width:240px;}
-			.item-benfit{padding: 6px; font-size: 16px; width: 35%;}
-			.item-benfits{padding: 5px; font-size: 16px;width: 112px;}
-		}
-		@media (max-width: 480px){
-			.item-name{margin-bottom:10px;}
-			.item-price{height:auto;}
-			.item-subprice{height:auto;line-height:25px;}
-			.item-action .btn{width: 100%; margin-bottom: 5px;}
-			.item-benfit{width: 100%;margin-bottom: 5px;}
-			.item-benfits{width: 100%;margin-bottom: 5px;margin-left: 0px;}
-			.item-feature{width: 100%;}
-		}
-		@media (max-width: 360px){}
+		
 </style>
 </head>
 <body>
