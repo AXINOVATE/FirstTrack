@@ -122,7 +122,7 @@ body{font-family:Century Gothic !important;}
 .news-title{color:#CE0505; height:45px; line-height:19px; font-size:17px; font-weight:600; padding-top:3px; padding-bottom:3px; display:table-cell; vertical-align:middle; text-transform: uppercase;}
 .news-brief{font-size:12px; line-height:16px; min-height:65px; max-height:65px; overflow:hidden;}
 .news-thumbnail-img{width:100%; height: 150px;}
-.news-title-txt{font-size:23px;}
+.news-title-txt{font-size:23px; font-weight:600;}
 .news-desc{font-size:17px; text-align:justify; line-height:30px;}
 @media only screen and (min-width: 768px) and (max-width:1024px){
 	.news-thumbnail-img{width:100%; height: 130px;}
