@@ -14,32 +14,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		.item-img{border:1px solid #EEE;padding:10px;text-align: center;display: inline-block;}
-		.item-img img{width:85%;margin-bottom:5px;}
-		.item-name .fa{color:#DC5452;}
-		.item-location{ display: inline-block; width: 100%;}
-		.item-location .dropdown{ font-size: 15px; }
-		.item-location span{ color: #777; }
-		.item-hr{margin-top:10px;margin-bottom:10px;border-color:#EEE;}
-		.item-price span{font-size:34px;color:#DC5452;}
-		.br-right{border-right:1px solid #EEE;}
-		.item-price{height: 100px; display: table-cell; vertical-align: middle;}
-		.item-subprice{height:50px;line-height:40px;}
-		.item-subprice span{width: 120px; display: block; float: left;}
-		.item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
-		.item-colors ul{list-style-type:none;margin-bottom:0px;}
-		.item-colors li{display: inline-block; border:1px solid #EEE; cursor: pointer;padding:2px;}
-		.item-colors li div{width: 25px; height: 25px}
-		.item-colors span{line-height: 30px; font-size:16px;}
-		.item-benfit{background-color: yellow; padding: 10px; font-size: 20px; text-align: center;width:30%;float:left;}
-		.item-benfits{border: 1px solid #027CD5; padding: 9px; font-size: 20px; text-align: center; float:left;width:17%;margin-left:5px;} 	
-		.item-feature{border: 1px solid #EEE; padding: 10px; text-align: center; float:left;width:190px;height:90px;} 	
-		.item-features ul{background-color: #027CD5;  border: 0px;} 	
-		.item-features li{ margin-bottom: -5px;border-right:1px solid #CCC;width: 20%; text-align: center;} 	
-		.item-features li a{border-radius: 0px;  background-color: #027CD5;  border: 0px; color: #fff;margin-right:0px; } 	
-		.item-features li a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid yellow;} 	
-		.item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid yellow;} 	
-		.item-features .tab-content{border: 1px solid #EEE;  padding: 10px;} 	
+		
 </style>
 </head>
 <body>
@@ -51,7 +26,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
 						<img src="<?php echo $prefix;?>/assets/images/baner-car.png">
 						<div class="item-colors text-right">
@@ -65,9 +40,9 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-7">
-					<div class="row">
-						<div class="col-md-6 item-name">
+				<div class="col-md-7 col-sm-12">
+					<div class="row item-name">
+						<div class="col-md-6 col-sm-7">
 							<h3 class="mt-0">Hyundai Xcent </h3>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
@@ -75,17 +50,17 @@ $prefix=$this->config->item('prefix');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-2 col-xs-6 text-center">
 							<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px">
 						</div>
-						<div class="col-md-3">
-							<div class="pull-right">7.9</div>
-							<span class="pull-right">Nayagaadi Rating</span>
+						<div class="col-md-3 col-sm-3 col-xs-6 item-rating">
+							<div>7.9</div>
+							<span>Nayagaadi Rating</span>
 						</div>
 					</div>
 					<hr class="item-hr">
 					<div class="item-location mt-10 mb-10">
-						<div class="col-md-5 pl-0">
+						<div class="col-md-5 col-sm-5 col-xs-12 pl-0">
 							<span class="pull-left">Variant : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Base Petrol </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -95,7 +70,7 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-6 pl-0">
+						<div class="col-md-6 col-sm-6 col-xs-12 pl-0">
 							<span class="pull-left">Location : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Bangalore </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -106,21 +81,21 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-1 pl-0">
+						<div class="col-md-1 col-sm-1 pl-0 hidden-xs">
 							<i class="fa fa-share-alt"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6 br-right">
+						<div class="col-md-6 col-sm-6 br-right">
 							<div class="item-price"><span ><i class="fa fa-inr"></i> 3,18,939 </span> On-Road Price </div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 col-sm-6">
 							<div class="item-subprice"><span>Ex-Showroom </span>: <i class="fa fa-inr"></i> 2,73,594</div>
-							<div class="item-subprice"><span>Insurance </span> <i class="fa fa-inr"></i> 2,73,594 </div>
+							<div class="item-subprice"><span>Insurance </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
 						</div>
 					</div>
 					<div class="row mt-10">
-						<div class="col-md-12 item-action text-right">
+						<div class="col-md-12 item-action">
 							<button class="btn">Buy Now</button>
 							<button class="btn">Advance Booking</button>
 							<button class="btn">Book Test Drive</button>
@@ -186,9 +161,10 @@ $prefix=$this->config->item('prefix');
 	
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		//
+		$('#myTab').tabCollapse();
 	});
 </script>
 </body>
