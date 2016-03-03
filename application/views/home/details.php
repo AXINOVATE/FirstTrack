@@ -26,6 +26,7 @@ $prefix=$this->config->item('prefix');
 		.item-price{height: 100px; display: table-cell; vertical-align: middle;}
 		.item-subprice{height:50px;line-height:40px;}
 		.item-subprice span{width: 120px; display: block; float: left;}
+		.item-action{text-align:center;}
 		.item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
 		.item-colors ul{list-style-type:none;margin-bottom:0px;}
 		.item-colors li{display: inline-block; border:1px solid #EEE; cursor: pointer;padding:2px;}
@@ -39,7 +40,30 @@ $prefix=$this->config->item('prefix');
 		.item-features li a{border-radius: 0px;  background-color: #027CD5;  border: 0px; color: #fff;margin-right:0px; } 	
 		.item-features li a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid yellow;} 	
 		.item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid yellow;} 	
-		.item-features .tab-content{border: 1px solid #EEE;  padding: 10px;} 	
+		.item-features .tab-content{border: 1px solid #EEE;  padding: 10px;}
+		.item-rating{text-align:right;}
+		@media (max-width: 1024px){
+			.item-feature{width:240px;}
+			.item-benfit{padding: 6px; font-size: 16px; width: 35%;}
+			.item-benfits{padding: 5px; font-size: 16px;width: 112px;}
+		}
+		@media (max-width: 768px){
+			.item-name{margin-top:10px;}
+			.item-rating{padding-right:25px;}
+			.item-feature{width:240px;}
+			.item-benfit{padding: 6px; font-size: 16px; width: 35%;}
+			.item-benfits{padding: 5px; font-size: 16px;width: 112px;}
+		}
+		@media (max-width: 480px){
+			.item-name{margin-bottom:10px;}
+			.item-price{height:auto;}
+			.item-subprice{height:auto;line-height:25px;}
+			.item-action .btn{width: 100%; margin-bottom: 5px;}
+			.item-benfit{width: 100%;margin-bottom: 5px;}
+			.item-benfits{width: 100%;margin-bottom: 5px;margin-left: 0px;}
+			.item-feature{width: 100%;}
+		}
+		@media (max-width: 360px){}
 </style>
 </head>
 <body>
@@ -51,7 +75,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
 						<img src="<?php echo $prefix;?>/assets/images/baner-car.png">
 						<div class="item-colors text-right">
@@ -65,9 +89,9 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-7">
-					<div class="row">
-						<div class="col-md-6 item-name">
+				<div class="col-md-7 col-sm-12">
+					<div class="row item-name">
+						<div class="col-md-6 col-sm-7">
 							<h3 class="mt-0">Hyundai Xcent </h3>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
@@ -75,17 +99,17 @@ $prefix=$this->config->item('prefix');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-sm-2 col-xs-6 text-center">
 							<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px">
 						</div>
-						<div class="col-md-3">
-							<div class="pull-right">7.9</div>
-							<span class="pull-right">Nayagaadi Rating</span>
+						<div class="col-md-3 col-sm-3 col-xs-6 item-rating">
+							<div>7.9</div>
+							<span>Nayagaadi Rating</span>
 						</div>
 					</div>
 					<hr class="item-hr">
 					<div class="item-location mt-10 mb-10">
-						<div class="col-md-5 pl-0">
+						<div class="col-md-5 col-sm-5 col-xs-12 pl-0">
 							<span class="pull-left">Variant : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Base Petrol </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -95,7 +119,7 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-6 pl-0">
+						<div class="col-md-6 col-sm-6 col-xs-12 pl-0">
 							<span class="pull-left">Location : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Bangalore </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -106,21 +130,21 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-1 pl-0">
+						<div class="col-md-1 col-sm-1 pl-0 hidden-xs">
 							<i class="fa fa-share-alt"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6 br-right">
+						<div class="col-md-6 col-sm-6 br-right">
 							<div class="item-price"><span ><i class="fa fa-inr"></i> 3,18,939 </span> On-Road Price </div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 col-sm-6">
 							<div class="item-subprice"><span>Ex-Showroom </span>: <i class="fa fa-inr"></i> 2,73,594</div>
-							<div class="item-subprice"><span>Insurance </span> <i class="fa fa-inr"></i> 2,73,594 </div>
+							<div class="item-subprice"><span>Insurance </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
 						</div>
 					</div>
 					<div class="row mt-10">
-						<div class="col-md-12 item-action text-right">
+						<div class="col-md-12 item-action">
 							<button class="btn">Buy Now</button>
 							<button class="btn">Advance Booking</button>
 							<button class="btn">Book Test Drive</button>
@@ -186,9 +210,10 @@ $prefix=$this->config->item('prefix');
 	
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		//
+		$('#myTab').tabCollapse();
 	});
 </script>
 </body>

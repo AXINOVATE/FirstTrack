@@ -24,11 +24,23 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/index',$data);
 	}
-	public function cars()
+	public function latest()
 	{
-		$pageData['currentPage'] = 'LIST';
+		$pageData['currentPage'] = 'LATEST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('home/list',$data);
+		$this->load->view('home/latest_list',$data);
+	}
+	public function popular()
+	{
+		$pageData['currentPage'] = 'POPULAR';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/popular_list',$data);
+	}
+	public function upcoming()
+	{
+		$pageData['currentPage'] = 'UPCOMING';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/upcoming_list',$data);
 	}
 	public function details()
 	{
