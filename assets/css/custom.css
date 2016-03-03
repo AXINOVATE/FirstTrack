@@ -132,15 +132,16 @@ body{font-family:Century Gothic !important;}
 /*edit product css */
 
 .nav-tabs1{background-color:#2268B5 !important; color: #FFF;}
+.nav-tabs1>li{width:auto !important;};
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover{
-    color: #FFF;
+    color: #FFF !important;
     cursor: default;
     background-color:#2268B5;
     border-top:5px solid #eb8104 !important;
     border-bottom-color: transparent;
 }
 .nav-tabs1>li>a {
-    margin-right: 2px;
+    margin-right: 2px !important;
     line-height: 1.42857143;
 	background-color:#2268B5;
     border: none !important;

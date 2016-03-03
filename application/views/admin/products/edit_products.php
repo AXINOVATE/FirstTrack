@@ -9,15 +9,14 @@ $prefix=$this->config->item('prefix');
 	<meta charset="utf-8">
 	<title>Welcome First Track</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetsPath;?>/css/home_page_style.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet">	
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />
 	<style type="text/css">
-		.container{
-		  padding: 20px 0;
-		}
+		
 	</style>
 </head>
 <body>
@@ -35,7 +34,7 @@ $prefix=$this->config->item('prefix');
 							<div class="panel-body">
 								<div role="tabpanel">
 								  <!-- Nav tabs -->
-								  <ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
+								  <ul id="myTab" class="nav  nav-tabs1" role="tablist">
 									<li role="presentation" class="active"><a href="#Basic-Details" aria-controls="home" role="tab" data-toggle="tab">Basic Details</a></li>
 									<li role="presentation"><a href="#Picture-color" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
 									<li role="presentation"><a href="#Pricing" aria-controls="Pricing" role="tab" data-toggle="tab">Pricing</a></li>
