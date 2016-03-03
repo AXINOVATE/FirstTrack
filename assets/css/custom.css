@@ -131,8 +131,8 @@ body{font-family:Century Gothic !important;}
 
 /*edit product css */
 
-.nav-tabs1{background-color:#2268B5 !important; color: #FFF;}
-.nav-tabs1>li{width:auto !important;};
+.nav-tabs1{background-color:#2268B5 !important; color: #FFF;margin-bottom:10px;}
+.nav-tabs1>li{width:auto !important;display:inline-block;}
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover{
     color: #FFF !important;
     cursor: default;
@@ -148,8 +148,8 @@ body{font-family:Century Gothic !important;}
     border-radius:0 !important;
 	color: #FFF;
 	border-top: 2px solid #eb8104;
-	padding-right:45px;
-	padding-left:45px;
+	padding-right:40px;
+	padding-left:42px;
 	
 }
 .nav-tabs1>li>a:focus, .nav-tabs1>li>a:hover {
@@ -223,8 +223,8 @@ body{font-family:Century Gothic !important;}
 		border-radius:0 !important;
 		color: #FFF;
 		border-top: 2px solid #eb8104;
-		padding-right:15px !important;
-		padding-left:15px !important;
+		padding-right:12px !important;
+		padding-left:12px !important;
 	}
 	
 }
@@ -261,6 +261,7 @@ body{font-family:Century Gothic !important;}
 		padding: 20px;
 		width: 100%;		
 	}
+	.font-size-16{font-size:14px !important}
 	.picture-padding-right-10{padding-right:0px !important;}
 	.Specification-padding-20{padding:0px !important;}
 }

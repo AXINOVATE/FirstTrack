@@ -16,7 +16,8 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />
 	<style type="text/css">
-		
+		#myTab-accordion>.panel-default>.panel-heading{background-color: #027CD5; color: white !important; }
+		#myTab-accordion>.panel-default>.panel-heading>.panel-title>a{text-decoration:none !important;}
 	</style>
 </head>
 <body>
@@ -29,13 +30,13 @@ $prefix=$this->config->item('prefix');
 		<section class="container">
 			<section class="row">
 				<div class="col-sm-12">
-					<div class="panel no-border-radius-all panel-default edit-product-panel">
-						<div class="panel-heading"><h3>Edit Products – Rapid</h3></div>
+					<div class="panel no-border-radius-all panel-default edit-product-panel product-panel-default">
+						<div class="panel-heading bg-lightblue"><h3>Edit Products – Rapid</h3></div>
 							<div class="panel-body">
 								<div role="tabpanel">
 								  <!-- Nav tabs -->
 								  <ul id="myTab" class="nav  nav-tabs1" role="tablist">
-									<li role="presentation" class="active"><a href="#Basic-Details" aria-controls="home" role="tab" data-toggle="tab">Basic Details</a></li>
+									<li role="presentation" class="active product-panel-heading"><a href="#Basic-Details" aria-controls="home" role="tab" data-toggle="tab">Basic Details</a></li>
 									<li role="presentation"><a href="#Picture-color" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
 									<li role="presentation"><a href="#Pricing" aria-controls="Pricing" role="tab" data-toggle="tab">Pricing</a></li>
 									<li role="presentation"><a href="#Specification" aria-controls="Specification" role="tab" data-toggle="tab">Specification</a></li>
@@ -220,19 +221,19 @@ $prefix=$this->config->item('prefix');
 														<tr>
 															<td>Brilliant Silver</td>
 															<td class="hidden-xs">#a5a7a6</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 															
 														</tr>
 														<tr>
 															<td>Candy White</td>
 															<td class="hidden-xs">#c6c5c1</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 															
 														</tr>
 														<tr>
 															<td>Cappuccino Beige</td>
 															<td class="hidden-xs">#d8d4cb</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 															
 														</tr>
 														
@@ -303,20 +304,20 @@ $prefix=$this->config->item('prefix');
 															<td>Brilliant Silver</td>
 															<td class="hidden-xs">Karnataka</td>
 															<td class="hidden-xs">Rs 9,25,000</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 															
 														</tr>
 														<tr>
 															<td>Candy White</td>
 															<td class="hidden-xs">Karnataka</td>
 															<td class="hidden-xs">Rs 9,25,000</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 														</tr>
 														<tr>
 															<td>Cappuccino Beige</td>
 															<td class="hidden-xs">Karnataka</td>
 															<td class="hidden-xs">Rs 9,25,000</td>
-															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+															<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 														</tr>
 														
 													</tbody>

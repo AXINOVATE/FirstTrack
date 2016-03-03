@@ -26,15 +26,9 @@ class Home extends CI_Controller {
 	}
 	public function cars()
 	{
-		$pageData['currentPage'] = 'LIST';
+		$pageData['currentPage'] = 'CARS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('home/list',$data);
-	}
-	public function details()
-	{
-		$pageData['currentPage'] = 'LIST';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('home/details',$data);
+		$this->load->view('home/cars',$data);
 	}
 	public function news()
 	{
@@ -52,6 +46,6 @@ class Home extends CI_Controller {
 	{
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('Home_Page/edit_products',$data);
+		$this->load->view('admin/products/edit_products',$data);
 	}
 }
