@@ -54,10 +54,10 @@ $prefix=$this->config->item('prefix');
 				<li class=""><a href="#" class="pd-tp-3">Latest</a></li>
 				<li><a href="#about" class="pd-tp-3">Popular</a></li>
 				<li><a href="#contact" class="pd-tp-3">Upcoming</a></li>
-				<li><a href="#compare" class="pd-tp-3">Compare</a></li>
+				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
-				<li><a href="#compare" class="pd-tp-3">Reviews</a></li>
-				<li><a href="#compare" class="pd-tp-3">Blogs</a></li>
+				<li><a href="#review" class="pd-tp-3">Reviews</a></li>
+				<li><a href="#blog" class="pd-tp-3">Blogs</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">

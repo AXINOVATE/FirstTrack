@@ -29,39 +29,37 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-3 col-sm-3 col-xs-12 border-lt-grey">
 					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue">
+						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue" id="cars">
 							<div>
 								<center>
-									<img src="<?php echo $assetsPath;?>/images/sedan.png" class="cat-img" alt="car" />
-									<div style="font-size:14px; color:#fff; margin-bottom:10px;">Car</div>
+									<img src="<?php echo $assetsPath;?>/images/car.png" class="cat-img" alt="car" />
+									<div style="font-size:14px; margin-bottom:10px;">Car</div>
 								</center>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey">
+						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">
 							
 							<div>
 								<center>
 									<img src="<?php echo $assetsPath;?>/images/bike.png" class="cat-img" alt="car">
-									<div style="font-size:14px; color:#696969; margin-bottom:10px;">Bike</div>
+									<div style="font-size:14px; margin-bottom:10px;">Bike</div>
 								</center>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey">
+						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="more">
 							
 							<div>
 								<center>
 									<img src="<?php echo $assetsPath;?>/images/more1.png" class="cat-img" alt="car" />
-									<div style="font-size:14px; color:#696969; margin-bottom:10px;">More</div>
+									<div style="font-size:14px; margin-bottom:10px;">More</div>
 								</center>
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row types" id="cars-div">
 						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 							<h5>Body Type</h5>
 						</div>
-					</div>
-					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
 								<center>
@@ -95,6 +93,80 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
+					<div class="row mt-10 hide types" id="more-div">
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/scooters.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Scooters</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-yellow pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/tractors.png" style="width:70%;" alt="car" />	
+								</center>
+								<div class="car-type-name">Tractors</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>	
+									<img src="<?php echo $assetsPath;?>/images/auto.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Auto</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/lorries.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Lorries</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/buses.png" style="width:70%;" alt="car" />	
+								</center>
+								<div class="car-type-name">Buses</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>	
+									<img src="<?php echo $assetsPath;?>/images/ampere.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Ampere</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/birdgroup.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Bird Group</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/fivewheels.png" style="width:70%;" alt="car" />	
+								</center>
+								<div class="car-type-name">Five Wheels</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+								<center>	
+									<img src="<?php echo $assetsPath;?>/images/segways.png" style="width:70%;" alt="car" />
+								</center>
+								<div class="car-type-name">Segway</div>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
 							<div class="mr-m5 ml-m5">
@@ -103,7 +175,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-9 col-sm-9 col-xs-12 ">
+				<div class="col-md-9 col-sm-9 col-xs-12 hybrid">
 					<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
 							<center>
@@ -180,5 +252,16 @@ $prefix=$this->config->item('prefix');
 	
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+	$('.cat-box').on('click', function(){
+		var id = $(this).attr('id');
+		$('.types').addClass('hide');
+		$('#'+id+'-div').removeClass('hide');
+		$('.cat-box').removeClass('bg-lightblue');
+		$(this).addClass('bg-lightblue');
+		$('.cat-box').addClass('bg-lightgrey');
+		
+	});
+</script>
 </body>
 </html>
