@@ -52,13 +52,14 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
-				<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>home/latest" class="pd-tp-3">Latest</a></li>
-				<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>home/popular" class="pd-tp-3">Popular</a></li>
-				<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>home/upcoming" class="pd-tp-3">Upcoming</a></li>
-				<li><a href="#compare" class="pd-tp-3">Compare</a></li>
+				<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/latest" class="pd-tp-3">Latest</a></li>
+				<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/popular" class="pd-tp-3">Popular</a></li>
+				<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/upcoming" class="pd-tp-3">Upcoming</a></li>
+				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
+
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
-				<li><a href="#compare" class="pd-tp-3">Reviews</a></li>
-				<li><a href="#compare" class="pd-tp-3">Blogs</a></li>
+				<li><a href="#review" class="pd-tp-3">Reviews</a></li>
+				<li><a href="#blog" class="pd-tp-3">Blogs</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
