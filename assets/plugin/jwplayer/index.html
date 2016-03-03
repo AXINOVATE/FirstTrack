@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>Training</title>
+	<script type="application/javascript" src="jwplayer/jwplayer.js"></script>
+	<script type="application/javascript">jwplayer.key="EtMiusL4M8At92ceRot/gjl0xyPaGIMHTLfULQ==";</script>
+</head>
+<body>
+	
+	<div id="myElement">Loading the player...</div>
+	<script type="text/javascript">
+		var aditionaltime= 0;
+		var pausetime= 0;
+		jwplayer("myElement").setup({
+			//file: "Tu_Meri.mp4",
+			autostart: false,
+			width: "75%",
+			height: 360,
+			aspectratio: "16:9",
+			repeat:false,
+			androidhls:true,
+			playlist: [
+				{
+				sources: [{ 
+				  file: "Tu_Meri.mp4"
+				}],
+				title: "Tu Meri from bang bang"
+				},
+				{
+				sources: [{ 
+				  file: "1_2_3.mp4"
+				}],
+				title: "ek too thene from anjaan"
+				},
+				{
+				sources: [{ 
+				  file: "song1.mp3"
+				}],
+				title: "song"
+				}
+			],
+			/*advertising: {
+				client: 'vast',
+				tag: 'http://adserver.com/vastResponse.xml'
+			}*/
+			listbar: {
+				position: "right",
+				size: 240
+			},
+			logo: {
+				file: 'logo.PNG',
+				link: 'http://localhost:8081/lion_kh',
+				hide: true,
+				position: 'top-left'
+				//position: 'bottom-right',
+				//position: 'bottom-left',
+				//position: 'top-right'
+			},
+			stretching : 'uniform'
+		});
+		
+		function calculatepausecount(){
+			if(pausetime>0){
+				pausetime++;
+				setTimeout(function(){calculatepausecount();},1000);
+			}
+		}
+		jwplayer().onPause(function(){
+			//alert(jwplayer().getPosition());
+			pausetime = 1;
+			calculatepausecount();
+		});
+		jwplayer().onPlay(function(){
+			aditionaltime += pausetime;
+			alert(aditionaltime);
+			pausetime = -1;
+			calculatepausecount();
+		});
+		jwplayer().onComplete(function(){
+			alert('completed : '+(jwplayer().getPosition()+aditionaltime));
+		});
+		jwplayer().onPlaylistComplete(function(){
+			alert('fully completed : '+jwplayer().getPosition());
+		});
+		jwplayer().onPlaylistItem(function(){
+			alert('item changed : '+jwplayer().getPosition());
+		});
+		jwplayer().onSeek(function(position,offset){
+			//alert(aditionaltime);
+			aditionaltime += parseInt(position['position']) - parseInt(position['offset']);
+			//alert(aditionaltime);
+			//alert(position);
+		});
+	</script>
+	
+	<p>
+	  <a onclick='jwplayer().play()'>Toggle playback</a> | 
+	  <a onclick='alert(jwplayer().getVolume())'>Report volume</a> | 
+	  <a onclick='alert(jwplayer().getPosition())'>get position</a> | 
+	  <a onclick='alert(jwplayer().getDuration())'>get duration</a> | 
+	  <a onclick='jwplayer().seek(200);'>go to 200</a> | 
+	</p>
+</body>
+</html>

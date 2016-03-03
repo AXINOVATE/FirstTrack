@@ -9,11 +9,13 @@ $prefix=$this->config->item('prefix');
 	<meta charset="utf-8">
 	<title>NayaGaadi.com is India's first Online market place for all the Brand New Vehicles.|Book Online, Buy Online , Test Ride all New Autos, Bikes, Cycles, Cars, Scooters, Buses, Lorries, Tractors, Trucks, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV in India,  New Autos, Bikes, Cycles, Cars, Scooters, Buses, Lorries, Tractors, Trucks, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV at your Door Step.</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-
+		
+	
 	</style>
 </head>
 <body>
@@ -25,7 +27,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-4 col-xs-12 border-lt-grey">
+				<div class="col-md-3 col-sm-3 col-xs-12 border-lt-grey">
 					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue">
 							<div>
@@ -62,26 +64,34 @@ $prefix=$this->config->item('prefix');
 					<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
-								<img src="<?php echo $assetsPath;?>/images/hatchback.png" class="cat-img" alt="car" />
-								<div class="car-type-name">Hatchback</div>
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/hatchback.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">Hatchback</div>
+								</center>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
-								<img src="<?php echo $assetsPath;?>/images/sedan.png" class="cat-img" alt="car" />
-								<div class="car-type-name">Sedan</div>
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/sedan.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">Sedan</div>
+								</center>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
-								<img src="<?php echo $assetsPath;?>/images/suv.png" class="cat-img" alt="car" />
-								<div class="car-type-name">SUV</div>
+								<center>	
+									<img src="<?php echo $assetsPath;?>/images/suv.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">SUV</div>
+								</center>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
-								<img src="<?php echo $assetsPath;?>/images/muv.png" class="cat-img" alt="car" />
-								<div class="car-type-name">MUV</div>
+								<center>	
+									<img src="<?php echo $assetsPath;?>/images/muv.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">MUV</div>
+								</center>
 							</div>
 						</div>
 					</div>
@@ -93,8 +103,36 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-9">
-				
+				<div class="col-md-9 col-sm-9 col-xs-12 ">
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="tab1">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10" width="70%" alt="car" />
+							</center>
+						</div>
+						<div class="tab-pane fade" id="tab2">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10" width="70%" alt="car" />
+							</center>
+						</div>
+						<div class="tab-pane fade" id="tab3">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10" width="70%" alt="car" />
+							</center>
+						</div>
+						<div class="tab-pane fade" id="tab4">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10" width="70%" alt="car" />
+							</center>
+						</div>
+					</div>
+					<ul id="myTab" class="nav-tabs">
+						<li class="active"><a href="#tab1" data-toggle="tab">Latest Skoda Superb 2016</a></li>
+						<li><a href="#tab2" data-toggle="tab">Toyota Camri Hybrid</a></li>
+						<li><a href="#tab3" data-toggle="tab">Fiat Abarth Punto</a></li>
+						<li><a href="#tab4" data-toggle="tab">Toyota Etios Cross</a></li>
+					</ul>
+					
 				</div>
 			</div>
 			
