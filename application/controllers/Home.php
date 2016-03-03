@@ -19,16 +19,22 @@ class Home extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/index',$data);
 	}
 	public function cars()
 	{
-		$pageData['currentPage'] = 'CARS';
+		$pageData['currentPage'] = 'LIST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('home/cars',$data);
+		$this->load->view('home/list',$data);
+	}
+	public function details()
+	{
+		$pageData['currentPage'] = 'LIST';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/details',$data);
 	}
 	public function news()
 	{
@@ -47,5 +53,11 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'COMPARE';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/detailed_comparison',$data);
+	}
+	public function edit_product()
+	{
+		$pageData['currentPage'] = 'HOME';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('Home_Page/edit_products',$data);
 	}
 }
