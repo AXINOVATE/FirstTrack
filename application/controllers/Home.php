@@ -72,4 +72,10 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/edit_products',$data);
 	}
+	public function news_detail()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/news_detail',$data);
+	}
 }

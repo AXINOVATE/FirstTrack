@@ -178,9 +178,11 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-9 col-sm-9 col-xs-12 hybrid">
 					<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
+							<a href="<?php echo $prefix;?>/home/news_details">
 							<center>
 								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10" width="70%" alt="car" />
 							</center>
+							</a>
 						</div>
 						<div class="tab-pane fade" id="tab2">
 							<center>

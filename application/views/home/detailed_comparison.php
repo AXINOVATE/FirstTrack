@@ -49,7 +49,7 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 mb-10" style="border-right: 1px solid #dfdfdf;">
 					<div class="compare-box" style="border-bottom: 1px solid #dfdfdf;">
-						<div class="comp-car-title text-center">Hyundai Fluidic Verna</div>
+						<div class="comp-car-title text-center">Hyundai Fluidic Verna Fluidic Verna Fluidic Verna</div>
 						<select class="form-control select2 mb-20">
 							<option value="">1.6 CRDI SX</option>
 							<option value="P">Maruti Suzuki</option>
