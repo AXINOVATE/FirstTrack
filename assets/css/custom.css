@@ -30,11 +30,17 @@ body{font-family:Century Gothic !important;}
 .txt_white{color:#ffffff;}
 .pd-tp-3{padding-top:3px !important; padding-bottom:3px !Important;}
 #second-header {width:100%;margin:0 auto; float:none;}
-#second-header>li{height:28px; text-align:center; width:20%;}
+#second-header>li{height:28px; text-align:center; width:11%;}
 #second-header>li>a{color:white;}
 #second-header>li>a:hover{color:white;}
-#second-header>.active>a{color:black; background-color:#e7e7e7;}
-#second-header>li>a:focus, #second-header>li>a:hover {color:black; background-color:#e7e7e7;}
+#second-header>.active>a{color:black; background-color:#FFD400; height:28px;}
+#second-header>li>a:focus, #second-header>li>a:hover {color:black; background-color:#FFD400; height:28px;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {background-color: #FFD400; height:28px;}
+.dropdown-menu{padding-top:0px; padding-bottom:0px; background-color: #027CD5; color: white; opacity:0.8; right:0; left:-110px;}
+.dropdown-menu>li>a{color:#fff;}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {color: #fff; text-decoration: none; background-color: #AB851F;}
+.cart-btn{display: block; width: 100%; height: 35px; text-align: center; color: white !important; background-color: #027cd5; padding: 8px; font-size: 14px; text-decoration: none !important;}
+.cart-item{height:25px;width:25px; border-radius:50%; background-color: #fff; color: #000; padding:3px; font-size: 14px; display:block; float:right; margin-top:-3px;}
 
 /* media query */
 @media only screen and (min-width: 1025px) and (max-width:1200px){
@@ -107,3 +113,16 @@ body{font-family:Century Gothic !important;}
 	.nav-tabs>li{font-size:10px;}
 }
 /* Home page CSS ends here	*/
+
+/* News page CSS starts here	*/
+.news-box{padding:10px; border: 1px solid #e7e7e7;}
+.news-title{color:#CE0505; height:45px; line-height:19px; font-size:17px; font-weight:600; padding-top:3px; padding-bottom:3px; display:table-cell; vertical-align:middle; text-transform: uppercase;}
+.news-brief{font-size:12px; line-height:16px; min-height:65px; max-height:65px; overflow:hidden;}
+.news-thumbnail-img{width:100%; height: 150px;}
+@media only screen and (min-width: 768px) and (max-width:1024px){
+	.news-thumbnail-img{width:100%; height: 130px;}
+}
+@media (max-width: 767px){
+	.news-thumbnail-img{width:100%; height: auto;}
+}
+/* News page CSS ends here	*/
