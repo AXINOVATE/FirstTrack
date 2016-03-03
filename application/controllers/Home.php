@@ -54,4 +54,16 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/edit_products',$data);
 	}
+	public function add_modify_location()
+	{
+		$pageData['currentPage'] = 'HOME';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/add_modify_location',$data);
+	}
+	public function add_modify_manufacture()
+	{
+		$pageData['currentPage'] = 'HOME';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/add_modify_manufacture',$data);
+	}
 }

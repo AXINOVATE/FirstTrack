@@ -241,6 +241,11 @@ body{font-family:Century Gothic !important;}
 		padding-right:12px !important;
 		padding-left:12px !important;
 	}
+/* Locations page css */
+.Locations-panel{border:none !important;}
+
+
+/* end location page css */
 	
 }
 @media only screen and (min-width: 992px) and (max-width:1024px){
