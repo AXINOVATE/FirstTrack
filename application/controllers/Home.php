@@ -110,4 +110,23 @@ class Home extends CI_Controller {
 		$this->load->view('home/news_detail',$data);
 
 	}
+	public function view_ealers_products()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/manage_product/view_ealers_products',$data);
+
+	}
+	public function add_dealer_products()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/manage_product/add_dealer_products',$data);
+	}
+	public function add_products()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/manage_product/add_products',$data);
+	}
 }

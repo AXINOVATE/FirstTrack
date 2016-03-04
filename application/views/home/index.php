@@ -95,7 +95,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
-					<div class="row mt-10 hide types" id="more-div">
+					<div class="row mt-10 hide types" id="more1-div">
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
 								<center>
@@ -344,7 +344,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script>
 	$('.cat-box').on('click', function(){
-		var id = $(this).attr('id');
+		var id = $(this).attr('id');		
 		$('.types').addClass('hide');
 		$('#'+id+'-div').removeClass('hide');
 		$('.cat-box').removeClass('bg-lightblue');
