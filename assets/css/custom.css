@@ -401,17 +401,26 @@ body{font-family:Century Gothic !important;}
 /* List Page CSS Ends */
 /* Add Dealer Products  */
 .Dealers-Products{padding-right:20px;padding-left:20px;border-radius:0px;}
-#Add-Dealer-Products>ul>li{padding-top:2px;padding:2px;}
+.Add-Dealers-Locations-btn{padding-right: 50px !important;padding-left: 50px !important;border-radius: 0px !important;}
+.border-radius-0{border-radius:0px !important;}
+.padding-right-10{padding-right:10px;}
+
 #Add-Dealer-Products>ul>li>a {
     margin-right: 2px !important;
     line-height: 1.42857143;
     background-color: #2268B5;
     border: none !important;
     border-radius: 0 !important;
-    color: #FFF;
-    border-top: 2px solid #eb8104;
+    color: #FFF;   
     padding-right:30px;
     padding-left:30px;	
+}
+#Add-Dealer-Products .nav-tabs1>li.active>a, #Add-Dealer-Products .nav-tabs1>li.active>a:focus, #Add-Dealer-Products .nav-tabs1>li.active>a:hover {
+    color: #FFF !important;
+    cursor: default;
+    background-color: #2268B5;
+    border-top: 5px solid #eb8104 !important;
+    border-bottom-color: transparent;
 }
 @media (max-width: 480px){
 	.Dealers-Products {
@@ -420,6 +429,7 @@ body{font-family:Century Gothic !important;}
 		font-size: 10px;
 	}
 	.Dealers-and-Products{font-size: 14px;}
+	
 }
 /* Add Dealer Products END CSS */
 

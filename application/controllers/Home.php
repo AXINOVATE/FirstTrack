@@ -135,4 +135,10 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/manage_product/add_products',$data);
 	}
+	public function add_dealers_locations()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
+	}
 }

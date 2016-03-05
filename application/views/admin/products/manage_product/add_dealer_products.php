@@ -105,8 +105,8 @@ $prefix=$this->config->item('prefix');
 									<center>
 										<select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
 											<option value="">Car</option>
-											<option value="1" >Yes</option>
-											<option value="1" >No</option>
+											<option value="1" >Maruti Suzuki</option>
+											<option value="1" >Maruti Aulto</option>
 										</select>
 									</center>
 									</div>
@@ -190,8 +190,8 @@ $prefix=$this->config->item('prefix');
 									<center>
 										<select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
 											<option value="">Car</option>
-											<option value="1" >Yes</option>
-											<option value="1" >No</option>
+											<option value="1" >Maruti Suzuki</option>
+											<option value="1" >Maruti Aulto</option>
 										</select>
 									</center>
 									</div>
@@ -241,7 +241,62 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div><!-- end tab 3 -->
 						<div role="tabpanel" class="tab-pane" id="Specification">
-							<p>Specification</p>
+							<div class="container1">
+								<div class="row">
+								<div class="col-md-12">									
+									<div class="col-md-4"></div>
+									<div class="col-md-4">
+									<center>
+										<select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
+											<option value="">Car</option>
+											<option value="1" >Maruti Suzuki</option>
+											<option value="1" >Maruti Aulto</option>
+										</select>
+									</center>
+									</div>
+									<div class="col-md-4"></div>
+									<br>
+									<br>
+									<table class="table table-bordered ">
+										<thead>
+										  <tr>
+											<th  >Dealers Loaction</th>
+											<th >Model</th>
+											<th >Variant</th>
+											<th >Offer</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td>Pratham Motors - Bellandur</td>
+											<td>Aulto 800</td>
+											<td>Standard</td>
+											<td>Free one year Insurance</td>
+										  </tr>
+										   <tr>
+											<td>Pratham Motors - Bellandur</td>
+											<td>Aulto 800</td>
+											<td>LX</td>
+											<td>10% Corporate Discount</td>
+										  </tr>
+										   <tr>
+											<td>Pratham Motors - Bellandur</td>
+											<td>Aulto 800</td>
+											<td>LXI</td>
+											<td></td>
+										  </tr>
+										  <tr>
+											<td>Pratham Motors - Bellandur</td>
+											<td>Aulto 800</td>
+											<td>VXI</td>
+											<td></td>
+										  </tr>
+										</tbody>
+									</table>
+									 <button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+								</div>
+								</div>
+							</div>
 						</div><!-- end tab 4 -->
 						<div role="tabpanel" class="tab-pane" id="Features">
 							<p>Features</p>
