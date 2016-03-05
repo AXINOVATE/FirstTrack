@@ -80,7 +80,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<a href="<?php echo $prefix;?>/home/details"><h4> Hyundai Xcent </h4></a>
-								<ul>
+								<ul class="product-variant">
 									<li><i class="fa fa-car"></i> Sedan</li>
 									<li><i class="fa fa-cog"></i> Manual, Automatic</li>
 									<li><i class="fa fa-clock-o"></i> 19.1 - 24.4 kmpl</li>
@@ -100,7 +100,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<a href="<?php echo $prefix;?>/home/details"><h4> Hyundai Xcent </h4></a>
-								<ul>
+								<ul class="product-variant">
 									<li><i class="fa fa-car"></i> Sedan</li>
 									<li><i class="fa fa-cog"></i> Manual, Automatic</li>
 									<li><i class="fa fa-clock-o"></i> 19.1 - 24.4 kmpl</li>
