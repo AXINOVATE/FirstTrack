@@ -15,7 +15,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		
-</style>
+	</style>
 </head>
 <body>
 	<!-- Header starts here -->
@@ -54,8 +54,10 @@ $prefix=$this->config->item('prefix');
 							<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px">
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-6 item-rating">
-							<div>7.9</div>
-							<span>Nayagaadi Rating</span>
+							<div class="chart" data-percent="86">
+								<span class="percent">8.6</span>
+							</div>
+							<div>Nayagaadi Rating</div>
 						</div>
 					</div>
 					<hr class="item-hr">
@@ -162,9 +164,15 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery.easypiechart.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#myTab').tabCollapse();
+		$('.chart').easyPieChart({
+			size:'40',
+			scaleColor:false,
+			easing: 'easeOutBounce'
+		});
 	});
 </script>
 </body>

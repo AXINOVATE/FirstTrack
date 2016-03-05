@@ -36,9 +36,9 @@ body{font-family:Century Gothic !important;}
 #second-header>.active>a{color:black; background-color:#F9D133; height:28px;}
 #second-header>li>a:focus, #second-header>li>a:hover {color:black; background-color:#F9D133; height:28px;}
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {background-color: #F9D133; height:28px;}
-.dropdown-menu{padding-top:0px; padding-bottom:0px; background-color: #027CD5; color: white; opacity:0.8; right:0; left:-110px;}
-.dropdown-menu>li>a{color:#fff;}
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {color: #fff; text-decoration: none; background-color: #AB851F;}
+#second-header .dropdown-menu{padding-top:0px; padding-bottom:0px; background-color: #027CD5; color: white; opacity:0.8; right:0; left:inherit;}
+#second-header .dropdown-menu>li>a{color:#fff;}
+#second-header .dropdown-menu>li>a:focus, #second-header .dropdown-menu>li>a:hover {color: #fff; text-decoration: none; background-color: #AB851F;}
 .cart-btn{display: block; width: 100%; height: 35px; text-align: center; color: white !important; background-color: #027cd5; padding: 8px; font-size: 14px; text-decoration: none !important;}
 .cart-item{height:25px;width:25px; border-radius:50%; background-color: #fff; color: #000; padding:3px; font-size: 14px; display:block; float:right; margin-top:-3px;}
 
@@ -337,7 +337,11 @@ body{font-family:Century Gothic !important;}
 .item-features li a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid yellow;} 	
 .item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid yellow;} 	
 .item-features .tab-content{border: 1px solid #EEE;  padding: 10px;}
-.item-rating{text-align:right;}
+.item-rating div{float:right;}
+.item-rating .chart { position: relative; display: inline-block; text-align: center; width:40px; height:40px; }
+.item-rating .chart canvas { position: absolute; top: 0; left: 0; }
+.item-rating .percent { display: inline-block; line-height: 38px; z-index: 2; }
+.item-rating .percent:after { content: ''; margin-left: 0.1em; font-size: .8em; }
 @media (max-width: 1024px){
 	.item-feature{width:240px;}
 	.item-benfit{padding: 6px; font-size: 16px; width: 35%;}
@@ -377,10 +381,11 @@ body{font-family:Century Gothic !important;}
 .sort-by li:last-child{padding-right: 5px; border-right: 0px;}
 .product-car{border:1px solid #DDD; margin-top:5px;}
 .product-car img{width: 100%; height: 112px;}
-.product-car h4{font-weight: 600;}
-.product-car ul li{display:inline-block; width:49%; height: 30px;font-size: 14px; color: #777;}
+.product-car h4{font-weight: 600;color:#555;}
+.product-car .product-variant li{display:inline-block; width:49%; height: 30px;font-size: 14px; color: #777;}
 .product-price{margin-top:30px;text-align:center;font-size:24px;font-weight:600;color:#027cd5;}
 .product-on-road{font-size:12px;font-weight:0px; color: #777;}
+.product-car .dropdown{display: inline-block;background-color: #EEE; padding: 3px 10px; color: #027CD5; font-weight: 600;}
 @media (max-width: 1024px){
 	.product-price{font-size:18px;}
 }

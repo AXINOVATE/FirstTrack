@@ -48,6 +48,12 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/details',$data);
 	}
+	public function search()
+	{
+		$pageData['currentPage'] = 'SEARCH';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/search',$data);
+	}
 	public function news()
 	{
 		$pageData['currentPage'] = 'NEWS';
