@@ -129,4 +129,11 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/manage_product/add_products',$data);
 	}
+	
+	public function sign_up_page_dealers()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/manage_dealers/sign_up_page_dealers',$data);
+	}
 }

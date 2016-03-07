@@ -36,7 +36,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Manufacture Name</label>
+								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">country</label>
 								<div class="col-sm-6 col-md-6 col-xs-12">
 								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
 									<option value="">Car</option>
@@ -50,7 +50,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Manufacture Name</label>
+								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">state</label>
 								<div class="col-sm-6 col-md-6 col-xs-12">
 								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
 									<option value="">Car</option>
@@ -64,7 +64,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Manufacture Name</label>
+								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">city</label>
 								<div class="col-sm-6 col-md-6 col-xs-12">
 								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
 									<option value="">Car</option>
