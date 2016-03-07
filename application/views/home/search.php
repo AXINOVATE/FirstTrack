@@ -28,7 +28,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="mt-0 mb-20">Latest</h3>
+					<h3 class="mt-0 mb-20">Car Models</h3>
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="filter-price">
@@ -66,6 +66,7 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-9 col-sm-9 pl-0">
 					<div class="sort-by">
+						<span>Showing 1-12 of 202 </span>
 						<ul class="pull-right">
 							<li>Sort By</li>
 							<li>Price</li>
@@ -91,6 +92,15 @@ $prefix=$this->config->item('prefix');
 								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
 								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
 							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="product-car">
@@ -111,8 +121,18 @@ $prefix=$this->config->item('prefix');
 								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
 								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
 							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
+				
 					
 				</div>
 			</div>

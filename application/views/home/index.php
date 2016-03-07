@@ -172,7 +172,7 @@ $prefix=$this->config->item('prefix');
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
 							<div class="mr-m5 ml-m5">
-								<a href="javascript:void(0)" class="search-btn" >Search</a>
+								<a href="<?php echo $prefix;?>/home/search" class="search-btn" >Search</a>
 							</div>
 						</div>
 					</div>

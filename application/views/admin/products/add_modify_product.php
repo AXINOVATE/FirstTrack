@@ -36,30 +36,30 @@ $prefix=$this->config->item('prefix');
 					   <div class="row">
 						<div class="col-md-6">
 							<form class="form-horizontal">
-							  <div class="form-group">
-													<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">Manufacture Name</label>
-													<div class="col-sm-6 col-xs-12">
-													   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Car</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
-													</div>
-									 </div>
+							    <div class="form-group">
+									<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">Manufacture Name</label>
+									<div class="col-sm-6 col-xs-12">
+									   <select class="form-control select2 mb-10">
+											<option value="">Select Maker</option>
+											<option value="P">Maruti Suzuki</option>
+											<option value="S">Hyundai</option>
+										</select>
+									</div>
+								</div>
 							</form>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-													<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">product type</label>
-													<div class="col-sm-6 col-xs-12">
-													   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Car</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
-													</div>
+								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">product type</label>
+								<div class="col-sm-6 col-xs-12">
+								   <select class="form-control select2 mb-10">
+										<option value="">Select Maker</option>
+										<option value="P">Maruti Suzuki</option>
+										<option value="S">Hyundai</option>
+									</select>
 								</div>
-								<br>
+							</div>
+							<br>
 						</div>
 						</div>
 						<br>
@@ -68,24 +68,24 @@ $prefix=$this->config->item('prefix');
 						
 						<div class="col-md-6">
 						<div class="form-group" id="title_cover_image">
-														<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
-															Upload file 
-														</label>
-														<div class="col-md-6 col-sm-5 col-xs-10">
-															<input type="hidden" name="cover_image" id="image_file_path" value="" va_req="true"/>
-															<div id="progress" class="progress">
-																<div id="image_progress" class="progress-bar progress-bar-success"></div>
-															</div>
-															<span>Picture size 200 X 125 Pixels</span>
-															<div id="image_file_msg" class="files"></div>
-														</div>
-														<div class="col-md-2 col-sm-2 col-xs-2">
-															<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
-																<!-- The file input field used as target for the file upload widget -->
-																<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path">
-															</span>
-														</div>
-													</div>
+							<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
+								Upload file 
+							</label>
+							<div class="col-md-6 col-sm-5 col-xs-10">
+								<input type="hidden" name="cover_image" id="image_file_path" value="" va_req="true"/>
+								<div id="progress" class="progress">
+									<div id="image_progress" class="progress-bar progress-bar-success"></div>
+								</div>
+								<span>Picture size 200 X 125 Pixels</span>
+								<div id="image_file_msg" class="files"></div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2">
+								<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
+									<!-- The file input field used as target for the file upload widget -->
+									<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path">
+								</span>
+							</div>
+						</div>
 						</div>
 						<button class="btn btn-default btn-primary" type="submit"><i class="fa fa-floppy-o padding-right-8"></i>Save </button>
 						</div>

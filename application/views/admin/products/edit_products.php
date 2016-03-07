@@ -13,7 +13,6 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet">	
-	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />
 	<style type="text/css">
 		#myTab-accordion>.panel-default>.panel-heading{background-color: #027CD5; color: white !important; }
@@ -54,21 +53,21 @@ $prefix=$this->config->item('prefix');
 												  <div class="form-group">
 													<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">Manufacture Name</label>
 													<div class="col-sm-6 col-xs-12">
-													   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Car</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
+													    <select class="form-control select2 mb-10">
+															<option value="">Select Maker</option>
+															<option value="P">Maruti Suzuki</option>
+															<option value="S">Hyundai</option>
+														</select>
 													</div>
 												  </div>
 												  <div class="form-group">
 													<label for="text" class="col-sm-4 col-xs-12 control-label">Product Type</label>
 													<div class="col-sm-6 col-xs-12">
-													  <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Car</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
+													    <select class="form-control select2 mb-10">
+															<option value="">Select Maker</option>
+															<option value="P">Maruti Suzuki</option>
+															<option value="S">Hyundai</option>
+														</select>
 													</div>
 												  </div>
 												  <div class="form-group">
@@ -110,21 +109,21 @@ $prefix=$this->config->item('prefix');
 												  <div class="form-group">
 													<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">Body Type</label>
 													<div class="col-sm-6 col-xs-12">
-													   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Body Type</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
+													   <select class="form-control select2 mb-10">
+															<option value="">Select Maker</option>
+															<option value="P">Maruti Suzuki</option>
+															<option value="S">Hyundai</option>
+														</select>
 													</div>
 												  </div>
 												  <div class="form-group">
 													<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Transmission</label>
 													<div class="col-sm-6 col-xs-12">
-													  <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-														<option value="">Car</option>
-														<option value="1" >Yes</option>
-														<option value="1" >No</option>
-													   </select>
+													    <select class="form-control select2 mb-10">
+															<option value="">Select Maker</option>
+															<option value="P">Maruti Suzuki</option>
+															<option value="S">Hyundai</option>
+														</select>
 													</div>
 												  </div>
 												  <div class="form-group">
@@ -530,7 +529,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
+
 <script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.iframe-transport.js"></script>
 <!-- The basic File Upload plugin -->
 <script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload.js"></script>
