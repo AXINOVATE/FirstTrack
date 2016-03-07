@@ -95,7 +95,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
-					<div class="row mt-10 hide types" id="more1-div">
+					<div class="row mt-10 hide types" id="more-div">
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
 								<center>
@@ -256,7 +256,14 @@ $prefix=$this->config->item('prefix');
 	</div>
 	<!-- Body content ends here -->	
 
-	
+	<!--div style="display:block; width: 100%; height:35px; position: fixed; background-color: #027cd5; bottom:0; padding-left: 15%; padding-right:15%;">
+		<div style="width:200px; float:left;">
+		fdsf
+		</div>
+		<div style="width:200px; float:left;">
+		fdfdfgdf
+		</div>
+	</div-->
 	
 	
 	<!-- Modal starts here -->
@@ -344,13 +351,13 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script>
 	$('.cat-box').on('click', function(){
-		var id = $(this).attr('id');		
+		var id = $(this).attr('id');
+alert(id);		
 		$('.types').addClass('hide');
 		$('#'+id+'-div').removeClass('hide');
 		$('.cat-box').removeClass('bg-lightblue');
 		$(this).addClass('bg-lightblue');
 		$('.cat-box').addClass('bg-lightgrey');
-		
 	});
 </script>
 </body>
