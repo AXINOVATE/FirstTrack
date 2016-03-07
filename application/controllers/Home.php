@@ -150,4 +150,5 @@ class Home extends CI_Controller {
 		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
 
 	}
+	
 }
