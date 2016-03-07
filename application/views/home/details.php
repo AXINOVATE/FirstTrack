@@ -28,14 +28,16 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
-						<img src="<?php echo $prefix;?>/assets/images/baner-car.png">
+						<img id="item-img" src="<?php echo $prefix;?>/assets/images/flash-red.jpg">
 						<div class="item-colors text-right">
 							<span>Colors &nbsp;</span>
 							<ul class="pull-right">
-								<li><div style="background-color:#DC5452;"></div></li>
-								<li><div style="background-color:#EEE;"></div></li>
-								<li><div style="background-color:#000;"></div></li>
-								<li><div style="background-color:#999;"></div></li>
+								<li class="active"><div style="background-color:#EE3435;" data-img="assets/images/flash-red.jpg"></div></li>
+								<li><div style="background-color:#5A483C;" data-img="assets/images/cappuccino-beige.jpg"></div></li>
+								<li><div style="background-color:#7C756D;" data-img="assets/images/Toffee-Brown.jpg"></div></li>
+								<li><div style="background-color:#626665;" data-img="assets/images/deep-black.jpg"></div></li>
+								<li><div style="background-color:#FFF;" data-img="assets/images/candy-white.jpg"></div></li>
+								<li><div style="background-color:#CBD7E3;" data-img="assets/images/brilliant-silver.jpg"></div></li>
 							</ul>
 						</div>
 					</div>
@@ -173,6 +175,12 @@ $prefix=$this->config->item('prefix');
 			scaleColor:false,
 			easing: 'easeOutBounce'
 		});
+	});
+	$(".item-colors li").on('click',function(){
+		var img = $(this).find('div').data('img');
+		$("#item-img").attr("src","<?php echo $prefix;?>/"+img);
+		$(".item-colors li").removeClass('active');
+		$(this).addClass('active');
 	});
 </script>
 </body>

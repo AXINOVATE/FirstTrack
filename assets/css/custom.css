@@ -311,7 +311,7 @@ body{font-family:Century Gothic !important;}
 
 /*Details Page css starts */
 .item-img{border:1px solid #EEE;padding:10px;text-align: center;display: inline-block;}
-.item-img img{width:85%;margin-bottom:5px;}
+.item-img img{width:100%;margin-bottom:5px; height: 212px;}
 .item-name .fa{color:#DC5452;}
 .item-location{ display: inline-block; width: 100%;}
 .item-location .dropdown{ font-size: 15px; }
@@ -326,6 +326,7 @@ body{font-family:Century Gothic !important;}
 .item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
 .item-colors ul{list-style-type:none;margin-bottom:0px;}
 .item-colors li{display: inline-block; border:1px solid #EEE; cursor: pointer;padding:2px;}
+.item-colors .active{ border-color: #DC5452;}
 .item-colors li div{width: 25px; height: 25px}
 .item-colors span{line-height: 30px; font-size:16px;}
 .item-benfit{background-color: yellow; padding: 10px; font-size: 20px; text-align: center;width:30%;float:left;}
@@ -362,6 +363,7 @@ body{font-family:Century Gothic !important;}
 	.item-benfit{width: 100%;margin-bottom: 5px;}
 	.item-benfits{width: 100%;margin-bottom: 5px;margin-left: 0px;}
 	.item-feature{width: 100%;}
+	.item-rating div{float:inherit;}
 }
 @media (max-width: 360px){}
 /*Details Page css ends */
