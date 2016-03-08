@@ -51,7 +51,7 @@
         };
         
         var toast = '<div data-id="' + dataId +'" style="display: block; position: relative; border-radius: 10px; min-width:80px; max-width: '+ settings.width +'px; height: '+ settings.height +'px; background: '+ settings.background +'; box-shadow: 0 5px 5px 2px #ccc;zIndex:100;max-height:80px !important;">';
-        toast += '<a class="closeToastee" style="color: '+ settings.color +'; text-align: center; line-height: .8; width: 10px; height: 10px; padding: 2px; border-radius: 100%;font-family: sans-serif; display: block; cursor: pointer; position: absolute; top: 10px; right: 10px; color: ' + settings.color + ';">X</a>';
+        toast += '<a class="closeToastee" style="color: '+ settings.color +'; text-align: center; line-height: .8; width: 10px; height: 10px; padding: 2px;padding-left: 8px; border-radius: 100%;font-family: sans-serif; display: block; cursor: pointer; position: absolute; top: 10px; right: 10px; color: ' + settings.color + ';">X</a>';
         toast += '<h6 style="text-align: center; padding: 10px 10px 0; color: '+ settings.color +'">' + settings.header + '</h6>';
         toast += '</div>';
 
@@ -63,7 +63,7 @@
             $('div[data-id="'+ dataId +'"]').fadeOut(settings.fadeout, function(){
                 $(this).remove();
             });
-            }, 3000);
+            }, 4000);
         };
 
         var stopTimer = function () {
@@ -72,7 +72,7 @@
 
         $(this).append(toast);
 
-        $('div[data-id="'+ dataId +'"]').hide(0).fadeIn(500);
+        $('div[data-id="'+ dataId +'"]').hide(0).fadeIn(300);
         startTimer();
         
         $('.closeToastee').on('click', function () {

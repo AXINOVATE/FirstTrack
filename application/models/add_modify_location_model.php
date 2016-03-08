@@ -46,7 +46,7 @@
 			$query2=$this->db->query("SELECT @vresult as status")->row();
 			//mysqli_next_result($this->db->conn_id);	
 			//return $query->status;		
-			if ($query1="Successfully"){
+			if ($query1 = "Successfully"){
 				return "Successfully";
 			}else{
 				return "Faild";

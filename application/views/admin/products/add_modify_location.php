@@ -28,7 +28,7 @@ $prefix=$this->config->item('prefix');
 	
 	<div class="body-container">
 		<section class="container">
-		<div id="my-toast-location" style="position:relative; top:0px; right:20px; z-index:100 !important; float:right;display:none;"></div>
+		<div id="my-toast-location" style="position:relative; top:0px; right:20px; z-index:100 !important; float:right;">ddff</div>
 			<div class="row">
 				<h4>Add or Modify Locations</h4>
 				<hr>
@@ -164,7 +164,8 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/main.js"></script>
 	<script>
 		
-		$('document').ready(function(){				 
+		$('document').ready(function(){	
+					
 			 $('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
@@ -234,15 +235,23 @@ $prefix=$this->config->item('prefix');
 					processData: true,
 					dataType:'JSON'
 				}).done(function(data){
-					if(data.status =="Successfully"){										
-						setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1500);
+					
+					if(data == "Successfully"){	
+						$('#my-toast-location').toastee({
+                        type: 'success'
+						});	
+						window.location.reload();
 					}else{
+						$('#my-toast-location').toastee({
+                        type: 'error'
+						});	
 						setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
 					}
 				});
 			}
 			
 		});
+		
 		
 	</script>
 </body>
