@@ -36,14 +36,14 @@ $prefix=$this->config->item('prefix');
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
 				<li <?php if($currentPage == 'DASHBOARD')echo 'class="active"';?>><a href="<?php echo $prefix;?>/admin/admin_dashboard" class="pd-tp-3">Dashboard</a></li>
-				<li class="dropdown <?php if($currentPage == '')echo 'active';?>">
+				<li class="dropdown <?php if($currentPage == 'MANAGE PRODUCT')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Product <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Location</a></li>
-						<li><a href="#">Manufacture</a></li>
-						<li><a href="#">Category</a></li>
-						<li><a href="#">Body Type</a></li>
-						<li><a href="#">Products</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_modify_location">Location</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_modify_manufacture">Manufacture</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_modify_product_type">Category</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_modify_body_type">Body Type</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_modify_product">Products</a></li>
 						<li><a href="#">Products Category</a></li>
 					</ul>
 				</li>

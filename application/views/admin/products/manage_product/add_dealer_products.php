@@ -10,7 +10,7 @@ $prefix=$this->config->item('prefix');
 	<title>Welcome First Track</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/admin_custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">	
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />

@@ -104,44 +104,44 @@ class Home extends CI_Controller {
 	}
 	public function edit_product()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/edit_products',$data);
 	}
 
 	public function add_modify_location()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_location',$data);
 	}
 	public function add_modify_manufacture()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_manufacture',$data);
 	}
 	public function add_modify_product_type()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_product_type',$data);
 	}
 	public function add_modify_body_type()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_body_type',$data);
 	}
 	public function add_modify_product()
 	{
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_product',$data);
 	}
@@ -153,18 +153,18 @@ class Home extends CI_Controller {
 		$this->load->view('home/news_detail',$data);
 
 	}
-	public function view_ealers_products()
+	public function view_dealers_products()
 	{
-		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/manage_product/view_ealers_products',$data);
+		$this->load->view('admin/products/manage_product/view_dealers_products',$data);
 
 	}
 	public function add_dealer_products()
 	{
-		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/manage_product/add_dealer_products',$data);
 	}
