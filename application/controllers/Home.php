@@ -22,11 +22,29 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('home_model');
+	}
 	public function index()
 	{		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/index',$data);
+	}
+	public function login()
+	{		
+		$pageData['currentPage'] = 'HOME';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/login',$data);
+	}
+	public function login_check()
+	{		
+		echo json_encode($_POST['username']);
+	}
+	public function register()
+	{		
+		echo json_encode($this->home_model->register());
 	}
 	public function latest()
 	{
