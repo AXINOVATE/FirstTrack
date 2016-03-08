@@ -28,6 +28,7 @@ $prefix=$this->config->item('prefix');
 	
 	<div class="body-container">
 		<section class="container">
+		<div id="my-toast-location" style="position:relative; top:0px; right:20px; z-index:100 !important; float:right;display:none;"></div>
 			<div class="row">
 				<h4>Add or Modify Locations</h4>
 				<hr>
@@ -36,12 +37,14 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">country</label>
-								<div class="col-sm-6 col-md-6 col-xs-12">
-								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
+								<label for="inputEmail3" class="col-sm-2 control-label">Country</label>
+								<div class="col-sm-10">
+								   <select class="form-control entity-type select2" id="all-countrys" name="all-countrys" style="width:100%;">
+								   <option value="">--Select country --</option>
+									<?php foreach ( $COUNTRY as $country){
+										echo '<option value="'.$country['countryID'].'">'.$country['countryName'].'</option>';
+									}
+									?>	
 								   </select>
 								</div>
 							  </div>
@@ -50,12 +53,14 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">state</label>
-								<div class="col-sm-6 col-md-6 col-xs-12">
-								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
+								<label for="inputEmail3" class="col-sm-2 control-label">State</label>
+								<div class="col-sm-10">
+								   <select class="form-control entity-type select2" id="all-states" name="all_states" style="width:100%;">
+								   <option value=""  >--Select State --</option>
+									<?php foreach ( $STATES as $state){
+										echo '<option value="'.$state['stateID'].'">'.$state['stateName'].'</option>';
+									}
+									?>	
 								   </select>
 								</div>
 							  </div>
@@ -64,19 +69,41 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">city</label>
-								<div class="col-sm-6 col-md-6 col-xs-12">
-								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
+								<label for="inputEmail3" class="col-sm-2 control-label">City</label>
+								<div class="col-sm-10">
+								   <select class="form-control entity-type select2" id="all-cities" style="width:100%;">
+								   <option value="">--Select City --</option>
+									<?php foreach ( $CITIES as $city){
+										echo '<option value="'.$city['cityID'].'">'.$city['cityName'].'</option>';
+									}
+									?>									
 								   </select>
 								</div>
 							  </div>
-							  <br>
-							   <button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save </button>
 							</form>
 						</div>
+						<div class="col-md-6">
+							<form class="form-horizontal">
+							  <div class="form-group">
+								<label for="inputEmail3" class="col-sm-2  control-label">Location</label>
+								<div class="col-sm-10 ">
+								  <textarea class="form-control" rows="3" id="location_detail"></textarea>								  
+								</div>
+							  </div>
+							</form>
+						</div>	
+						<div class="col-md-2"></div>						
+						<div class="col-md-4">
+							<form class="form-horizontal">
+							  <div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label"></label>
+								<div class="col-sm-10">
+								   <a class="btn btn-default btn-primary pull-right" id="location-save" name="location_save" ><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </a>
+								</div>
+							  </div>
+							</form>
+						</div>
+						
 					</div>
 				</div>
 				<div class="col-md-12"><br>
@@ -87,7 +114,7 @@ $prefix=$this->config->item('prefix');
 						<th class="hidden-xs">City</th>
 						<th>Action</th>													
 						</thead>
-						<tbody>
+						<tbody id="location-detail-all">
 							<tr>
 								<td>India</td>
 								<td class="hidden-xs">Karnataka</td>
@@ -131,19 +158,89 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload-validate.js"></script>
 
 <!-- Bootstrap -->
+<script src="<?php echo $assetsPath; ?>/js/result_status.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/highlight.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/main.js"></script>
 	<script>
-		$('document').ready(function(){
+		
+		$('document').ready(function(){				 
 			 $('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
             });
 			 $('button').on('click', function(){
 			alert('preserve attached java script data!');
+			});		
+			$('#myTab').tabCollapse();			
+			});
+		$('#all-countrys').on('change',function(){
+			var country_id = $(this , '#all-countrys').val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/get_particular_states/',
+				data:{'country_id':country_id},
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.length > -1){					
+					$('#all-states').html('');					
+					var i=0;
+					for(i=0;i< data.length;i++){
+						$('#all-states').append('<option value="'+data[i]['stateID']+'">'+data[i]['stateName']+'</option>');
+					}
+					$('#all-states').select2();
+				}else{
+					
+				}
+			});
 		});
-		$('#myTab').tabCollapse();
+		$('#all-states').on('change',function(){
+			var states_id = $(this , '#all-states').val();			
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/get_particular_city/',
+				data:{'states_id':states_id},
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.length > -1){					
+					$('#all-cities').html('');					
+					var i=0;
+					for(i=0;i< data.length;i++){
+						$('#all-cities').append('<option value="'+data[i]['cityID']+'">'+data[i]['cityName']+'</option>');
+					}
+					$('#all-cities').select2();
+				}else{
+					
+				}
+			});
+		});		
+		$('#location-save').on('click', function(){
+			var country_id = $('#all-countrys').val();						
+			var states_id = $('#all-states').val();
+			var city_id=$('#all-cities').val();
+			var location_detail=$('#location_detail').val();
+			var error=0;
+			if(country_id=='' ){error=1;}
+			if(states_id=='' ){error=1;}
+			if(city_id=='' ){error=1;}
+			if(location_detail=='' ){error=1;}
+			if(error==0){
+				$.ajax({
+					url:'<?php echo $prefix;?>/home/save_location_detail/',
+					data:{'country_id':country_id,'states_id':states_id,'city_id':city_id,'location_detail':location_detail},
+					type:'POST',
+					processData: true,
+					dataType:'JSON'
+				}).done(function(data){
+					if(data.status =="Successfully"){										
+						setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1500);
+					}else{
+						setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+					}
+				});
+			}
 			
 		});
 		

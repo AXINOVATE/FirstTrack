@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
+	function __construct() {
+		parent::__construct();   
+		$this->load->model('add_modify_location_model');		
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -81,8 +85,12 @@ class Home extends CI_Controller {
 
 	public function add_modify_location()
 	{
+		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['COUNTRY']= $this->add_modify_location_model->location_detail('COUNTRY');
+		$data['STATES']= $this->add_modify_location_model->location_detail('STATES');
+		$data['CITIES']= $this->add_modify_location_model->location_detail('CITIES');		
 		$this->load->view('admin/products/add_modify_location',$data);
 	}
 	public function add_modify_manufacture()
@@ -149,6 +157,18 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
 
+	}
+	public function get_particular_states()
+	{
+		$country_id= $this->input->post('country_id');		
+		echo json_encode($this->add_modify_location_model->get_particular_states($country_id));
+	}
+	public function get_particular_city()	{
+		$state_id= $this->input->post('states_id');		
+		echo json_encode($this->add_modify_location_model->get_particular_city($state_id));
+	}
+	public function save_location_detail()	{						
+		echo json_encode($this->add_modify_location_model->save_location_detail());
 	}
 	
 }
