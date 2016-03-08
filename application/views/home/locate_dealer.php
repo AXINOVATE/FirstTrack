@@ -79,12 +79,12 @@ $prefix=$this->config->item('prefix');
 		</div>
 		<div class="row" style="margin-top: 50px;">
 		<div class="col-md-3 col-sm-4 col-xs-12 mb-10 col-md-offset-2" >
-					<div class="news-box bg-lightgrey  style="margin-top: 45px;"">
+					<div class="dealer-box bg-lightgrey  style="margin-top: 45px;"">
 						
-						<div class="news-title">
+						<div class="dealer-name">
 							M/S Keerthi
 						</div>
-						<div class="news-brief">
+						<div class="dealer-address">
 							Address:banglore adress banglore location
 							banglore
 							<br>
@@ -109,12 +109,12 @@ $prefix=$this->config->item('prefix');
 					
 				</div>
               <div class="col-md-3 col-sm-4 col-xs-12 mb-10">
-					<div class="news-box bg-lightgrey style="margin-top: 41px;"">
+					<div class="dealer-box bg-lightgrey style="margin-top: 41px;"">
 						
-						<div class="news-title ">
+						<div class="dealer-name ">
 							M/S Keerthi
 						</div>
-						<div class="news-brief">
+						<div class="dealer-address">
 							Address:banglore adress banglore location
 							banglore
 							<br>
