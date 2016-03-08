@@ -80,6 +80,11 @@ body{font-family:Century Gothic !important;}
 	/* end */
 }
 
+/* Footer CSS starts here	*/
+.sticky-footer{background-color:#027CD5;position:fixed;width:100%;bottom:0px;}
+.f-btn{background-color:yellow;color:#000;padding:4px 15px;font-weight: bold;}
+/* Footer CSS ends here	*/
+
 /* Home page CSS starts here	*/
 .border-lt-grey{border:1px solid #e7e7e7;}
 .border-lt-blue{border:1px solid #027cd5;}
@@ -443,6 +448,9 @@ body{font-family:Century Gothic !important;}
 .Add-Dealers-Locations-btn{padding-right: 50px !important;padding-left: 50px !important;border-radius: 0px !important;}
 .border-radius-0{border-radius:0px !important;}
 .padding-right-10{padding-right:10px;}
+.text-align-left{text-align:left !important;}
+.border-none-all{border: none !important; border-color:#fff; }
+.total-cost-text{color:red;font-size:14px;font-weight:800;}
 
 #Add-Dealer-Products>ul>li>a {
     margin-right: 2px !important;
@@ -472,6 +480,7 @@ body{font-family:Century Gothic !important;}
 }
 /* Add Dealer Products END CSS */
 
+
 /* Modal Popups CSS starts here */
 	.blue-modals .modal-header{background-color: #0a3151; color: white !important;}
 	.blue-modals .modal-header .close{color: white !important;}
@@ -480,3 +489,9 @@ body{font-family:Century Gothic !important;}
 	.tooltip-inner { max-width: 280px; }
 /* Modal Popups CSS ends here */
 
+
+/*locate a dealer page*/
+.dealer-box{padding:10px; border: 1px solid #e7e7e7;}
+.dealer-name{color:#CE0505; height:45px; line-height:19px; font-size:17px; font-weight:600; padding-top:2px; padding-bottom:3px; display:table-cell; vertical-align:middle; }
+.dealer-address{font-size:12px; line-height:16px; min-height:65px; max-height:65px; overflow:hidden;}
+/* end of locate a dealer page*/

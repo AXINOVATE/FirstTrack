@@ -32,8 +32,10 @@ hr.style-eight {
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
+			
 				<h2><center>Signup Page for Dealers </center></h2>
 				<hr class="style-eight"/>
+				
 						<div class="col-md-12">
 							<form class="form-horizontal">
 							  <div class="form-group">

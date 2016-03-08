@@ -7,7 +7,7 @@ $prefix=$this->config->item('prefix');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>NayaGaadi.com is India's first Online market place for all the Brand New Vehicles.|Book Online, Buy Online , Test Ride all New Autos, Bikes, Cycles, Cars, Scooters, Buses, Lorries, Tractors, Trucks, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV in India,  New Autos, Bikes, Cycles, Cars, Scooters, Buses, Lorries, Tractors, Trucks, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV at your Door Step.</title>
+	<title>NayaGaadi.com</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
@@ -28,7 +28,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4>News</h4>
+					<h4>Reviews</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -110,6 +110,5 @@ $prefix=$this->config->item('prefix');
 	<!-- Footer end -->
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 </body>
 </html>

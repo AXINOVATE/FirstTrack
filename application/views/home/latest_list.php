@@ -66,6 +66,7 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-9 col-sm-9 pl-0">
 					<div class="sort-by">
+						<span>Showing 1-12 of 202 </span>
 						<ul class="pull-right">
 							<li>Sort By</li>
 							<li>Price</li>
@@ -91,6 +92,15 @@ $prefix=$this->config->item('prefix');
 								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
 								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
 							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="product-car">
@@ -111,15 +121,26 @@ $prefix=$this->config->item('prefix');
 								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
 								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
 							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
-					
+				
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Body content ends here -->	
-	
+	<!-- Footer start -->
+	<?php echo $footer; ?>
+	<!-- Footer end -->
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>

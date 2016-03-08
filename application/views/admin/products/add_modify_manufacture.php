@@ -38,7 +38,7 @@ $prefix=$this->config->item('prefix');
 							  <div class="form-group">
 								<label for="inputPassword3" class="col-sm-4 col-md-3 col-xs-12 control-label text-align-left">Manufacture Name</label>
 								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="Color Name">
+								  <input type="text" class="form-control" placeholder="manufacture name">
 								</div>
 							  </div>
 							</form>
@@ -62,28 +62,22 @@ $prefix=$this->config->item('prefix');
 							</tr>
 							<tr>
 								<td>Bajaj</td>								
-								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
-								
+							<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 							</tr>
 							<tr>
 								<td>Bharat Benz</td>								
 								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
-								
 							</tr>
 							<tr>
 								<td>Chinkara</td>								
 								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
-								
 							</tr>
-							
 						</tbody>
-
 					</table>
 				</div>
 			</div>
 		</section>
 	</div>
-		
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>

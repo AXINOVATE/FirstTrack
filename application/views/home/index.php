@@ -98,16 +98,16 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
 								<center>
-									<img src="<?php echo $assetsPath;?>/images/hatchback.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Hatchback</div>
+									<img src="<?php echo $assetsPath;?>/images/bike-body1.png" style="height:55px;" alt="car" />
+									<div class="car-type-name">Commuters</div>
 								</center>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10">
 								<center>
-									<img src="<?php echo $assetsPath;?>/images/sedan.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Sedan</div>
+									<img src="<?php echo $assetsPath;?>/images/bike-body2.png" style="height:55px;" alt="car" />
+									<div class="car-type-name">Off road</div>
 								</center>
 							</div>
 						</div>
@@ -285,7 +285,11 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 	<!-- Body content ends here -->	
- 
+	
+	<!-- Footer start -->
+	<?php echo $footer; ?>
+	<!-- Footer end -->
+
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
