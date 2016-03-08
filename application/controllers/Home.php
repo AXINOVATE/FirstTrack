@@ -74,6 +74,13 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/news',$data);
 	}
+	public function review()
+	{
+		$pageData['currentPage'] = 'REVIEW';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/review',$data);
+	}
 	public function compare()
 	{
 		$pageData['currentPage'] = 'COMPARE';
@@ -184,11 +191,5 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/locate_dealer',$data);
 	}
-	public function service_cost_analyzer(){
-		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$this->load->view('admin/service_cost_analyzer',$data);
-	}
-	
 	
 }
