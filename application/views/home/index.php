@@ -778,7 +778,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script>
-	$('.cat-box').on('click', function(){
+	$('.cat-box').on('mouseover', function(){
 		var id = $(this).attr('id');
 		$('.types').addClass('hide');
 		$('#'+id+'-div').removeClass('hide');
