@@ -32,6 +32,13 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/index',$data);
 	}
+	public function login()
+	{		
+		$pageData['currentPage'] = 'LOGIN';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/login',$data);
+	}
 	public function latest()
 	{
 		$pageData['currentPage'] = 'LATEST';
