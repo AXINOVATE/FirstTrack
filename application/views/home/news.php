@@ -108,5 +108,6 @@ $prefix=$this->config->item('prefix');
 	
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 </body>
 </html>

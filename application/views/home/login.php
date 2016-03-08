@@ -112,6 +112,7 @@ $prefix=$this->config->item('prefix');
 	</div>	
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function checkemail(email){
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;

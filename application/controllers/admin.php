@@ -20,20 +20,20 @@ class Admin extends CI_Controller {
 	 */
 	public function admin_dashboard()
 	{		
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'DASHBOARD';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$this->load->view('admin/admin_dashboard',$data);
 	}
 	public function request_list()
 	{		
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'DASHBOARD';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$this->load->view('admin/request_list',$data);
 	}
 	public function request_report()
 	{		
-		$pageData['currentPage'] = 'HOME';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$pageData['currentPage'] = 'DASHBOARD';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$this->load->view('admin/request_report',$data);
 	}
 }

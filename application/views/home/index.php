@@ -14,10 +14,6 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		.modal-header{background-color: #0a3151; color: white !important;}
-		.modal-header .close{color: white !important;}
-		.modal-body{background-color: #027cd5; color: white !important; overflow:auto;}
-		.modal-footer{background-color: #027cd5; color: white !important;}
 	</style>
 </head>
 <body>
@@ -236,15 +232,7 @@ $prefix=$this->config->item('prefix');
 			</div>
 			
 			<div class="row mt-20">
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal1">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/adv-booking.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Advance<br/>Booking</div>
-					</center>
-				</div>
-				</a>
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal2">
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
 				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 					<center>
 						<img src="<?php echo $assetsPath;?>/images/test-drive.png" class="mt-10" width="50%" alt="car" />
@@ -252,7 +240,15 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				</a>
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal3">
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
+				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+					<center>
+						<img src="<?php echo $assetsPath;?>/images/adv-booking.png" class="mt-10" width="50%" alt="car" />
+						<div class="car-type-name">Advance<br/>Booking</div>
+					</center>
+				</div>
+				</a>
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal">
 				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 					<center>
 						<img src="<?php echo $assetsPath;?>/images/vehicle-loan.png" class="mt-10" width="50%" alt="car" />
@@ -260,7 +256,15 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				</a>
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-moda4">
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal">
+				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+					<center>
+						<img src="<?php echo $assetsPath;?>/images/corporate-deals.png" class="mt-10" width="50%" alt="car" />
+						<div class="car-type-name">Corporate<br/>Deals</div>
+					</center>
+				</div>
+				</a>
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal">
 				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 					<center>
 						<img src="<?php echo $assetsPath;?>/images/apply-insurance.png" class="mt-10" width="50%" alt="car" />
@@ -268,19 +272,12 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				</a>
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal5">
+				
+				<a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal">
 				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 					<center>
-						<img src="<?php echo $assetsPath;?>/images/cost-analyzer.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Service Cost<br/>Analyzer</div>
-					</center>
-				</div>
-				</a>
-				<a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal6">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/locate-dealer.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Locate a <br/>Dealer</div>
+						<img src="<?php echo $assetsPath;?>/images/road-assistance.png" class="mt-10" width="50%" alt="car" />
+						<div class="car-type-name">By On Road <br/> Assistance </div>
 					</center>
 				</div>
 				</a>
@@ -288,496 +285,12 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 	<!-- Body content ends here -->	
-
-	<!--div style="display:block; width: 100%; height:35px; position: fixed; background-color: #027cd5; bottom:0; padding-left: 15%; padding-right:15%;">
-		<div style="width:200px; float:left;">
-		fdsf
-		</div>
-		<div style="width:200px; float:left;">
-		fdfdfgdf
-		</div>
-	</div-->
-	
-	
-	<!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal1" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Advance Booking</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here --><!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal2" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Request for Test Drive</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here --><!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal3" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Vehicle Loan</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here --><!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal4" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Apply for insurance</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here --><!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal5" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Service Cost Analyzer</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here --><!-- Modal starts here -->
-	<div class="modal fade" id="adv-book-modal6" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Locate Dealer</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-  <!-- Modal ends here -->
-  
+ 
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script>
+	
 	$('.cat-box').on('mouseover', function(){
 		var id = $(this).attr('id');
 		$('.types').addClass('hide');

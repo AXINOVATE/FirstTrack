@@ -472,5 +472,11 @@ body{font-family:Century Gothic !important;}
 }
 /* Add Dealer Products END CSS */
 
-
+/* Modal Popups CSS starts here */
+	.blue-modals .modal-header{background-color: #0a3151; color: white !important;}
+	.blue-modals .modal-header .close{color: white !important;}
+	.blue-modals .modal-body{background-color: #027cd5; color: white !important; overflow:auto;}
+	.blue-modals .modal-footer{background-color: #027cd5; color: white !important;}
+	.tooltip-inner { max-width: 280px; }
+/* Modal Popups CSS ends here */
 
