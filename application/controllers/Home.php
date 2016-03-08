@@ -160,5 +160,11 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/locate_dealer',$data);
 	}
+	public function service_cost_analyzer(){
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/service_cost_analyzer',$data);
+	}
+	
 	
 }
