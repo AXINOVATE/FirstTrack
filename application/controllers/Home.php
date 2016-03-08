@@ -203,6 +203,13 @@ class Home extends CI_Controller {
 		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
 
 	}
+	public function service_cost_analyzer()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('admin/service_cost_analyzer',$data);
+
+	}
 	public function get_particular_states()
 	{
 		$country_id= $this->input->post('country_id');		

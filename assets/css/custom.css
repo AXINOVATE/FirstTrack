@@ -448,6 +448,8 @@ body{font-family:Century Gothic !important;}
 .Add-Dealers-Locations-btn{padding-right: 50px !important;padding-left: 50px !important;border-radius: 0px !important;}
 .border-radius-0{border-radius:0px !important;}
 .padding-right-10{padding-right:10px;}
+.text-align-left{text-align:left !important;}
+.border-none-all{border: none !important; border-color:#fff; }
 
 #Add-Dealer-Products>ul>li>a {
     margin-right: 2px !important;
