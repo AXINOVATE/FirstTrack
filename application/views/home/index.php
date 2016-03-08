@@ -95,6 +95,29 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
+					<div class="row types hide" id="bikes-div">
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+							<h5>Body Type</h5>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/hatchback.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">Hatchback</div>
+								</center>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+							<div class="border-lt-grey ml-m10 mr-m10">
+								<center>
+									<img src="<?php echo $assetsPath;?>/images/sedan.png" style="width:70%;" alt="car" />
+									<div class="car-type-name">Sedan</div>
+								</center>
+							</div>
+						</div>
+						
+					</div>
+					
 					<div class="row mt-10 hide types" id="more-div">
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
@@ -757,7 +780,6 @@ $prefix=$this->config->item('prefix');
 <script>
 	$('.cat-box').on('click', function(){
 		var id = $(this).attr('id');
-alert(id);		
 		$('.types').addClass('hide');
 		$('#'+id+'-div').removeClass('hide');
 		$('.cat-box').removeClass('bg-lightblue');

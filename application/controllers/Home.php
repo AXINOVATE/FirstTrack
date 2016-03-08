@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 	function __construct() {
 		parent::__construct();   
-		$this->load->model('add_modify_location_model');		
+		$this->load->model('add_modify_location_model');
+		$this->load->model('home_model');
 	}
 
 	/**
@@ -22,10 +23,7 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function __construct(){
-		parent::__construct();
-		$this->load->model('home_model');
-	}
+	
 	public function index()
 	{		
 		$pageData['currentPage'] = 'HOME';
