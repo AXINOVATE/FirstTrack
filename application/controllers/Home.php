@@ -17,7 +17,11 @@ class Home extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	 	 */
+		 
+		
+
+		
 	public function index()
 	{		
 		$pageData['currentPage'] = 'HOME';
@@ -149,6 +153,12 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
 
+	}
+	public function locate_dealer()
+	{
+		$pageData['currentPage'] = 'news';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$this->load->view('home/locate_dealer',$data);
 	}
 	
 }

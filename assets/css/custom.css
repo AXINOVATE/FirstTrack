@@ -435,5 +435,8 @@ body{font-family:Century Gothic !important;}
 }
 /* Add Dealer Products END CSS */
 
-
-
+/*locate a dealer page*/
+.dealer-box{padding:10px; border: 1px solid #e7e7e7;}
+.dealer-name{color:#CE0505; height:45px; line-height:19px; font-size:17px; font-weight:600; padding-top:2px; padding-bottom:3px; display:table-cell; vertical-align:middle; }
+.dealer-address{font-size:12px; line-height:16px; min-height:65px; max-height:65px; overflow:hidden;}
+/* end of loacate a dealer page*/

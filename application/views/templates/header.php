@@ -65,7 +65,7 @@ $prefix=$this->config->item('prefix');
 					<ul class="dropdown-menu">
 						<li><a href="#">EMI Calculator</a></li>
 						<li><a href="#">Service Cost Analyzer</a></li>
-						<li><a href="#">Locate a Dealer</a></li>
+						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>">Locate a Dealer</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
