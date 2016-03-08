@@ -159,7 +159,7 @@ $prefix=$this->config->item('prefix');
 					</table>
 					<div class="col-md-4"><div class="total-cost-text">Total service cost</div></div>
 					<div class="col-md-4"></div>
-					<div class="col-md-3 col-md-offset-1"><div class="total-cost-text"><center>RS.7759.00</div></div>
+					<div class="col-md-3 col-md-offset-1 "><div class="total-cost-text"><center>RS.7759.00</div></div>
 				</div>
 			</div>
 		</section>
