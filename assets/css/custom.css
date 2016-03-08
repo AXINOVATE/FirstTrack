@@ -450,6 +450,7 @@ body{font-family:Century Gothic !important;}
 .padding-right-10{padding-right:10px;}
 .text-align-left{text-align:left !important;}
 .border-none-all{border: none !important; border-color:#fff; }
+.total-cost-text{color:red;font-size:14px;font-weight:800;}
 
 #Add-Dealer-Products>ul>li>a {
     margin-right: 2px !important;
