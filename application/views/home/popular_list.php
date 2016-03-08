@@ -66,6 +66,7 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-9 pl-0">
 					<div class="sort-by">
+						<span>Showing 1-12 of 202 </span>
 						<ul class="pull-right">
 							<li>Sort By</li>
 							<li>Price</li>
@@ -73,32 +74,73 @@ $prefix=$this->config->item('prefix');
 							<li>Latest</li>
 						</ul>
 					</div>
-					<div class="product-car">
+				<div class="product-car">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-3">
 								<a href="<?php echo $prefix;?>/home/details"><img src="<?php echo $prefix;?>/assets/images/baner-car.png"></a>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 								<a href="<?php echo $prefix;?>/home/details"><h4> Hyundai Xcent </h4></a>
 								<ul class="product-variant">
 									<li><i class="fa fa-car"></i> Sedan</li>
-									<li><i class="fa fa-cog"></i> Manual,Automatic</li>
+									<li><i class="fa fa-cog"></i> Manual, Automatic</li>
 									<li><i class="fa fa-clock-o"></i> 19.1 - 24.4 kmpl</li>
-									<li><i class="fa fa-filter"></i> Diesel,Petrol</li>
+									<li><i class="fa fa-filter"></i> Diesel, Petrol</li>
 								</ul>
 							</div>
-							<div class="col-md-3 text-center">
+							<div class="col-md-3 col-sm-3 text-center">
 								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
 								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
 							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="product-car">
+						<div class="row">
+							<div class="col-md-3 col-sm-3">
+								<a href="<?php echo $prefix;?>/home/details"><img src="<?php echo $prefix;?>/assets/images/baner-car.png"></a>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<a href="<?php echo $prefix;?>/home/details"><h4> Hyundai Xcent </h4></a>
+								<ul class="product-variant">
+									<li><i class="fa fa-car"></i> Sedan</li>
+									<li><i class="fa fa-cog"></i> Manual, Automatic</li>
+									<li><i class="fa fa-clock-o"></i> 19.1 - 24.4 kmpl</li>
+									<li><i class="fa fa-filter"></i> Diesel, Petrol</li>
+								</ul>
+							</div>
+							<div class="col-md-3 col-sm-3 text-center">
+								<div class="product-price"><i class="fa fa-inr"></i> 5.5 - 8.74 L </div>
+								<span class="product-on-road">(On-road Proce <b>New Delhi</b>)</span>
+							</div>
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="dropdown">
+									<div data-toggle="dropdown">6 variants available<span class="caret"></span></div>
+									<ul class="dropdown-menu">
+										<li><a href="#">Petrol</a></li>
+										<li><a href="#">Diesel</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Body content ends here -->	
-	
+	<!-- Footer start -->
+	<?php echo $footer; ?>
+	<!-- Footer end -->
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-slider.min.js" type="text/javascript"></script>

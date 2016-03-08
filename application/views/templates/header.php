@@ -18,8 +18,8 @@ $prefix=$this->config->item('prefix');
 						<li><a href="#">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
 						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
-						<li><a href="#"><span>Signup</span></a></li>
-						<li class="border-none-r"><a href="#">Login</a></li>
+						<li><a href="<?php echo $prefix;?>/home/login"><span>Signup</span></a></li>
+						<li class="border-none-r"><a href="<?php echo $prefix;?>/home/login">Login</a></li>
 					</ul>
 				</div>
 				<div class="row">
@@ -59,7 +59,7 @@ $prefix=$this->config->item('prefix');
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
-				<li><a href="#review" class="pd-tp-3">Reviews</a></li>
+				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/review';?>" class="pd-tp-3">Review</a></li>
 				<li><a href="#blog" class="pd-tp-3">Blogs</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
