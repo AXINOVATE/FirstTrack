@@ -61,7 +61,7 @@ $prefix=$this->config->item('prefix');
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
 				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/review';?>" class="pd-tp-3">Review</a></li>
 				<li><a href="#blog" class="pd-tp-3">Blogs</a></li>
-				<li class="dropdown">
+				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">EMI Calculator</a></li>
