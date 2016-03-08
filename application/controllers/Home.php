@@ -156,7 +156,7 @@ class Home extends CI_Controller {
 	}
 	public function locate_dealer()
 	{
-		$pageData['currentPage'] = 'news';
+		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('home/locate_dealer',$data);
 	}

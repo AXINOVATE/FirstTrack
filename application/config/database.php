@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => 'dbuserNG.db.10816696.hostedresource.com',
+	'username' => 'dbuserNG',
+	'password' => 'Axin@12345',
+	'database' => 'dbuserNG',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
