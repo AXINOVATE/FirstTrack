@@ -88,7 +88,7 @@ $prefix=$this->config->item('prefix');
 							<tr>
 								<td>car</td>	
 								<td><center><img src="<?php echo $assetsPath;?>/images/car-type2.png" class="img-rounded img-responsive " alt="Cinque Terre" height="30px" width="30%"></center></td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+								<td><a href="" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 								
 							</tr>
 							<tr>

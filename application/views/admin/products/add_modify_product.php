@@ -107,7 +107,7 @@ $prefix=$this->config->item('prefix');
 								<td>1.6 Active Petrol</td> 
 								<td>Sedan</td> 
 								
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
+								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="<?php echo $prefix;?>/home/edit_product" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 								
 							</tr>
 							<tr>
@@ -116,7 +116,7 @@ $prefix=$this->config->item('prefix');
 								<td></td> 
 								<td>SUV</td> 
 								
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
+								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 								
 							</tr>
 							<tr>
@@ -125,7 +125,7 @@ $prefix=$this->config->item('prefix');
 								<td></td> 
 								<td>Sedan</td> 
 								
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
+								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 							</tr>
 							<tr>
 								<td>Superb</td>
@@ -133,7 +133,7 @@ $prefix=$this->config->item('prefix');
 								<td></td> 
 								<td>Sedan</td> 
 								
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a> &nbsp &nbsp<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
+								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a> &nbsp &nbsp<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 							</tr>
 						</tbody>
 					</table>

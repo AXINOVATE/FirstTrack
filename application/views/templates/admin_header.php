@@ -47,7 +47,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href="#">Products Category</a></li>
 					</ul>
 				</li>
-				<li class="dropdown <?php if($currentPage == '')echo 'active';?>">
+				<li class="dropdown <?php if($currentPage == 'MANAGE DEALERS')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<?php echo $prefix;?>/home/md_add_dealers">Add Dealers</a></li>
