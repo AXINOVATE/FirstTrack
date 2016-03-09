@@ -84,9 +84,6 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 </nav>
-	
-
-	
 	<!-- Modal starts here -->
 	<div class="modal fade blue-modals" id="adv-book-modal" role="dialog">
 		<div class="modal-dialog modal-md">
@@ -108,6 +105,7 @@ $prefix=$this->config->item('prefix');
 							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
@@ -308,6 +306,33 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="address" class="col-md-3 col-sm-3 col-xs-12 control-label">address</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="address" name="address" placeholder="residential address" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Have you Paid Booking Amount  --</option>
+								<option value="1" >yes</option>
+								<option value="1" >no</option>
+							</select>
+					</div>						
+					</div>
+					<div class="form-group">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Any Preference to Specific Bank ?  --</option>
+								<option value="1" >HDFC</option>
+								<option value="1" >KOTAK</option>
+								<option value="1" >ICICI</option>
+								<option value="1" >YES</option>
+							</select>
+					</div>			
+                     </div>			
+					
+					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
 							<input type="text" class="form-control" id="pan" name="pan" placeholder="PAN card No" />
 						</div>
@@ -342,6 +367,42 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Salaried</option>
 								<option value="1" >Self Employed</option>
 								<option value="1" >Partnership-Pvt Ltd –Public Ltd Co</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- loan amount --</option>
+								<option value="1" >Less than 1 Lak</option>
+								<option value="1" >1-2 Laks</option>
+								<option value="1" >3 to 5 Laks</option>
+								<option value="1" >5 to 7 Laks</option>
+								<option value="1" >10 laks to 15 Laks</option>
+								<option value="1" >15 to 20 Laks</option>
+								<option value="1" >20 to 50 Laks</option>
+                                <option value="1" >50 Laks and Above</option>  
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- Loan Duration --</option>
+								<option value="1" >1 Year</option>
+								<option value="1" >2 Year</option>
+								<option value="1" >3 Years</option>
+								<option value="1" >4 Years</option>
+								<option value="1" >5 Years</option>
+								<option value="1" >6 Years and above</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- Purchase Time Frame  --</option>
+								<option value="1" >Immediate</option>
+								<option value="1" >1-2 weeks</option>
+								<option value="1" > 3-4 weeks</option>
+								<option value="1" >4 to 8 weeks</option>
+								<option value="1" > 10 weeks and Above</option>
 							</select>
 						</div>
 					</div>
@@ -394,6 +455,18 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="which bank you have salary account?" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="comment">Any specific comment</label>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+					</div>
+					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
@@ -407,7 +480,6 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -440,6 +512,13 @@ $prefix=$this->config->item('prefix');
 							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">address</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="office or residential address" />
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
@@ -480,6 +559,93 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					</div>
+					
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Select Category --</option>
+								<option value="1" >Bangalore</option>
+								<option value="1" >Mysore</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="bank" name="bank" placeholder="quantity of vechiles" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">--Customer Type --</option>
+								<option value="1" >Proprietary</option>
+								<option value="1" > LLP</option>
+								<option value="1" > Joint Venture</option>
+								<option value="1" > Partnership-Pvt Ltd –Public Ltd Co</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
+								<option value="">-- Do you also need Loan --</option>
+								<option value="1" >Yes</option>
+								<option value="1" >No</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- What is the Loan Amount Looking for --</option>
+								<option value="1" >5 to 10 Laks</option>
+								<option value="1" > 10 laks to 15 Laks</option>
+								<option value="1" > 15 to 20 Laks</option>
+								<option value="1" > 20 to 50 Laks</option>
+								<option value="1" > 50 Laks and Above</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- Loan Duration --</option>
+								<option value="1" >1 Year</option>
+								<option value="1" >2 Year</option>
+								<option value="1" >3 Years</option>
+								<option value="1" >4 Years</option>
+								<option value="1" >5 Years</option>
+								<option value="1" >6 Years and above</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+					     <div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Any Preference to Specific Bank ?  --</option>
+								<option value="1" >HDFC</option>
+								<option value="1" >KOTAK</option>
+								<option value="1" >ICICI</option>
+								<option value="1" >YES</option>
+							</select>
+					   </div>	
+                     <div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- Purchase Time Frame  --</option>
+								<option value="1" >Immediate</option>
+								<option value="1" >1-2 weeks</option>
+								<option value="1" > 3-4 weeks</option>
+								<option value="1" >4 to 8 weeks</option>
+								<option value="1" > 10 weeks and Above</option>
+							</select>
+						</div>
+                     </div>	
+					 <div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="which bank you have salary account?" />
+						</div>
+					</div>
+					 <div class="form-group">
+						<label for="comment">Any specific comment</label>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
@@ -488,7 +654,6 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
