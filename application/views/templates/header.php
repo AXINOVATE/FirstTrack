@@ -94,7 +94,7 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 </nav>
-	<!-- Modal starts here -->
+	<!-- Modal starts here  advance booking-->
 	<div class="modal fade blue-modals" id="adv-book-modal" role="dialog">
 		<div class="modal-dialog modal-md">
 			<div class="modal-content">
@@ -106,20 +106,29 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />					
+							</div>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />				
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -319,19 +328,30 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" id="username" name="username" placeholder="name">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+						
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+						   
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -526,19 +546,28 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" id="username" name="username" placeholder="name">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -701,13 +730,19 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -888,19 +923,28 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" id="username" name="username" placeholder="name">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -941,6 +985,100 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
 							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="category" style="width:100%;">
+								<option value="">-- Select Category --</option>
+								<option value="1" >Bangalore</option>
+								<option value="1" >Mysore</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- personal use or commercial use  --</option>
+								<option value="1" >White Board</option>
+								<option value="1" > Yellow Board</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="category" style="width:100%;">
+								<option value="">-- Are you looking--</option>
+								<option value="1" > Individual plan</option>
+								<option value="1" > Corporate Plan </option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">--Bulk Purchase for Corporates  --</option>
+								<option value="1" >yes</option>
+								<option value="1" >no</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="category" style="width:100%;">
+								<option value="">-list of on road companies--</option>
+								<option value="1" > </option>
+								<option value="1" >  </option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">Types of On Road Assistance Packages</option>
+								<option value="1" >yes</option>
+								<option value="1" >no</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="pack benifits" name="pck benifits" placeholder="packge benifits" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="pck cost" name="pck cost" placeholder="cost of the packege" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- Purchase Time Frame  --</option>
+								<option value="1" >Immediate</option>
+								<option value="1" >1-2 weeks</option>
+								<option value="1" > 3-4 weeks</option>
+								<option value="1" >4 to 8 weeks</option>
+								<option value="1" > 10 weeks and Above</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">--payment details --</option>
+								<option value="1" >NEFT</option>
+								<option value="1" >IMPS</option>
+								<option value="1" >CASH</option>
+								<option value="1" >CHEQUE</option>
+								<option value="1" >DD Transaction details</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+							<label for="comment">Any specific comment</label>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
