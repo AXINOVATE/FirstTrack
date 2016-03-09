@@ -31,7 +31,7 @@ body{font-family:Century Gothic !important;}
 .txt_white{color:#ffffff;}
 .pd-tp-3{padding-top:3px !important; padding-bottom:3px !Important;}
 #second-header {width:100%;margin:0 auto; float:none;}
-#second-header>li{height:28px; text-align:center; width:11%;}
+#second-header>li{height:28px; text-align:center; /* width:11%;  */ min-width: 118px;}
 #second-header>li>a{color:white;}
 #second-header>li>a:hover{color:white;}
 #second-header>.active>a{color:black; background-color:#F9D133; height:28px;}
@@ -415,9 +415,10 @@ body{font-family:Century Gothic !important;}
 .login ul li{width: 50%;text-align: center;margin-bottom:0px;}
 .login .nav-tabs>li.active>a{border:0px;}
 .login .nav-tabs>li>a{border:0px;border-radius:0px;}
-.login .form-control{border-radius: 0px; height: 40px; box-shadow: none; outline: none;}
-.login .input-group-addon{border-radius: 0px;}
-.login .btn{width: 100%;border-radius: 0px; margin: 15px 0px; height: 40px; background-color: #027CD5; color: #FFF;outline: none;}
+.login .form-control,.checkout .form-control{border-radius: 0px; height: 40px; box-shadow: none; outline: none;}
+.login .input-group-addon,.checkout .input-group-addon{border-radius: 0px;}
+.login .btn,.checkout .btn{width: 100%;border-radius: 0px; margin: 10px 0px; height: 40px; background-color: #027CD5; color: #FFF;outline: none;}
+.login .form-group,.checkout .form-group{margin-bottom:10px;}
 .login .or-middle{position: relative;height: 270px;text-align:center;}
 .login .or-middle:before{border-left: 1px solid #d6d6d5;content: ""; position: absolute; top: 0; left: 50%; width: 1px; height: 121px;} 	
 .login .horizontal { vertical-align: middle;position: relative;text-transform: uppercase;color: #999999;font-size: 16px;display: inline-block;padding: 120px 0;z-index: 1;}
