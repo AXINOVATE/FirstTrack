@@ -154,6 +154,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
@@ -331,6 +332,16 @@ $prefix=$this->config->item('prefix');
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+								<option value="">-- customer type --</option>
+								<option value="1" >Salaried</option>
+								<option value="1" >Self Employed</option>
+								<option value="1" >Partnership-Pvt Ltd –Public Ltd Co</option>
 							</select>
 						</div>
 					</div>
