@@ -117,7 +117,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -127,7 +127,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -137,7 +137,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -147,7 +147,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
@@ -203,14 +203,14 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="category" style="width:100%;">
+							<select class="form-control mb-10" id="category" style="width:100%;">
 								<option value="">-- Select Category --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -219,14 +219,14 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -235,24 +235,24 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 hidden-xs mb-10"> <div class="mb-10" style="height:34px;"></div> </div>
+						<div class="col-md-6 col-sm-6 hidden-xs"> <div class="mb-10" style="height:34px;"></div> </div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="dealerName" style="width:100%;">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
 								<option value="">-- Select Dealer Name --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="dealerLocation" style="width:100%;">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
 								<option value="">-- Select Dealer Location --</option>
 								<option value="1" >HSR Layout</option>
 								<option value="1" >Marathahalli</option>
@@ -311,7 +311,7 @@ $prefix=$this->config->item('prefix');
 							<input type="text" class="form-control" id="pan" name="pan" placeholder="PAN card No" />
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -320,14 +320,14 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select Category --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -336,14 +336,14 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
@@ -352,14 +352,14 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="dealerName" style="width:100%;">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
 								<option value="">-- Select Dealer Name --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
 							</select>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="dealerLocation" style="width:100%;">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
 								<option value="">-- Select Dealer Location --</option>
 								<option value="1" >HSR Layout</option>
 								<option value="1" >Majestic</option>
@@ -432,7 +432,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -442,7 +442,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -452,7 +452,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -462,7 +462,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
@@ -513,7 +513,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -523,7 +523,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -533,7 +533,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -543,7 +543,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
@@ -594,7 +594,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -604,7 +604,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -614,7 +614,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -624,7 +624,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
