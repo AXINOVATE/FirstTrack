@@ -100,16 +100,16 @@ $prefix=$this->config->item('prefix');
 						</thead>
 						<tbody>
 							<tr>
-								<td>Pratham Motors - Bellandur </td>
+								<td><a href="<?php echo $prefix;?>/home/md_view_dealers_and_products">Pratham Motors - Bellandur </a></td>
 							</tr>
 							<tr>
-								<td>Pratham Motors - Bellandur </td>
+								<td><a href="">Pratham Motors - Bellandur </a></td>
 							</tr>
 							<tr>
-								<td>Pratham Motors - Bellandur </td>
+								<td><a href="">Pratham Motors - Bellandur </a></td>
 							</tr>
 							<tr>
-								<td>Pratham Motors - Bellandur </td>
+								<td><a href="">Pratham Motors - Bellandur </a></td>
 							</tr>
 							
 						</tbody>

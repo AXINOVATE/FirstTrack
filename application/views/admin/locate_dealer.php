@@ -35,7 +35,7 @@ $prefix=$this->config->item('prefix');
 		</section>
 	</div>
 		<!-- Footer start -->
-	<?php echo $footer; ?>
+	   <?php echo $footer; ?>
 	<!-- Footer end -->
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>

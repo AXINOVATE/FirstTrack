@@ -29,8 +29,8 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
-				<h4>View Dealers and Products  <div class="col-sm-4 col-xs-12 float-right">
-													  <button class="btn btn-default btn-primary pull-right" type="submit">Add Dealers Products </button>
+				<h4>View Dealers and Products<div class="col-sm-4 col-xs-12 float-right">
+													 <a href="<?php echo $prefix;?>/home/md_add_dealer_products"> <button class="btn btn-default btn-primary pull-right" type="submit">Add Dealers Products </button></a>
 													</div></h4>
 				
 				<hr>
