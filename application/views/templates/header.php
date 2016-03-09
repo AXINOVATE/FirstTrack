@@ -185,29 +185,48 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">Request for Test Drive</h4>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body">					
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />					
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />				
+							</div>
+							
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="datetime" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="datetime" name="datetime" placeholder="24-04-2016" />
+						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
+							
+								<div class="input-group date datepicker no-padding">
+									<input type="text" class="form-control" va_req="true" id="regCloseDate" name="regCloseDate" value="">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+									<div class="input-group bootstrap-timepicker timepicker" style="margin-left:3px">
+									<input id="timepicker3" name="reg_time" type="text" class="form-control input-small inpt-timepicker" value="">
+									</div>
+								</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -678,12 +697,7 @@ $prefix=$this->config->item('prefix');
 					<h4 class="text-center modal-title">Apply for Insurance</h4>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" />
-						</div>
-					</div>
+					<div class="modal-body">				
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
@@ -694,26 +708,6 @@ $prefix=$this->config->item('prefix');
 						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -735,6 +729,137 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Diesel</option>
 							</select>
 						</div>
+					</div>					
+					<div class="form-group">
+						<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Select City --</option>
+								<option value="1" >Bangalore</option>
+								<option value="1" >Mysore</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="datetime" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time</label>
+						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
+							
+								<div class="input-group date datepicker no-padding">
+									<input type="text" class="form-control" va_req="true" id="regCloseDate" name="regCloseDate" value="">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+									<div class="input-group bootstrap-timepicker timepicker" style="margin-left:3px">
+									<input id="timepicker3" name="reg_time" type="text" class="form-control input-small inpt-timepicker" value="">
+									</div>
+								</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="maker" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
+								<option value="">-- Select Maker --</option>
+								<option value="1" >Maruti Suzuki</option>
+								<option value="1" >Hyundai</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
+								<option value="">-- personal use or Commercial use --</option>
+								<option value="1" >White Board</option>
+								<option value="2" >Yellow Board</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
+								<option value="">-- Customer Type --</option>
+								<option value="1" >Proprietary</option>
+								<option value="2" >LLP</option>
+								<option value="3" >Joint Venture</option>
+								<option value="4" >Partnership-Pvt Ltd</option>
+								<option value="5" >Public Ltd Co</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
+								<option value="">-- Do you also need Loan --</option>
+								<option value="1" >Yes</option>
+								<option value="2" >No</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
+								<option value="">-- What is the Loan Amount Looking --</option>
+								<option value="1" >5 to 10 Laks</option>
+								<option value="2" >10 laks to 15 Laks</option>
+								<option value="3" >15 to 20 Laks</option>
+								<option value="4" >20 to 50 Laks</option>
+								<option value="5" >50 Laks and Above</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
+								<option value="">-- Loan Duration --</option>
+								<option value="1" >1 Year</option>
+								<option value="2" >2 Year</option>
+								<option value="2" >3 Year</option>
+								<option value="2" >4 Year</option>
+								<option value="2" >5 Year</option>
+								<option value="2" >6 Year and Above</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
+								<option value="">-- Purchase Time Frame --</option>
+								<option value="1" >Immediate</option>
+								<option value="2" >1-2 weeks</option>
+								<option value="3" >3-4 weeks</option>
+								<option value="4" >4 to 8 weeks</option>
+								<option value="5" >10 weeks and Above</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
+								<option value="">-- Preference to Specific Bank --</option>
+								<option value="1" >HDFC</option>
+								<option value="2" >KOTAK</option>
+								<option value="3" >ICICI</option>
+								<option value="4" >YES</option>
+								<option value="5" >AXIS </option>
+								<option value="6" >Other</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
+								<option value="">-- Which bank you have Current Account --</option>
+								<option value="1" >HDFC</option>
+								<option value="2" >KOTAK</option>
+								<option value="3" >ICICI</option>
+								<option value="4" >YES</option>
+								<option value="5" >AXIS </option>
+								<option value="6" >Other</option>
+								
+							</select>
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="comment">Any specific comment</label>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+					</div>					
+					<div class="form-group">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
@@ -743,6 +868,7 @@ $prefix=$this->config->item('prefix');
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
+				</div>
 				</div>
 				
 			</div>
