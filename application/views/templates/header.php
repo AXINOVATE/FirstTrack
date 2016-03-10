@@ -171,6 +171,12 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					
+					   <div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
+						</div>
 					
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
@@ -362,13 +368,13 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					
-						<div class="col-md-4 col-sm-4 col-xs-4">
+						<div class="col-md-4">
 							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Have you Paid Booking Amount  --</option>
 								<option value="1" >yes</option>
 								<option value="1" >no</option>
 							</select>
-					</div>						
+					  </div>
 					
 					
 					<div class="col-md-4 col-sm-4 col-xs-4">
@@ -380,7 +386,7 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >YES</option>
 							</select>
 					</div>			
-                  		
+                     			
 					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -393,7 +399,7 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
-				
+					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="city" style="width:100%;">
@@ -412,7 +418,7 @@ $prefix=$this->config->item('prefix');
 					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
 								<option value="">-- customer type --</option>
 								<option value="1" >Salaried</option>
 								<option value="1" >Self Employed</option>
@@ -420,7 +426,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
 								<option value="">-- loan amount --</option>
 								<option value="1" >Less than 1 Lak</option>
 								<option value="1" >1-2 Laks</option>
@@ -435,7 +441,7 @@ $prefix=$this->config->item('prefix');
 					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
 								<option value="1" >1 Year</option>
 								<option value="1" >2 Year</option>
@@ -446,7 +452,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
 								<option value="">-- Purchase Time Frame  --</option>
 								<option value="1" >Immediate</option>
 								<option value="1" >1-2 weeks</option>
@@ -455,7 +461,7 @@ $prefix=$this->config->item('prefix');
 								<option value="1" > 10 weeks and Above</option>
 							</select>
 						</div>
-				
+					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="model" style="width:100%;">
@@ -471,7 +477,7 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Diesel</option>
 							</select>
 						</div>
-				
+					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="dealerName" style="width:100%;">
@@ -503,7 +509,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="Bank Location" />
 						</div>
-				
+					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
@@ -511,25 +517,24 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="which bank you have salary account?" />
 						</div>
-					   
-						<br>
-					   <div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+					
+					    <div class="col-md-12">
 						<label for="comment">Any specific comment</label>
                         <textarea class="form-control" rows="2" id="comment"></textarea>
-					   </div>
-					 
+					  </div>
+					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
-					
-					
+					</div>
+					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
-					
+					</div>
 				</div>
 			</div>
 		</div>
@@ -707,7 +712,12 @@ $prefix=$this->config->item('prefix');
 						<label for="comment">Any specific comment</label>
                         <textarea class="form-control" rows="2" id="comment"></textarea>
 					    </div>
-					
+					    <div class="form-group">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
+					</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
