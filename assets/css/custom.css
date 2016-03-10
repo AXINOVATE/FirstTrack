@@ -328,7 +328,7 @@ body{font-family:Century Gothic !important;}
 .item-subprice{/* height:50px;line-height:40px; */}
 .item-subprice span{width: 180px; display: block; float: left;}
 .item-action{text-align:center;}
-.item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
+.item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 14px; width: 24%;}
 .item-colors ul{list-style-type:none;margin-bottom:0px;}
 .item-colors li{display: inline-block; border:1px solid #EEE; cursor: pointer;padding:2px;}
 .item-colors .active{ border-color: #DC5452;}

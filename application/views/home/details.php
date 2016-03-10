@@ -64,7 +64,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<hr class="item-hr">
 					<div class="item-location mt-10 mb-10">
-						<div class="col-md-5 col-sm-5 col-xs-12 pl-0">
+						<div class="col-md-4 col-sm-5 col-xs-12 no-padding">
 							<span class="pull-left">Variant : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Base Petrol </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -74,7 +74,18 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12 pl-0">
+						<div class="col-md-4 col-sm-6 col-xs-12 no-padding">
+							<span class="pull-left">Usage Type : </span>
+							<div class="dropdown pull-left ml-10">
+							  <div data-toggle="dropdown"><b> White Board</b>&nbsp;&nbsp;<span class="caret"></span></div>
+							  <ul class="dropdown-menu">
+								<li><a href="#">Hyderabad</a></li>
+								<li><a href="#">Delhi</a></li>
+								<li><a href="#">Mumbai</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12 no-padding">
 							<span class="pull-left">Location : </span>
 							<div class="dropdown pull-left ml-10">
 							  <div data-toggle="dropdown"><b> Bangalore </b>&nbsp;&nbsp;<span class="caret"></span></div>
@@ -85,7 +96,7 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-1 col-sm-1 pl-0 hidden-xs">
+						<div class="col-md-1 col-sm-1 pl-0 hidden-xs no-padding">
 							<i class="fa fa-share-alt"></i>
 						</div>
 					</div>
@@ -105,6 +116,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-12 item-action">
 							<a href="<?php echo $prefix;?>/home/checkout" class="btn">Buy Now</a>
 							<button class="btn">Advance Booking</button>
+							<button class="btn">Buy Later</button>
 							<button class="btn">Book Test Drive</button>
 						</div>
 					</div>
