@@ -1,6 +1,5 @@
 *{ padding:0;margin:0;}
 body{font-family:Century Gothic !important;}
-.body-container{margin-bottom:45px;}
 .top-content-container{background-color:#0a3151;height:80px;position:relative; }
 .border-right-all{border-right: 1px solid #BFBFBF; }.display-inline-block-all{display:inline-block !important;}
 .top-location-img{width:20%;}
@@ -10,7 +9,7 @@ body{font-family:Century Gothic !important;}
 .padding-left-none{padding-left: 0px !important;}
 .search-group{margin-top:-5px !important;}
 .no-border-radius-all{border:none !important;border-radius:0px;}
-.input-group-addon1{background-color:#F9D133 !important; color:#fff; border-radius:0px; padding-left: 40px; padding-right: 40px;}
+.input-group-addon1{background-color:#F9D133 !important; color:#000; border-radius:0px; padding-left: 40px; padding-right: 40px;}
 .shopping-img-top{width: 43px;margin-top: -3px; float:right;}
 .border-none-r{border-right: none !important;}
 .header-top{padding:5px;}
@@ -83,7 +82,7 @@ body{font-family:Century Gothic !important;}
 
 /* Footer CSS starts here	*/
 .sticky-footer{background-color:#027CD5;position:fixed;width:100%;bottom:0px;}
-.f-btn{background-color:yellow;color:#000;padding:4px 15px;font-weight: bold;}
+.f-btn{background-color:#F9D133;color:#000;padding:4px 15px;font-weight: bold;}
 /* Footer CSS ends here	*/
 
 /* Home page CSS starts here	*/
@@ -91,7 +90,7 @@ body{font-family:Century Gothic !important;}
 .border-lt-blue{border:1px solid #027cd5;}
 .cat-box{padding-left: 0px; padding-right: 0px;}
 .bg-lightgrey{background-color:#F4F4F4;}
-.bg-yellow{background-color:#F9D133;}
+.bg-#F9D133{background-color:#F9D133;}
 .banner-img{width: 75%;}
 .cat-img{width:60%;}
 .mt-10{margin-top:10px;}
@@ -326,8 +325,8 @@ body{font-family:Century Gothic !important;}
 .item-price span{font-size:34px;color:#DC5452;}
 .br-right{border-right:1px solid #EEE;}
 .item-price{height: 100px; display: table-cell; vertical-align: middle;}
-.item-subprice{height:50px;line-height:40px;}
-.item-subprice span{width: 120px; display: block; float: left;}
+.item-subprice{/* height:50px;line-height:40px; */}
+.item-subprice span{width: 180px; display: block; float: left;}
 .item-action{text-align:center;}
 .item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 18px; width: 32%;}
 .item-colors ul{list-style-type:none;margin-bottom:0px;}
@@ -335,14 +334,14 @@ body{font-family:Century Gothic !important;}
 .item-colors .active{ border-color: #DC5452;}
 .item-colors li div{width: 25px; height: 25px}
 .item-colors span{line-height: 30px; font-size:16px;}
-.item-benfit{background-color: yellow; padding: 10px; font-size: 20px; text-align: center;width:30%;float:left;}
+.item-benfit{background-color: #F9D133; padding: 10px; font-size: 20px; text-align: center;width:30%;float:left;}
 .item-benfits{border: 1px solid #027CD5; padding: 9px; font-size: 20px; text-align: center; float:left;width:17%;margin-left:5px;} 	
 .item-feature{border: 1px solid #EEE; padding: 10px; text-align: center; float:left;width:190px;height:90px;} 	
-.item-features ul{background-color: #027CD5;  border: 0px;} 	
-.item-features li{ margin-bottom: -5px;border-right:1px solid #CCC;width: 20%; text-align: center;} 	
-.item-features li a{border-radius: 0px;  background-color: #027CD5;  border: 0px; color: #fff;margin-right:0px; } 	
-.item-features li a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid yellow;} 	
-.item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid yellow;} 	
+.item-features>ul{background-color: #027CD5;  border: 0px;} 	
+.item-features>ul>li{ margin-bottom: -5px;border-right:1px solid #CCC;width: 20%; text-align: center;} 	
+.item-features>ul>li>a{border-radius: 0px;  background-color: #027CD5;  border: 0px; color: #fff;margin-right:0px; } 	
+.item-features>ul>li>a:hover{border-radius: 0px;  background-color: #027CD5;  color: #fff; border-bottom:5px solid #F9D133;} 	
+.item-features .nav-tabs>li.active>a{background-color: #027CD5; border: 0px; color: #fff;border-bottom:5px solid #F9D133;} 	
 .item-features .tab-content{border: 1px solid #EEE;  padding: 10px;}
 .item-rating div{float:right;}
 .item-rating .chart { position: relative; display: inline-block; text-align: center; width:40px; height:40px; }

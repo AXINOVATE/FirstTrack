@@ -96,11 +96,14 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-6 col-sm-6">
 							<div class="item-subprice"><span>Ex-Showroom </span>: <i class="fa fa-inr"></i> 2,73,594</div>
 							<div class="item-subprice"><span>Insurance </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
+							<div class="item-subprice"><span>RTO </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
+							<div class="item-subprice"><span>Road Tax </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
+							<div class="item-subprice"><span>Other Handling Charges </span>: <i class="fa fa-inr"></i> 2,73,594 </div>
 						</div>
 					</div>
 					<div class="row mt-10">
 						<div class="col-md-12 item-action">
-							<button class="btn">Buy Now</button>
+							<a href="<?php echo $prefix;?>/home/checkout" class="btn">Buy Now</a>
 							<button class="btn">Advance Booking</button>
 							<button class="btn">Book Test Drive</button>
 						</div>

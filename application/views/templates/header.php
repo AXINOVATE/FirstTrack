@@ -318,7 +318,7 @@ $prefix=$this->config->item('prefix');
   
 	<!-- Request for Vehicle Loan Modal starts here -->
 	<div class="modal fade blue-modals" id="vehicle-loan-modal" role="dialog">
-		<div class="modal-dialog modal-md">
+		<div class="modal-dialog modal-md" style="width:75%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -360,67 +360,72 @@ $prefix=$this->config->item('prefix');
 							<input type="text" class="form-control" id="address" name="address" placeholder="residential address" />
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Have you Paid Booking Amount  --</option>
+					
+					<div class="col-md-4 col-sm-6 col-xs-12">
+							<select class="form-control" id="city" style="width:100%;">
+								<option value=""> Have you Paid Booking Amount </option>
 								<option value="1" >yes</option>
 								<option value="1" >no</option>
 							</select>
-					</div>						
-					</div>
-					<div class="form-group">
-					<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Any Preference to Specific Bank ?  --</option>
+					</div>	
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<select class="form-control" id="city" style="width:100%;">
+								<option value="">Any Preference to Specific Bank ? </option>
 								<option value="1" >HDFC</option>
 								<option value="1" >KOTAK</option>
 								<option value="1" >ICICI</option>
 								<option value="1" >YES</option>
 							</select>
-					</div>			
-                     </div>			
-					
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+						</div>			
+                     </div>					
+					<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
+						<div class="form-group">
 							<input type="text" class="form-control" id="pan" name="pan" placeholder="PAN card No" />
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<select class="form-control" id="city" style="width:100%;">
+								<option value=""> Select City </option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select Category --</option>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<select class="form-control" id="city" style="width:100%;">
+								<option value=""> Select Category</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<select class="form-control" id="maker" style="width:100%;">
+								<option value=""> Select Maker </option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-6">
+					
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="form-group">
 							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- customer type --</option>
+								<option value="">Customer type </option>
 								<option value="1" >Salaried</option>
 								<option value="1" >Self Employed</option>
 								<option value="1" >Partnership-Pvt Ltd –Public Ltd Co</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="form-group">
 							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- loan amount --</option>
+								<option value="">Loan amount</option>
 								<option value="1" >Less than 1 Lak</option>
 								<option value="1" >1-2 Laks</option>
 								<option value="1" >3 to 5 Laks</option>
@@ -432,10 +437,11 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-6">
+					
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="form-group">
 							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Loan Duration --</option>
+								<option value="">Loan Duration </option>
 								<option value="1" >1 Year</option>
 								<option value="1" >2 Year</option>
 								<option value="1" >3 Years</option>
@@ -444,9 +450,11 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >6 Years and above</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="form-group">
 							<select class="form-control entity-type select2 mb-10" id="variant" style="width:100%;">
-								<option value="">-- Purchase Time Frame  --</option>
+								<option value=""> Purchase Time Frame </option>
 								<option value="1" >Immediate</option>
 								<option value="1" >1-2 weeks</option>
 								<option value="1" > 3-4 weeks</option>
@@ -455,33 +463,39 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-12">
+					
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="form-group">
 							<select class="form-control mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
+								<option value="">Select Model </option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
 							<select class="form-control mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
+								<option value="">Select Variant</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-sm-6 col-xs-12">
+					
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="form-group">
 							<select class="form-control mb-10" id="dealerName" style="width:100%;">
-								<option value="">-- Select Dealer Name --</option>
+								<option value=""> Select Dealer Name </option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
 							</select>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
+					</div>
+					<div class="form-group">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
-								<option value="">-- Select Dealer Location --</option>
+								<option value=""> Select Dealer Location </option>
 								<option value="1" >HSR Layout</option>
 								<option value="1" >Majestic</option>
 							</select>
