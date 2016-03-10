@@ -1,5 +1,6 @@
 *{ padding:0;margin:0;}
 body{font-family:Century Gothic !important;}
+.body-container{margin-bottom:45px;}
 .top-content-container{background-color:#0a3151;height:80px;position:relative; }
 .border-right-all{border-right: 1px solid #BFBFBF; }.display-inline-block-all{display:inline-block !important;}
 .top-location-img{width:20%;}
@@ -374,9 +375,9 @@ body{font-family:Century Gothic !important;}
 /*Details Page css ends */
 
 /* List Page CSS Starts */
-.filter-heading{ background-color: #DDD; padding: 5px 10px; font-size: 15px; }
+.filter-heading{ background-color: #DDD; padding: 5px 10px; font-size: 15px; font-weight:600; }
 .filter-heading .fa-minus, .filter-heading .fa-plus{ float: right; margin-top: 3px; cursor: pointer; }
-.filter-price,.filter-manufacture,.filter-mileage{border-right:2px solid #DDD;}
+.filter-price,.filter-manufacture,.filter-mileage{border-right:2px solid #DDD; padding-bottom:5px;}
 .filter-price .slider-example,.filter-mileage .slider-example{ padding: 45px 15px 10px 15px;}
 .filter-price .slider.slider-horizontal,.filter-mileage .slider.slider-horizontal{ width:100%; }
 .filter-price .tooltip-inner,.filter-mileage .tooltip-inner{ background-color:#DDD; color: #000;}
