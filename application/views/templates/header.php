@@ -12,7 +12,7 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
+						<li><a href="#"><span>Dealer Signup</span></a></li>
 						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker" style="color:#FFD400;"></i>Bangalore</a></li>
 						<li style="background-color:#FFD400;"><a href="#" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="#">24X7 Customer Care</a></li>
@@ -53,7 +53,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
-				<li><a href="#" class="pd-tp-3">Get Instant Quote</a></li>
+				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" class="pd-tp-3">Get Instant Quote</a></li>
 				<li><a href="#" class="pd-tp-3">Pro forma Invoice</a></li>
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
@@ -74,7 +74,7 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
+						<li><a href="#">EMI Calculator</a></li>
 						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
 						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>">Locate a Dealer</a></li>
 					</ul>
@@ -160,9 +160,6 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >I20</option>
 							</select>
 						</div>
-					
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
@@ -170,14 +167,12 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Diesel</option>
 							</select>
 						</div>
-					
 					   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 						</div>
-					
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
@@ -1105,4 +1100,132 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 	<!-- By on Road Assistance Modal ends here -->
+	
+	
+	
+	
+	<!-- get-instant-quote Modal starts here -->
+	<div class="modal fade  left blue-modals" id="get-instant-quote" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="text-center modal-title">Get Instant Quote</h4>
+				</div>
+				<div class="modal-body">
+				       <div class="col-md-6">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Select State --</option>
+								<option value="1" >Bihar</option>
+								<option value="1" >karnataka</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+							<select class="form-control mb-10" id="city" style="width:100%;">
+								<option value="">-- Select City --</option>
+								<option value="1" >Bangalore</option>
+								<option value="1" >Mysore</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+							<select class="form-control mb-10" id="category" style="width:100%;">
+								<option value="">-- Select Category --</option>
+								<option value="1" >Bangalore</option>
+								<option value="1" >Mysore</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control mb-10" id="maker" style="width:100%;">
+								<option value="">--  Select Make --</option>
+								<option value="1" >Maruti Suzuki</option>
+								<option value="1" >Hyundai</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control mb-10" id="model" style="width:100%;">
+								<option value="">-- Select Model --</option>
+								<option value="1" >Swift</option>
+								<option value="1" >I20</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+							<select class="form-control mb-10" id="variant" style="width:100%;">
+								<option value="">-- Select Variant --</option>
+								<option value="1" >Petrol</option>
+								<option value="1" >Diesel</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<select class="form-control mb-10" id="dealerName" style="width:100%;">
+								<option value="">-- Select Dealer Name --</option>
+								<option value="1" >Maruti Suzuki</option>
+								<option value="1" >Hyundai</option>
+							</select>
+						</div>
+					    <div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
+						</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<a href="javascript:void(0)"   class="search-btn" style="background-color:#F9D133;" onclick="showDiv()">Get Instant Quote</a>
+							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+							
+						</div>
+					</div>
+					
+						<div  class="col-md-12 "id="get-instant-quote-div"  style="display:none;  background-color:#ffffff;margin-top:20px;" > 
+						   <div class="col-md-6" >
+						    <h1><font color="red"><i class="fa fa-inr"></i>&nbsp; 3,18,939</font><h5><h2><font color="black">On-Road-Price</font></h5>
+						   </div>
+						   <div class="col-md-6"style="border-left: 1px solid #ccc;">
+						   <table>
+							<thead>
+							<tr>
+							<th class="col-md-9"></th>
+							<th class="col-md-3"></th>
+							<tr>
+							</thead>
+							<tbody style="color: black; font-size:20px;"> 
+							<tr>
+							
+							<td class="">Ex-showroom:</td>
+							<td class="" ><i class="fa fa-inr"></i> 2,73,594</td>
+							</tr>
+							<tr>
+							<td class="">Insurance:</td>
+							<td class=""><i class="fa fa-inr"></i>2,73,594</td>
+							</tr>
+							<tr>
+							<td class="">RTO:</td>
+							<td class=""><i class="fa fa-inr"></i>2,73,594</td>
+							</tr>
+							<tr>
+							<td class="">Road Tax:</td>
+							<td class=""><i class="fa fa-inr"></i>2,73,594</td>
+							</tr>
+							<tr>
+							<td class="">Other Handling Charges:</td>
+							<td class=""><i class="fa fa-inr"></i>2,73,594</td>
+							</tr>
+							</tbody>
+							</table>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- get-instant-quote model ends here -->
+	<script>
+	function showDiv() {
+   document.getElementById('get-instant-quote-div').style.display = "block";
+ }
+</script>
+	
+	
+	
  
