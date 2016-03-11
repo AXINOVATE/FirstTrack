@@ -14,7 +14,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		
+		.item-share{display: table-cell;height: 58px; vertical-align: middle; font-size: 30px;}
 	</style>
 </head>
 <body>
@@ -52,8 +52,16 @@ $prefix=$this->config->item('prefix');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
 						</div>
-						<div class="col-md-3 col-sm-2 col-xs-6 text-center">
-							<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px">
+						<div class="col-md-3 col-sm-2 col-xs-6 item-share">
+							<div class="dropdown">
+							  <div data-toggle="dropdown"><i class="fa fa-share-alt"></i></div>
+							  <ul class="dropdown-menu">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Google+</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Linkedin</a></li>
+							  </ul>
+							</div>
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-6 item-rating">
 							<div class="chart" data-percent="86">
@@ -96,9 +104,6 @@ $prefix=$this->config->item('prefix');
 							  </ul>
 							</div>
 						</div>
-						<div class="col-md-1 col-sm-1 pl-0 hidden-xs no-padding">
-							<i class="fa fa-share-alt"></i>
-						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 col-sm-6 br-right">
@@ -129,6 +134,12 @@ $prefix=$this->config->item('prefix');
 					<div class="item-benfits">Benfits 2</div>
 					<div class="item-benfits">Benfits 3</div>
 					<div class="item-benfits">Benfits 4</div>
+					<div class="item-benfits">Benfits 5</div>
+				</div>
+			</div>
+			<div class="row mt-10">
+				<div class="col-md-3">
+					<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px">
 				</div>
 			</div>
 			<div class="row mt-10">

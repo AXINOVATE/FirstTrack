@@ -55,10 +55,9 @@ $prefix=$this->config->item('prefix');
 					</ul>
 				</li>
 				<li class="dropdown <?php if($currentPage == '')echo 'active';?>">
-					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage users <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Request for Test Drive</a></li>
-						
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Users</a></li>
 					</ul>
 				</li>
 			</ul> 

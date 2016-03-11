@@ -228,6 +228,13 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/service_cost_analyzer',$data);
 	}
+	public function emi_calculator()
+	{
+		$pageData['currentPage'] = 'TOOLS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/emi_calculator',$data);
+	}
 	function checkout(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);

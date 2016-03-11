@@ -34,7 +34,7 @@ $prefix=$this->config->item('prefix');
 			</div>
 			
 			<div class="row">
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<a href="<?php echo $prefix; ?>/admin/request_list">
 						<div class="big-box">
@@ -71,7 +71,7 @@ $prefix=$this->config->item('prefix');
 						</a>
 					</center>
 				</div>
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -106,9 +106,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -143,7 +141,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -178,10 +176,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -216,7 +211,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -251,9 +246,8 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+			
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>
@@ -288,7 +282,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</center>
 				</div>
-				<div class="col-md-5 col-sm-6 col-xs-12 mb-30">
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>

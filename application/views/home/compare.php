@@ -15,7 +15,9 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		
+		.c-compare{width: 80px;float: left;height: 70px;display: inline-block;text-align: center;border: 1px solid #ccc;background-color: #eeeeee;padding: 5px;}
+		.bg-blue{background-color: #027CD5;color: #FFF;border: 1px solid #027cd5;}
+		.c-compare i{font-size:40px;}
 	</style>
 </head>
 <body>
@@ -28,13 +30,14 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4>Compare</h4>
+					<h4 class="pull-left mr-10">Compare</h4> 
+					<div class="c-compare bg-blue"><i class="fa fa-car"></i><div>Car</div></div>
+					<div class="c-compare"><i class="fa fa-motorcycle"></i><div>Bike</div></div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mt-20">
 				<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 					<div class="compare-box">
-						<h5 class="text-center">Car 1</h5>
 						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
 						<div class="compare-title">
 							Maruti Suzuki Cias SHVS ZDI Plus Sedan, Diesel Manual
@@ -58,7 +61,6 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 					<div class="compare-box">
-						<h5 class="text-center">Car 2</h5>
 						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
 						<div class="compare-title">
 							Maruti Suzuki Cias SHVS ZDI Plus Sedan, Diesel Manual
@@ -85,7 +87,6 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 					<div class="compare-box">
-						<h5 class="text-center">Car 3</h5>
 						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
 						<div class="compare-title">
 							Maruti Suzuki Cias SHVS ZDI Plus Sedan, Diesel Manual
