@@ -21,7 +21,8 @@ class Home extends CI_Controller {
 		 
 	public function __construct(){
 		parent::__construct();
-		//$this->load->database();
+		//$this->load->database();	
+		
 	}
 
 		
@@ -195,9 +196,6 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_add_dealer_products',$data);
 	}
-	
-
-	
 	public function md_sign_up_page_dealers()
 	{
 		$pageData['currentPage'] = 'NEWS';
@@ -246,5 +244,41 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/conformation',$data);
+	}
+	public function get_Proforma_Invoice_pdf(){
+		$data['fullname'] = $this->input->post('fullname');
+		$data['phone'] = $this->input->post('phone');
+		$data['emailID'] = $this->input->post('emailID');
+		$data['Address'] = $this->input->post('Address');
+		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
+		$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);	
+		$pdfFilePath = "Proforma_Invoice.pdf";
+		//load mPDF library
+		$this->load->library('m_pdf');
+		//actually, you can pass mPDF parameter on this load() function
+		$pdf = $this->m_pdf->load();
+		//generate the PDF!
+		$pdf->WriteHTML($html);
+		//offer it to user via browser download! (The PDF won't be saved on your server HDD)
+		$pdf->Output();
+	}
+	public function get_Proforma_Invoice_pdf_download(){
+		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
+		$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);	
+		$pdfFilePath = "Proforma_Invoice.pdf";
+		//load mPDF library
+		$this->load->library('m_pdf');
+		//actually, you can pass mPDF parameter on this load() function
+		$pdf = $this->m_pdf->load();
+		//generate the PDF!
+		$pdf->WriteHTML($html);
+		//offer it to user via browser download! (The PDF won't be saved on your server HDD)		
+		$pdf->Output($pdf,'D');
+	}
+	function edit_dealer_info(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/manage_dealers/edit_dealer_info',$data);
 	}
 }

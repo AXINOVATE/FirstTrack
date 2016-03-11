@@ -54,7 +54,10 @@ $prefix=$this->config->item('prefix');
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
 				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" class="pd-tp-3">Get Instant Quote</a></li>
-				<li><a href="#" class="pd-tp-3">Pro forma Invoice</a></li>
+				
+				
+				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" class="pd-tp-3">Pro forma Invoice</a></li>
+
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
@@ -186,7 +189,118 @@ $prefix=$this->config->item('prefix');
 		</div>
 	</div>
 	<!-- Modal ends here -->
+	<!-- Get Proforma Invoice -->
+	<div class="modal fade blue-modals" id="Get-Proforma-Invoice" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="text-center modal-title">Get Proforma Invoice </h4>
+				</div>
+				<form action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" method="post">
+				<div class="modal-body">
+					
+					<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+						<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+						<input type="text"  name="fullname" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						</div>
+					</div>
+					<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+						<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+						<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />					
+						</div>
+					</div>
+					<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+						<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+						<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />				
+						</div>
+					</div>
+					<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
+					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+						<textarea class="form-control" rows="3" name="Address" placeholder="Address"></textarea>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="city" style="width:100%;">
+							<option value="">-- Select State --</option>
+							<option value="1" >Bangalore</option>
+							<option value="1" >Mysore</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="maker" style="width:100%;">
+							<option value="">-- Select City --</option>
+							<option value="1" >Bangalore</option>
+							<option value="1" >Mysore</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="model" style="width:100%;">
+							<option value="">-- Select Category --</option>
+							<option value="1" >Maruti Suzuki</option>
+							<option value="1" >Hyundai</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="Make" style="width:100%;">
+							<option value="">-- Select Make --</option>
+							<option value="1" >Swift</option>
+							<option value="1" >I20</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="Model" style="width:100%;">
+							<option value="">-- Select Model --</option>
+							<option value="1" >Petrol</option>
+							<option value="1" >Diesel</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="variant" style="width:100%;">
+							<option value="">-- Select Variant --</option>
+							<option value="1" >Petrol</option>
+							<option value="1" >Diesel</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select class="form-control mb-10" id="model" style="width:100%;">
+							<option value="">-- Select Dealer Name -- </option>
+							<option value="1" >Maruti Suzuki</option>
+							<option value="1" >Hyundai</option>
+						</select>
+					</div>
+					
+				   <div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="col-md-6">
+							<a href="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf_download" id="get_Proforma_Invoice_pdf" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
+							</div>
+							<div class="col-md-6">
+							<input type="submit"  class="search-btn col-md-6" style="background-color:#F9D133;" >Print</a>
+							</div>
+							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
   
+	<!--End Get Proforma Invoice -->
+
 	<!-- Request for Test Drive Modal starts here -->
 	<div class="modal fade blue-modals" id="test-drive-modal" role="dialog">
 		<div class="modal-dialog modal-lg">

@@ -36,117 +36,65 @@ hr.style-eight {
 				<h2><center>Signup Page for Dealers </center></h2>
 				<hr class="style-eight"/>
 				
-						<div class="col-md-12">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<div class="col-sm-6 col-xs-12 col-md-10">
-								  <input type="text" class="form-control" placeholder="Dealers Name">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-12">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-10">
-								  <input type="text" class="form-control" placeholder="house number,street number">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-12">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-10">
-								  <input type="text" class="form-control" placeholder="area">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8">
-								  <input type="text" class="form-control" placeholder="country">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8">
-								  <input type="text" class="form-control" placeholder="state">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="city">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="location">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="area">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="contact number">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="text" class="form-control" placeholder="email">
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								
-								<div class="col-sm-6 col-xs-12 col-md-8 ">
-								  <input type="password" class="form-control" placeholder="password">
-								</div>
-							  </div>
-							</form>
-						</div>
-					<button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
+				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Dealers Name"/>
 				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="House number, Street number"/>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Area">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Country">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="State">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="City">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Location">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Contact Number">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Email">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="text" class="form-control" placeholder="Contact Person">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<input type="password" class="form-control" placeholder="Password">
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<select class="form-control select2" style="width:100%;">
+						<option value="11">-- Select Category --</option>
+						<option value="12" >Diesel</option>
+						<option value="13" >LPG</option>
+						<option value="14" >CNG</option>
+						<option value="15" >Electric Power</option>
+					</select>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<select class="form-control select2" style="width:100%;">
+						<option value="1">-- Select Manufacturers --</option>
+						<option value="2" >Maruti</option>
+						<option value="3" >Hyundai</option>
+						<option value="4" >Nissan</option>
+						<option value="5" >Honda</option>
+					</select>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 mt-10">
+					<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value=""/>
+					<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+						Authorized Dealer for Brand
+					</div>
+				</div>
+				<a href="<?php echo $prefix;?>/home/edit_dealer_info" style="text-decoration:none;"><button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button></a>
+			</div>
 		</section>
 	</div>
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
@@ -161,11 +109,15 @@ hr.style-eight {
 <!-- The File Upload validation plugin -->
 <script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload-validate.js"></script>
 
-<!-- Bootstrap -->
-<script src="<?php echo $assetsPath; ?>/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/highlight.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/main.js"></script>
 	<script>
+		$(document).ready(function() {
+			$('.select2').select2({
+				placeholder: "Select",
+				allowClear: true
+			});
+		});	
 	</script>
 </body>
 </html>

@@ -82,12 +82,21 @@ $prefix=$this->config->item('prefix');
 							  </div>
 							</form>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<form class="form-horizontal">
 							  <div class="form-group">
 								<label for="inputEmail3" class="col-sm-2  control-label">Location</label>
 								<div class="col-sm-10 ">
-								  <textarea class="form-control" rows="3" id="location_detail"></textarea>								  
+								  <textarea class="form-control" rows="3" id="location_detail"></textarea></div>
+							  </div>
+							</form>
+						</div>	
+						<div class="col-md-4">
+							<form class="form-horizontal">
+							  <div class="form-group">
+								<label for="inputEmail3" class="col-sm-3  control-label">Pin Code</label>
+								<div class="col-sm-9">
+								  <input class="form-control">
 								</div>
 							  </div>
 							</form>
