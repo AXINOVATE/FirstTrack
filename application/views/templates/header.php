@@ -12,7 +12,7 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="#"><span>Dealer Signup</span></a></li>
+						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
 						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker" style="color:#FFD400;"></i>Bangalore</a></li>
 						<li style="background-color:#FFD400;"><a href="#" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="#">24X7 Customer Care</a></li>
@@ -74,7 +74,7 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">EMI Calculator</a></li>
+						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
 						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
 						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>">Locate a Dealer</a></li>
 					</ul>

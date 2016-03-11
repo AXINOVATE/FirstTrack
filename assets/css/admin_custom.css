@@ -84,7 +84,7 @@ body{font-family:Century Gothic !important;}
 
 /* admin dashboard CSS starts here */
 .page-title{font-size: 18px; color: #7D7D7D; margin-bottom:10px;}
-.big-box{border: 1px solid #dfdfdf; width:80%; height:auto; overflow:auto; display: inline-table;}
+.big-box{border: 1px solid #dfdfdf; width:90%; height:auto; overflow:auto; display: inline-table;}
 .big-box-header{display:block; padding:7px; width:60%; height: 35px; background-color: #027CD5; color: #fff; font-size: 15px; text-align: center; margin-top:-17px;}
 .request-count-box{text-align:center; border: 1px solid #dfdfdf;}
 .request-count-box>h5{font-size:30px; color: #000;}
