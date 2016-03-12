@@ -281,4 +281,20 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/edit_dealer_info',$data);
 	}
+	public function manage_product()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/dealers/manage_product',$data);
+
+	}
+	public function edit_add_dealer_product()
+	{
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/dealers/edit_add_dealer_product',$data);
+
+	}
 }
