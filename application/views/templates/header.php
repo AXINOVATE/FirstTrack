@@ -12,10 +12,10 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="#"><span>Dealer Signup</span></a></li>
+						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
 						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker" style="color:#FFD400;"></i>Bangalore</a></li>
-						<li style="background-color:#FFD400;"><a href="#" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
-						<li><a href="#">24X7 Customer Care</a></li>
+						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/home/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
+						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
 						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
 						<li><a href="<?php echo $prefix;?>/home/login"><span>Signup</span></a></li>

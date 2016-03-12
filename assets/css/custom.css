@@ -497,3 +497,17 @@ body{font-family:Century Gothic !important;}
 .dealer-name{color:#CE0505; height:45px; line-height:19px; font-size:17px; font-weight:600; padding-top:2px; padding-bottom:3px; display:table-cell; vertical-align:middle; }
 .dealer-address{font-size:12px; line-height:16px; min-height:65px; max-height:65px; overflow:hidden;}
 /* end of locate a dealer page*/
+
+/* Deal Page CSS starts here  */
+.deal-title{color: #528DB0; height: 64px; line-height: 19px; font-size: 15px; font-weight: 600; padding-top: 3px; padding-bottom: 3px; display: table-cell; vertical-align: middle;}
+.deal-title p {font-size:12px; color: #7F7E7E; margin:0; font-weight:500;}
+.deal-validity{font-size:12px; color: #7F7E7E; line-height: 15px;}
+.deal-validity p{font-size:13px; color:#000;}
+.deal-view-btn{text-decoration: none !important; width: 100%; height: 35px; display: block; border: 2px solid #dfdfdf; font-size: 13px; padding: 6px; color: #027CD5; font-weight: 600; text-align: center;}
+@media (max-width: 1024px){
+
+}
+@media (max-width: 767px){
+
+}
+/* Deal Page CSS ends here	*/

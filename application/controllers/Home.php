@@ -198,7 +198,7 @@ class Home extends CI_Controller {
 	}
 	public function md_sign_up_page_dealers()
 	{
-		$pageData['currentPage'] = 'NEWS';
+		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_sign_up_page_dealers',$data);
@@ -280,5 +280,17 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/edit_dealer_info',$data);
+	}
+	function deals(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/deals',$data);
+	}
+	function customer_care(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/customer_care',$data);
 	}
 }
