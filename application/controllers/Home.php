@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 		 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('home_model');
 		//$this->load->database();
 	}
 
@@ -38,6 +39,9 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
+	}
+	function register(){
+		echo json_encode($this->home_model->register());
 	}
 	public function latest()
 	{

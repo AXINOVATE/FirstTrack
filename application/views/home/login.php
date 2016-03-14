@@ -27,6 +27,7 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<div class="container">
+			<h4 class="text-center"><?php echo $this->session->flashdata('registerMessage');?></h4>
 			<div class="login mt-65">
 				<div class="row br-1">
 					<div class="col-md-4"></div>
@@ -159,7 +160,10 @@ $prefix=$this->config->item('prefix');
 				data:{'name':$('#name').val(),'email':$('#email').val(),'password':$('#password').val(),'repassword':$('#repassword').val(),'phone':$('#phone').val()},
 				dataType:'JSON'
 			}).success(function(data){
-				alert(data);
+				/* if(data){
+					setTimeout(function(){  }, 3000);
+				} */
+				window.location.reload();
 			});;
 		}
 	});

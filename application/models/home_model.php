@@ -45,7 +45,7 @@ class Home_model extends CI_Model{
 	}
 	
 	public function register(){
-		
+		$retvalue = array();
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
 		$password = $this->encrypt_password($this->input->post('password'));
@@ -53,16 +53,36 @@ class Home_model extends CI_Model{
 		
 		$xml = "<ROOT>
 				<HEADER>
+					<ACTIONTYPE>CREATE</ACTIONTYPE>
 					<NAME>".$name."</NAME>
+					<USERNAME>".$email."</USERNAME>
 					<EMAIL>".$email."</EMAIL>
 					<PASSWORD>".$password."</PASSWORD>
 					<PHONE>".$phone."</PHONE>
+					<ROLE>User</ROLE>
 				</HEADER>
 			</ROOT>";
 			
-		$qry = $this->db->query('CALL usp_insUpdSignUp("'.$xml.'",@vresult)');
-			
+		$vMessage = mt_rand();$vStatus = mt_rand();
+		$this->db->query('CALL usp_insUpdUsers("$xml",@'.$vMessage.',@'.$vStatus.')');
+		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		
+		if($row){
+			if($row->status){
+				$this->session->set_flashdata('registerMessage', 'Registered Successfully');
+				return true;
+			}else{
+				$this->session->set_flashdata('registerMessage', 'Please try again later.');
+				return false;
+			}
+		}
+		else{
+			$this->session->set_flashdata('registerMessage', 'Please try again later.');
+			return false;
+		}
 	}
 
 }
+
 ?>
