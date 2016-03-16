@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
@@ -26,223 +25,192 @@ class Home extends CI_Controller {
 	}
 
 		
-	public function index()
-	{		
+	public function index(){		
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/index',$data);
 	}
-	public function login()
-	{		
+	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
 	}
-	function register(){
+	public function register(){
 		echo json_encode($this->home_model->register());
 	}
-	public function latest()
-	{
+	public function latest(){
 		$pageData['currentPage'] = 'LATEST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/latest_list',$data);
 	}
-	public function popular()
-	{
+	public function popular(){
 		$pageData['currentPage'] = 'POPULAR';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/popular_list',$data);
 	}
-	public function upcoming()
-	{
+	public function upcoming(){
 		$pageData['currentPage'] = 'UPCOMING';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/upcoming_list',$data);
 	}
-	public function details()
-	{
+	public function details(){
 		$pageData['currentPage'] = 'LIST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/details',$data);
 	}
-	public function search()
-	{
+	public function search(){
 		$pageData['currentPage'] = 'SEARCH';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/search',$data);
 	}
-	public function news()
-	{
+	public function news(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/news',$data);
 	}
-	public function review()
-	{
+	public function review(){
 		$pageData['currentPage'] = 'REVIEW';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/review',$data);
 	}
-	public function compare()
-	{
+	public function compare(){
 		$pageData['currentPage'] = 'COMPARE';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/compare',$data);
 	}
-	public function detailed_comparison()
-	{
+	public function detailed_comparison(){
 		$pageData['currentPage'] = 'COMPARE';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/detailed_comparison',$data);
 	}
-	public function edit_product()
-	{
+	public function edit_product(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/edit_products',$data);
 	}
 
-	public function add_modify_location()
-	{
+	public function add_modify_location(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_location',$data);
 	}
-	public function add_modify_manufacture()
-	{
+	public function add_modify_manufacture(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_manufacture',$data);
 	}
-	public function add_modify_product_type()
-	{
+	public function add_modify_product_type(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_product_type',$data);
 	}
-	public function add_modify_body_type()
-	{
+	public function add_modify_body_type(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_body_type',$data);
 	}
-	public function add_modify_product()
-	{
+	public function add_modify_product(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/add_modify_product',$data);
 	}
-	public function news_detail()
-	{
+	public function news_detail(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/news_detail',$data);
 
 	}
-	public function view_dealers_products()
-	{
+	public function view_dealers_products(){
 		$pageData['currentPage'] = 'MANAGE DEALERS';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/manage_product/view_dealers_products',$data);
-
 	}
-	public function add_dealer_products()
-	{
+	public function add_dealer_products(){
 		$pageData['currentPage'] = 'MANAGE DEALERS';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/manage_product/add_dealer_products',$data);
 	}
-	public function add_products()
-	{
+	public function add_products(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$this->load->view('admin/products/manage_product/add_products',$data);
 	}
-	public function md_add_dealers()
-	{
+	public function md_add_dealers(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_add_dealers',$data);
 	}
-	public function md_view_dealers_and_products()
-	{
+	public function md_view_dealers_and_products(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_view_dealers_and_products',$data);
 	}
-	public function md_add_dealer_products()
-	{
+	public function md_add_dealer_products(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_add_dealer_products',$data);
 	}
-	public function md_sign_up_page_dealers()
-	{
+	public function md_sign_up_page_dealers(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_sign_up_page_dealers',$data);
 	}
 	
-	public function add_dealers_locations()
-	{
+	public function add_dealers_locations(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/dealers_locations/add_dealers_locations',$data);
-
 	}
-	public function locate_dealer()
-	{
+	public function locate_dealer(){
 		$pageData['currentPage'] = 'TOOLS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/locate_dealer',$data);
 	}
-	public function service_cost_analyzer()
-	{
+	public function service_cost_analyzer(){
 		$pageData['currentPage'] = 'TOOLS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/service_cost_analyzer',$data);
 	}
-	public function emi_calculator()
-	{
+	public function emi_calculator(){
 		$pageData['currentPage'] = 'TOOLS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/emi_calculator',$data);
 	}
-	function checkout(){
+	public function checkout(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/checkout',$data);
 	}
-	function conformation(){
+	public function conformation(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
@@ -284,28 +252,25 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/edit_dealer_info',$data);
 	}
-	function deals(){
+	public function deals(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/deals',$data);
 	}
-	function customer_care(){
+	public function customer_care(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/customer_care',$data);
 	}
-	public function manage_product()
-	{
+	public function manage_product(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/dealers/manage_product',$data);
-
 	}
-	public function edit_add_dealer_product()
-	{
+	public function edit_add_dealer_product(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
