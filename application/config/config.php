@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/olam';
+$config['base_url']	= 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/FirstTrack';
 //$config['base_url']	= '';
 
 /*
@@ -27,7 +27,7 @@ $config['base_url']	= 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] =
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -366,7 +366,7 @@ $config['proxy_ips'] = '';
 | Path to the assets folder
 |
 */
-$config['asset_path'] 		= '/olam1/assets';
-$config['prefix'] 		= '/olam1';
+$config['asset_path'] 		= '/FirstTrack/assets';
+$config['prefix'] 		= '/FirstTrack';
 /* End of file config.php */
 /* Location: ./application/config/config.php */
