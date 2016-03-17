@@ -98,4 +98,27 @@
 			mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 		}
+		public function add_modify_bodyTypeDetails(){
+			$vresult['status']="Failed";
+			$body_typeID= $this->input->post('body_typeID');	
+			$categoryID= $this->input->post('categoryID');	
+			$body_type= $this->input->post('body_type');
+			$body_type_img= $this->input->post('body_type_img');
+			$vType= $this->input->post('vType');			
+			$rndS=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdBodyTypeDetail('".$vType."','".$body_typeID."','".$categoryID."','".$body_type."','".$body_type_img."',@vresult)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
+		public function getBodyTypeDetails($vType,$vID=''){
+			$query = $this->db->query("CALL usp_getBodyType('".$vType."','".$vID."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
 	}

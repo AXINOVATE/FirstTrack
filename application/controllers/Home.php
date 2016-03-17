@@ -139,6 +139,9 @@ class Home extends CI_Controller {
 	public function add_modify_categoryDetails()	{						
 		echo json_encode($this->manage_products_model->add_modify_categoryDetails());
 	}
+	public function add_modify_bodyTypeDetails()	{						
+		echo json_encode($this->manage_products_model->add_modify_bodyTypeDetails());
+	}
 	public function upload_files($type){ 
 		$file = $_FILES['files'];
 		$retvalue['path'] = $this->home_model->upload_file($file, $type);
@@ -152,10 +155,13 @@ class Home extends CI_Controller {
 		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
 		$this->load->view('admin/products/add_modify_category',$data);
 	}
-	public function add_modify_body_type(){
+	public function add_modify_body_type($bodyTypeID=''){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+		$data['editbodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ONE',$bodyTypeID);
+		$data['bodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ALL');
 		$this->load->view('admin/products/add_modify_body_type',$data);
 	}
 	public function add_modify_product(){
