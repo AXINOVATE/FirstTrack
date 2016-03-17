@@ -35,6 +35,7 @@ $prefix=$this->config->item('prefix');
 				<div class="panel panel-default Locations-panel" style="border-radius: 0px;border:1px solid #f2f2f2;">
 					<div class="panel-body">
 						<form class="form-horizontal" name="location_data" role="form"  method="POST" id="location_data"  onsubmit="return false">
+							<input type="hidden" id="locationID" value="<?php if(isset($edit_locations[0]['locationID'])){ echo $edit_locations[0]['locationID']; } ?>">
 							<div class="col-md-4">
 							  <div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label">Country</label>
@@ -42,7 +43,14 @@ $prefix=$this->config->item('prefix');
 								   <select class="form-control entity-type select2" id="all-countrys" name="all-countrys" style="width:100%;" va_req="true">
 								   <option value="">--Select country --</option>
 									<?php foreach ( $COUNTRY as $country){
-										echo '<option value="'.$country['countryID'].'">'.$country['countryName'].'</option>';
+										$selected='';
+											if(count($edit_locations) > 0){
+												$cID=$edit_locations[0]['countryID'];
+												if($cID==$country['countryID']){
+													$selected="selected";
+												}
+											}
+										echo '<option value="'.$country['countryID'].'" '.$selected.'>'.$country['countryName'].'</option>';
 									}
 									?>	
 								   </select>
@@ -55,9 +63,17 @@ $prefix=$this->config->item('prefix');
 							<div class="col-sm-10">
 							   <select class="form-control entity-type select2" va_req="true" id="all-states" name="all_states" style="width:100%;">
 							   <option value=""  >--Select State --</option>
-								<?php foreach ( $STATES as $state){
-									echo '<option value="'.$state['stateID'].'">'.$state['stateName'].'</option>';
-								}
+								<?php
+									if(count($edit_locations) > 0){
+										foreach ( $STATES as $state){
+											$selected='';
+											$sID=$edit_locations[0]['stateID'];
+											if($sID==$state['stateID']){
+												$selected="selected";
+											}
+											echo '<option value="'.$state['stateID'].'" '.$selected.'>'.$state['stateName'].'</option>';
+										}
+									} 
 								?>	
 							   </select>
 							</div>
@@ -69,9 +85,17 @@ $prefix=$this->config->item('prefix');
 							<div class="col-sm-10">
 							   <select class="form-control entity-type select2" va_req="true" id="all-cities" style="width:100%;">
 							   <option value="">--Select City --</option>
-								<?php foreach ( $CITIES as $city){
-									echo '<option value="'.$city['cityID'].'">'.$city['cityName'].'</option>';
-								}
+								<?php 
+									if(count($edit_locations) > 0){
+										foreach ( $CITIES as $city){
+											$selected='';
+											$ciID=$edit_locations[0]['cityID'];
+											if($ciID==$city['cityID']){
+												$selected="selected";
+											}
+											echo '<option value="'.$city['cityID'].'" '.$selected.'>'.$city['cityName'].'</option>';
+										}
+									} 
 								?>									
 							   </select>
 							</div>
@@ -81,14 +105,14 @@ $prefix=$this->config->item('prefix');
 						  <div class="form-group">
 							<label for="inputEmail3" class="col-sm-2  control-label">Location</label>
 							<div class="col-sm-10 ">
-							  <textarea class="form-control" rows="3" id="location_detail" va_req="true"></textarea></div>
+							  <textarea class="form-control" rows="3" id="location" va_req="true" ><?php if(count($edit_locations) > 0){ echo $edit_locations[0]['location'];}?></textarea></div>
 						  </div>
 						</div>	
 						<div class="col-md-4">
 						  <div class="form-group">
 							<label for="inputEmail3" class="col-sm-3  control-label">Pin Code</label>
 							<div class="col-sm-9">
-							  <input type="text" class="form-control" va_req="true">
+							  <input type="text" class="form-control" va_req="true" id="pincode" value="<?php if(count($edit_locations) > 0){ echo $edit_locations[0]['pincode'];}?>">
 							</div>
 						  </div>
 						</div>	
@@ -113,28 +137,17 @@ $prefix=$this->config->item('prefix');
 						<th>Action</th>													
 						</thead>
 						<tbody id="location-detail-all">
-							<tr>
-								<td>India</td>
-								<td class="hidden-xs">Karnataka</td>
-								<td class="hidden-xs">Bangalore</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+							<?php 
+								foreach($locationDetail as $LD){
+									echo '<tr>
+								<td>'.$LD["countryName"].'</td>
+								<td class="hidden-xs">'.$LD["stateName"].'</td>
+								<td class="hidden-xs">'.$LD["cityName"].'</td>
+								<td><a href="'.$prefix.'/home/add_modify_location/'.$LD["locationID"].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="javascript:void();" class="delete-box-color delete-location font-size-16" data-lid="'.$LD["locationID"].'"><i class="fa fa-trash-o picture-padding-right-10" ></i><span class="hidden-xs" >Delete</span></a></td>
 								
-							</tr>
-							<tr>
-								<td>India</td>
-								<td class="hidden-xs">Karnataka</td>
-								<td class="hidden-xs">Bangalore</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
-								
-							</tr>
-							<tr>
-								<td>India</td>
-								<td class="hidden-xs">Karnataka</td>
-								<td class="hidden-xs">Bangalore</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
-								
-							</tr>
-							
+							</tr>';
+								}
+							?>
 						</tbody>
 
 					</table>
@@ -157,12 +170,8 @@ $prefix=$this->config->item('prefix');
 			 $('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
-            });
-			 $('button').on('click', function(){
-			alert('preserve attached java script data!');
-			});		
-			$('#myTab').tabCollapse();			
-			});
+            });		
+		});
 		$('#all-countrys').on('change',function(){
 			var country_id = $(this , '#all-countrys').val();
 			$.ajax({
@@ -209,19 +218,51 @@ $prefix=$this->config->item('prefix');
 			xu_validation.form_submit('#location_data','save_location');
 		});
 		function save_location(){
+			var locationID = $('#locationID').val();
+			if(locationID==''){
+				vType='INSERT';
+			}else{
+				vType='EDIT';
+			}
 			var country_id = $('#all-countrys').val();						
 			var states_id = $('#all-states').val();
 			var city_id=$('#all-cities').val();
-			var location_detail=$('#location_detail').val();
+			var location=$('#location').val();
+			var pincode=$('#pincode').val();
 			$.ajax({
 				url:'<?php echo $prefix;?>/home/save_location_detail/',
-				data:{'country_id':country_id,'states_id':states_id,'city_id':city_id,'location_detail':location_detail},
+				data:{'vType':vType,'locationID':locationID,'country_id':country_id,'states_id':states_id,'city_id':city_id,'location':location,'pincode':pincode},
 				type:'POST',
 				processData: true,
 				dataType:'JSON'
 			}).done(function(data){
-				
-				if(data == "Successfully"){	
+				if(data.status == "Success"){	
+					$.gritter.add({
+						title: 'Success',
+						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+				}else{
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Failed To Save',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+				}
+			});
+		}
+		$(".delete-location").click(function(){
+			var locationID=$(this).data("lid");
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/save_location_detail/',
+				data:{'vType':'DELETE','locationID':locationID,'country_id':'','states_id':'','city_id':'','location_detail':'','pincode':''},
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.status == "Success"){	
 					$.gritter.add({
 						title: 'Success',
 						text: 'Saved Successfully',
@@ -237,12 +278,7 @@ $prefix=$this->config->item('prefix');
 					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
 				}
 			});
-		}
-		/*$('#location-save').on('click', function(){
-			
-			
-		});*/
-		
+		});
 		
 	</script>
 </body>

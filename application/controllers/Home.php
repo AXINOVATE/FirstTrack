@@ -102,13 +102,15 @@ class Home extends CI_Controller {
 		$this->load->view('admin/products/edit_products',$data);
 	}
 
-	public function add_modify_location(){
+	public function add_modify_location($locationID=''){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-			$data['COUNTRY']= $this->manage_products_model->location_detail('COUNTRY');
+		$data['COUNTRY']= $this->manage_products_model->location_detail('COUNTRY');
 		$data['STATES']= $this->manage_products_model->location_detail('STATES');
 		$data['CITIES']= $this->manage_products_model->location_detail('CITIES');	
+		$data['locationDetail']= $this->manage_products_model->location_detail('A_PUB_LOC');	
+		$data['edit_locations']= $this->manage_products_model->location_detail('LOC_D',$locationID);
 		$this->load->view('admin/products/add_modify_location',$data);
 	}
 	public function get_particular_states()
