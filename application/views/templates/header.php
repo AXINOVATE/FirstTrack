@@ -288,7 +288,7 @@ $prefix=$this->config->item('prefix');
 							<a href="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf_download" id="get_Proforma_Invoice_pdf" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
 							</div>
 							<div class="col-md-6">
-							<input type="submit"  class="search-btn col-md-6" style="background-color:#F9D133;" >Print</a>
+							<a href="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf_download" id="get_Proforma_Invoice_pdf" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</a>
 							</div>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
