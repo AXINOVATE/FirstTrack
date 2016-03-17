@@ -18,7 +18,7 @@ $prefix=$this->config->item('prefix');
 </head>
 <body>
 	<!-- Header starts here -->
-	<?php echo $header;?>
+	 <?php echo $header;?>
 	<!-- Header ends here -->
 	
 	<!-- Body content starts here -->
@@ -293,6 +293,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script>
 	
 	$('.cat-box').on('mouseover', function(){

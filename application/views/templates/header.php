@@ -54,10 +54,7 @@ $prefix=$this->config->item('prefix');
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
 				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" class="pd-tp-3">Get Instant Quote</a></li>
-				
-				
 				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" class="pd-tp-3">Pro forma Invoice</a></li>
-
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
@@ -105,6 +102,7 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">Advance Booking</h4>
 				</div>
+				<form method="post" action="">
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
@@ -134,8 +132,6 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="city" style="width:100%;">
 								<option value="">-- Select City --</option>
@@ -143,9 +139,6 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
-					
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
@@ -153,9 +146,6 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Hyundai</option>
 							</select>
 						</div>
-				
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="model" style="width:100%;">
 								<option value="">-- Select Model --</option>
@@ -179,12 +169,12 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
+							<a href="" class="search-btn" id="advance-booking" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
 				</div>
-				
+				</form>
 			</div>
 		</div>
 	</div>
@@ -343,7 +333,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
 							
 								<div class="input-group date datepicker no-padding">
-									<input type="text" class="form-control" va_req="true" id="regCloseDate" name="regCloseDate" value="">
+									<input type="text" class="form-control" va_req="true" id="datetimepicker1" name="regCloseDate" value="">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 									</span>
@@ -900,7 +890,6 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="datetime" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time</label>
 						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
-							
 								<div class="input-group date datepicker no-padding">
 									<input type="text" class="form-control" va_req="true" id="regCloseDate" name="regCloseDate" value="">
 									<span class="input-group-addon">
@@ -912,8 +901,6 @@ $prefix=$this->config->item('prefix');
 								</div>
 						</div>
 					</div>
-					
-						
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
@@ -921,8 +908,6 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >Hyundai</option>
 							</select>
 						</div>
-				
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="dealerName" style="width:100%;">
 								<option value="">-- personal use or Commercial use --</option>
@@ -1333,12 +1318,8 @@ $prefix=$this->config->item('prefix');
 			</div>
 		</div>
 	</div>
-	<!-- get-instant-quote model ends here -->
-	<script>
-	function showDiv() {
-   document.getElementById('get-instant-quote-div').style.display = "block";
- }
-</script>
+	<!-- get-instant-quote model ends here -->	
+	
 	
 	
 	
