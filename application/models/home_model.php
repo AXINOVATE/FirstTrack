@@ -57,6 +57,107 @@ class Home_model extends CI_Model{
 			}
 			return 'r'.$result;
 		}
+		/**
+ * Method upload_file for uploading files into server
+ * @param object
+ * @return string
+ **/
+	public function upload_file($file, $type='', $uploaddir=''){
+		$d=date('Ymdhms');
+		$path = '';
+		if($type=='image'){
+			$allowedExts = $this->config->item('ext_img');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='audio'){
+			$allowedExts = $this->config->item('ext_audio');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='video'){
+			$allowedExts = $this->config->item('ext_video');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='document'){
+			$allowedExts = $this->config->item('ext_document');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='scorm'){
+			$allowedExts = $this->config->item('ext_scorm');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){
+						$this->load->library('unzip');
+						$folderName=str_replace(".zip","",$path);
+						mkdir($folderName,0777);
+						$this->unzip->extract($path, $folderName);
+						$path= $folderName;
+					}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		return $path;
+	}
 	
 	public function register(){
 		$retvalue = array();

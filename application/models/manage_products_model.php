@@ -76,5 +76,26 @@
 			mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 		}
-		
+		public function add_modify_categoryDetails(){
+			$vresult['status']="Failed";
+			$categoryID= $this->input->post('categoryID');	
+			$categoryName= $this->input->post('categoryName');
+			$imgPath= $this->input->post('imgPath');
+			$vType= $this->input->post('vType');			
+			$rndS=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdCategoryDetail('".$vType."','".$categoryID."','".$categoryName."','".$imgPath."',@vresult)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
+		public function getCategoryDetails($vType,$vID=''){
+			$query = $this->db->query("CALL usp_getCategory('".$vType."','".$vID."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
 	}

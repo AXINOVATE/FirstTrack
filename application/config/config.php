@@ -368,5 +368,7 @@ $config['proxy_ips'] = '';
 */
 $config['asset_path'] 		= '/FirstTrack/assets';
 $config['prefix'] 		= '/FirstTrack';
+$config['ext_img'] = array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tiff', 'svg'); //Images
+$config['upload_path_category'] = 'assets/upload/category/';
 /* End of file config.php */
 /* Location: ./application/config/config.php */

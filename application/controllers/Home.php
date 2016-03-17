@@ -136,11 +136,21 @@ class Home extends CI_Controller {
 	public function add_modify_manufactureDetails()	{						
 		echo json_encode($this->manage_products_model->add_modify_manufactureDetails());
 	}
-	public function add_modify_product_type(){
+	public function add_modify_categoryDetails()	{						
+		echo json_encode($this->manage_products_model->add_modify_categoryDetails());
+	}
+	public function upload_files($type){ 
+		$file = $_FILES['files'];
+		$retvalue['path'] = $this->home_model->upload_file($file, $type);
+		echo json_encode($retvalue);
+	}
+	public function add_modify_category($categoryID=''){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_product_type',$data);
+		$data['editcategoryDetails']= $this->manage_products_model->getCategoryDetails('ONE',$categoryID);
+		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+		$this->load->view('admin/products/add_modify_category',$data);
 	}
 	public function add_modify_body_type(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
