@@ -10,7 +10,7 @@
 *
 *
 */
-    class Add_modify_location_model extends CI_Model{
+    class Manage_products_model extends CI_Model{
         /**
            * @return void
         **/
@@ -37,19 +37,19 @@
 			return $query->result_array();
 		}
 		public function save_location_detail(){
-			$vresult="Faild";
+			$vresult="Failed";
 			$country_id= $this->input->post('country_id');	
 			$states_id= $this->input->post('states_id');	
 			$city_id= $this->input->post('city_id');
 			$location_detail= $this->input->post('location_detail');				
 			$query = $this->db->query("CALL usp_insUpdLocationsDetail('".$country_id."','".$states_id."','".$city_id."','".$location_detail."',@vresult)");
 			$query2=$this->db->query("SELECT @vresult as status")->row();
-			//mysqli_next_result($this->db->conn_id);	
+			mysqli_next_result($this->db->conn_id);	
 			//return $query->status;		
 			if ($query1 = "Successfully"){
 				return "Successfully";
 			}else{
-				return "Faild";
+				return "Failed";
 			}
 		}
 		

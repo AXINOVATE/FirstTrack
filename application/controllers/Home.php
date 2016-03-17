@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('home_model');
+		$this->load->model('manage_products_model');
 		//$this->load->database();	
 	}
 
@@ -105,7 +106,22 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['COUNTRY']= $this->manage_products_model->location_detail('COUNTRY');
+		$data['STATES']= $this->manage_products_model->location_detail('STATES');
+		$data['CITIES']= $this->manage_products_model->location_detail('CITIES');	
 		$this->load->view('admin/products/add_modify_location',$data);
+	}
+	public function get_particular_states()
+	{
+		$country_id= $this->input->post('country_id');		
+		echo json_encode($this->manage_products_model->get_particular_states($country_id));
+	}
+	public function get_particular_city()	{
+		$state_id= $this->input->post('states_id');		
+		echo json_encode($this->manage_products_model->get_particular_city($state_id));
+	}
+	public function save_location_detail()	{						
+		echo json_encode($this->manage_products_model->save_location_detail());
 	}
 	public function add_modify_manufacture(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';

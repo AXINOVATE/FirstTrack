@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if(defined('BASEPATH') OR exit('No direct script access allowed'));
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
 ?>
@@ -14,7 +14,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet">	
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<style type="text/css">
 		
 	</style>
@@ -28,18 +28,18 @@ $prefix=$this->config->item('prefix');
 	
 	<div class="body-container">
 		<section class="container">
-		<div id="my-toast-location" style="position:relative; top:0px; right:20px; z-index:100 !important; float:right;">ddff</div>
+		<div id="my-toast-location" style="position:relative; top:0px; right:20px; z-index:100 !important; float:right;"></div>
 			<div class="row">
 				<h4>Add or Modify Locations</h4>
 				<hr>
 				<div class="panel panel-default Locations-panel" style="border-radius: 0px;border:1px solid #f2f2f2;">
 					<div class="panel-body">
-						<div class="col-md-4">
-							<form class="form-horizontal">
+						<form class="form-horizontal" name="location_data" role="form"  method="POST" id="location_data"  onsubmit="return false">
+							<div class="col-md-4">
 							  <div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label">Country</label>
 								<div class="col-sm-10">
-								   <select class="form-control entity-type select2" id="all-countrys" name="all-countrys" style="width:100%;">
+								   <select class="form-control entity-type select2" id="all-countrys" name="all-countrys" style="width:100%;" va_req="true">
 								   <option value="">--Select country --</option>
 									<?php foreach ( $COUNTRY as $country){
 										echo '<option value="'.$country['countryID'].'">'.$country['countryName'].'</option>';
@@ -48,71 +48,60 @@ $prefix=$this->config->item('prefix');
 								   </select>
 								</div>
 							  </div>
-							</form>
+							</div>
+						<div class="col-md-4">
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">State</label>
+							<div class="col-sm-10">
+							   <select class="form-control entity-type select2" va_req="true" id="all-states" name="all_states" style="width:100%;">
+							   <option value=""  >--Select State --</option>
+								<?php foreach ( $STATES as $state){
+									echo '<option value="'.$state['stateID'].'">'.$state['stateName'].'</option>';
+								}
+								?>	
+							   </select>
+							</div>
+						  </div>
 						</div>
 						<div class="col-md-4">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">State</label>
-								<div class="col-sm-10">
-								   <select class="form-control entity-type select2" id="all-states" name="all_states" style="width:100%;">
-								   <option value=""  >--Select State --</option>
-									<?php foreach ( $STATES as $state){
-										echo '<option value="'.$state['stateID'].'">'.$state['stateName'].'</option>';
-									}
-									?>	
-								   </select>
-								</div>
-							  </div>
-							</form>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">City</label>
+							<div class="col-sm-10">
+							   <select class="form-control entity-type select2" va_req="true" id="all-cities" style="width:100%;">
+							   <option value="">--Select City --</option>
+								<?php foreach ( $CITIES as $city){
+									echo '<option value="'.$city['cityID'].'">'.$city['cityName'].'</option>';
+								}
+								?>									
+							   </select>
+							</div>
+						  </div>
 						</div>
 						<div class="col-md-4">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">City</label>
-								<div class="col-sm-10">
-								   <select class="form-control entity-type select2" id="all-cities" style="width:100%;">
-								   <option value="">--Select City --</option>
-									<?php foreach ( $CITIES as $city){
-										echo '<option value="'.$city['cityID'].'">'.$city['cityName'].'</option>';
-									}
-									?>									
-								   </select>
-								</div>
-							  </div>
-							</form>
-						</div>
-						<div class="col-md-4">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-2  control-label">Location</label>
-								<div class="col-sm-10 ">
-								  <textarea class="form-control" rows="3" id="location_detail"></textarea></div>
-							  </div>
-							</form>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-2  control-label">Location</label>
+							<div class="col-sm-10 ">
+							  <textarea class="form-control" rows="3" id="location_detail" va_req="true"></textarea></div>
+						  </div>
 						</div>	
 						<div class="col-md-4">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-3  control-label">Pin Code</label>
-								<div class="col-sm-9">
-								  <input class="form-control">
-								</div>
-							  </div>
-							</form>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-3  control-label">Pin Code</label>
+							<div class="col-sm-9">
+							  <input type="text" class="form-control" va_req="true">
+							</div>
+						  </div>
 						</div>	
 						<div class="col-md-2"></div>						
 						<div class="col-md-4">
-							<form class="form-horizontal">
-							  <div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label"></label>
-								<div class="col-sm-10">
-								   <a class="btn btn-default btn-primary pull-right" id="location-save" name="location_save" ><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </a>
-								</div>
-							  </div>
-							</form>
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label"></label>
+							<div class="col-sm-10">
+							   <a class="btn btn-default btn-primary pull-right" id="location-save" name="location_save" ><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </a>
+							</div>
+						  </div>
 						</div>
-						
+						</form>
 					</div>
 				</div>
 				<div class="col-md-12"><br>
@@ -158,23 +147,13 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
-<script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.iframe-transport.js"></script>
-<!-- The basic File Upload plugin -->
-<script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload.js"></script>
-<!-- The File Upload processing plugin -->
-<script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload-process.js"></script>
-<!-- The File Upload validation plugin -->
-<script src="<?php echo $assetsPath; ?>/plugin/file-upload/js/jquery.fileupload-validate.js"></script>
-
+<script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <!-- Bootstrap -->
-<script src="<?php echo $assetsPath; ?>/js/result_status.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/highlight.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/main.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
 	<script>
 		
 		$('document').ready(function(){	
-					
 			 $('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
@@ -226,40 +205,43 @@ $prefix=$this->config->item('prefix');
 				}
 			});
 		});		
-		$('#location-save').on('click', function(){
+		$("#location-save").click(function(){
+			xu_validation.form_submit('#location_data','save_location');
+		});
+		function save_location(){
 			var country_id = $('#all-countrys').val();						
 			var states_id = $('#all-states').val();
 			var city_id=$('#all-cities').val();
 			var location_detail=$('#location_detail').val();
-			var error=0;
-			if(country_id=='' ){error=1;}
-			if(states_id=='' ){error=1;}
-			if(city_id=='' ){error=1;}
-			if(location_detail=='' ){error=1;}
-			if(error==0){
-				$.ajax({
-					url:'<?php echo $prefix;?>/home/save_location_detail/',
-					data:{'country_id':country_id,'states_id':states_id,'city_id':city_id,'location_detail':location_detail},
-					type:'POST',
-					processData: true,
-					dataType:'JSON'
-				}).done(function(data){
-					
-					if(data == "Successfully"){	
-						$('#my-toast-location').toastee({
-                        type: 'success'
-						});	
-						window.location.reload();
-					}else{
-						$('#my-toast-location').toastee({
-                        type: 'error'
-						});	
-						setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
-					}
-				});
-			}
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/save_location_detail/',
+				data:{'country_id':country_id,'states_id':states_id,'city_id':city_id,'location_detail':location_detail},
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				
+				if(data == "Successfully"){	
+					$.gritter.add({
+						title: 'Success',
+						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					window.location.reload();
+				}else{
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Failed To Save',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+				}
+			});
+		}
+		/*$('#location-save').on('click', function(){
 			
-		});
+			
+		});*/
 		
 		
 	</script>
