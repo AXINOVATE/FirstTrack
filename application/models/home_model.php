@@ -43,6 +43,20 @@ class Home_model extends CI_Model{
 	public function salt(){
 		return substr(md5(uniqid(rand(), true)), 0, $this->config->item('salt_length'));
 	}
+	/**
+ * To create Random String
+ * return @varchar
+ **/
+	function randStrGen($len=5){
+			$result = "";
+			$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+			$charArray = str_split($chars);
+			for($i = 0; $i < $len; $i++){
+				$randItem = array_rand($charArray);
+				$result .= "".$charArray[$randItem];
+			}
+			return 'r'.$result;
+		}
 	
 	public function register(){
 		$retvalue = array();

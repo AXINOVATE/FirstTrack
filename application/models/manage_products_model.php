@@ -16,7 +16,7 @@
         **/
        function __construct() {
 		parent::__construct();   
-			
+			$this->load->model('home_model');
 		}
 		
 		public function location_detail($Vtype='',$vid=''){			
@@ -55,6 +55,26 @@
 				return $vresult;
 			}
 		}
-		
+		public function add_modify_manufactureDetails(){
+			$vresult['status']="Failed";
+			$manufactureID= $this->input->post('manufactureID');	
+			$manufactureName= $this->input->post('manufactureName');
+			$vType= $this->input->post('vType');			
+			$rndS=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdManufatureDetail('".$vType."','".$manufactureID."','".$manufactureName."',@vresult)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
+		public function getManufatureDetails($vType,$vID=''){
+			$query = $this->db->query("CALL usp_getManufacture('".$vType."','".$vID."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
 		
 	}

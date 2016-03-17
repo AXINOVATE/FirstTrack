@@ -125,11 +125,16 @@ class Home extends CI_Controller {
 	public function save_location_detail()	{						
 		echo json_encode($this->manage_products_model->save_location_detail());
 	}
-	public function add_modify_manufacture(){
+	public function add_modify_manufacture($manufactureID=''){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['editmanufactureDetails']= $this->manage_products_model->getManufatureDetails('ONE',$manufactureID);
+		$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
 		$this->load->view('admin/products/add_modify_manufacture',$data);
+	}
+	public function add_modify_manufactureDetails()	{						
+		echo json_encode($this->manage_products_model->add_modify_manufactureDetails());
 	}
 	public function add_modify_product_type(){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
