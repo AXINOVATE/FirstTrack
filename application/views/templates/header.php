@@ -164,9 +164,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10" style="width:100%;" va_req="true" name="abVariant" id="abVariant">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="2" >Diesel</option>
+								<option value="">-- Select Variant --</option>								
 							</select>
 						</div>
 					   <div class="col-md-12">
