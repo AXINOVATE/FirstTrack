@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('home_model');
+		$this->load->model('manage_products_model');
 		//$this->load->database();	
 	}
 
@@ -38,6 +39,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
 	}
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url());
@@ -45,6 +47,7 @@ class Home extends CI_Controller {
 	public function login_check(){
 		echo json_encode($this->home_model->login($this->input->post('username'),$this->input->post('password')));
 	}
+
 	public function register(){
 		echo json_encode($this->home_model->register());
 	}
@@ -108,43 +111,20 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/edit_products',$data);
 	}
-
-	public function add_modify_location(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_location',$data);
+	public function get_particular_states()
+	{
+		$country_id= $this->input->post('country_id');		
+		echo json_encode($this->manage_products_model->get_particular_states($country_id));
 	}
-	public function add_modify_manufacture(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_manufacture',$data);
-	}
-	public function add_modify_product_type(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_product_type',$data);
-	}
-	public function add_modify_body_type(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_body_type',$data);
-	}
-	public function add_modify_product(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_product',$data);
+	public function get_particular_city()	{
+		$state_id= $this->input->post('states_id');		
+		echo json_encode($this->manage_products_model->get_particular_city($state_id));
 	}
 	public function news_detail(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/news_detail',$data);
-
 	}
 	public function view_dealers_products(){
 		$pageData['currentPage'] = 'MANAGE DEALERS';

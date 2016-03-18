@@ -1,0 +1,29 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Services extends CI_Controller {
+
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('home_model');
+		$this->load->model('services_model');
+		$this->load->model('manage_products_model');
+	}
+	public function advanced_booking(){		
+		 $this->services_model->advance_booking();
+	}
+	public function get_city(){		
+		echo json_encode($this->manage_products_model->location_detail('UCITY'));
+	}
+	public function getManufatureDetails(){		
+		echo json_encode($this->manage_products_model->getManufatureDetails('ALL'));
+	}
+	public function getModelDetail($vType='',$moID='',$maID=''){		
+		$vType="Maker-M";
+		$manufatureID = $this->input->post("abMaker_detail");		
+		echo json_encode($this->home_model->getModelDetail($vType,$moID='',$manufatureID));
+	}
+	public function getVariantDetail($vType,$vID=''){						
+		echo json_encode($this->home_model->getVariantDetail($vType,$vID=''));
+	}
+	
+}

@@ -43,6 +43,121 @@ class Home_model extends CI_Model{
 	public function salt(){
 		return substr(md5(uniqid(rand(), true)), 0, $this->config->item('salt_length'));
 	}
+	/**
+ * To create Random String
+ * return @varchar
+ **/
+	function randStrGen($len=5){
+			$result = "";
+			$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+			$charArray = str_split($chars);
+			for($i = 0; $i < $len; $i++){
+				$randItem = array_rand($charArray);
+				$result .= "".$charArray[$randItem];
+			}
+			return 'r'.$result;
+		}
+		/**
+ * Method upload_file for uploading files into server
+ * @param object
+ * @return string
+ **/
+	public function upload_file($file, $type='', $uploaddir=''){
+		$d=date('Ymdhms');
+		$path = '';
+		if($type=='image'){
+			$allowedExts = $this->config->item('ext_img');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='audio'){
+			$allowedExts = $this->config->item('ext_audio');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='video'){
+			$allowedExts = $this->config->item('ext_video');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='document'){
+			$allowedExts = $this->config->item('ext_document');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		else if($type=='scorm'){
+			$allowedExts = $this->config->item('ext_scorm');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){
+						$this->load->library('unzip');
+						$folderName=str_replace(".zip","",$path);
+						mkdir($folderName,0777);
+						$this->unzip->extract($path, $folderName);
+						$path= $folderName;
+					}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
+		return $path;
+	}
 	
 	public function login($userName,$password){
 		$retvalue = array();
@@ -125,8 +240,18 @@ class Home_model extends CI_Model{
 			$retvalue['status'] = false;
 		}
 		return $retvalue;
-	}
 
+	}	
+	public function getModelDetail($vType,$moID='',$maID=''){		
+		$query = $this->db->query("CALL usp_getModelDetail('".$vType."','".$moID."','".$maID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function getVariantDetail($vType,$vID=''){
+		$query = $this->db->query("CALL usp_getVariantDetail('".$vType."','".$vID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 }
 
 ?>
