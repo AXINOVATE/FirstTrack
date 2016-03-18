@@ -18,8 +18,17 @@
 		adv_getManufatureDetails();		
 		adv_getVariantDetail();
 	});
+	$('#on-road-assistance,#on-road-assistance1').on('click', function(){
+		by_road_on_get_cities();
+		by_road_on_getManufatureDetails();		
+		by_road_on_getVariantDetail();
+		by_road_on_categories();
+	});
 	$('document').ready(function(){
 		$('#abModel').html('');
+	});
+	$('document').ready(function(){
+		$('#boraModel').html('');
 	});
 	$('#abMaker').on('change',function(){		
 		var abMaker_detail = $(this ,'#abMaker').val();
@@ -39,6 +48,30 @@
 						$('#abModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
 					}
 					$('#abModel').select2();
+				}else{
+					
+				}
+			});
+		
+	});
+	$('#boraMaker').on('change',function(){		
+		var abMaker_detail = $(this ,'#boraMaker').val();
+		var manufactureDetail="NUll";
+		var Maker_detail="Maker-M";
+		$.ajax({
+			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
+			data:{},
+			type:'POST',
+			processData: true,
+			dataType:'JSON'
+			}).done(function(data){
+				if(data.length > -1){					
+					$('#boraModel').html('');					
+					var i=0;
+					for(i=0;i< data.length;i++){
+						$('#boraModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
+					}
+					$('#boraModel').select2();
 				}else{
 					
 				}
@@ -266,4 +299,99 @@ function save_advance_booking(){
 }
 /* Advanced Booking End Starts Here */
 
+/* by road assistance pop up start here*/
 
+function by_road_on_get_cities(){	
+	$.ajax({
+		url:prefix+'/services/get_city',
+		data:{},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+		}).done(function(data){
+			if(data.length > -1){					
+				$('#boraCity').html('');					
+				var i=0;
+				$('#boraCity').append('<option value="">-- Select City --</option>');
+				for(i=0;i< data.length;i++){
+					$('#boraCity').append('<option value="'+data[i]['cityID']+'">'+data[i]['cityName']+'</option>');
+				}
+				$('#boraCity').select2();
+			}else{
+				
+			}
+		});
+}
+function by_road_on_getManufatureDetails(){	
+	$.ajax({
+		url:prefix+'/services/getManufatureDetails',
+		data:{},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+		}).done(function(data){
+			if(data.length > -1){					
+				$('#boraMaker').html('');					
+				var i=0;
+				$('#boraMaker').append('<option value="">-- Select Maker --</option>');
+				for(i=0;i< data.length;i++){
+					$('#boraMaker').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
+				}
+				$('#boraMaker').select2();
+			}else{
+				
+			}
+		});
+
+}
+function  by_road_on_categories(){
+	$.ajax({
+		url:prefix+'/home/get_category_detail/ALL',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Category --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].categoryID+"' >"+data[i].categoryName+"</option>";
+		}
+		$("#boraCategory").html(html);
+	});
+}
+function by_road_on_getVariantDetail(){	
+	$.ajax({
+		url:prefix+'/services/getVariantDetail/ALL/null',
+		data:{},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+
+		}).done(function(data){
+			if(data.length > -1){					
+				$('#boraVarient').html('');					
+				var i=0;
+				$('#boraVarient').append('<option value="">-- Select Variant --</option>');
+				for(i=0;i< data.length;i++){
+					$('#boraVarient').append('<option value="'+data[i]['variantID']+'">'+data[i]['variantName']+'</option>');
+				}
+				$('#boraVarient').select2();
+			}else{
+				
+			}
+		});
+}
+
+var prefix=$("#prefix").data("prefix");
+function save_road_assistance(){
+	$.ajax({
+			url:prefix+'/services/advanced_booking',
+			dataType:'json',
+			type:'POST',
+			data:$('#By-on-road-assistance').serialize()
+		}).done(function(data){				
+			
+		});
+}
+
+/*end of road assistance popup*/
