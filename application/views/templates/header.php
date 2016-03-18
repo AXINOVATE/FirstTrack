@@ -488,19 +488,19 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="vehlone_amount_paid" style="width:100%;" name="vehlone_amount_paid"  va_req="true">
+							<select class="form-control mb-10" id="vehlone_booking_amount" style="width:100%;" name="vehlone_booking_amount"  va_req="true">
 								<option value="">-- Have you Paid Booking Amount  --</option>
-								<option value="1" >yes</option>
-								<option value="1" >no</option>
+								<option value="Paid" >yes</option>
+								<option value="Not Paid" >no</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" va_req="true" id="vehlone_preference_bank" name="vehlone_preference_bank" style="width:100%;">
 								<option value="">-- Any Preference to Specific Bank ?  --</option>
-								<option value="1" >HDFC</option>
-								<option value="1" >KOTAK</option>
-								<option value="1" >ICICI</option>
-								<option value="1" >YES</option>
+								<option value="HDFC" >HDFC</option>
+								<option value="KOTAK" >KOTAK</option>
+								<option value="ICICI" >ICICI</option>
+								<option value="YES" >YES</option>
 							</select>
 						</div>		
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -524,43 +524,43 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_cust_type" va_req="true" name="vehlone_cust_type" style="width:100%;">
 								<option value="">-- customer type --</option>
-								<option value="1" >Salaried</option>
-								<option value="1" >Self Employed</option>
-								<option value="1" >Partnership-Pvt Ltd –Public Ltd Co</option>
+								<option value="Salaried" >Salaried</option>
+								<option value="Self Employed" >Self Employed</option>
+								<option value="Partnership-Pvt Ltd –Public Ltd Co" >Partnership-Pvt Ltd –Public Ltd Co</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_loan_amount" va_req="true" name="vehlone_loan_amount" style="width:100%;">
 								<option value="">-- loan amount --</option>
-								<option value="1" >Less than 1 Lak</option>
-								<option value="1" >1-2 Laks</option>
-								<option value="1" >3 to 5 Laks</option>
-								<option value="1" >5 to 7 Laks</option>
-								<option value="1" >10 laks to 15 Laks</option>
-								<option value="1" >15 to 20 Laks</option>
-								<option value="1" >20 to 50 Laks</option>
-								<option value="1" >50 Laks and Above</option>  
+								<option value="Less than 1 Lakh" >Less than 1 Lakh</option>
+								<option value="1-2 Lakhs" >1-2 Lakhs</option>
+								<option value="3 to 5 Lakhs" >3 to 5 Lakhs</option>
+								<option value="5 to 7 Lakhs" >5 to 7 Lakhs</option>
+								<option value="10 lakhs to 15 Lakhs" >10 lakhs to 15 Lakhs</option>
+								<option value="15 to 20 Lakhs" >15 to 20 Lakhs</option>
+								<option value="20 to 50 Lakhs" >20 to 50 Lakhs</option>
+								<option value="50 Lakhs and Above" >50 Lakhs and Above</option>  
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_loan_duration" va_req="true" name="vehlone_loan_duration" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
 								<option value="1" >1 Year</option>
-								<option value="1" >2 Year</option>
-								<option value="1" >3 Years</option>
-								<option value="1" >4 Years</option>
-								<option value="1" >5 Years</option>
-								<option value="1" >6 Years and above</option>
+								<option value="2" >2 Year</option>
+								<option value="3" >3 Years</option>
+								<option value="4" >4 Years</option>
+								<option value="5" >5 Years</option>
+								<option value="6" >6 Years and above</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_purchase_time" va_req="true" name="vehlone_purchase_time" style="width:100%;">
 								<option value="">-- Purchase Time Frame  --</option>
-								<option value="1" >Immediate</option>
-								<option value="1" >1-2 weeks</option>
-								<option value="1" > 3-4 weeks</option>
-								<option value="1" >4 to 8 weeks</option>
-								<option value="1" > 10 weeks and Above</option>
+								<option value="Immediate" >Immediate</option>
+								<option value="1-2 weeks" >1-2 weeks</option>
+								<option value="3-4 weeks" > 3-4 weeks</option>
+								<option value="4 to 8 weeks" >4 to 8 weeks</option>
+								<option value="10 weeks and Above" > 10 weeks and Above</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
@@ -576,15 +576,15 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_dealerName" va_req="true" name="vehlone_dealerName" style="width:100%;">
 								<option value="">-- Select Dealer Name --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
+								<option value="King Cars">King Cars</option>
+								<option value="Super Cars">Super Cars</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_dealerLocation" va_req="true" id="vehlone_dealerLocation" style="width:100%;">
 								<option value="">-- Select Dealer Location --</option>
-								<option value="1" >HSR Layout</option>
-								<option value="1" >Majestic</option>
+								<option value="HSR Layout" >HSR Layout</option>
+								<option value="Majestic" >Majestic</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -594,25 +594,27 @@ $prefix=$this->config->item('prefix');
 							<input type="text" class="form-control" id="bank" name="bank" placeholder="Bank Name" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="annual" name="annual" placeholder="Annual Income" />
+							<input type="text" class="form-control" id="vehlone_annual" name="vehlone_annual" placeholder="Annual Income"  va_req="true"/>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="Bank Location" />
+							<input type="text" class="form-control" id="vehlone_bankLocation" name="vehlone_bankLocation" placeholder="Bank Location"  va_req="true"/>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+							<input type="text" class="form-control" id="vehlone_timeticall" name="vehlone_timeticall" placeholder="what is the best time to call you?"  va_req="true"/>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="which bank you have salary account?" />
+							<input type="text" class="form-control" id="vehlone_salaryAccountBank" name="vehlone_salaryAccountBank" placeholder="which bank you have salary account?" va_req="true" />
 						</div>
 						<div class="col-md-12">
 							<label for="comment">Any specific comment</label>
-							<textarea class="form-control" rows="2" id="comment"></textarea>
+							<textarea class="form-control" rows="2" id="vehlone_comment"  va_req="true"></textarea>
 						 </div>
 						<div class="form-group">
-							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
-							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							<div class="col-md-12">
+								<input type="checkbox" class="col-md-1 col-sm-1 col-xs-2" name="vehlone_termsandconditions" id="vehlone_termsandconditions" value="agreed" style="float:left;"  va_req="true">
+								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+									I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								</div>
 							</div>
 						</div>
 						<div class="form-group">

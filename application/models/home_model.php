@@ -252,6 +252,90 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+	public function add_vehicle_loan(){
+		$vresult['status'] = "Failed";
+		$xml ="<ROOT>
+					<HEADER>";
+		$vType = $this->input->post('vType');
+		$fullname = $this->input->post('fullname');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$address = $this->input->post('address');
+		$booking_amount = $this->input->post('booking_amount');
+		$preferenceBank = $this->input->post('preferenceBank');
+		$pan = $this->input->post('pan');
+		$cityID = $this->input->post('cityID');
+		$categoryID = $this->input->post('categoryID');
+		$manufactureID = $this->input->post('manufactureID');
+		$customer_type = $this->input->post('customer_type');
+		$loan_amount = $this->input->post('loan_amount');
+		$loan_duration = $this->input->post('loan_duration');
+		$purchase_time = $this->input->post('purchase_time');
+		$modelID = $this->input->post('modelID');
+		$variantID = $this->input->post('variantID');
+		$dealerName = $this->input->post('dealerName');
+		$dealerLocation = $this->input->post('dealerLocation');
+		$annualIncome = $this->input->post('annualIncome');
+		$bankLocation = $this->input->post('bankLocation');
+		$timeToCall = $this->input->post('timeToCall');
+		$salaryAccountBank = $this->input->post('salaryAccountBank');
+		$comment = $this->input->post('comment');
+		$termsandconditions = $this->input->post('termsandconditions');
+		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
+						<FULLNAME>".$fullname."</FULLNAME>
+						<PHONE>".$phone."</PHONE>
+						<EMAIL>".$email."</EMAIL>
+						<ADDRESS>".$address."</ADDRESS>
+						<BOOKINGAMOUNT>".$booking_amount."</BOOKINGAMOUNT>
+						<PREFERENCEBANK>".$preferenceBank."</PREFERENCEBANK>
+						<PAN>".$pan."</PAN>
+						<CITYID>".$cityID."</CITYID>
+						<CATEGORYID>".$categoryID."</CATEGORYID>
+						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+						<CUSTOMERTYPE>".$customer_type."</CUSTOMERTYPE>
+						<LOANAMOUNT>".$loan_amount."</LOANAMOUNT>
+						<LOANDURATION>".$loan_duration."</LOANDURATION>
+						<PURCHASETIME>".$purchase_time."</PURCHASETIME>
+						<MODELID>".$modelID."</MODELID>
+						<VARIANTID>".$variantID."</VARIANTID>
+						<DEALERNAME>".$dealerName."</DEALERNAME>
+						<DEALERLOCATION>".$dealerLocation."</DEALERLOCATION>
+						<ANNUALINCOME>".$annualIncome."</ANNUALINCOME>
+						<BANKLOCATION>".$bankLocation."</BANKLOCATION>
+						<TIMETOCALL>".$timeToCall."</TIMETOCALL>
+						<SALARYACCOUNTBANK>".$salaryAccountBank."</SALARYACCOUNTBANK>
+						<COMMENT>".$comment."</COMMENT>
+						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
+					</HEADER>
+				</ROOT>";
+			$rndS=$this->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdVehicleLoan('".$xml."',@vresult)");
+			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+			mysqli_next_result($this->db->conn_id);	
+			if ($query1[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+	}
+		/**
+ * To send email
+ * @param from varchar, to varchar, cc varchar, subject varchar, message varchar
+ * @return none
+ **/
+	public function send_email($from, $to, $cc, $subject, $message){
+		$this->load->library('Email');
+		$this->email->from($from);
+		$this->email->to($to);
+		$this->email->cc($cc);
+		$this->email->subject($subject);
+		$this->email->message($message);
+		$this->email->send();
+		//echo $this->email->print_debugger();
+		return 1;
+	}
 }
 
 ?>

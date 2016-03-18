@@ -87,4 +87,5 @@ class Admin extends CI_Controller {
 		$data['getCategory'] = array();
 		$this->load->view('admin/products/add_products',$data);
 	}
+
 }

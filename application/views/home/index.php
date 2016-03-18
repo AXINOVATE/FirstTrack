@@ -12,6 +12,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 	</style>
@@ -294,6 +295,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
+<script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
 	
 	$('.cat-box').on('mouseover', function(){

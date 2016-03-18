@@ -132,6 +132,56 @@ function get_vehlone_varient(){
 		$("#vehlone_variant").html(html);
 	});
 }
+function save_vehicle_loan(){
+	var fullname=$("#vehlone_username").val();
+	var phone=$("#vehlone_phone").val();
+	var email=$("#vehlone_email").val();
+	var address=$("#vehlone_address").val();
+	var booking_amount=$("#vehlone_booking_amount").val();
+	var preferenceBank=$("#vehlone_preference_bank").val();
+	var pan=$("#vehlone_pan").val();
+	var cityID=$("#vehlone_city").val();
+	var categoryID=$("#vehlone_category").val();
+	var manufactureID=$("#vehlone_maker").val();
+	var customer_type=$("#vehlone_cust_type").val();
+	var loan_amount=$("#vehlone_loan_amount").val();
+	var loan_duration=$("#vehlone_loan_duration").val();
+	var purchase_time=$("#vehlone_purchase_time").val();
+	var modelID=$("#vehlone_model").val();
+	var variantID=$("#vehlone_variant").val();
+	var dealerName=$("#vehlone_dealerName").val();
+	var dealerLocation=$("#vehlone_dealerLocation").val();
+	var annualIncome=$("#vehlone_annual").val();
+	var bankLocation=$("#vehlone_bankLocation").val();
+	var timeToCall=$("#vehlone_timeticall").val();
+	var salaryAccountBank=$("#vehlone_salaryAccountBank").val();
+	var comment=$("#vehlone_comment").val();
+	var termsandconditions=$("#vehlone_termsandconditions").val();
+	var vType="INSERT";
+	$.ajax({
+		url:prefix+'/home/add_vehicle_loan/',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'booking_amount':booking_amount,'preferenceBank':preferenceBank,'pan':pan,'cityID':cityID,'categoryID':categoryID,'manufactureID':manufactureID,'customer_type':customer_type,'loan_amount':loan_amount,'loan_duration':loan_duration,'purchase_time':purchase_time,'modelID':modelID,'variantID':variantID,'dealerName':dealerName,'dealerLocation':dealerLocation,'annualIncome':annualIncome,'bankLocation':bankLocation,'timeToCall':timeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Success',
+				text: 'Saved Successfully',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
+	});
+}
 /*------------------- Vechicle loan Popup Ends Here -----------------*/
 	
 /* Advanced Booking Starts Here */
