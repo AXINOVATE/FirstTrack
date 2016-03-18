@@ -139,8 +139,7 @@ $prefix=$this->config->item('prefix');
 								<?php foreach ( $get_city as $citys){
 										echo '<option value="'.$citys['cityID'].'" '.$selected.'>'.$country['cityName'].'</option>';
 									}
-								?>	
-								
+								?>
 							</select>
 						</div>
 						<div class="col-md-4">
@@ -156,8 +155,11 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abModel" id="abModel">
 								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="2" >I20</option>
+								<?php foreach ( $getMakerDetail as $getMakerDetails){
+										$selected='';
+										echo '<option value="'.$getMakerDetails['makerID'].'" '.$selected.'>'.$getMakerDetails['makerName'].'</option>';
+									}
+								?>	
 							</select>
 						</div>
 						<div class="col-md-4">

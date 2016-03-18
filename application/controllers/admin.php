@@ -83,6 +83,8 @@ class Admin extends CI_Controller {
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['getMakers'] = array();
+		$data['getCategory'] = array();
 		$this->load->view('admin/products/add_products',$data);
 	}
 }
