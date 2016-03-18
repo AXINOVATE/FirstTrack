@@ -21,12 +21,14 @@ class Services_model  extends CI_Model{
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>INSERT</ACTIONTYPE>
-					<ADVFULLNAME>".$name."</NAME>
-					<USERNAME>".$email."</USERNAME>
-					<EMAIL>".$email."</EMAIL>
-					<PASSWORD>".$password."</PASSWORD>
-					<PHONE>".$phone."</PHONE>
-					<ROLE>User</ROLE>
+					<ADVFULLNAME>".$adfullName."</ADVFULLNAME>
+					<ADVPHONE>".$abphone."</ADVPHONE>
+					<ADVEMAILID>".$abemailID."</ADVEMAILID>
+					<ADVCITY>".$abCity."</ADVCITY>
+					<ADVMAKER>".$abMaker."</ADVMAKER>
+					<ADVMODEL>".$abModel."</ADVMODEL>
+					<ADVVARIANT>".$abVariant."</ADVVARIANT>
+					<ADVTC>".$abTermsConditions."</ADVTC>				
 				</HEADER>
 			</ROOT>";		 
 	}
