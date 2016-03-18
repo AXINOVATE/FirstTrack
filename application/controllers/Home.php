@@ -38,6 +38,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
 	}
+	
 	public function register(){
 		echo json_encode($this->home_model->register());
 	}

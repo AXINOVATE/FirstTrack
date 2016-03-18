@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix');
 ?>
+<input type="hidden" data-prefix="<?php echo $prefix;?>" id="prefix">
 <div class="top-content-container hidden-xs" >
 	<div class="container">
 		<div class="row">
@@ -102,14 +103,14 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">Advance Booking</h4>
 				</div>
-				<form method="post" action="">
+				<form class="form-horizontal" name="Advance_Booking" role="form"  method="POST" id="Advance-Booking" submit="return false">
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+							<input type="text" class="form-control" va_req="true" placeholder="Username" name="abFullName" aria-describedby="basic-addon1">
 							</div>
 						</div>
 					</div>
@@ -118,7 +119,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />					
+							<input type="text" class="form-control"  va_req="true" id="abphone" name="abphone" placeholder="eg. 9874563110" />					
 							</div>
 						</div>
 					</div>
@@ -128,40 +129,40 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />				
+							<input type="text" class="form-control" va_email="true"   id="abemailID" name="abemailID" placeholder="tony@gmail.com" />				
 							</div>
 						</div>
 					</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abCity" id="abCity">
+								<option value="" >-- Select City --</option>
 								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
+								<option value="2" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abMaker" id="abMaker">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
+								<option value="2" >Hyundai</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abModel" id="abModel">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
+								<option value="2" >I20</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" style="width:100%;" va_req="true" name="abVariant" id="abVariant">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
+								<option value="2" >Diesel</option>
 							</select>
 						</div>
 					   <div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="true" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
@@ -169,7 +170,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="" class="search-btn" id="advance-booking" style="background-color:#F9D133;" >Save</a>
+							<a href="#" class="search-btn" id="advance-booking" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>

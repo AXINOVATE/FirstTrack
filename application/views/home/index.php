@@ -304,6 +304,8 @@ $prefix=$this->config->item('prefix');
 		$(this).addClass('bg-lightblue');
 		$('.cat-box').addClass('bg-lightgrey');
 	});
+	
+	
 </script>
 </body>
 </html>
