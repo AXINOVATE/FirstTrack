@@ -165,12 +165,6 @@ class Home extends CI_Controller {
 		$data['bodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ALL');
 		$this->load->view('admin/products/add_modify_body_type',$data);
 	}
-	public function add_modify_product(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/add_modify_product',$data);
-	}
 	public function news_detail(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
