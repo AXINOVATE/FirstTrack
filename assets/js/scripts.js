@@ -50,6 +50,7 @@
 		get_vehlone_cities();
 		get_vehlone_categories();
 		get_vehlone_manufacture();
+		get_vehlone_varient();
 	});
 	
 })(jQuery);
@@ -116,7 +117,7 @@ $("#vehlone_maker").on('change',function(){
 		$("#vehlone_model").html(html);
 	});
 });
-$("#vehlone_maker").on('change',function(){
+function get_vehlone_varient(){
 	$.ajax({
 		url:prefix+'/services/getVariantDetail/ALL',
 		type:'POST',
@@ -126,11 +127,11 @@ $("#vehlone_maker").on('change',function(){
 		var len=data.length;
 		html = "<option value=''>-- Select Varient --</option>";
 		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
+			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
 		}
 		$("#vehlone_variant").html(html);
 	});
-});
+}
 /*------------------- Vechicle loan Popup Ends Here -----------------*/
 	
 /* Advanced Booking Starts Here */
