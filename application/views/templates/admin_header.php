@@ -43,7 +43,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href="<?php echo $prefix;?>/admin/add_manufacture">Manufacture</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_category">Category</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_body_type">Body Type</a></li>
-						<li><a href="<?php echo $prefix;?>/home/add_modify_product">Products</a></li>
+						<li><a href="<?php echo $prefix;?>/admin/add_products">Products</a></li>
 						<li><a href="#">Products Category</a></li>
 					</ul>
 				</li>
