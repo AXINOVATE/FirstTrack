@@ -60,7 +60,7 @@ $prefix=$this->config->item('prefix');
 								foreach($manufactureDetails as $MD){ ?>
 										<tr>
 									<td><?php echo $MD['manufactureName']; ?></td>								
-									<td><a href="<?php echo $prefix;?>/home/add_modify_manufacture/<?php echo $MD['manufactureID'];?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete_manufacture" data-mid="<?php echo $MD['manufactureID'];?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+									<td><a href="<?php echo $prefix;?>/home/add_manufacture/<?php echo $MD['manufactureID'];?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete_manufacture" data-mid="<?php echo $MD['manufactureID'];?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 									
 								</tr>
 								<?php
@@ -96,7 +96,7 @@ $prefix=$this->config->item('prefix');
 				vType='EDIT';
 			}
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/add_modify_manufactureDetails/',
+				url:'<?php echo $prefix;?>/admin/add_modify_manufactureDetails/',
 				data:{'vType':vType,'manufactureID':manufactureID,'manufactureName':manufactureName},
 				type:'POST',
 				processData: true,
@@ -108,21 +108,21 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_manufacture";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_manufacture";},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_manufacture";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_manufacture";},1000);
 				}
 			});
 		}
 		$(".delete_manufacture").click(function(){
 			var manufactureID=$(this).data('mid');
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/add_modify_manufactureDetails/',
+				url:'<?php echo $prefix;?>/admin/add_modify_manufactureDetails/',
 				data:{'vType':'DELETE','manufactureID':manufactureID,'manufactureName':''},
 				type:'POST',
 				processData: true,
@@ -134,14 +134,14 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_manufacture";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_manufacture";},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_manufacture";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_manufacture";},1000);
 				}
 			});
 		});

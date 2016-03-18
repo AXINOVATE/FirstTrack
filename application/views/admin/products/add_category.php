@@ -94,7 +94,7 @@ $prefix=$this->config->item('prefix');
 									<tr>
 										<td><?php echo $CD['categoryName']; ?></td>	
 										<td><center><img src="<?php echo $prefix.'/'.$CD['imgPath'];?>" class="img-rounded img-responsive " alt="Cinque Terre" height="30px" width="30%"></center></td>
-										<td><a href="<?php echo $prefix.'/home/add_modify_category/'.$CD['categoryID']; ?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete-category" data-cid="<?php echo $CD['categoryID']; ?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+										<td><a href="<?php echo $prefix.'/home/add_category/'.$CD['categoryID']; ?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete-category" data-cid="<?php echo $CD['categoryID']; ?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 										
 									</tr>
 							<?php	
@@ -133,7 +133,7 @@ $prefix=$this->config->item('prefix');
 			placeholder: "Select",
 			allowClear: true
 		});
-		xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'image', '<?php echo $prefix;?>/home/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
+		xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 	});	 
 	$("#save_category").click(function(){
 		xu_validation.form_submit('#category_data','save_category');
@@ -149,7 +149,7 @@ $prefix=$this->config->item('prefix');
 		var categoryName=$("#categoryName").val();
 		var imgPath=$("#image_file_path").val();
 		$.ajax({
-			url:'<?php echo $prefix;?>/home/add_modify_categoryDetails/',
+			url:'<?php echo $prefix;?>/admin/add_modify_categoryDetails/',
 			data:{'vType':vType,'categoryID':categoryID,'categoryName':categoryName,'imgPath':imgPath},
 			type:'POST',
 			processData: true,
@@ -161,14 +161,14 @@ $prefix=$this->config->item('prefix');
 					text: 'Saved Successfully',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_category";},1000);
+				setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_category";},1000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_category";},1000);
+				setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_category";},1000);
 			}
 		});
 	}
@@ -176,7 +176,7 @@ $prefix=$this->config->item('prefix');
 		var categoryID=$(this).data('cid');
 		var vType='DELETE';
 		$.ajax({
-			url:'<?php echo $prefix;?>/home/add_modify_categoryDetails/',
+			url:'<?php echo $prefix;?>/admin/add_modify_categoryDetails/',
 			data:{'vType':vType,'categoryID':categoryID,'categoryName':'','imgPath':''},
 			type:'POST',
 			processData: true,
@@ -188,14 +188,14 @@ $prefix=$this->config->item('prefix');
 					text: 'Saved Successfully',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_category";},1000);
+				setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_category";},1000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_category";},1000);
+				setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_category";},1000);
 			}
 		});
 	});
