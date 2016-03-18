@@ -1002,13 +1002,15 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">By on Road Assistance</h4>
 				</div>
+				<form class="form-horizontal" name="by_on_road_asistance" role="form"  method="POST" id="By-on-road-assistance" submit="return false">
 				<div class="modal-body">
+				
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control" id="username" name="username" placeholder="name">
+								<input type="text" class="form-control" id="boraFullName"  va_req="true" name="boraFullName" placeholder="name">
 							</div>
 						</div>
 					</div>
@@ -1017,7 +1019,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+								<input type="text" class="form-control" id="boraphone"  va_req="true" name="boraphone" placeholder="9164545924">
 							</div>
 						</div>
 					</div>
@@ -1026,14 +1028,14 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+								<input type="text" class="form-control" id="boraEmail" va_req="true" name="boraEmail" placeholder="smishra10002gmail">
 							</div>
 						</div>
 					</div>
 					
 						
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="boraCity"   va_req="true" name="boraCity" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
@@ -1043,7 +1045,7 @@ $prefix=$this->config->item('prefix');
 					
 						
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="boraMaker"   va_req="true" name="boraMaker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
@@ -1053,7 +1055,7 @@ $prefix=$this->config->item('prefix');
 					
 						
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="model" style="width:100%;">
+							<select class="form-control mb-10" id="boraModel"   va_req="true" name="boraModel" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
@@ -1063,7 +1065,7 @@ $prefix=$this->config->item('prefix');
 					
 						
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="variant" style="width:100%;">
+							<select class="form-control mb-10" id="boraVarient"  va_req="true" name="boraVarient" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
@@ -1073,14 +1075,14 @@ $prefix=$this->config->item('prefix');
 					
 						
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="category" style="width:100%;">
+							<select class="form-control mb-10" id="boraCategory"  va_req="true" name="boraCategory" style="width:100%;">
 								<option value="">-- Select Category --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="borause"   va_req="true" name="borause"style="width:100%;">
 								<option value="">-- personal use or commercial use  --</option>
 								<option value="1" >White Board</option>
 								<option value="1" > Yellow Board</option>
@@ -1089,14 +1091,14 @@ $prefix=$this->config->item('prefix');
 					
 					
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="category" style="width:100%;">
+							<select class="form-control mb-10" id="boraplan" va_req="true" name="boraplan"style="width:100%;">
 								<option value="">-- Are you looking--</option>
 								<option value="1" > Individual plan</option>
 								<option value="1" > Corporate Plan </option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="borapurchase"   va_req="true" name="borapurchase"style="width:100%;">
 								<option value="">--Bulk Purchase for Corporates  --</option>
 								<option value="1" >yes</option>
 								<option value="1" >no</option>
@@ -1105,14 +1107,14 @@ $prefix=$this->config->item('prefix');
 				
 				
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="category" style="width:100%;">
+							<select class="form-control mb-10" id="boraroadcompanies"  va_req="true" name="boraroadcompanies"style="width:100%;">
 								<option value="">-list of on road companies--</option>
 								<option value="1" > </option>
 								<option value="1" >  </option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="borapackage"  va_req="true" name="borapackage"style="width:100%;">
 								<option value="">Types of On Road Assistance Packages</option>
 								<option value="1" >yes</option>
 								<option value="1" >no</option>
@@ -1121,13 +1123,13 @@ $prefix=$this->config->item('prefix');
 					
 				
 						<div class="col-md-4 ">
-							<input type="text" class="form-control mb-10" id="pack benifits" name="pck benifits" placeholder="packge benifits" />
+							<input type="text" class="form-control mb-10" id="borapackbenifits"  va_req="true" name="borapackbenifits" placeholder="packge benifits" />
 						</div>
 						<div class="col-md-4 ">
-							<input type="text" class="form-control mb-10" id="pck cost" name="pck cost" placeholder="cost of the packege" />
+							<input type="text" class="form-control mb-10" id="borapackcost"  va_req="true"name="borapackcost" placeholder="cost of the packege" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type  mb-10"   va_req="true" name="boratimeframe"id="boratimeframe" style="width:100%;">
 								<option value="">-- Purchase Time Frame  --</option>
 								<option value="1" >Immediate</option>
 								<option value="1" >1-2 weeks</option>
@@ -1137,7 +1139,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type" id="variant" style="width:100%;">
+							<select class="form-control entity-type" id="borapaymentdetails" va_req="true" name="borapaymentdetails"style="width:100%;">
 								<option value="">--payment details --</option>
 								<option value="1" >NEFT</option>
 								<option value="1" >IMPS</option>
@@ -1149,15 +1151,15 @@ $prefix=$this->config->item('prefix');
 					
 					
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+							<input type="text" class="form-control" id="boratimecall" name="boratimecall" va_req="true" placeholder="what is the best time to call you?" />
 						</div>
 						<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 							<label for="comment">Any specific comment</label>
-                        <textarea class="form-control" rows="2" id="comment"></textarea>
+                        <textarea class="form-control" rows="2" id="boracomment" va_req="true" name="boracomment"></textarea>
 						</div>
 					
 					<div class="form-group">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value=""  va_req="true" id="boraagree" name="boraagree"style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
@@ -1165,19 +1167,17 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
+							<a href="javascript:void(0)" class="search-btn" id="by-on-road-assistance" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
+					</form>
 				</div>
 				
 			</div>
 		</div>
 	</div>
 	<!-- By on Road Assistance Modal ends here -->
-	
-	
-	
 	
 	<!-- get-instant-quote Modal starts here -->
 	<div class="modal fade  left blue-modals" id="get-instant-quote" role="dialog">

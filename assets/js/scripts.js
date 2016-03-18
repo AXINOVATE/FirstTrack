@@ -7,6 +7,9 @@
 	$('#advance-booking').on('click' ,function(){
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
+	$('#by-on-road-assistance').on('click' ,function(){
+		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
+	});
 	$('#test-drive,#test-drive1').on('click', function(){
 		get_cities();
 		get_maker();
