@@ -17,7 +17,20 @@ class Services_model  extends CI_Model{
 		 $abMaker=$this->input->post("abMaker");
 		 $abModel=$this->input->post("abModel");
 		 $abVariant=$this->input->post("abVariant");
-		 $abTermsConditions=$this->input->post("abTermsConditions");		
+		 $abTermsConditions=$this->input->post("abTermsConditions");
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT</ACTIONTYPE>
+					<ADVFULLNAME>".$adfullName."</ADVFULLNAME>
+					<ADVPHONE>".$abphone."</ADVPHONE>
+					<ADVEMAILID>".$abemailID."</ADVEMAILID>
+					<ADVCITY>".$abCity."</ADVCITY>
+					<ADVMAKER>".$abMaker."</ADVMAKER>
+					<ADVMODEL>".$abModel."</ADVMODEL>
+					<ADVVARIANT>".$abVariant."</ADVVARIANT>
+					<ADVTC>".$abTermsConditions."</ADVTC>				
+				</HEADER>
+			</ROOT>";		 
 	}
 
 }

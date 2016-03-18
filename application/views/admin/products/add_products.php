@@ -75,7 +75,7 @@ $prefix=$this->config->item('prefix');
 											Upload File
 										</label>
 										<div class="col-md-6 col-sm-6 col-xs-9">
-											<input type="hidden" name="cover_image" id="image_file_path" value="" va_req="true"/>
+											<input type="hidden" name="file_path" id="file_path" value="" va_req="true"/>
 											<div id="progress" class="progress">
 												<div id="image_progress" class="progress-bar progress-bar-success"></div>
 											</div>
@@ -83,7 +83,7 @@ $prefix=$this->config->item('prefix');
 										</div>
 										<div class="col-md-2 col-sm-2 col-xs-3">													
 											<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
-												<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+												<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="file_path" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
 											</span>
 										</div>
 									</div>
@@ -159,13 +159,40 @@ $prefix=$this->config->item('prefix');
                 placeholder: "Select",
                 allowClear: true
             });
-			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'document', '<?php echo $prefix;?>/home/upload_files/document',/(\.|\/)(<?php foreach($this->config->item('ext_document') as $img_type){echo $img_type.'|';} ?>~~)$/i);
+			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'document', '<?php echo $prefix;?>/admin/upload_files/document',/(\.|\/)(<?php foreach($this->config->item('ext_document') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 		});
 		$('#submit_btn').on('click',function(){
 			xu_validation.form_submit('#addproductform','add_product');
 		});
 		function add_product(){
-			alert('done');
+			$('#submit_btn').attr('disabled', 'disabled');
+			//$('#report').html("<center>Loading ...</center>");
+			
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/upload_products_list/',
+				type:'POST',
+				data: $('#addproductform').serialize(),
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.status == "success"){
+					$('.disable_div').remove();$.gritter.add({
+						title: 'Success ',
+						text: 'Emails delivered',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_product";},2000);
+				}
+				else{
+					var error_text = "";
+					if(data.message!=''){error_text = data['message'];}
+					else{error_text ='Failed to save';}
+					$('.disable_div').remove();$.gritter.add({
+						title: 'Failed',
+						text: error_text,
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+				}
+			});
 		}
 	</script>
 </body>

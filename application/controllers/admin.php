@@ -83,9 +83,47 @@ class Admin extends CI_Controller {
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$data['getMakers'] = array();
-		$data['getCategory'] = array();
+		$data['getMakers'] = $this->manage_products_model->getManufatureDetails('ALL');
+		$data['getCategory'] = $this->manage_products_model->getCategoryDetails('ALL');
 		$this->load->view('admin/products/add_products',$data);
 	}
-
+	public function upload_products_list()	{						
+		//var_dump($_POST); exit();
+		$retvalue=array();
+		$retvalue['status'] = 'success';
+		//to bye pass xss filter
+		//global $mypost;
+		$excel_path	= $this->input->post('file_path');;
+		//end of xss filter
+		
+		$Filepath=$excel_path;
+		if($Filepath==''){
+			$retvalue['status'] = 'failed';
+			return $retvalue;
+		}
+		
+		// Excel reader from http://code.google.com/p/php-excel-reader/
+		require(APPPATH.'third_party/excel-reader/php-excel-reader/excel_reader2.php');
+		require(APPPATH.'third_party/excel-reader/SpreadsheetReader.php');
+		
+		$userID=$this->session->userdata('userID');
+		//creating log file
+		$now = date('d M Y H:i:s');
+		$now1 = date('dmyHis');
+		
+		$error=0;
+		try
+		{
+			$Spreadsheet = new SpreadsheetReader($Filepath);
+			for($i=0;$i<=3;$i++){
+				echo $Spreadsheet->Sheets[0]['cells'][$i]['3']."<br/>";
+			}
+		}
+		catch (Exception $E)
+		{
+			$retvalue['message']= $E -> getMessage();
+		}
+		var_dump($Spreadsheet); exit();
+		echo json_encode($this->manage_products_model->upload_products_list());
+	}
 }
