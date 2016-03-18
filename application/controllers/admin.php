@@ -26,7 +26,6 @@ class Admin extends CI_Controller {
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$this->load->view('admin/request_report',$data);
 	}
-	
 	public function add_location($locationID=''){
 		$pageData['currentPage'] = 'MANAGE PRODUCT';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
@@ -79,5 +78,11 @@ class Admin extends CI_Controller {
 		$data['editbodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ONE',$bodyTypeID);
 		$data['bodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ALL');
 		$this->load->view('admin/products/add_body_type',$data);
+	}
+	public function add_products(){
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/products/add_products',$data);
 	}
 }
