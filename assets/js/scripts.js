@@ -215,3 +215,93 @@ function save_advance_booking(){
 		});
 }
 /* Advanced Booking End Starts Here */
+
+
+$("#on-road-assistance").on('click',function(){
+		get_road_assistance_cities();
+		get_road_assistance_categories();
+		get_road_assistance_manufacture();
+		get_road_assistance_varient();
+	});
+	
+})(jQuery);
+var prefix=$("#prefix").data("prefix");
+/*--------------------- road assistance Popup Stats Here -------------*/
+function get_road_assistance_cities(){
+	$.ajax({
+		url:prefix+'/home/location_detail/UCITY',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select City --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
+		}
+		$("#boraCity").html(html);
+	});
+}
+function get_road_assistance_categories(){
+	$.ajax({
+		url:prefix+'/home/get_category_detail/ALL',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Category --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].categoryID+"' >"+data[i].categoryName+"</option>";
+		}
+		$("#boraCategory").html(html);
+	});
+}
+function get_road_assistance_manufacture(){
+	$.ajax({
+		url:prefix+'/home/get_manufacture_detail/ALL',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Maker --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].manufactureID+"' >"+data[i].manufactureName+"</option>";
+		}
+		$("#boraMaker").html(html);
+	});
+}
+$("#boraMaker").on('change',function(){
+	var maID=$(this).val();
+	$.ajax({
+		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Model --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
+		}
+		$("#boraModel").html(html);
+	});
+});
+function get_road_assistance_varient(){
+	$.ajax({
+		url:prefix+'/services/getVariantDetail/ALL',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Varient --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
+		}
+		$("#boraVarient").html(html);
+	});
+}
+
+/* road assistance popup end here8/

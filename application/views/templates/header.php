@@ -1075,8 +1075,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraVarient"  va_req="true" name="boraVarient" style="width:100%;">
 								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
+								
 							</select>
 						</div>
 				
