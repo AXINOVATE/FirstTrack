@@ -84,7 +84,7 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-12"><br>
 					<table class="table table-bordered picture-color-edit">
 						<thead>
-						<th class="col-md-4">product type</th>	
+						<th class="col-md-4">Category type</th>	
                          <th class="col-md-4">picture</th>							
 						<th class="col-md-4">Action</th>													
 						</thead>
