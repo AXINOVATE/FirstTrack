@@ -44,6 +44,40 @@ class Home_model extends CI_Model{
 		return substr(md5(uniqid(rand(), true)), 0, $this->config->item('salt_length'));
 	}
 	
+	public function login($userName,$password){
+		$retvalue = array();
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>LOGIN</ACTIONTYPE>
+					<USERID></USERID>
+					<EMAIL>".$userName."</EMAIL>
+					<ROLE>User</ROLE>
+				</HEADER>
+			</ROOT>";
+			
+		$qry = $this->db->query('CALL usp_getUsers("'.$xml.'")');
+		$row = $qry->row();
+		if($row){
+			$password = $this->decrypt_password($row->password, $password);
+			
+			if($password == $row->password){
+				$this->session->set_userdata('login',true);
+				$this->session->set_userdata('userID',$row->userID);
+				$this->session->set_userdata('name',$row->firstName.' '.$row->lastName);
+				$this->session->set_userdata('email',$row->email);
+				$this->session->set_userdata('roleID',$row->defaultRoleID);
+				$retvalue['message'] = 'Logged in successfully';
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['message'] = 'Invalid Username or Password';
+				$retvalue['status'] = false;
+			}
+		}else{
+			$retvalue['message'] = 'Username does not exist';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
 	public function register(){
 		$retvalue = array();
 		$name = $this->input->post('name');
@@ -53,7 +87,7 @@ class Home_model extends CI_Model{
 		
 		$xml = "<ROOT>
 				<HEADER>
-					<ACTIONTYPE>CREATE</ACTIONTYPE>
+					<ACTIONTYPE>INSERT</ACTIONTYPE>
 					<NAME>".$name."</NAME>
 					<USERNAME>".$email."</USERNAME>
 					<EMAIL>".$email."</EMAIL>
@@ -64,23 +98,33 @@ class Home_model extends CI_Model{
 			</ROOT>";
 			
 		$vMessage = mt_rand();$vStatus = mt_rand();
-		$this->db->query('CALL usp_insUpdUsers("$xml",@'.$vMessage.',@'.$vStatus.')');
+		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
 		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
 		$row = $qry->row();
 		
 		if($row){
 			if($row->status){
 				$this->session->set_flashdata('registerMessage', 'Registered Successfully');
-				return true;
+				$this->session->set_flashdata('registerStatus', true);
+				$retvalue['message'] = 'Registered Successfully';
+				$retvalue['status'] = true;
+				//Logging 
+				$this->login($email,$this->input->post('password'));
 			}else{
 				$this->session->set_flashdata('registerMessage', 'Please try again later.');
-				return false;
+				$this->session->set_flashdata('registerStatus', false);
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
 			}
 		}
 		else{
 			$this->session->set_flashdata('registerMessage', 'Please try again later.');
-			return false;
+			$this->session->set_flashdata('registerStatus', false);
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
 		}
+		return $retvalue;
 	}
 
 }

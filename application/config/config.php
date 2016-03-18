@@ -358,6 +358,9 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+//Salt length
+$config['salt_length'] = 10;
+
 /*
 |--------------------------------------------------------------------------
 | Assets path

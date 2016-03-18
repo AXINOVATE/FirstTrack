@@ -12,9 +12,9 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="#">Welcome: Gautam Choudhury</a></li>
+						<li><a href="#">Welcome: <?php echo $this->session->userdata('name');?></a></li>
 						<li><a href="#">Administrator</a></li>
-						<li class="border-none-r"><a href="#">Sign Out</a></li>
+						<li class="border-none-r"><a href="<?php echo $prefix;?>/home/logout">Sign Out</a></li>
 					</ul>
 				</div>
 				
