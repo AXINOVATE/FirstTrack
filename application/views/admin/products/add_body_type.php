@@ -119,7 +119,7 @@ $prefix=$this->config->item('prefix');
 										<td><?php echo $BTD['categoryName']; ?></td>
 										<td><?php echo $BTD['body_type']; ?></td>   								
 										<td><center><img src="<?php echo $prefix.'/'.$BTD['body_type_img'];?>" class="img-rounded img-responsive " alt="Cinque Terre" height="30px" width="30%"></center></td>
-										<td><a href="<?php echo $prefix.'/home/add_modify_body_type/'.$BTD['bodyTypeID']; ?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete-bodyType" data-btid="<?php echo $BTD['bodyTypeID']; ?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
+										<td><a href="<?php echo $prefix.'/home/add_body_type/'.$BTD['bodyTypeID']; ?>" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="#" class="delete-box-color font-size-16 delete-bodyType" data-btid="<?php echo $BTD['bodyTypeID']; ?>"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 										
 									</tr>
 								<?php
@@ -159,7 +159,7 @@ $prefix=$this->config->item('prefix');
                 placeholder: "Select",
                 allowClear: true
             });		
-			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'image', '<?php echo $prefix;?>/home/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
+			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 		});
 		$("#save_body_type").click(function(){
 			xu_validation.form_submit('#body_type_data','save_body_type');
@@ -176,7 +176,7 @@ $prefix=$this->config->item('prefix');
 			var body_type=$("#body_type").val();
 			var body_type_img=$("#image_file_path").val();
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/add_modify_bodyTypeDetails/',
+				url:'<?php echo $prefix;?>/admin/add_modify_bodyTypeDetails/',
 				data:{'vType':vType,'body_typeID':body_typeID,'categoryID':categoryID,'body_type':body_type,'body_type_img':body_type_img},
 				type:'POST',
 				processData: true,
@@ -188,21 +188,21 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_body_type";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_body_type";},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_body_type";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_body_type";},1000);
 				}
 			});
 		}
 		$(".delete-bodyType").click(function(){
 			var bodyTypeID=$(this).data("btid");
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/add_modify_bodyTypeDetails/',
+				url:'<?php echo $prefix;?>/admin/add_modify_bodyTypeDetails/',
 				data:{'vType':'DELETE','body_typeID':bodyTypeID,'categoryID':'','body_type':'','body_type_img':''},
 				type:'POST',
 				processData: true,
@@ -214,14 +214,14 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_body_type";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_body_type";},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_body_type";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_body_type";},1000);
 				}
 			});
 		});

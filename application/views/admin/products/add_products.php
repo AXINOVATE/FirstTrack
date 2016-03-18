@@ -29,16 +29,15 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
-				<h4>Add or Modify Product Type</h4>
+				<h4>Add Products</h4>
 				<hr>
 				<div class="panel panel-default Locations-panel" style="border-radius: 0px;border:1px solid #f2f2f2;">
 					<div class="panel-body">
-					   <div class="row">
-						<div class="col-md-6">
-							<form class="form-horizontal">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 mb-20">
 							    <div class="form-group">
-									<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">Manufacture Name</label>
-									<div class="col-sm-6 col-xs-12">
+									<label for="inputEmail3" class="col-md-4 col-sm-4 col-xs-12 control-label">Manufacture Name</label>
+									<div class="col-md-8 col-sm-8 col-xs-12">
 									   <select class="form-control select2 mb-10">
 											<option value="">Select Maker</option>
 											<option value="P">Maruti Suzuki</option>
@@ -46,93 +45,82 @@ $prefix=$this->config->item('prefix');
 										</select>
 									</div>
 								</div>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label">product type</label>
-								<div class="col-sm-6 col-xs-12">
-								   <select class="form-control select2 mb-10">
-										<option value="">Select Maker</option>
-										<option value="P">Maruti Suzuki</option>
-										<option value="S">Hyundai</option>
-									</select>
+							</div>
+							<div class="col-md-6 col-sm-6 mb-20">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-md-4 col-sm-4 col-xs-12 control-label">product type</label>
+									<div class="col-md-8 col-sm-8 col-xs-12">
+									   <select class="form-control select2 mb-10">
+											<option value="">Select Maker</option>
+											<option value="P">Maruti Suzuki</option>
+											<option value="S">Hyundai</option>
+										</select>
+									</div>
 								</div>
 							</div>
-							<br>
-						</div>
-						</div>
-						<br>
-						
-						<div class="row">
-						
-						<div class="col-md-6">
-						<div class="form-group" id="title_cover_image">
-							<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
-								Upload file 
-							</label>
-							<div class="col-md-6 col-sm-5 col-xs-10">
-								<input type="hidden" name="cover_image" id="image_file_path" value="" va_req="true"/>
-								<div id="progress" class="progress">
-									<div id="image_progress" class="progress-bar progress-bar-success"></div>
+							<div class="col-md-6 col-sm-6 mb-20">
+								<div class="form-group" id="title_cover_image">
+									<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
+										Upload file 
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-9">
+										<input type="hidden" name="cover_image" id="image_file_path" value="" va_req="true"/>
+										<div id="progress" class="progress">
+											<div id="image_progress" class="progress-bar progress-bar-success"></div>
+										</div>
+										<span>Picture size 200 X 125 Pixels</span>
+										<div id="image_file_msg" class="files"></div>
+									</div>
+									<div class="col-md-2 col-sm-2 col-xs-3">
+										<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
+											<!-- The file input field used as target for the file upload widget -->
+											<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path">
+										</span>
+									</div>
 								</div>
-								<span>Picture size 200 X 125 Pixels</span>
-								<div id="image_file_msg" class="files"></div>
 							</div>
-							<div class="col-md-2 col-sm-2 col-xs-2">
-								<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
-									<!-- The file input field used as target for the file upload widget -->
-									<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path">
-								</span>
+							<div class="col-md-5 col-sm-5 col-xs-11 mb-20">
+								<button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8"></i>Save </button>
 							</div>
-						</div>
-						</div>
-						<button class="btn btn-default btn-primary" type="submit"><i class="fa fa-floppy-o padding-right-8"></i>Save </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<table class="table table-bordered picture-color-edit">
 						<thead>
-						<th class="col-md-2">product Name</th>
-                         <th class="col-md-2">Manufacturer</th>
-                          <th class="col-md-2">Variant</th>
+							<th class="col-md-2">product Name</th>
+							<th class="col-md-2">Manufacturer</th>
+							<th class="col-md-2">Variant</th>
                             <th class="col-md-2">Body Type</th>	
-						   <th class="col-md-4">Action</th>													
+							<th class="col-md-4">Action</th>													
 						</thead>
 						<tbody align="center">
 							<tr>
 								<td>Rapid</td>
                                 <td>Skoda India</td>
 								<td>1.6 Active Petrol</td> 
-								<td>Sedan</td> 
-								
+								<td>Sedan</td>
 								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="<?php echo $prefix;?>/home/edit_product" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-								
 							</tr>
 							<tr>
 								<td>Yeti</td>
                                 <td>Skoda India</td>
 								<td></td> 
-								<td>SUV</td> 
-								
+								<td>SUV</td>								
 								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-								
 							</tr>
 							<tr>
-								<<td>Octavia</td>
+								<td>Octavia</td>
                                 <td>Skoda India</td>
 								<td></td> 
-								<td>Sedan</td> 
-								
+								<td>Sedan</td>
 								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 							</tr>
 							<tr>
 								<td>Superb</td>
                                 <td>Skoda India</td>
 								<td></td> 
-								<td>Sedan</td> 
-								
+								<td>Sedan</td>
 								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a> &nbsp &nbsp<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
 							</tr>
 						</tbody>
@@ -164,11 +152,6 @@ $prefix=$this->config->item('prefix');
                 placeholder: "Select",
                 allowClear: true
             });
-			 $('button').on('click', function(){
-			alert('preserve attached java script data!');
-		});
-		$('#myTab').tabCollapse();
-			
 		});
 		
 	</script>

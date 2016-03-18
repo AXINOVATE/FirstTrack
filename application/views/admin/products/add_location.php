@@ -143,7 +143,7 @@ $prefix=$this->config->item('prefix');
 								<td>'.$LD["countryName"].'</td>
 								<td class="hidden-xs">'.$LD["stateName"].'</td>
 								<td class="hidden-xs">'.$LD["cityName"].'</td>
-								<td><a href="'.$prefix.'/home/add_modify_location/'.$LD["locationID"].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="javascript:void();" class="delete-box-color delete-location font-size-16" data-lid="'.$LD["locationID"].'"><i class="fa fa-trash-o picture-padding-right-10" ></i><span class="hidden-xs" >Delete</span></a></td>
+								<td><a href="'.$prefix.'/home/add_location/'.$LD["locationID"].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="javascript:void();" class="delete-box-color delete-location font-size-16" data-lid="'.$LD["locationID"].'"><i class="fa fa-trash-o picture-padding-right-10" ></i><span class="hidden-xs" >Delete</span></a></td>
 								
 							</tr>';
 								}
@@ -230,7 +230,7 @@ $prefix=$this->config->item('prefix');
 			var location=$('#location').val();
 			var pincode=$('#pincode').val();
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/save_location_detail/',
+				url:'<?php echo $prefix;?>/admin/save_location_detail/',
 				data:{'vType':vType,'locationID':locationID,'country_id':country_id,'states_id':states_id,'city_id':city_id,'location':location,'pincode':pincode},
 				type:'POST',
 				processData: true,
@@ -242,21 +242,21 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_location";},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_location";},1000);
 				}
 			});
 		}
 		$(".delete-location").click(function(){
 			var locationID=$(this).data("lid");
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/save_location_detail/',
+				url:'<?php echo $prefix;?>/admin/save_location_detail/',
 				data:{'vType':'DELETE','locationID':locationID,'country_id':'','states_id':'','city_id':'','location_detail':'','pincode':''},
 				type:'POST',
 				processData: true,
@@ -275,7 +275,7 @@ $prefix=$this->config->item('prefix');
 						text: 'Failed To Save',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/home/add_modify_location";},1000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_location";},1000);
 				}
 			});
 		});
