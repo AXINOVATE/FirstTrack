@@ -264,4 +264,13 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/dealers/edit_add_dealer_product',$data);
 	}
+	public function location_detail($Vtype='',$vid='')	{
+		echo json_encode($this->manage_products_model->location_detail($Vtype,$vid));
+	}
+	public function get_category_detail($Vtype='')	{
+		echo json_encode($this->manage_products_model->getCategoryDetails($Vtype));
+	}
+	public function get_manufacture_detail($Vtype='')	{
+		echo json_encode($this->manage_products_model->getManufatureDetails($Vtype));
+	}
 }
