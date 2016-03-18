@@ -19,8 +19,21 @@ $prefix=$this->config->item('prefix');
 						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
 						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
-						<li><a href="<?php echo $prefix;?>/home/login"><span>Signup</span></a></li>
-						<li class="border-none-r"><a href="<?php echo $prefix;?>/home/login">Login</a></li>
+						<?php if($this->session->userdata('login')){ ?>
+							<li class="dropdown border-none-r user-options">
+								<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('name');?> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<?php if($this->session->userdata('roleID') == '02cb2679-e453-11e5-8594-74867ad2fb90'){ ?>
+									<li><a href="<?php echo $prefix;?>/admin/admin_dashboard">Admin Panel</a></li>
+									<?php } ?>
+									<li><a href="#">Profile</a></li>
+									<li><a href="<?php echo $prefix;?>/home/logout">Logout</a></li>
+								</ul>
+							</li>
+						<?php }else{ ?>
+							<li><a href="<?php echo $prefix;?>/home/login"><span>Signup</span></a></li>
+							<li class="border-none-r"><a href="<?php echo $prefix;?>/home/login">Login</a></li>
+						<?php } ?>
 					</ul>
 				</div>
 				<div class="row">
@@ -164,9 +177,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10" style="width:100%;" va_req="true" name="abVariant" id="abVariant">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="2" >Diesel</option>
+								<option value="">-- Select Variant --</option>								
 							</select>
 						</div>
 					   <div class="col-md-12">

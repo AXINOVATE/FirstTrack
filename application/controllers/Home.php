@@ -34,11 +34,20 @@ class Home extends CI_Controller {
 	}
 	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
+		if($this->session->userdata('login'))redirect(base_url());
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
 	}
-	
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
+	public function login_check(){
+		echo json_encode($this->home_model->login($this->input->post('username'),$this->input->post('password')));
+	}
+
 	public function register(){
 		echo json_encode($this->home_model->register());
 	}

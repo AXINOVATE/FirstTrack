@@ -27,7 +27,7 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<div class="container">
-			<h4 class="text-center"><?php echo $this->session->flashdata('registerMessage');?></h4>
+			<h4 class="text-center <?php if($this->session->flashdata('registerStatus'))echo 'text-success';else echo 'text-danger';?>"><?php echo $this->session->flashdata('registerMessage');?></h4>
 			<div class="login mt-65">
 				<div class="row br-1">
 					<div class="col-md-4"></div>
@@ -40,22 +40,24 @@ $prefix=$this->config->item('prefix');
 						<div id = "myTabContent" class = "tab-content">
 
 						   <div class="tab-pane fade in active" id="login_tab">
-								<div class="form-group">
-									<div class="input-group mt-10">
-										<div class="input-group-addon"><i class="fa fa-user"></i></div>
-										<input type="text" class="form-control" id="username" name="username" placeholder="Email">
+								<form class="form-horizontal" method="post" action="#" onsubmit="return false;" role="login" id="login_form">
+									<div>
+										<div class="input-group mt-10">
+											<div class="input-group-addon"><i class="fa fa-user"></i></div>
+											<input type="text" class="form-control" id="user_name" name="username" placeholder="Email">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<div class="input-group mt-10">
-										<div class="input-group-addon"><i class="fa fa-key"></i></div>
-										<input type="password" class="form-control" name="password" id="pwd" placeholder="Password">
+									<div>
+										<div class="input-group mt-10">
+											<div class="input-group-addon"><i class="fa fa-key"></i></div>
+											<input type="password" class="form-control" name="password" id="userpassword" placeholder="Password">
+										</div>
 									</div>
-								</div>
-								<button class="btn" id="login_btn">Login</button>
-								<div class="form-group">
-									Forgot Password ? <a href="javascript:void(0);"> Click here </a> to reset password
-								</div>
+									<button class="btn" id="login_btn">Login</button>
+									<div>
+										Forgot Password ? <a href="javascript:void(0);"> Click here </a> to reset password
+									</div>
+								</form>
 						   </div>
 						   
 						   <div class="tab-pane fade" id="signup_tab">
@@ -68,7 +70,7 @@ $prefix=$this->config->item('prefix');
 								<div class="form-group">
 									<div class="input-group mt-10">
 										<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-										<input type="text" class="form-control" id="email" name="email" placeholder="Email">
+										<input type="text" class="form-control" id="userEmail" name="email" placeholder="Email">
 									</div>
 								</div>
 								<div class="form-group">
@@ -86,7 +88,7 @@ $prefix=$this->config->item('prefix');
 								<div class="form-group">
 									<div class="input-group mt-10">
 										<div class="input-group-addon"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
+										<input type="text" class="form-control" name="phone" id="userPhone" placeholder="Phone">
 									</div>
 								</div>
 								<button class="btn" id="register_btn">Signup</button>
@@ -126,22 +128,34 @@ $prefix=$this->config->item('prefix');
 		return 0;
 	}
     $(document).ready(function(){
-		
+		$("#login_form").on('submit',function(){
+			$("#login_btn").trigger('click');
+		});
 	});
 	$("#login_btn").on('click',function(){
 		$(".login .text-danger").remove();
 		var text_error = '<span class="text-danger"> This field is required </span>',error=0;
-		if($('#username').val() == ""){$('#username').parent().parent().append(text_error);error++;}
-		if($('#pwd').val() == ""){$('#pwd').parent().parent().append(text_error);error++;}
+		if($('#user_name').val() == ""){$('#user_name').parent().parent().append(text_error);error++;}
+		if($('#userpassword').val() == ""){$('#userpassword').parent().parent().append(text_error);error++;}
 		if(error == 0){
+			$("#login_btn").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+			$("#login_btn").attr('disabled','disabled');
 			$.ajax({
 				url:'<?php echo $prefix;?>/home/login_check',
 				type:'POST',
-				data:{'username':$('#username').val(),'password':$('#pwd').val()},
+				data:{'username':$('#user_name').val(),'password':$('#userpassword').val()},
 				dataType:'JSON'
 			}).success(function(data){
-				alert(data);
-			});;
+				$(".login .text-danger").remove();
+				if(data.status){
+					window.location.reload();
+				}				
+				else{
+					$("#login_tab").prepend('<div class="text-danger mt-10">Invalid username or password </div>');
+					$("#login_btn").html('Login');
+					$("#login_btn").attr('disabled',false);
+				}
+			});
 		}
 	});
 	$("#register_btn").on('click',function(){
@@ -149,22 +163,28 @@ $prefix=$this->config->item('prefix');
 		$(".login .text-danger").remove();
 		var text_error = '<span class="text-danger"> This field is required </span>',error=0;
 		$("#signup_tab .form-control").each(function(){if($(this).val() == ""){$(this).parent().parent().append(text_error);error++;}});
-		if(!checkemail($("#email").val()) && $("#email").val() != ""){$("#email").parent().parent().append('<span class="text-danger"> Invalid email </span>');error++;}
+		if(!checkemail($("#userEmail").val()) && $("#userEmail").val() != ""){$("#userEmail").parent().parent().append('<span class="text-danger"> Invalid email </span>');error++;}
 		if($("#repassword").val() != $("#password").val() && $("#password").val() != ""){	$("#repassword").parent().parent().append('<span class="text-danger"> Password not matched </span>');error++;}
 		if($("#password").val().length < 7 && $("#password").val() != ""){$("#password").parent().parent().append('<span class="text-danger"> This field should contain 6 characters minimum </span>');error++;}
 		
 		if(error == 0){
+			$("#register_btn").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+			$("#register_btn").attr('disabled','disabled');
 			$.ajax({
 				url:'<?php echo $prefix;?>/home/register',
 				type:'POST',
-				data:{'name':$('#name').val(),'email':$('#email').val(),'password':$('#password').val(),'repassword':$('#repassword').val(),'phone':$('#phone').val()},
+				data:{'name':$('#name').val(),'email':$('#userEmail').val(),'password':$('#password').val(),'repassword':$('#repassword').val(),'phone':$('#userPhone').val()},
 				dataType:'JSON'
 			}).success(function(data){
-				/* if(data){
-					setTimeout(function(){  }, 3000);
-				} */
-				window.location.reload();
-			});;
+				if(data.message == 'DUPLICATE'){
+					$("#userEmail").parent().parent().append('<span class="text-danger"> This email is already exists in system. Please try forgot password to retrive the password </span>');
+					$("#register_btn").html('Signup');
+					$("#register_btn").attr('disabled',false);
+				}else{
+					window.location.reload();
+				}
+				
+			});
 		}
 	});
 </script>
