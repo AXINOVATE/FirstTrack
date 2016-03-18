@@ -12,9 +12,6 @@ class Services extends CI_Controller {
 	public function advanced_booking(){		
 		 $this->services_model->advance_booking();
 	}
-	public function getMakerDetail($vType,$mID=''){						
-		echo json_encode($this->home_model->getMakerDetail($vType,$mID=''));
-	}
 	public function getModelDetail($vType,$moID='',$maID=''){						
 		echo json_encode($this->home_model->getModelDetail($vType,$moID='',$maID=''));
 	}

@@ -197,11 +197,6 @@ class Home_model extends CI_Model{
 			return false;
 		}
 	}
-	public function getMakerDetail($vType,$mID=''){
-		$query = $this->db->query("CALL usp_getMakerDetail('".$vType."','".$mID."')");
-		mysqli_next_result($this->db->conn_id);
-		return $query->result_array();
-	}
 	public function getModelDetail($vType,$moID='',$maID=''){
 		$query = $this->db->query("CALL usp_getModelDetail('".$vType."','".$moID."','".$maID."')");
 		mysqli_next_result($this->db->conn_id);
