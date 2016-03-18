@@ -181,7 +181,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					   <div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="true" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
+						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agree" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>

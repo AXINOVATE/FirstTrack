@@ -10,6 +10,7 @@ class Services_model  extends CI_Model{
 	}
 	
 	public function advance_booking(){
+		
 		 $adfullName=$this->input->post("abFullName");
 		 $abphone=$this->input->post("abphone");
 		 $abemailID=$this->input->post("abemailID");
@@ -27,11 +28,12 @@ class Services_model  extends CI_Model{
 					<ADVMAKER>".$abMaker."</ADVMAKER>
 					<ADVMODEL>".$abModel."</ADVMODEL>
 					<ADVVARIANT>".$abVariant."</ADVVARIANT>
-					<ADVTC>".$abTermsConditions."</ADVTC>				
+					<ADVTC>".$abTermsConditions."</ADVTC>
+					<STATUS>OPEN</STATUS>					
 				</HEADER>
 			</ROOT>";		
-		$user_address = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vresult)");
-		$query=$this->db->query("SELECT @vresult as status")->row();
+		$user_address = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
+		$query=$this->db->query("SELECT @vStatus as status")->row();
 			//mysqli_next_result($this->db->conn_id);	
 			//return $query->status;		
 			if ($query == "Inserted Successfully" ){

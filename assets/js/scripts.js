@@ -294,7 +294,21 @@ function save_advance_booking(){
 			type:'POST',
 			data:$('#Advance-Booking').serialize()
 		}).done(function(data){				
-			
+		if(data.status == "Success"){	
+		$.gritter.add({
+			title: 'Success',
+			text: 'Saved Successfully',
+			class_name: 'gritter-info gritter-center' + 'gritter-light'
+		});
+		setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
 		});
 }
 /* Advanced Booking End Starts Here */
