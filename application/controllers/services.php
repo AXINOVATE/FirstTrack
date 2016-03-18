@@ -14,15 +14,14 @@ class Services extends CI_Controller {
 	public function get_city(){		
 		echo json_encode($this->manage_products_model->location_detail('UCITY'));
 	}
+	public function getModelDetail($vType,$moID='',$maID=''){
+		echo json_encode($this->home_model->getModelDetail($vType,$moID,$maID));
+	}
 	public function getManufatureDetails(){		
 		echo json_encode($this->manage_products_model->getManufatureDetails('ALL'));
 	}
-	public function getModelDetail($vType='',$moID='',$maID=''){		
-				
-		echo json_encode($this->home_model->getModelDetail($vType,$moID='',$maID));
-	}
 	public function getVariantDetail($vType,$vID=''){						
-		echo json_encode($this->home_model->getVariantDetail($vType,$vID=''));
+		echo json_encode($this->home_model->getVariantDetail($vType,$vID));
 	}
 	
 }
