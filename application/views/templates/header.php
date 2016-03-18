@@ -1037,8 +1037,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="boraCity"   va_req="true" name="boraCity" style="width:100%;">
 								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
+								
 							</select>
 						</div>
 				
@@ -1047,8 +1046,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraMaker"   va_req="true" name="boraMaker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
+								
 							</select>
 						</div>
 					
@@ -1057,8 +1055,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraModel"   va_req="true" name="boraModel" style="width:100%;">
 								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
+								
 							</select>
 						</div>
 					
@@ -1077,8 +1074,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraCategory"  va_req="true" name="boraCategory" style="width:100%;">
 								<option value="">-- Select Category --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
+								
 							</select>
 						</div>
 						<div class="col-md-4">

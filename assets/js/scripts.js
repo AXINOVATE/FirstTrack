@@ -205,3 +205,6 @@ function save_advance_booking(){
 		});
 }	
 /* Advanced Booking End Starts Here */
+
+
+

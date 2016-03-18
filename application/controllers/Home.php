@@ -136,25 +136,25 @@ class Home extends CI_Controller {
 	}
 	public function md_add_dealers(){
 		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_add_dealers',$data);
 	}
 	public function md_view_dealers_and_products(){
 		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_view_dealers_and_products',$data);
 	}
 	public function md_add_dealer_products(){
 		$pageData['currentPage'] = 'NEWS';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_add_dealer_products',$data);
 	}
 	public function md_sign_up_page_dealers(){
 		$pageData['currentPage'] = '';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/md_sign_up_page_dealers',$data);
 	}
