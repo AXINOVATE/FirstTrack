@@ -81,7 +81,7 @@
 	$('#btn_apply_vehicle_loan').on('click' ,function(){
 		xu_validation.form_submit('#apply_for_vehicle_loan','save_vehicle_loan');		
 	});
-	$("#vehicle-loan").on('click',function(){
+	$("#vehicle-loan,#vehicle-loan").on('click',function(){
 		get_vehlone_cities();
 		get_vehlone_categories();
 		get_vehlone_manufacture();
@@ -90,8 +90,12 @@
 	
 })(jQuery);
 var prefix=$("#prefix").data("prefix");
-/*--------------------- Vechicle loan Popup Stats Here -------------*/
-function get_vehlone_cities(){
+
+
+/* --------------------- Common Function Starts  --------------------------*/
+
+function get_cities(callback){
+	var callback="#"+callback;
 	$.ajax({
 		url:prefix+'/home/location_detail/UCITY',
 		type:'POST',
@@ -103,10 +107,11 @@ function get_vehlone_cities(){
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
 		}
-		$("#vehlone_city").html(html);
+		$(callback).html(html);
 	});
 }
-function get_vehlone_categories(){
+function get_categories(callback){
+	var callback="#"+callback;
 	$.ajax({
 		url:prefix+'/home/get_category_detail/ALL',
 		type:'POST',
@@ -118,10 +123,27 @@ function get_vehlone_categories(){
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].categoryID+"' >"+data[i].categoryName+"</option>";
 		}
-		$("#vehlone_category").html(html);
+		$(callback).html(html);
 	});
 }
-function get_vehlone_manufacture(){
+function get_variant(callback){
+	var callback="#"+callback;
+	$.ajax({
+		url:prefix+'/services/getVariantDetail/ALL',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Varient --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
+function get_manufacture(callback){
+	var callback="#"+callback;
 	$.ajax({
 		url:prefix+'/home/get_manufacture_detail/ALL',
 		type:'POST',
@@ -133,8 +155,26 @@ function get_vehlone_manufacture(){
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].manufactureID+"' >"+data[i].manufactureName+"</option>";
 		}
-		$("#vehlone_maker").html(html);
+		$(callback).html(html);
 	});
+}
+/*---------------------------- Common Function Ends--------------------------*/
+
+
+
+
+/*--------------------- Vechicle loan Popup Stats Here -------------*/
+function get_vehlone_cities(){
+	get_cities("vehlone_city");
+}
+function get_vehlone_categories(){
+	get_categories("vehlone_category");
+}
+function get_vehlone_manufacture(){
+	get_manufacture("vehlone_maker");
+}
+function get_vehlone_varient(){
+	get_variant("vehlone_variant");
 }
 $("#vehlone_maker").on('change',function(){
 	var maID=$(this).val();
@@ -152,21 +192,6 @@ $("#vehlone_maker").on('change',function(){
 		$("#vehlone_model").html(html);
 	});
 });
-function get_vehlone_varient(){
-	$.ajax({
-		url:prefix+'/services/getVariantDetail/ALL',
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-	}).done(function(data){
-		var len=data.length;
-		html = "<option value=''>-- Select Varient --</option>";
-		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
-		}
-		$("#vehlone_variant").html(html);
-	});
-}
 function save_vehicle_loan(){
 	var fullname=$("#vehlone_username").val();
 	var phone=$("#vehlone_phone").val();

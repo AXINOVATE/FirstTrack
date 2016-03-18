@@ -633,102 +633,85 @@ $prefix=$this->config->item('prefix');
 	<div class="modal fade blue-modals" id="corporate-deal-modal" role="dialog">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Corporate Deals</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<div class="input-group">
-								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control" id="username" name="username" placeholder="name">
+				<form class="form-horizontal" name="corporate_deals_form" role="form"  method="POST" id="corporate_deals_form" submit="return false">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="text-center modal-title">Corporate Deals</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+									<input type="text" class="form-control" id="corp_fullname" name="corp_fullname" placeholder="full name">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<div class="input-group">
-								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-								<input type="text" class="form-control" id="phone" name="phone" placeholder="9164545924">
+						<div class="form-group">
+							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+									<input type="text" class="form-control" id="corp_phone" name="corp_phone" placeholder="1234567890">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<div class="input-group">
-								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-								<input type="text" class="form-control" id="email" name="email" placeholder="smishra10002gmail">
+						<div class="form-group">
+							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+									<input type="text" class="form-control" id="corp_email" name="corp_email" placeholder="abcd@gmail.com">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">address</label>
-						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="office or residential address" />
+						<div class="form-group">
+							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">address</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<input type="text" class="form-control" id="corp_emailID" name="corp_emailID" placeholder="office or residential address" />
+							</div>
 						</div>
-					</div>
-					
-				        <div class="col-md-4">
-						
-						
-							<select class="form-control mb-10" id="city" style="width:100%;">
+						<div class="col-md-4">
+							<select class="form-control mb-10" id="corp_city" style="width:100%;">
 								<option value="">-- Select City --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
-						
 						</div>
-					
-					  <div class="col-md-4">
-						
-					
-							<select class="form-control mb-10" id="maker" style="width:100%;">
+						<div class="col-md-4">
+							<select class="form-control mb-10" id="corp_maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 								<option value="1" >Maruti Suzuki</option>
 								<option value="1" >Hyundai</option>
 							</select>
-						
-				  </div>
-					<div class="col-md-4">
-						
-						
-							<select class="form-control mb-10" id="model" style="width:100%;">
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10" id="corp_model" style="width:100%;">
 								<option value="">-- Select Model --</option>
 								<option value="1" >Swift</option>
 								<option value="1" >I20</option>
 							</select>
-						
-					</div>
-					<div class="col-md-4">
-						
-						
-							<select class="form-control mb-10" id="variant" style="width:100%;">
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10" id="corp_variant" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								<option value="1" >Petrol</option>
 								<option value="1" >Diesel</option>
 							</select>
-						
-					</div>
-					
-					
+						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="corp_category" style="width:100%;">
 								<option value="">-- Select Category --</option>
 								<option value="1" >Bangalore</option>
 								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="bank" name="bank" placeholder="quantity of vechiles" />
+							<input type="text" class="form-control" id="corp_quality_of_vehicle" name="corp_quality_of_vehicle" placeholder="quantity of vechiles" />
 						</div>
-					
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="corp_customerType" style="width:100%;">
 								<option value="">--Customer Type --</option>
 								<option value="1" >Proprietary</option>
 								<option value="1" > LLP</option>
@@ -737,16 +720,14 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
+							<select class="form-control mb-10" id="corp_needloan" style="width:100%;">
 								<option value="">-- Do you also need Loan --</option>
 								<option value="1" >Yes</option>
 								<option value="1" >No</option>
 							</select>
 						</div>
-					
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+							<select class="form-control mb-10" id="corp_loan_looking" style="width:100%;">
 								<option value="">-- What is the Loan Amount Looking for --</option>
 								<option value="1" >5 to 10 Laks</option>
 								<option value="1" > 10 laks to 15 Laks</option>
@@ -756,7 +737,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+							<select class="form-control entity-type  mb-10" id="corp_loan_duration" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
 								<option value="1" >1 Year</option>
 								<option value="1" >2 Year</option>
@@ -766,10 +747,8 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >6 Years and above</option>
 							</select>
 						</div>
-					
-					
-					     <div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
+						 <div class="col-md-4 col-sm-4 col-xs-4">
+							<select class="form-control mb-10" id="corp_pref_bank" style="width:100%;">
 								<option value="">-- Any Preference to Specific Bank ?  --</option>
 								<option value="1" >HDFC</option>
 								<option value="1" >KOTAK</option>
@@ -777,8 +756,8 @@ $prefix=$this->config->item('prefix');
 								<option value="1" >YES</option>
 							</select>
 					   </div>	
-                     <div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="variant" style="width:100%;">
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<select class="form-control entity-type  mb-10" id="corp_purchase_time_frame" style="width:100%;">
 								<option value="">-- Purchase Time Frame  --</option>
 								<option value="1" >Immediate</option>
 								<option value="1" >1-2 weeks</option>
@@ -787,32 +766,29 @@ $prefix=$this->config->item('prefix');
 								<option value="1" > 10 weeks and Above</option>
 							</select>
 						</div>
-                   	
-					 
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="annual" name="annual" placeholder="what is the best time to call you?" />
+							<input type="text" class="form-control" id="corp_best_time_to_call" name="corp_best_time_to_call" placeholder="what is the best time to call you?" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="bankLocation" name="bankLocation" placeholder="which bank you have salary account?" />
+							<input type="text" class="form-control" id="corp_salary_account" name="corp_salary_account" placeholder="which bank you have salary account?" />
 						</div>
-					
-					     <div class="col-md-12">
-						<label for="comment">Any specific comment</label>
-                        <textarea class="form-control" rows="2" id="comment"></textarea>
-					    </div>
-					    <div class="form-group">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
-						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						 <div class="col-md-12">
+							<label for="comment">Any specific comment</label>
+							<textarea class="form-control" rows="2" id="corp_comment"></textarea>
 						</div>
-					</div>
+						<div class="form-group">
+							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" id="corp_termsadnconditions" value="agreed" style="float:left;">
+							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+								I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							</div>
+						</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
+							<a href="javascript:void(0)" class="search-btn" id="corp_save_data" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
-					
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
