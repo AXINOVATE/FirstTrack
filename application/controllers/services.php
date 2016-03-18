@@ -6,13 +6,18 @@ class Services extends CI_Controller {
 		parent::__construct();
 		$this->load->model('home_model');
 		$this->load->model('services_model');
+		$this->load->model('manage_products_model');
 	}
 
 		
 	public function advanced_booking(){		
 		 $this->services_model->advance_booking();
 	}
-	public function getMakerDetail($vType,$mID=''){						
+	
+	public function get_city(){
+		echo json_encode($this->manage_products_model->location_detail('CITIES'));
+	}
+	public function getMakerDetail($vType,$mID=''){		
 		echo json_encode($this->home_model->getMakerDetail($vType,$mID=''));
 	}
 	public function getModelDetail($vType,$moID='',$maID=''){						

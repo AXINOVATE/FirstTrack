@@ -17,9 +17,7 @@ class Services_model  extends CI_Model{
 		 $abMaker=$this->input->post("abMaker");
 		 $abModel=$this->input->post("abModel");
 		 $abVariant=$this->input->post("abVariant");
-		 $abTermsConditions=$this->input->post("abTermsConditions");
-		
-		
+		 $abTermsConditions=$this->input->post("abTermsConditions");		
 	}
 
 }

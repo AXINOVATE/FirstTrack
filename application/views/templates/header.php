@@ -83,12 +83,12 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Request for Test Drive</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">Advance Booking</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal">Apply for Vehicle Loan</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal">Corporate Deals</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal">Apply for Insurance</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal">By on Road Assistance</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal" id="test-drive">Request for Test Drive</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal" id="adv-book">Advance Booking</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply for Vehicle Loan</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">By on Road Assistance</a></li>
 					</ul>
 				</li>
 			</ul> 
@@ -136,15 +136,21 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abCity" id="abCity">
 								<option value="" >-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="2" >Mysore</option>
+								<?php foreach ( $get_city as $citys){
+										echo '<option value="'.$citys['cityID'].'" '.$selected.'>'.$country['cityName'].'</option>';
+									}
+								?>	
+								
 							</select>
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abMaker" id="abMaker">
 								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="2" >Hyundai</option>
+								<?php foreach ( $getMakerDetail as $getMakerDetails){
+										$selected='';
+										echo '<option value="'.$getMakerDetails['makerID'].'" '.$selected.'>'.$getMakerDetails['makerName'].'</option>';
+									}
+								?>	
 							</select>
 						</div>
 						<div class="col-md-4">
