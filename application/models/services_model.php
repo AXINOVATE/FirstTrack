@@ -19,8 +19,7 @@ class Services_model  extends CI_Model{
 		 $abVariant=$this->input->post("abVariant");
 		 $abTermsConditions=$this->input->post("abTermsConditions");
 		$xml = "<ROOT>
-				<HEADER>
-					<ACTIONTYPE>INSERT</ACTIONTYPE>
+				<HEADER>					
 					<ADVFULLNAME>".$adfullName."</ADVFULLNAME>
 					<ADVPHONE>".$abphone."</ADVPHONE>
 					<ADVEMAILID>".$abemailID."</ADVEMAILID>
@@ -30,7 +29,16 @@ class Services_model  extends CI_Model{
 					<ADVVARIANT>".$abVariant."</ADVVARIANT>
 					<ADVTC>".$abTermsConditions."</ADVTC>				
 				</HEADER>
-			</ROOT>";		 
+			</ROOT>";		
+		$user_address = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vresult)");
+		$query=$this->db->query("SELECT @vresult as status")->row();
+			//mysqli_next_result($this->db->conn_id);	
+			//return $query->status;		
+			if ($query == "Inserted Successfully" ){
+				return "Success";
+			}else{
+				return "Faild";
+			}
 	}
 
 }
