@@ -194,7 +194,7 @@ function adv_getVariantDetail(){
 				var i=0;
 				$('#abVariant').append('<option value="">-- Select Variant --</option>');
 				for(i=0;i< data.length;i++){
-					$('#abVariant').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
+					$('#abVariant').append('<option value="'+data[i]['variantID']+'">'+data[i]['variantName']+'</option>');
 				}
 				$('#abVariant').select2();
 			}else{
