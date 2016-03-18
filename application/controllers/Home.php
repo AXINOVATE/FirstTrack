@@ -240,6 +240,12 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/manage_dealers/edit_dealer_info',$data);
 	}
+	function manage_dealers(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/manage_dealers/manage_dealers1',$data);
+	}
 	public function deals(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
