@@ -47,7 +47,7 @@
 					for(i=0;i< data.length;i++){
 						$('#abModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
 					}
-					$('#abModel').select2();
+					
 				}else{
 					
 				}
@@ -260,7 +260,7 @@ function adv_get_cities(){
 				for(i=0;i< data.length;i++){
 					$('#abCity').append('<option value="'+data[i]['cityID']+'">'+data[i]['cityName']+'</option>');
 				}
-				$('#abCity').select2();
+				
 			}else{
 				
 			}
@@ -281,7 +281,7 @@ function adv_getManufatureDetails(){
 				for(i=0;i< data.length;i++){
 					$('#abMaker').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
 				}
-				$('#abMaker').select2();
+				
 			}else{
 				
 			}
@@ -304,7 +304,7 @@ function adv_getVariantDetail(){
 				for(i=0;i< data.length;i++){
 					$('#abVariant').append('<option value="'+data[i]['variantID']+'">'+data[i]['variantName']+'</option>');
 				}
-				$('#abVariant').select2();
+				
 			}else{
 				
 			}
@@ -315,25 +315,25 @@ var prefix=$("#prefix").data("prefix");
 function save_advance_booking(){
 	$.ajax({
 			url:prefix+'/services/advanced_booking',
-			dataType:'json',
+			dataType:'JSON',
 			type:'POST',
 			data:$('#Advance-Booking').serialize()
-		}).done(function(data){				
-		if(data.status == "Success"){	
-		$.gritter.add({
-			title: 'Success',
-			text: 'Saved Successfully',
-			class_name: 'gritter-info gritter-center' + 'gritter-light'
-		});
-		setTimeout(function(){window.location.reload();},1000);
-		}else{
-			$.gritter.add({
-				title: 'Failed',
-				text: 'Failed To Save',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
-		}
+		}).done(function(data){
+			if(data.status == "Success"){	
+				$.gritter.add({
+					title: 'Success',
+					text: 'Saved Successfully',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},1000);
+			}else{
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To Save',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},1000);
+			}
 		});
 }
 /* Advanced Booking End Starts Here */
@@ -355,7 +355,7 @@ function by_road_on_get_cities(){
 				for(i=0;i< data.length;i++){
 					$('#boraCity').append('<option value="'+data[i]['cityID']+'">'+data[i]['cityName']+'</option>');
 				}
-				$('#boraCity').select2();
+				
 			}else{
 				
 			}
@@ -376,7 +376,7 @@ function by_road_on_getManufatureDetails(){
 				for(i=0;i< data.length;i++){
 					$('#boraMaker').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
 				}
-				$('#boraMaker').select2();
+				
 			}else{
 				
 			}
@@ -414,7 +414,7 @@ function by_road_on_getVariantDetail(){
 				for(i=0;i< data.length;i++){
 					$('#boraVarient').append('<option value="'+data[i]['variantID']+'">'+data[i]['variantName']+'</option>');
 				}
-				$('#boraVarient').select2();
+				
 			}else{
 				
 			}
