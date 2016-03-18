@@ -81,13 +81,22 @@
 	$('#btn_apply_vehicle_loan').on('click' ,function(){
 		xu_validation.form_submit('#apply_for_vehicle_loan','save_vehicle_loan');		
 	});
-	$("#vehicle-loan,#vehicle-loan").on('click',function(){
+	$("#vehicle-loan,#vehicle-loan1").on('click',function(){
 		get_vehlone_cities();
 		get_vehlone_categories();
 		get_vehlone_manufacture();
 		get_vehlone_varient();
 	});
+	$('#corp_save_data').on('click' ,function(){
+		xu_validation.form_submit('#corporate_deals_form','save_corporate_deals');		
+	});
 	
+	$("#corporate-deal,#corporate-deal1").on('click',function(){
+		get_corp_cities();
+		get_corp_categories();
+		get_corp_manufacture();
+		get_corp_varient();
+	});
 })(jQuery);
 var prefix=$("#prefix").data("prefix");
 
@@ -243,6 +252,83 @@ function save_vehicle_loan(){
 	});
 }
 /*------------------- Vechicle loan Popup Ends Here -----------------*/
+
+
+/*------------------- Corporate Deals Popup Starts Here -----------------*/
+
+function get_corp_cities(){
+	get_cities("corp_city");
+}
+function get_corp_categories(){
+	get_categories("corp_category");
+}
+function get_corp_manufacture(){
+	get_manufacture("corp_maker");
+}
+function get_corp_varient(){
+	get_variant("corp_variant");
+}
+$("#corp_maker").on('change',function(){
+	var maID=$(this).val();
+	$.ajax({
+		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Model --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
+		}
+		$("#corp_model").html(html);
+	});
+});
+function save_corporate_deals(){
+	var fullname=$("#corp_fullname").val();
+	var phone=$("#corp_phone").val();
+	var email=$("#corp_email").val();
+	var address=$("#corp_address").val();
+	var cityID=$("#corp_city").val();
+	var manufactureID=$("#corp_maker").val();
+	var modelID=$("#corp_model").val();
+	var variantID=$("#corp_variant").val();
+	var categoryID=$("#corp_category").val();
+	var quality_of_vehicle=$("#corp_quality_of_vehicle").val();
+	var needLoad=$("#corp_needloan").val();
+	var loanLooking=$("#corp_loan_looking").val();
+	var lookDuration=$("#corp_loan_duration").val();
+	var preferenceBank=$("#corp_pref_bank").val();
+	var purchaseTimeFrame=$("#corp_purchase_time_frame").val();
+	var bestTimeToCall=$("#corp_best_time_to_call").val();
+	var salaryAccountBank=$("#corp_salary_account").val();
+	var comment=$("#corp_comment").val();
+	var termsandconditions=$("#corp_termsadnconditions").val();
+	$.ajax({
+		url:prefix+'/home/add_corporrate_deals/',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'quality_of_vehicle':quality_of_vehicle,'needLoad':needLoad,'loanLooking':loanLooking,'lookDuration':lookDuration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Success',
+				text: 'Saved Successfully',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
+	});
+}
+/*------------------- Corporate Deals Popup Ends Here -----------------*/
 	
 /* Advanced Booking Starts Here */
 function adv_get_cities(){	

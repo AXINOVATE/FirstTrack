@@ -644,7 +644,7 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 								<div class="input-group">
 									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-									<input type="text" class="form-control" id="corp_fullname" name="corp_fullname" placeholder="full name">
+									<input type="text" class="form-control" va_req="true" id="corp_fullname" name="corp_fullname" placeholder="full name">
 								</div>
 							</div>
 						</div>
@@ -653,7 +653,7 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 								<div class="input-group">
 									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-									<input type="text" class="form-control" id="corp_phone" name="corp_phone" placeholder="1234567890">
+									<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone" placeholder="1234567890">
 								</div>
 							</div>
 						</div>
@@ -662,124 +662,116 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 								<div class="input-group">
 									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-									<input type="text" class="form-control" id="corp_email" name="corp_email" placeholder="abcd@gmail.com">
+									<input type="text" class="form-control"  va_req="true" va_email="true" id="corp_email" name="corp_email" placeholder="abcd@gmail.com">
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">address</label>
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<input type="text" class="form-control" id="corp_emailID" name="corp_emailID" placeholder="office or residential address" />
+								<input type="text" class="form-control"  va_req="true" id="corp_address" name="corp_address" placeholder="office or residential address" />
 							</div>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="corp_city" style="width:100%;">
+							<select class="form-control mb-10" id="corp_city"  va_req="true" style="width:100%;">
 								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="corp_maker" style="width:100%;">
+							<select class="form-control mb-10" id="corp_maker"  va_req="true" style="width:100%;">
 								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="corp_model" style="width:100%;">
+							<select class="form-control mb-10" id="corp_model"  va_req="true" style="width:100%;">
 								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
 							</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control mb-10" id="corp_variant" style="width:100%;">
+							<select class="form-control mb-10" id="corp_variant"  va_req="true" style="width:100%;">
 								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_category" style="width:100%;">
+							<select class="form-control mb-10" id="corp_category"  va_req="true" style="width:100%;">
 								<option value="">-- Select Category --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="corp_quality_of_vehicle" name="corp_quality_of_vehicle" placeholder="quantity of vechiles" />
+							<input type="text" class="form-control" id="corp_quality_of_vehicle"  va_req="true" name="corp_quality_of_vehicle" placeholder="quantity of vechiles" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_customerType" style="width:100%;">
+							<select class="form-control mb-10" id="corp_customerType"  va_req="true" style="width:100%;">
 								<option value="">--Customer Type --</option>
-								<option value="1" >Proprietary</option>
-								<option value="1" > LLP</option>
-								<option value="1" > Joint Venture</option>
-								<option value="1" > Partnership-Pvt Ltd –Public Ltd Co</option>
+								<option value="Proprietary" >Proprietary</option>
+								<option value="LLP" > LLP</option>
+								<option value="Joint Venture" > Joint Venture</option>
+								<option value="Partnership-Pvt Ltd –Public Ltd Co"> Partnership-Pvt Ltd –Public Ltd Co</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_needloan" style="width:100%;">
+							<select class="form-control mb-10" id="corp_needloan"  va_req="true" style="width:100%;">
 								<option value="">-- Do you also need Loan --</option>
-								<option value="1" >Yes</option>
-								<option value="1" >No</option>
+								<option value="Require" >Yes</option>
+								<option value="Not Require" >No</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_loan_looking" style="width:100%;">
+							<select class="form-control mb-10" id="corp_loan_looking"  va_req="true" style="width:100%;">
 								<option value="">-- What is the Loan Amount Looking for --</option>
-								<option value="1" >5 to 10 Laks</option>
-								<option value="1" > 10 laks to 15 Laks</option>
-								<option value="1" > 15 to 20 Laks</option>
-								<option value="1" > 20 to 50 Laks</option>
-								<option value="1" > 50 Laks and Above</option>
+								<option value="5 to 10 Lakhs" >5 to 10 Lakhs</option>
+								<option value="10 lakhs to 15 Lakhs" > 10 lakhs to 15 Lakhs</option>
+								<option value="15 to 20 Lakhs" > 15 to 20 Lakhs</option>
+								<option value="20 to 50 Lakhs" > 20 to 50 Lakhs</option>
+								<option value="50 Lakhs and Above" > 50 Lakhs and Above</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="corp_loan_duration" style="width:100%;">
+							<select class="form-control entity-type  mb-10"  va_req="true" id="corp_loan_duration" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
-								<option value="1" >1 Year</option>
-								<option value="1" >2 Year</option>
-								<option value="1" >3 Years</option>
-								<option value="1" >4 Years</option>
-								<option value="1" >5 Years</option>
-								<option value="1" >6 Years and above</option>
+								<option value="1 Year" >1 Year</option>
+								<option value="2 Year" >2 Year</option>
+								<option value="3 Years" >3 Years</option>
+								<option value="4 Years" >4 Years</option>
+								<option value="5 Years" >5 Years</option>
+								<option value="6 Years and above" >6 Years and above</option>
 							</select>
 						</div>
 						 <div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_pref_bank" style="width:100%;">
+							<select class="form-control mb-10"  va_req="true" id="corp_pref_bank" style="width:100%;">
 								<option value="">-- Any Preference to Specific Bank ?  --</option>
-								<option value="1" >HDFC</option>
-								<option value="1" >KOTAK</option>
-								<option value="1" >ICICI</option>
-								<option value="1" >YES</option>
+								<option value="HDFC" >HDFC</option>
+								<option value="KOTAK" >KOTAK</option>
+								<option value="ICICI" >ICICI</option>
+								<option value="YES" >YES</option>
 							</select>
 					   </div>	
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control entity-type  mb-10" id="corp_purchase_time_frame" style="width:100%;">
+							<select class="form-control entity-type  mb-10"  va_req="true" id="corp_purchase_time_frame" style="width:100%;">
 								<option value="">-- Purchase Time Frame  --</option>
-								<option value="1" >Immediate</option>
-								<option value="1" >1-2 weeks</option>
-								<option value="1" > 3-4 weeks</option>
-								<option value="1" >4 to 8 weeks</option>
-								<option value="1" > 10 weeks and Above</option>
+								<option value="Immediate" >Immediate</option>
+								<option value="1-2 weeks" >1-2 weeks</option>
+								<option value="3-4 weeks" > 3-4 weeks</option>
+								<option value="4 to 8 weeks" >4 to 8 weeks</option>
+								<option value="10 weeks and Above" > 10 weeks and Above</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="corp_best_time_to_call" name="corp_best_time_to_call" placeholder="what is the best time to call you?" />
+							<input type="text" class="form-control"  va_req="true" id="corp_best_time_to_call" name="corp_best_time_to_call" placeholder="what is the best time to call you?" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="corp_salary_account" name="corp_salary_account" placeholder="which bank you have salary account?" />
+							<input type="text" class="form-control"  va_req="true" id="corp_salary_account" name="corp_salary_account" placeholder="which bank you have salary account?" />
 						</div>
 						 <div class="col-md-12">
 							<label for="comment">Any specific comment</label>
-							<textarea class="form-control" rows="2" id="corp_comment"></textarea>
+							<textarea class="form-control" rows="2"  va_req="true" id="corp_comment"></textarea>
 						</div>
 						<div class="form-group">
-							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" id="corp_termsadnconditions" value="agreed" style="float:left;">
-							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							<div class="col-md-12">
+								<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" name="corp_termsadnconditions" va_req="true" id="corp_termsadnconditions" value="agreed" style="float:left;">
+								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+									I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								</div>
 							</div>
 						</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
