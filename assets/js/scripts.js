@@ -4,7 +4,7 @@
 	
 	//for tooltip
 	$('[data-toggle="tooltip"]').tooltip();
-	$('#advance-booking').on('click' ,function(){
+	$('#advance-booking').on('click' ,function(){		
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
 
@@ -597,9 +597,7 @@ function save_road_assistance(){
 		}).done(function(data){				
 			
 		});
-	}).done(function(data){
-		
-	});
+	
 
 }
 /*-------------------road assistance popup-----------------*/

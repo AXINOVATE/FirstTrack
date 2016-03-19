@@ -411,7 +411,7 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" id="Request_TestDrive" name="Request_TestDrive" style="background-color:#F9D133;" >Save</a>
+							<a href="#" class="search-btn" id="Request_TestDrive" name="Request_TestDrive" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>

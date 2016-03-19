@@ -44,8 +44,8 @@ class Services_model  extends CI_Model{
 			}
 	}
 
-}
-public function Request_for_TestDrive(){		
+
+	public function Request_for_TestDrive(){		
 		 $rtd_Full_Name=$this->input->post("RTD_Full_Name");
 		 $rtd_phone=$this->input->post("RTD_Phone");
 		 $rtd_Email_id=$this->input->post("RTD_Email_id");
@@ -60,32 +60,32 @@ public function Request_for_TestDrive(){
 		 $RTD_Dealer_Location=$this->input->post("RTD_Dealer_Location");
 		 $RTD_agree=$this->input->post("RTD_agree");
 		$xml = "<ROOT>
-				<HEADER>					
-					<RTDFULLNAME>".$rtd_Full_Name."</RTDFULLNAME>
-					<RTDPHONE>".$rtd_phone."</RTDPHONE>
-					<RTDEMAILID>".$rtd_Email_id."</RTDEMAILID>
-					<RTDPREFERREDDATE>".$RTD_Pre_date."</RTDPREFERREDDATE>
-					<RTDPREFERREDTIME>".$RTD_Pre_Time."</RTDPREFERREDTIME>
-					<RTDCITY>".$RTD_City."</RTDCITY>
-					<RTDCATEGORY>".$RTD_Category."</RTDCATEGORY>
-					<RTDMAKER>".$RTD_Maker."</RTDMAKER>
-					<RTDMODEL>".$RTD_Model."</RTDMODEL>
-					<RTDVARIANT>".$RTD_Variant."</RTDVARIANT>
-					<RTDDEALERNAME>".$RTD_Dealer_Name."</RTDEALERNAME>
-					<RTDDEALERLOCATION>".$RTD_Dealer_Location."</RTDDEALERLOCATION>
-					<RTDAGREE>".$RTD_agree."</RTDAGREE>
-					<STATUS>Opened</STATUS>					
-				</HEADER>
+			<HEADER>					
+				<RTDFULLNAME>".$rtd_Full_Name."</RTDFULLNAME>
+				<RTDPHONE>".$rtd_phone."</RTDPHONE>
+				<RTDEMAILID>".$rtd_Email_id."</RTDEMAILID>
+				<RTDPREFERREDDATE>".$RTD_Pre_date."</RTDPREFERREDDATE>
+				<RTDPREFERREDTIME>".$RTD_Pre_Time."</RTDPREFERREDTIME>
+				<RTDCITY>".$RTD_City."</RTDCITY>
+				<RTDCATEGORY>".$RTD_Category."</RTDCATEGORY>
+				<RTDMAKER>".$RTD_Maker."</RTDMAKER>
+				<RTDMODEL>".$RTD_Model."</RTDMODEL>
+				<RTDVARIANT>".$RTD_Variant."</RTDVARIANT>
+				<RTDDEALERNAME>".$RTD_Dealer_Name."</RTDEALERNAME>
+				<RTDDEALERLOCATION>".$RTD_Dealer_Location."</RTDDEALERLOCATION>
+				<RTDAGREE>".$RTD_agree."</RTDAGREE>
+				<STATUS>Opened</STATUS>					
+			</HEADER>
 			</ROOT>";		
-		$user_address = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
+			var_dump("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");exit();
+		$user_address = $this->db->query("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");
 		$query=$this->db->query("SELECT @vStatus as status")->result_array();
-		mysqli_next_result($this->db->conn_id);	
-		$query1= $query[0]['status'];
-			if ($query1 == "Inserted Successfully" ){
-				$retVal['status']="Success";
-				return $retVal;
+		//mysqli_next_result($this->db->conn_id);	
+		//$query1= $query[0]['status'];
+			if ($query == "Inserted Successfully" ){
+				return "Success";
 			}else{
-				return $retVal;
+				return "Failed";
 			}
 	}
 	
