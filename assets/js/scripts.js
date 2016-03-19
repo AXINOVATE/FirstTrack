@@ -13,10 +13,11 @@
 	$('#test-drive,#test-drive1').on('click', function(){
 		
 	});
-	$('#adv-book,#adv-book1').on('click', function(){
-		adv_get_cities();
-		adv_getManufatureDetails();		
-		adv_getVariantDetail();
+	$('#adv-book,#adv-book1').on('click', function(){	
+		adv_getCatDetails();
+		//get_cities("abCity");				
+		get_manufacture_adv();
+		get_variant_adv();
 	});
 	$('#on-road-assistance,#on-road-assistance1').on('click', function(){
 		by_road_on_get_cities();
@@ -44,6 +45,7 @@
 				if(data.length > -1){					
 					$('#abModel').html('');					
 					var i=0;
+					$('#abModel').append('<option value="">-- Select Model --</option>');
 					for(i=0;i< data.length;i++){
 						$('#abModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
 					}
@@ -175,6 +177,15 @@ function get_manufacture(callback){
 /*--------------------- Vechicle loan Popup Stats Here -------------*/
 function get_vehlone_cities(){
 	get_cities("vehlone_city");
+}
+function adv_getCatDetails(){
+	get_cities("abCity");
+}
+function get_variant_adv(){
+	get_variant("abVariant");
+}
+function get_manufacture_adv(){
+	get_manufacture("abMaker");
 }
 function get_vehlone_categories(){
 	get_categories("vehlone_category");
