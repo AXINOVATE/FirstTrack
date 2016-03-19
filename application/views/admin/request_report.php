@@ -28,33 +28,40 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="page-title">Road Test Request - REQ00001</div>
+					<div class="page-title"><?php echo $Name;?> Request - <?php echo $details[0]['requestNo'];?></div>
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
-			
+			<?php 
+				foreach($counts as $count){
+					$totalCount = $count['totalCount'];
+					$openedCount = $count['openedCount'];
+					$progressCount = $count['progressCount'];
+					$closedCount = $count['closedCount'];
+				}
+			?>
 			<div class="row">
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box bg-yellow">
-						<h5>100</h5>
+						<h5><?php echo $totalCount; ?></h5>
 						<p>Total Request</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box">
-						<h5>40</h5>
+						<h5><?php echo $openedCount; ?></h5>
 						<p>New Request</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box">
-						<h5>35</h5>
+						<h5><?php echo $progressCount; ?></h5>
 						<p>In-progress</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box">
-						<h5>25</h5>
+						<h5><?php echo $closedCount; ?></h5>
 						<p>Closed</p>
 					</div>
 				</div>
@@ -64,49 +71,49 @@ $prefix=$this->config->item('prefix');
 					Requester Name:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					Jay Prakash
+					<?php echo $details[0]['fullName'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Contact No.:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					9874561230
+					<?php echo $details[0]['phone'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					City:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					Bangalore
+					<?php echo $details[0]['cityName'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Email-id:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					jay@gmail.com
+					<?php echo $details[0]['email'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Maker:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					Maruti Suzuki
+					<?php echo $details[0]['manufactureName'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Model:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					Alto 800
+					<?php echo $details[0]['modelName'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Variant:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					VXI
+					<?php echo $details[0]['variantName'];?>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 					Received Date:
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-					21 Feb 2016
+					<?php echo $details[0]['createdDateTime'];?>
 				</div>
 			</div>
 			<div class="row">

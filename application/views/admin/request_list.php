@@ -26,35 +26,42 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<div class="container">
+			<?php 
+				foreach($counts as $count){
+					$totalCount = $count['totalCount'];
+					$openedCount = $count['openedCount'];
+					$progressCount = $count['progressCount'];
+					$closedCount = $count['closedCount'];
+				}
+			?>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="page-title">Road Test Request</div>
+					<div class="page-title"><?php echo $Name; ?> Request</div>
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
-			
 			<div class="row">
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
-					<div class="request-count-box bg-yellow">
-						<h5>100</h5>
+					<div class="request-count-box bg-yellow" data-req="ALL">
+						<h5><?php echo $totalCount; ?></h5>
 						<p>Total Request</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
-					<div class="request-count-box">
-						<h5>40</h5>
+					<div class="request-count-box" data-req="OPENED">
+						<h5><?php echo $openedCount; ?></h5>
 						<p>New Request</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
-					<div class="request-count-box">
-						<h5>35</h5>
+					<div class="request-count-box" data-req="PROGRESS">
+						<h5><?php echo $progressCount; ?></h5>
 						<p>In-progress</p>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
-					<div class="request-count-box">
-						<h5>25</h5>
+					<div class="request-count-box" data-req="CLOSED">
+						<h5><?php echo $closedCount; ?></h5>
 						<p>Closed</p>
 					</div>
 				</div>
@@ -69,31 +76,22 @@ $prefix=$this->config->item('prefix');
 								<th>Phone</th>													
 								<th class="hidden-xs">Email</th>													
 								<th>Vehicle Variant</th>													
+								<th>Status</th>													
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td class="hidden-xs">REQ0001</td>
-								<td><a href="<?php echo $prefix;?>/admin/request_report">Jay Prakash</a></td>
-								<td>9874561230</td>
-								<td class="hidden-xs">jay@gmail.com</td>
-								<td>Alto 800</td>
-								
-							</tr>
-							<tr>
-								<td class="hidden-xs">REQ0002</td>
-								<td><a href="<?php echo $prefix;?>/admin/request_report">Ram Prakash</a></td>
-								<td>9124561230</td>
-								<td class="hidden-xs">ram@gmail.com</td>
-								<td>Alto 800</td>
-							</tr>
-							<tr>
-								<td class="hidden-xs">REQ0003</td>
-								<td><a href="<?php echo $prefix;?>/admin/request_report">Hari Prakash</a></td>
-								<td>8745621230</td>
-								<td class="hidden-xs">hari@gmail.com</td>
-								<td>Alto 800</td>
-							</tr>
+						<tbody id="table_data">
+							<?php 
+								foreach($details as $D){    ?>
+									<tr>
+										<td class="hidden-xs"><?php echo $D['requestNo']; ?></td>
+										<td><a href="<?php echo $prefix;?>/admin/request_report/<?php echo $page."/".$D['UID']; ?>"><?php echo $D['fullName']; ?></a></td>
+										<td><?php echo $D['phone']; ?></td>
+										<td class="hidden-xs"><?php echo $D['email']; ?></td>
+										<td><?php echo $D['variantName']; ?></td>
+										<td><?php echo $D['status']; ?></td>
+										
+									</tr>
+							<?php  }  ?>
 						</tbody>
 					</table>
 				</div>
@@ -106,8 +104,38 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script>
 	$('.request-count-box').on('click', function(){
+		var page='<?php echo $page;?>';
 		$('.request-count-box').removeClass('bg-yellow');
 		$(this).addClass('bg-yellow');
+		var vType=$(this).data("req");
+		var myUrl='';
+		if(page=='Corporate'){
+			myUrl="<?php echo $prefix;?>/admin/getCorporateDetailsRequest/"+vType;
+		}else if(page=='VehicleLoan'){
+			myUrl="<?php echo $prefix;?>/admin/getVehicleLoanRequest/"+vType;
+		}else if(page=='AdvanceBooking'){
+			myUrl="<?php echo $prefix;?>/admin/getAdvanceBookingRequest/"+vType;
+		}else if(page=='RASSISTANCE'){
+			myUrl="<?php echo $prefix;?>/admin/getRoadAssistanceRequest/"+vType;
+		}
+		$.ajax({
+			url:myUrl,
+			dataType:'JSON',
+			type:'POST'
+		}).done(function(data){
+			var html='';
+			var len=data.length;
+			for(var i=0;i<len;i++){
+				html += '<tr><td class="hidden-xs">'+data[i]['requestNo']+'</td>'+
+							'<td><a href="<?php echo $prefix;?>/admin/request_report/<?php echo $page; ?>/'+data[i]['UID']+'">'+data[i]['fullName']+'</a></td>'+
+							'<td>'+data[i]['phone']+'</td>'+
+							'<td class="hidden-xs">'+data[i]['email']+'</td>'+
+							'<td>'+data[i]['variantName']+'</td>'+
+							'<td>'+data[i]['status']+'</td>'+
+						'</tr>';
+			}
+			$("#table_data").html(html);
+		});
 	});
 </script>
 </body>

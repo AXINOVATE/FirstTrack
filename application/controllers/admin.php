@@ -7,23 +7,64 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('home_model');
 		$this->load->model('manage_products_model');
+		$this->load->model('dashboard_model');
 	}
 	public function admin_dashboard()
 	{		
 		$pageData['currentPage'] = 'DASHBOARD';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['corporateDealsCount'] = $this->dashboard_model->getCorporateDetailsRequest('COUNTS','');
+		$data['vehicleLoanCount'] = $this->dashboard_model->getVehicleLoanRequest('COUNTS','');
+		$data['advanceBookingCount'] = $this->dashboard_model->getAdvanceBookingRequest('COUNTS','');
+		$data['roadAssistanceCount'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
 		$this->load->view('admin/admin_dashboard',$data);
 	}
-	public function request_list()
+	public function request_list($page)
 	{		
 		$pageData['currentPage'] = 'DASHBOARD';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['page']=$page;
+		if($page=='Corporate'){
+			$data['Name'] = "Corporate Deals ";
+			$data['counts'] = $this->dashboard_model->getCorporateDetailsRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getCorporateDetailsRequest('ALL','');
+		}elseif($page=='VehicleLoan'){
+			$data['Name'] = "Vehicle Loan ";
+			$data['counts'] = $this->dashboard_model->getVehicleLoanRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getVehicleLoanRequest('ALL','');
+		}elseif($page=='AdvanceBooking'){
+			$data['Name'] = "Advance Booking ";
+			$data['counts'] = $this->dashboard_model->getAdvanceBookingRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getAdvanceBookingRequest('ALL','');
+		}elseif($page=='RASSISTANCE'){
+			$data['Name'] = "Road Assistance ";
+			$data['counts'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getRoadAssistanceRequest('ALL','');
+		}
 		$this->load->view('admin/request_list',$data);
 	}
-	public function request_report()
+	public function request_report($page,$id)
 	{		
+		$data['page']=$page;
 		$pageData['currentPage'] = 'DASHBOARD';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		if($page=='Corporate'){
+			$data['Name'] = "Corporate Deals ";
+			$data['counts'] = $this->dashboard_model->getCorporateDetailsRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getCorporateDetailsRequest('ONE',$id);
+		}elseif($page=='VehicleLoan'){
+			$data['Name'] = "Vehicle Loan ";
+			$data['counts'] = $this->dashboard_model->getVehicleLoanRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getVehicleLoanRequest('ONE',$id);
+		}elseif($page=='AdvanceBooking'){
+			$data['Name'] = "Advance Booking ";
+			$data['counts'] = $this->dashboard_model->getAdvanceBookingRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getAdvanceBookingRequest('ONE',$id);
+		}elseif($page=='RASSISTANCE'){
+			$data['Name'] = "Road Assistance ";
+			$data['counts'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getRoadAssistanceRequest('ONE',$id);
+		}
 		$this->load->view('admin/request_report',$data);
 	}
 	public function add_location($locationID=''){
@@ -125,5 +166,17 @@ class Admin extends CI_Controller {
 		}
 		var_dump($Spreadsheet); exit();
 		echo json_encode($this->manage_products_model->upload_products_list());
+	}
+	public function getCorporateDetailsRequest($vType,$CID=''){
+		echo json_encode($this->dashboard_model->getCorporateDetailsRequest($vType,$CID));
+	}
+	public function getVehicleLoanRequest($vType,$VID=''){
+		echo json_encode($this->dashboard_model->getVehicleLoanRequest($vType,$VID));
+	}
+	public function getAdvanceBookingRequest($vType,$AbID=''){
+		echo json_encode($this->dashboard_model->getAdvanceBookingRequest($vType,$AbID));
+	}
+	public function getRoadAssistanceRequest($vType,$RaID=''){
+		echo json_encode($this->dashboard_model->getRoadAssistanceRequest($vType,$RaID));
 	}
 }

@@ -36,7 +36,7 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
-						<a href="<?php echo $prefix; ?>/admin/request_list">
+						<a href="#">
 						<div class="big-box">
 							<center>
 								<div class="big-box-header">
@@ -72,38 +72,46 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($advanceBookingCount as $ABC){
+							$totalAdvanceBookingRequest = $ABC['totalCount'];
+							$totalAdvanceBookingOpenedRequest = $ABC['openedCount'];
+							$totalAdvanceBookingProgressRequest = $ABC['progressCount'];
+							$totalAdvanceBookingClosedRequest = $ABC['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Advance Booking
+						<a href="<?php echo $prefix; ?>/admin/request_list/AdvanceBooking">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Advance Booking
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalAdvanceBookingRequest;?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>500</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalAdvanceBookingOpenedRequest;?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalAdvanceBookingProgressRequest;?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalAdvanceBookingClosedRequest;?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>300</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>27</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>173</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
@@ -142,73 +150,89 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
-					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Apply for Vehicle Loan
+				<?php foreach($vehicleLoanCount as $VLC){
+							$totalVehicleLoanRequest = $VLC['totalCount'];
+							$totalVehicleLoanOpenedRequest = $VLC['openedCount'];
+							$totalVehicleLoanProgressRequest = $VLC['progressCount'];
+							$totalVehicleLoanClosedRequest = $VLC['closedCount'];
+					} ?>
+					<center>
+						<a href="<?php echo $prefix; ?>/admin/request_list/VehicleLoan">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Apply for Vehicle Loan
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalVehicleLoanRequest; ?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>200</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalVehicleLoanOpenedRequest; ?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalVehicleLoanProgressRequest; ?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalVehicleLoanClosedRequest; ?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>70</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>80</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>50</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+					<?php foreach($corporateDealsCount as $CDC){
+							$totalCorporateRequest = $CDC['totalCount'];
+							$totalCorporateOpenedRequest = $CDC['openedCount'];
+							$totalCorporateProgressRequest = $CDC['progressCount'];
+							$totalCorporateClosedRequest = $CDC['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Corporate Deals
+						<a href="<?php echo $prefix; ?>/admin/request_list/Corporate">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Corporate Deals
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalCorporateRequest; ?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>100</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalCorporateOpenedRequest; ?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalCorporateProgressRequest; ?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalCorporateClosedRequest; ?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>40</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>35</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>25</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
@@ -248,38 +272,46 @@ $prefix=$this->config->item('prefix');
 				</div>
 			
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($roadAssistanceCount as $RAC){
+							$totalRoadAssistanceRequest = $RAC['totalCount'];
+							$totalRoadAssistanceOpenedRequest = $RAC['openedCount'];
+							$totalRoadAssistanceProgressRequest = $RAC['progressCount'];
+							$totalRoadAssistanceClosedRequest = $RAC['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									By On Road Assistance
+						<a href="<?php echo $prefix; ?>/admin/request_list/RASSISTANCE">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										By On Road Assistance
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalRoadAssistanceRequest;?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>140</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalRoadAssistanceOpenedRequest;?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalRoadAssistanceProgressRequest;?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalRoadAssistanceClosedRequest;?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>20</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>60</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>60</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
