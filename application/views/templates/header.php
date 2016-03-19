@@ -142,37 +142,23 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-							<input type="text" class="form-control" va_email="true"   id="abemailID" name="abemailID" placeholder="tony@gmail.com" />				
+							<input type="text" class="form-control" va_email="true" va_req="true"  id="abemailID" name="abemailID" placeholder="tony@gmail.com" />				
 							</div>
 						</div>
 					</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abCity" id="abCity">
 								<option value="" >-- Select City --</option>
-								<?php foreach ( $get_city as $citys){
-										echo '<option value="'.$citys['cityID'].'" '.$selected.'>'.$country['cityName'].'</option>';
-									}
-								?>
 							</select>
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abMaker" id="abMaker">
 								<option value="">-- Select Maker --</option>
-								<?php foreach ( $getMakerDetail as $getMakerDetails){
-										$selected='';
-										echo '<option value="'.$getMakerDetails['makerID'].'" '.$selected.'>'.$getMakerDetails['makerName'].'</option>';
-									}
-								?>	
 							</select>
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abModel" id="abModel">
 								<option value="">-- Select Model --</option>
-								<?php foreach ( $getMakerDetail as $getMakerDetails){
-										$selected='';
-										echo '<option value="'.$getMakerDetails['makerID'].'" '.$selected.'>'.$getMakerDetails['makerName'].'</option>';
-									}
-								?>	
 							</select>
 						</div>
 						<div class="col-md-4">
@@ -181,7 +167,7 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					   <div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agree" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
+						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
@@ -712,12 +698,12 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="corp_needloan"  va_req="true" style="width:100%;">
 								<option value="">-- Do you also need Loan --</option>
-								<option value="Require" >Yes</option>
-								<option value="Not Require" >No</option>
+								<option value="Yes" >Yes</option>
+								<option value="No" >No</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_loan_looking"  va_req="true" style="width:100%;">
+							<select class="form-control mb-10" id="corp_loan_amount"  va_req="true" style="width:100%;">
 								<option value="">-- What is the Loan Amount Looking for --</option>
 								<option value="5 to 10 Lakhs" >5 to 10 Lakhs</option>
 								<option value="10 lakhs to 15 Lakhs" > 10 lakhs to 15 Lakhs</option>
