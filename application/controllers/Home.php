@@ -282,4 +282,7 @@ class Home extends CI_Controller {
 	public function add_vehicle_loan()	{
 		echo json_encode($this->home_model->add_vehicle_loan());
 	}
+	public function add_by_on_road_assistance()	{
+		echo json_encode($this->home_model->add_by_on_road_assistance());
+	}
 }

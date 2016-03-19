@@ -336,6 +336,70 @@ class Home_model extends CI_Model{
 		//echo $this->email->print_debugger();
 		return 1;
 	}
+	
+	
+	
+	public function add_by_on_road_assistance(){
+		$vresult['status'] = "Failed";
+		$xml ="";
+		$vType = $this->input->post('vType');
+		$fullname = $this->input->post('fullname');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$address = $this->input->post('address');
+		$cityID = $this->input->post('cityID');
+		$categoryID = $this->input->post('categoryID');
+		$manufactureID = $this->input->post('manufactureID');
+		$modelID = $this->input->post('modelID');
+		$variantID = $this->input->post('variantID');
+		$use = $this->input->post('use');
+		$plan = $this->input->post('plan');
+		$purchase = $this->input->post('purchase');
+		$roadcompanies = $this->input->post('roadcompanies');
+		$packag = $this->input->post('packag');
+		$packegebenifit = $this->input->post('packegebenifit');
+		$packagecost = $this->input->post('packagecost');
+		$timeframe = $this->input->post('timeframe');
+		$paymentdetails = $this->input->post('paymentdetails');
+		$timecall = $this->input->post('timecall');
+		$comment = $this->input->post('comment');
+		$termsandconditions = $this->input->post('termsandconditions');
+		$xml .= "<ROOT>
+					<HEADER><ACTIONTYPE>".$vType."</ACTIONTYPE>
+						<FULLNAME>".$fullname."</FULLNAME>
+						<PHONE>".$phone."</PHONE>
+						<EMAIL>".$email."</EMAIL>
+						<CITYID>".$cityID."</CITYID>
+						<CATEGORYID>".$categoryID."</CATEGORYID>
+						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+						<MODEL>".$modelID."</MODEL>
+						<VARIANTID>".$variantID."</VARIANTID>
+						<USE>".$use."</USE>
+						<PLAN>".$plan."</PLAN>
+						<PURCHASE>".$purchase."</PURCHASE>
+						<ROADCOMPANIES>".$roadcompanies."</ROADCOMPANIES>
+						<PACKAGE>".$packag."</PACKAGE>
+						<PACKAGEBENIFIT>".$packegebenifit."</PACKAGEBENIFIT>
+						<PACKAGECOST>".$packagecost."</PACKAGECOST>
+						<TIMEFRAME>".$timeframe."</TIMEFRAME>
+						<PAYMENTSDETAILS>".$paymentdetails."</PAYMENTSDETAILS>
+						<TIMECALL>".$timecall."</TIMECALL>
+						<COMMENT>".$comment."</COMMENT>
+						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
+					</HEADER>
+				</ROOT>";			
+				$rndS=$this->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdRoadAsistance('".$xml."',@vresult)");
+			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query1[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+			
+	}
 }
 
 ?>
