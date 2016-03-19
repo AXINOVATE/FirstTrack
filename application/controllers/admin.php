@@ -143,4 +143,7 @@ class Admin extends CI_Controller {
 	public function getRoadAssistanceRequest($vType,$RaID=''){
 		echo json_encode($this->dashboard_model->getRoadAssistanceRequest($vType,$RaID));
 	}
+	public function getAllCountry(){
+		echo json_encode($this->manage_products_model->location_detail('COUNTRY'));
+	}
 }

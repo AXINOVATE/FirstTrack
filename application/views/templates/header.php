@@ -67,7 +67,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
-				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" class="pd-tp-3">Get Instant Quote</a></li>
+				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" class="pd-tp-3">Pro forma Invoice</a></li>
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
@@ -1139,70 +1139,64 @@ $prefix=$this->config->item('prefix');
 					<h4 class="text-center modal-title">Get Instant Quote</h4>
 				</div>
 				<div class="modal-body">
-				       <div class="col-md-6">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select State --</option>
-								<option value="1" >Bihar</option>
-								<option value="1" >karnataka</option>
-							</select>
+						<form class="form-horizontal" name="get_instant_quote_form" role="form"  method="POST" id="get_instant_quote_form" submit="return false">
+						   <div class="col-md-6">
+								<select class="form-control mb-10" id="instquote_country" name="instquote_country" style="width:100%;" va_req="true">
+									<option value="">-- Select Country --</option>
+								</select>
+							</div>
+						   <div class="col-md-6">
+								<select class="form-control mb-10" id="instquote_state" name="instquote_state" style="width:100%;" va_req="true">
+									<option value="">-- Select State --</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<select class="form-control mb-10" id="instquote_city" name="instquote_city" style="width:100%;" va_req="true">
+									<option value="">-- Select City --</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<select class="form-control mb-10" id="instquote_category" name="instquote_category" style="width:100%;" va_req="true">
+									<option value="">-- Select Category --</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<select class="form-control mb-10" id="instquote_maker" name="instquote_maker" style="width:100%;" va_req="true">
+									<option value="">--  Select Make --</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<select class="form-control mb-10" id="instquote_model" name="instquote_model" style="width:100%;" va_req="true">
+									<option value="">-- Select Model --</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<select class="form-control mb-10" id="instquote_variant" name="instquote_variant" style="width:100%;" va_req="true">
+									<option value="">-- Select Variant --</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<select class="form-control mb-10" id="instquote_dealerName" name="instquote_dealerName" style="width:100%;" va_req="true">
+									<option value="">-- Select Dealer Name --</option>
+									<option value="1" >Maruti Suzuki</option>
+									<option value="1" >Hyundai</option>
+								</select>
+							</div>
+							<div class="col-md-12">
+							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" id="instquote_termandconditions" name="instquote_termandconditions" value="agreed" style="float:left;" va_req="true">
+							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+								I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							</div>
+							</div>
+						<div class="form-group">
+							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a href="javascript:void(0)"  class="search-btn" id="get_instant_quote_form_save" style="background-color:#F9D133;" >Get Instant Quote</a>
+								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+								
+							</div>
 						</div>
-						<div class="col-md-6">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-						<div class="col-md-6">
-							<select class="form-control mb-10" id="category" style="width:100%;">
-								<option value="">-- Select Category --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
-								<option value="">--  Select Make --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<select class="form-control mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-						<div class="col-md-6">
-							<select class="form-control mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<select class="form-control mb-10" id="dealerName" style="width:100%;">
-								<option value="">-- Select Dealer Name --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-					    <div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
-						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
-						</div>
-						</div>
-					<div class="form-group">
-						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)"   class="search-btn" style="background-color:#F9D133;" onclick="showDiv()">Get Instant Quote</a>
-							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
-							
-						</div>
-					</div>
-					
+					</form>
 						<div  class="col-md-12 "id="get-instant-quote-div"  style="display:none;  background-color:#ffffff;margin-top:20px;" > 
 						   <div class="col-md-6" >
 						    <h1><font color="red"><i class="fa fa-inr"></i>&nbsp; 3,18,939</font><h5><h2><font color="black">On-Road-Price</font></h5>

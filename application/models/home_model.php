@@ -406,7 +406,6 @@ class Home_model extends CI_Model{
 		$vresult['status'] = "Failed";
 		$xml ="<ROOT>
 					<HEADER>";
-
 		$manufactureID = $this->input->post('manufactureID');
 		$modelID = $this->input->post('modelID');
 		$variantID = $this->input->post('variantID');
@@ -508,6 +507,44 @@ class Home_model extends CI_Model{
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 
+			mysqli_next_result($this->db->conn_id);	
+			if ($query1[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+	}
+	public function add_InstantQuotes(){
+		$vresult['status'] = "Failed";
+		$xml ="<ROOT>
+					<HEADER>";
+		$countryID = $this->input->post('countryID');
+		$stateID = $this->input->post('stateID');
+		$cityID = $this->input->post('cityID');
+		$categoryID = $this->input->post('categoryID');
+		$manufactureID = $this->input->post('manufactureID');
+		$modelID = $this->input->post('modelID');
+		$variantID = $this->input->post('variantID');
+		$dealerName = $this->input->post('dealerName');
+		$termsandconditions = $this->input->post('termsandconditions');
+		$vType = $this->input->post('vType');
+		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
+						<COUNTRYID>".$countryID."</COUNTRYID>
+						<STATEID>".$stateID."</STATEID>
+						<CITYID>".$cityID."</CITYID>
+						<CATEGORYID>".$categoryID."</CATEGORYID>
+						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+						<MODELID>".$modelID."</MODELID>
+						<VARIANTID>".$variantID."</VARIANTID>
+						<DEALERNAME>".$dealerName."</DEALERNAME>
+						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
+					</HEADER>
+				</ROOT>";
+			$rndS=$this->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdInstantQuote('".$xml."',@vresult)");
+			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
 				$vresult['status'] = "Success";

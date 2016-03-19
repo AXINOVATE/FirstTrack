@@ -294,4 +294,8 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->add_insurance_details());
 
 	}
+	public function add_InstantQuotes(){
+		echo json_encode($this->home_model->add_InstantQuotes());
+
+	}
 }

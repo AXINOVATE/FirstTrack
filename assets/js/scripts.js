@@ -164,12 +164,36 @@
 		get_road_manufacture();
 		get_road_varient();
 	});
+	$("#get_instant_quote_popup").on('click',function(){
+		get_instant_country();
+		get_instant_category();
+		get_instant_maker();
+		get_instant_variant();
+	});
+	$('#get_instant_quote_form_save').on('click' ,function(){
+		xu_validation.form_submit('#get_instant_quote_form','save_instant_quote');		
+	});
 })(jQuery);
 var prefix=$("#prefix").data("prefix");
 
 
 /* --------------------- Common Function Starts  --------------------------*/
-
+function get_all_country(callback){
+	var callback="#"+callback;
+	$.ajax({
+		url:prefix+'/admin/getAllCountry',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Country --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].countryID+"' >"+data[i].countryName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
 function get_cities(callback){
 	var callback="#"+callback;
 	$.ajax({
@@ -407,7 +431,107 @@ function save_corporate_deals(){
 	});
 }
 /*------------------- Corporate Deals Popup Ends Here -----------------*/
-	
+
+/*---------------------GET INSTANCE QUOTE POPUP STARTS --------------*/
+function get_instant_country(){
+	get_all_country("instquote_country");
+}
+function get_instant_category(){
+	get_categories("instquote_category");
+}
+function get_instant_maker(){
+	get_manufacture("instquote_maker");
+}
+function get_instant_variant(){
+	get_variant("instquote_variant");
+}
+$('#instquote_country').on('change',function(){
+	var country_id=$(this).val();
+	$.ajax({
+		url:prefix+'/home/get_particular_states',
+		type:'POST',
+		processData: true,
+		dataType:'JSON',
+		data:{'country_id':country_id}
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select State --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].stateID+"' >"+data[i].stateName+"</option>";
+		}
+		$("#instquote_state").html(html);
+	});
+});
+$("#instquote_state").on('change',function(){
+	var states_id=$(this).val();
+	$.ajax({
+		url:prefix+'/home/get_particular_city',
+		type:'POST',
+		processData: true,
+		dataType:'JSON',
+		data:{'states_id':states_id}
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select City --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
+		}
+		$("#instquote_city").html(html);
+	});
+});
+$("#instquote_maker").on('change',function(){
+	var maID=$(this).val();
+	$.ajax({
+		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Model --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
+		}
+		$("#instquote_model").html(html);
+	});
+});
+function save_instant_quote(){
+	var vType="INSERT";
+	var countryID=$("#instquote_country").val();
+	var stateID=$("#instquote_state").val();
+	var cityID=$("#instquote_city").val();
+	var categoryID=$("#instquote_category").val();
+	var manufactureID=$("#instquote_maker").val();
+	var modelID=$("#instquote_model").val();
+	var variantID=$("#instquote_variant").val();
+	var dealerName=$("#instquote_dealerName").val();
+	var termsandconditions=$("#instquote_termandconditions").val();
+	var vType="INSERT";
+	$.ajax({
+		url:prefix+'/home/add_InstantQuotes/',
+		data:{'vType':vType,'countryID':countryID,'stateID':stateID,'cityID':cityID,'categoryID':categoryID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'dealerName':dealerName,'termsandconditions':termsandconditions},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Success',
+				text: 'Saved Successfully',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
+	});
+}
+/*---------------------GET INSTANCE QUOTE POPUP ENDS --------------*/
 /* Advanced Booking Starts Here */
 function adv_get_cities(){	
 	$.ajax({
