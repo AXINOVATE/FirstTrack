@@ -336,9 +336,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="Expiry_Date" class="col-md-3 field_titles ">
-							Preferred Time <span class="form-man"> * </span>
-						</label>
+						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time </label>						
 						<div class="col-md-3 pr-0">
 							<div class="input-group date datepicker no-padding">
 								<input type="text" class="form-control" va_req="true" name="RTD_Pre_date" id="RTD_Pre_date" value="">
@@ -349,57 +347,53 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-2 pl-0">
 							<div class="input-group bootstrap-timepicker timepicker">
-								<input id="timepicker3" name="reg_time" va_req="true"  name="RTD_Pre_Time" id="RTD_Pre_Time" type="text" class="form-control input-small inpt-timepicker" value="">
+								<input   va_req="true"  name="RTD_Pre_Time" id="RTD_Pre_Time" type="text" class="form-control input-small inpt-timepicker" value="">
 							</div>
 						</div>
 					</div>	
 					<div class="col-md-4">
-						<select class="form-control mb-10" id="city" style="width:100%;" va_req="true" name="RTD_City" id="RTD_City">
+						<select class="form-control mb-10" id="RTD_City" style="width:100%;" va_req="true" name="RTD_City" >
 							<option value="">-- Select City --</option>
-							<option value="1" >Bangalore</option>
-							<option value="1" >Mysore</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4">
-						<select class="form-control mb-10" id="category" style="width:100%;" va_req="true" name="RTD_Category" id="RTD_Category">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Category" id="RTD_Category">
 							<option value="">-- Select Category --</option>
-							<option value="1" >Bangalore</option>
-							<option value="1" >Mysore</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
-						<select class="form-control mb-10" id="maker" style="width:100%;" va_req="true" name="RTD_Maker" id="RTD_Maker">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Maker" id="RTD_Maker">
 							<option value="">-- Select Maker --</option>
-							<option value="1" >Maruti Suzuki</option>
-							<option value="1" >Hyundai</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
-						<select class="form-control mb-10" id="model" style="width:100%;" va_req="true" name="RTD_Model" id="RTD_Model">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Model" id="RTD_Model">
 							<option value="">-- Select Model --</option>
-							<option value="1" >Swift</option>
-							<option value="1" >I20</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4">
-						<select class="form-control mb-10" id="variant" style="width:100%;" va_req="true" name="RTD_Variant" id="RTD_Variant">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Variant" id="RTD_Variant">
 							<option value="">-- Select Variant --</option>
-							<option value="1" >Petrol</option>
-							<option value="1" >Diesel</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
-						<select class="form-control mb-10" id="dealerName" style="width:100%;" va_req="true" name="RTD_Dealer_Name" id="RTD_Dealer_Name">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Dealer_Name" id="RTD_Dealer_Name">
 							<option value="">-- Select Dealer Name --</option>
-							<option value="1" >Maruti Suzuki</option>
-							<option value="1" >Hyundai</option>
+							<option value="1">Hero</option>
+							<option value="2">Suzuki</option>
+							
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
-						<select class="form-control mb-10" id="dealerLocation" style="width:100%;" va_req="true" name="RTD_Dealer_Location" id="RTD_Dealer_Location">
-							<option value="">-- Select Dealer Location --</option>
-							<option value="1" >HSR Layout</option>
-							<option value="1" >Marathahalli</option>
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Dealer_Location" id="RTD_Dealer_Location">
+							<option value="">-- Select Dealer Location --</option>	
+							<option value="1">Bangalore</option>
+							<option value="2">HsrLayout</option>							
 						</select>
 					</div>
 					<div class="col-md-12">

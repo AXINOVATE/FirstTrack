@@ -46,9 +46,9 @@ class Services_model  extends CI_Model{
 
 
 	public function Request_for_TestDrive(){		
-		 $rtd_Full_Name=$this->input->post("RTD_Full_Name");
-		 $rtd_phone=$this->input->post("RTD_Phone");
-		 $rtd_Email_id=$this->input->post("RTD_Email_id");
+		 $RTD_Full_Name=$this->input->post("RTD_Full_Name");
+		 $RTD_Phone=$this->input->post("RTD_Phone");
+		 $RTD_Email_id=$this->input->post("RTD_Email_id");
 		 $RTD_Pre_date=$this->input->post("RTD_Pre_date");
 		 $RTD_Pre_Time=$this->input->post("RTD_Pre_Time");
 		 $RTD_City=$this->input->post("RTD_City");
@@ -61,9 +61,9 @@ class Services_model  extends CI_Model{
 		 $RTD_agree=$this->input->post("RTD_agree");
 		$xml = "<ROOT>
 			<HEADER>					
-				<RTDFULLNAME>".$rtd_Full_Name."</RTDFULLNAME>
-				<RTDPHONE>".$rtd_phone."</RTDPHONE>
-				<RTDEMAILID>".$rtd_Email_id."</RTDEMAILID>
+				<RTDFULLNAME>".$RTD_Full_Name."</RTDFULLNAME>
+				<RTDPHONE>".$RTD_Phone."</RTDPHONE>
+				<RTDEMAILID>".$RTD_Email_id."</RTDEMAILID>
 				<RTDPREFERREDDATE>".$RTD_Pre_date."</RTDPREFERREDDATE>
 				<RTDPREFERREDTIME>".$RTD_Pre_Time."</RTDPREFERREDTIME>
 				<RTDCITY>".$RTD_City."</RTDCITY>
@@ -71,18 +71,18 @@ class Services_model  extends CI_Model{
 				<RTDMAKER>".$RTD_Maker."</RTDMAKER>
 				<RTDMODEL>".$RTD_Model."</RTDMODEL>
 				<RTDVARIANT>".$RTD_Variant."</RTDVARIANT>
-				<RTDDEALERNAME>".$RTD_Dealer_Name."</RTDEALERNAME>
+				<RTDDEALERNAME>".$RTD_Dealer_Name."</RTDDEALERNAME>
 				<RTDDEALERLOCATION>".$RTD_Dealer_Location."</RTDDEALERLOCATION>
 				<RTDAGREE>".$RTD_agree."</RTDAGREE>
 				<STATUS>Opened</STATUS>					
 			</HEADER>
 			</ROOT>";		
-			var_dump("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");exit();
+			
 		$user_address = $this->db->query("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");
 		$query=$this->db->query("SELECT @vStatus as status")->result_array();
 		//mysqli_next_result($this->db->conn_id);	
 		//$query1= $query[0]['status'];
-			if ($query == "Inserted Successfully" ){
+			if ($query = "Inserted Successfully" ){
 				return "Success";
 			}else{
 				return "Failed";

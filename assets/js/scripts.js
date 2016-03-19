@@ -8,8 +8,7 @@
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
 
-	$('#Request_TestDrive').on('click' ,function(){
-		alert('ddssdf');
+	$('#Request_TestDrive').on('click' ,function(){		
 		xu_validation.form_submit('#Request_for_TestDrive','Request_TestDrive_Save');			
 	});
 	$('#by-on-road-assistance').on('click' ,function(){
@@ -19,7 +18,11 @@
 	
 
 	$('#test-drive,#test-drive1').on('click', function(){
-		
+		alert('dfdsfsdf');
+		get_rtd_cities();
+		get_rtd_categories();					
+		get_rtd_manufacture();
+		get_rtd_varient();
 	});
 	$('#adv-book,#adv-book1').on('click', function(){	
 		adv_getCatDetails();
@@ -64,6 +67,31 @@
 					$('#abModel').append('<option value="">-- Select Model --</option>');
 					for(i=0;i< data.length;i++){
 						$('#abModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
+					}
+					
+				}else{
+					
+				}
+			});
+		
+	});
+	$('#RTD_Maker').on('change',function(){		
+		var abMaker_detail = $(this ,'#RTD_Maker').val();
+		var manufactureDetail="NUll";
+		var Maker_detail="Maker-M";
+		$.ajax({
+			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
+			data:{},
+			type:'POST',
+			processData: true,
+			dataType:'JSON'
+			}).done(function(data){
+				if(data.length > -1){					
+					$('#RTD_Model').html('');					
+					var i=0;
+					$('#RTD_Model').append('<option value="">-- Select Model --</option>');
+					for(i=0;i< data.length;i++){
+						$('#RTD_Model').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
 					}
 					
 				}else{
@@ -473,8 +501,17 @@ function save_advance_booking(){
 }
 /* Advanced Booking End Starts Here */
 /* Requist For Test Drive Starts Here */
-function get_vehlone_cities(){
-	get_cities("vehlone_city");
+function get_rtd_cities(){
+	get_cities("RTD_City");
+}
+function get_rtd_categories(){
+	get_categories("RTD_Category");
+}
+function get_rtd_manufacture(){
+	get_manufacture("RTD_Maker");
+}
+function get_rtd_varient(){
+	get_variant("RTD_Variant");
 }
 function Request_TestDrive_Save(){
 	$.ajax({
@@ -483,7 +520,7 @@ function Request_TestDrive_Save(){
 			type:'POST',
 			data:$('#Request_for_TestDrive').serialize()
 		}).done(function(data){
-			if(data.status == "Success"){	
+			if(data.status == "Inserted Successfully"){	
 				$.gritter.add({
 					title: 'Success',
 					text: 'Saved Successfully',
