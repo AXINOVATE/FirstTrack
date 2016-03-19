@@ -7,6 +7,7 @@
 	$('#advance-booking').on('click' ,function(){
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
+
 	$('#Request_TestDrive').on('click' ,function(){
 		alert('ddssdf');
 		xu_validation.form_submit('#Request_for_TestDrive','Request_TestDrive_Save');			
@@ -14,6 +15,9 @@
 	$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
+
+	
+
 	$('#test-drive,#test-drive1').on('click', function(){
 		
 	});
@@ -23,6 +27,7 @@
 		get_manufacture_adv();
 		get_variant_adv();
 	});
+
 	$('#adv-book,#adv-book1').on('click', function(){	
 		requestTD_getcityDetails();
 		//get_cities("abCity");				
@@ -35,6 +40,7 @@
 		by_road_on_getVariantDetail();
 		by_road_on_categories();
 	});
+
 	$('document').ready(function(){
 		$('#abModel').html('');
 	});
@@ -83,7 +89,7 @@
 					for(i=0;i< data.length;i++){
 						$('#boraModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
 					}
-					$('#boraModel').select2();
+					
 				}else{
 					
 				}
@@ -108,6 +114,16 @@
 		get_corp_categories();
 		get_corp_manufacture();
 		get_corp_varient();
+	});
+	$('#by-on-road-assistance').on('click' ,function(){
+		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
+	});
+	
+	$("#on-road-assistance,#on-road-assistance1").on('click',function(){
+		get_road_cities();
+		get_road_categories();
+		get_road_manufacture();
+		get_road_varient();
 	});
 })(jQuery);
 var prefix=$("#prefix").data("prefix");
@@ -316,18 +332,20 @@ function save_corporate_deals(){
 	var variantID=$("#corp_variant").val();
 	var categoryID=$("#corp_category").val();
 	var quality_of_vehicle=$("#corp_quality_of_vehicle").val();
+	var customer_type=$("#corp_customerType").val();
 	var needLoad=$("#corp_needloan").val();
-	var loanLooking=$("#corp_loan_looking").val();
-	var lookDuration=$("#corp_loan_duration").val();
+	var loan_amount=$("#corp_loan_amount").val();
+	var loan_duration=$("#corp_loan_duration").val();
 	var preferenceBank=$("#corp_pref_bank").val();
 	var purchaseTimeFrame=$("#corp_purchase_time_frame").val();
 	var bestTimeToCall=$("#corp_best_time_to_call").val();
 	var salaryAccountBank=$("#corp_salary_account").val();
 	var comment=$("#corp_comment").val();
 	var termsandconditions=$("#corp_termsadnconditions").val();
+	var vType='INSERT';
 	$.ajax({
-		url:prefix+'/home/add_corporrate_deals/',
-		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'quality_of_vehicle':quality_of_vehicle,'needLoad':needLoad,'loanLooking':loanLooking,'lookDuration':lookDuration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		url:prefix+'/home/add_corporate_deals/',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'quality_of_vehicle':quality_of_vehicle,'customer_type':customer_type,'needLoad':needLoad,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -471,89 +489,88 @@ function Request_TestDrive_Save(){
 			}
 		});
 
-
+}
 
 /* Requist For Test End Starts Here */
 /* by road assistance pop up start here*/
 
-function by_road_on_get_cities(){	
-	$.ajax({
-		url:prefix+'/services/get_city',
-		data:{},
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-		}).done(function(data){
-			if(data.length > -1){					
-				$('#boraCity').html('');					
-				var i=0;
-				$('#boraCity').append('<option value="">-- Select City --</option>');
-				for(i=0;i< data.length;i++){
-					$('#boraCity').append('<option value="'+data[i]['cityID']+'">'+data[i]['cityName']+'</option>');
-				}
-				
-			}else{
-				
-			}
-		});
-}
-function by_road_on_getManufatureDetails(){	
-	$.ajax({
-		url:prefix+'/services/getManufatureDetails',
-		data:{},
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-		}).done(function(data){
-			if(data.length > -1){					
-				$('#boraMaker').html('');					
-				var i=0;
-				$('#boraMaker').append('<option value="">-- Select Maker --</option>');
-				for(i=0;i< data.length;i++){
-					$('#boraMaker').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
-				}
-				
-			}else{
-				
-			}
-		});
+/*------------------- road assistance popup -----------------*/
 
+
+function get_road_cities(){
+	get_cities("boraCity");
 }
-function  by_road_on_categories(){
+function get_road_categories(){
+	get_categories("boraCategory");
+}
+function get_road_manufacture(){
+	get_manufacture("boraMaker");
+}
+function get_road_varient(){
+	get_variant("boraVarient");
+}
+$("#boraMaker").on('change',function(){
+	var maID=$(this).val();
 	$.ajax({
-		url:prefix+'/home/get_category_detail/ALL',
+		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
 		var len=data.length;
-		html = "<option value=''>-- Select Category --</option>";
+		html = "<option value=''>-- Select Model --</option>";
 		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].categoryID+"' >"+data[i].categoryName+"</option>";
+			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
 		}
-		$("#boraCategory").html(html);
+		$("#boraModel").html(html);
 	});
-}
-function by_road_on_getVariantDetail(){	
+});
+function save_by_on_road_assistance(){
+	var vType="INSERT";
+	var fullname=$("#boraFullName").val();
+	var phone=$("#boraPhone").val();
+	var email=$("#boraEmail").val();
+	var address=$("#corp_address").val();
+	var cityID=$("#boraCity").val();
+	var manufactureID=$("#boraMaker").val();
+	var modelID=$("#boraModel").val();
+	var variantID=$("#boraVarient").val();
+	var categoryID=$("#boraCategory").val();
+	var use=$("#boraUse").val();
+	var plan=$("#boraPlan").val();
+	var purchase=$("#boraPurchase").val();
+	var roadcompanies=$("#boraRoadcompanies").val();
+	var packag=$("#boraPackage").val();
+	var packegebenifit=$("#boraPackbenifits").val();
+	var packagecost=$("#boraPackcost").val();
+	var timeframe=$("#boraTimeframe").val();
+	var paymentdetails=$("#boraPaymentdetails").val();
+	var timecall=$("#boraTimecall").val();
+	var comment=$("#boraComment").val();
+	var termsandconditions=$("#boraAgree").val();
 	$.ajax({
-		url:prefix+'/services/getVariantDetail/ALL/null',
-		data:{},
+		url:prefix+'/home/add_by_on_road_assistance',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'use':use,'plan':plan,'purchase':purchase,'roadcompanies':roadcompanies,'packag':packag,'packegebenifit':packegebenifit,'packagecost':packagecost,'timeframe':timeframe,'paymentdetails':paymentdetails,'timecall':timecall,'comment':comment,'termsandconditions':termsandconditions},
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
-
 		}).done(function(data){
-			if(data.length > -1){					
-				$('#boraVarient').html('');					
-				var i=0;
-				$('#boraVarient').append('<option value="">-- Select Variant --</option>');
-				for(i=0;i< data.length;i++){
-					$('#boraVarient').append('<option value="'+data[i]['variantID']+'">'+data[i]['variantName']+'</option>');
-				}
-				
+			if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Success',
+				text: 'Saved Successfully',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
 			}else{
-				
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To Save',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},1000);
 			}
+			
 		});
 }
 
@@ -569,6 +586,9 @@ function save_road_assistance(){
 		}).done(function(data){				
 			
 		});
-}
+	}).done(function(data){
+		
+	});
 
-/*end of road assistance popup*/
+}
+/*-------------------road assistance popup-----------------*/

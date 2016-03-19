@@ -23,8 +23,13 @@ class Services extends CI_Controller {
 	public function getVariantDetail($vType,$vID=''){						
 		echo json_encode($this->home_model->getVariantDetail($vType,$vID));
 	}
+<<<<<<< HEAD
 	public function request_for_testDrive(){						
 		echo json_encode($this->services_model->Request_for_TestDrive());
+=======
+	public function by_on_road_assistance(){		
+		 $this->services_model->by_on_road_assistance();
+>>>>>>> origin/master
 	}
 	
 }
