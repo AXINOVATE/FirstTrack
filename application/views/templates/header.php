@@ -820,19 +820,23 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="datetime" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time</label>
-						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
-								<div class="input-group date datepicker no-padding">
-									<input type="text" class="form-control" va_req="true" id="insurance_time" va_req="true" name="insurance_time" value="">
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>
-									<div class="input-group bootstrap-timepicker timepicker" style="margin-left:3px">
-									<input id="insurance_dtae-time" name="reg_time" type="text" va_req="true" class="form-control input-small inpt-timepicker" value="">
-									</div>
-								</div>
+						<label for="Expiry_Date" class="col-md-3 field_titles ">
+							Preferred Time <span class="form-man"> * </span>
+						</label>
+						<div class="col-md-3 pr-0">
+							<div class="input-group date datepicker no-padding">
+								<input type="text" class="form-control" va_req="true" name="insurance_date" id="insurance_date" value="">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
 						</div>
-					</div>
+						<div class="col-md-2 pl-0">
+							<div class="input-group bootstrap-timepicker timepicker">
+								<input id="timepicker3" name="reg_time" va_req="true"  name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
+							</div>
+						</div>
+					</div>	
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
 								<option value="">-- Select Maker --</option>
@@ -928,9 +932,9 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-12">
 						<label for="comment">Any specific comment</label>
                         <textarea class="form-control" rows="2" id="insurance_comment" va_req="true"></textarea>
-						</div>				
+					</div>				
 					<div class="form-group">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agree" id="insurance_agree" va_req="true" style="float:left;">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agree" id="insurance_agree"  style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>

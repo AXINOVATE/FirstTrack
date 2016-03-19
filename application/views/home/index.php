@@ -295,10 +295,11 @@ $prefix=$this->config->item('prefix');
 
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
+
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
 	

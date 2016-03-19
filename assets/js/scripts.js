@@ -138,7 +138,6 @@
 	});
 	$("#apply-for-insurance,#apply-for-insurance1").on('click',function(){
 		get_insurance_cities();
-		get_insurance_categories();
 		get_insurance_manufacture();
 		get_insurance_varient();
 	});
@@ -797,18 +796,32 @@ $("#insurance_maker").on('change',function(){
 function save_apply_for_insurance(){
 	var vType="INSERT";
 	var phone=$("#insurance_phone").val();
+	alert(phone);
 	var email=$("#insurance_email").val();
+	alert(email);
 	var cityID=$("#insurance_city").val();
+	alert(cityID);
 	var manufactureID=$("#insurance_maker").val();
 	var modelID=$("#insurance_model").val();
 	var variantID=$("#insurance_variant").val();
+	var date=$("#insurance_date").val();
+	alert(date);
+	var time=$("#insurance_time").val();
+	alert(time);
 	var customer_type=$("#insurance_customer_type").val();
+	alert(customer_type)
 	var use=$("#insurance_use").val();
+	alert(use)
 	var needLoan=$("#insurance_need_loan").val();
+	alert(needLoan);
 	var loan_amount=$("#insurance_loan_amount").val();
+	alert(loan_amount);
 	var loan_duration=$("#insurance_duration").val();
+	alert(loan_duration);
 	var preferenceBank=$("#insurance_preferd_bank").val();
+	alert(preferenceBank)
 	var purchaseTimeFrame=$("#insurance_time_frame").val();
+	alert(purchaseTimeFrame);
 	
 	var salaryAccountBank=$("#insurance_bank_account").val();
 	var comment=$("#insurance_comment").val();
@@ -816,7 +829,7 @@ function save_apply_for_insurance(){
 	var vType='INSERT';
 	$.ajax({
 		url:prefix+'/home/add_insurance_details',
-		data:{'vType':vType,'phone':phone,'email':email,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'customer_type':customer_type,'use':use,'needLoan':needLoan,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		data:{'vType':vType,'phone':phone,'email':email,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'date':date,'time':time,'customer_type':customer_type,'use':use,'needLoan':needLoan,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
 		type:'POST',
 		processData: true,
 		dataType:'JSON'

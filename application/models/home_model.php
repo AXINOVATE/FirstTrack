@@ -462,48 +462,51 @@ class Home_model extends CI_Model{
 		$vresult['status'] = "Failed";
 		$xml ="<ROOT>
 					<HEADER>";
+					$vType = $this->input->post('vType');
         $phone=$this->input->post('phone');
-		
-		$manufactureID = $this->input->post('manufactureID');
+		$email = $this->input->post('email');
 		$modelID = $this->input->post('modelID');
 		$variantID = $this->input->post('variantID');
-		$categoryID = $this->input->post('categoryID');
-		$quality_of_vehicle = $this->input->post('quality_of_vehicle');
+		$cityID = $this->input->post('cityID');
+		
+		$date=$this->input->post('date');
+		$time=$this->input->post('time');
+		$manufactureID = $this->input->post('manufactureID');
+		$use=$this->input->post('use');
 		$customer_type = $this->input->post('customer_type');
 		$needLoan = $this->input->post('needLoan');
 		$loan_amount = $this->input->post('loan_amount');
 		$loan_duration = $this->input->post('loan_duration');
 		$preferenceBank = $this->input->post('preferenceBank');
 		$purchaseTimeFrame = $this->input->post('purchaseTimeFrame');
-		$bestTimeToCall = $this->input->post('bestTimeToCall');
+		
 		$salaryAccountBank = $this->input->post('salaryAccountBank');
 		$comment = $this->input->post('comment');
 		$termsandconditions = $this->input->post('termsandconditions');
 		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
-						<FULLNAME>".$fullname."</FULLNAME>
+						
 						<PHONE>".$phone."</PHONE>
 						<EMAIL>".$email."</EMAIL>
-						<ADDRESS>".$address."</ADDRESS>
-						<CITYID>".$cityID."</CITYID>
-						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
 						<MODELID>".$modelID."</MODELID>
 						<VARIANTID>".$variantID."</VARIANTID>
-						<CATEGORYID>".$categoryID."</CATEGORYID>
-						<QUALITYOFVEHICLE>".$quality_of_vehicle."</QUALITYOFVEHICLE>
+						<CITYID>".$cityID."</CITYID>
+						<DATE>".$date."</DATE>
+						<TIME>".$time."</TIME>
+						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+						<USE>".$use."</USE>
 						<CUSTOMERTYPE>".$customer_type."</CUSTOMERTYPE>
-						<NEEDLOAN>".$needLoad."</NEEDLOAN>
+						<NEEDLOAN>".$needLoan."</NEEDLOAN>
 						<LOANAMOUNT>".$loan_amount."</LOANAMOUNT>
 						<LOANDURATION>".$loan_duration."</LOANDURATION>
 						<PREFERENCEBANK>".$preferenceBank."</PREFERENCEBANK>
 						<PURCHASETIME>".$purchaseTimeFrame."</PURCHASETIME>
-						<TIMETOCALL>".$bestTimeToCall."</TIMETOCALL>
 						<SALARYACCOUNTBANK>".$salaryAccountBank."</SALARYACCOUNTBANK>
 						<COMMENT>".$comment."</COMMENT>
 						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
 					</HEADER>
 				</ROOT>";
 			$rndS=$this->randStrGen();
-			$query = $this->db->query("CALL usp_insUpdCorporateDeals('".$xml."',@vresult)");
+			$query = $this->db->query("CALL usp_insUpdApplyInsurance('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 
