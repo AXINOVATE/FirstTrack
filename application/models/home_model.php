@@ -373,7 +373,7 @@ class Home_model extends CI_Model{
 						<CITYID>".$cityID."</CITYID>
 						<CATEGORYID>".$categoryID."</CATEGORYID>
 						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
-						<MODEL>".$modelID."</MODEL>
+						<MODELID>".$modelID."</MODELID>
 						<VARIANTID>".$variantID."</VARIANTID>
 						<USE>".$use."</USE>
 						<PLAN>".$plan."</PLAN>
@@ -414,6 +414,64 @@ class Home_model extends CI_Model{
 		$quality_of_vehicle = $this->input->post('quality_of_vehicle');
 		$customer_type = $this->input->post('customer_type');
 		$needLoad = $this->input->post('needLoad');
+		$loan_amount = $this->input->post('loan_amount');
+		$loan_duration = $this->input->post('loan_duration');
+		$preferenceBank = $this->input->post('preferenceBank');
+		$purchaseTimeFrame = $this->input->post('purchaseTimeFrame');
+		$bestTimeToCall = $this->input->post('bestTimeToCall');
+		$salaryAccountBank = $this->input->post('salaryAccountBank');
+		$comment = $this->input->post('comment');
+		$termsandconditions = $this->input->post('termsandconditions');
+		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
+						<FULLNAME>".$fullname."</FULLNAME>
+						<PHONE>".$phone."</PHONE>
+						<EMAIL>".$email."</EMAIL>
+						<ADDRESS>".$address."</ADDRESS>
+						<CITYID>".$cityID."</CITYID>
+						<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+						<MODELID>".$modelID."</MODELID>
+						<VARIANTID>".$variantID."</VARIANTID>
+						<CATEGORYID>".$categoryID."</CATEGORYID>
+						<QUALITYOFVEHICLE>".$quality_of_vehicle."</QUALITYOFVEHICLE>
+						<CUSTOMERTYPE>".$customer_type."</CUSTOMERTYPE>
+						<NEEDLOAN>".$needLoad."</NEEDLOAN>
+						<LOANAMOUNT>".$loan_amount."</LOANAMOUNT>
+						<LOANDURATION>".$loan_duration."</LOANDURATION>
+						<PREFERENCEBANK>".$preferenceBank."</PREFERENCEBANK>
+						<PURCHASETIME>".$purchaseTimeFrame."</PURCHASETIME>
+						<TIMETOCALL>".$bestTimeToCall."</TIMETOCALL>
+						<SALARYACCOUNTBANK>".$salaryAccountBank."</SALARYACCOUNTBANK>
+						<COMMENT>".$comment."</COMMENT>
+						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
+					</HEADER>
+				</ROOT>";
+			$rndS=$this->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdCorporateDeals('".$xml."',@vresult)");
+			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+
+			mysqli_next_result($this->db->conn_id);	
+			if ($query1[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+	}
+	
+	public function add_insurance_details(){
+		$vresult['status'] = "Failed";
+		$xml ="<ROOT>
+					<HEADER>";
+        $phone=$this->input->post('phone');
+		
+		$manufactureID = $this->input->post('manufactureID');
+		$modelID = $this->input->post('modelID');
+		$variantID = $this->input->post('variantID');
+		$categoryID = $this->input->post('categoryID');
+		$quality_of_vehicle = $this->input->post('quality_of_vehicle');
+		$customer_type = $this->input->post('customer_type');
+		$needLoan = $this->input->post('needLoan');
 		$loan_amount = $this->input->post('loan_amount');
 		$loan_duration = $this->input->post('loan_duration');
 		$preferenceBank = $this->input->post('preferenceBank');

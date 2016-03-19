@@ -105,6 +105,17 @@
 		get_vehlone_manufacture();
 		get_vehlone_varient();
 	});
+	$('#insurance-save').on('click' ,function(){
+		xu_validation.form_submit('#Apply-for-insurance','save_apply_for_insurance');		
+	});
+	$("#apply-for-insurance,#apply-for-insurance1").on('click',function(){
+		get_insurance_cities();
+		get_insurance_categories();
+		get_insurance_manufacture();
+		get_insurance_varient();
+	});
+	
+	
 	$('#corp_save_data').on('click' ,function(){
 		xu_validation.form_submit('#corporate_deals_form','save_corporate_deals');		
 	});
@@ -592,3 +603,80 @@ function save_road_assistance(){
 
 }
 /*-------------------road assistance popup-----------------*/
+
+
+
+
+/*------------------- apply for insurance Popup Starts Here -----------------*/
+
+function get_insurance_cities(){
+	get_cities("insurance_city");
+}
+
+function get_insurance_manufacture(){
+	get_manufacture("insurance_maker");
+}
+function get_insurance_varient(){
+	get_variant("insurance_variant");
+}
+$("#insurance_maker").on('change',function(){
+	var maID=$(this).val();
+	$.ajax({
+		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Model --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
+		}
+		$("#insurance_model").html(html);
+	});
+});
+function save_apply_for_insurance(){
+	var vType="INSERT";
+	var phone=$("#insurance_phone").val();
+	var email=$("#insurance_email").val();
+	var cityID=$("#insurance_city").val();
+	var manufactureID=$("#insurance_maker").val();
+	var modelID=$("#insurance_model").val();
+	var variantID=$("#insurance_variant").val();
+	var customer_type=$("#insurance_customer_type").val();
+	var use=$("#insurance_use").val();
+	var needLoan=$("#insurance_need_loan").val();
+	var loan_amount=$("#insurance_loan_amount").val();
+	var loan_duration=$("#insurance_duration").val();
+	var preferenceBank=$("#insurance_preferd_bank").val();
+	var purchaseTimeFrame=$("#insurance_time_frame").val();
+	
+	var salaryAccountBank=$("#insurance_bank_account").val();
+	var comment=$("#insurance_comment").val();
+	var termsandconditions=$("#insurance_agree").val();
+	var vType='INSERT';
+	$.ajax({
+		url:prefix+'/home/add_insurance_details',
+		data:{'vType':vType,'phone':phone,'email':email,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'customer_type':customer_type,'use':use,'needLoan':needLoan,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Success',
+				text: 'Saved Successfully',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
+	});
+}
+/*-------------------apply for insurance pop end -----------------*/
