@@ -698,12 +698,12 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="corp_needloan"  va_req="true" style="width:100%;">
 								<option value="">-- Do you also need Loan --</option>
-								<option value="Require" >Yes</option>
-								<option value="Not Require" >No</option>
+								<option value="Yes" >Yes</option>
+								<option value="No" >No</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_loan_looking"  va_req="true" style="width:100%;">
+							<select class="form-control mb-10" id="corp_loan_amount"  va_req="true" style="width:100%;">
 								<option value="">-- What is the Loan Amount Looking for --</option>
 								<option value="5 to 10 Lakhs" >5 to 10 Lakhs</option>
 								<option value="10 lakhs to 15 Lakhs" > 10 lakhs to 15 Lakhs</option>

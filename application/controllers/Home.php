@@ -279,7 +279,10 @@ class Home extends CI_Controller {
 	public function get_manufacture_detail($Vtype='')	{
 		echo json_encode($this->manage_products_model->getManufatureDetails($Vtype));
 	}
-	public function add_vehicle_loan()	{
+	public function add_vehicle_loan(){
 		echo json_encode($this->home_model->add_vehicle_loan());
+	}
+	public function add_corporate_deals(){
+		echo json_encode($this->home_model->add_corporate_deals());
 	}
 }

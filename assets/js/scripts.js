@@ -306,18 +306,20 @@ function save_corporate_deals(){
 	var variantID=$("#corp_variant").val();
 	var categoryID=$("#corp_category").val();
 	var quality_of_vehicle=$("#corp_quality_of_vehicle").val();
+	var customer_type=$("#corp_customerType").val();
 	var needLoad=$("#corp_needloan").val();
-	var loanLooking=$("#corp_loan_looking").val();
-	var lookDuration=$("#corp_loan_duration").val();
+	var loan_amount=$("#corp_loan_amount").val();
+	var loan_duration=$("#corp_loan_duration").val();
 	var preferenceBank=$("#corp_pref_bank").val();
 	var purchaseTimeFrame=$("#corp_purchase_time_frame").val();
 	var bestTimeToCall=$("#corp_best_time_to_call").val();
 	var salaryAccountBank=$("#corp_salary_account").val();
 	var comment=$("#corp_comment").val();
 	var termsandconditions=$("#corp_termsadnconditions").val();
+	var vType='INSERT';
 	$.ajax({
-		url:prefix+'/home/add_corporrate_deals/',
-		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'quality_of_vehicle':quality_of_vehicle,'needLoad':needLoad,'loanLooking':loanLooking,'lookDuration':lookDuration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		url:prefix+'/home/add_corporate_deals/',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'address':address,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'categoryID':categoryID,'quality_of_vehicle':quality_of_vehicle,'customer_type':customer_type,'needLoad':needLoad,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'bestTimeToCall':bestTimeToCall,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
