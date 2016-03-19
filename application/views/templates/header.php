@@ -305,13 +305,14 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">Request for Test Drive</h4>
 				</div>
-				<div class="modal-body">					
+				<div class="modal-body">	
+					<form class="form-horizontal" name="Request_for_TestDrive" role="form"  method="POST" id="Request_for_TestDrive" submit="return false">				
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+							<input type="text" name="RTD_Full_Name" id="RTD_Full_Name" va_req="true" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
 							</div>
 						</div>
 					</div>
@@ -320,7 +321,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="eg. 9874563110" />					
+							<input type="text" class="form-control" va_req="true" name="RTD_Phone" id="RTD_Phone" placeholder="eg. 9874563110" />					
 							</div>
 						</div>
 					</div>
@@ -329,100 +330,93 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-							<input type="text" class="form-control" id="emailID" name="emailID" placeholder="tony@gmail.com" />				
+							<input type="text" class="form-control"  name="RTD_Email_id" id="RTD_Email_id" va_req="true" va_email="true"  placeholder="tony@gmail.com" />				
 							</div>
 							
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="datetime" class="col-md-3 col-sm-3 col-xs-12 control-label">Preferred Time</label>
-						<div class="col-md-9 col-sm-9 col-xs-9  mb-10">
-							
-								<div class="input-group date datepicker no-padding">
-									<input type="text" class="form-control" va_req="true" id="datetimepicker1" name="regCloseDate" value="">
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>
-									<div class="input-group bootstrap-timepicker timepicker" style="margin-left:3px">
-									<input id="timepicker3" name="reg_time" type="text" class="form-control input-small inpt-timepicker" value="">
-									</div>
-								</div>
+						<label for="Expiry_Date" class="col-md-3 field_titles ">
+							Preferred Time <span class="form-man"> * </span>
+						</label>
+						<div class="col-md-3 pr-0">
+							<div class="input-group date datepicker no-padding">
+								<input type="text" class="form-control" va_req="true" name="RTD_Pre_date" id="RTD_Pre_date" value="">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
 						</div>
+						<div class="col-md-2 pl-0">
+							<div class="input-group bootstrap-timepicker timepicker">
+								<input id="timepicker3" name="reg_time" va_req="true"  name="RTD_Pre_Time" id="RTD_Pre_Time" type="text" class="form-control input-small inpt-timepicker" value="">
+							</div>
+						</div>
+					</div>	
+					<div class="col-md-4">
+						<select class="form-control mb-10" id="city" style="width:100%;" va_req="true" name="RTD_City" id="RTD_City">
+							<option value="">-- Select City --</option>
+							<option value="1" >Bangalore</option>
+							<option value="1" >Mysore</option>
+						</select>
 					</div>
-					
-						<div class="col-md-4">
-							<select class="form-control mb-10" id="city" style="width:100%;">
-								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-						<div class="col-md-4">
-							<select class="form-control mb-10" id="category" style="width:100%;">
-								<option value="">-- Select Category --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
-							</select>
-						</div>
-					
-					
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="maker" style="width:100%;">
-								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="model" style="width:100%;">
-								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
-							</select>
-						</div>
-					
-					
-						<div class="col-md-4">
-							<select class="form-control mb-10" id="variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
-							</select>
-						</div>
-						
-					
-					
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="dealerName" style="width:100%;">
-								<option value="">-- Select Dealer Name --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="dealerLocation" style="width:100%;">
-								<option value="">-- Select Dealer Location --</option>
-								<option value="1" >HSR Layout</option>
-								<option value="1" >Marathahalli</option>
-							</select>
-						</div>
-					
-					    <div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+					<div class="col-md-4">
+						<select class="form-control mb-10" id="category" style="width:100%;" va_req="true" name="RTD_Category" id="RTD_Category">
+							<option value="">-- Select Category --</option>
+							<option value="1" >Bangalore</option>
+							<option value="1" >Mysore</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<select class="form-control mb-10" id="maker" style="width:100%;" va_req="true" name="RTD_Maker" id="RTD_Maker">
+							<option value="">-- Select Maker --</option>
+							<option value="1" >Maruti Suzuki</option>
+							<option value="1" >Hyundai</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<select class="form-control mb-10" id="model" style="width:100%;" va_req="true" name="RTD_Model" id="RTD_Model">
+							<option value="">-- Select Model --</option>
+							<option value="1" >Swift</option>
+							<option value="1" >I20</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<select class="form-control mb-10" id="variant" style="width:100%;" va_req="true" name="RTD_Variant" id="RTD_Variant">
+							<option value="">-- Select Variant --</option>
+							<option value="1" >Petrol</option>
+							<option value="1" >Diesel</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<select class="form-control mb-10" id="dealerName" style="width:100%;" va_req="true" name="RTD_Dealer_Name" id="RTD_Dealer_Name">
+							<option value="">-- Select Dealer Name --</option>
+							<option value="1" >Maruti Suzuki</option>
+							<option value="1" >Hyundai</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<select class="form-control mb-10" id="dealerLocation" style="width:100%;" va_req="true" name="RTD_Dealer_Location" id="RTD_Dealer_Location">
+							<option value="">-- Select Dealer Location --</option>
+							<option value="1" >HSR Layout</option>
+							<option value="1" >Marathahalli</option>
+						</select>
+					</div>
+					<div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox"  value="agreed" style="float:left;" va_req="true" name="RTD_agree" id="RTD_agree">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
-						</div>
-					
+					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" style="background-color:#F9D133;" >Save</a>
+							<a href="javascript:void(0)" class="search-btn" id="Request_TestDrive" name="Request_TestDrive" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
 				</div>
-				
+				</form>
 			</div>
 		</div>
 	</div>

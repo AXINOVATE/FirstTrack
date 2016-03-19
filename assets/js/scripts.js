@@ -7,6 +7,10 @@
 	$('#advance-booking').on('click' ,function(){
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
+	$('#Request_TestDrive').on('click' ,function(){
+		alert('ddssdf');
+		xu_validation.form_submit('#Request_for_TestDrive','Request_TestDrive_Save');			
+	});
 	$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
@@ -18,6 +22,12 @@
 		//get_cities("abCity");				
 		get_manufacture_adv();
 		get_variant_adv();
+	});
+	$('#adv-book,#adv-book1').on('click', function(){	
+		requestTD_getcityDetails();
+		//get_cities("abCity");				
+		requestTD_manufacture_adv();
+		requestTD_variant_adv();
 	});
 	$('#on-road-assistance,#on-road-assistance1').on('click', function(){
 		by_road_on_get_cities();
@@ -378,7 +388,6 @@ function adv_getManufatureDetails(){
 				for(i=0;i< data.length;i++){
 					$('#abMaker').append('<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>');
 				}
-				
 			}else{
 				
 			}
@@ -434,7 +443,37 @@ function save_advance_booking(){
 		});
 }
 /* Advanced Booking End Starts Here */
+/* Requist For Test Drive Starts Here */
+function get_vehlone_cities(){
+	get_cities("vehlone_city");
+}
+function Request_TestDrive_Save(){
+	$.ajax({
+			url:prefix+'/services/Request_for_TestDrive',
+			dataType:'JSON',
+			type:'POST',
+			data:$('#Request_for_TestDrive').serialize()
+		}).done(function(data){
+			if(data.status == "Success"){	
+				$.gritter.add({
+					title: 'Success',
+					text: 'Saved Successfully',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},1000);
+			}else{
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To Save',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},1000);
+			}
+		});
 
+
+
+/* Requist For Test End Starts Here */
 /* by road assistance pop up start here*/
 
 function by_road_on_get_cities(){	
@@ -519,6 +558,8 @@ function by_road_on_getVariantDetail(){
 }
 
 var prefix=$("#prefix").data("prefix");
+$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+$('.inpt-timepicker').timepicker();
 function save_road_assistance(){
 	$.ajax({
 			url:prefix+'/services/advanced_booking',
