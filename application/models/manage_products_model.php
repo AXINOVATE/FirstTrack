@@ -173,7 +173,7 @@
 					}
 				}
 				$xml .= "</ROOT>";
-				echo htmlspecialchars($xml); exit();
+				//echo htmlspecialchars($xml); exit();
 			}
 			catch (Exception $E)
 			{
