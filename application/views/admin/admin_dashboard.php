@@ -37,8 +37,11 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 				<?php foreach($roadTestCount as $RTC){
 							$totalRoadTestRequest = $RTC['totalCount'];
+							if($RTC['openedCount']==null) $RTC['openedCount']="0";
 							$totalRoadTestOpenedRequest = $RTC['openedCount'];
+							if($RTC['progressCount']==null) $RTC['progressCount']="0";
 							$totalRoadTestProgressRequest = $RTC['progressCount'];
+							if($RTC['closedCount']==null) $RTC['closedCount']="0";
 							$totalRoadTestClosedRequest = $RTC['closedCount'];
 					} ?>
 					<center>	
@@ -80,6 +83,9 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 				<?php foreach($advanceBookingCount as $ABC){
 							$totalAdvanceBookingRequest = $ABC['totalCount'];
+							if($ABC['openedCount']==null) $ABC['openedCount']="0";
+							if($ABC['progressCount']==null) $ABC['progressCount']="0";
+							if($ABC['closedCount']==null) $ABC['closedCount']="0";
 							$totalAdvanceBookingOpenedRequest = $ABC['openedCount'];
 							$totalAdvanceBookingProgressRequest = $ABC['progressCount'];
 							$totalAdvanceBookingClosedRequest = $ABC['closedCount'];
@@ -158,6 +164,9 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 				<?php foreach($vehicleLoanCount as $VLC){
 							$totalVehicleLoanRequest = $VLC['totalCount'];
+							if($VLC['openedCount']==null) $VLC['openedCount']="0";
+							if($VLC['progressCount']==null) $VLC['progressCount']="0";
+							if($VLC['closedCount']==null) $VLC['closedCount']="0";
 							$totalVehicleLoanOpenedRequest = $VLC['openedCount'];
 							$totalVehicleLoanProgressRequest = $VLC['progressCount'];
 							$totalVehicleLoanClosedRequest = $VLC['closedCount'];
@@ -201,6 +210,9 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<?php foreach($corporateDealsCount as $CDC){
 							$totalCorporateRequest = $CDC['totalCount'];
+							if($CDC['openedCount'] == null) $CDC['openedCount'] = "0";
+							if($CDC['progressCount'] == null) $CDC['progressCount'] = "0";
+							if($CDC['closedCount'] == null) $CDC['closedCount'] = "0";
 							$totalCorporateOpenedRequest = $CDC['openedCount'];
 							$totalCorporateProgressRequest = $CDC['progressCount'];
 							$totalCorporateClosedRequest = $CDC['closedCount'];
@@ -244,6 +256,9 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 				<?php foreach($applyForInsuranceCount as $AFI){
 							$totalForInsuranceRequest = $AFI['totalCount'];
+							if($AFI['openedCount']==null) $AFI['openedCount']="0";
+							if($AFI['progressCount']==null) $AFI['progressCount']="0";
+							if($AFI['closedCount']==null) $AFI['closedCount']="0";
 							$totalForInsuranceOpenedRequest = $AFI['openedCount'];
 							$totalForInsuranceProgressRequest = $AFI['progressCount'];
 							$totalForInsuranceClosedRequest = $AFI['closedCount'];
@@ -288,6 +303,9 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 				<?php foreach($roadAssistanceCount as $RAC){
 							$totalRoadAssistanceRequest = $RAC['totalCount'];
+							if($RAC['openedCount']==null) $RAC['openedCount']="0";
+							if($RAC['progressCount']==null) $RAC['progressCount']="0";
+							if($RAC['closedCount']==null) $RAC['closedCount']="0";
 							$totalRoadAssistanceOpenedRequest = $RAC['openedCount'];
 							$totalRoadAssistanceProgressRequest = $RAC['progressCount'];
 							$totalRoadAssistanceClosedRequest = $RAC['closedCount'];
