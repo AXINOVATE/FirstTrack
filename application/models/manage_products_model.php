@@ -192,4 +192,54 @@
 				$retvalue['evalID'] = $result[0][$re3];
 			}
 		}
+		public function getTrendType($vType,$id=''){
+			$query = $this->db->query("CALL usp_getTrendType('".$vType."','".$id."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
+		public function getProductList($vType,$mID=''){
+			$query='';
+			if($vType=='ALL'){
+				$query = $this->db->query("select productID,productName,manufacturerID from tbl_productBasic where status='P'");
+			}elseif($vType=='BM'){
+				$query = $this->db->query("select productID,productName,manufacturerID from tbl_productBasic where status='P' and manufacturerID='".$mID."'");
+			}
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
+		public function getVariantList($vType,$prID=''){
+			$query='';
+			if($vType=='ALL'){
+				$query = $this->db->query("SELECT variantID,productID,variantName FROM tbl_productDetails WHERE status='P'");
+			}elseif($vType='BP'){
+				$query = $this->db->query("SELECT variantID,productID,variantName FROM tbl_productDetails WHERE status='P' and productID='".$prID."'");
+			}
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
+		public function insUpdProductCategoryDetails(){
+			$vresult['status']="Failed";
+			$vType= $this->input->post('vType');	
+			$manufacturerName= $this->input->post('manufacturerName');	
+			$select_product= $this->input->post('select_product');
+			$select_variant= $this->input->post('select_variant');
+			$trendTypeID= $this->input->post('trendTypeID');			
+			$productCategoryID= $this->input->post('productCategoryID');
+			$userID=$this->session->userdata('userID');
+			$rndS=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdTrendDetails('".$vType."','".$productCategoryID."','".$manufacturerName."','".$select_product."','".$select_variant."','".$trendTypeID."','".$userID."',@vresult)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS] == "Success"){
+				$vresult['status'] = "Success";
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
+		public function getProductsCategoryDetails($vType,$vID=''){
+			$query = $this->db->query("CALL usp_getProductCategoryDetails('".$vType."','".$vID."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
 	}

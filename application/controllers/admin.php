@@ -173,4 +173,31 @@ class Admin extends CI_Controller {
 	public function getRoadTestRequest($vType,$GRTID=''){
 		echo json_encode($this->dashboard_model->getRoadTestRequest($vType,$GRTID));
 	}
+	public function add_products_category($id=''){
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['getMakers'] = $this->manage_products_model->getManufatureDetails('ALL');
+		$data['getTrendType'] = $this->manage_products_model->getTrendType('ALL','');
+		$data['productsCategoryDetails'] = $this->manage_products_model->getProductsCategoryDetails('ALL','');
+		$data['productList'] = $this->manage_products_model->getProductList('ALL','');
+		$data['variantList'] = $this->manage_products_model->getVariantList('ALL','');
+		$data['edit_productsCategoryDetails'] = $this->manage_products_model->getProductsCategoryDetails('ONE',$id);
+		$this->load->view('admin/products/add_products_category',$data);
+	}
+	public function getTrendType($vType,$id=''){
+		echo json_encode($this->manage_products_model->getTrendType($vType,$id));
+	}
+	public function getProductList($vType,$mID=''){
+		echo json_encode($this->manage_products_model->getProductList($vType,$mID));
+	}
+	public function getVariantList($vType,$prID=''){
+		echo json_encode($this->manage_products_model->getVariantList($vType,$prID));
+	}
+	public function insUpdProductCategoryDetails(){
+		echo json_encode($this->manage_products_model->insUpdProductCategoryDetails());
+	}
+	public function getProductsCategoryDetails($vType,$vID=''){
+		echo json_encode($this->manage_products_model->getProductsCategoryDetails($vType,$vID=''));
+	}
 }
