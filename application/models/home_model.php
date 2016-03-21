@@ -311,7 +311,7 @@ class Home_model extends CI_Model{
 			$rndS=$this->randStrGen();
 			$query = $this->db->query("CALL usp_insUpdVehicleLoan('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
-			$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
 				$vresult['status'] = "Success";
@@ -406,6 +406,12 @@ class Home_model extends CI_Model{
 		$vresult['status'] = "Failed";
 		$xml ="<ROOT>
 					<HEADER>";
+		$vType = $this->input->post('vType');
+		$fullname = $this->input->post('fullname');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$address = $this->input->post('address');
+		$cityID = $this->input->post('cityID');
 		$manufactureID = $this->input->post('manufactureID');
 		$modelID = $this->input->post('modelID');
 		$variantID = $this->input->post('variantID');
