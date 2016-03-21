@@ -17,8 +17,7 @@
 
 	
 
-	$('#test-drive,#test-drive1').on('click', function(){
-		alert('dfdsfsdf');
+	$('#test-drive,#test-drive1').on('click', function(){		
 		get_rtd_cities();
 		get_rtd_categories();					
 		get_rtd_manufacture();
@@ -604,8 +603,8 @@ function save_advance_booking(){
 			dataType:'JSON',
 			type:'POST',
 			data:$('#Advance-Booking').serialize()
-		}).done(function(data){
-			if(data.status == "Success"){	
+		}).done(function(data){			
+			if(data == "Success"){	
 				$.gritter.add({
 					title: 'Success',
 					text: 'Saved Successfully',
@@ -643,7 +642,8 @@ function Request_TestDrive_Save(){
 			type:'POST',
 			data:$('#Request_for_TestDrive').serialize()
 		}).done(function(data){
-			if(data.status == "Inserted Successfully"){	
+			
+			if(data == "Success"){	
 				$.gritter.add({
 					title: 'Success',
 					text: 'Saved Successfully',

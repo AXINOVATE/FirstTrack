@@ -9,8 +9,7 @@ class Services_model  extends CI_Model{
 		//$this->load->database();
 	}
 	
-	public function advance_booking(){
-		$retVal['status']="Failed";
+	public function advance_booking(){		
 		 $adfullName=$this->input->post("abFullName");
 		 $abphone=$this->input->post("abphone");
 		 $abemailID=$this->input->post("abemailID");
@@ -31,16 +30,13 @@ class Services_model  extends CI_Model{
 					<ADVTC>".$abTermsConditions."</ADVTC>
 					<STATUS>Opened</STATUS>					
 				</HEADER>
-			</ROOT>";		
-		$user_address = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
-		$query=$this->db->query("SELECT @vStatus as status")->result_array();
-		mysqli_next_result($this->db->conn_id);	
-		$query1= $query[0]['status'];
-			if ($query1 == "Inserted Successfully" ){
-				$retVal['status']="Success";
-				return $retVal;
+			</ROOT>";				
+		$query = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
+		$query=$this->db->query("SELECT @vStatus as status")->row();		
+			if ($query = "Successfully" ){
+				return "Success";
 			}else{
-				return $retVal;
+				return "Failed";
 			}
 	}
 
@@ -76,13 +72,13 @@ class Services_model  extends CI_Model{
 				<RTDAGREE>".$RTD_agree."</RTDAGREE>
 				<STATUS>Opened</STATUS>					
 			</HEADER>
-			</ROOT>";		
-			
-		$user_address = $this->db->query("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");
-		$query=$this->db->query("SELECT @vStatus as status")->result_array();
+			</ROOT>";			
+		$query = $this->db->query("call usp_insUpdRequestTestDrive('INSERT','$xml',@vStatus)");
+		$query=$this->db->query("SELECT @vStatus as status")->row();
 		//mysqli_next_result($this->db->conn_id);	
 		//$query1= $query[0]['status'];
-			if ($query = "Inserted Successfully" ){
+		//var_dump($query);exit();
+			if ($query = "Successfully" ){
 				return "Success";
 			}else{
 				return "Failed";

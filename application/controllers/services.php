@@ -9,7 +9,7 @@ class Services extends CI_Controller {
 		$this->load->model('manage_products_model');
 	}
 	public function advanced_booking(){		
-		 $this->services_model->advance_booking();
+		echo json_encode($this->services_model->advance_booking());
 	}
 	public function get_city(){		
 		echo json_encode($this->manage_products_model->location_detail('UCITY'));
