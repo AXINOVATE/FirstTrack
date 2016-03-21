@@ -36,12 +36,7 @@
 		requestTD_manufacture_adv();
 		requestTD_variant_adv();
 	});
-	$('#on-road-assistance,#on-road-assistance1').on('click', function(){
-		by_road_on_get_cities();
-		by_road_on_getManufatureDetails();		
-		by_road_on_getVariantDetail();
-		by_road_on_categories();
-	});
+	
 
 	$('document').ready(function(){
 		$('#abModel').html('');
@@ -796,7 +791,6 @@ $("#insurance_maker").on('change',function(){
 function save_apply_for_insurance(){
 	var vType="INSERT";
 	var fullname=$("#insurance_fullname").val();
-	alert(fullname);
 	var phone=$("#insurance_phone").val();
 	var email=$("#insurance_email").val();
 	var cityID=$("#insurance_city").val();
