@@ -463,6 +463,7 @@ class Home_model extends CI_Model{
 		$xml ="<ROOT>
 					<HEADER>";
 					$vType = $this->input->post('vType');
+					$fullname = $this->input->post('fullname');
         $phone=$this->input->post('phone');
 		$email = $this->input->post('email');
 		$modelID = $this->input->post('modelID');
@@ -484,7 +485,7 @@ class Home_model extends CI_Model{
 		$comment = $this->input->post('comment');
 		$termsandconditions = $this->input->post('termsandconditions');
 		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
-						
+						<FULLNAME>".$fullname."</FULLNAME>
 						<PHONE>".$phone."</PHONE>
 						<EMAIL>".$email."</EMAIL>
 						<MODELID>".$modelID."</MODELID>

@@ -795,6 +795,8 @@ $("#insurance_maker").on('change',function(){
 });
 function save_apply_for_insurance(){
 	var vType="INSERT";
+	var fullname=$("#insurance_fullname").val();
+	alert(fullname);
 	var phone=$("#insurance_phone").val();
 	var email=$("#insurance_email").val();
 	var cityID=$("#insurance_city").val();
@@ -816,7 +818,7 @@ function save_apply_for_insurance(){
 	var vType='INSERT';
 	$.ajax({
 		url:prefix+'/home/add_insurance_details',
-		data:{'vType':vType,'phone':phone,'email':email,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'date':date,'time':time,'customer_type':customer_type,'use':use,'needLoan':needLoan,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'cityID':cityID,'manufactureID':manufactureID,'modelID':modelID,'variantID':variantID,'date':date,'time':time,'customer_type':customer_type,'use':use,'needLoan':needLoan,'loan_amount':loan_amount,'loan_duration':loan_duration,'preferenceBank':preferenceBank,'purchaseTimeFrame':purchaseTimeFrame,'salaryAccountBank':salaryAccountBank,'comment':comment,'termsandconditions':termsandconditions},
 		type:'POST',
 		processData: true,
 		dataType:'JSON'

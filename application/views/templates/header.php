@@ -770,7 +770,16 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<form class="form-horizontal" name="Apply_for_insurance" role="form"  method="POST" id="Apply-for-insurance" submit="return false">
 				<div class="modal-body">
-					<div class="modal-body">				
+					<div class="modal-body">
+                     <div class="form-group">
+						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<div class="input-group">
+								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" id="insurance_fullname"  va_req="true" name="insurance_fullname" placeholder="name">
+							</div>
+						</div>
+					</div>					
 					<div class="form-group">
 						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
