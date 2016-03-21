@@ -538,3 +538,21 @@ body{font-family:Century Gothic !important;}
 		padding-left:12px !important;
 	}
 }
+
+/* Edit Product page CSS starts */
+.specs-div{display:block; padding:10px;}
+.specs-title{font-size: 17px; margin-bottom: 10px;}
+.specs-box{border: 1px solid #f3f3f3; display:block;}
+@media only screen and (min-width: 992px) and (max-width:1200px){
+	
+}
+@media only screen and (min-width: 768px) and (max-width:991px){
+	
+}
+@media (max-width: 767px){	
+	.specs-div{display:block; padding:0px;}
+}
+@media (max-width: 480px){	
+	
+}
+/* Edit Product page CSS ends */
