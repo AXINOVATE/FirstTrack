@@ -35,8 +35,14 @@ $prefix=$this->config->item('prefix');
 			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($roadTestCount as $RTC){
+							$totalRoadTestRequest = $RTC['totalCount'];
+							$totalRoadTestOpenedRequest = $RTC['openedCount'];
+							$totalRoadTestProgressRequest = $RTC['progressCount'];
+							$totalRoadTestClosedRequest = $RTC['closedCount'];
+					} ?>
 					<center>	
-						<a href="#">
+						<a href="<?php echo $prefix; ?>/admin/request_list/RoadTest">
 						<div class="big-box">
 							<center>
 								<div class="big-box-header">
@@ -45,25 +51,25 @@ $prefix=$this->config->item('prefix');
 							</center>
 							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
 								<div class="request-count-box">
-									<h5>100</h5>
+									<h5><?php echo $totalRoadTestRequest; ?></h5>
 									<p>Total Request</p>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
 								<div class="request-count-box">
-									<h5>40</h5>
+									<h5><?php echo $totalRoadTestOpenedRequest; ?></h5>
 									<p>New Request</p>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
 								<div class="request-count-box">
-									<h5>35</h5>
+									<h5><?php echo $totalRoadTestProgressRequest; ?></h5>
 									<p>In-progress</p>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
 								<div class="request-count-box">
-									<h5>25</h5>
+									<h5><?php echo $totalRoadTestClosedRequest; ?></h5>
 									<p>Closed</p>
 								</div>
 							</div>
@@ -236,38 +242,46 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($applyForInsuranceCount as $AFI){
+							$totalForInsuranceRequest = $AFI['totalCount'];
+							$totalForInsuranceOpenedRequest = $AFI['openedCount'];
+							$totalForInsuranceProgressRequest = $AFI['progressCount'];
+							$totalForInsuranceClosedRequest = $AFI['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Apply for Insurance
+						<a href="<?php echo $prefix; ?>/admin/request_list/APInsurance">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Apply for Insurance
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalForInsuranceRequest; ?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>500</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalForInsuranceOpenedRequest; ?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalForInsuranceProgressRequest; ?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalForInsuranceClosedRequest; ?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>300</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>27</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>173</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 			

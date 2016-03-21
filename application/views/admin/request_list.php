@@ -117,6 +117,8 @@ $prefix=$this->config->item('prefix');
 			myUrl="<?php echo $prefix;?>/admin/getAdvanceBookingRequest/"+vType;
 		}else if(page=='RASSISTANCE'){
 			myUrl="<?php echo $prefix;?>/admin/getRoadAssistanceRequest/"+vType;
+		}else if(page=='APInsurance'){
+			myUrl="<?php echo $prefix;?>/admin/getApplyForInsuranceRequest/"+vType;
 		}
 		$.ajax({
 			url:myUrl,

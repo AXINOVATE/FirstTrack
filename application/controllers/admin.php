@@ -17,6 +17,8 @@ class Admin extends CI_Controller {
 		$data['vehicleLoanCount'] = $this->dashboard_model->getVehicleLoanRequest('COUNTS','');
 		$data['advanceBookingCount'] = $this->dashboard_model->getAdvanceBookingRequest('COUNTS','');
 		$data['roadAssistanceCount'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
+		$data['applyForInsuranceCount'] = $this->dashboard_model->getApplyForInsuranceRequest('COUNTS','');
+		$data['roadTestCount'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
 		$this->load->view('admin/admin_dashboard',$data);
 	}
 	public function request_list($page)
@@ -40,6 +42,14 @@ class Admin extends CI_Controller {
 			$data['Name'] = "Road Assistance ";
 			$data['counts'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getRoadAssistanceRequest('ALL','');
+		}elseif($page=='APInsurance'){
+			$data['Name'] = "Apply For Insurance ";
+			$data['counts'] = $this->dashboard_model->getApplyForInsuranceRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getApplyForInsuranceRequest('ALL','');
+		}elseif($page=='RoadTest'){
+			$data['Name'] = "Apply For Insurance ";
+			$data['counts'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getRoadTestRequest('ALL','');
 		}
 		$this->load->view('admin/request_list',$data);
 	}
@@ -64,6 +74,14 @@ class Admin extends CI_Controller {
 			$data['Name'] = "Road Assistance ";
 			$data['counts'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getRoadAssistanceRequest('ONE',$id);
+		}elseif($page=='APInsurance'){
+			$data['Name'] = "Apply For Insurance ";
+			$data['counts'] = $this->dashboard_model->getApplyForInsuranceRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getApplyForInsuranceRequest('ONE',$id);
+		}elseif($page=='RoadTest'){
+			$data['Name'] = "Road Test Drive ";
+			$data['counts'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getRoadTestRequest('ONE',$id);
 		}
 		$this->load->view('admin/request_report',$data);
 	}
@@ -145,5 +163,14 @@ class Admin extends CI_Controller {
 	}
 	public function getAllCountry(){
 		echo json_encode($this->manage_products_model->location_detail('COUNTRY'));
+	}
+	public function updateRequestReport(){
+		echo json_encode($this->dashboard_model->updateRequestReport());
+	}
+	public function getApplyForInsuranceRequest($vType,$AfIID=''){
+		echo json_encode($this->dashboard_model->getApplyForInsuranceRequest($vType,$AfIID));
+	}
+	public function getRoadTestRequest($vType,$GRTID=''){
+		echo json_encode($this->dashboard_model->getRoadTestRequest($vType,$GRTID));
 	}
 }
