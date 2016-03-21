@@ -833,7 +833,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-2 pl-0">
 							<div class="input-group bootstrap-timepicker timepicker">
-								<input id="timepicker3" name="reg_time" va_req="true"  name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
+								<input  type="text"  name="reg_time" va_req="true"  name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
 							</div>
 						</div>
 					</div>	
@@ -847,18 +847,18 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_use" va_req="true" style="width:100%;">
 								<option value="">-- personal use or Commercial use --</option>
-								<option value="1" >White Board</option>
-								<option value="2" >Yellow Board</option>
+								<option value="White Board" >White Board</option>
+								<option value="Yellow Board" >Yellow Board</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_customer_type" va_req="true" style="width:100%;">
 								<option value="">-- Customer Type --</option>
-								<option value="1" >Proprietary</option>
-								<option value="2" >LLP</option>
-								<option value="3" >Joint Venture</option>
-								<option value="4" >Partnership-Pvt Ltd</option>
-								<option value="5" >Public Ltd Co</option>
+								<option value="Proprietary" >Proprietary</option>
+								<option value="LLP" >LLP</option>
+								<option value="Joint Venture" >Joint Venture</option>
+								<option value="Partnership-Pvt Ltd" >Partnership-Pvt Ltd</option>
+								<option value="Public Ltd Co" >Public Ltd Co</option>
 							</select>
 						</div>
 					
@@ -866,18 +866,18 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_need_loan" va_req="true" style="width:100%;">
 								<option value="">-- Do you also need Loan --</option>
-								<option value="1" >Yes</option>
-								<option value="2" >No</option>
+								<option value="Yes" >Yes</option>
+								<option value="No" >No</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_loan_amount" va_req="true" style="width:100%;">
 								<option value="">-- What is the Loan Amount Looking --</option>
-								<option value="1" >5 to 10 Laks</option>
-								<option value="2" >10 laks to 15 Laks</option>
-								<option value="3" >15 to 20 Laks</option>
-								<option value="4" >20 to 50 Laks</option>
-								<option value="5" >50 Laks and Above</option>
+								<option value="5 to 10 Laks" >5 to 10 Laks</option>
+								<option value="10 laks to 15 Laks" >10 laks to 15 Laks</option>
+								<option value="15 to 20 Laks" >15 to 20 Laks</option>
+								<option value="20 to 50 Laks" >20 to 50 Laks</option>
+								<option value="50 Laks and Above" >50 Laks and Above</option>
 							</select>
 						</div>
 					
@@ -885,22 +885,22 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_duration" va_req="true" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
-								<option value="1" >1 Year</option>
-								<option value="2" >2 Year</option>
-								<option value="2" >3 Year</option>
-								<option value="2" >4 Year</option>
-								<option value="2" >5 Year</option>
-								<option value="2" >6 Year and Above</option>
+								<option value="1 Year" >1 Year</option>
+								<option value="2 Year" >2 Year</option>
+								<option value="3 Year" >3 Year</option>
+								<option value="4 Year" >4 Year</option>
+								<option value="5 Year" >5 Year</option>
+								<option value="6 Year and Above" >6 Year and Above</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_time_frame" va_req="true" style="width:100%;">
 								<option value="">-- Purchase Time Frame --</option>
-								<option value="1" >Immediate</option>
-								<option value="2" >1-2 weeks</option>
-								<option value="3" >3-4 weeks</option>
-								<option value="4" >4 to 8 weeks</option>
-								<option value="5" >10 weeks and Above</option>
+								<option value="Immediate" >Immediate</option>
+								<option value="1-2 weeks" >1-2 weeks</option>
+								<option value="3-4 weeks" >3-4 weeks</option>
+								<option value="4 to 8 weeks" >4 to 8 weeks</option>
+								<option value="10 weeks and Above" >10 weeks and Above</option>
 							</select>
 						</div>
 					
@@ -908,23 +908,23 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_preferd_bank" va_req="true" style="width:100%;">
 								<option value="">-- Preference to Specific Bank --</option>
-								<option value="1" >HDFC</option>
-								<option value="2" >KOTAK</option>
-								<option value="3" >ICICI</option>
-								<option value="4" >YES</option>
-								<option value="5" >AXIS </option>
-								<option value="6" >Other</option>
+								<option value="HDFC" >HDFC</option>
+								<option value="KOTAK" >KOTAK</option>
+								<option value="ICICI" >ICICI</option>
+								<option value="YES" >YES</option>
+								<option value="AXIS" >AXIS </option>
+								<option value="Other" >Other</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_bank_account"  va_req="true" style="width:100%;">
 								<option value="">-- Which bank you have Current Account --</option>
-								<option value="1" >HDFC</option>
-								<option value="2" >KOTAK</option>
-								<option value="3" >ICICI</option>
-								<option value="4" >YES</option>
-								<option value="5" >AXIS </option>
-								<option value="6" >Other</option>
+								<option value="HDFC" >HDFC</option>
+								<option value="KOTAK" >KOTAK</option>
+								<option value="ICICI" >ICICI</option>
+								<option value="YES" >YES</option>
+								<option value="AXIS" >AXIS </option>
+								<option value="Other" >Other</option>
 								
 							</select>
 						</div>

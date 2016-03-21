@@ -291,7 +291,7 @@ class Home extends CI_Controller {
 
 	}
 	public function add_insurance_details(){
-		echo "hello";
+		
 		echo json_encode($this->home_model->add_insurance_details());
 
 	}
