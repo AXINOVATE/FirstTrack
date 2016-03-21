@@ -179,5 +179,17 @@
 			{
 				echo $E -> getMessage();
 			}
+			$this->db->query("CALL usp_insUploadProducts('".$xml."',@vResult, @vproductID, @vMessage)");
+			$re1 = $this->home_model->randStrGen();
+			$re2 = $this->home_model->randStrGen();
+			$re3 = $this->home_model->randStrGen();
+			$getResult=$this->db->query("SELECT @vResult as ".$re1.", @vproductID as ".$re3.", @vMessage as ".$re2);
+			mysqli_next_result($this->db->conn_id);
+			$result = $getResult->result_array();
+			var_dump($result); exit();
+			if($result[0][$re2] == 'Success'){
+				$retvalue['status'] = true;
+				$retvalue['evalID'] = $result[0][$re3];
+			}
 		}
 	}
