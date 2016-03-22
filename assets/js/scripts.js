@@ -35,19 +35,13 @@
 		//get_cities("abCity");				
 		requestTD_manufacture_adv();
 		requestTD_variant_adv();
-	});
-
-	$('#on-road-assistance,#on-road-assistance1').on('click', function(){
-		by_road_on_get_cities();
-		by_road_on_getManufatureDetails();		
-		by_road_on_getVariantDetail();
-		by_road_on_categories();
-	});
+	});	
 	$('#GetProformaInvoice').on('click' , function(){
 		get_gpi_cities();
 		get_gpi_categories();					
 		get_gpi_manufacture();
 		get_gpi_varient();
+		
 	});
 
 	$('document').ready(function(){
@@ -56,80 +50,20 @@
 	$('document').ready(function(){
 		$('#boraModel').html('');
 	});
-	$('#abMaker').on('change',function(){		
-		var abMaker_detail = $(this ,'#abMaker').val();
-		var manufactureDetail="NUll";
-		var Maker_detail="Maker-M";
-		$.ajax({
-			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
-			data:{},
-			type:'POST',
-			processData: true,
-			dataType:'JSON'
-			}).done(function(data){
-				if(data.length > -1){					
-					$('#abModel').html('');					
-					var i=0;
-					$('#abModel').append('<option value="">-- Select Model --</option>');
-					for(i=0;i< data.length;i++){
-						$('#abModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
-					}
-					
-				}else{
-					
-				}
-			});
-		
+	$('#abMaker').on('change',function(){	
+		get_particular_model("abMaker","abModel");		
 	});
-	$('#RTD_Maker').on('change',function(){		
-		var abMaker_detail = $(this ,'#RTD_Maker').val();
-		var manufactureDetail="NUll";
-		var Maker_detail="Maker-M";
-		$.ajax({
-			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
-			data:{},
-			type:'POST',
-			processData: true,
-			dataType:'JSON'
-			}).done(function(data){
-				if(data.length > -1){					
-					$('#RTD_Model').html('');					
-					var i=0;
-					$('#RTD_Model').append('<option value="">-- Select Model --</option>');
-					for(i=0;i< data.length;i++){
-						$('#RTD_Model').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
-					}
-					
-				}else{
-					
-				}
-			});
-		
+	$('#RTD_Maker').on('change',function(){			
+		get_particular_model("RTD_Maker","RTD_Model");		
+	});
+	$('#gpi_maker').on('change',function(){
+			get_particular_model("gpi_maker","gpi_model");
 	});
 	$('#boraMaker').on('change',function(){		
-		var abMaker_detail = $(this ,'#boraMaker').val();
-		var manufactureDetail="NUll";
-		var Maker_detail="Maker-M";
-		$.ajax({
-			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
-			data:{},
-			type:'POST',
-			processData: true,
-			dataType:'JSON'
-			}).done(function(data){
-				if(data.length > -1){					
-					$('#boraModel').html('');					
-					var i=0;
-					for(i=0;i< data.length;i++){
-						$('#boraModel').append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
-					}
-					
-				}else{
-					
-				}
-			});
-		
+		get_particular_model("boraMaker","boraModel");			
 	});
+	
+	
 	$('#btn_apply_vehicle_loan').on('click' ,function(){
 		xu_validation.form_submit('#apply_for_vehicle_loan','save_vehicle_loan');		
 	});
@@ -265,7 +199,6 @@ function get_manufacture(callback){
 }
 /*---------------------------- Common Function Ends--------------------------*/
 /* -------------------------- GetProformaInvoice start --------------------------*/
-
 function get_gpi_cities(){
 	get_cities("gpi_city");
 }
@@ -278,8 +211,6 @@ function get_gpi_manufacture(){
 function get_gpi_varient(){
 	get_variant("gpi_variant");
 }
-
-
 /* -------------------------- End GetProformaInvoice start --------------------------*/
 /*--------------------- Vechicle loan Popup Stats Here -------------*/
 function get_vehlone_cities(){
@@ -303,21 +234,8 @@ function get_vehlone_manufacture(){
 function get_vehlone_varient(){
 	get_variant("vehlone_variant");
 }
-$("#vehlone_maker").on('change',function(){
-	var maID=$(this).val();
-	$.ajax({
-		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-	}).done(function(data){
-		var len=data.length;
-		html = "<option value=''>-- Select Model --</option>";
-		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
-		}
-		$("#vehlone_model").html(html);
-	});
+$("#vehlone_maker").on('change',function(){	
+	get_particular_model("vehlone_maker","vehlone_model");	
 });
 function save_vehicle_loan(){
 	var fullname=$("#vehlone_username").val();
@@ -701,20 +619,7 @@ function get_road_varient(){
 	get_variant("boraVarient");
 }
 $("#boraMaker").on('change',function(){
-	var maID=$(this).val();
-	$.ajax({
-		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-	}).done(function(data){
-		var len=data.length;
-		html = "<option value=''>-- Select Model --</option>";
-		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
-		}
-		$("#boraModel").html(html);
-	});
+	get_particular_model("boraMaker","boraModel");		
 });
 function save_by_on_road_assistance(){
 	var vType="INSERT";
@@ -797,21 +702,8 @@ function get_insurance_manufacture(){
 function get_insurance_varient(){
 	get_variant("insurance_variant");
 }
-$("#insurance_maker").on('change',function(){
-	var maID=$(this).val();
-	$.ajax({
-		url:prefix+'/services/getModelDetail/Maker-M/null/'+maID,
-		type:'POST',
-		processData: true,
-		dataType:'JSON'
-	}).done(function(data){
-		var len=data.length;
-		html = "<option value=''>-- Select Model --</option>";
-		for(i=0;i<len;i++){
-			html += "<option value='"+data[i].modelID+"' >"+data[i].modelName+"</option>";
-		}
-		$("#insurance_model").html(html);
-	});
+$("#insurance_maker").on('change',function(){	
+	get_particular_model("insurance_maker","insurance_model");		
 });
 function save_apply_for_insurance(){
 	var vType="INSERT";
@@ -860,3 +752,32 @@ function save_apply_for_insurance(){
 	});
 }
 /*-------------------apply for insurance pop end -----------------*/
+/*-------------------get particular model name code -----------------*/
+function get_particular_model(manufacture_control_name,model_control_name){
+		var manufacture_control_name,model_control_name;
+		var manufacture_control_name ='#'+manufacture_control_name
+		var model_control_name ='#'+model_control_name;
+		var abMaker_detail = $(manufacture_control_name).val();		
+		var manufactureDetail="NUll";
+		var Maker_detail="Maker-M";
+		$.ajax({
+			url:prefix+'/services/getModelDetail/'+ Maker_detail +'/'+manufactureDetail+'/'+abMaker_detail,
+			data:{},
+			type:'POST',
+			processData: true,
+			dataType:'JSON'
+			}).done(function(data){
+				if(data.length > -1){					
+					$(model_control_name).html('');					
+					var i=0;
+					for(i=0;i< data.length;i++){
+						$(model_control_name).append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
+					}
+					
+				}else{
+					
+				}
+			});
+		
+	}
+/*-------------------end get particular model name code -----------------*/
