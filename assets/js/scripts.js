@@ -42,7 +42,12 @@
 		by_road_on_getVariantDetail();
 		by_road_on_categories();
 	});
-
+	$('#GetProformaInvoice').on('click' , function(){
+		get_gpi_cities();
+		get_gpi_categories();					
+		get_gpi_manufacture();
+		get_gpi_varient();
+	});
 	$('document').ready(function(){
 		$('#abModel').html('');
 	});
@@ -257,10 +262,23 @@ function get_manufacture(callback){
 	});
 }
 /*---------------------------- Common Function Ends--------------------------*/
+/* -------------------------- GetProformaInvoice start --------------------------*/
+
+function get_gpi_cities(){
+	get_cities("gpi_city");
+}
+function get_gpi_categories(){
+	get_categories("gpi_category");
+}
+function get_gpi_manufacture(){
+	get_manufacture("gpi_maker");
+}
+function get_gpi_varient(){
+	get_variant("gpi_variant");
+}
 
 
-
-
+/* -------------------------- End GetProformaInvoice start --------------------------*/
 /*--------------------- Vechicle loan Popup Stats Here -------------*/
 function get_vehlone_cities(){
 	get_cities("vehlone_city");

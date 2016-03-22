@@ -205,8 +205,8 @@ class Home extends CI_Controller {
 		$this->load->view('home/conformation',$data);
 	}
 	public function get_Proforma_Invoice_pdf(){
-		$data['fullname'] = $this->input->post('fullname');
-		$data['phone'] = $this->input->post('phone');
+		$data['gpi_fullname'] = $this->input->post('gpi_fullname');
+		$data['gpi_phone'] = $this->input->post('gpi_phone');
 		$data['emailID'] = $this->input->post('emailID');
 		$data['Address'] = $this->input->post('Address');
 		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
