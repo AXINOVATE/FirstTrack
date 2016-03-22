@@ -55,6 +55,9 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'LATEST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+		$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
+		$data['trendDetails']= $this->home_model->getTrendData('ALL');
 		$this->load->view('home/latest_list',$data);
 	}
 	public function popular(){
@@ -297,6 +300,9 @@ class Home extends CI_Controller {
 	}
 	public function add_InstantQuotes(){
 		echo json_encode($this->home_model->add_InstantQuotes());
+	}
+	public function getTrendData($vType,$xml=''){
+		echo json_encode($this->home_model->getTrendData($vType,$xml));
 
 	}
 }
