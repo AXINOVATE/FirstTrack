@@ -311,7 +311,7 @@ class Home_model extends CI_Model{
 			$rndS=$this->randStrGen();
 			$query = $this->db->query("CALL usp_insUpdVehicleLoan('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
-			$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
 				$vresult['status'] = "Success";
@@ -406,6 +406,12 @@ class Home_model extends CI_Model{
 		$vresult['status'] = "Failed";
 		$xml ="<ROOT>
 					<HEADER>";
+		$vType = $this->input->post('vType');
+		$fullname = $this->input->post('fullname');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$address = $this->input->post('address');
+		$cityID = $this->input->post('cityID');
 		$manufactureID = $this->input->post('manufactureID');
 		$modelID = $this->input->post('modelID');
 		$variantID = $this->input->post('variantID');
@@ -556,6 +562,25 @@ class Home_model extends CI_Model{
 			}else{
 				return $vresult;
 			}
+	}
+	public function getTrendData($vType,$xml=''){
+		$categoryID='';
+		if(isset($_POST)){
+			$categoryID=$this->input->post('categoryID');
+			$manufactureID=$this->input->post('manufactureID');
+			$fuelType=$this->input->post('fuelType');
+			$power_streering=$this->input->post('power_streering');
+			$transmission=$this->input->post('transmission');
+			if($categoryID=='ALL'){ $categoryID='';}
+			if($manufactureID=='ALL'){ $manufactureID='';}
+			if($fuelType=='ALL'){ $fuelType='';}
+			if($power_streering=='Yes,No'){ $power_streering='';}
+			if($transmission=='Manual,Automatic'){ $transmission='';}
+		}
+		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION></HEADER></ROOT>";
+		$query = $this->db->query("CALL usp_getTrendData('".$vType."','".$xml."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
 	}
 }
 

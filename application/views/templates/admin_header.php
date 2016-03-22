@@ -44,7 +44,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href="<?php echo $prefix;?>/admin/add_category">Category</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_body_type">Body Type</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_products">Products</a></li>
-						<li><a href="#">Products Category</a></li>
+						<li><a href="<?php echo $prefix;?>/admin/add_products_category">Products Category</a></li>
 					</ul>
 				</li>
 				<li class="dropdown <?php if($currentPage == 'MANAGE DEALERS')echo 'active';?>">
