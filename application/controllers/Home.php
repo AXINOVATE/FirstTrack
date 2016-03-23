@@ -108,12 +108,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/detailed_comparison',$data);
 	}
-	public function edit_product(){
-		$pageData['currentPage'] = 'MANAGE PRODUCT';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/edit_products',$data);
-	}
+	
 	public function get_particular_states()
 	{
 		$country_id= $this->input->post('country_id');		

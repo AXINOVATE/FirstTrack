@@ -39,7 +39,7 @@ $prefix=$this->config->item('prefix');
 									<div class="form-group">
 										<label for="inputEmail3" class="col-md-4 col-sm-4 col-xs-12 control-label">Manufacturer Name</label>
 										<div class="col-md-8 col-sm-8 col-xs-12">
-										   <select class="form-control select2 mb-10" va_req="true" id="manufacturerName" name="manufacturerName">
+											<select class="form-control select2 mb-10" va_req="true" id="manufacturerName" name="manufacturerName">
 												<option value="">Select Maker</option>
 												<?php 
 												if(isset($getMakers)){
@@ -56,7 +56,7 @@ $prefix=$this->config->item('prefix');
 									<div class="form-group">
 										<label for="inputEmail3" class="col-md-4 col-sm-4 col-xs-12 control-label">Category type</label>
 										<div class="col-md-8 col-sm-8 col-xs-12">
-										   <select class="form-control select2 mb-10" va_req="true" id="categoryType" name="categoryType">
+											<select class="form-control select2 mb-10" va_req="true" id="categoryType" name="categoryType">
 												<option value="">Select Category</option>
 												<?php 
 												if(isset($getCategory)){
@@ -96,45 +96,40 @@ $prefix=$this->config->item('prefix');
 					</div>
 				</div>
 				<div class="col-md-12">
+					<?php
+					if(count($getProducts)){
+						echo '
+					
 					<table class="table table-bordered picture-color-edit">
 						<thead>
-							<th class="col-md-2">product Name</th>
-							<th class="col-md-2">Manufacturer</th>
-							<th class="col-md-2">Variant</th>
-                            <th class="col-md-2">Body Type</th>	
-							<th class="col-md-4">Action</th>													
+							<th class="col-md-2 col-sm-2 col-xs-4">Product Name</th>
+							<th class="col-md-2 col-sm-2 hidden-xs">Manufacturer</th>
+							<th class="col-md-2 col-sm-2 col-xs-3">Variant</th>
+                            <th class="col-md-2 col-sm-2 hidden-xs">Body Type</th>	
+							<th class="col-md-4 col-sm-4 col-xs-5">Action</th>													
 						</thead>
-						<tbody align="center">
+						<tbody align="center">';
+							foreach($getProducts as $gp){
+							echo '
 							<tr>
-								<td>Rapid</td>
-                                <td>Skoda India</td>
-								<td>1.6 Active Petrol</td> 
-								<td>Sedan</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="<?php echo $prefix;?>/home/edit_product" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-							</tr>
-							<tr>
-								<td>Yeti</td>
-                                <td>Skoda India</td>
-								<td></td> 
-								<td>SUV</td>								
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-							</tr>
-							<tr>
-								<td>Octavia</td>
-                                <td>Skoda India</td>
-								<td></td> 
-								<td>Sedan</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>&nbsp &nbsp <a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-							</tr>
-							<tr>
-								<td>Superb</td>
-                                <td>Skoda India</td>
-								<td></td> 
-								<td>Sedan</td>
-								<td><a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">copy</span></a> &nbsp &nbsp <a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a> &nbsp &nbsp<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a></td>
-							</tr>
+								<td class="col-md-2 col-sm-2 col-xs-4">'.$gp['productName'].'</td>
+                                <td class="col-md-2 col-sm-2 hidden-xs">'.$gp['manufactureName'].'</td>
+								<td class="col-md-2 col-sm-2 col-xs-3">'.$gp['variantName'].'</td> 
+								<td class="col-md-2 col-sm-2 hidden-xs">'.$gp['body_type'].'</td>
+								<td class="col-md-4 col-sm-4 col-xs-5">
+									<a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Copy</span></a>
+									&nbsp &nbsp 
+									<a href="'.$prefix.'/admin/edit_product/'.$gp['variantID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>
+									&nbsp &nbsp 
+									<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a>
+								</td>
+							</tr>';
+							}
+							echo '
 						</tbody>
-					</table>
+					</table>';
+					}
+					?>
 				</div>
 			</div>
 		</section>

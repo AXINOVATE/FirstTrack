@@ -144,7 +144,25 @@ class Admin extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['getMakers'] = $this->manage_products_model->getManufatureDetails('ALL');
 		$data['getCategory'] = $this->manage_products_model->getCategoryDetails('ALL');
+		$data['getProducts'] = $this->manage_products_model->getProducts('ALL','');
 		$this->load->view('admin/products/add_products',$data);
+	}
+	public function edit_product($varID=""){
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['getMakers'] = $this->manage_products_model->getManufatureDetails('ALL');
+		$data['getCategory'] = $this->manage_products_model->getCategoryDetails('ALL');
+		$data['bodyTypeDetails']= $this->manage_products_model->getBodyTypeDetails('ALL');
+		$data['getProductsBasic'] = $this->manage_products_model->getProducts('Basic',$varID);
+		$data['getProductsColors'] = $this->manage_products_model->getProducts('Colors',$varID);
+		$data['getProductsPrices'] = $this->manage_products_model->getProducts('Prices',$varID);
+		$data['getProductsSpecs'] = $this->manage_products_model->getProducts('Specifications',$varID);
+		$data['getProductsFeatures'] = $this->manage_products_model->getProducts('Features',$varID);
+		$data['getProductsPhotos'] = $this->manage_products_model->getProducts('Photo',$varID);
+		$data['getProductsVideos'] = $this->manage_products_model->getProducts('Video',$varID);
+		//var_dump($data['getProductsVideos']); exit();
+		$this->load->view('admin/products/edit_products',$data);
 	}
 	public function upload_products_list()	{						
 		echo json_encode($this->manage_products_model->upload_products_list());
@@ -199,5 +217,11 @@ class Admin extends CI_Controller {
 	}
 	public function getProductsCategoryDetails($vType,$vID=''){
 		echo json_encode($this->manage_products_model->getProductsCategoryDetails($vType,$vID=''));
+	}
+	public function insUpdProducts($type,$id){
+		echo json_encode($this->manage_products_model->insUpdProducts($type,$id));
+	}
+	public function delProducts(){
+		echo json_encode($this->manage_products_model->delProducts());
 	}
 }

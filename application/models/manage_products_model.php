@@ -242,4 +242,148 @@
 			mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 		}
+		public function getProducts($vType,$varID){
+			$xml = "<ROOT>
+					<HEADER>
+					<USERID>".$this->session->userdata('userID')."</USERID>";
+			if($vType=='ALL'){
+				$xml .= "";
+			}
+			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'){
+				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
+			}
+			$xml .= "</HEADER>
+					</ROOT>";
+			$query = $this->db->query("CALL usp_getProducts('".$vType."','".$xml."')");
+			mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		}
+		public function insUpdProducts($type,$id){
+			//var_dump($_POST); exit();
+			$vresult['status']="Failed";
+			$now = date('Y-m-d H:i:s');
+			$xml = "<ROOT>";
+			$xml .="<HEADER>";
+			$xml .="<USERID>".$this->session->userdata('userID')."</USERID>";
+			$xml .="<MODIFIEDON>".$now."</MODIFIEDON>";
+			$xml .="<VARIANTID>".$id."</VARIANTID>";
+			if($type=='Basic'){
+				$xml .= "<MANUFACTURERID>".$this->input->post('manufacturerName')."</MANUFACTURERID>";
+				$xml .= "<PRODUCTTYPEID>".$this->input->post('productType')."</PRODUCTTYPEID>";
+				$xml .= "<VARIANTNAME>".$this->input->post('variantName')."</VARIANTNAME>";
+				$xml .= "<COVERIMAGE>".$this->input->post('cover_image')."</COVERIMAGE>";
+				$xml .= "<PRODUCTNAME>".$this->input->post('productName')."</PRODUCTNAME>";
+				$xml .= "<BODYTYPEID>".$this->input->post('bodyType')."</BODYTYPEID>";
+				$xml .= "<TRANSMISSION>".$this->input->post('transmission')."</TRANSMISSION>";
+				$xml .= "<OVERVIEW>".$this->input->post('overview')."</OVERVIEW>";
+			}
+			if($type=='Colors'){
+				$xml .= "<COLORNAME>".$this->input->post('colorName')."</COLORNAME>";
+				$xml .= "<COLORIMAGE>".$this->input->post('cover_image1')."</COLORIMAGE>";
+				$xml .= "<COLORCODE>".$this->input->post('colorCode')."</COLORCODE>";
+			}
+			if($type=='Specification'){
+				$xml .= "<ENGINETYPE>".$this->input->post('engineType')."</engineType>";
+				$xml .= "<DISPLACEMENT>".$this->input->post('displacement')."</DISPLACEMENT>";
+				$xml .= "<NOOFCYLINDERS>".$this->input->post('noOfCylinders')."</NOOFCYLINDERS>";
+				$xml .= "<POWERBHP>".$this->input->post('powerBHP')."</POWERBHP>";
+				$xml .= "<POWERRPM>".$this->input->post('powerRPM')."</POWERRPM>";
+				$xml .= "<TORQUENM>".$this->input->post('torqueNm')."</TORQUENM>";
+				$xml .= "<TORQUERPM>".$this->input->post('torqueRPM')."</TORQUERPM>";
+				$xml .= "<PRODUCTLENGTH>".$this->input->post('productLength')."</PRODUCTLENGTH>";
+				$xml .= "<PRODUCTWIDTH>".$this->input->post('productWidth')."</PRODUCTWIDTH>";
+				$xml .= "<PRODUCTHEIGHT>".$this->input->post('productHeight')."</PRODUCTHEIGHT>";
+				$xml .= "<GROUNDCLEARANCE>".$this->input->post('groundClearance')."</GROUNDCLEARANCE>";
+				$xml .= "<WHEELBASE>".$this->input->post('wheelBase')."</WHEELBASE>";
+				$xml .= "<SEATINGCAPACITY>".$this->input->post('seatingCapacity')."</SEATINGCAPACITY>";
+				$xml .= "<MINIMUMTURNINGRADIUS>".$this->input->post('minimumTurningRadius')."</MINIMUMTURNINGRADIUS>";
+				$xml .= "<TYRETYPE>".$this->input->post('tyreType')."</TYRETYPE>";
+				$xml .= "<FRONTBRAKETYPE>".$this->input->post('frontBrakeType')."</FRONTBRAKETYPE>";
+				$xml .= "<REARBRAKETYPE>".$this->input->post('rearBrakeType')."</REARBRAKETYPE>";
+				$xml .= "<FRONTTYRESIZE>".$this->input->post('frontTyreSize')."</FRONTTYRESIZE>";
+				$xml .= "<REARTYRESIZE>".$this->input->post('reartyreSize')."</REARTYRESIZE>";
+				$xml .= "<FUELTYPE>".$this->input->post('fueltype')."</FUELTYPE>";
+				$xml .= "<MILEAGE>".$this->input->post('mileage')."</MILEAGE>";
+				$xml .= "<NOOFGEARS>".$this->input->post('noOfGears')."</NOOFGEARS>";
+				$xml .= "<FUELTANKCAPACITY>".$this->input->post('fuelTankCapacity')."</FUELTANKCAPACITY>";
+				$xml .= "<FRONTSUSPENSION>".$this->input->post('frontSuspension')."</FRONTSUSPENSION>";
+				$xml .= "<REARSUSPENSION>".$this->input->post('rearSuspension')."</REARSUSPENSION>";
+				$xml .= "<BATTERY>".$this->input->post('battery')."</BATTERY>";
+				$xml .= "<HEADLAMP>".$this->input->post('headlamp')."</HEADLAMP>";
+				$xml .= "<SEATHEIGHT>".$this->input->post('seatHeight')."</SEATHEIGHT>";
+				$xml .= "<SPEEDOMETER>".$this->input->post('speedometer')."</SPEEDOMETER>";
+				$xml .= "<TACHOMETER>".$this->input->post('tachometer')."</TACHOMETER>";
+				$xml .= "<LIGHTTYPE>".$this->input->post('lightType')."</LIGHTTYPE>";
+			}
+			if($type=='Feature'){
+				$xml .= "<AIRBAGS>".$this->input->post('airbags')."</AIRBAGS>";
+				$xml .= "<PASSENGERAIRBAGS>".$this->input->post('passengerAirbags')."</PASSENGERAIRBAGS>";
+				$xml .= "<SIDEAIRBAGS>".$this->input->post('sideAirbags')."</SIDEAIRBAGS>";
+				$xml .= "<ABS>".$this->input->post('ABS')."</ABS>";
+				$xml .= "<CENTRALLOCKING>".$this->input->post('centralLocking')."</CENTRALLOCKING>";
+				$xml .= "<CHILDSAFETYLOCK>".$this->input->post('childSafetyLock')."</CHILDSAFETYLOCK>";
+				$xml .= "<REARPARKINGCENSOR>".$this->input->post('arearParkingCensorirbags')."</REARPARKINGCENSOR>";
+				$xml .= "<REARPARKINGCAMERA>".$this->input->post('rearParkingCamera')."</REARPARKINGCAMERA>";
+				$xml .= "<POWERSTEERING>".$this->input->post('powerSteering')."</POWERSTEERING>";
+				$xml .= "<ADJUSTABLEPOWERSTEERING>".$this->input->post('adjustablePowerSteering')."</ADJUSTABLEPOWERSTEERING>";
+				$xml .= "<FOGLAMPS>".$this->input->post('fogLamps')."</FOGLAMPS>";
+				$xml .= "<LOWFUELINDICATOR>".$this->input->post('lowFuelIndicator')."</LOWFUELINDICATOR>";
+				$xml .= "<AC>".$this->input->post('AC')."</AC>";
+				$xml .= "<HEATER>".$this->input->post('heater')."</HEATER>";
+				$xml .= "<HEADLAMPBEAMADJUSTOR>".$this->input->post('headlampBeamAdjustor')."</HEADLAMPBEAMADJUSTOR>";
+				$xml .= "<CRUISECONTROL>".$this->input->post('cruiseControl')."</CRUISECONTROL>";
+				$xml .= "<STEERINGMOUNTEDAUDIO>".$this->input->post('steeringMountedAudio')."</STEERINGMOUNTEDAUDIO>";
+				$xml .= "<FRONTARMREST>".$this->input->post('frontArmRest')."</FRONTARMREST>";
+				$xml .= "<REARARMREST>".$this->input->post('rearArmRest')."</REARARMREST>";
+				$xml .= "<MUSICSYSTEM>".$this->input->post('musicSystem')."</MUSICSYSTEM>";
+				$xml .= "<SPEAKERS>".$this->input->post('speakers')."</SPEAKERS>";
+				$xml .= "<TRIPMETER>".$this->input->post('tripMeter')."</TRIPMETER>";
+				$xml .= "<PILLIONSEAT>".$this->input->post('pillionSeat')."</PILLIONSEAT>";
+			}
+			if($type=='Photo' || $type=='Video'){
+				$xml .= "<FILETYPE>".$this->input->post('fileType')."</FILETYPE>";
+				$xml .= "<FILEPATH>".$this->input->post('filePath')."</FILEPATH>";
+				$xml .= "<FILETITLE>".$this->input->post('fileTitle')."</FILETITLE>";
+			}
+			$xml .="</HEADER>";
+			$xml .="</ROOT>";
+			
+			$rndS1=$this->home_model->randStrGen();
+			$rndS2=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_insUpdProducts('".$type."','".$xml."',@vresult, @vMessage)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS1.", @vMessage as ".$rndS2)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS1] == "Success"){
+				$vresult['status'] = 'Success';
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
+		public function delProducts(){
+			//var_dump($_POST); exit();
+			$vresult['status']="Failed";
+			$now = date('Y-m-d H:i:s');
+			$type = $this->input->post('vType');
+			$xml = "<ROOT>";
+			$xml .="<HEADER>";
+			$xml .="<USERID>".$this->session->userdata('userID')."</USERID>";
+			$xml .="<MODIFIEDON>".$now."</MODIFIEDON>";
+			$xml .="<VARIANTID>".$this->input->post('variantID')."</VARIANTID>";
+			$xml .="<ID>".$this->input->post('id')."</ID>";
+			$xml .="</HEADER>";
+			$xml .="</ROOT>";
+			
+			$rndS1=$this->home_model->randStrGen();
+			$rndS2=$this->home_model->randStrGen();
+			$query = $this->db->query("CALL usp_removeProductItems('".$type."','".$xml."',@vresult, @vMessage)");
+			$query2=$this->db->query("SELECT @vresult as ".$rndS1.", @vMessage as ".$rndS2)->result_array();
+			mysqli_next_result($this->db->conn_id);	
+			if ($query2[0][$rndS1] == "Success"){
+				$vresult['status'] = 'Success';
+				return $vresult;
+			}else{
+				return $vresult;
+			}
+		}
 	}
