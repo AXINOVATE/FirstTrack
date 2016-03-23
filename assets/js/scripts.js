@@ -781,3 +781,25 @@ function get_particular_model(manufacture_control_name,model_control_name){
 		
 	}
 /*-------------------end get particular model name code -----------------*/
+/*-------------------  get_Proforma_Invoice_pdf code -----------------*/
+
+$('#ProformaInvoicePDF').on('click' , function(){
+	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
+	//window.open(prefix+'/home/get_Proforma_Invoice_pdf', '_blank');	
+		//get_Proforma_Invoice_pdf();
+});
+/*
+function getProformaInvoicePdf(){	
+	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');	
+	//return false;
+}
+*/
+function get_Proforma_Invoice_pdf(){
+	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
+	$('#get_Proforma_Invoice_pdf').submit();
+	
+	
+
+}
+
+/*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/

@@ -168,6 +168,7 @@ $prefix=$this->config->item('prefix');
 	<table class="" style="width:100%;">
 		<tr><center>
 			<td style="width:80mm;">
+			
 			<center>	<h1 class="heading">PRERANA MOTORS(P) LTD.,</h1></center>
 				<h2 class="heading">
 					NO 14 ,SLN ROAD ,BANGALORE-560027<br />
@@ -193,13 +194,13 @@ $prefix=$this->config->item('prefix');
     <table class="heading" style="width:100%;">
         <tr>
             <td style="width:80mm;">
-                <h1 class="heading"> Name :<?php echo $fullname;?></h1>
+                <h1 class="heading"> Name :<?php echo $gpi_phone;?></h1>
                 <h2 class="heading">
                     123 Happy Street<br />
-                    Phone :<?php echo $phone;?> <br />
-                    Email ID :<?php echo $emailID;?> <br />                     
+                    Phone :<?php echo $gpi_phone;?> <br />
+                    Email ID :<?php echo $gpi_emailID;?> <br />                     
                    Address : <br/>
-				   <?php echo $Address;?> 
+				   <?php echo $gpi_Address;?> 
                 </h2>
             </td>
             <td rowspan="2" valign="top" align="right" style="padding:3mm;">

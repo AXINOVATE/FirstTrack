@@ -193,73 +193,74 @@ $prefix=$this->config->item('prefix');
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="text-center modal-title">Get Proforma Invoice </h4>
 				</div>
-				<form action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" method="post">
+				
+				<form class="form-horizontal"  onsubmit="return false" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" name="get_Proforma_Invoice_pdf" role="form"  method="POST" id="get_Proforma_Invoice_pdf">		
 				<div class="modal-body">
 					
 					<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-						<input type="text" id="gpi_fullname" name="gpi_fullname" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						<input type="text" id="gpi_fullname"  va_req="true" name="gpi_fullname" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
 						</div>
 					</div>
 					<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
 					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-						<input type="text" class="form-control" id="gpi_phone" name="gpi_phone" placeholder="eg. 9874563110" />					
+						<input type="text" class="form-control" va_req="true" id="gpi_phone" name="gpi_phone" placeholder="eg. 9874563110" />					
 						</div>
 					</div>
 					<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
 					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-						<input type="text" class="form-control" id="gpi_emailID" name="gpi_emailID" placeholder="tony@gmail.com" />				
+						<input type="text" class="form-control" va_req="true" id="gpi_emailID" name="gpi_emailID" placeholder="tony@gmail.com" />				
 						</div>
 					</div>
 					<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
 					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-						<textarea class="form-control" rows="3" id="gpi_address" name="gpi_address" placeholder="Address"></textarea>
+						<textarea class="form-control" rows="3" va_req="true" id="gpi_address" name="gpi_address" placeholder="Address"></textarea>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_city" name="gpi_city" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_city" name="gpi_city" style="width:100%;" >
 							<option value="">-- Select State --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;" >
 							<option value="">-- Select City --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_category" name="gpi_category" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_category" name="gpi_category" style="width:100%;" >
 							<option value="">-- Select Category --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_make" name="gpi_make" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_make" name="gpi_make" style="width:100%;" >
 							<option value="">-- Select Make --</option>
 							<option value="1">Maruti</option>
 							<option value="2">Hero</option>
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_model" name="gpi_model" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_model" name="gpi_model" style="width:100%;" >
 							<option value="">-- Select Model --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_variant" name="gpi_variant" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_variant" name="gpi_variant" style="width:100%;" >
 							<option value="">-- Select Variant --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_dealer_name" name="gpi_dealer_name" style="width:100%;">
+						<select class="form-control mb-10" id="gpi_dealer_name" name="gpi_dealer_name" style="width:100%;" >
 							<option value="">-- Select Dealer Name -- </option>
 							<option value="1">Maruti</option>
 							<option value="2">Hero</option>
@@ -278,10 +279,10 @@ $prefix=$this->config->item('prefix');
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<div class="col-md-6">
-							<a href="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf_download" id="get_Proforma_Invoice_pdf" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
+							<a href="#" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
 							</div>
 							<div class="col-md-6">
-							<a href="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf_download" id="get_Proforma_Invoice_pdf" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</a>
+							<button type="submit" id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</button>
 							</div>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>

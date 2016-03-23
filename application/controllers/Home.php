@@ -205,10 +205,11 @@ class Home extends CI_Controller {
 	public function get_Proforma_Invoice_pdf(){
 		$data['gpi_fullname'] = $this->input->post('gpi_fullname');
 		$data['gpi_phone'] = $this->input->post('gpi_phone');
-		$data['emailID'] = $this->input->post('emailID');
-		$data['Address'] = $this->input->post('Address');
+		$data['gpi_emailID'] = $this->input->post('gpi_emailID');
+		$data['gpi_Address'] = $this->input->post('gpi_Address');
 		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
-		$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);	
+		$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);
+		//echo htmlspecialchars($html);exit();
 		$pdfFilePath = "Proforma_Invoice.pdf";
 		//load mPDF library
 		$this->load->library('m_pdf');
