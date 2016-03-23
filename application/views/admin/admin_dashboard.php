@@ -14,10 +14,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		body{
-			
-		}
-	
+		
 	</style>
 </head>
 <body>
