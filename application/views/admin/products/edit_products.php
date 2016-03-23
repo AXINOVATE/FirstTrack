@@ -62,7 +62,7 @@ $prefix=$this->config->item('prefix');
 														<div class="form-group">
 															<label for="manufacturerName" class="col-md-4 col-sm-4 col-xs-12 control-label">Manufacture Name</label>
 															<div class="col-md-7 col-sm-6 col-xs-12">
-																<select class="form-control select2 mb-10" va_req="true" id="manufacturerName" name="manufacturerName">
+																<select class="form-control select2 mb-10" va_req="true" id="manufacturerName" name="manufacturerName" <?php if(count($getProductsBasic)) echo 'disabled';?>>
 																	<option value=""></option>
 																	<?php 
 																	if(isset($getMakers)){
@@ -83,7 +83,7 @@ $prefix=$this->config->item('prefix');
 														<div class="form-group">
 															<label for="productType" class="col-md-4 col-sm-4 col-xs-12 control-label">Product Type</label>
 															<div class="col-md-7 col-sm-6 col-xs-12">
-																<select class="form-control select2 mb-10" va_req="true" id="productType" name="productType">
+																<select class="form-control select2 mb-10" va_req="true" id="productType" name="productType" <?php if(count($getProductsBasic)) echo 'disabled';?> >
 																	<option value=""></option>
 																	<?php 
 																	if(isset($getCategory)){
@@ -274,7 +274,7 @@ $prefix=$this->config->item('prefix');
 																<td>'.$gpc['colorName'].'</td>
 																<td class="hidden-xs">'.$gpc['colorCode'].'</td>
 																<td>
-																	<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
+																	<a href="'.$prefix.'/admin/edit_productColors/'.$gpc['variantID'].'/'.$gpc['colorID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
 																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delColors" data-id="'.$gpc['colorID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
 																</td>
 															</tr>
@@ -294,61 +294,79 @@ $prefix=$this->config->item('prefix');
 										<!-- end tab 2 -->
 										<div role="tabpanel" class="tab-pane" id="Pricing">
 											<div class="row">
-												<form class="form-horizontal">
-													<div class="col-md-6 ">
+												<form class="form-horizontal" name="productPriceData" role="form"  method="POST" id="productPriceData"  onsubmit="return false">
+													<div class="col-md-6 col-sm-6 col-xs-12">
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Color Name</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Color Name">
+															<label for="pcolorName" class="col-md-4 col-sm-4 col-xs-12 control-label">Color Name</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<select class="form-control select2" va_req="true" id="pcolorName" name="pcolorName" style="width:100%;">
+																	<option value=""></option>
+																	<?php 
+																	if(count($getProductsColors)){
+																		foreach($getProductsColors as $pcolor){
+																			echo '<option value="'.$pcolor['colorID'].'">'.$pcolor['colorName'].'</option>';
+																		}
+																	}	
+																	?>
+																</select>
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Ex-showroom Price</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Price">
+															<label for="exShowroomPrice" class="col-md-4 col-sm-4 col-xs-12 control-label">Ex-showroom Price</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="480000" id="exShowroomPrice" name="exShowroomPrice"  va_req="true" />
 															</div>
 														</div>	
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Insurance</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Price">
+															<label for="insurance" class="col-md-4 col-sm-4 col-xs-12 control-label">Insurance</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="20000" id="insurance" name="insurance"  va_req="true" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Other Handling Charges</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Price">
+															<label for="handlingCharges" class="col-md-4 col-sm-4 col-xs-12 control-label">Other Handling Charges</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="15000" id="handlingCharges" name="handlingCharges"  va_req="true" />
 															</div>
 														</div>
 													</div>
-													<div class="col-md-6">
+													<div class="col-md-6 col-sm-6 col-xs-12">
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">City</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="State">
+															<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label">City</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<select class="form-control select2" va_req="true" id="pcity" name="pcity" style="width:100%;">
+																	<option value=""></option>
+																	<?php 
+																	if(count($getCities)){
+																		foreach($getCities as $gc){
+																			echo '<option value="'.$gc['cityID'].'">'.$gc['cityName'].'</option>';
+																		}
+																	}	
+																	?>
+																</select>
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">Road Tax</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Price">
+															<label for="roadTax" class="col-md-4 col-sm-4 col-xs-12 control-label">Road Tax</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="12000" id="roadTax" name="roadTax" va_req="true" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label">RTO</label>
-															<div class="col-sm-6 col-xs-12 ">
-																<input type="text" class="form-control" placeholder="Price">
+															<label for="RTO" class="col-md-4 col-sm-4 col-xs-12 control-label">RTO</label>
+															<div class="col-md-7 col-sm-7 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="1400" id="RTO" name="RTO" va_req="true"  />
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
-															<div class="col-sm-6 col-xs-12 ">
-																<button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
+															<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label"></label>
+															<div class="col-md-7 col-sm-6 col-xs-12 ">
+																<button class="btn btn-default btn-primary pull-right" id="priceData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
 															</div>
 														</div>
 													</div>
 												</form>
-												<div class="col-md-12 col-sm-12">
+												<div class="col-md-12 col-sm-12 col-xs-12">
 													<table class="table table-bordered picture-color-edit">
 														<thead>
 															<th>Color Name</th>
@@ -358,16 +376,18 @@ $prefix=$this->config->item('prefix');
 														</thead>
 														<tbody>
 															<?php
+															$totalPrice = 0;
 															if(count($getProductsPrices)){
 																foreach($getProductsPrices as $gpp){
+																	$totalPrice = $gpp['exShowroomPrice']+$gpp['insurance']+$gpp['RTO']+$gpp['roadTax']+$gpp['handlingCharges'];
 																	echo '
 															<tr>
 																<td>'.$gpp['colorName'].'</td>
 																<td>'.$gpp['cityName'].'</td>
-																<td class="hidden-xs">'.$gpp['exShowroomPrice'].'</td>
+																<td class="hidden-xs">'.$totalPrice.'</td>
 																<td>
-																	<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
-																	<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
+																	<a href="'.$prefix.'/admin/edit_productPrices/'.$gpp['variantID'].'/'.$gpp['priceID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
+																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPrices" data-id="'.$gpp['priceID'].'""><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
 																</td>
 															</tr>
 																	';
@@ -984,7 +1004,7 @@ $prefix=$this->config->item('prefix');
 																</td>
 																<td class="hidden-xs">'.$gpph['fileTitle'].'</td>
 																<td>
-																	<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
+																	<!--a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a-->  
 																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPhoto" data-id="'.$gpph['fileID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
 																</td>
 															</tr>
@@ -1074,7 +1094,7 @@ $prefix=$this->config->item('prefix');
 																		</center>
 																	</td>
 																	<td>
-																		<a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
+																		<!--a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a--> 
 																		<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delVideo" data-id="'.$gpv['fileID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
 																	</td>
 																</tr>
@@ -1157,6 +1177,14 @@ $prefix=$this->config->item('prefix');
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
 					setTimeout(function(){window.location.reload();},1000);
+				}
+				else if(data.status == "Does not exist"){	
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Check Product or variant exist or not',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1198,6 +1226,39 @@ $prefix=$this->config->item('prefix');
 				}
 			});
 		}
+		
+		$("#priceData-btn").click(function(){
+			xu_validation.form_submit('#productPriceData','save_priceData');
+		});
+		function save_priceData(){
+			var vType='Prices';
+			var variantID=$("#variantID").val();
+			
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
+				data: $('#productPriceData').serialize(),
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.status == "Success"){	
+					$.gritter.add({
+						title: 'Success',
+						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}else{
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Failed To Save',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}
+			});
+		}
+		
 		$("#specData-btn").click(function(){
 			xu_validation.form_submit('#productSpecData','save_specData');
 		});

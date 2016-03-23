@@ -242,15 +242,19 @@
 			mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 		}
-		public function getProducts($vType,$varID){
+		public function getProducts($vType,$varID,$id=""){
 			$xml = "<ROOT>
 					<HEADER>
 					<USERID>".$this->session->userdata('userID')."</USERID>";
 			if($vType=='ALL'){
 				$xml .= "";
 			}
-			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'){
+			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities'){
 				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
+			}
+			if($vType=='ColorOne' || $vType=='PriceOne' || $vType=='PhotoOne' || $vType=='VideoOne'){
+				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
+				$xml .= "<ID>".$id."</ID>";
 			}
 			$xml .= "</HEADER>
 					</ROOT>";
@@ -277,10 +281,19 @@
 				$xml .= "<TRANSMISSION>".$this->input->post('transmission')."</TRANSMISSION>";
 				$xml .= "<OVERVIEW>".$this->input->post('overview')."</OVERVIEW>";
 			}
-			if($type=='Colors'){
+			if($type=='Colors' || $type=='ColorsOne'){
 				$xml .= "<COLORNAME>".$this->input->post('colorName')."</COLORNAME>";
 				$xml .= "<COLORIMAGE>".$this->input->post('cover_image1')."</COLORIMAGE>";
 				$xml .= "<COLORCODE>".$this->input->post('colorCode')."</COLORCODE>";
+			}
+			if($type=='Prices' || $type=='PricesOne'){
+				$xml .= "<PCOLORNAME>".$this->input->post('pcolorName')."</PCOLORNAME>";
+				$xml .= "<EXSHOWROOMPRICE>".$this->input->post('exShowroomPrice')."</EXSHOWROOMPRICE>";
+				$xml .= "<INSURANCE>".$this->input->post('insurance')."</INSURANCE>";
+				$xml .= "<HANDLINGCHARGES>".$this->input->post('handlingCharges')."</HANDLINGCHARGES>";
+				$xml .= "<ROADTAX>".$this->input->post('roadTax')."</ROADTAX>";
+				$xml .= "<RTO>".$this->input->post('RTO')."</RTO>";
+				$xml .= "<PCITY>".$this->input->post('pcity')."</PCITY>";
 			}
 			if($type=='Specification'){
 				$xml .= "<ENGINETYPE>".$this->input->post('engineType')."</engineType>";
@@ -355,6 +368,10 @@
 			mysqli_next_result($this->db->conn_id);	
 			if ($query2[0][$rndS1] == "Success"){
 				$vresult['status'] = 'Success';
+				return $vresult;
+			}
+			else if($query2[0][$rndS1] == "Does not exist"){
+				$vresult['status'] = 'Does not exist';
 				return $vresult;
 			}else{
 				return $vresult;

@@ -161,8 +161,31 @@ class Admin extends CI_Controller {
 		$data['getProductsFeatures'] = $this->manage_products_model->getProducts('Features',$varID);
 		$data['getProductsPhotos'] = $this->manage_products_model->getProducts('Photo',$varID);
 		$data['getProductsVideos'] = $this->manage_products_model->getProducts('Video',$varID);
-		//var_dump($data['getProductsVideos']); exit();
+		$data['getCities'] = $this->manage_products_model->getProducts('getCities',$varID);
+		//var_dump($data['getCities']); exit();
 		$this->load->view('admin/products/edit_products',$data);
+	}
+	public function edit_productColors($varID="",$id=""){
+		if($varID!='' && $id!=''){
+			$pageData['currentPage'] = 'MANAGE PRODUCT';
+			$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['getProductsColors'] = $this->manage_products_model->getProducts('ColorOne',$varID,$id);
+			//var_dump($data['getProductsColors']); exit();
+			$this->load->view('admin/products/edit_productColors',$data);
+		}
+	}
+	public function edit_productPrices($varID="",$id=""){
+		if($varID!='' && $id!=''){
+			$pageData['currentPage'] = 'MANAGE PRODUCT';
+			$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['getProductsColors'] = $this->manage_products_model->getProducts('Colors',$varID);
+			$data['getCities'] = $this->manage_products_model->getProducts('getCities',$varID);
+			$data['getProductsPrices'] = $this->manage_products_model->getProducts('PriceOne',$varID,$id);
+			//var_dump($data['getProductsPrices']); exit();
+			$this->load->view('admin/products/edit_productPrices',$data);
+		}
 	}
 	public function upload_products_list()	{						
 		echo json_encode($this->manage_products_model->upload_products_list());
@@ -218,7 +241,7 @@ class Admin extends CI_Controller {
 	public function getProductsCategoryDetails($vType,$vID=''){
 		echo json_encode($this->manage_products_model->getProductsCategoryDetails($vType,$vID=''));
 	}
-	public function insUpdProducts($type,$id){
+	public function insUpdProducts($type,$id=""){
 		echo json_encode($this->manage_products_model->insUpdProducts($type,$id));
 	}
 	public function delProducts(){
