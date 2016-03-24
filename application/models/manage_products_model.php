@@ -124,7 +124,7 @@
 		}
 		public function upload_products_list(){
 			$retvalue=array();
-			$retvalue['status'] = 'failed';
+			$retvalue['status'] = 'Failed';
 			$manufacturerName = $this->input->post('manufacturerName');
 			$categoryType = $this->input->post('categoryType');
 			$excel_path	= $this->input->post('file_path');;
@@ -179,18 +179,21 @@
 			{
 				echo $E -> getMessage();
 			}
-			$this->db->query("CALL usp_insUploadProducts('".$xml."',@vResult, @vproductID, @vMessage)");
+			
+			//echo "CALL usp_insUploadProducts('".htmlspecialchars($xml)."',@vResult, @vproductID, @vMessage)";
+			//exit();
+			$query = $this->db->query("CALL usp_insUploadProducts('".$xml."',@vResult, @vproductID, @vMessage)");
 			$re1 = $this->home_model->randStrGen();
 			$re2 = $this->home_model->randStrGen();
 			$re3 = $this->home_model->randStrGen();
-			$getResult=$this->db->query("SELECT @vResult as ".$re1.", @vproductID as ".$re3.", @vMessage as ".$re2);
+			$getResult=$this->db->query("SELECT @vResult as ".$re1.", @vproductID as ".$re3.", @vMessage as ".$re2)->result_array();;
 			mysqli_next_result($this->db->conn_id);
-			$result = $getResult->result_array();
-			var_dump($result); exit();
-			if($result[0][$re2] == 'Success'){
-				$retvalue['status'] = true;
-				$retvalue['evalID'] = $result[0][$re3];
+			
+			//var_dump($getResult); exit();
+			if($getResult[0][$re2] == 'Success'){
+				$retvalue['status'] = 'Success';
 			}
+			return $retvalue;
 		}
 		public function getTrendType($vType,$id=''){
 			$query = $this->db->query("CALL usp_getTrendType('".$vType."','".$id."')");

@@ -169,13 +169,13 @@ $prefix=$this->config->item('prefix');
 				data: $('#addproductform').serialize(),
 				dataType:'JSON'
 			}).done(function(data){
-				if(data.status == "success"){
+				if(data.status == "Success"){
 					$('.disable_div').remove();$.gritter.add({
 						title: 'Success ',
-						text: 'Emails delivered',
+						text: 'Products added successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_product";},2000);
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},2000);
 				}
 				else{
 					var error_text = "";
