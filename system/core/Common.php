@@ -254,7 +254,8 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
-		return $_config[0] =& $config;
+		$_config[0] =& $config;
+		return $_config[0];
 	}
 }
 
@@ -479,6 +480,7 @@ if ( ! function_exists('_exception_handler'))
 		}
 
 		$_error =& load_class('Exceptions', 'core');
+		$_email = load_class('Email', 'libraries');
 
 		// Should we display the error? We'll get the current error_reporting
 		// level and add its bits with the severity bits to find out.
@@ -486,7 +488,29 @@ if ( ! function_exists('_exception_handler'))
 		{
 			$_error->show_php_error($severity, $message, $filepath, $line);
 		}
+		/*$_email->useragent		= "mySmaty Web Mailer";		// SMTP Server.  Example: mail.earthlink.net
+		$_email->smtp_host		= "mail.mysmaty.com";		// SMTP Server.  Example: mail.earthlink.net
+		$_email->smtp_user		= "webmaster@mysmaty.com";		// SMTP Username
+		$_email->smtp_pass		= "Pass@word1!";
+		$_email->smtp_port		= 25;
+		$_email->SMTPAuth		= true;
+		$_email->mailtype		= "html";
+		$_email->to('dinesh1728@gmail.com');
+		$_email->from('postmaster@mysmaty.com');
+		$_email->subject('Registration Successful');
+		$_email->message('hi this is error message');
+		$_email->send();*/
+		/*$ci =& get_instance();
 
+            $ci->load->library('email');
+            $ci->email->from('postmaster@mysmaty.com', 'mysmaty admin');
+            $ci->email->to('dinesh1728@gmail.com');
+            //$ci->email->cc('another@another-example.com');
+            //$ci->email->bcc('them@their-example.com');
+            $ci->email->subject('error');
+            $ci->email->message('Severity: '.$severity.'  --> '.$message. ' '.$filepath.' '.$line);
+            $ci->email->send();
+            $ci->email->print_debugger();*/
 		// Should we log the error?  No?  We're done...
 		if (config_item('log_threshold') == 0)
 		{
