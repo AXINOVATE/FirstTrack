@@ -28,7 +28,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-12 border-lt-grey">
+				<div class="col-md-3 col-sm-3 col-xs-12 border-lt-grey mb-10">
 					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue" id="cars">
 							<div>
@@ -201,34 +201,29 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-12 hybrid">
 					<div id="myTabContent" class="tab-content">
-						<div class="tab-pane fade in active" id="tab1">
-							<a href="<?php echo $prefix;?>/home/news_detail">
-							<center>
-								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10 banner-img" alt="car" />
-							</center>
-							</a>
-						</div>
-						<div class="tab-pane fade" id="tab2">
-							<center>
-								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10 banner-img" alt="car" />
-							</center>
-						</div>
-						<div class="tab-pane fade" id="tab3">
-							<center>
-								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10 banner-img" alt="car" />
-							</center>
-						</div>
-						<div class="tab-pane fade" id="tab4">
-							<center>
-								<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="mt-10 banner-img" alt="car" />
-							</center>
-						</div>
+					<?php
+						for($i=0; $i<=3; $i++){
+							$actClass = '';
+							if($i==0){$actClass='in active';}
+							echo '
+							<div class="tab-pane fade '.$actClass.'" id="tab'.($i+1).'">
+								<a href="'.$prefix.'/home/product_news/'.$getShowcaseProducts[$i]['uid'].'">
+								<center>
+									<img src="'.$prefix.'/'.$getShowcaseProducts[$i]['showcaseImage'].'" class="banner-img" alt="'.$getShowcaseProducts[$i]['showcaseTitle'].'" />
+								</center>
+								</a>
+							</div>';
+						}
+					?>
 					</div>
 					<ul id="myTab" class="nav-tabs">
-						<li class="active"><a href="#tab1" data-toggle="tab">Latest Skoda Superb 2016</a></li>
-						<li><a href="#tab2" data-toggle="tab">Toyota Camri Hybrid</a></li>
-						<li><a href="#tab3" data-toggle="tab">Fiat Abarth Punto</a></li>
-						<li><a href="#tab4" data-toggle="tab">Toyota Etios Cross</a></li>
+					<?php	
+						for($i=0; $i<=3; $i++){
+							$activeClass = '';
+							if($i==0){$activeClass='active';}
+							echo '<li class="'.$activeClass.'"><a href="#tab'.($i+1).'" data-toggle="tab">'.substr($getShowcaseProducts[$i]['showcaseTitle'], 0, 20).'</a></li>';
+						}
+					?>
 					</ul>
 					
 				</div>
