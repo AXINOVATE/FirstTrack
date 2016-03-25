@@ -123,6 +123,7 @@
 			return $query->result_array();
 		}
 		public function upload_products_list(){
+			var_dump($_POST); exit();
 			$retvalue=array();
 			$retvalue['status'] = 'Failed';
 			$manufacturerName = $this->input->post('manufacturerName');
@@ -268,6 +269,7 @@
 		public function insUpdProducts($type,$id){
 			//var_dump($_POST); exit();
 			$vresult['status']="Failed";
+			$vresult['message']="Failed";
 			$now = date('Y-m-d H:i:s');
 			$xml = "<ROOT>";
 			$xml .="<HEADER>";
@@ -361,6 +363,9 @@
 				$xml .= "<FILEPATH>".$this->input->post('filePath')."</FILEPATH>";
 				$xml .= "<FILETITLE>".$this->input->post('fileTitle')."</FILETITLE>";
 			}
+			if($type=='copyProduct' || $type=='delProduct'){
+
+			}
 			$xml .="</HEADER>";
 			$xml .="</ROOT>";
 			
@@ -371,10 +376,17 @@
 			mysqli_next_result($this->db->conn_id);	
 			if ($query2[0][$rndS1] == "Success"){
 				$vresult['status'] = 'Success';
+				$vresult['message'] = $query2[0][$rndS2];
 				return $vresult;
 			}
 			else if($query2[0][$rndS1] == "Does not exist"){
 				$vresult['status'] = 'Does not exist';
+				$vresult['message'] = $query2[0][$rndS2];
+				return $vresult;
+			}
+			else if($query2[0][$rndS1] == "Deleted"){
+				$vresult['status'] = 'Deleted';
+				$vresult['message'] = $query2[0][$rndS2];
 				return $vresult;
 			}else{
 				return $vresult;

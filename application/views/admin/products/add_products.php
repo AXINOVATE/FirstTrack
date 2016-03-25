@@ -95,42 +95,47 @@ $prefix=$this->config->item('prefix');
 						</form>
 					</div>
 				</div>
-				<div class="col-md-12">
-					<?php
-					if(count($getProducts)){
-						echo '
+				
+				<div class="">
+					<div class="col-md-12" id="list_products">
+						<?php
+						if(count($getProducts)){
+							echo '
+						
+						<table class="table table-bordered picture-color-edit">
+							<thead>
+								<th class="col-md-2 col-sm-2 col-xs-4">Product Name</th>
+								<th class="col-md-2 col-sm-2 hidden-xs">Manufacturer</th>
+								<th class="col-md-2 col-sm-2 col-xs-3">Variant</th>
+								<th class="col-md-2 col-sm-2 hidden-xs">Body Type</th>	
+								<th class="col-md-4 col-sm-4 col-xs-5">Action</th>													
+							</thead>
+							<tbody align="center">';
+								foreach($getProducts as $gp){
+								echo '
+								<tr>
+									<td class="col-md-2 col-sm-2 col-xs-4">'.$gp['productName'].'</td>
+									<td class="col-md-2 col-sm-2 hidden-xs">'.$gp['manufactureName'].'</td>
+									<td class="col-md-2 col-sm-2 col-xs-3">'.$gp['variantName'].'</td> 
+									<td class="col-md-2 col-sm-2 hidden-xs">'.$gp['body_type'].'</td>
+									<td class="col-md-4 col-sm-4 col-xs-5">
+										<a href="javascript:void(0)" class="font-size-16 copy-btn" data-id="'.$gp['variantID'].'"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Copy</span></a>
+										&nbsp &nbsp 
+										<a href="'.$prefix.'/admin/edit_product/'.$gp['variantID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>
+										&nbsp &nbsp 
+										<a href="javascript:void(0)" class="delete-box-color font-size-16 del-btn" data-id="'.$gp['variantID'].'"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a>
+									</td>
+								</tr>';
+								}
+								echo '
+							</tbody>
+						</table>';
+						}
+						?>
+					</div>
 					
-					<table class="table table-bordered picture-color-edit">
-						<thead>
-							<th class="col-md-2 col-sm-2 col-xs-4">Product Name</th>
-							<th class="col-md-2 col-sm-2 hidden-xs">Manufacturer</th>
-							<th class="col-md-2 col-sm-2 col-xs-3">Variant</th>
-                            <th class="col-md-2 col-sm-2 hidden-xs">Body Type</th>	
-							<th class="col-md-4 col-sm-4 col-xs-5">Action</th>													
-						</thead>
-						<tbody align="center">';
-							foreach($getProducts as $gp){
-							echo '
-							<tr>
-								<td class="col-md-2 col-sm-2 col-xs-4">'.$gp['productName'].'</td>
-                                <td class="col-md-2 col-sm-2 hidden-xs">'.$gp['manufactureName'].'</td>
-								<td class="col-md-2 col-sm-2 col-xs-3">'.$gp['variantName'].'</td> 
-								<td class="col-md-2 col-sm-2 hidden-xs">'.$gp['body_type'].'</td>
-								<td class="col-md-4 col-sm-4 col-xs-5">
-									<a href="#" class="font-size-16"><i class="fa fa-files-o picture-padding-right-5 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Copy</span></a>
-									&nbsp &nbsp 
-									<a href="'.$prefix.'/admin/edit_product/'.$gp['variantID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-5 font-size-16">Edit</span></a>
-									&nbsp &nbsp 
-									<a href="#" class="delete-box-color font-size-16"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a>
-								</td>
-							</tr>';
-							}
-							echo '
-						</tbody>
-					</table>';
-					}
-					?>
 				</div>
+				
 			</div>
 		</section>
 	</div>
@@ -188,6 +193,54 @@ $prefix=$this->config->item('prefix');
 					});
 				}
 			});
+		}
+		$('.copy-btn').on('click',function(){
+			var variantID = $(this).attr('data-id');
+			var vType = 'copyProduct';
+			copy_productDetails(variantID,vType);
+		});
+		$('.del-btn').on('click',function(){
+			var variantID = $(this).attr('data-id');
+			var vType = 'delProduct';
+			copy_productDetails(variantID,vType);
+		});
+		function copy_productDetails(variantID,vType){
+			$('#list_products').find('a').removeClass('copy-btn');
+			$('#list_products').find('a').removeClass('del-btn');
+			$('#list_products').find('a').attr('href','javascript:void(0)');
+			
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
+				data: {},
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.status == "Success"){	
+					var vID = data.message;
+					$.gritter.add({
+						title: 'Successfully',
+						text: 'Copied Product Details',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/edit_product/"+vID;},1000);
+				}
+				else if(data.status == "Deleted"){
+					$.gritter.add({
+						title: 'Removed',
+						text: 'Product Details Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}else{
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Failed To Save',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}
+			});	
 		}
 	</script>
 </body>
