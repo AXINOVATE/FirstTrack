@@ -119,11 +119,12 @@ class Home extends CI_Controller {
 		$state_id= $this->input->post('states_id');		
 		echo json_encode($this->manage_products_model->get_particular_city($state_id));
 	}
-	public function product_news(){
+	public function product_news($id=""){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
+		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_DETAIL',$id);
+		//var_dump($data['getShowcaseProducts']); exit();
 		$this->load->view('home/product_news',$data);
 	}
 	public function view_dealers_products(){

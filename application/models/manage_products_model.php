@@ -260,7 +260,7 @@
 			if($vType=='ALL' || $vType=='SHOWCASE_ALL' || $vType=='SHOWCASE_ACTIVE'){
 				$xml .= "";
 			}
-			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities' || $vType=='SHOWCASE_ONE'){
+			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities' || $vType=='SHOWCASE_ONE' || $vType=='SHOWCASE_DETAIL'){
 				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
 			}
 			if($vType=='ColorOne' || $vType=='PriceOne' || $vType=='PhotoOne' || $vType=='VideoOne'){
