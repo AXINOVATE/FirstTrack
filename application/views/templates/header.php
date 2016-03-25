@@ -194,7 +194,7 @@ $prefix=$this->config->item('prefix');
 					<h4 class="text-center modal-title">Get Proforma Invoice </h4>
 				</div>
 				
-				<form class="form-horizontal"  onsubmit="return false" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" name="get_Proforma_Invoice_pdf" role="form"  method="POST" id="get_Proforma_Invoice_pdf">		
+				<form class="form-horizontal"  target="_blank" onsubmit="return false" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" name="get_Proforma_Invoice_pdf" role="form"  method="POST" id="get_Proforma_Invoice_pdf">		
 				<div class="modal-body">
 					
 					<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
@@ -282,7 +282,7 @@ $prefix=$this->config->item('prefix');
 							<a href="#" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
 							</div>
 							<div class="col-md-6">
-							<button type="submit" id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</button>
+							<button type="submit" id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" formtarget="_blank" >Print</button>
 							</div>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>

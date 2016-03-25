@@ -795,11 +795,8 @@ function getProformaInvoicePdf(){
 }
 */
 function get_Proforma_Invoice_pdf(){
-	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
-	$('#get_Proforma_Invoice_pdf').submit();
-	
-	
-
+	//$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
+	//$('#get_Proforma_Invoice_pdf').submit();	
 }
 
 /*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/
