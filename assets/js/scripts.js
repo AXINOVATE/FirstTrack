@@ -139,6 +139,69 @@ var prefix=$("#prefix").data("prefix");
 
 
 /* --------------------- Common Function Starts  --------------------------*/
+var path = '/FirstTrack';
+function getStates(data,callback,selectValue){
+	var callback="#"+callback;
+	$.ajax({
+		url:path+'/home/location_detail/PSTATE/'+data.value,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = '<option value=""></option>';
+		for(i=0;i<len;i++){
+			if(selectValue == data[i].stateID)
+				html += "<option value='"+data[i].stateID+"' selected>"+data[i].stateName+"</option>";
+			else
+				html += "<option value='"+data[i].stateID+"' >"+data[i].stateName+"</option>";
+		}
+		$(callback).html(html);
+		$(callback).select2({placeholder: "Select state",allowClear:true});
+		if(selectValue != "")$(callback).trigger('change');
+	}); 
+}
+function getCities(data,callback,selectValue){
+	var callback="#"+callback;
+	$.ajax({
+		url:path+'/home/location_detail/PCITY/'+data.value,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = '<option value=""></option>';
+		for(i=0;i<len;i++){
+			if(selectValue == data[i].cityID)
+				html += "<option value='"+data[i].cityID+"' selected>"+data[i].cityName+"</option>";
+			else
+				html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
+		}
+		$(callback).html(html);
+		$(callback).select2({placeholder: "Select city",allowClear:true});
+		if(selectValue != "")$(callback).trigger('change');
+	}); 
+}
+function getLocations(data,callback,selectValue){
+	var callback="#"+callback;
+	$.ajax({
+		url:path+'/home/location_detail/PLOCATION/'+data.value,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = '<option value=""></option>';
+		for(i=0;i<len;i++){
+			if(selectValue == data[i].locationID)
+				html += "<option value='"+data[i].locationID+"' selected>"+data[i].locationName+"</option>";
+			else
+				html += "<option value='"+data[i].locationID+"' >"+data[i].locationName+"</option>";
+		}
+		$(callback).html(html);
+		$(callback).select2({placeholder: "Select location",allowClear:true});
+	}); 
+}
 function get_all_country(callback){
 	var callback="#"+callback;
 	$.ajax({
@@ -693,8 +756,8 @@ function save_by_on_road_assistance(){
 }
 
 var prefix=$("#prefix").data("prefix");
-$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
-$('.inpt-timepicker').timepicker();
+//$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+//$('.inpt-timepicker').timepicker();
 function save_road_assistance(){
 	$.ajax({
 			url:prefix+'/services/advanced_booking',
