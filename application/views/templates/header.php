@@ -14,7 +14,12 @@ $prefix=$this->config->item('prefix');
 				<div class="header-top">
 					<ul style="display:block; float:right;">
 						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
-						<li style="border-right:none;"><a href="#"><i class="fa fa-map-marker" style="color:#FFD400;"></i>Bangalore</a></li>
+						
+						<li class="dropdown border-none-r user-options"  id="city-option"style="border-right:none;"><a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i>banglore<span class="caret"></span></a>
+						<ul class="dropdown-menu" id="city-option-detail">
+						
+						</ul>
+						</li>
 						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/home/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>

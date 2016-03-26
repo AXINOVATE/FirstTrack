@@ -582,6 +582,13 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+	
+	public function getCity(){
+		$query=$this->db->query("select TLD.cityID,TC.cityName from tbl_locations_detail  TLD INNER JOIN tbl_cities  TC ON TLD.cityID =TC.cityID");
+		mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+		
+	}
 }
 
 ?>

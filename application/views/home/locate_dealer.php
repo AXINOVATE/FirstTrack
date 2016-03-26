@@ -34,12 +34,26 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
+			<div class="col-md-6 col-md-offset-2">
+			   <form class="form-horizontal">
+							  <div class="form-group required">
+								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
+								<div class="col-md-6">
+								   <select class="form-control entity-type select2" id="ld-brand" style="width:100%;">
+									<option value="">Car</option>
+									<option value="" ></option>
+									<option value="1" >No</option>
+								   </select>
+								</div>
+							  </div>
+				</form>
+			  </div>
 			  <div class="col-md-6 col-md-offset-2">
 			   <form class="form-horizontal">
 							  <div class="form-group required">
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Vehicle</label>
 								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
+								   <select class="form-control entity-type select2" id="ld_vehicle" style="width:100%;">
 									<option value="">Car</option>
 									<option value="1" >Yes</option>
 									<option value="1" >No</option>
@@ -48,20 +62,7 @@ $prefix=$this->config->item('prefix');
 							  </div>
 				</form>
 			  </div>
-			  <div class="col-md-6 col-md-offset-2">
-			   <form class="form-horizontal">
-							  <div class="form-group required">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
-								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="canbe_sme" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
-								   </select>
-								</div>
-							  </div>
-				</form>
-			  </div>
+			  
 			  <div class="col-md-6 col-md-offset-2">
 			   <form class="form-horizontal">
 							  <div class="form-group required">
