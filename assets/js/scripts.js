@@ -2,6 +2,29 @@
 (function() {
     "use strict";
 	
+	$('#city-option').on('click',function(){
+	
+		$.ajax({
+		url:prefix+'/home/getCity',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var html;
+		var len=data.length;
+		var i=0;
+		html="";
+		for(i=0;i<len;i++){
+			html += '<li class="pd-tp-3"><a href="#" class="particular-city-id">'+data[i].cityName+'</a></li>';
+		}
+		$('#city-option-detail').html(html);
+		
+	});
+	});
+	
+	
+	
+	
 	//for tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 	$('#advance-booking').on('click' ,function(){		
@@ -14,9 +37,6 @@
 	$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
-
-	
-
 	$('#test-drive,#test-drive1').on('click', function(){		
 		get_rtd_cities();
 		get_rtd_categories();					
@@ -47,9 +67,11 @@
 	$('document').ready(function(){
 		$('#abModel').html('');
 	});
+	
 	$('document').ready(function(){
 		$('#boraModel').html('');
 	});
+	
 	$('#abMaker').on('change',function(){	
 		get_particular_model("abMaker","abModel");		
 	});

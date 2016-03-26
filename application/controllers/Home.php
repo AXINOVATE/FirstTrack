@@ -38,7 +38,7 @@ class Home extends CI_Controller {
 	}
 	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
-		if($this->session->userdata('login'))redirect(base_url());
+		if($this->session->userdata('login'))redirect(base_url());		
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);
@@ -306,6 +306,9 @@ class Home extends CI_Controller {
 	public function getTrendData($vType,$xml=''){
 		echo json_encode($this->home_model->getTrendData($vType,$xml));
 
+	}
+	public function getCity(){
+		echo json_encode($this->home_model->getCity());
 	}
 	public function getBodyTypeEach($BodyType){
 		if($BodyType =='cars')

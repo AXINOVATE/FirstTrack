@@ -582,6 +582,13 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+
+	
+	public function getCity(){
+		$query=$this->db->query("select TLD.cityID,TC.cityName from tbl_locations_detail  TLD INNER JOIN tbl_cities  TC ON TLD.cityID =TC.cityID");
+		mysqli_next_result($this->db->conn_id);
+			return $query->result_array();
+	}
 	public function getBodyTypeEach($BodyType){
 		$VType="ALL";		
 		if($BodyType =='More'){
@@ -590,6 +597,7 @@ class Home_model extends CI_Model{
 		$query =$this->db->query("CALL usp_getBodyTypeEach('".$VType."','".$BodyType."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();		
+
 	}
 }
 
