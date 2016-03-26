@@ -28,6 +28,7 @@ body{font-family:Century Gothic !important;}
 .categories-list-container{margin-top:10px;}
 .categori-icon{width: 58%;}
 .bg-lightblue{background-color:#027cd5 !Important;}
+.bg-yellow-active{background-color:#F9D133 !Important;}
 .txt_white{color:#ffffff;}
 .pd-tp-3{padding-top:3px !important; padding-bottom:3px !Important;}
 #second-header {width:100%;margin:0 auto; float:none;}
@@ -94,7 +95,7 @@ body{font-family:Century Gothic !important;}
 .cat-box{padding-left: 0px; padding-right: 0px;}
 .bg-lightgrey{background-color:#F4F4F4;}
 .bg-#F9D133{background-color:#F9D133;}
-.banner-img{width: 75%;}
+.banner-img{width: 100%;}
 .cat-img{width:60%;}
 .mt-10{margin-top:10px;}
 .mt-20{margin-top:20px;}

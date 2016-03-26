@@ -19,7 +19,14 @@
 			$this->load->model('home_model');
 			date_default_timezone_set('Asia/Kolkata');
 		}
-		
+		/**
+	 * Method remove_spl for removing special character from string
+	 * @param string
+	 * @return string
+	 **/
+		public function remove_spl($string=''){
+			return str_replace("'","\\'",str_replace("\\","\\\\",($string)));
+		}
 		public function location_detail($Vtype='',$vid=''){			
 			$query = $this->db->query("CALL usp_get_Locations('".$Vtype."','".$vid."')");
 			mysqli_next_result($this->db->conn_id);
@@ -250,10 +257,10 @@
 			$xml = "<ROOT>
 					<HEADER>
 					<USERID>".$this->session->userdata('userID')."</USERID>";
-			if($vType=='ALL'){
+			if($vType=='ALL' || $vType=='SHOWCASE_ALL' || $vType=='SHOWCASE_ACTIVE'){
 				$xml .= "";
 			}
-			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities'){
+			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities' || $vType=='SHOWCASE_ONE' || $vType=='SHOWCASE_DETAIL'){
 				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
 			}
 			if($vType=='ColorOne' || $vType=='PriceOne' || $vType=='PhotoOne' || $vType=='VideoOne'){
@@ -363,14 +370,29 @@
 				$xml .= "<FILEPATH>".$this->input->post('filePath')."</FILEPATH>";
 				$xml .= "<FILETITLE>".$this->input->post('fileTitle')."</FILETITLE>";
 			}
-			if($type=='copyProduct' || $type=='delProduct'){
-
+			if($type=='copyProduct' || $type=='delProduct' || $type=='delShowcaseProducts'){
+				
+			}
+			if($type=='showcaseDataP' || $type=='showcaseDataS'){
+				$status = 'S';
+				if($type=='showcaseDataP'){
+					$status = 'P';
+				}
+				$xml .= "<SHOWCASESTATUS>".$status."</SHOWCASESTATUS>";
+				for($i=1; $i<=4; $i++){	
+					$xml .= "<SHOWCASE>";	
+						$xml .= "<SHOWCASETITLE>".$this->remove_spl($this->input->post('showcaseTitle'.$i))."</SHOWCASETITLE>";
+						$xml .= "<COVERIMAGE>".$this->remove_spl($this->input->post('cover_image'.$i))."</COVERIMAGE>";
+						$xml .= "<SHOWCASEDESC>".$this->remove_spl($this->input->post('showcaseDesc'.$i))."</SHOWCASEDESC>";
+					$xml .= "</SHOWCASE>";
+				}
 			}
 			$xml .="</HEADER>";
 			$xml .="</ROOT>";
-			
+			//echo htmlspecialchars($xml); exit();
 			$rndS1=$this->home_model->randStrGen();
 			$rndS2=$this->home_model->randStrGen();
+			//echo "CALL usp_insUpdProducts('".$type."','".htmlspecialchars($xml)."',@vresult, @vMessage)"; exit();
 			$query = $this->db->query("CALL usp_insUpdProducts('".$type."','".$xml."',@vresult, @vMessage)");
 			$query2=$this->db->query("SELECT @vresult as ".$rndS1.", @vMessage as ".$rndS2)->result_array();
 			mysqli_next_result($this->db->conn_id);	

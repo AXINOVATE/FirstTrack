@@ -187,6 +187,20 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/products/edit_productPrices',$data);
 		}
 	}
+	public function showcase_list(){
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ALL','');
+		$this->load->view('admin/showcase_list',$data);
+	}
+	public function add_showcase($id=""){
+		$pageData['currentPage'] = 'MANAGE PRODUCT';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ONE',$id);
+		$this->load->view('admin/add_showcase',$data);
+	}
 	public function upload_products_list()	{						
 		echo json_encode($this->manage_products_model->upload_products_list());
 	}

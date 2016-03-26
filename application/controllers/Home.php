@@ -30,6 +30,10 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['Car'] = $this->home_model->getBodyTypeEach('Car');
+		$data['Bike'] = $this->home_model->getBodyTypeEach('Bike');
+		$data['More'] = $this->home_model->getBodyTypeEach('More');
+		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$this->load->view('home/index',$data);
 	}
 	public function login(){		
@@ -118,11 +122,13 @@ class Home extends CI_Controller {
 		$state_id= $this->input->post('states_id');		
 		echo json_encode($this->manage_products_model->get_particular_city($state_id));
 	}
-	public function news_detail(){
+	public function product_news($id=""){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('home/news_detail',$data);
+		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_DETAIL',$id);
+		//var_dump($data['getShowcaseProducts']); exit();
+		$this->load->view('home/product_news',$data);
 	}
 	public function view_dealers_products(){
 		$pageData['currentPage'] = 'MANAGE DEALERS';
@@ -303,6 +309,17 @@ class Home extends CI_Controller {
 	}
 	public function getCity(){
 		echo json_encode($this->home_model->getCity());
-
+	}
+	public function getBodyTypeEach($BodyType){
+		if($BodyType =='cars')
+		{
+			$BodyType ='Car';
+		}elseif($BodyType == 'bikes'){
+			$BodyType ='Bike';
+		}
+		elseif($BodyType =='More'){
+			$BodyType ='More';
+		}
+		echo json_encode($this->home_model->getBodyTypeEach($BodyType));
 	}
 }
