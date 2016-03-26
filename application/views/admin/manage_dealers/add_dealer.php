@@ -10,9 +10,10 @@ $prefix=$this->config->item('prefix');
 	<title>Welcome First Track</title>
 	<link href="<?php echo $assetsPath;?>/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $assetsPath;?>/css/admin_custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
+	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		.picture-color-edit >tr>td>img{text-align:center !important;}
 hr.style-eight {
@@ -30,11 +31,15 @@ hr.style-eight {
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<section class="container">
-			<div class="row">
-				<form id="dealer_form" method="POST" action="#" onSubmit="return false;">
-					<h2><center>Signup Page for Dealers </center></h2>
-					<hr class="style-eight"/>
-					<input type="hidden" name="login" value="true">
+			
+			<form id="dealer_form" method="POST" action="#" onSubmit="return false;">
+				<h3>Add Dealer's Information</h3>
+				<ul id="myTab" class="nav  nav-tabs1" role="tablist">
+					<li role="presentation" class="active product-panel-heading"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Information</a></li>
+					<li role="presentation"><a href="#bank-info" aria-controls="profile" role="tab" data-toggle="tab">Bank Details</a></li>
+				</ul>
+				<div class="row">
+					<input type="hidden" name="login" value="false">
 					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="text" class="form-control" name="name" placeholder="Dealers Name"/>
 					</div>
@@ -101,9 +106,10 @@ hr.style-eight {
 							Authorized Dealer for Brand
 						</div>
 					</div>
-					<button class="btn btn-default btn-primary pull-right" id="register_btn">Signup <i class="fa fa-arrow-right pl-5" ></i></button>
-				</form>
-			</div>
+				</div>
+				<button class="btn btn-default btn-primary pull-right" id="register_btn">Signup <i class="fa fa-arrow-right pl-5" ></i></button>
+			</form>
+			
 		</section>
 	</div>
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
@@ -149,7 +155,7 @@ hr.style-eight {
 					$("#register_btn").html('Signup');
 					$("#register_btn").attr('disabled',false);
 				}else{
-					//window.location.reload();
+					//window.location="<?php echo $prefix;?>/home/bank_details".data.userID;
 				}
 				
 			});

@@ -48,15 +48,15 @@ $prefix=$this->config->item('prefix');
 						<li><a href="<?php echo $prefix;?>/admin/showcase_list">Showcase Products</a></li>
 					</ul>
 				</li>
-				<li class="dropdown <?php if($currentPage == 'MANAGE DEALERS')echo 'active';?>">
+				<li class="dropdown <?php if($currentPage == 'DEALERS')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo $prefix;?>/home/manage_dealers">Add Dealers</a></li>
-						<li><a href="#">Add Products</a></li>
+						<li><a href="<?php echo $prefix;?>/home/add_dealer">Add Dealers</a></li>
+						<li><a href="<?php echo $prefix;?>/home/dealer_products">Dealer Products</a></li>
 					</ul>
 				</li>
-				<li class="dropdown <?php if($currentPage == '')echo 'active';?>">
-					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage users <span class="caret"></span></a>
+				<li class="dropdown <?php if($currentPage == 'USERS')echo 'active';?>">
+					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage users <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Users</a></li>
 					</ul>

@@ -36,34 +36,7 @@ class Home extends CI_Controller {
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$this->load->view('home/index',$data);
 	}
-	public function login(){		
-		$pageData['currentPage'] = 'LOGIN';
-		if($this->session->userdata('login'))redirect(base_url());		
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('home/login',$data);
-	}
-
-	public function logout(){
-		$this->session->sess_destroy();
-		redirect(base_url());
-	}
-	public function login_check(){
-		echo json_encode($this->home_model->login($this->input->post('username'),$this->input->post('password')));
-	}
-
-	public function register(){
-		echo json_encode($this->home_model->register());
-	}
-	public function latest(){
-		$pageData['currentPage'] = 'LATEST';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
-		$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
-		$data['trendDetails']= $this->home_model->getTrendData('ALL');
-		$this->load->view('home/latest_list',$data);
-	}
+	
 	public function popular(){
 		$pageData['currentPage'] = 'POPULAR';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -147,12 +120,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/products/manage_product/view_dealers_products',$data);
 	}
-	public function add_dealer_products(){
-		$pageData['currentPage'] = 'MANAGE DEALERS';
-		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('admin/products/manage_product/add_dealer_products',$data);
-	}
+	
 	public function add_products(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -333,8 +301,133 @@ class Home extends CI_Controller {
 		}
 		echo json_encode($this->home_model->getBodyTypeEach($BodyType));
 	}
-	public function getCompareInfo($vType,$catID="",$makerID="",$modelID="")	{
-		//var_dump($_POST); exit();
+
+	public function getCompareInfo($vType,$catID="",$makerID="",$modelID=""){
 		echo json_encode($this->home_model->getCompareInfo($vType, $catID, $makerID, $modelID));
 	}
+	
+	function add_dealer(){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['countries'] = $this->manage_products_model->location_detail("COUNTRY");
+		$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+		$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+		$this->load->view('admin/manage_dealers/add_dealer',$data);
+	}
+	function dealer($userID=""){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['countries'] = $this->manage_products_model->location_detail("COUNTRY");
+			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			$this->load->view('admin/manage_dealers/dealer',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
+	function bank_details($userID=""){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['bank'] = $this->home_model->getUserBankDetails("SP",$userID);
+			$this->load->view('admin/manage_dealers/bank_details',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
+	function bank_update(){
+		echo json_encode($this->home_model->bank_update());
+	}
+	function dealer_products($userID=""){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['bank'] = $this->home_model->getUserBankDetails("SP",$userID);
+			$data['data'] = $this->home_model->getDealerProducts("LIST",$userID);
+			//var_dump($data['data']);exit();
+			$this->load->view('admin/manage_dealers/dealer_products',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
+	public function add_dealer_products($userID=""){
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			$this->load->view('admin/manage_dealers/add_dealer_products',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
+	public function login(){		
+		$pageData['currentPage'] = 'LOGIN';
+		if($this->session->userdata('login'))redirect(base_url());
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/login',$data);
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
+	public function login_check(){
+		echo json_encode($this->home_model->login($this->input->post('username'),$this->input->post('password')));
+	}
+
+	public function register(){
+		echo json_encode($this->home_model->register($this->input->post('name'),$this->input->post('email'),$this->input->post('password'),$this->input->post('phone'),true));
+	}
+	public function dealers_signup(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['countries'] = $this->manage_products_model->location_detail("COUNTRY");
+		$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+		$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+		if($this->session->userdata('login'))redirect(base_url());
+		$this->load->view('admin/manage_dealers/md_sign_up_page_dealers',$data);
+	}
+	public function profile(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		if(!$this->session->userdata('login'))redirect(base_url());
+		$data['details'] = $this->home_model->getUsers("SP",$this->session->userdata("userID"));
+		//var_dump($data['details']);exit();
+		$data['countries'] = $this->manage_products_model->location_detail("COUNTRY");
+		$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+		$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+		$this->load->view('home/profile',$data);
+	}
+	public function profile_update(){
+		echo json_encode($this->home_model->updateUserDetails($this->input->post('userID'),$this->input->post('firstName'),$this->input->post('lastName'),$this->input->post('profilePic'),$this->input->post('countryID'),$this->input->post('stateID'),$this->input->post('cityID'),$this->input->post('address1'),$this->input->post('address2'),$this->input->post('locationID'),$this->input->post('zipCode'),$this->input->post('phone'),$this->input->post('sEmail'),$this->input->post('sPhone'),$this->input->post('productCategory'),$this->input->post('manufacture'),$this->input->post('authDealer'),$this->input->post('status')));
+	}
+	public function dealer_registration(){
+		echo json_encode($this->home_model->dealer_registration());
+	}
+	public function adding_dealer_products(){
+		echo json_encode($this->home_model->adding_dealer_products());
+	}
+	
+	function getProducts($type=""){
+		echo json_encode($this->home_model->getProducts($type,$this->input->post('userID'),$this->input->post('productID'),"",$this->input->post('category'),$this->input->post('manufacture')));
+	}
+
 }

@@ -13,8 +13,9 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
-						
+						<?php if(!$this->session->userdata('login')){ ?>
+						<li><a href="<?php echo $prefix;?>/home/dealers_signup"><span>Dealer Signup</span></a></li>
+						<?php } ?>
 						<li class="dropdown border-none-r user-options"  id="city-option"style="border-right:none;"><a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i>banglore<span class="caret"></span></a>
 						<ul class="dropdown-menu" id="city-option-detail">
 						
@@ -28,10 +29,10 @@ $prefix=$this->config->item('prefix');
 							<li class="dropdown border-none-r user-options">
 								<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('name');?> <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<?php if($this->session->userdata('roleID') == '02cb2679-e453-11e5-8594-74867ad2fb90'){ ?>
+									<?php if($this->session->userdata('roleName') == $this->config->item('admin_role')){ ?>
 									<li><a href="<?php echo $prefix;?>/admin/admin_dashboard">Admin Panel</a></li>
 									<?php } ?>
-									<li><a href="#">Profile</a></li>
+									<li><a href="<?php echo $prefix;?>/home/profile">Profile</a></li>
 									<li><a href="<?php echo $prefix;?>/home/logout">Logout</a></li>
 								</ul>
 							</li>
