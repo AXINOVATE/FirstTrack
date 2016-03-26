@@ -74,7 +74,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="types" id="cars-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Body Type</h5>
+								<h5><b>Body Type</b></h5>
 							</div>
 							<?php foreach($Car as $car){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
@@ -90,7 +90,7 @@ $prefix=$this->config->item('prefix');
 						</div>	
 						<div class="types hide" id="bikes-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Body Type</h5>
+								<h5><b>Body Type</b></h5>
 							</div>
 							<?php foreach($Bike as $bike){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
@@ -106,7 +106,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="mt-10 hide types" id="more-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Other Categories</h5>
+								<h5><b>Other Categories</b></h5>
 							</div>
 							<?php foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
