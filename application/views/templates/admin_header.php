@@ -13,7 +13,7 @@ $prefix=$this->config->item('prefix');
 				<div class="header-top">
 					<ul style="display:block; float:right;">
 						<li><a href="#">Welcome: <?php echo $this->session->userdata('name');?></a></li>
-						<li><a href="#">Administrator</a></li>
+						<li><a href="#"><?php echo $this->session->userdata('roleName'); ?></a></li>
 						<li class="border-none-r"><a href="<?php echo $prefix;?>/home/logout">Sign Out</a></li>
 					</ul>
 				</div>
@@ -35,6 +35,8 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
+				<?php if($this->session->userdata('roleName') == $this->config->item('admin_role')){ ?>
+				
 				<li <?php if($currentPage == 'DASHBOARD')echo 'class="active"';?>><a href="<?php echo $prefix;?>/admin/admin_dashboard" class="pd-tp-3">Dashboard</a></li>
 				<li class="dropdown <?php if($currentPage == 'MANAGE PRODUCT')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Product <span class="caret"></span></a>
@@ -48,12 +50,13 @@ $prefix=$this->config->item('prefix');
 						<li><a href="<?php echo $prefix;?>/admin/showcase_list">Showcase Products</a></li>
 					</ul>
 				</li>
-				<li class="dropdown <?php if($currentPage == 'DEALERS')echo 'active';?>">
-					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>
+				<li class="dropdown <?php if($currentPage == 'DEALERS' || $currentPage == 'DEALER_PRODUCTS')echo 'active';?>">
+					<a href="<?php echo $prefix;?>/home/dealers" class="pd-tp-3"> Manage Dealers </a>
+					<!--a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<?php echo $prefix;?>/home/add_dealer">Add Dealers</a></li>
 						<li><a href="<?php echo $prefix;?>/home/dealer_products">Dealer Products</a></li>
-					</ul>
+					</ul-->
 				</li>
 				<li class="dropdown <?php if($currentPage == 'USERS')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage users <span class="caret"></span></a>
@@ -61,6 +64,10 @@ $prefix=$this->config->item('prefix');
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Users</a></li>
 					</ul>
 				</li>
+				<?php }else if($this->session->userdata('roleName') == $this->config->item('dealer_role')){ ?>
+					<li <?php if($currentPage == 'DEALERS')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/dealer/<?php echo $this->session->userdata('userID');?>" class="pd-tp-3">Profile</a></li>
+					<li <?php if($currentPage == 'DEALER_PRODUCTS')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/DEALER_PRODUCTS/<?php echo $this->session->userdata('userID');?>" class="pd-tp-3">Manage Products</a></li>
+				<?php } ?>
 			</ul> 
 		</div>
 	</div>

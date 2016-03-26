@@ -32,7 +32,11 @@ $prefix=$this->config->item('prefix');
 									<?php if($this->session->userdata('roleName') == $this->config->item('admin_role')){ ?>
 									<li><a href="<?php echo $prefix;?>/admin/admin_dashboard">Admin Panel</a></li>
 									<?php } ?>
+									<?php if($this->session->userdata('roleName') == $this->config->item('dealer_role')){ ?>
+									<li><a href="<?php echo $prefix;?>/home/dealer/<?php echo $this->session->userdata('userID');?>">Profile</a></li>
+									<?php }else{ ?>
 									<li><a href="<?php echo $prefix;?>/home/profile">Profile</a></li>
+									<?php } ?>
 									<li><a href="<?php echo $prefix;?>/home/logout">Logout</a></li>
 								</ul>
 							</li>

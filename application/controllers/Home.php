@@ -325,6 +325,14 @@ class Home extends CI_Controller {
 			echo 'Page not found';
 		}
 	}
+	function dealers(){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("RLIST","","",$this->config->item('dealer_role'));
+		//var_dump($data['details']);exit();
+		$this->load->view('admin/manage_dealers/dealers',$data);
+	}
 	function bank_details($userID=""){
 		$pageData['currentPage'] = 'DEALERS';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
@@ -342,7 +350,7 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->bank_update());
 	}
 	function dealer_products($userID=""){
-		$pageData['currentPage'] = 'DEALERS';
+		$pageData['currentPage'] = 'DEALER_PRODUCTS';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['details'] = $this->home_model->getUsers("SP",$userID);
