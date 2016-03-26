@@ -154,55 +154,57 @@ $prefix=$this->config->item('prefix');
 			</div>
 			
 			<div class="row mt-20">
-				<a id="test-drive1" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/test-drive.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Request for<br/>Test Drive</div>
-					</center>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<a id="test-drive1" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/test-drive.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">Request for<br/>Test Drive</div>
+						</center>
+					</div>
+					</a>
+					<a id="adv-book1" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/adv-booking.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">Advance<br/>Booking</div>
+						</center>
+					</div>
+					</a>
+					<a id="vehicle-loan1" href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/vehicle-loan.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">Apply for<br/>Vehicle Loan</div>
+						</center>
+					</div>
+					</a>
+					<a id="corporate-deal1" href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/corporate-deals.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">Corporate<br/>Deals</div>
+						</center>
+					</div>
+					</a>
+					<a id="apply-insurance1" href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/apply-insurance.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">Apply for<br/>Insurance</div>
+						</center>
+					</div>
+					</a>
+					
+					<a id="on-road-assistance1" href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal">
+					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/road-assistance.png" class="mt-10" width="50%" alt="car" />
+							<div class="car-type-name">By On Road <br/> Assistance </div>
+						</center>
+					</div>
+					</a>
 				</div>
-				</a>
-				<a id="adv-book1" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/adv-booking.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Advance<br/>Booking</div>
-					</center>
-				</div>
-				</a>
-				<a id="vehicle-loan1" href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/vehicle-loan.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Apply for<br/>Vehicle Loan</div>
-					</center>
-				</div>
-				</a>
-				<a id="corporate-deal1" href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/corporate-deals.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Corporate<br/>Deals</div>
-					</center>
-				</div>
-				</a>
-				<a id="apply-insurance1" href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/apply-insurance.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">Apply for<br/>Insurance</div>
-					</center>
-				</div>
-				</a>
-				
-				<a id="on-road-assistance1" href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal">
-				<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
-					<center>
-						<img src="<?php echo $assetsPath;?>/images/road-assistance.png" class="mt-10" width="50%" alt="car" />
-						<div class="car-type-name">By On Road <br/> Assistance </div>
-					</center>
-				</div>
-				</a>
 			</div>
 		</div>
 	</div>
