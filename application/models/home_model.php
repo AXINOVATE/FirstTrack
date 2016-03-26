@@ -517,6 +517,7 @@ class Home_model extends CI_Model{
 		return $query->result_array();		
 
 	}
+
 	
 	public function login($userName,$password){
 		$retvalue = array();
@@ -847,6 +848,13 @@ class Home_model extends CI_Model{
 			return $qry->row();
 		else
 			return $qry->result();
+	}
+
+
+	public function getCompareInfo($vType, $catID, $makerID){
+		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();		
 	}
 
 }

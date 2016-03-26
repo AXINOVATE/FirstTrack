@@ -28,6 +28,9 @@ $prefix=$this->config->item('prefix');
 		background-color:#F9D133;
 		color:#000;
 	}
+	.body-type-detail {
+		text-decoration:none !importent;
+	}
 	
 	</style>
 </head>
@@ -71,7 +74,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="types" id="cars-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Body Type</h5>
+								<h5><b>Body Type</b></h5>
 							</div>
 							<?php foreach($Car as $car){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
@@ -84,11 +87,10 @@ $prefix=$this->config->item('prefix');
 									</div>';
 								}
 							?>
-							
-						</div>
+						</div>	
 						<div class="types hide" id="bikes-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Body Type</h5>
+								<h5><b>Body Type</b></h5>
 							</div>
 							<?php foreach($Bike as $bike){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
@@ -96,16 +98,15 @@ $prefix=$this->config->item('prefix');
 										<center>
 										<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
 										<div class="car-type-name">'.$bike['body_type'].'</div>
-										</center>							
+										</center>
 										</div></a>
 									</div>';
 								}
 							?>					
 						</div>
-					
 						<div class="mt-10 hide types" id="more-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<h5>Other Categories</h5>
+								<h5><b>Other Categories</b></h5>
 							</div>
 							<?php foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -246,11 +247,10 @@ $prefix=$this->config->item('prefix');
 		$(this,'.body-type-detail').addClass('bg-yellow-active');
 	});
 	$('.particular-bike-detail').on('click',function(){
+		var bikeid;
+		bikeid= $(this).attr("data-bikebodyTypeID");
+		alert(bikeid);
 		
-		var bikecategoryID = $(this,'.particular-bike-detail').data('bikecategoryID');
-		var bikebodyTypeID = $(this,'.particular-bike-detail').data('bikebodyTypeID');
-		alert(bikecategoryID);
-		alert(bikebodyTypeID);
 	});
 	
 </script>
