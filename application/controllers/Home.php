@@ -104,21 +104,22 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'COMPARE';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$data['catID']= $this->home_model->getCompareInfo('category','','');
+		$data['catID']= $this->home_model->getCompareInfo('category','','','');
 		//var_dump($data['catID']); exit();
 		$this->load->view('home/compare',$data);
 	}
 	public function detailed_comparison(){
-		var_dump($_POST); exit();
+		//var_dump($_POST); exit();
 		$var1="";$var2="";$var="";
 		$var1 = $this->input->post('selVariant1');
 		$var2 = $this->input->post('selVariant2');
 		$var3 = $this->input->post('selVariant3');
-		if($var1!='' && $var!=''){
+		if($var1!='' && $var2!=''){
 			$pageData['currentPage'] = 'COMPARE';
 			$data['header'] = $this->load->view('templates/header',$pageData,true);
 			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-			$data['catID']= $this->home_model->getCompareInfo('detailedComparison','','');
+			$data['specs'] = $this->home_model->getCompareInfo('detailedComparison',$var1,$var2,$var3);
+			//var_dump($data['specs']); exit();
 			$this->load->view('home/detailed_comparison',$data);
 		}
 	}
@@ -332,8 +333,8 @@ class Home extends CI_Controller {
 		}
 		echo json_encode($this->home_model->getBodyTypeEach($BodyType));
 	}
-	public function getCompareInfo($vType,$catID="",$makerID="")	{
+	public function getCompareInfo($vType,$catID="",$makerID="",$modelID="")	{
 		//var_dump($_POST); exit();
-		echo json_encode($this->home_model->getCompareInfo($vType, $catID, $makerID));
+		echo json_encode($this->home_model->getCompareInfo($vType, $catID, $makerID, $modelID));
 	}
 }
