@@ -90,7 +90,7 @@ body{font-family:Century Gothic !important;}
 /* Footer CSS ends here	*/
 
 /* Home page CSS starts here	*/
-.border-lt-grey{border:1px solid #e7e7e7;}
+.border-lt-grey{border:1px solid #e7e7e7; display: block; overflow:auto;}
 .border-lt-blue{border:1px solid #027cd5;}
 .cat-box{padding-left: 0px; padding-right: 0px;}
 .bg-lightgrey{background-color:#F4F4F4;}

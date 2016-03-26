@@ -40,85 +40,90 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-12 border-lt-grey mb-10">
-					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue" id="cars">
-							<div>
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/car.png" class="cat-img" alt="car" />
-									<div style="font-size:14px; margin-bottom:10px;">Car</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">							
-							<div>
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/bike.png" class="cat-img" alt="car">
-									<div style="font-size:14px; margin-bottom:10px;">Bike</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="more">
-							
-							<div>
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/more1.png" class="cat-img" alt="car" />
-									<div style="font-size:14px; margin-bottom:10px;">More</div>
-								</center>
-							</div>
-						</div>
-					</div>
-					<div class="row types" id="cars-div">
-						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-							<h5>Body Type</h5>
-						</div>
-						<?php foreach($Car as $car){
-							echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-									<a href="#" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-10">
+					<div class="border-lt-grey">
+						<div class="">
+							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue" id="cars">
+								<div>
 									<center>
-									<img src="'.$car['body_type_img'].'" style="width:90px;height:60px;" alt="'.$car['body_type'].'" />
-									<div class="car-type-name">'.$car['body_type'].'</div>
-									</center>							
-									</div></a>
-								</div>';
-							}
-						?>
-						
-					</div>
-					<div class="row types hide" id="bikes-div">
-						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-							<h5>Body Type</h5>
-						</div>
-						<?php foreach($Bike as $bike){
-							echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-									<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<img src="<?php echo $assetsPath;?>/images/car.png" class="cat-img" alt="car" />
+										<div style="font-size:14px; margin-bottom:10px;">Car</div>
+									</center>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">							
+								<div>
 									<center>
-									<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
-									<div class="car-type-name">'.$bike['body_type'].'</div>
-									</center>							
-									</div></a>
-								</div>';
-							}
-						?>					
-					</div>
-					
-					<div class="row mt-10 hide types" id="more-div">
-						<?php foreach($More as $more){
-								echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-										<a href="#" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-											<center>
-												<img src="'.$more['imgPath'].'" style="width:76px; height:55px;" alt="'.$more['categoryName'].'" />
-												<div class="car-type-name">'.$more['categoryName'].'</div>
-											</center>
+										<img src="<?php echo $assetsPath;?>/images/bike.png" class="cat-img" alt="car">
+										<div style="font-size:14px; margin-bottom:10px;">Bike</div>
+									</center>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="more">
+								
+								<div>
+									<center>
+										<img src="<?php echo $assetsPath;?>/images/more1.png" class="cat-img" alt="car" />
+										<div style="font-size:14px; margin-bottom:10px;">More</div>
+									</center>
+								</div>
+							</div>
+						</div>
+						<div class="types" id="cars-div">
+							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+								<h5>Body Type</h5>
+							</div>
+							<?php foreach($Car as $car){
+								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+										<a href="#" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<center>
+										<img src="'.$car['body_type_img'].'" style="width:90px;height:60px;" alt="'.$car['body_type'].'" />
+										<div class="car-type-name">'.$car['body_type'].'</div>
+										</center>							
 										</div></a>
 									</div>';
-							}
-						?>					
-					</div>
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
-							<div class="mr-m5 ml-m5">
-								<a href="<?php echo $prefix;?>/home/search" class="search-btn" >Search</a>
+								}
+							?>
+							
+						</div>
+						<div class="types hide" id="bikes-div">
+							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+								<h5>Body Type</h5>
+							</div>
+							<?php foreach($Bike as $bike){
+								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+										<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<center>
+										<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
+										<div class="car-type-name">'.$bike['body_type'].'</div>
+										</center>							
+										</div></a>
+									</div>';
+								}
+							?>					
+						</div>
+					
+						<div class="mt-10 hide types" id="more-div">
+							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+								<h5>Other Categories</h5>
+							</div>
+							<?php foreach($More as $more){
+									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+											<a href="#" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
+												<center>
+													<img src="'.$more['imgPath'].'" style="width:100%; height:55px;" alt="'.$more['categoryName'].'" />
+													<div class="car-type-name">'.$more['categoryName'].'</div>
+												</center>
+											</div></a>
+										</div>';
+								}
+							?>					
+						</div>
+						<div class="">
+							<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
+								<div class="mr-m5 ml-m5">
+									<a href="<?php echo $prefix;?>/home/search" class="search-btn" >Search</a>
+								</div>
 							</div>
 						</div>
 					</div>
