@@ -28,6 +28,9 @@ $prefix=$this->config->item('prefix');
 		background-color:#F9D133;
 		color:#000;
 	}
+	.body-type-detail {
+		text-decoration:none !importent;
+	}
 	
 	</style>
 </head>
@@ -91,7 +94,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<?php foreach($Bike as $bike){
 							echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-									<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+									<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'" data-mybike="hellobike"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 									<center>
 									<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
 									<div class="car-type-name">'.$bike['body_type'].'</div>
@@ -239,11 +242,10 @@ $prefix=$this->config->item('prefix');
 		$(this,'.body-type-detail').addClass('bg-yellow-active');
 	});
 	$('.particular-bike-detail').on('click',function(){
+		var bikeid;
+		bikeid= $(this).attr("data-bikebodyTypeID");
+		alert(bikeid);
 		
-		var bikecategoryID = $(this,'.particular-bike-detail').data('bikecategoryID');
-		var bikebodyTypeID = $(this,'.particular-bike-detail').data('bikebodyTypeID');
-		alert(bikecategoryID);
-		alert(bikebodyTypeID);
 	});
 	
 </script>
