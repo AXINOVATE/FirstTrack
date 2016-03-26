@@ -17,6 +17,18 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
+	.body-type-detail{
+		background-color:#fff;
+	}
+	.bg-yellow1{
+		background-color:#F9D133 !importent;
+		color:#000 !importent;
+	}
+	.body-type-detail:hover,.car-type-name:hover {
+		background-color:#F9D133;
+		color:#000;
+	}
+	
 	</style>
 </head>
 <body>
@@ -38,8 +50,7 @@ $prefix=$this->config->item('prefix');
 								</center>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">
-							
+						<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">							
 							<div>
 								<center>
 									<img src="<?php echo $assetsPath;?>/images/bike.png" class="cat-img" alt="car">
@@ -61,135 +72,48 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 							<h5>Body Type</h5>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/hatchback.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Hatchback</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/sedan.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Sedan</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>	
-									<img src="<?php echo $assetsPath;?>/images/suv.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">SUV</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>	
-									<img src="<?php echo $assetsPath;?>/images/muv.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">MUV</div>
-								</center>
-							</div>
-						</div>
+						<?php foreach($Car as $car){
+							echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+									<a href="#" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+									<center>
+									<img src="'.$car['body_type_img'].'" style="width:90px;height:60px;" alt="'.$car['body_type'].'" />
+									<div class="car-type-name">'.$car['body_type'].'</div>
+									</center>							
+									</div></a>
+								</div>';
+							}
+						?>
+						
 					</div>
 					<div class="row types hide" id="bikes-div">
 						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 							<h5>Body Type</h5>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/bike-body1.png" style="height:55px;" alt="car" />
-									<div class="car-type-name">Commuters</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/bike-body2.png" style="height:55px;" alt="car" />
-									<div class="car-type-name">Off road</div>
-								</center>
-							</div>
-						</div>
-						
+						<?php foreach($Bike as $bike){
+							echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
+									<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+									<center>
+									<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
+									<div class="car-type-name">'.$bike['body_type'].'</div>
+									</center>							
+									</div></a>
+								</div>';
+							}
+						?>					
 					</div>
 					
 					<div class="row mt-10 hide types" id="more-div">
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/scooters.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Scooters</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-yellow pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/tractors.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Tractors</div>	
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>	
-									<img src="<?php echo $assetsPath;?>/images/auto.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Auto</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/lorries.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Lorries</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/buses.png" style="width:70%;" alt="car" />	
-									<div class="car-type-name">Buses</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>	
-									<img src="<?php echo $assetsPath;?>/images/ampere.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Ampere</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/birdgroup.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Bird Group</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>
-									<img src="<?php echo $assetsPath;?>/images/fivewheels.png" style="width:70%;" alt="car" />	
-									<div class="car-type-name">Five Wheels</div>
-								</center>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
-								<center>	
-									<img src="<?php echo $assetsPath;?>/images/segways.png" style="width:70%;" alt="car" />
-									<div class="car-type-name">Segway</div>
-								</center>
-							</div>
-						</div>
+						<?php foreach($More as $more){
+								echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
+										<a href="#" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="border-lt-grey ml-m10 mr-m10 bg-lightgrey pd-5">
+											<center>
+												<img src="'.$more['imgPath'].'" style="width:76px; height:55px;" alt="'.$more['categoryName'].'" />
+												<div class="car-type-name">'.$more['categoryName'].'</div>
+											</center>
+										</div></a>
+									</div>';
+							}
+						?>					
 					</div>
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
@@ -304,15 +228,28 @@ $prefix=$this->config->item('prefix');
 <script>
 	
 	$('.cat-box').on('mouseover', function(){
-		var id = $(this).attr('id');
+		var id = $(this).attr('id');		
 		$('.types').addClass('hide');
 		$('#'+id+'-div').removeClass('hide');
 		$('.cat-box').removeClass('bg-lightblue');
 		$(this).addClass('bg-lightblue');
 		$('.cat-box').addClass('bg-lightgrey');
 	});
+	
 	$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
-	$('.inpt-timepicker').timepicker();
+	$('.inpt-timepicker').timepicker();	
+	
+	$('.body-type-detail').on('click', function(){		
+		$('.body-type-detail').removeClass('bg-yellow-active');
+		$(this,'.body-type-detail').addClass('bg-yellow-active');
+	});
+	$('.particular-bike-detail').on('click',function(){
+		
+		var bikecategoryID = $(this,'.particular-bike-detail').data('bikecategoryID');
+		var bikebodyTypeID = $(this,'.particular-bike-detail').data('bikebodyTypeID');
+		alert(bikecategoryID);
+		alert(bikebodyTypeID);
+	});
 	
 </script>
 </body>
