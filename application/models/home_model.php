@@ -481,21 +481,40 @@ class Home_model extends CI_Model{
 				return $vresult;
 			}
 	}
-	public function getTrendData($vType,$xml=''){
+	public function getTrendData($vType,$trendTypeID=''){
 		$categoryID='';
-		if(isset($_POST)){
+		$manufactureID='';
+		$fuelType='';
+		$power_streering='';
+		$transmission='';
+		$minprice='';
+		$maxprice='';
+		$minMileage='';
+		$maxMileage='';
+		$price='';
+		$trendsTypeID=$trendTypeID;
+		if(isset($_POST['trendsTypeID'])){
 			$categoryID=$this->input->post('categoryID');
 			$manufactureID=$this->input->post('manufactureID');
 			$fuelType=$this->input->post('fuelType');
 			$power_streering=$this->input->post('power_streering');
 			$transmission=$this->input->post('transmission');
+			$trendsTypeID=$this->input->post('trendsTypeID');
+			$price=$this->input->post('price');
+			$mileage=$this->input->post('mileage');
+			$min=explode(',',$price);
+			$mile=explode(',',$mileage);
+			$minprice=$min[0];
+			$maxprice=$min[1];
+			$minMileage=$mile[0];
+			$maxMileage=$mile[1];
 			if($categoryID=='ALL'){ $categoryID='';}
 			if($manufactureID=='ALL'){ $manufactureID='';}
 			if($fuelType=='ALL'){ $fuelType='';}
 			if($power_streering=='Yes,No'){ $power_streering='';}
 			if($transmission=='Manual,Automatic'){ $transmission='';}
 		}
-		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION></HEADER></ROOT>";
+		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE></HEADER></ROOT>";
 		$query = $this->db->query("CALL usp_getTrendData('".$vType."','".$xml."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
@@ -958,6 +977,7 @@ class Home_model extends CI_Model{
 				</RECORD>";
 			}
 		$xml.="</ROOT>";
+		//echo htmlspecialchars($xml); exit();
 		$vStatus = mt_rand();
 		$this->db->query('CALL usp_insUpdDealerProductsOffer("'.$xml.'",@'.$vStatus.')');
 		mysqli_next_result($this->db->conn_id);

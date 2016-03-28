@@ -36,7 +36,24 @@ class Home extends CI_Controller {
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$this->load->view('home/index',$data);
 	}
-	
+	public function searchList($page){
+		if($page=='latest' || $page=='upcoming' || $page=='popular'){
+			$pageData['currentPage'] = strtoupper($page);
+			$data['header'] = $this->load->view('templates/header',$pageData,true);
+			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['pageName'] = strtoupper($page);
+			$data['getTID'] = $this->manage_products_model->getTrendType('GTID',ucfirst($page));
+			$data['trendsTypeID']=$data['getTID'][0]['trendsTypeID'];
+			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
+			$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID']);
+			$this->load->view('home/searchList',$data);
+		}else{
+			echo 'Page not found';
+		}
+		
+		
+	}
 	public function popular(){
 		$pageData['currentPage'] = 'POPULAR';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -291,8 +308,8 @@ class Home extends CI_Controller {
 	public function add_InstantQuotes(){
 		echo json_encode($this->home_model->add_InstantQuotes());
 	}
-	public function getTrendData($vType,$xml=''){
-		echo json_encode($this->home_model->getTrendData($vType,$xml));
+	public function getTrendData($vType){
+		echo json_encode($this->home_model->getTrendData($vType));
 
 	}
 	public function getCity(){

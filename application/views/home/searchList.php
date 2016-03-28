@@ -32,7 +32,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="mt-0 mb-20">Latest</h3>
+					<h3 class="mt-0 mb-20"><?php echo $pageName; ?></h3>
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="filter-manufacture">
@@ -55,7 +55,7 @@ $prefix=$this->config->item('prefix');
 							PRICE RANGE <i class="fa fa-minus"></i>
 						</div>
 						<div class="slider-example">
-							<input id="ex1" type="text" class="span2" data-slider-min="10" data-slider-max="500" data-slider-step="5" data-slider-value="[10,500]"/>
+							<input id="ex1" type="text" class="span2" data-slider-min="<?php echo $trendDetails[0]['Minsum']; ?>" data-slider-max="<?php echo $trendDetails[0]['Maxsum']; ?>" data-slider-step="5" data-slider-value="[<?php echo $trendDetails[0]['Minsum'].','.$trendDetails[0]['Maxsum']; ?>]"/>
 						</div>
 					</div>
 					<div class="filter-manufacture">
@@ -104,7 +104,8 @@ $prefix=$this->config->item('prefix');
 							MILEAGE <i class="fa fa-minus"></i>
 						</div>
 						<div class="slider-example">
-							<input id="ex2" type="text" class="span2" data-slider-min="10" data-slider-max="500" data-slider-step="5" data-slider-value="[10,500]"/>
+							<input id="ex2" type="text" class="span2" data-slider-min="<?php echo $trendDetails[0]['minMileage']; ?>" data-slider-max="<?php echo $trendDetails[0]['maxMileage']; ?>" data-slider-step="1" data-slider-value="[<?php echo $trendDetails[0]['minMileage'].','.$trendDetails[0]['maxMileage']; ?>]"/>
+							<!--<input id="ex2" type="text" class="span2" data-slider-min="0" data-slider-max="50" data-slider-step="5" data-slider-value="[0,50]"/>-->
 						</div>
 					</div>
 					<div class="filter-manufacture">
@@ -230,7 +231,7 @@ $prefix=$this->config->item('prefix');
 											<li><i class="fa fa-car"></i> <?php echo $TD['body_type']; ?></li>
 											<li><i class="fa fa-cog"></i> <?php echo $TD['transmission']; ?></li>
 											<li><i class="fa fa-clock-o"></i>  <?php echo $TD['mileage']; ?> kmpl</li>
-											<li><i class="fa fa-filter"></i><?php echo $TD['fueltype']; ?></li>
+											<li><i class="fa fa-filter"></i><?php echo $TD['fuelType']; ?></li>
 										</ul>
 									</div>
 									<div class="col-md-3 col-sm-3 text-center">
@@ -286,6 +287,12 @@ $prefix=$this->config->item('prefix');
 		$("#ex5").slider({tooltip: 'always'});
 		$("#ex6").slider({tooltip: 'always'});
 	});		
+	$("#ex1").change(function(){
+		getData();
+	});
+	$("#ex2").change(function(){
+		getData();
+	});
 	$("#search_category").on('change',function(){
 		getData();
 	});
@@ -307,11 +314,14 @@ $prefix=$this->config->item('prefix');
 		var categoryID=$("#search_category").val();
 		var manufactureID=$("#search_manufacture").val();
 		var fuelType=$("#search_fuelType").val();
+		var price=$("#ex1").val();
+		var mileage=$("#ex2").val();
+		var trendsTypeID='<?php echo $trendsTypeID; ?>';
 		$.ajax({
 			url:'<?php echo $prefix; ?>/home/getTrendData/ALL',
 			dataType:'JSON',
 			type:'POST',
-			data:{'categoryID':categoryID,'manufactureID':manufactureID,'fuelType':fuelType,'power_streering':power_streering,'transmission':transmission}
+			data:{'categoryID':categoryID,'manufactureID':manufactureID,'fuelType':fuelType,'power_streering':power_streering,'transmission':transmission,'trendsTypeID':trendsTypeID,'price':price,'mileage':mileage}
 		}).done(function(data){
 			var html='';
 			var vID=[50];
@@ -330,7 +340,7 @@ $prefix=$this->config->item('prefix');
 												'<li><i class="fa fa-car"></i>'+data[i]['body_type']+'</li>'+
 												'<li><i class="fa fa-cog"></i>'+data[i]['transmission']+'</li>'+
 												'<li><i class="fa fa-clock-o"></i>'+data[i]['mileage']+' kmpl</li>'+
-												'<li><i class="fa fa-filter"></i>'+data[i]['fueltype']+'</li>'+
+												'<li><i class="fa fa-filter"></i>'+data[i]['fuelType']+'</li>'+
 											'</ul>'+
 										'</div>'+
 										'<div class="col-md-3 col-sm-3 text-center">'+
