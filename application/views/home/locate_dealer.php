@@ -152,7 +152,7 @@ $prefix=$this->config->item('prefix');
 	
 	
 		$('#locate-a-dealer').on('click',function(){
-			alert('hello');
+			
             var loc_id=$('#dealer-location').val();	
 			$.ajax({
 				url:prefix+'/home/locate_a_dealer',
