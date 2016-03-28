@@ -865,6 +865,42 @@ class Home_model extends CI_Model{
 		else
 			return $qry->result();
 	}
+	function adding_dealer_products_offer(){
+		$retvalue['status']='Failed';
+		$productID = $this->input->post('productID');
+		$userID = $this->input->post('userID');
+		$data = $this->input->post('data');
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
+					<PRODUCTID>".$productID."</PRODUCTID>
+					<USERID>".$userID."</USERID>
+					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+				</HEADER>";
+			foreach($data as $d){
+				$xml.="<RECORD>
+					<VARIANTID>".$d[0]."</VARIANTID>
+					<COLORID>".$d[1]."</COLORID>
+					<OFFER1>".$d[2]."</OFFER1>
+					<OFFER2>".$d[3]."</OFFER2>
+					<OFFER3>".$d[4]."</OFFER3>
+					<OFFER4>".$d[5]."</OFFER4>
+					<OFFER5>".$d[6]."</OFFER5>
+					<OFFER6>".$d[7]."</OFFER6>
+					<STATUS>P</STATUS>
+				</RECORD>";
+			}
+		$xml.="</ROOT>";
+		$vStatus = mt_rand();
+		$this->db->query('CALL usp_insUpdDealerProductsOffer("'.$xml.'",@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vStatus." as status")->result_array();
+		
+		if($qry[0]['status']=='Success'){
+			$retvalue['status'] = 'Success';
+		}
+		return $retvalue;
+	}
 }
 
 ?>

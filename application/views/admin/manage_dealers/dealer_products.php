@@ -18,6 +18,7 @@ $prefix=$this->config->item('prefix');
 	.dealer-products tbody{background-color:#F9F9F9;}
 	.dealer-products thead{ color: #fff; background-color: #027CD5;}
 	.vColor div{ display:inline-block;width:20px;height:20px;}
+	.ml-10{margin-left:10px;}
 
 </style>
 </head>
@@ -29,7 +30,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<section class="container">
 			<h3> Dealer Products - <?php if(isset($details->firstName)){echo $details->firstName.' '.$details->lastName; }?>
-			<a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add products</a>
+			<a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right  ml-10">Add products</a><a href="<?php echo $prefix;?>/home/add_dealer_offer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add Offers</a>
 			</h3>
 			<hr>
 			<table class="table table-bordered dealer-products">

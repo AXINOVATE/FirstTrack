@@ -395,6 +395,20 @@ class Home extends CI_Controller {
 			echo 'Page not found';
 		}
 	}
+	public function add_dealer_offer_products($userID=""){
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			$this->load->view('admin/manage_dealers/add_dealer_offer_products',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
 	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
 		if($this->session->userdata('login'))redirect(base_url());
@@ -448,6 +462,10 @@ class Home extends CI_Controller {
 	
 	function getProducts($type=""){
 		echo json_encode($this->home_model->getProducts($type,$this->input->post('userID'),$this->input->post('productID'),"",$this->input->post('category'),$this->input->post('manufacture')));
+	}
+	
+	public function adding_dealer_products_offer(){
+		echo json_encode($this->home_model->adding_dealer_products_offer());
 	}
 
 
