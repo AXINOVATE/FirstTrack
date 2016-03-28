@@ -531,9 +531,70 @@ class Home_model extends CI_Model{
 	}
 
 	public function getCompareInfo($vType, $catID, $makerID, $modelID){
+		$retvalue = array();
 		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."','".$modelID."')");
 		mysqli_next_result($this->db->conn_id);
-		return $query->result_array();	
+		if($vType=='detailedComparison'){
+			$i=0;
+			foreach($query->result() as $row){
+				$retvalue[$i]['variantID']=$row->variantID;
+				$retvalue[$i]['productID']=$row->productID;
+				$retvalue[$i]['variantName']=$row->variantName;
+				$retvalue[$i]['fueltype']=$row->fueltype;
+				$retvalue[$i]['transmission']=$row->transmission;
+				$retvalue[$i]['engineType']=$row->engineType;
+				$retvalue[$i]['displacement']=round($row->displacement);
+				$retvalue[$i]['noOfCylinders']=round($row->noOfCylinders);
+				$retvalue[$i]['productLength']=round($row->productLength);
+				$retvalue[$i]['productWidth']=round($row->productWidth);
+				$retvalue[$i]['productHeight']=round($row->productHeight);
+				$retvalue[$i]['powerBHP']=$row->powerBHP;
+				$retvalue[$i]['powerRPM']=round($row->powerRPM);
+				$retvalue[$i]['mileage']=$row->mileage;
+				$retvalue[$i]['seatingCapacity']=round($row->seatingCapacity);
+				$retvalue[$i]['torqueNm']=$row->torqueNm;
+				$retvalue[$i]['torqueRPM']=round($row->torqueRPM);
+				$retvalue[$i]['wheelBase']=$row->wheelBase;
+				$retvalue[$i]['frontBrakeType']=$row->frontBrakeType;
+				$retvalue[$i]['rearBrakeType']=$row->rearBrakeType;
+				$retvalue[$i]['groundClearance']=round($row->groundClearance);
+				$retvalue[$i]['minimumTurningRadius']=$row->minimumTurningRadius;
+				$retvalue[$i]['fuelTankCapacity']=round($row->fuelTankCapacity);
+				$retvalue[$i]['tyreType']=$row->tyreType;
+				$retvalue[$i]['frontTyreSize']=$row->frontTyreSize;
+				$retvalue[$i]['reartyreSize']=$row->reartyreSize;
+				$retvalue[$i]['lightType']=$row->lightType;
+				$retvalue[$i]['tachometer']=$row->tachometer;
+				$retvalue[$i]['speedometer']=$row->speedometer;
+				$retvalue[$i]['seatHeight']=$row->seatHeight;
+				$retvalue[$i]['frontSuspension']=$row->frontSuspension;
+				$retvalue[$i]['rearSuspension']=$row->rearSuspension;
+				$retvalue[$i]['Battery']=$row->Battery;
+				$retvalue[$i]['Headlamp']=$row->Headlamp;
+				$retvalue[$i]['productName']=$row->productName;
+				$retvalue[$i]['manufactureName']=$row->manufactureName;
+				$retvalue[$i]['exShowroomPrice']=$this->convertNum(round($row->exShowroomPrice));
+				$retvalue[$i++]['coverImage']=$row->coverImage;
+			}
+			return $retvalue;
+		}
+		else{
+			return $query->result_array();	
+		}
+	}
+	function convertNum($n) {
+		// first strip any formatting;
+		$n = (0+str_replace(",","",$n));
+		
+		// is this a number?
+		if(!is_numeric($n)) return false;
+		
+		// now filter it;
+		if($n>10000000) return round(($n/10000000),2).' Crores';
+		else if($n>100000) return round(($n/100000),2).' Lakhs';
+		else if($n>1000) return round(($n/1000),2).' Thousands';
+		
+		return number_format($n);
 	}
 	public function login($userName,$password){
 		$retvalue = array();

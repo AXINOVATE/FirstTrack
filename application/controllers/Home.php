@@ -92,7 +92,19 @@ class Home extends CI_Controller {
 			$data['header'] = $this->load->view('templates/header',$pageData,true);
 			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 			$data['specs'] = $this->home_model->getCompareInfo('detailedComparison',$var1,$var2,$var3);
-			//var_dump($data['specs']); exit();
+			$product1 = ""; $product2 = ""; $product3 = "";
+			$product1 = $data['specs'][0]['productID'];
+			$product2 = $data['specs'][1]['productID'];
+			if(count($data['specs'])>2){ 
+				$product3 = $data['specs'][2]['productID']; 
+			}
+			$data['variants1'] = $this->home_model->getCompareInfo('variants','',$product1,'');
+			$data['variants2'] = $this->home_model->getCompareInfo('variants','',$product2,'');
+			$data['variants3'] = $this->home_model->getCompareInfo('variants','',$product3,'');
+		//	var_dump($data['variants1']); 
+		//	var_dump($data['variants2']); 
+		//	var_dump($data['variants3']); 
+		//	exit();
 			$this->load->view('home/detailed_comparison',$data);
 		}
 	}
@@ -272,12 +284,9 @@ class Home extends CI_Controller {
 	}
 	public function add_corporate_deals(){
 		echo json_encode($this->home_model->add_corporate_deals());
-
 	}
 	public function add_insurance_details(){
-		
 		echo json_encode($this->home_model->add_insurance_details());
-
 	}
 	public function add_InstantQuotes(){
 		echo json_encode($this->home_model->add_InstantQuotes());
