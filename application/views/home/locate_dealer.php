@@ -40,9 +40,7 @@ $prefix=$this->config->item('prefix');
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
 								<div class="col-md-6">
 								   <select class="form-control entity-type select2" id="all-brand" style="width:100%;">
-									<option value=""></option>
-									<option value="" ></option>
-									<option value="1" ></option>
+									
 								   </select>
 								</div>
 							  </div>
@@ -67,66 +65,22 @@ $prefix=$this->config->item('prefix');
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Location</label>
 								<div class="col-md-6">
 								   <select class="form-control entity-type select2 " id="dealer-location" style="width:100%;">
-									<option value=""></option>
-									<option value="1" ></option>
-									<option value="1" ></option>
+									
 								   </select>
 								</div>
 							  </div>
 							    
 				</form>
 				<div class= "mt-29 col-md-offset-5">
-					<a href="<?php ?>" class="search-btn" >Locate a Dealer </a>
+					<a href="#" class="search-btn"  id="locate-a-dealer">Locate a Dealer </a>
 				</div>
 			  </div>
 		</div>
-		<div class="row" style="margin-top: 50px;">
-		<div class="col-md-3 col-sm-4 col-xs-12 mb-10 col-md-offset-2" >
-					<div class="dealer-box bg-lightgrey  style="margin-top: 45px;"">
-						
-						<div class="dealer-name">
-							M/S Keerthi
-						</div>
-						<div class="dealer-address">
-							Address:banglore adress banglore location
-							banglore
-							<br>
-							phone:9164545924
-						</div>
-					</div>
-					
-		</div>
-                <div class="col-md-3 col-sm-4 col-xs-12 mb-10">
-					<div class="dealer-box bg-lightgrey style="margin-top: 41px;"">
-						
-						<div class="dealer-name">
-							Amba Bajaj
-						</div>
-						<div class="dealer-address">
-						     Address:banglore adress banglore location
-							banglore
-							<br>
-							phone:9164545924
-						</div>
-					</div>
-					
-				</div>
-              <div class="col-md-3 col-sm-4 col-xs-12 mb-10">
-					<div class="dealer-box bg-lightgrey style="margin-top: 41px;"">
-						
-						<div class="dealer-name ">
-							M/S Keerthi
-						</div>
-						<div class="dealer-address">
-							Address:banglore adress banglore location
-							banglore
-							<br>
-							phone:9164545924
-						</div>
-					</div>
-					
-				</div>
-         </div>			  
+		<div class="" style="" >
+			<div class="" style="margin-top:45px;" id="delar-info-box">
+				
+			</div>
+        </div>			  
 	</div>
 </div>	
 <?php echo $footer; ?>
@@ -177,25 +131,45 @@ $prefix=$this->config->item('prefix');
 					$('#all-vehicle').append(html);
 				});
 		});
+		
 		function get_locate_dealer_location(){
-			
-	     $.ajax({
-					url:prefix+'/home/get_location',
-					type:'POST',
-					processData: true,
-					dataType:'JSON',
-					}).done(function(data){
-					
-					var html ,i;
-					var len=data.length;
-					$('#dealer-location').html('');
-					html = "<option value=''>-- Select vechile--</option>";
-					for(i=0;i<len;i++){
-						html += "<option value='"+ data[i].locationID +"' >"+data[i].location+"</option>";
-					}
-					$('#dealer-location').append(html);
-				});
-    }
+			$.ajax({
+				url:prefix+'/home/get_location',
+				type:'POST',
+				processData: true,
+				dataType:'JSON',
+			}).done(function(data){
+				var html ,i;
+				var len=data.length;
+				$('#dealer-location').html('');
+				html = "<option value=''>-- Select vechile--</option>";
+				for(i=0;i<len;i++){
+					html += "<option value='"+ data[i].locationID +"' >"+data[i].location+"</option>";
+				}
+				$('#dealer-location').append(html);
+			});
+		}
+	
+	
+		$('#locate-a-dealer').on('click',function(){
+			alert('hello');
+            var loc_id=$('#dealer-location').val();	
+			$.ajax({
+				url:prefix+'/home/locate_a_dealer',
+				type:'POST',
+				processData: true,
+				dataType:'JSON',
+				data:{'loc_id':loc_id}
+			}).done(function(data){
+				var html='';
+				for(i=0;i<data.length;i++){
+					html+='<div class="col-md-3 col-sm-4 col-xs-12 mb-10">'+
+						'<div class="dealer-box bg-lightgrey style="margin-top: 41px;"">'+
+						'<div class="dealer-name" id="dealers name">'+data[i].firstName+data[i].lastName+'</div>'+'<div class="dealer-address" id="dealers_address">'+data[i].addressLine1+'<br>'+data[i].addressLine2 +'<br>'+data[i].location+'<br>'+data[i].phone+'</div>'+'</div>'+'</div>';
+				}
+				$('#delar-info-box').html(html);
+			});
+		});
 		
 	</script>
 </body>

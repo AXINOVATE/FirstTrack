@@ -519,6 +519,12 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+	public function locate_a_dealer(){
+	    $locid=$this->input->post("loc_id");
+		$query=$this->db->query("select   distinct TUD.firstName,TUD.lastName,TUD.phone,TUD.addressLine1,TUD.addressLine2,TLD.location from tbl_userDetails  TUD INNER JOIN  tbl_locations_detail TLD ON TUD.locationID=TLD.locationID where TLD.locationID='".$locid."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 	public function getBodyTypeEach($BodyType){
 		$VType="ALL";		
 		if($BodyType =='More'){
