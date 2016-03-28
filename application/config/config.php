@@ -361,6 +361,11 @@ $config['proxy_ips'] = '';
 //Salt length
 $config['salt_length'] = 10;
 
+//Roles
+$config['admin_role'] = 'ADMIN';
+$config['dealer_role'] = 'DEALER';
+$config['user_role'] = 'USER';
+
 /*
 |--------------------------------------------------------------------------
 | Assets path

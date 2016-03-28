@@ -159,89 +159,7 @@ class Home_model extends CI_Model{
 		return $path;
 	}
 	
-	public function login($userName,$password){
-		$retvalue = array();
-		$xml = "<ROOT>
-				<HEADER>
-					<ACTIONTYPE>LOGIN</ACTIONTYPE>
-					<USERID></USERID>
-					<EMAIL>".$userName."</EMAIL>
-					<ROLE>User</ROLE>
-				</HEADER>
-			</ROOT>";
-			
-		$qry = $this->db->query('CALL usp_getUsers("'.$xml.'")');
-		$row = $qry->row();
-		if($row){
-			$password = $this->decrypt_password($row->password, $password);
-			
-			if($password == $row->password){
-				$this->session->set_userdata('login',true);
-				$this->session->set_userdata('userID',$row->userID);
-				$this->session->set_userdata('name',$row->firstName.' '.$row->lastName);
-				$this->session->set_userdata('email',$row->email);
-				$this->session->set_userdata('roleID',$row->defaultRoleID);
-				$retvalue['message'] = 'Logged in successfully';
-				$retvalue['status'] = true;
-			}else{
-				$retvalue['message'] = 'Invalid Username or Password';
-				$retvalue['status'] = false;
-			}
-		}else{
-			$retvalue['message'] = 'Username does not exist';
-			$retvalue['status'] = false;
-		}
-		return $retvalue;
-	}
-	public function register(){
-		$retvalue = array();
-		$name = $this->input->post('name');
-		$email = $this->input->post('email');
-		$password = $this->encrypt_password($this->input->post('password'));
-		$phone = $this->input->post('phone');
-		
-		$xml = "<ROOT>
-				<HEADER>
-					<ACTIONTYPE>INSERT</ACTIONTYPE>
-					<NAME>".$name."</NAME>
-					<USERNAME>".$email."</USERNAME>
-					<EMAIL>".$email."</EMAIL>
-					<PASSWORD>".$password."</PASSWORD>
-					<PHONE>".$phone."</PHONE>
-					<ROLE>User</ROLE>
-				</HEADER>
-			</ROOT>";
-			
-		$vMessage = mt_rand();$vStatus = mt_rand();
-		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
-		$this->db->query('CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
-		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
-		$row = $qry->row();
-		
-		if($row){
-			if($row->status){
-				$this->session->set_flashdata('registerMessage', 'Registered Successfully');
-				$this->session->set_flashdata('registerStatus', true);
-				$retvalue['message'] = 'Registered Successfully';
-				$retvalue['status'] = true;
-				//Logging 
-				$this->login($email,$this->input->post('password'));
-			}else{
-				$this->session->set_flashdata('registerMessage', 'Please try again later.');
-				$this->session->set_flashdata('registerStatus', false);
-				$retvalue['status'] = false;
-				$retvalue['message'] = $row->message;
-			}
-		}
-		else{
-			$this->session->set_flashdata('registerMessage', 'Please try again later.');
-			$this->session->set_flashdata('registerStatus', false);
-			$retvalue['message'] = 'Please try again later.';
-			$retvalue['status'] = false;
-		}
-		return $retvalue;
-
-	}	
+	
 	public function getModelDetail($vType,$moID='',$maID=''){		
 		$query = $this->db->query("CALL usp_getModelDetail('".$vType."','".$moID."','".$maID."')");
 		mysqli_next_result($this->db->conn_id);
@@ -589,6 +507,18 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 	}
+	public function get_particular_vechile($mid=''){
+		$varid=$this->input->post("brand_id");
+		$query=$this->db->query("select distinct TPB.productID,TPB.productName from tbl_productBasic  TPB INNER JOIN  tbl_manufacture TM ON TPB.manufacturerID='".$varid."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function get_location(){
+	
+		$query=$this->db->query("select locationID,location from tbl_locations_detail");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 	public function getBodyTypeEach($BodyType){
 		$VType="ALL";		
 		if($BodyType =='More'){
@@ -598,6 +528,342 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();		
 
+	}
+
+	public function getCompareInfo($vType, $catID, $makerID, $modelID){
+		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."','".$modelID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();	
+	}
+	public function login($userName,$password){
+		$retvalue = array();
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>LOGIN</ACTIONTYPE>
+					<USERID></USERID>
+					<EMAIL>".$userName."</EMAIL>
+					<ROLE>User</ROLE>
+				</HEADER>
+			</ROOT>";
+			
+		$qry = $this->db->query('CALL usp_getUsers("'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		$row = $qry->row();
+		if($row){
+			$password = $this->decrypt_password($row->password, $password);
+			
+			if($password == $row->password){
+				$this->session->set_userdata('login',true);
+				$this->session->set_userdata('userID',$row->userID);
+				$this->session->set_userdata('name',$row->firstName.' '.$row->lastName);
+				$this->session->set_userdata('email',$row->email);
+				$this->session->set_userdata('roleID',$row->defaultRoleID);
+				$this->session->set_userdata('roleName',$row->roleName);
+				$retvalue['message'] = 'Logged in successfully';
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['message'] = 'Invalid Username or Password';
+				$retvalue['status'] = false;
+			}
+		}else{
+			$retvalue['message'] = 'Username does not exist';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	public function register($name,$email,$password,$phone="",$role="User",$login=false){
+		$retvalue = array();
+		$pwd = $this->encrypt_password($password);
+		
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT</ACTIONTYPE>
+					<NAME>".$name."</NAME>
+					<USERNAME>".$email."</USERNAME>
+					<EMAIL>".$email."</EMAIL>
+					<PASSWORD>".$pwd."</PASSWORD>
+					<PHONE>".$phone."</PHONE>
+					<ROLE>".$role."</ROLE>
+				</HEADER>
+			</ROOT>";
+			
+		$vID = mt_rand();$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdUsers("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		
+		if($row){
+			if($row->status){
+				$this->session->set_flashdata('registerMessage', 'Registered Successfully');
+				$this->session->set_flashdata('registerStatus', true);
+				$retvalue['message'] = 'Registered Successfully';
+				$retvalue['userID'] = $row->ID;
+				$retvalue['status'] = true;
+				//Logging 
+				if($login)
+					$this->login($email,$password);
+			}else{
+				$this->session->set_flashdata('registerMessage', 'Please try again later.');
+				$this->session->set_flashdata('registerStatus', false);
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
+			}
+		}
+		else{
+			$this->session->set_flashdata('registerMessage', 'Please try again later.');
+			$this->session->set_flashdata('registerStatus', false);
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	function getUsers($type,$userID="",$email="",$roleID=""){
+		$retvalue = array();
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>".$type."</ACTIONTYPE>
+					<USERID>".$userID."</USERID>
+					<EMAIL>".$email."</EMAIL>
+					<ROLE>".$roleID."</ROLE>
+				</HEADER>
+			</ROOT>";
+		//echo 'CALL usp_getUsers("'.$xml.'")';exit();
+		$qry = $this->db->query('CALL usp_getUsers("'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		if($type == 'SP')
+			return $qry->row();
+		else
+			return $qry->result();
+	}
+	function getUserBankDetails($type,$userID=""){
+		$retvalue = array();
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>".$type."</ACTIONTYPE>
+					<USERID>".$userID."</USERID>
+				</HEADER>
+			</ROOT>";
+		//echo 'CALL usp_getUsers("'.$xml.'")';exit();
+		$qry = $this->db->query('CALL usp_getUserBankDetails("'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		if($type == 'SP')
+			return $qry->row();
+		else
+			return $qry->result();
+	}
+	public function updateUserDetails($userID,$firstName,$lastName,$profilePic,$countryID,$stateID,$cityID,$address1,$address2,$locationID,$zipCode,$phone,$sEmail,$sPhone,$productCategory,$manufacture,$authDealer,$status){
+		$retvalue = array();
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>UPDATE</ACTIONTYPE>
+					<USERID>".$userID."</USERID>
+					<FIRSTNAME>".$firstName."</FIRSTNAME>
+					<LASTNAME>".$lastName."</LASTNAME>
+					<PROFILEPIC>".$profilePic."</PROFILEPIC>
+					<COUNTRYID>".$countryID."</COUNTRYID>
+					<STATEID>".$stateID."</STATEID>
+					<CITYID>".$cityID."</CITYID>
+					<ADDRESS1>".$address1."</ADDRESS1>
+					<ADDRESS2>".$address2."</ADDRESS2>
+					<LOCATIONID>".$locationID."</LOCATIONID>
+					<ZIPCODE>".$zipCode."</ZIPCODE>
+					<PHONE>".$phone."</PHONE>
+					<SECONDARYMAIL>".$sEmail."</SECONDARYMAIL>
+					<SECONDARYPHONE>".$sPhone."</SECONDARYPHONE>
+					<PRODUCTCATEGORY>".$productCategory."</PRODUCTCATEGORY>
+					<MANUFACTURE>".$manufacture."</MANUFACTURE>
+					<AUTHDEALER>".$authDealer."</AUTHDEALER>
+					<STATUS>".$status."</STATUS>
+				</HEADER>
+			</ROOT>";
+			
+		$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo 'CALL usp_insUpdUserDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdUserDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		
+		if($row){
+			if($row->status){
+				$retvalue['message'] = 'Updated Successfully';
+				$retvalue['userID'] = $userID;
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
+			}
+		}
+		else{
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	
+	function dealer_registration(){
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		$phone = $this->input->post('phone');
+		$address1 = $this->input->post('address1');
+		$address2 = $this->input->post('address2');
+		$countryID = $this->input->post('countryID');
+		$stateID = $this->input->post('stateID');
+		$cityID = $this->input->post('cityID');
+		$locationID = $this->input->post('locationID');
+		$contactPerson = $this->input->post('contactPerson');
+		$productCategory = $this->input->post('category');
+		$manufacture = $this->input->post('maker');
+		$authDealer = $this->input->post('authDealer');
+		$login = $this->input->post('login');
+		$role = 'Dealer';
+		
+		$retvalue = $this->register($name,$email,$password,$phone,$role,$login);
+		if($retvalue['status']){
+			$retvalue = $this->updateUserDetails($retvalue['userID'],$name,"","",$countryID,$stateID,$cityID,$address1,$address2,$locationID,"",$phone,"","",$productCategory,$manufacture,$authDealer,"P");
+			$this->login($email,$password);
+		}
+		return $retvalue;
+	}
+	function bank_update(){
+		$userID = $this->input->post('userID');
+		$bankName = $this->input->post('bankName');
+		$accountNumber = $this->input->post('accountNumber');
+		$accountType = $this->input->post('accountType');
+		$IFSC = $this->input->post('IFSC');
+		$branch = $this->input->post('branch');
+		$TIN = $this->input->post('TIN');
+		$CIN = $this->input->post('CIN');
+		$PAN = $this->input->post('PAN');
+		$address = $this->input->post('address');
+		
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
+					<USERID>".$userID."</USERID>
+					<BANKNAME>".$bankName."</BANKNAME>
+					<ACCOUNTNUMBER>".$accountNumber."</ACCOUNTNUMBER>
+					<ACCOUNTTYPE>".$accountType."</ACCOUNTTYPE>
+					<IFSC>".$IFSC."</IFSC>
+					<BRANCH>".$branch."</BRANCH>
+					<TIN>".$TIN."</TIN>
+					<CIN>".$CIN."</CIN>
+					<PAN>".$PAN."</PAN>
+					<ADDRESS>".$address."</ADDRESS>
+					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+					<STATUS>P</STATUS>
+				</HEADER>
+			</ROOT>";
+			
+		$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo 'CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		
+		if($row){
+			if($row->status){
+				$retvalue['message'] = 'Updated Successfully';
+				$retvalue['userID'] = $userID;
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
+			}
+		}
+		else{
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	function getProducts($type,$userID="",$productID="",$variantID="",$productType="",$manufactureID=""){
+		$xml = "<ROOT>
+				<HEADER>
+					<USERID>".$userID."</USERID>
+					<PRODUCTID>".$productID."</PRODUCTID>
+					<VARIANTID>".$variantID."</VARIANTID>
+					<PRODUCTTYPE>".$productType."</PRODUCTTYPE>
+					<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+				</HEADER>
+			</ROOT>";
+		$qry = $this->db->query('CALL usp_getProducts("'.$type.'","'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		if($type == 'SP')
+			return $qry->row();
+		else
+			return $qry->result();
+	}
+	function adding_dealer_products(){
+		$productID = $this->input->post('productID');
+		$userID = $this->input->post('userID');
+		$data = $this->input->post('data');
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
+					<PRODUCTID>".$productID."</PRODUCTID>
+					<USERID>".$userID."</USERID>
+					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+				</HEADER>";
+			foreach($data as $d){
+				$xml.="<RECORD>
+					<VARIANTID>".$d[0]."</VARIANTID>
+					<COLORID>".$d[1]."</COLORID>
+					<QUANTITY>".$d[2]."</QUANTITY>
+					<EXSHOWROOMPRICE>".$d[3]."</EXSHOWROOMPRICE>
+					<INSURANCE>".$d[4]."</INSURANCE>
+					<RTO>".$d[5]."</RTO>
+					<ROADTAX>".$d[6]."</ROADTAX>
+					<HANDLINGCHARGES>".$d[7]."</HANDLINGCHARGES>
+					<ONROADPRICE>".$d[8]."</ONROADPRICE>
+					<WAITINGDAYS>".$d[9]."</WAITINGDAYS>
+					<STATUS>P</STATUS>
+				</RECORD>";
+			}
+		$xml.="</ROOT>";
+		
+		$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo 'CALL usp_insUpdDealerProducts("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdDealerProducts("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		
+		if($row){
+			if($row->status){
+				$retvalue['message'] = 'Updated Successfully';
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
+			}
+		}
+		else{
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	function getDealerProducts($type,$userID,$productID="",$variantID="",$colorID=""){
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>".$type."</ACTIONTYPE>
+					<USERID>".$userID."</USERID>
+					<PRODUCTID>".$productID."</PRODUCTID>
+					<VARIANTID>".$variantID."</VARIANTID>
+					<COLORID>".$colorID."</COLORID>
+				</HEADER>
+			</ROOT>";
+		$qry = $this->db->query('CALL usp_getDealerProducts("'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		if($type == 'SP')
+			return $qry->row();
+		else
+			return $qry->result();
 	}
 }
 
