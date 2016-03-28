@@ -507,6 +507,18 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
 	}
+	public function get_particular_vechile($mid=''){
+		$varid=$this->input->post("brand_id");
+		$query=$this->db->query("select distinct TPB.productID,TPB.productName from tbl_productBasic  TPB INNER JOIN  tbl_manufacture TM ON TPB.manufacturerID='".$varid."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function get_location(){
+	
+		$query=$this->db->query("select locationID,location from tbl_locations_detail");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 	public function getBodyTypeEach($BodyType){
 		$VType="ALL";		
 		if($BodyType =='More'){

@@ -63,6 +63,7 @@
 		get_gpi_varient();
 		
 	});
+	
 
 	$('document').ready(function(){
 		$('#abModel').html('');
@@ -115,6 +116,14 @@
 		get_corp_manufacture();
 		get_corp_varient();
 	});
+	
+	
+	$("#locate-dealer,#locate-dealer1").on('click',function(){
+		
+		get_locate_dealer_manufacture();
+		
+	});
+	
 	$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
@@ -885,3 +894,14 @@ function get_Proforma_Invoice_pdf(){
 }
 
 /*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/
+
+
+
+/* ----------------locate dealer--------------------*/
+
+
+function get_locate_dealer_manufacture(){
+	get_manufacture("all-brand");
+}
+
+/* ----------------locate dealer  end--------------------*/

@@ -39,10 +39,10 @@ $prefix=$this->config->item('prefix');
 							  <div class="form-group required">
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
 								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="ld-brand" style="width:100%;">
-									<option value="">Car</option>
+								   <select class="form-control entity-type select2" id="all-brand" style="width:100%;">
+									<option value=""></option>
 									<option value="" ></option>
-									<option value="1" >No</option>
+									<option value="1" ></option>
 								   </select>
 								</div>
 							  </div>
@@ -53,10 +53,8 @@ $prefix=$this->config->item('prefix');
 							  <div class="form-group required">
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Vehicle</label>
 								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="ld_vehicle" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
+								   <select class="form-control entity-type select2" id="all-vehicle" style="width:100%;">
+									
 								   </select>
 								</div>
 							  </div>
@@ -68,10 +66,10 @@ $prefix=$this->config->item('prefix');
 							  <div class="form-group required">
 								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Location</label>
 								<div class="col-md-6">
-								   <select class="form-control entity-type select2 " id="canbe_sme" style="width:100%;">
-									<option value="">Car</option>
-									<option value="1" >Yes</option>
-									<option value="1" >No</option>
+								   <select class="form-control entity-type select2 " id="dealer-location" style="width:100%;">
+									<option value=""></option>
+									<option value="1" ></option>
+									<option value="1" ></option>
 								   </select>
 								</div>
 							  </div>
@@ -136,6 +134,8 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
+
 
 
 <!-- Bootstrap -->
@@ -152,6 +152,50 @@ $prefix=$this->config->item('prefix');
 		$('#myTab').tabCollapse();
 			
 		});
+		$('document').ready(function(){
+		 get_locate_dealer_manufacture();
+		 get_locate_dealer_location();
+		});
+		$('#all-brand').on('change',function(){	
+		    
+	        var brand_id=$(this,'#all-brand').val();
+				$.ajax({
+					url:prefix+'/home/get_particular_vechile',
+					type:'POST',
+					processData: true,
+					dataType:'JSON',
+					data:{'brand_id':brand_id}
+				}).done(function(data){
+					
+					var html ,i;
+					var len=data.length;
+					$('#all-vehicle').html('');
+					html = "<option value=''>-- Select vechile--</option>";
+					for(i=0;i<len;i++){
+						html += "<option value='"+ data[i].productID +"' >"+data[i].productName+"</option>";
+					}
+					$('#all-vehicle').append(html);
+				});
+		});
+		function get_locate_dealer_location(){
+			
+	     $.ajax({
+					url:prefix+'/home/get_location',
+					type:'POST',
+					processData: true,
+					dataType:'JSON',
+					}).done(function(data){
+					
+					var html ,i;
+					var len=data.length;
+					$('#dealer-location').html('');
+					html = "<option value=''>-- Select vechile--</option>";
+					for(i=0;i<len;i++){
+						html += "<option value='"+ data[i].locationID +"' >"+data[i].location+"</option>";
+					}
+					$('#dealer-location').append(html);
+				});
+    }
 		
 	</script>
 </body>

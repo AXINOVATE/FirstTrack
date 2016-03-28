@@ -289,6 +289,14 @@ class Home extends CI_Controller {
 	public function getCity(){
 		echo json_encode($this->home_model->getCity());
 	}
+	public function get_particular_vechile($mid=''){
+		
+		echo json_encode($this->home_model->get_particular_vechile($mid=''));
+	}
+	public function get_location(){
+		
+		echo json_encode($this->home_model->get_location());
+	}
 	public function getBodyTypeEach($BodyType){
 		if($BodyType =='cars')
 		{
