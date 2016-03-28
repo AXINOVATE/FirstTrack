@@ -322,4 +322,9 @@ class Home extends CI_Controller {
 		}
 		echo json_encode($this->home_model->getBodyTypeEach($BodyType));
 	}
+	public function getparticularcityID(){		
+		$this->session->set_userdata('cityID',$this->input->post('VcityName'));
+		$cityID = $this->session->userdata('cityID');
+		return $cityID;
+	}
 }

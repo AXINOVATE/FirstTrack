@@ -15,7 +15,8 @@ $prefix=$this->config->item('prefix');
 					<ul style="display:block; float:right;">
 						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
 						
-						<li class="dropdown border-none-r user-options"  id="city-option"style="border-right:none;"><a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i>banglore<span class="caret"></span></a>
+						<li class="dropdown border-none-r user-options"  id="city-option" style="border-right:none;">
+							<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i><span id="location"><?php $cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "eswar"; echo $cityName;?></span><span class="caret"></span></a>
 						<ul class="dropdown-menu" id="city-option-detail">
 						
 						</ul>

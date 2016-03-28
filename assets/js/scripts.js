@@ -15,13 +15,25 @@
 		var i=0;
 		html="";
 		for(i=0;i<len;i++){
-			html += '<li class="pd-tp-3"><a href="#" class="particular-city-id">'+data[i].cityName+'</a></li>';
-		}
+			html += '<li class="pd-tp-3" ><a href="#" class="particular-city-id" data-particulaCity-id="'+data[i].cityID +'" data-city-name="'+ data[i].cityName +'">'+ data[i].cityName +'</a></li>';
+		}		
 		$('#city-option-detail').html(html);
 		
 	});
 	});
-	
+	$("#city-option-detail").on('click', 'li a', function() {	
+		var VparticularcityID=$(this).attr("data-particulaCity-id");
+		var VcityName=$(this).attr("data-city-name");
+		//alert(VparticularcityID);
+		$('#location').html($(this).attr("data-city-name"));
+		$.ajax({
+			url:prefix+'/home/getparticularcityID',
+			type:'POST',
+			processData:true,
+			data:{VcityName:VcityName},
+			dataType:'JSON'
+		}).done();
+	});
 	
 	
 	
