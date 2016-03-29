@@ -258,15 +258,15 @@ function convertNum($n) {
 											$variantID1=array();
 											$variantName=array();
 											foreach($trendDetails as $TD1){
-												if($TD1['variantID']==$TD['variantID']){
-													if(in_array($TD1['variantID'],$variantID1)){
-														$sum[]=$TD1['exShowroomPrice'];
-													}else{
-														$sum=array();
-														$variantID1[]=$TD1['variantID'];
-														$sum[]=$TD1['exShowroomPrice'];
-														$variantName[]=$TD1['variantName'];
-													}
+												if($TD1['productID']==$TD['productID']) {
+														if(in_array($TD1['variantID'],$variantID1)){
+															$sum[]=$TD1['exShowroomPrice'];
+														}else{
+															$sum=array();
+															$variantID1[]=$TD1['variantID'];
+															$sum[]=$TD1['exShowroomPrice'];
+															$variantName[]=$TD1['variantName'];
+														}
 												}
 											}
 											?>
@@ -415,9 +415,9 @@ function convertNum($n) {
 					   var sum=[];
 					   var variantName=[];
 						for(var j=0;j<data1.length;j++){
-							if(data1[j]['variantID']==data[i]['variantID']){
+							if(data1[j]['productID']==data[i]['productID']){
 								if($.inArray(data1[j]['variantID'],vID1)<0){
-									vID[vID.length]=data1[j]['variantID'];
+									vID1[vID1.length]=data1[j]['variantID'];
 									sum[sum.length]=data1[j]['exShowroomPrice'];
 									variantName[variantName.length]=data1[j]['variantName'];
 								}else{
@@ -450,9 +450,9 @@ function convertNum($n) {
 										'</div>'+
 										'<div class="col-md-12 col-sm-12 text-center">'+
 											'<div class="dropdown">'+
-												'<div data-toggle="dropdown">'+vID1.length+' variants available<span class="caret"></span></div>'+
+												'<div data-toggle="dropdown">'+variantName.length+' variants available<span class="caret"></span></div>'+
 												'<ul class="dropdown-menu">';
-												for(var k=0;k<vID1.length;k++){
+												for(var k=0;k<variantName.length;k++){
 													html+='<li><a href="<?php echo $prefix.'/home/details/';?>'+data[i]['productID']+'">'+variantName[k]+'</a></li>';
 												}
 												html+='</ul>'+

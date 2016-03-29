@@ -78,7 +78,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<?php foreach($Car as $car){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-										<a href="#" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<a href="'.$prefix.'/home/searchList/bodytype/'.$car['bodyTypeID'].'" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
 										<img src="'.$car['body_type_img'].'" style="width:90px;height:60px;" alt="'.$car['body_type'].'" />
 										<div class="car-type-name">'.$car['body_type'].'</div>
@@ -94,7 +94,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<?php foreach($Bike as $bike){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-										<a href="#" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<a href="'.$prefix.'/home/searchList/bodytype/'.$bike['bodyTypeID'].'" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
 										<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
 										<div class="car-type-name">'.$bike['body_type'].'</div>
@@ -110,7 +110,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<?php foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-											<a href="#" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
+											<a href="'.$prefix.'/home/searchList/categorytype/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
 												<center>
 													<img src="'.$more['imgPath'].'" style="width:100%; height:55px;" alt="'.$more['categoryName'].'" />
 													<div class="car-type-name">'.$more['categoryName'].'</div>
