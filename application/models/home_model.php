@@ -518,11 +518,11 @@ class Home_model extends CI_Model{
 
 	}
 
-	public function getCompareInfo($vType, $catID, $makerID, $modelID){
+	/* public function getCompareInfo($vType, $catID, $makerID, $modelID){
 		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."','".$modelID."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();	
-	}
+	} */
 	public function login($userName,$password){
 		$retvalue = array();
 		$xml = "<ROOT>
@@ -607,14 +607,14 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	function getUsers($type,$userID="",$email="",$roleID=""){
+	function getUsers($type,$userID="",$email="",$role=""){
 		$retvalue = array();
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>".$type."</ACTIONTYPE>
 					<USERID>".$userID."</USERID>
 					<EMAIL>".$email."</EMAIL>
-					<ROLE>".$roleID."</ROLE>
+					<ROLE>".$role."</ROLE>
 				</HEADER>
 			</ROOT>";
 		//echo 'CALL usp_getUsers("'.$xml.'")';exit();
@@ -779,13 +779,15 @@ class Home_model extends CI_Model{
 					<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
 				</HEADER>
 			</ROOT>";
+		//echo "CALL usp_getProducts('".$type."','".$xml."')";
 		$qry = $this->db->query('CALL usp_getProducts("'.$type.'","'.$xml.'")');
 		mysqli_next_result($this->db->conn_id);
-		if($type == 'SP')
+		if($type == 'SP' || $type == 'SPV' || $type == 'SPB' || $type == 'Features' || $type == 'SOFFER')
 			return $qry->row();
 		else
 			return $qry->result();
 	}
+ 	
 	function adding_dealer_products(){
 		$productID = $this->input->post('productID');
 		$userID = $this->input->post('userID');
@@ -853,13 +855,112 @@ class Home_model extends CI_Model{
 		else
 			return $qry->result();
 	}
-
-
+	
+	function booking(){
+		$s_address1 = $this->input->post('s_address1');
+		$s_address2 = $this->input->post('s_address2');
+		$s_city = $this->input->post('s_city');
+		$s_state = $this->input->post('s_state');
+		$s_country = $this->input->post('s_country');
+		$s_zip_code = $this->input->post('s_zip_code');
+		$d_address1 = $this->input->post('d_address1');
+		$d_address2 = $this->input->post('d_address2');
+		$d_city = $this->input->post('d_city');
+		$d_state = $this->input->post('d_state');
+		$d_country = $this->input->post('d_country');
+		$d_zip_code = $this->input->post('d_zip_code');
+		$payment_method = $this->input->post('payment_method');
+		$shipping_choices = $this->input->post('shipping_choices');
+		$delivery_choices = $this->input->post('delivery_choices');
+		$transactionDetails = $this->input->post('transactionDetails');
+		$cart = $this->session->userdata('cart');
+		
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT</ACTIONTYPE>
+					<USERID>".$this->session->userdata('userID')."</USERID>
+					<PRODUCTID>".$cart['productID']."</PRODUCTID>
+					<VARIANTID>".$cart['variantID']."</VARIANTID>
+					<COLORID>".$cart['colorID']."</COLORID>
+					<DEALERID>".$cart['dealerID']."</DEALERID>
+					<QUANTITY>".$cart['qty']."</QUANTITY>
+					<UNITPRICE>".$cart['unitPrice']."</UNITPRICE>
+					<SHIPPINGCOST>".$cart['shippingPrice']."</SHIPPINGCOST>
+					<TOTALPRICE>".$cart['totalPrice']."</TOTALPRICE>
+					<SADDRESS1>".$s_address1."</SADDRESS1>
+					<SADDRESS2>".$s_address2."</SADDRESS2>
+					<SCITY>".$s_city."</SCITY>
+					<SSTATE>".$s_state."</SSTATE>
+					<SCOUNTRY>".$s_country."</SCOUNTRY>
+					<SZIPCODE>".$s_zip_code."</SZIPCODE>
+					<DADDRESS1>".$d_address1."</DADDRESS1>
+					<DADDRESS2>".$d_address2."</DADDRESS2>
+					<DCITY>".$d_city."</DCITY>
+					<DSTATE>".$d_state."</DSTATE>
+					<DCOUNTRY>".$d_country."</DCOUNTRY>
+					<DZIPCODE>".$d_zip_code."</DZIPCODE>
+					<PAYMENTMETHOD>".$payment_method."</PAYMENTMETHOD>
+					<SHIPPINGCHOICES>".$shipping_choices."</SHIPPINGCHOICES>
+					<DELIVERYCHOICES>".$delivery_choices."</DELIVERYCHOICES>
+					<TRANSACTIONDETAILS>".$transactionDetails."</TRANSACTIONDETAILS>
+					<STATUS>CONFORMED</STATUS>
+				</HEADER>
+			</ROOT>";
+		
+		$vID = mt_rand();$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		$this->db->query('CALL usp_insUpdBookings("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.')');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status");
+		$row = $qry->row();
+		//Creating pdf
+		//$this->create_pdf();
+				
+		if($row){
+			if($row->status){
+				$retvalue['message'] = 'Booked Successfully';
+				$retvalue['bookingID'] = $row->ID;
+				$retvalue['status'] = true;
+			}else{
+				$retvalue['status'] = false;
+				$retvalue['message'] = $row->message;
+			}
+		}
+		else{
+			$retvalue['message'] = 'Please try again later.';
+			$retvalue['status'] = false;
+		}
+		return $retvalue;
+	}
+	public function create_pdf(){
+		$cart = $this->session->userdata('cart');
+		if(count($cart)>0){
+			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
+			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
+			$data['cart'] = $this->session->userdata('cart');
+		}
+		$html=$this->load->view('home/invoice',$data,true);	
+		 $userName = $this->session->userdata('name');
+		$path = 'assets/invoice/';
+		//checkign the path exists
+		if (!is_dir($path)) {mkdir($path,0777);}
+		
+		$pdfFilePath = $path.$userName.date('dmyhmi').".pdf";
+		$this->load->library('m_pdf');
+		$pdf = $this->m_pdf->load();
+		$pdf->WriteHTML($html);
+		$pdf->Output($pdfFilePath,'F'); 
+		return $pdfFilePath;
+	}
 	public function getCompareInfo($vType, $catID, $makerID){
 		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();		
 	}
+	
+	
+
 
 }
 

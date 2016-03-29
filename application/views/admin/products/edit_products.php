@@ -471,7 +471,7 @@ $prefix=$this->config->item('prefix');
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-6 col-xs-12">
-														<div class="specs-div" >
+														<div class="specs-div">
 															<div class="specs-title">Dimensions</div>
 															<div class="specs-box">
 																<div class="row">	

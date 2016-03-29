@@ -49,11 +49,55 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/upcoming_list',$data);
 	}
-	public function details(){
+	public function details($slug="",$variantID="",$locationID="",$dealerID="",$colorID=""){
+		
+		$variantID = isset($_GET['variant']) ? $_GET['variant'] : '';
+		$locationID = isset($_GET['location']) ? $_GET['location'] : '';
+		$dealerID = isset($_GET['dealer']) ? $_GET['dealer'] : '';
+		$colorID = isset($_GET['color']) ? $_GET['color'] : '';
+		
 		$pageData['currentPage'] = 'LIST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('home/details',$data);
+		
+		$data['slug'] = $slug;
+		$data['basic'] = $this->home_model->getProducts("SPB","",$slug);
+		if($data['basic']){
+			$data['variants'] = $this->home_model->getProducts("LPV","",$slug);
+			if($variantID =="" && isset($data['variants'][0]->variantID))
+				$variantID = $data['variants'][0]->variantID;
+			
+			$data['data'] = $this->home_model->getProducts("SPV","",$slug,$variantID);
+			
+			$data['colors'] = $this->home_model->getProducts("LPC","",$slug,$variantID);
+			if($colorID =="" && isset($data['colors'][0]->colorID))
+				$colorID = $data['colors'][0]->colorID;
+			
+			$data['dealers'] = $this->home_model->getProducts("LPD","",$slug,$variantID);
+			if($dealerID =="" && isset($data['dealers'][0]->userID))
+				$dealerID = $data['dealers'][0]->userID;
+			
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$slug,$variantID,$colorID);
+			
+			$data['features'] = $this->home_model->getProducts('Features',"",$slug,$variantID);
+			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$slug,$variantID);
+			$data['photos'] = $this->home_model->getProducts('Photo',"",$slug,$variantID);
+			$data['videos'] = $this->home_model->getProducts('Video',"",$slug,$variantID);
+			$data['cities'] = $this->home_model->getProducts('getCities',"",$slug,$variantID);
+			
+			$data['locations'] = $this->manage_products_model->location_detail("LIST_ON_CITY",$this->config->item("default_country_id"));
+			
+			$data['variantID'] = $variantID;
+			$data['locationID'] = $locationID;
+			$data['dealerID'] = $dealerID;
+			$data['colorID'] = $colorID;
+			$data['slug'] = $slug;
+			
+			//echo $dealerID = $data['dealers'][0]->userID;
+			
+			//var_dump($data['photos']);exit();
+			$this->load->view('home/details',$data);
+		}
 	}
 	public function search(){
 		$pageData['currentPage'] = 'SEARCH';
@@ -179,14 +223,58 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		
+		$cart = $this->session->userdata('cart');
+		if(count($cart)>0){
+			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
+			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
+			
+			if(isset($data['prices']->onRoadPrice))
+				$cart['unitPrice'] = floatval($data['prices']->onRoadPrice);
+			
+			$cart['shippingPrice'] = 0;
+			$cart['totalPrice'] = floatval(($cart['qty']*$cart['unitPrice'])+$cart['shippingPrice']);
+			$this->session->set_userdata('cart',$cart);
+		}
+		$data['cart'] = $this->session->userdata('cart');
+		//var_dump($data['cart']);exit();
+		//echo $this->session->userdata('cart_product_id');
+		//var_dump($data['prices']);exit();
 		$this->load->view('home/checkout',$data);
+	}
+	function creating_checkout(){
+		$this->session->unset_userdata('cart');
+		$cart = array();
+		$cart['productID'] = $this->input->post('productID');
+		$cart['variantID'] = $this->input->post('variantID');
+		$cart['dealerID'] = $this->input->post('dealerID');
+		$cart['colorID'] = $this->input->post('colorID');
+		$cart['qty'] = 1;
+		$cart['unitPrice'] = 0;
+		$cart['shippingPrice'] = 0;
+		$cart['totalPrice'] = 0;
+		$this->session->set_userdata('cart',$cart);
+		echo json_encode(true);
+	}
+	function update_cart(){
+		$cart = $this->session->userdata('cart');
+		$cart['qty'] = $this->input->post('qty');;
+		$cart['totalPrice'] = ($cart['qty']*$cart['unitPrice'])+$cart['shippingPrice'];
+		$this->session->set_userdata('cart',$cart);
+		echo json_encode($this->session->userdata('cart'));
+	}
+	function booking(){
+		echo json_encode($this->home_model->booking());
 	}
 	public function conformation(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['path'] = $this->home_model->create_pdf();
 		$this->load->view('home/conformation',$data);
 	}
+	
 	public function get_Proforma_Invoice_pdf(){
 		$data['gpi_fullname'] = $this->input->post('gpi_fullname');
 		$data['gpi_phone'] = $this->input->post('gpi_phone');

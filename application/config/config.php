@@ -366,6 +366,9 @@ $config['admin_role'] = 'ADMIN';
 $config['dealer_role'] = 'DEALER';
 $config['user_role'] = 'USER';
 
+//Default locations
+$config['default_country_id'] = '70f17564-e43f-11e5-8594-74867ad2fb90';
+
 /*
 |--------------------------------------------------------------------------
 | Assets path

@@ -15,7 +15,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		.success-box{padding: 10px;border: 1px solid #EEE; box-shadow: 2px 2px 5px #949494;}
-		.success-box .btn{border-radius: 0px; outline: none; background-color: #FFF; border: 2px solid #E45050; color: #E45050; font-weight: 600;}
+		.success-box .btn{border-radius: 0px; outline: none; background-color: #FFF; border: 2px solid #3C763D; color: #3C763D; font-weight: 600;}
 	</style>
 </head>
 <body>
@@ -28,21 +28,15 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="mt-0 mb-20">Successfully Processed</h3>
-					<hr>
-				</div>
-				<div class="col-md-6">
-					<div class="success-box">
-						<h2>YOUR ORDER HAS BEEN PLACED!</h2>
+					<div class="success-box text-center mt-30">
+						<h2 class="text-success"><i class="fa fa-check-circle"></i> YOUR ORDER HAS BEEN PLACED!</h2>
 						<p>Your order has been successfully processed!</p>
 						<p>If you have any questions please contact store owner.</p>
 						<p>Thanks for shopping online!</p>
-						<button class="btn">Continue</button>
+						<a class="btn" href="<?php echo $prefix.'/'.$path;?>" target="_blank"><i class="fa fa-file-pdf-o"></i> Download pdf</a>
 					</div>
 				</div>
 			</div>
-			<br>
-			<a href="#" class="pl-10"> Download pdf</a>
 		</div>
 	</div>
 	<!-- Body content ends here -->	
