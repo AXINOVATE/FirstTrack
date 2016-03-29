@@ -13,7 +13,6 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
-						<li><a href="<?php echo $prefix;?>/home/md_sign_up_page_dealers"><span>Dealer Signup</span></a></li>
 						<li class="dropdown border-none-r user-options"  id="city-option" style="border-right:none;">
 							<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i><span id="location"><?php $cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore"; echo $cityName;?></span><span class="caret"></span></a>
 							<ul class="dropdown-menu" id="city-option-detail">
@@ -86,9 +85,9 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trends <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/latest">Latest</a></li>
-						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/popular">Popular</a></li>
-						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/upcoming">Upcoming</a></li>
+						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/latest">Latest</a></li>
+						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/popular">Popular</a></li>
+						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/upcoming">Upcoming</a></li>
 					</ul>
 				</li>
 				

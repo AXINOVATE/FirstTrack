@@ -492,7 +492,18 @@ class Home_model extends CI_Model{
 		$minMileage='';
 		$maxMileage='';
 		$price='';
+		$minDisp='';
+		$maxDisp='';
+		$minWaitPeriod='';
+		$maxWaitPeriod='';
+		$minPow='';
+		$maxPow='';
+		$seatCapacity='';
+		$dealerID='';
+		$cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore";
 		$trendsTypeID=$trendTypeID;
+		$xml1 = "";
+		$xml1 .= "<SEATS>";
 		if(isset($_POST['trendsTypeID'])){
 			$categoryID=$this->input->post('categoryID');
 			$manufactureID=$this->input->post('manufactureID');
@@ -502,19 +513,64 @@ class Home_model extends CI_Model{
 			$trendsTypeID=$this->input->post('trendsTypeID');
 			$price=$this->input->post('price');
 			$mileage=$this->input->post('mileage');
+			$displacement=$this->input->post('displacement');
+			$waitingPeriod=$this->input->post('waitingPeriod');
+			$power=$this->input->post('power');
+			$dealerID=$this->input->post('dealerID');
 			$min=explode(',',$price);
 			$mile=explode(',',$mileage);
+			$disp=explode(',',$displacement);
+			$waitPeriod=explode(',',$waitingPeriod);
+			$pow=explode(',',$power);
 			$minprice=$min[0];
 			$maxprice=$min[1];
 			$minMileage=$mile[0];
 			$maxMileage=$mile[1];
+			
+			$minDisp=$disp[0];
+			$maxDisp=$disp[1];
+			$minWaitPeriod=$waitPeriod[0];
+			$maxWaitPeriod=$waitPeriod[1];
+			$minPow=$pow[0];
+			$maxPow=$pow[1];
+			$seatCapacity=$this->input->post('seatCapacity');
+			
+			//$xml1 .= "<SEATS>";
+			if($seatCapacity!=''){
+				$seatCap=explode(',',$seatCapacity);
+				
+				if(end($seatCap)=='6'){
+					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
+					array_pop($seatCap);
+					$seatStr = implode(",",$seatCap);
+					if($seatStr!=''){
+						$seatStr = $seatStr;
+					}
+					else{
+						$seatStr = 0;
+					}
+					$xml1 .= "<SEATCAPACITY>".$seatStr."</SEATCAPACITY>";
+				}
+				else{
+					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
+					$xml1 .= "<SEATCAPACITY>".$seatCapacity."</SEATCAPACITY>";
+				}
+			}
+			else{
+				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
+				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
+			}
+			
+			
 			if($categoryID=='ALL'){ $categoryID='';}
 			if($manufactureID=='ALL'){ $manufactureID='';}
 			if($fuelType=='ALL'){ $fuelType='';}
 			if($power_streering=='Yes,No'){ $power_streering='';}
 			if($transmission=='Manual,Automatic'){ $transmission='';}
 		}
-		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE></HEADER></ROOT>";
+		$xml1 .= "</SEATS>";
+		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE><MINDISP>".$minDisp."</MINDISP><MAXDISP>".$maxDisp."</MAXDISP><MINWAITPERIOD>".$minWaitPeriod."</MINWAITPERIOD><MAXWAITPERIOD>".$maxWaitPeriod."</MAXWAITPERIOD><MINPOW>".$minPow."</MINPOW><MAXPOW>".$maxPow."</MAXPOW>".$xml1."<DEALERID>".$dealerID."</DEALERID><CITYNAME>".$cityName."</CITYNAME></HEADER></ROOT>";
+		//echo htmlspecialchars($xml); exit();
 		$query = $this->db->query("CALL usp_getTrendData('".$vType."','".$xml."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();

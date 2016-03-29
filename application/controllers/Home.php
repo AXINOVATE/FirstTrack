@@ -47,6 +47,10 @@ class Home extends CI_Controller {
 			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
 			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
 			$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID']);
+			$data['categories']= $this->home_model->getTrendData('Category','');
+			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
+			
+			//var_dump($data['trendDetails']); exit();
 			$this->load->view('home/searchList',$data);
 		}else{
 			echo 'Page not found';
