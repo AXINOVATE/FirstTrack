@@ -15,13 +15,25 @@
 		var i=0;
 		html="";
 		for(i=0;i<len;i++){
-			html += '<li class="pd-tp-3"><a href="#" class="particular-city-id">'+data[i].cityName+'</a></li>';
-		}
+			html += '<li class="pd-tp-3" ><a href="#" class="particular-city-id" data-particulaCity-id="'+data[i].cityID +'" data-city-name="'+ data[i].cityName +'">'+ data[i].cityName +'</a></li>';
+		}		
 		$('#city-option-detail').html(html);
 		
 	});
 	});
-	
+	$("#city-option-detail").on('click', 'li a', function() {	
+		var VparticularcityID=$(this).attr("data-particulaCity-id");
+		var VcityName=$(this).attr("data-city-name");
+		//alert(VparticularcityID);
+		$('#location').html($(this).attr("data-city-name"));
+		$.ajax({
+			url:prefix+'/home/getparticularcityID',
+			type:'POST',
+			processData:true,
+			data:{VcityName:VcityName},
+			dataType:'JSON'
+		}).done();
+	});
 	
 	
 	
@@ -63,6 +75,7 @@
 		get_gpi_varient();
 		
 	});
+	
 
 	$('document').ready(function(){
 		$('#abModel').html('');
@@ -115,6 +128,14 @@
 		get_corp_manufacture();
 		get_corp_varient();
 	});
+	
+	
+	$("#locate-dealer,#locate-dealer1").on('click',function(){
+		
+		get_locate_dealer_manufacture();
+		
+	});
+	
 	$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
@@ -885,3 +906,14 @@ function get_Proforma_Invoice_pdf(){
 }
 
 /*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/
+
+
+
+/* ----------------locate dealer--------------------*/
+
+
+function get_locate_dealer_manufacture(){
+	get_manufacture("all-brand");
+}
+
+/* ----------------locate dealer  end--------------------*/

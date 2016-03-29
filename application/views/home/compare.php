@@ -248,43 +248,6 @@ $prefix=$this->config->item('prefix');
 	function compareProducts(){
 		$('#compareForm').attr('onSubmit', 'return true');
 	}
-		//window.open('<?php echo $prefix;?>/home/detailed_comparison');
-	/*	var catID = $('#categoryID').val();
-		var selmaker1 = $('#selMaker1').val();
-		var selmaker2 = $('#selMaker2').val();
-		var selmaker3 = $('#selMaker3').val();
-		var selModel1 = $('#selModel1').val();
-		var selModel2 = $('#selModel2').val();
-		var selModel3 = $('#selModel3').val();
-		var selVariant1 = $('#selVariant1').val();
-		var selVariant2 = $('#selVariant2').val();
-		var selVariant3 = $('#selVariant3').val();
-		$.ajax({
-			url:'<?php echo $prefix;?>/home/getCompareInfo/compareProducts/'+catID,
-			type:'POST',
-			data: {'selmaker1':selmaker1, 'selmaker2':selmaker2, 'selmaker3':selmaker3, 'selModel1':selModel1, 'selModel2':selModel2, 'selModel3':selModel3, 'selVariant1':selVariant1, 'selVariant2':selVariant2, 'selVariant3':selVariant3},
-			dataType:'JSON'
-		}).done(function(data){
-			if(data.status == "Success"){
-				$('.disable_div').remove();$.gritter.add({
-					title: 'Success ',
-					text: 'Products added successfully',
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
-				setTimeout(function(){window.location="<?php echo $prefix;?>/home/detailed_comparison";},2000);
-			}
-			else{
-				var error_text = "";
-				if(data.message!=''){error_text = data['message'];}
-				else{error_text ='Failed to save';}
-				$('.disable_div').remove();$.gritter.add({
-					title: 'Failed',
-					text: error_text,
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
-			}
-		});	*/
-	//}
 </script>
 </body>
 </html>

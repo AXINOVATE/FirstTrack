@@ -13,14 +13,15 @@ $prefix=$this->config->item('prefix');
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
 					<ul style="display:block; float:right;">
+						<li class="dropdown border-none-r user-options"  id="city-option" style="border-right:none;">
+							<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i><span id="location"><?php $cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore"; echo $cityName;?></span><span class="caret"></span></a>
+							<ul class="dropdown-menu" id="city-option-detail">
+						
+							</ul>
+						</li>
 						<?php if(!$this->session->userdata('login')){ ?>
 						<li><a href="<?php echo $prefix;?>/home/dealers_signup"><span>Dealer Signup</span></a></li>
 						<?php } ?>
-						<li class="dropdown border-none-r user-options"  id="city-option"style="border-right:none;"><a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i>banglore<span class="caret"></span></a>
-						<ul class="dropdown-menu" id="city-option-detail">
-						
-						</ul>
-						</li>
 						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/home/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
@@ -84,9 +85,9 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trends <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/latest">Latest</a></li>
-						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/popular">Popular</a></li>
-						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/upcoming">Upcoming</a></li>
+						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/latest">Latest</a></li>
+						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/popular">Popular</a></li>
+						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/upcoming">Upcoming</a></li>
 					</ul>
 				</li>
 				
@@ -100,7 +101,7 @@ $prefix=$this->config->item('prefix');
 					<ul class="dropdown-menu">
 						<li><a href="#">EMI Calculator</a></li>
 						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
-						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>">Locate a Dealer</a></li>
+						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate a Dealer</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">

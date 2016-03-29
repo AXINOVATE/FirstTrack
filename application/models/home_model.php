@@ -481,21 +481,96 @@ class Home_model extends CI_Model{
 				return $vresult;
 			}
 	}
-	public function getTrendData($vType,$xml=''){
+	public function getTrendData($vType,$trendTypeID=''){
 		$categoryID='';
-		if(isset($_POST)){
+		$manufactureID='';
+		$fuelType='';
+		$power_streering='';
+		$transmission='';
+		$minprice='';
+		$maxprice='';
+		$minMileage='';
+		$maxMileage='';
+		$price='';
+		$minDisp='';
+		$maxDisp='';
+		$minWaitPeriod='';
+		$maxWaitPeriod='';
+		$minPow='';
+		$maxPow='';
+		$seatCapacity='';
+		$dealerID='';
+		$cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore";
+		$trendsTypeID=$trendTypeID;
+		$xml1 = "";
+		$xml1 .= "<SEATS>";
+		if(isset($_POST['trendsTypeID'])){
 			$categoryID=$this->input->post('categoryID');
 			$manufactureID=$this->input->post('manufactureID');
 			$fuelType=$this->input->post('fuelType');
 			$power_streering=$this->input->post('power_streering');
 			$transmission=$this->input->post('transmission');
+			$trendsTypeID=$this->input->post('trendsTypeID');
+			$price=$this->input->post('price');
+			$mileage=$this->input->post('mileage');
+			$displacement=$this->input->post('displacement');
+			$waitingPeriod=$this->input->post('waitingPeriod');
+			$power=$this->input->post('power');
+			$dealerID=$this->input->post('dealerID');
+			$min=explode(',',$price);
+			$mile=explode(',',$mileage);
+			$disp=explode(',',$displacement);
+			$waitPeriod=explode(',',$waitingPeriod);
+			$pow=explode(',',$power);
+			$minprice=$min[0];
+			$maxprice=$min[1];
+			$minMileage=$mile[0];
+			$maxMileage=$mile[1];
+			
+			$minDisp=$disp[0];
+			$maxDisp=$disp[1];
+			$minWaitPeriod=$waitPeriod[0];
+			$maxWaitPeriod=$waitPeriod[1];
+			$minPow=$pow[0];
+			$maxPow=$pow[1];
+			$seatCapacity=$this->input->post('seatCapacity');
+			
+			//$xml1 .= "<SEATS>";
+			if($seatCapacity!=''){
+				$seatCap=explode(',',$seatCapacity);
+				
+				if(end($seatCap)=='6'){
+					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
+					array_pop($seatCap);
+					$seatStr = implode(",",$seatCap);
+					if($seatStr!=''){
+						$seatStr = $seatStr;
+					}
+					else{
+						$seatStr = 0;
+					}
+					$xml1 .= "<SEATCAPACITY>".$seatStr."</SEATCAPACITY>";
+				}
+				else{
+					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
+					$xml1 .= "<SEATCAPACITY>".$seatCapacity."</SEATCAPACITY>";
+				}
+			}
+			else{
+				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
+				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
+			}
+			
+			
 			if($categoryID=='ALL'){ $categoryID='';}
 			if($manufactureID=='ALL'){ $manufactureID='';}
 			if($fuelType=='ALL'){ $fuelType='';}
 			if($power_streering=='Yes,No'){ $power_streering='';}
 			if($transmission=='Manual,Automatic'){ $transmission='';}
 		}
-		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION></HEADER></ROOT>";
+		$xml1 .= "</SEATS>";
+		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE><MINDISP>".$minDisp."</MINDISP><MAXDISP>".$maxDisp."</MAXDISP><MINWAITPERIOD>".$minWaitPeriod."</MINWAITPERIOD><MAXWAITPERIOD>".$maxWaitPeriod."</MAXWAITPERIOD><MINPOW>".$minPow."</MINPOW><MAXPOW>".$maxPow."</MAXPOW>".$xml1."<DEALERID>".$dealerID."</DEALERID><CITYNAME>".$cityName."</CITYNAME></HEADER></ROOT>";
+		//echo htmlspecialchars($xml); exit();
 		$query = $this->db->query("CALL usp_getTrendData('".$vType."','".$xml."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
@@ -506,6 +581,24 @@ class Home_model extends CI_Model{
 		$query=$this->db->query("select TLD.cityID,TC.cityName from tbl_locations_detail  TLD INNER JOIN tbl_cities  TC ON TLD.cityID =TC.cityID");
 		mysqli_next_result($this->db->conn_id);
 			return $query->result_array();
+	}
+	public function get_particular_vechile($mid=''){
+		$varid=$this->input->post("brand_id");
+		$query=$this->db->query("select distinct TPB.productID,TPB.productName from tbl_productBasic  TPB INNER JOIN  tbl_manufacture TM ON TPB.manufacturerID='".$varid."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function get_location(){
+	
+		$query=$this->db->query("select locationID,location from tbl_locations_detail");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function locate_a_dealer(){
+	    $locid=$this->input->post("loc_id");
+		$query=$this->db->query("select   distinct TUD.firstName,TUD.lastName,TUD.phone,TUD.addressLine1,TUD.addressLine2,TLD.location from tbl_userDetails  TUD INNER JOIN  tbl_locations_detail TLD ON TUD.locationID=TLD.locationID where TLD.locationID='".$locid."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
 	}
 	public function getBodyTypeEach($BodyType){
 		$VType="ALL";		
@@ -518,11 +611,74 @@ class Home_model extends CI_Model{
 
 	}
 
-	/* public function getCompareInfo($vType, $catID, $makerID, $modelID){
+
+	public function getCompareInfo($vType, $catID, $makerID, $modelID){
+		$retvalue = array();
 		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."','".$modelID."')");
 		mysqli_next_result($this->db->conn_id);
-		return $query->result_array();	
-	} */
+		if($vType=='detailedComparison'){
+			$i=0;
+			foreach($query->result() as $row){
+				$retvalue[$i]['variantID']=$row->variantID;
+				$retvalue[$i]['productID']=$row->productID;
+				$retvalue[$i]['variantName']=$row->variantName;
+				$retvalue[$i]['fueltype']=$row->fueltype;
+				$retvalue[$i]['transmission']=$row->transmission;
+				$retvalue[$i]['engineType']=$row->engineType;
+				$retvalue[$i]['displacement']=round($row->displacement);
+				$retvalue[$i]['noOfCylinders']=round($row->noOfCylinders);
+				$retvalue[$i]['productLength']=round($row->productLength);
+				$retvalue[$i]['productWidth']=round($row->productWidth);
+				$retvalue[$i]['productHeight']=round($row->productHeight);
+				$retvalue[$i]['powerBHP']=$row->powerBHP;
+				$retvalue[$i]['powerRPM']=round($row->powerRPM);
+				$retvalue[$i]['mileage']=$row->mileage;
+				$retvalue[$i]['seatingCapacity']=round($row->seatingCapacity);
+				$retvalue[$i]['torqueNm']=$row->torqueNm;
+				$retvalue[$i]['torqueRPM']=round($row->torqueRPM);
+				$retvalue[$i]['wheelBase']=$row->wheelBase;
+				$retvalue[$i]['frontBrakeType']=$row->frontBrakeType;
+				$retvalue[$i]['rearBrakeType']=$row->rearBrakeType;
+				$retvalue[$i]['groundClearance']=round($row->groundClearance);
+				$retvalue[$i]['minimumTurningRadius']=$row->minimumTurningRadius;
+				$retvalue[$i]['fuelTankCapacity']=round($row->fuelTankCapacity);
+				$retvalue[$i]['tyreType']=$row->tyreType;
+				$retvalue[$i]['frontTyreSize']=$row->frontTyreSize;
+				$retvalue[$i]['reartyreSize']=$row->reartyreSize;
+				$retvalue[$i]['lightType']=$row->lightType;
+				$retvalue[$i]['tachometer']=$row->tachometer;
+				$retvalue[$i]['speedometer']=$row->speedometer;
+				$retvalue[$i]['seatHeight']=$row->seatHeight;
+				$retvalue[$i]['frontSuspension']=$row->frontSuspension;
+				$retvalue[$i]['rearSuspension']=$row->rearSuspension;
+				$retvalue[$i]['Battery']=$row->Battery;
+				$retvalue[$i]['Headlamp']=$row->Headlamp;
+				$retvalue[$i]['productName']=$row->productName;
+				$retvalue[$i]['manufactureName']=$row->manufactureName;
+				$retvalue[$i]['exShowroomPrice']=$this->convertNum(round($row->exShowroomPrice));
+				$retvalue[$i++]['coverImage']=$row->coverImage;
+			}
+			return $retvalue;
+		}
+		else{
+			return $query->result_array();	
+		}
+	}
+	function convertNum($n) {
+		// first strip any formatting;
+		$n = (0+str_replace(",","",$n));
+		
+		// is this a number?
+		if(!is_numeric($n)) return false;
+		
+		// now filter it;
+		if($n>10000000) return round(($n/10000000),2).' Crores';
+		else if($n>100000) return round(($n/100000),2).' Lakhs';
+		else if($n>1000) return round(($n/1000),2).' Thousands';
+		
+		return number_format($n);
+	}
+
 	public function login($userName,$password){
 		$retvalue = array();
 		$xml = "<ROOT>
@@ -855,6 +1011,7 @@ class Home_model extends CI_Model{
 		else
 			return $qry->result();
 	}
+
 	
 	function booking(){
 		$s_address1 = $this->input->post('s_address1');
@@ -955,12 +1112,45 @@ class Home_model extends CI_Model{
 	}
 	public function getCompareInfo($vType, $catID, $makerID){
 		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."')");
-		mysqli_next_result($this->db->conn_id);
-		return $query->result_array();		
-	}
-	
-	
 
+	function adding_dealer_products_offer(){
+		$retvalue['status']='Failed';
+		$productID = $this->input->post('productID');
+		$userID = $this->input->post('userID');
+		$data = $this->input->post('data');
+		$xml = "<ROOT>
+				<HEADER>
+					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
+					<PRODUCTID>".$productID."</PRODUCTID>
+					<USERID>".$userID."</USERID>
+					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+				</HEADER>";
+			foreach($data as $d){
+				$xml.="<RECORD>
+					<VARIANTID>".$d[0]."</VARIANTID>
+					<COLORID>".$d[1]."</COLORID>
+					<OFFER1>".$d[2]."</OFFER1>
+					<OFFER2>".$d[3]."</OFFER2>
+					<OFFER3>".$d[4]."</OFFER3>
+					<OFFER4>".$d[5]."</OFFER4>
+					<OFFER5>".$d[6]."</OFFER5>
+					<OFFER6>".$d[7]."</OFFER6>
+					<STATUS>P</STATUS>
+				</RECORD>";
+			}
+		$xml.="</ROOT>";
+		//echo htmlspecialchars($xml); exit();
+		$vStatus = mt_rand();
+		$this->db->query('CALL usp_insUpdDealerProductsOffer("'.$xml.'",@'.$vStatus.')');
+
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @".$vStatus." as status")->result_array();
+		
+		if($qry[0]['status']=='Success'){
+			$retvalue['status'] = 'Success';
+		}
+		return $retvalue;
+	}
 
 }
 

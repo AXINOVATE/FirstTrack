@@ -36,7 +36,28 @@ class Home extends CI_Controller {
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$this->load->view('home/index',$data);
 	}
-	
+	public function searchList($page){
+		if($page=='latest' || $page=='upcoming' || $page=='popular'){
+			$pageData['currentPage'] = strtoupper($page);
+			$data['header'] = $this->load->view('templates/header',$pageData,true);
+			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['pageName'] = strtoupper($page);
+			$data['getTID'] = $this->manage_products_model->getTrendType('GTID',ucfirst($page));
+			$data['trendsTypeID']=$data['getTID'][0]['trendsTypeID'];
+			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
+			$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID']);
+			$data['categories']= $this->home_model->getTrendData('Category','');
+			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
+			
+			//var_dump($data['trendDetails']); exit();
+			$this->load->view('home/searchList',$data);
+		}else{
+			echo 'Page not found';
+		}
+		
+		
+	}
 	public function popular(){
 		$pageData['currentPage'] = 'POPULAR';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -136,7 +157,19 @@ class Home extends CI_Controller {
 			$data['header'] = $this->load->view('templates/header',$pageData,true);
 			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 			$data['specs'] = $this->home_model->getCompareInfo('detailedComparison',$var1,$var2,$var3);
-			//var_dump($data['specs']); exit();
+			$product1 = ""; $product2 = ""; $product3 = "";
+			$product1 = $data['specs'][0]['productID'];
+			$product2 = $data['specs'][1]['productID'];
+			if(count($data['specs'])>2){ 
+				$product3 = $data['specs'][2]['productID']; 
+			}
+			$data['variants1'] = $this->home_model->getCompareInfo('variants','',$product1,'');
+			$data['variants2'] = $this->home_model->getCompareInfo('variants','',$product2,'');
+			$data['variants3'] = $this->home_model->getCompareInfo('variants','',$product3,'');
+		//	var_dump($data['variants1']); 
+		//	var_dump($data['variants2']); 
+		//	var_dump($data['variants3']); 
+		//	exit();
 			$this->load->view('home/detailed_comparison',$data);
 		}
 	}
@@ -360,22 +393,31 @@ class Home extends CI_Controller {
 	}
 	public function add_corporate_deals(){
 		echo json_encode($this->home_model->add_corporate_deals());
-
 	}
 	public function add_insurance_details(){
-		
 		echo json_encode($this->home_model->add_insurance_details());
-
 	}
 	public function add_InstantQuotes(){
 		echo json_encode($this->home_model->add_InstantQuotes());
 	}
-	public function getTrendData($vType,$xml=''){
-		echo json_encode($this->home_model->getTrendData($vType,$xml));
+	public function getTrendData($vType){
+		echo json_encode($this->home_model->getTrendData($vType));
 
 	}
 	public function getCity(){
 		echo json_encode($this->home_model->getCity());
+	}
+	public function get_particular_vechile($mid=''){
+		
+		echo json_encode($this->home_model->get_particular_vechile($mid=''));
+	}
+	public function get_location(){
+		
+		echo json_encode($this->home_model->get_location());
+	}
+	public function locate_a_dealer(){
+		
+		echo json_encode($this->home_model->locate_a_dealer());
 	}
 	public function getBodyTypeEach($BodyType){
 		if($BodyType =='cars')
@@ -389,7 +431,11 @@ class Home extends CI_Controller {
 		}
 		echo json_encode($this->home_model->getBodyTypeEach($BodyType));
 	}
-
+	public function getparticularcityID(){		
+		$this->session->set_userdata('cityID',$this->input->post('VcityName'));
+		$cityID = $this->session->userdata('cityID');
+		return $cityID;
+	}
 	public function getCompareInfo($vType,$catID="",$makerID="",$modelID=""){
 		echo json_encode($this->home_model->getCompareInfo($vType, $catID, $makerID, $modelID));
 	}
@@ -471,6 +517,20 @@ class Home extends CI_Controller {
 			echo 'Page not found';
 		}
 	}
+	public function add_dealer_offer_products($userID=""){
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		if(count($data['details']) > 0){
+			$data['userID'] = $userID;
+			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			$this->load->view('admin/manage_dealers/add_dealer_offer_products',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
 	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
 		if($this->session->userdata('login'))redirect(base_url());
@@ -525,5 +585,10 @@ class Home extends CI_Controller {
 	function getProducts($type=""){
 		echo json_encode($this->home_model->getProducts($type,$this->input->post('userID'),$this->input->post('productID'),"",$this->input->post('category'),$this->input->post('manufacture')));
 	}
+	
+	public function adding_dealer_products_offer(){
+		echo json_encode($this->home_model->adding_dealer_products_offer());
+	}
+
 
 }
