@@ -293,6 +293,8 @@
 				$xml .= "<BODYTYPEID>".$this->input->post('bodyType')."</BODYTYPEID>";
 				$xml .= "<TRANSMISSION>".$this->input->post('transmission')."</TRANSMISSION>";
 				$xml .= "<OVERVIEW>".$this->input->post('overview')."</OVERVIEW>";
+				$xml .= "<PRODUCTRATING>".$this->input->post('productRating')."</PRODUCTRATING>";
+				$xml .= "<NAYAGAADIRATING>".$this->input->post('nayagaadiRating')."</NAYAGAADIRATING>";
 			}
 			if($type=='Colors' || $type=='ColorsOne'){
 				$xml .= "<COLORNAME>".$this->input->post('colorName')."</COLORNAME>";

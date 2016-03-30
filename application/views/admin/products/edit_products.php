@@ -112,7 +112,20 @@ $prefix=$this->config->item('prefix');
 																<input type="text" class="form-control" placeholder="Variant" id="variantName" name="variantName" value="<?php if(isset($getProductsBasic[0]['variantName'])) echo $getProductsBasic[0]['variantName'];?>" />
 															</div>
 														</div>
-														<div class="form-group" id="title_cover_image">
+														
+														<div class="form-group">
+															<label for="productRating" class="col-md-4 col-sm-4 col-xs-12 control-label">Product Rating</label>
+															<div class="col-md-7 col-sm-6 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="4.5" id="productRating" name="productRating" value="<?php if(isset($getProductsBasic[0]['productRating'])) echo $getProductsBasic[0]['productRating'];?>" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="nayagaadiRating" class="col-md-4 col-sm-4 col-xs-12 control-label">Nayagaadi Rating</label>
+															<div class="col-md-7 col-sm-6 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="86" id="nayagaadiRating" name="nayagaadiRating" value="<?php if(isset($getProductsBasic[0]['nayagaadiRating'])) echo $getProductsBasic[0]['nayagaadiRating'];?>" />
+															</div>
+														</div>
+														<div class="form-group">
 															<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
 																Cover Image <span class="form-man"> * </span>
 															</label>
