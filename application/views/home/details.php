@@ -122,19 +122,22 @@ $prefix=$this->config->item('prefix');
 						</div>
 					</div>
 					<?php if(!empty($dealers)){ ?>
-					<?php $priceCheck = 0; if(isset($prices->onRoadPrice)) $priceCheck = $prices->onRoadPrice;	?>
-					<h3 class="<?php if($priceCheck != 0)echo 'hide';?>">Prices are not avaialable at this dealers </h3>
-						
+					<?php $priceCheck = 0; if(isset($prices->onRoadPrice)) $priceCheck = $prices->onRoadPrice;
+					if($priceCheck == 0){?>
+					<div class="alert alert-danger mt-20">
+						Prices are not available  
+					</div>		
+					<?php }else{ ?>	
 					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
 						<div class="col-md-6 col-sm-6 br-right">
 							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo round($prices->onRoadPrice);?> </span> On-Road Price </div>
 						</div>
 						<div class="col-md-6 col-sm-6">
-							<div class="item-subprice"><span>Ex-Showroom </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->exShowroomPrice))echo $prices->exShowroomPrice;?></div>
-							<div class="item-subprice"><span>Insurance </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->insurance))echo $prices->insurance;?> </div>
-							<div class="item-subprice"><span>RTO </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->RTO))echo $prices->RTO;?> </div>
-							<div class="item-subprice"><span>Road Tax </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->roadTax))echo $prices->roadTax;?> </div>
-							<div class="item-subprice"><span>Other Handling Charges </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->handlingOtherCharges))echo $prices->handlingOtherCharges;?> </div>
+							<div class="item-subprice"><span>Ex-Showroom </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->exShowroomPrice))echo $prices->exShowroomPrice;?></div></div>
+							<div class="item-subprice"><span>Insurance </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->insurance))echo $prices->insurance;?> </div></div>
+							<div class="item-subprice"><span>RTO </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->RTO))echo $prices->RTO;?> </div></div>
+							<div class="item-subprice"><span>Road Tax </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->roadTax))echo $prices->roadTax;?> </div></div>
+							<div class="item-subprice"><span>Other Handling Charges </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->handlingOtherCharges))echo $prices->handlingOtherCharges;?> </div></div>
 						</div>
 					</div>
 					<div class="row mt-10">
@@ -145,6 +148,8 @@ $prefix=$this->config->item('prefix');
 							<button class="btn">Book Test Drive</button>
 						</div>
 					</div>
+					
+					<?php } ?>
 					<?php }else{ ?>
 						<h3>No dealers available</h3>
 					<?php } ?>

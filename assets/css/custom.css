@@ -349,7 +349,7 @@ body{font-family:Century Gothic !important;}
 .item-price span{font-size:34px;color:#DC5452;}
 .br-right{border-right:1px solid #EEE;}
 .item-price{height: 100px; display: table-cell; vertical-align: middle;}
-.item-subprice{/* height:50px;line-height:40px; */}
+.item-subprice{/* height:50px;line-height:40px; */    margin-right: 10px;}
 .item-subprice span{width: 180px; display: block; float: left;}
 .item-action{text-align:center;}
 .item-action .btn{ border-radius: 0px; outline: none; background-color: #027CD5; color: #FFF;font-size: 14px; width: 24%;}
