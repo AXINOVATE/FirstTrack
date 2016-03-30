@@ -1115,8 +1115,6 @@ class Home_model extends CI_Model{
 		$pdf->Output($pdfFilePath,'F'); 
 		return $pdfFilePath;
 	}
-	public function getCompareInfo($vType, $catID, $makerID){
-		$query =$this->db->query("CALL usp_getCompareInfo('".$vType."','".$catID."','".$makerID."')");
 
 	function adding_dealer_products_offer(){
 		$retvalue['status']='Failed';
