@@ -165,7 +165,7 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
-	public function getVariantDetail($vType,$vID=''){
+	public function getVariantDetail($vType,$vID){
 		$query = $this->db->query("CALL usp_getVariantDetail('".$vType."','".$vID."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();

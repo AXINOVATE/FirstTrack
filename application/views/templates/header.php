@@ -55,7 +55,7 @@ $prefix=$this->config->item('prefix');
 						</div>	
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-12">
-						<a href="javascript:void(0)" class="cart-btn">
+						<a href="#" class="cart-btn">
 							<i class="fa fa-shopping-cart"></i>  Cart 
 							<span class="cart-item">1</span>
 						</a>
@@ -78,7 +78,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
-				<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
+				<li><a href ="#" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" id="GetProformaInvoice" class="pd-tp-3">Pro forma Invoice</a></li>
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
@@ -107,12 +107,12 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal" id="test-drive">Request for Test Drive</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal" id="adv-book">Advance Booking</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply for Vehicle Loan</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">By on Road Assistance</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#test-drive-modal" id="test-drive">Request for Test Drive</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#adv-book-modal" id="adv-book">Advance Booking</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply for Vehicle Loan</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">By on Road Assistance</a></li>
 					</ul>
 				</li>
 			</ul> 
@@ -180,7 +180,7 @@ $prefix=$this->config->item('prefix');
 					   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 						</div>
 					<div class="form-group">
@@ -283,7 +283,7 @@ $prefix=$this->config->item('prefix');
 				   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
@@ -408,7 +408,7 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox"  value="agreed" style="float:left;" va_req="true" name="RTD_agree" id="RTD_agree">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
@@ -594,14 +594,14 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-12">
 								<input type="checkbox" class="col-md-1 col-sm-1 col-xs-2" name="vehlone_termsandconditions" id="vehlone_termsandconditions" value="agreed" style="float:left;"  va_req="true">
 								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-									I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="javascript:void(0)" id="btn_apply_vehicle_loan" class="search-btn" style="background-color:#F9D133;" >Save</a>
+								<a href="#" id="btn_apply_vehicle_loan" class="search-btn" style="background-color:#F9D133;" >Save</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 							</div>
 						</div>
@@ -753,13 +753,13 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-12">
 								<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" name="corp_termsadnconditions" va_req="true" id="corp_termsadnconditions" value="agreed" style="float:left;">
 								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-									I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 								</div>
 							</div>
 						</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" id="corp_save_data" style="background-color:#F9D133;" >Save</a>
+							<a href="#" class="search-btn" id="corp_save_data" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -954,13 +954,13 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agree" id="insurance_agree"  style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)"  id="insurance-save" class="search-btn" style="background-color:#F9D133;" >Save</a>
+							<a href="#"  id="insurance-save" class="search-btn" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -1134,13 +1134,13 @@ $prefix=$this->config->item('prefix');
 					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agreed"  va_req="true" id="boraAgree" name="boraAgree"style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" id="by-on-road-assistance" style="background-color:#F9D133;" >Save</a>
+							<a href="#" class="search-btn" id="by-on-road-assistance" style="background-color:#F9D133;" >Save</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -1207,13 +1207,13 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-12">
 							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" id="instquote_termandconditions" name="instquote_termandconditions" value="agreed" style="float:left;" va_req="true">
 							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="javascript:void(0)" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 							</div>
 							</div>
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="javascript:void(0)"  class="search-btn" id="get_instant_quote_form_save" style="background-color:#F9D133;" >Get Instant Quote</a>
+								<a href="#"  class="search-btn" id="get_instant_quote_form_save" style="background-color:#F9D133;" >Get Instant Quote</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 								
 							</div>
