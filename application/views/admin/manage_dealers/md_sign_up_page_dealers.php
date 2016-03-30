@@ -149,7 +149,7 @@ hr.style-eight {
 					$("#register_btn").html('Signup');
 					$("#register_btn").attr('disabled',false);
 				}else{
-					//window.location.reload();
+					window.location.reload();
 				}
 				
 			});

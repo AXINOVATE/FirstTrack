@@ -178,7 +178,7 @@ $prefix=$this->config->item('prefix');
 					data:{'productID':product,'userID':userID,'data':contents},
 					dataType:'JSON'
 				}).success(function(data){
-					
+					window.location = '<?php echo $prefix;?>/home/dealer_products/'+userID;
 				});
 			}
 		});

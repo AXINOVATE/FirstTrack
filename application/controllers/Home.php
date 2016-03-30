@@ -96,13 +96,17 @@ class Home extends CI_Controller {
 		
 		$slugData = $this->home_model->getProducts("SLUG","","","","","",$slug);
 		//var_dump($slugData);exit();
+		$productID = "";
 		if($slugData){
 			$variantID = $slugData->variantID;
 			$productID = $slugData->productID;
 		}else{
 			echo 'Invalid URL';
 		}
-
+		$cityName = 'Bangalore';
+		if($this->session->userdata("cityID"))
+			$cityName = $this->session->userdata("cityID");
+		$data['cityName'] = $cityName;
 		$data['basic'] = $this->home_model->getProducts("SPB","",$productID);
 		if($data['basic']){
 			$data['variants'] = $this->home_model->getProducts("LPV","",$productID);

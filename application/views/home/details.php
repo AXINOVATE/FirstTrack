@@ -104,7 +104,7 @@ $prefix=$this->config->item('prefix');
 							<select class="select2" style="width:145px;" id="d_location">
 								<option value=""></option>
 								<?php foreach($locations as $l){ ?>
-								<?php if($l['cityName'] == $this->session->userdata('cityID')){ ?>
+								<?php if($l['cityName'] == $cityName){ ?>
 								<option value="<?php echo $l['cityID'];?>" selected><?php echo $l['cityName'];?></option>
 								<?php }else{?>
 								<option value="<?php echo $l['cityID'];?>"><?php echo $l['cityName'];?></option>
@@ -125,7 +125,7 @@ $prefix=$this->config->item('prefix');
 					<?php $priceCheck = 0; if(isset($prices->onRoadPrice)) $priceCheck = $prices->onRoadPrice;
 					if($priceCheck == 0){?>
 					<div class="alert alert-danger mt-20">
-						Prices are not available in <strong><?php echo $this->session->userdata('cityID'); ?></strong> for this variant and dealer
+						Prices are not available in <strong><?php echo $cityName; ?></strong> for this variant and dealer
 					</div>		
 					<?php }else{ ?>	
 					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
