@@ -24,7 +24,11 @@ $prefix=$this->config->item('prefix');
 	.c-dashboard .fa{color: #cf0202; font-size: 40px;}
 	.c-dashboard .title{font-size: 22px; font-weight: 600; margin: 15px 0px;color: #737373;}
 	.c-dashboard .count{font-size: 22px; color: #737373;}
-	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 	</style>
+	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 	
+	@media (min-width: 767px){
+		.types{  min-height: 340px;}
+	}
+	</style>
 	
 	
 	<!--Start of Zopim Live Chat Script-->
