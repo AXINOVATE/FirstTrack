@@ -112,7 +112,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply for Vehicle Loan</a></li>
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
-						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">By on Road Assistance</a></li>
+						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">Buy on Road Assistance</a></li>
 					</ul>
 				</li>
 			</ul> 
@@ -212,7 +212,7 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-						<input type="text" id="gpi_fullname"  va_req="true" name="gpi_fullname" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						<input type="text" id="gpi_fullname"  va_req="true" name="gpi_fullname" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1">
 						</div>
 					</div>
 					<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
@@ -978,7 +978,7 @@ $prefix=$this->config->item('prefix');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">By on Road Assistance</h4>
+					<h4 class="text-center modal-title">Buy on Road Assistance</h4>
 				</div>
 				<form class="form-horizontal" name="by_on_road_asistance" role="form"  method="POST" id="By-on-road-assistance" submit="return false">
 				<div class="modal-body">
