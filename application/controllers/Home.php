@@ -37,13 +37,13 @@ class Home extends CI_Controller {
 		$this->load->view('home/index',$data);
 	}
 	public function searchList($page,$id=""){
-		if($page=='latest' || $page=='upcoming' || $page=='popular' || $page=='bodytype' || $page=='category'){
+		if($page=='list' || $page=='latest' || $page=='upcoming' || $page=='popular' || $page=='bodytype' || $page=='category'){
 			$pageData['currentPage'] = strtoupper($page);
 			$data['header'] = $this->load->view('templates/header',$pageData,true);
 			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 			$data['pageName'] = ucfirst($page);
 			$data['typeID'] = '';
-			if($page=='bodytype' || $page=='category'){
+			if($page=='bodytype' || $page=='category' || $page=='list'){
 				$data['getTType'] = $this->manage_products_model->getTrendType('ALL');
 				$data['getTID'] = '';
 				$data['trendsTypeID']='';

@@ -126,7 +126,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						<div class="">
 							<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
 								<div class="mr-m5 ml-m5">
-									<a href="<?php echo $prefix;?>/home/search" class="search-btn" >Search</a>
+									<a href="<?php echo $prefix;?>/home/searchList/list" class="search-btn" >Search</a>
 								</div>
 							</div>
 						</div>
