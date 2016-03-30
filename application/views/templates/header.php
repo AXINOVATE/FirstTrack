@@ -557,15 +557,11 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_dealerName" va_req="true" name="vehlone_dealerName" style="width:100%;">
 								<option value="">-- Select Dealer Name --</option>
-								<option value="King Cars">King Cars</option>
-								<option value="Super Cars">Super Cars</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_dealerLocation" va_req="true" id="vehlone_dealerLocation" style="width:100%;">
 								<option value="">-- Select Dealer Location --</option>
-								<option value="HSR Layout" >HSR Layout</option>
-								<option value="Majestic" >Majestic</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -812,8 +808,6 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12">
 							<select class="form-control mb-10" id="insurance_model" va_req="true" style="width:100%;">
 								<option value="">-- Select Model --</option>
-								<option value="1" >Swift</option>
-								<option value="1" >I20</option>
 							</select>
 						</div>
 					</div>
@@ -822,8 +816,6 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12">
 							<select class="form-control mb-10" id="insurance_variant" va_req="true" style="width:100%;">
 								<option value="">-- Select Variant --</option>
-								<option value="1" >Petrol</option>
-								<option value="1" >Diesel</option>
 							</select>
 						</div>
 					</div>					
@@ -832,8 +824,6 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12">
 							<select class="form-control mb-10" id="insurance_city"  va_req="true" style="width:100%;">
 								<option value="">-- Select City --</option>
-								<option value="1" >Bangalore</option>
-								<option value="1" >Mysore</option>
 							</select>
 						</div>
 					</div>
@@ -858,8 +848,6 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
 								<option value="">-- Select Maker --</option>
-								<option value="1" >Maruti Suzuki</option>
-								<option value="1" >Hyundai</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
@@ -898,8 +886,6 @@ $prefix=$this->config->item('prefix');
 								<option value="50 Laks and Above" >50 Laks and Above</option>
 							</select>
 						</div>
-					
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_duration" va_req="true" style="width:100%;">
 								<option value="">-- Loan Duration --</option>
@@ -921,8 +907,6 @@ $prefix=$this->config->item('prefix');
 								<option value="10 weeks and Above" >10 weeks and Above</option>
 							</select>
 						</div>
-					
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_preferd_bank" va_req="true" style="width:100%;">
 								<option value="">-- Preference to Specific Bank --</option>
@@ -982,7 +966,6 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<form class="form-horizontal" name="by_on_road_asistance" role="form"  method="POST" id="By-on-road-assistance" submit="return false">
 				<div class="modal-body">
-				
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
@@ -1010,44 +993,27 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</div>
-					
-						
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="boraCity"   va_req="true" name="boraCity" style="width:100%;">
 								<option value="">-- Select City --</option>
-								
 							</select>
 						</div>
-				
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraMaker"   va_req="true" name="boraMaker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
-								
 							</select>
 						</div>
-					
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraModel"   va_req="true" name="boraModel" style="width:100%;">
 								<option value="">-- Select Model --</option>
-								
 							</select>
 						</div>
-					
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraVarient"  va_req="true" name="boraVarient" style="width:100%;">
 								<option value="">-- Select Variant --</option>
 								
 							</select>
 						</div>
-				
-					
-						
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraCategory"  va_req="true" name="boraCategory" style="width:100%;">
 								<option value="">-- Select Category --</option>
@@ -1061,8 +1027,6 @@ $prefix=$this->config->item('prefix');
 								<option value="Yellow Board" > Yellow Board</option>
 							</select>
 						</div>
-					
-					
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="boraPlan" va_req="true" name="boraPlan"style="width:100%;">
 								<option value="">-- Are you looking--</option>
@@ -1077,8 +1041,6 @@ $prefix=$this->config->item('prefix');
 								<option value="no" >no</option>
 							</select>
 						</div>
-				
-				
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="boraRoadcompanies"  va_req="true" name="boraRoadcompanies"style="width:100%;">
 								<option value="">-list of on road companies--</option>
@@ -1093,8 +1055,6 @@ $prefix=$this->config->item('prefix');
 								<option value="no" >no</option>
 							</select>
 						</div>
-					
-				
 						<div class="col-md-4 ">
 							<input type="text" class="form-control mb-10" id="boraPackbenifits"  va_req="true" name="boraPackbenifits" placeholder="packge benifits" />
 						</div>
@@ -1121,8 +1081,6 @@ $prefix=$this->config->item('prefix');
 								<option value="DD Transaction details" >DD Transaction details</option>
 							</select>
 						</div>
-					
-					
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<input type="text" class="form-control" id="boraTimecall" name="boraTimecall" va_req="true" placeholder="what is the best time to call you?" />
 						</div>
@@ -1130,7 +1088,6 @@ $prefix=$this->config->item('prefix');
 							<label for="comment">Any specific comment</label>
                         <textarea class="form-control" rows="2" id="boraComment" va_req="true" name="boraComment"></textarea>
 						</div>
-					
 					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agreed"  va_req="true" id="boraAgree" name="boraAgree"style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
@@ -1146,7 +1103,6 @@ $prefix=$this->config->item('prefix');
 					</div>
 					</form>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -1200,8 +1156,6 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-6 col-sm-6 col-xs-6">
 								<select class="form-control mb-10" id="instquote_dealerName" name="instquote_dealerName" style="width:100%;" va_req="true">
 									<option value="">-- Select Dealer Name --</option>
-									<option value="1" >Maruti Suzuki</option>
-									<option value="1" >Hyundai</option>
 								</select>
 							</div>
 							<div class="col-md-12">

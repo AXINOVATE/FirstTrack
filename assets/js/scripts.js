@@ -53,6 +53,7 @@
 		get_rtd_cities();
 		get_rtd_categories();					
 		get_rtd_manufacture();
+		get_rtd_dealerName();
 		//get_rtd_varient();
 	});
 	$('#adv-book,#adv-book1').on('click', function(){	
@@ -106,6 +107,7 @@
 		get_vehlone_cities(); 
 		get_vehlone_categories();
 		get_vehlone_manufacture();
+		get_vehlone_dealerName();
 		//get_vehlone_varient();
 	});
 	$('#insurance-save').on('click' ,function(){
@@ -150,6 +152,7 @@
 		get_instant_country();
 		get_instant_category();
 		get_instant_maker();
+		get_instant_dealerName();
 		//get_instant_variant();
 	});
 	$('#get_instant_quote_form_save').on('click' ,function(){
@@ -305,6 +308,38 @@ function get_manufacture(callback){
 		$(callback).html(html);
 	});
 }
+function get_dealerName(callback){
+	var callback="#"+callback;
+	$.ajax({
+		url:prefix+'/home/get_dealer/RLIST',
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Dealer Name --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].userID+"' >"+data[i].firstName+" "+data[i].lastName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
+function get_dealerLocation(callback,id){
+	var callback="#"+callback;
+	$.ajax({
+		url:prefix+'/home/get_dealer/DEALER-O/'+id,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select Dealer Name --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].locationID+"' >"+data[i].location+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
 /*---------------------------- Common Function Ends--------------------------*/
 /* -------------------------- GetProformaInvoice start --------------------------*/
 function get_gpi_cities(){
@@ -330,6 +365,12 @@ function get_vehlone_categories(){
 function get_vehlone_manufacture(){
 	get_manufacture("vehlone_maker");
 }
+function get_vehlone_dealerName(){
+	get_dealerName("vehlone_dealerName");
+}
+$("#vehlone_dealerName").on('change',function(){	
+	get_dealerLocation("vehlone_dealerLocation",$(this).val());	
+});
 $("#vehlone_maker").on('change',function(){	
 	get_particular_model("vehlone_maker","vehlone_model");	
 });
@@ -481,6 +522,10 @@ function get_instant_maker(){
 $("#instquote_model").on('change',function(){
 	get_variant("instquote_variant", $(this).val());
 });
+function get_instant_dealerName(){
+	get_dealerName("instquote_dealerName");
+}
+
 $('#instquote_country').on('change',function(){
 	var country_id=$(this).val();
 	$.ajax({
@@ -680,6 +725,12 @@ function get_rtd_categories(){
 function get_rtd_manufacture(){
 	get_manufacture("RTD_Maker");
 }
+function get_rtd_dealerName(){
+	get_dealerName("RTD_Dealer_Name");
+}
+$("#RTD_Dealer_Name").on('change',function(){
+	get_dealerLocation("RTD_Dealer_Location",$(this).val());
+});
 $("#RTD_Model").on('change',function(){
 	get_variant("RTD_Variant", $(this).val());
 });

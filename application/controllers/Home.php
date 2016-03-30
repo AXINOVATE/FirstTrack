@@ -600,6 +600,9 @@ class Home extends CI_Controller {
 	public function adding_dealer_products_offer(){
 		echo json_encode($this->home_model->adding_dealer_products_offer());
 	}
+	public function get_dealer($vType,$userID=''){
+		echo json_encode($this->home_model->getUsers($vType,$userID,"",$this->config->item('dealer_role')));
+	}
 
 
 }
