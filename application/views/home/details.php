@@ -16,33 +16,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet">	
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		.item-share{display: table-cell;height: 58px; vertical-align: middle; font-size: 30px;}
-		.item-location .select2-container--default .select2-selection--single .select2-selection__rendered{line-height:24px;}
-		.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-label{opacity:1;color:#FFF;}
-		.specs-title{font-size: 18px; margin-bottom: 10px;}
 		
-		#specifications ul,#features ul{background: #FFFFFF; box-shadow: 0 1px 2px #FFFFF;list-style-type:none;}
-		#specifications ul li,#features ul li{border-bottom: 1px solid #F2F2F2;padding: 15px;}
-		#specifications ul li>div,#features ul li>div{width:50%;float:left;}
-		
-		.item-benfits span{font-size:14px;}
-		
-		#photos ul { padding:0 0 0 0; margin:0 0 0 0; }
-		#photos ul li { list-style:none; margin-bottom:25px; }
-		#photos ul li img { cursor: pointer;height:200px;width:100%; }
-		#photos .modal-body { padding:5px !important; }
-		#photos .modal-content { border-radius:0; }
-		#photos .modal-dialog img { text-align:center; margin:0 auto; }
-		#photos .controls{ width:50px; display:block; font-size:11px; padding-top:8px; font-weight:bold; }
-		#photos .next { float:right; text-align:right; }
-		/*override modal for demo only*/
-		#photos .modal-dialog { max-width:500px; padding-top: 90px; }
-		@media screen and (min-width: 768px){
-			#photos .modal-dialog { width:500px; padding-top: 90px; }          
-		}
-		@media screen and (max-width:1500px){
-			#photos #ads { display:none; }
-		}
 		
 	</style>
 </head>

@@ -42,8 +42,8 @@ $prefix=$this->config->item('prefix');
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Product <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<?php echo $prefix;?>/admin/add_location">Location</a></li>
-						<li><a href="<?php echo $prefix;?>/admin/add_manufacture">Manufacture</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_category">Category</a></li>
+						<li><a href="<?php echo $prefix;?>/admin/add_manufacture">Manufacture</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_body_type">Body Type</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_products">Products</a></li>
 						<li><a href="<?php echo $prefix;?>/admin/add_products_category">Products Category</a></li>

@@ -154,6 +154,9 @@
 		get_instant_maker();
 		get_instant_dealerName();
 		//get_instant_variant();
+		get_all_country("instquote_country");
+		get_categories("instquote_category");
+		//get_variant("instquote_variant");
 	});
 	$('#get_instant_quote_form_save').on('click' ,function(){
 		xu_validation.form_submit('#get_instant_quote_form','save_instant_quote');		
@@ -292,10 +295,11 @@ function get_variant(callback,id){
 	});
 }
 function get_manufacture(callback){
+	var vType='ALL',vID='';
 	var callback="#"+callback;
 	var html="";
 	$.ajax({
-		url:prefix+'/home/get_manufacture_detail/ALL',
+		url:prefix+'/home/get_manufacture_detail/'+vType+'/'+vID,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -525,7 +529,6 @@ $("#instquote_model").on('change',function(){
 function get_instant_dealerName(){
 	get_dealerName("instquote_dealerName");
 }
-
 $('#instquote_country').on('change',function(){
 	var country_id=$(this).val();
 	$.ajax({
