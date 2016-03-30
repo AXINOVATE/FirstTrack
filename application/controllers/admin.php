@@ -161,8 +161,9 @@ class Admin extends CI_Controller {
 		$data['getProductsFeatures'] = $this->manage_products_model->getProducts('Features',$varID);
 		$data['getProductsPhotos'] = $this->manage_products_model->getProducts('Photo',$varID);
 		$data['getProductsVideos'] = $this->manage_products_model->getProducts('Video',$varID);
+		$data['getProductsDM'] = $this->manage_products_model->getProducts('DigitalMarketing',$varID);
 		$data['getCities'] = $this->manage_products_model->getProducts('getCities',$varID);
-		//var_dump($data['getCities']); exit();
+		//var_dump($data['getProductsDM']); exit();
 		$this->load->view('admin/products/edit_products',$data);
 	}
 	public function edit_productColors($varID="",$id=""){

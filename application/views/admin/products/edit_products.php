@@ -20,6 +20,10 @@ $prefix=$this->config->item('prefix');
 		#myTab-accordion>.panel-default>.panel-heading{background-color: #027CD5; color: white !important; }
 		#myTab-accordion>.panel-default>.panel-heading>.panel-title>a{text-decoration:none !important;}
 		.abc{padding:5px;}
+		.nav-tabs1>li>a {padding-right: 30px; padding-left: 40px;}
+		@media only screen and (max-width: 998px) and (min-width: 651px){
+			.nav-tabs1>li>a {padding-right: 10px !important; padding-left: 10px !important;}
+		}
 	</style>
 </head>
 <body>
@@ -47,6 +51,7 @@ $prefix=$this->config->item('prefix');
 									<li role="presentation"><a href="#Features" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
 									<li role="presentation"><a href="#Photos" aria-controls="Photos" role="tab" data-toggle="tab">Photos</a></li>
 									<li role="presentation"><a href="#Videos" aria-controls="Videos" role="tab" data-toggle="tab">Videos</a></li>
+									<li role="presentation"><a href="#DM" aria-controls="DM" role="tab" data-toggle="tab">DM</a></li>
 								  </ul>
 									<div>
 									<input type="hidden" id="variantID" value="<?php if(count($getProductsBasic) > 0 ){ echo $getProductsBasic[0]['variantID'];} ?>">
@@ -687,6 +692,14 @@ $prefix=$this->config->item('prefix');
 																			</div>
 																		</div>
 																	</div>
+																	<div class="col-md-12 col-sm-12 col-xs-12 mb-10">	
+																		<div class="form-group">
+																			<label for="emissionStandard" class="col-md-4 col-sm-4 col-xs-12 control-label text-align-left">Emission Standard</label>
+																			<div class="col-md-7 col-sm-7 col-xs-12 ">
+																				<input type="text" class="form-control" placeholder="BS-III" id="emissionStandard" name="emissionStandard" value="<?php if(isset($getProductsSpecs[0]['emissionStandard'])) echo $getProductsSpecs[0]['emissionStandard'];?>" />
+																			</div>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -1116,6 +1129,69 @@ $prefix=$this->config->item('prefix');
 										</div>
 										<!-- end tab 7 -->
 										
+										<div role="tabpanel" class="tab-pane" id="DM">
+											<form class="form-horizontal" name="productDMData" role="form"  method="POST" id="productDMData"  onsubmit="return false">
+												
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label for="slugName" class="col-md-2 col-sm-4 col-xs-12 control-label">Slug Name</label>
+															<div class="col-md-7 col-sm-6 col-xs-12">
+																<input type="text" class="form-control" placeholder="Slug Name" id="slugName" name="slugName" value="<?php if(isset($getProductsDM[0]['slugName'])) echo $getProductsDM[0]['slugName'];?>" disabled />
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="metaTitle" class="col-md-2 col-sm-4 col-xs-12 control-label">Meta Title</label>
+															<div class="col-md-7 col-sm-6 col-xs-12 ">
+																<input type="text" class="form-control" placeholder="Meta Title" id="metaTitle" name="metaTitle" value="<?php if(isset($getProductsDM[0]['metaTitle'])) echo $getProductsDM[0]['metaTitle'];?>" />
+															</div>
+														</div>
+													</div>
+													
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label for="h1Tag" class="col-md-2 col-sm-4 col-xs-12 control-label">H1 Tag</label>
+															<div class="col-md-7 col-sm-6 col-xs-12">
+																<textarea type="text" rows="3" class="form-control" placeholder="H1 Tag" id="h1Tag" name="h1Tag"><?php if(isset($getProductsDM[0]['h1Tag'])) echo $getProductsDM[0]['h1Tag'];?></textarea>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12">
+														<div class="form-group">
+															<label for="metaKeywords" class="col-md-2 col-sm-4 col-xs-12 control-label">Meta Keywords</label>
+															<div class="col-md-7 col-sm-6 col-xs-12">
+																<textarea type="text" rows="3" class="form-control" placeholder="Meta Keywords" id="metaKeywords" name="metaKeywords"><?php if(isset($getProductsDM[0]['metaKeywords'])) echo $getProductsDM[0]['metaKeywords'];?></textarea>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-12">
+														<div class="form-group">
+															<label for="metaDesc" class="col-md-2 col-sm-4 col-xs-12 control-label">Meta Description</label>
+															<div class="col-md-7 col-sm-6 col-xs-12">
+																<textarea type="text" rows="3" class="form-control" placeholder="Meta Description" id="metaDesc" name="metaDesc"><?php if(isset($getProductsDM[0]['metaDesc'])) echo $getProductsDM[0]['metaDesc'];?></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="col-md-4"></div>
+														<div class="col-md-4"></div>
+														<div class="col-md-4">
+															<div class="form-group">
+																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
+																<div class="col-sm-6 col-xs-12 ">
+																	<button class="btn btn-default btn-primary pull-right" id="dmData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+										<!-- end tab 1 -->
 									</div>
 
 								</div>
@@ -1379,6 +1455,45 @@ $prefix=$this->config->item('prefix');
 					$.gritter.add({
 						title: 'Success',
 						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}else{
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Failed To Save',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}
+			});
+		}
+		$("#dmData-btn").click(function(){
+			xu_validation.form_submit('#productDMData','save_dmData');
+		});
+		function save_dmData(){
+			var vType='DigitalMarketing';
+			var variantID=$("#variantID").val();
+			
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
+				data: $('#productDMData').serialize(),
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				if(data.status == "Success"){	
+					$.gritter.add({
+						title: 'Success',
+						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					setTimeout(function(){window.location.reload();},1000);
+				}
+				else if(data.status == "Does not exist"){	
+					$.gritter.add({
+						title: 'Failed',
+						text: 'Check Product or variant exist or not',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
 					setTimeout(function(){window.location.reload();},1000);

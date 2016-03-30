@@ -130,7 +130,7 @@
 			return $query->result_array();
 		}
 		public function upload_products_list(){
-			var_dump($_POST); exit();
+			//var_dump($_POST); exit();
 			$retvalue=array();
 			$retvalue['status'] = 'Failed';
 			$manufacturerName = $this->input->post('manufacturerName');
@@ -260,7 +260,7 @@
 			if($vType=='ALL' || $vType=='SHOWCASE_ALL' || $vType=='SHOWCASE_ACTIVE'){
 				$xml .= "";
 			}
-			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities' || $vType=='SHOWCASE_ONE' || $vType=='SHOWCASE_DETAIL'){
+			if($vType=='Basic' || $vType=='Colors' || $vType=='Prices' || $vType=='Specifications' || $vType=='Features' || $vType=='Photo' || $vType=='Video'|| $vType=='getCities' || $vType=='SHOWCASE_ONE' || $vType=='SHOWCASE_DETAIL' || $vType=='DigitalMarketing'){
 				$xml .= "<VARIANTID>".$varID."</VARIANTID>";
 			}
 			if($vType=='ColorOne' || $vType=='PriceOne' || $vType=='PhotoOne' || $vType=='VideoOne'){
@@ -339,6 +339,7 @@
 				$xml .= "<SPEEDOMETER>".$this->input->post('speedometer')."</SPEEDOMETER>";
 				$xml .= "<TACHOMETER>".$this->input->post('tachometer')."</TACHOMETER>";
 				$xml .= "<LIGHTTYPE>".$this->input->post('lightType')."</LIGHTTYPE>";
+				$xml .= "<EMISSIONSTANDARD>".$this->input->post('emissionStandard')."</EMISSIONSTANDARD>";
 			}
 			if($type=='Feature'){
 				$xml .= "<AIRBAGS>".$this->input->post('airbags')."</AIRBAGS>";
@@ -369,6 +370,12 @@
 				$xml .= "<FILETYPE>".$this->input->post('fileType')."</FILETYPE>";
 				$xml .= "<FILEPATH>".$this->input->post('filePath')."</FILEPATH>";
 				$xml .= "<FILETITLE>".$this->input->post('fileTitle')."</FILETITLE>";
+			}
+			if($type=='DigitalMarketing'){
+				$xml .= "<H1TAG>".$this->input->post('h1Tag')."</H1TAG>";
+				$xml .= "<METATITLE>".$this->input->post('metaTitle')."</METATITLE>";
+				$xml .= "<METAKEYWORDS>".$this->input->post('metaKeywords')."</METAKEYWORDS>";
+				$xml .= "<METADESC>".$this->input->post('metaDesc')."</METADESC>";
 			}
 			if($type=='copyProduct' || $type=='delProduct' || $type=='delShowcaseProducts'){
 				
