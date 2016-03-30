@@ -418,10 +418,10 @@ if($pageName=='Bodytype'){
 										'<div class="col-md-6 col-sm-6">'+
 											'<a href="<?php echo $prefix;?>/home/details'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
 											'<ul class="product-variant">'+
-												'<li><i class="fa fa-car"></i>'+data[i]['body_type']+'</li>'+
-												'<li><i class="fa fa-cog"></i>'+data[i]['transmission']+'</li>'+
-												'<li><i class="fa fa-clock-o"></i>'+data[i]['mileage']+' kmpl</li>'+
-												'<li><i class="fa fa-filter"></i>'+data[i]['fuelType']+'</li>'+
+												'<li><i class="fa fa-car"></i>&nbsp; '+data[i]['body_type']+'</li>'+
+												'<li><i class="fa fa-cog"></i>&nbsp; '+data[i]['transmission']+'</li>'+
+												'<li><i class="fa fa-clock-o"></i>&nbsp; '+data[i]['mileage']+' kmpl</li>'+
+												'<li><i class="fa fa-filter"></i>&nbsp; '+data[i]['fuelType']+'</li>'+
 											'</ul>'+
 										'</div>'+
 										'<div class="col-md-3 col-sm-3 text-center">'+
