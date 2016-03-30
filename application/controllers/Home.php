@@ -37,13 +37,14 @@ class Home extends CI_Controller {
 		$this->load->view('home/index',$data);
 	}
 	public function searchList($page,$id=""){
-		if($page=='latest' || $page=='upcoming' || $page=='popular' || $page=='bodytype' || $page=='categorytype'){
+		if($page=='latest' || $page=='upcoming' || $page=='popular' || $page=='bodytype' || $page=='category'){
 			$pageData['currentPage'] = strtoupper($page);
 			$data['header'] = $this->load->view('templates/header',$pageData,true);
 			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-			$data['pageName'] = strtoupper($page);
+			$data['pageName'] = ucfirst($page);
 			$data['typeID'] = '';
-			if($page=='bodytype' || $page=='categorytype'){
+			if($page=='bodytype' || $page=='category'){
+				$data['getTType'] = $this->manage_products_model->getTrendType('ALL');
 				$data['getTID'] = '';
 				$data['trendsTypeID']='';
 				$data['typeID'] = $id;
@@ -55,7 +56,7 @@ class Home extends CI_Controller {
 			
 			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
 			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
-			$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID'],$page,$id);
+			//$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID'],$page,$id);
 			$data['categories']= $this->home_model->getTrendData('Category','');
 			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
 			

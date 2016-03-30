@@ -3,19 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
 function convertNum($n) {
-		// first strip any formatting;
-		$n = (0+str_replace(",","",$n));
-		
-		// is this a number?
-		if(!is_numeric($n)) return false;
-		
-		// now filter it;
-		if($n>10000000) return round(($n/10000000),2).' Cr';
-		else if($n>100000) return round(($n/100000),2).' L';
-		else if($n>1000) return round(($n/1000),2).' Thousands';
-		
-		return number_format($n);
-	}
+	// first strip any formatting;
+	$n = (0+str_replace(",","",$n));
+	
+	// is this a number?
+	if(!is_numeric($n)) return false;
+	
+	// now filter it;
+	if($n>10000000) return round(($n/10000000),2).' Cr';
+	else if($n>100000) return round(($n/100000),2).' L';
+	else if($n>1000) return round(($n/1000),2).' Thousands';
+	
+	return number_format($n);
+}
+$bodyTypeID = "";
+if($pageName=='Bodytype'){
+	$bodyTypeID = $typeID;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,13 +56,22 @@ function convertNum($n) {
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
 							SELECT CATEGORY <i class="fa fa-minus"></i>
+							<input type="hidden" id="bodyTypeID" name="bodyTypeID" value="<?php echo $bodyTypeID; ?>"/>
+							<input type="hidden" id="trendTypeID" name="trendTypeID" value="<?php echo $trendsTypeID; ?>"/>
+							<input type="hidden" id="orderBy" name="orderBy" value=""/>
 						</div>
 						<center>
 							<select class="form-control select2" id="search_category" style="width:95%;">
 								<option value='ALL' selected>ALL</option>
 								<?php 
 									foreach($categoryDetails as $CD){
-										echo "<option value='".$CD['categoryID']."'>".$CD['categoryName']."</option>";
+										echo "<option value='".$CD['categoryID']."'";
+										if($pageName=='Category'){
+											if($typeID==$CD['categoryID']){
+												echo "selected";
+											}
+										} 
+										echo ">".$CD['categoryName']."</option>";
 									}
 								?>
 							</select>
@@ -187,10 +200,25 @@ function convertNum($n) {
 							EMISSION STANDARD <i class="fa fa-minus"></i>
 						</div>
 						<div class="checkbox">
-						  <label><input type="checkbox" value="">BS III</label>
+						  <label><input type="checkbox" class="emissionStandard" value="BS-I">BS I</label>
 						</div>
 						<div class="checkbox">
-						  <label><input type="checkbox" value="">BS IV</label>
+						  <label><input type="checkbox" class="emissionStandard" value="BS-II">BS II</label>
+						</div>
+						<div class="checkbox">
+						  <label><input type="checkbox" class="emissionStandard" value="BS-III">BS III</label>
+						</div>
+						<div class="checkbox">
+						  <label><input type="checkbox" class="emissionStandard" value="BS-IV">BS IV</label>
+						</div>
+						<div class="checkbox">
+						  <label><input type="checkbox" class="emissionStandard" value="BS-V">BS V</label>
+						</div>
+						<div class="checkbox">
+						  <label><input type="checkbox" class="emissionStandard" value="BS-VI">BS VI</label>
+						</div>
+						<div class="checkbox">
+						  <label><input type="checkbox" class="emissionStandard" value="BS-VII">BS VII</label>
 						</div>
 					</div>
 					<div class="filter-powersteering">
@@ -215,88 +243,22 @@ function convertNum($n) {
 				</div>
 				<div class="col-md-9 col-sm-9 pl-0">
 					<div class="sort-by">
-						<span>Showing 1-12 of 202 </span>
+						<span id="showing">Loading....</span>
 						<ul class="pull-right">
 							<li>Sort By</li>
-							<li>Price</li>
-							<li>Popularity</li>
-							<li>Latest</li>
+							<li id='orderByPrice'><a href='javascript:void(0);'> Price</a></li>
+							<?php 
+							if($pageName=='Bodytype' || $pageName == 'Category'){	
+								foreach($getTType as $gT){
+									echo "<li data-id=".$gT['trendsTypeID']." class='trType'><a href='javascript:void(0);'> ".$gT['trendsTypeName']."</a></li>";
+									
+								}
+								}	?>
+							
 						</ul>
 					</div>
 					
 					<div id="table_data">
-					<?php
-						$variantID=array();
-						$productID=array();
-						$sum=array();
-						
-						foreach($trendDetails as $TD){
-							if(in_array($TD['productID'],$productID)){
-							}else{
-								$productID[]=$TD['productID'];
-								if(in_array($TD['variantID'],$variantID)){
-								}else{
-									$variantID[]=$TD['variantID'];
-								?>
-								<div class="product-car">
-									<div class="row">
-										<div class="col-md-3 col-sm-3">
-											<a href="<?php echo $prefix;?>/home/details"><img src="<?php echo $prefix.'/'.$TD['coverImage'];?>" alt="<?php echo $TD['productName']; ?>"></a>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<a href="<?php echo $prefix;?>/home/details"><h4><?php echo $TD['productName']; ?></h4></a>
-											<ul class="product-variant">
-												<li><i class="fa fa-car"></i> <?php echo $TD['body_type']; ?></li>
-												<li><i class="fa fa-cog"></i> <?php echo $TD['transmission']; ?></li>
-												<li><i class="fa fa-clock-o"></i>  <?php echo $TD['mileage']; ?> kmpl</li>
-												<li><i class="fa fa-filter"></i><?php echo $TD['fuelType']; ?></li>
-											</ul>
-										</div>
-										<div class="col-md-3 col-sm-3 text-center">
-											<?php 
-											$sum=array();
-											$variantID1=array();
-											$variantName=array();
-											foreach($trendDetails as $TD1){
-												if($TD1['productID']==$TD['productID']) {
-														if(in_array($TD1['variantID'],$variantID1)){
-															$sum[]=$TD1['exShowroomPrice'];
-														}else{
-															$sum=array();
-															$variantID1[]=$TD1['variantID'];
-															$sum[]=$TD1['exShowroomPrice'];
-															$variantName[]=$TD1['variantName'];
-														}
-												}
-											}
-											?>
-											<div class="product-price"><i class="fa fa-inr"></i> <?php echo convertNum(min($sum)).' - '.convertNum(max($sum)); ?> </div>
-											<span class="product-on-road">(On-road Proce <b>
-											<?php 
-											$cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore";
-											echo $cityName; 
-											?></b>)</span>
-										</div>
-										<div class="col-md-12 col-sm-12 text-center">
-											<div class="dropdown">
-												<div data-toggle="dropdown"><?php echo count($variantID1); ?> variants available<span class="caret"></span></div>
-												<ul class="dropdown-menu">
-													<?php 
-														foreach($variantName as $vN){
-															echo "<li><a href='".$prefix.'/home/details/'.$TD['productID']."'>".$vN."</a></li>";
-														}
-													?>
-													
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-						<?php 
-								}
-							}
-						}
-					?>
 					</div>
 				</div>
 			</div>
@@ -324,6 +286,7 @@ function convertNum($n) {
 			placeholder: "Select",
 			allowClear: true
 		});
+		getData();
 		$("#ex1").slider({tooltip: 'always'});
 		$("#ex2").slider({tooltip: 'always'});
 		$("#ex3").slider({tooltip: 'always'});
@@ -347,6 +310,7 @@ function convertNum($n) {
 		getData();
 	});
 	$("#search_category").on('change',function(){
+		$('#bodyTypeID').val('');
 		getData();
 	});
 	$("#search_manufacture").on('change',function(){
@@ -367,6 +331,17 @@ function convertNum($n) {
 	$(".dealerID").click(function(){
 		getData();
 	});
+	$(".trType").click(function(){
+		$("#trendTypeID").val($(this).data("id"));
+		getData();
+	});
+	$("#orderByPrice").click(function(){
+		$("#orderBy").val($(this).val());
+		getData();
+	});
+	$(".emissionStandard").click(function(){
+		getData();
+	});
 	function convertNum(n) {
 		// first strip any formatting;
 		//n = (0+str_replace(",","",n));
@@ -382,10 +357,12 @@ function convertNum($n) {
 		return n;
 	}
 	function getData(){
+		var bodyTypeID = $("#bodyTypeID").val();
 		var power_streering = $('input:checkbox:checked.power_streering').map(function(){return this.value; }).get().join(",");
 		var transmission = $('input:checkbox:checked.transmission').map(function(){return this.value; }).get().join(",");
 		var seatCapacity = $('input:checkbox:checked.seatCapacity').map(function(){return this.value; }).get().join(",");
 		var dealerID = $('input:checkbox:checked.dealerID').map(function(){return this.value; }).get().join(",");
+		var emissionStandard = $('input:checkbox:checked.emissionStandard').map(function(){return this.value; }).get().join(",");
 		var categoryID=$("#search_category").val();
 		var manufactureID=$("#search_manufacture").val();
 		var fuelType=$("#search_fuelType").val();
@@ -394,14 +371,16 @@ function convertNum($n) {
 		var displacement=$("#ex3").val();
 		var waitingPeriod=$("#ex5").val();
 		var power=$("#ex6").val();
-		var trendsTypeID='<?php echo $trendsTypeID; ?>';
+		var trendsTypeID=$("#trendTypeID").val();
+		var orderBy=$("#orderBy").val();
 		$.ajax({
 			url:'<?php echo $prefix; ?>/home/getTrendData/ALL',
 			dataType:'JSON',
 			type:'POST',
-			data:{'categoryID':categoryID,'manufactureID':manufactureID,'fuelType':fuelType,'power_streering':power_streering,'transmission':transmission,'trendsTypeID':trendsTypeID,'price':price,'mileage':mileage,'displacement':displacement,'waitingPeriod':waitingPeriod,'power':power,'seatCapacity':seatCapacity,'dealerID':dealerID}
+			data:{'categoryID':categoryID,'manufactureID':manufactureID,'fuelType':fuelType,'power_streering':power_streering,'transmission':transmission,'trendsTypeID':trendsTypeID,'price':price,'mileage':mileage,'displacement':displacement,'waitingPeriod':waitingPeriod,'power':power,'seatCapacity':seatCapacity,'dealerID':dealerID, 'bodyTypeID':bodyTypeID, 'orderBy':orderBy, 'emissionStandard':emissionStandard}
 		}).done(function(data){
 			var html='';
+			var totalCount=0;
 			var vID=[100];
 			var pID=[100];
 			var vID1=[100];
@@ -414,12 +393,14 @@ function convertNum($n) {
 					  vID[vID.length]=data[i]['variantID'];
 					   var sum=[];
 					   var variantName=[];
+					   var slugName=[];
 						for(var j=0;j<data1.length;j++){
 							if(data1[j]['productID']==data[i]['productID']){
 								if($.inArray(data1[j]['variantID'],vID1)<0){
 									vID1[vID1.length]=data1[j]['variantID'];
 									sum[sum.length]=data1[j]['exShowroomPrice'];
 									variantName[variantName.length]=data1[j]['variantName'];
+									slugName[slugName.length]=data1[j]['slugName'];
 								}else{
 									sum[sum.length]=data1[j]['exShowroomPrice'];
 								}
@@ -428,7 +409,7 @@ function convertNum($n) {
 						var min=convertNum(Math.min.apply(Math, sum));
 						var max=convertNum(Math.max.apply(Math, sum));
 						//Math.min.apply(Math, sum)+' - '+Math.max.apply(Math, sum)+
-						
+						totalCount++;
 						html += '<div class="product-car">'+
 									'<div class="row">'+
 										'<div class="col-md-3 col-sm-3">'+
@@ -453,7 +434,7 @@ function convertNum($n) {
 												'<div data-toggle="dropdown">'+variantName.length+' variants available<span class="caret"></span></div>'+
 												'<ul class="dropdown-menu">';
 												for(var k=0;k<variantName.length;k++){
-													html+='<li><a href="<?php echo $prefix.'/home/details/';?>'+data[i]['productID']+'">'+variantName[k]+'</a></li>';
+													html+='<li><a href="<?php echo $prefix.'/home/details/';?>'+slugName[k]+'">'+variantName[k]+'</a></li>';
 												}
 												html+='</ul>'+
 											'</div>'+
@@ -466,6 +447,12 @@ function convertNum($n) {
 				}else{
 					
 				}
+			}
+			if(totalCount>0){
+				var result="Showing 1-"+totalCount+" of "+totalCount;
+				$("#showing").html(result);
+			}else{
+				$("#showing").html("No result Found");
 			}
 			$("#table_data").html(html);
 		});

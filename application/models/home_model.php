@@ -165,7 +165,7 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
-	public function getVariantDetail($vType,$vID=''){
+	public function getVariantDetail($vType,$vID){
 		$query = $this->db->query("CALL usp_getVariantDetail('".$vType."','".$vID."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
@@ -484,6 +484,7 @@ class Home_model extends CI_Model{
 	public function getTrendData($vType,$trendTypeID='',$page='',$id=''){
 		$categoryID='';
 		$manufactureID='';
+		$bodyTypeID='';
 		$fuelType='';
 		$power_streering='';
 		$transmission='';
@@ -500,6 +501,8 @@ class Home_model extends CI_Model{
 		$maxPow='';
 		$seatCapacity='';
 		$dealerID='';
+		$orderBy='';
+		$emissionStandard='';
 		$cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore";
 		if($page=='bodytype' || $page=='categorytype'){
 			$trendsTypeID=$id;
@@ -522,22 +525,34 @@ class Home_model extends CI_Model{
 			$waitingPeriod=$this->input->post('waitingPeriod');
 			$power=$this->input->post('power');
 			$dealerID=$this->input->post('dealerID');
+			$bodyTypeID=$this->input->post('bodyTypeID');
+			$orderBy=$this->input->post('orderBy');
+			$emissionStandard=$this->input->post('emissionStandard');
 			$min=explode(',',$price);
 			$mile=explode(',',$mileage);
 			$disp=explode(',',$displacement);
 			$waitPeriod=explode(',',$waitingPeriod);
 			$pow=explode(',',$power);
-			$minprice=$min[0];
-			$maxprice=$min[1];
-			$minMileage=$mile[0];
-			$maxMileage=$mile[1];
-			
-			$minDisp=$disp[0];
-			$maxDisp=$disp[1];
-			$minWaitPeriod=$waitPeriod[0];
-			$maxWaitPeriod=$waitPeriod[1];
-			$minPow=$pow[0];
-			$maxPow=$pow[1];
+			if(count($min)==2){
+				$minprice=$min[0];
+				$maxprice=$min[1];
+			}
+			if(count($mile)==2){
+				$minMileage=$mile[0];
+				$maxMileage=$mile[1];
+			}
+			if(count($disp)==2){
+				$minDisp=$disp[0];
+				$maxDisp=$disp[1];
+			}
+			if(count($waitPeriod)==2){
+				$minWaitPeriod=$waitPeriod[0];
+				$maxWaitPeriod=$waitPeriod[1];
+			}
+			if(count($pow)==2){
+				$minPow=$pow[0];
+				$maxPow=$pow[1];
+			}
 			$seatCapacity=$this->input->post('seatCapacity');
 			
 			//$xml1 .= "<SEATS>";
@@ -574,7 +589,7 @@ class Home_model extends CI_Model{
 			if($transmission=='Manual,Automatic'){ $transmission='';}
 		}
 		$xml1 .= "</SEATS>";
-		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><PAGENAME>".$page."</PAGENAME><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE><MINDISP>".$minDisp."</MINDISP><MAXDISP>".$maxDisp."</MAXDISP><MINWAITPERIOD>".$minWaitPeriod."</MINWAITPERIOD><MAXWAITPERIOD>".$maxWaitPeriod."</MAXWAITPERIOD><MINPOW>".$minPow."</MINPOW><MAXPOW>".$maxPow."</MAXPOW>".$xml1."<DEALERID>".$dealerID."</DEALERID><CITYNAME>".$cityName."</CITYNAME></HEADER></ROOT>";
+		$xml = "<ROOT><HEADER><CATEGORYID>".$categoryID."</CATEGORYID><MANUFACTUREID>".$manufactureID."</MANUFACTUREID><FUELTYPE>".$fuelType."</FUELTYPE><POWERSTEERING>".$power_streering."</POWERSTEERING><TRANSMISSION>".$transmission."</TRANSMISSION><PAGENAME>".$page."</PAGENAME><TRENDSTYPEID>".$trendsTypeID."</TRENDSTYPEID><MINPRICE>".$minprice."</MINPRICE><MAXPRICE>".$maxprice."</MAXPRICE><MAXMILEAGE>".$maxMileage."</MAXMILEAGE><MINMILEAGE>".$minMileage."</MINMILEAGE><MINDISP>".$minDisp."</MINDISP><MAXDISP>".$maxDisp."</MAXDISP><MINWAITPERIOD>".$minWaitPeriod."</MINWAITPERIOD><MAXWAITPERIOD>".$maxWaitPeriod."</MAXWAITPERIOD><MINPOW>".$minPow."</MINPOW><MAXPOW>".$maxPow."</MAXPOW>".$xml1."<DEALERID>".$dealerID."</DEALERID><CITYNAME>".$cityName."</CITYNAME><BODYTYPEID>".$bodyTypeID."</BODYTYPEID><ORDERBY>".$orderBy."</ORDERBY><EMISSIONSTANDARD>".$emissionStandard."</EMISSIONSTANDARD></HEADER></ROOT>";
 		//echo htmlspecialchars($xml); exit();
 		$query = $this->db->query("CALL usp_getTrendData('".$vType."','".$xml."')");
 		mysqli_next_result($this->db->conn_id);

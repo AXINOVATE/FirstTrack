@@ -20,7 +20,7 @@ class Services extends CI_Controller {
 	public function getManufatureDetails(){		
 		echo json_encode($this->manage_products_model->getManufatureDetails('ALL'));
 	}
-	public function getVariantDetail($vType,$vID=''){						
+	public function getVariantDetail($vType, $vID=''){
 		echo json_encode($this->home_model->getVariantDetail($vType,$vID));
 	}
 

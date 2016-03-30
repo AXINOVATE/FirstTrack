@@ -53,26 +53,20 @@
 		get_rtd_cities();
 		get_rtd_categories();					
 		get_rtd_manufacture();
-		get_rtd_varient();
+		//get_rtd_varient();
 	});
 	$('#adv-book,#adv-book1').on('click', function(){	
 		adv_getCatDetails();
 		//get_cities("abCity");				
 		get_manufacture_adv();
-		get_variant_adv();
+		//get_variant_adv();
 	});
-
-	$('#adv-book,#adv-book1').on('click', function(){	
-		requestTD_getcityDetails();
-		//get_cities("abCity");				
-		requestTD_manufacture_adv();
-		requestTD_variant_adv();
-	});	
+	
 	$('#GetProformaInvoice').on('click' , function(){
 		get_gpi_cities();
 		get_gpi_categories();					
 		get_gpi_manufacture();
-		get_gpi_varient();
+		//get_gpi_varient();
 		
 	});
 	
@@ -102,11 +96,17 @@
 	$('#btn_apply_vehicle_loan').on('click' ,function(){
 		xu_validation.form_submit('#apply_for_vehicle_loan','save_vehicle_loan');		
 	});
+	$(document).on('click', 'a', function(e){
+		var href = $(this).attr('href');
+		if(href == '#'){
+			e.preventDefault();
+		}
+	});
 	$("#vehicle-loan,#vehicle-loan1").on('click',function(){
-		get_vehlone_cities();
+		get_vehlone_cities(); 
 		get_vehlone_categories();
 		get_vehlone_manufacture();
-		get_vehlone_varient();
+		//get_vehlone_varient();
 	});
 	$('#insurance-save').on('click' ,function(){
 		xu_validation.form_submit('#Apply-for-insurance','save_apply_for_insurance');		
@@ -114,7 +114,7 @@
 	$("#apply-for-insurance,#apply-for-insurance1").on('click',function(){
 		get_insurance_cities();
 		get_insurance_manufacture();
-		get_insurance_varient();
+		//get_insurance_varient();
 	});
 	
 	
@@ -126,7 +126,7 @@
 		get_corp_cities();
 		get_corp_categories();
 		get_corp_manufacture();
-		get_corp_varient();
+		//get_corp_varient();
 	});
 	
 	
@@ -144,9 +144,10 @@
 		get_road_cities();
 		get_road_categories();
 		get_road_manufacture();
-		get_road_varient();
+		//get_road_varient();
 	});
 	$("#get_instant_quote_popup").on('click',function(){
+
 		get_all_country("instquote_country");
 		get_categories("instquote_category");
 		//get_instant_maker();
@@ -164,7 +165,7 @@ var path = '/FirstTrack';
 function getStates(data,callback,selectValue){
 	var callback="#"+callback;
 	$.ajax({
-		url:path+'/home/location_detail/PSTATE/'+data.value,
+		url:prefix+'/home/location_detail/PSTATE/'+data.value,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -185,7 +186,7 @@ function getStates(data,callback,selectValue){
 function getCities(data,callback,selectValue){
 	var callback="#"+callback;
 	$.ajax({
-		url:path+'/home/location_detail/PCITY/'+data.value,
+		url:prefix+'/home/location_detail/PCITY/'+data.value,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -206,7 +207,7 @@ function getCities(data,callback,selectValue){
 function getLocations(data,callback,selectValue){
 	var callback="#"+callback;
 	$.ajax({
-		url:path+'/home/location_detail/PLOCATION/'+data.value,
+		url:prefix+'/home/location_detail/PLOCATION/'+data.value,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -271,16 +272,17 @@ function get_categories(callback){
 		$(callback).html(html);
 	});
 }
-function get_variant(callback){
+function get_variant(callback,id){
 	var callback="#"+callback;
+	var html="";
 	$.ajax({
-		url:prefix+'/services/getVariantDetail/ALL',
+		url:prefix+'/services/getVariantDetail/ALL/'+id,
 		type:'POST',
-		processData: true,
+		data:{},
 		dataType:'JSON'
 	}).done(function(data){
 		var len=data.length;
-		html = "<option value=''>-- Select Varient --</option>";
+		html += "<option value=''>-- Select Varient --</option>";
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
 		}
@@ -294,7 +296,9 @@ function get_manufacture(callback){
 		vID = $("#instquote_category").val();
 	}
 	var callback="#"+callback;
-	
+
+	var html="";
+
 	$.ajax({
 		url:prefix+'/home/get_manufacture_detail/'+vType+'/'+vID,
 		type:'POST',
@@ -302,7 +306,7 @@ function get_manufacture(callback){
 		dataType:'JSON'
 	}).done(function(data){
 		var len=data.length;
-		html = "<option value=''>-- Select Maker --</option>";
+		html += "<option value=''>-- Select Maker --</option>";
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].manufactureID+"' >"+data[i].manufactureName+"</option>";
 		}
@@ -320,22 +324,13 @@ function get_gpi_categories(){
 function get_gpi_manufacture(){
 	get_manufacture("gpi_maker");
 }
-function get_gpi_varient(){
-	get_variant("gpi_variant");
-}
+$("#gpi_model").on('change',function(){
+	get_variant("gpi_variant",$(this).val());
+});
 /* -------------------------- End GetProformaInvoice start --------------------------*/
 /*--------------------- Vechicle loan Popup Stats Here -------------*/
 function get_vehlone_cities(){
 	get_cities("vehlone_city");
-}
-function adv_getCatDetails(){
-	get_cities("abCity");
-}
-function get_variant_adv(){
-	get_variant("abVariant");
-}
-function get_manufacture_adv(){
-	get_manufacture("abMaker");
 }
 function get_vehlone_categories(){
 	get_categories("vehlone_category");
@@ -343,11 +338,12 @@ function get_vehlone_categories(){
 function get_vehlone_manufacture(){
 	get_manufacture("vehlone_maker");
 }
-function get_vehlone_varient(){
-	get_variant("vehlone_variant");
-}
 $("#vehlone_maker").on('change',function(){	
 	get_particular_model("vehlone_maker","vehlone_model");	
+});
+$("#vehlone_model").on('change',function(){	
+	get_variant("vehlone_variant", $(this).val());
+	return false;
 });
 function save_vehicle_loan(){
 	var fullname=$("#vehlone_username").val();
@@ -413,9 +409,9 @@ function get_corp_categories(){
 function get_corp_manufacture(){
 	get_manufacture("corp_maker");
 }
-function get_corp_varient(){
-	get_variant("corp_variant");
-}
+$("#corp_model").on('change',function(){
+	get_variant("corp_variant",$(this).val());
+});
 $("#corp_maker").on('change',function(){
 	var maID=$(this).val();
 	$.ajax({
@@ -489,10 +485,17 @@ function get_instant_category(){
 }
 $('#instquote_category').on('change',function(){
 	get_manufacture("instquote_maker");
+
 });
 function get_instant_variant(){
 	get_variant("instquote_variant");
 }
+
+
+$("#instquote_model").on('change',function(){
+	get_variant("instquote_variant", $(this).val());
+});
+
 $('#instquote_country').on('change',function(){
 	var country_id=$(this).val();
 	$.ajax({
@@ -581,6 +584,16 @@ function save_instant_quote(){
 }
 /*---------------------GET INSTANCE QUOTE POPUP ENDS --------------*/
 /* Advanced Booking Starts Here */
+
+function adv_getCatDetails(){
+	get_cities("abCity");
+}
+$("#abModel").on('change',function(){
+	get_variant("abVariant",$(this).val());
+});
+function get_manufacture_adv(){
+	get_manufacture("abMaker");
+}
 function adv_get_cities(){	
 	$.ajax({
 		url:prefix+'/services/get_city',
@@ -623,9 +636,9 @@ function adv_getManufatureDetails(){
 		});
 
 }
-function adv_getVariantDetail(){	
+function adv_getVariantDetail(id){	
 	$.ajax({
-		url:prefix+'/services/getVariantDetail/ALL/null',
+		url:prefix+'/services/getVariantDetail/ALL/'+id,
 		data:{},
 		type:'POST',
 		processData: true,
@@ -682,9 +695,9 @@ function get_rtd_categories(){
 function get_rtd_manufacture(){
 	get_manufacture("RTD_Maker");
 }
-function get_rtd_varient(){
-	get_variant("RTD_Variant");
-}
+$("#RTD_Model").on('change',function(){
+	get_variant("RTD_Variant", $(this).val());
+});
 function Request_TestDrive_Save(){
 	$.ajax({
 			url:prefix+'/services/Request_for_TestDrive',
@@ -727,9 +740,9 @@ function get_road_categories(){
 function get_road_manufacture(){
 	get_manufacture("boraMaker");
 }
-function get_road_varient(){
-	get_variant("boraVarient");
-}
+$("#boraModel").on('change',function(){
+	get_variant("boraVarient", $(this).val());
+});
 $("#boraMaker").on('change',function(){
 	get_particular_model("boraMaker","boraModel");		
 });
@@ -811,11 +824,11 @@ function get_insurance_cities(){
 function get_insurance_manufacture(){
 	get_manufacture("insurance_maker");
 }
-function get_insurance_varient(){
-	get_variant("insurance_variant");
-}
 $("#insurance_maker").on('change',function(){	
 	get_particular_model("insurance_maker","insurance_model");		
+});
+$("#insurance_model").on('change',function(){	
+	get_variant("insurance_variant", $(this).val());	
 });
 function save_apply_for_insurance(){
 	var vType="INSERT";
@@ -880,7 +893,7 @@ function get_particular_model(manufacture_control_name,model_control_name){
 			dataType:'JSON'
 			}).done(function(data){
 				if(data.length > -1){					
-					$(model_control_name).html('');					
+					$(model_control_name).html('<option value="">------ Select Model -------</option>');					
 					var i=0;
 					for(i=0;i< data.length;i++){
 						$(model_control_name).append('<option value="'+data[i]['modelID']+'">'+data[i]['modelName']+'</option>');
