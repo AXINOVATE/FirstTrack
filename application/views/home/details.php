@@ -125,7 +125,7 @@ $prefix=$this->config->item('prefix');
 					<?php $priceCheck = 0; if(isset($prices->onRoadPrice)) $priceCheck = $prices->onRoadPrice;
 					if($priceCheck == 0){?>
 					<div class="alert alert-danger mt-20">
-						Prices are not available  
+						Prices are not available in <strong><?php echo $this->session->userdata('cityID'); ?></strong> for this variant and dealer
 					</div>		
 					<?php }else{ ?>	
 					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
