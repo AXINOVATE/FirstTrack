@@ -31,6 +31,7 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['Car'] = $this->home_model->getBodyTypeEach('Car');
+		//var_dump($data['Car']); exit();
 		$data['Bike'] = $this->home_model->getBodyTypeEach('Bike');
 		$data['More'] = $this->home_model->getBodyTypeEach('More');
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
@@ -429,6 +430,9 @@ class Home extends CI_Controller {
 	public function add_InstantQuotes(){
 		echo json_encode($this->home_model->add_InstantQuotes());
 	}
+	public function add_dropAQuery(){
+		echo json_encode($this->home_model->add_dropAQuery());
+	}
 	public function getTrendData($vType){
 		echo json_encode($this->home_model->getTrendData($vType));
 
@@ -562,7 +566,14 @@ class Home extends CI_Controller {
 	}
 	public function login(){		
 		$pageData['currentPage'] = 'LOGIN';
-		if($this->session->userdata('login'))redirect(base_url());
+		if($this->session->userdata('login')){
+			if($this->session->userdata('roleName')=='ADMIN'){
+				redirect(base_url('admin/admin_dashboard'));
+			}
+			else{
+				redirect(base_url());
+			}
+		}
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/login',$data);

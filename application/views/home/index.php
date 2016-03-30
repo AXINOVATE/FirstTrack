@@ -219,7 +219,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/road-assistance.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name">By On Road <br/> Assistance </div>
+							<div class="car-type-name">Buy On Road <br/> Assistance </div>
 						</center>
 					</div>
 					</a>

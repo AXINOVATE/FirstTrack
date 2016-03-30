@@ -162,7 +162,9 @@ $prefix=$this->config->item('prefix');
 					<div class="f-btn"><i class="fa fa-download"></i> Download Brochure</div>
 				</div>
 				<div class="col-md-4">
+					<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" style="text-decoration:none;">
 					<div class="f-btn"><i class="fa fa-pencil-square-o"></i> Drop a query</div>
+					</a>
 				</div>
 				<div class="col-md-4">
 					<div class="f-btn"><i class="fa fa-comment"></i> Chat with us</div>

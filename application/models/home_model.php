@@ -481,6 +481,37 @@ class Home_model extends CI_Model{
 				return $vresult;
 			}
 	}
+	
+	public function add_dropAQuery(){
+		$vresult['status'] = "Failed";
+		$xml ="<ROOT>
+					<HEADER>";
+		$vType = $this->input->post('vType');
+		$fullname = $this->input->post('fullname');
+		$phone = $this->input->post('phone');
+		$email = $this->input->post('email');
+		$query = $this->input->post('query');
+				$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
+						<FULLNAME>".$fullname."</FULLNAME>
+						<PHONE>".$phone."</PHONE>
+						<EMAIL>".$email."</EMAIL>
+						<QUERY>".$query."</QUERY>
+					</HEADER>
+				</ROOT>";
+		$rndS=$this->randStrGen();
+		$query = $this->db->query("CALL usp_insUpdDropAQuery('".$xml."',@vresult)");
+		$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+		//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+
+		mysqli_next_result($this->db->conn_id);	
+		if ($query1[0][$rndS] == "Success"){
+			$vresult['status'] = "Success";
+			return $vresult;
+		}else{
+			return $vresult;
+		}
+	}
+	
 	public function getTrendData($vType,$trendTypeID='',$page='',$id=''){
 		$categoryID='';
 		$manufactureID='';

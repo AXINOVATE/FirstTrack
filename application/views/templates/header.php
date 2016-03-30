@@ -1217,7 +1217,67 @@ $prefix=$this->config->item('prefix');
 	</div>
 	<!-- get-instant-quote model ends here -->	
 	
+	<!-- Drop a Query Modal starts here -->
+	<div class="modal fade blue-modals" id="drop-a-query-modal" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="text-center modal-title">Drop a Query</h4>
+				</div>
+				<div class="modal-body">	
+					<form class="form-horizontal" name="drop_a_query_form" role="form"  method="POST" id="drop_a_query_form" submit="return false">				
+					<div class="form-group">
+						<label for="dq_fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">							
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+							<input type="text" name="dq_fullName" id="dq_fullName" va_req="true" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dq_phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">							
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+							<input type="text" class="form-control" va_req="true" name="dq_phone" id="dq_phone" placeholder="eg. 9874563110" />					
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dq_emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+							<input type="text" class="form-control"  name="dq_emailID" id="dq_emailID" va_req="true" va_email="true"  placeholder="tony@gmail.com" />				
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dq_query" class="col-md-3 col-sm-3 col-xs-12 control-label">Query</label>
+						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">
+							<textarea type="text" rows="4" class="form-control"  name="dq_query" id="dq_query" va_req="true"  placeholder="Drop your query here"></textarea>				
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<a href="javascript:void(0)" class="search-btn" id="drop_a_query_btn" style="background-color:#F9D133;" >Save</a>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Drop a query modal ends here -->
 	
+<div class="sticky" id="sticky">
+	<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" id="dq_open" style="text-decoration:none;">
+		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback/ Ask the Experts </br><b>+919900151719</b></span>
+	</a>
+</div>
 	
 	
  

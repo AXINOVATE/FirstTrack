@@ -560,3 +560,10 @@ body{font-family:Century Gothic !important;}
 
 }
 /* Deal Page CSS ends here	*/
+
+
+
+.sticky { position: fixed; right: 33px; top: 220px;}
+
+.sticky-btn { padding: 6px; background: #F9D133; color: #000; border-radius:3px; position: absolute; left: -79px; top: 35px; height: 65px; width:160px; font-size: 12px !important; cursor: pointer; text-align: center; -webkit-transform: rotate(-90deg);}
+.sticky-btn b{font-size: 16px;}

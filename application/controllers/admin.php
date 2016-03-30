@@ -9,6 +9,20 @@ class Admin extends CI_Controller {
 		$this->load->model('manage_products_model');
 		$this->load->model('dashboard_model');
 	}
+	public function index(){		
+		$pageData['currentPage'] = 'LOGIN';
+		if($this->session->userdata('login')){
+			if($this->session->userdata('roleName')=='ADMIN'){
+				redirect(base_url('admin/admin_dashboard'));
+			}
+			else{
+				redirect(base_url());
+			}
+		}
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/login',$data);
+	}
 	public function admin_dashboard()
 	{		
 		$pageData['currentPage'] = 'DASHBOARD';

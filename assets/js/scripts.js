@@ -975,3 +975,43 @@ function get_locate_dealer_manufacture(){
 }
 
 /* ----------------locate dealer  end--------------------*/
+
+
+
+/* Start of Drop a Query Form*/
+$('#drop_a_query_btn').on('click' ,function(){
+	xu_validation.form_submit('#drop_a_query_form','save_dropAQuery');		
+});
+function save_dropAQuery(){
+	alert('hi');
+	var fullname=$("#dq_fullName").val();
+	var phone=$("#dq_phone").val();
+	var email=$("#dq_emailID").val();
+	var query=$("#dq_query").val();
+	
+	var vType='INSERT';
+	$.ajax({
+		url:prefix+'/home/add_dropAQuery/',
+		data:{'vType':vType,'fullname':fullname,'phone':phone,'email':email,'query':query},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){	
+			$.gritter.add({
+				title: 'Thank You',
+				text: 'We will get back to you soon!',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},1000);
+		}
+	});
+}
+/* End of Drop a Query Form*/
