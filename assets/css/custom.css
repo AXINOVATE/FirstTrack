@@ -87,6 +87,26 @@ body{font-family:Century Gothic !important;}
 /* Footer CSS starts here	*/
 .sticky-footer{background-color:#027CD5;position:fixed;width:100%;bottom:0px;}
 .f-btn{background-color:#F9D133;color:#000;padding:4px 15px;font-weight: bold;}
+.f-links h4{color:#cf0202;font-weight: bold; font-size: 20px;}
+.f-links ul{line-height: 2em;list-style-type: none;}
+.f-links ul li a{color:#333333;}
+.f-desc .logo-img{width: 270px; margin-top: 25px; height: 50px;}
+.f-desc p{color:#fff;}
+.f-desc input{ width: 100%; height: 40px; outline: none; background-color: #454545; border: 1px solid #343434; color: #FFF; padding: 0px 30px 0px 10px;}
+.f-desc h4{ color:#fff; text-transform: uppercase;   font-weight: 600;}
+.f-desc .input-group{ width:100%; }
+.f-desc .fa-paper-plane{ position: absolute; color: #D4D4D4; right: 10px;  top: 12px;}
+.f-social ul{list-style-type:none; margin: 15px 0px;}
+.f-social ul li{display: inline-block; border: 1px solid #fff; padding: 5px; width: 35px; text-align: center; color: #FFF;margin-right: 7px;}  
+.f-social ul li a{ color: #FFF;}  
+.f-social .v-count{ border: 1px solid #FFF; width: 50%; text-align: center; color: #FFF; font-size: 24px;} 
+.fs-links ul{list-style-type:none; margin-bottom: 0px;} 
+.fs-links ul li{ display: inline-block;} 
+.fs-links .heading,.fs-links p{ color:#fff;} 
+.fs-links ul li a{ font-size: 10px; font-weight: 400; line-height: 12px; color: #c5c5c5; text-transform: uppercase; border-left: 1px solid #c5c5c5; padding: 0 5px;} 
+.fs-links ul li:first-child a{border-left: 0px;padding-left: 0px;} 
+.payment a{border-left: 0px !important;}
+
 /* Footer CSS ends here	*/
 
 /* Home page CSS starts here	*/

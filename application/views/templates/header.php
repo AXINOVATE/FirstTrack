@@ -99,7 +99,7 @@ $prefix=$this->config->item('prefix');
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">EMI Calculator</a></li>
+						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
 						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
 						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate a Dealer</a></li>
 					</ul>
