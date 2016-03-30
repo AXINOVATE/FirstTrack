@@ -388,10 +388,11 @@ body{font-family:Century Gothic !important;}
 #photos ul li img { cursor: pointer;height:200px;width:100%; }
 #photos .modal-body { padding:5px !important; }
 #photos .modal-content { border-radius:0; }
-#photos .modal-dialog img { text-align:center; margin:0 auto; }
-#photos .controls{ width:50px; display:block; font-size:11px; padding-top:8px; font-weight:bold; }
+#photos .modal-dialog img { text-align:center; margin:0 auto;width:100%;height:400px; }
+#photos .controls{ width:50px; display:block; font-size:40px; padding-top:8px; font-weight:bold; }
 #photos .next { float:right; text-align:right; }
-#photos .modal-dialog { max-width:500px; padding-top: 90px; }
+#photos .modal-dialog { max-width:600px; padding-top: 20px; }
+#photos .prev-next { position: absolute; top: 40%; width: 95%; margin: 10px; }
 
 @media screen and (max-width:1500px){
 	#photos #ads { display:none; }

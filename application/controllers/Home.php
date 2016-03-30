@@ -127,7 +127,8 @@ class Home extends CI_Controller {
 			$data['videos'] = $this->home_model->getProducts('Video',"",$productID,$variantID);
 			$data['cities'] = $this->home_model->getProducts('getCities',"",$productID,$variantID);
 			
-			$data['locations'] = $this->manage_products_model->location_detail("LIST_ON_CITY",$this->config->item("default_country_id"));
+			//$data['locations'] = $this->manage_products_model->location_detail("LIST_ON_CITY",$this->config->item("default_country_id"));
+			$data['locations'] = $this->home_model->getCity();
 			
 			$data['variantID'] = $variantID;
 			$data['locationID'] = $locationID;
@@ -138,7 +139,7 @@ class Home extends CI_Controller {
 			
 			//echo $dealerID = $data['dealers'][0]->userID;
 			
-			//var_dump($data['photos']);exit();
+			//var_dump($data['videos']);exit();
 			$this->load->view('home/details',$data);
 		}
 	}

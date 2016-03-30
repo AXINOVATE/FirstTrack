@@ -17,7 +17,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		
-		
+	.model-body div{}
 	</style>
 </head>
 <body>
@@ -31,13 +31,13 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
-						<img id="item-img" src="<?php if(count($colors) > 0)if(file_exists($prefix.'/'.$colors[0]->colorImage))echo $prefix.'/'.$colors[0]->colorImage;else echo $prefix.'/assets/images/no-image.png';?>">
+						<img id="item-img" src="<?php if(count($colors) > 0)echo $prefix.'/'.$colors[0]->colorImage;//if(file_exists($prefix.'/'.$colors[0]->colorImage))echo $prefix.'/'.$colors[0]->colorImage;else echo $prefix.'/assets/images/no-image.png';?>">
 						<div class="item-colors text-right">
 							<span>Colors &nbsp;</span>
 							<input type="hidden" id="d_color" value="<?php echo $colorID; ?>">
 							<ul class="pull-right">
 								<?php foreach($colors as $c){ ?>
-								<li <?php if($colorID == $c->colorID)echo 'class="active"';?>><div style="background-color:<?php echo $c->colorCode; ?>;" data-img="<?php if(file_exists($prefix.'/'.$c->colorImage))echo $c->colorImage;else echo '/assets/images/no-image.png';?>" data-id="<?php echo $c->colorID; ?>"></div></li>
+								<li <?php if($colorID == $c->colorID)echo 'class="active"';?>><div style="background-color:<?php echo $c->colorCode; ?>;" data-img="<?php echo $c->colorImage;?>" data-id="<?php echo $c->colorID; ?>"></div></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -96,10 +96,10 @@ $prefix=$this->config->item('prefix');
 							<select class="select2" style="width:145px;" id="d_location">
 								<option value=""></option>
 								<?php foreach($locations as $l){ ?>
-								<?php if($l['locationID'] == $locationID){ ?>
-								<option value="<?php echo $l['locationID'];?>" selected><?php echo $l['location'];?></option>
+								<?php if($l['cityName'] == $this->session->userdata('cityID')){ ?>
+								<option value="<?php echo $l['cityID'];?>" selected><?php echo $l['cityName'];?></option>
 								<?php }else{?>
-								<option value="<?php echo $l['locationID'];?>"><?php echo $l['location'];?></option>
+								<option value="<?php echo $l['cityID'];?>"><?php echo $l['cityName'];?></option>
 								<?php } } ?>
 							</select>
 						</div>
@@ -119,7 +119,7 @@ $prefix=$this->config->item('prefix');
 						
 					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
 						<div class="col-md-6 col-sm-6 br-right">
-							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo $prices->onRoadPrice;?> </span> On-Road Price </div>
+							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo round($prices->onRoadPrice);?> </span> On-Road Price </div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="item-subprice"><span>Ex-Showroom </span>: <i class="fa fa-inr"></i> <?php if(isset($prices->exShowroomPrice))echo $prices->exShowroomPrice;?></div>
@@ -240,33 +240,33 @@ $prefix=$this->config->item('prefix');
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<div class="specs-title">Safety & security features</div>
 									<ul>
-										<li><div>Airbags</div><b><?php if(isset($features->airbags)) if($features->airbags=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Passenger Airbags</div><b><?php if(isset($features->passengerAirbags)) if($features->passengerAirbags=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Side Airbags</div><b><?php if(isset($features->sideAirbags)) if($features->sideAirbags=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>ABS</div><b><?php if(isset($features->ABS)) if($features->ABS=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Central Locking</div><b><?php if(isset($features->centralLocking)) if($features->centralLocking=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Child Safety Lock</div><b><?php if(isset($features->childSafetyLock)) if($features->childSafetyLock=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Rear Parking Censor</div><b><?php if(isset($features->rearParkingCensor)) if($features->rearParkingCensor=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Power Steering</div><b><?php if(isset($features->powerSteering)) if($features->powerSteering=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Adjustable Power Steering</div><b><?php if(isset($features->adjustablePowerSteering)) if($features->adjustablePowerSteering=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Fog Lamps</div><b><?php if(isset($features->fogLamps)) if($features->fogLamps=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Low Fuel Indicator</div><b><?php if(isset($features->lowFuelIndicator)) if($features->lowFuelIndicator=='Yes') echo 'Yes';else echo 'No';?></b></li>
+										<li><div>Airbags</div><b><?php if(isset($features->airbags)) if($features->airbags=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Passenger Airbags</div><b><?php if(isset($features->passengerAirbags)) if($features->passengerAirbags=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Side Airbags</div><b><?php if(isset($features->sideAirbags)) if($features->sideAirbags=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>ABS</div><b><?php if(isset($features->ABS)) if($features->ABS=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Central Locking</div><b><?php if(isset($features->centralLocking)) if($features->centralLocking=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Child Safety Lock</div><b><?php if(isset($features->childSafetyLock)) if($features->childSafetyLock=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Rear Parking Censor</div><b><?php if(isset($features->rearParkingCensor)) if($features->rearParkingCensor=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Power Steering</div><b><?php if(isset($features->powerSteering)) if($features->powerSteering=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Adjustable Power Steering</div><b><?php if(isset($features->adjustablePowerSteering)) if($features->adjustablePowerSteering=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Fog Lamps</div><b><?php if(isset($features->fogLamps)) if($features->fogLamps=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Low Fuel Indicator</div><b><?php if(isset($features->lowFuelIndicator)) if($features->lowFuelIndicator=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
 									</ul>
 								</div>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<div class="specs-title">Comfort and Convenience</div>
 									<ul>
-										<li><div>AC</div><b><?php if(isset($features->AC)) if($features->AC=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Heater</div><b><?php if(isset($features->heater)) if($features->heater=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Headlamp Beam Adjustor</div><b><?php if(isset($features->headlampBeamAdjustor)) if($features->headlampBeamAdjustor=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Cruise Control</div><b><?php if(isset($features->cruiseControl)) if($features->cruiseControl=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Steering Mounted Audio</div><b><?php if(isset($features->steeringMountedAudio)) if($features->steeringMountedAudio=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Front Armrest</div><b><?php if(isset($features->frontArmRest)) if($features->frontArmRest=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Rear Armrest</div><b><?php if(isset($features->rearArmRest)) if($features->rearArmRest=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Music System</div><b><?php if(isset($features->musicSystem)) if($features->musicSystem=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Speakers</div><b><?php if(isset($features->speakers)) if($features->speakers=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Trip Meter</div><b><?php if(isset($features->tripMeter)) if($features->tripMeter=='Yes') echo 'Yes';else echo 'No';?></b></li>
-										<li><div>Pillion Seat</div><b><?php if(isset($features->pillionSeat)) if($features->pillionSeat=='Yes') echo 'Yes';else echo 'No';?></b></li>
+										<li><div>AC</div><b><?php if(isset($features->AC)) if($features->AC=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Heater</div><b><?php if(isset($features->heater)) if($features->heater=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Headlamp Beam Adjustor</div><b><?php if(isset($features->headlampBeamAdjustor)) if($features->headlampBeamAdjustor=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Cruise Control</div><b><?php if(isset($features->cruiseControl)) if($features->cruiseControl=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Steering Mounted Audio</div><b><?php if(isset($features->steeringMountedAudio)) if($features->steeringMountedAudio=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Front Armrest</div><b><?php if(isset($features->frontArmRest)) if($features->frontArmRest=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Rear Armrest</div><b><?php if(isset($features->rearArmRest)) if($features->rearArmRest=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Music System</div><b><?php if(isset($features->musicSystem)) if($features->musicSystem=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Speakers</div><b><?php if(isset($features->speakers)) if($features->speakers=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Trip Meter</div><b><?php if(isset($features->tripMeter)) if($features->tripMeter=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
+										<li><div>Pillion Seat</div><b><?php if(isset($features->pillionSeat)) if($features->pillionSeat=='Yes') echo '<i class="fa fa-check text-success"></i>';else echo '<i class="fa fa-times text-danger"></i>';?></b></li>
 										
 									</ul>
 								
@@ -293,7 +293,20 @@ $prefix=$this->config->item('prefix');
 							</div><!-- /.modal -->
 						</div>
 						<div class = "tab-pane fade" id = "videos">
-							<p>No videos available</p>
+							<?php if(count($videos) > 0){ ?>
+							<div class="row">
+								<?php foreach($videos as $v){ ?>
+								<div class="col-lg-4 col-md-4 col-sm-3 col-xs-4">
+									<video width="100%" height="240" controls>
+									  <source src="<?php echo $prefix.'/'.$v->filePath;?>" type="video/mp4">
+									  Your browser does not support the video tag.
+									</video>
+								</div>
+								<?php } ?>
+							</div> 
+							<?php }else{ ?>
+								<p> No videos available</p>
+							<?php } ?>
 						</div>
 					</div>
 
@@ -339,13 +352,14 @@ $prefix=$this->config->item('prefix');
 		$("#d_color").val(id);
 		$("#d_color").trigger('change');
 	});
-	$("#d_variant,#d_dealer,#d_color").on("change",function(){
+	$("#d_variant,#d_dealer,#d_color,#d_location").on("change",function(){
 		var variantID = $("#d_variant").val();
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
+		var locationID = $("#d_location").val();
 		if(variantID != ""){
 			//window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
-			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID;
+			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID;
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
