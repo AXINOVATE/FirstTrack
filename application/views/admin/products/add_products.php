@@ -183,12 +183,9 @@ $prefix=$this->config->item('prefix');
 					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},2000);
 				}
 				else{
-					var error_text = "";
-					if(data.message!=''){error_text = data['message'];}
-					else{error_text ='Failed to save';}
-					$('.disable_div').remove();$.gritter.add({
+					$.gritter.add({
 						title: 'Failed',
-						text: error_text,
+						text: 'Check the excel sheet data again!',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
 				}

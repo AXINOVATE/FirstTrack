@@ -280,7 +280,6 @@ function get_variant(callback,id){
 		data:{},
 		dataType:'JSON'
 	}).done(function(data){
-		//alert(data);return false;
 		var len=data.length;
 		html += "<option value=''>-- Select Varient --</option>";
 		for(i=0;i<len;i++){
