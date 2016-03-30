@@ -105,6 +105,8 @@ class Admin extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['editmanufactureDetails']= $this->manage_products_model->getManufatureDetails('ONE',$manufactureID);
 		$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
+		$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+		//var_dump($data['editmanufactureDetails']);exit();
 		$this->load->view('admin/products/add_manufacture',$data);
 	}
 	public function add_modify_manufactureDetails()	{						

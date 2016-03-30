@@ -17,24 +17,25 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-	.body-type-detail{
-		background-color:#fff;
-	}
-	.bg-yellow1{
-		background-color:#F9D133 !importent;
-		color:#000 !importent;
-	}
-	.body-type-detail:hover,.car-type-name:hover {
-		background-color:#F9D133;
-		color:#000;
-	}
-	.body-type-detail {
-		text-decoration:none !importent;
-	}
+	.body-type-detail{ background-color:#fff; }
+	.bg-yellow1{ background-color:#F9D133 !importent; color:#000 !importent; }
+	.body-type-detail:hover,.car-type-name:hover { background-color:#F9D133; color:#000; }
+	.body-type-detail { text-decoration:none !importent; }
 	.c-dashboard .fa{color: #cf0202; font-size: 40px;}
 	.c-dashboard .title{font-size: 22px; font-weight: 600; margin: 15px 0px;color: #737373;}
 	.c-dashboard .count{font-size: 22px; color: #737373;}
 	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 	</style>
+	
+	
+	<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?3npoVC8VKJ1fHWq2ZeXRRTkTOVToL9i0";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
 </head>
 <body>
 	<!-- Header starts here -->

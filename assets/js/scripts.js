@@ -147,10 +147,10 @@
 		get_road_varient();
 	});
 	$("#get_instant_quote_popup").on('click',function(){
-		get_instant_country();
-		get_instant_category();
-		get_instant_maker();
-		get_instant_variant();
+		get_all_country("instquote_country");
+		get_categories("instquote_category");
+		//get_instant_maker();
+		get_variant("instquote_variant");
 	});
 	$('#get_instant_quote_form_save').on('click' ,function(){
 		xu_validation.form_submit('#get_instant_quote_form','save_instant_quote');		
@@ -288,9 +288,15 @@ function get_variant(callback){
 	});
 }
 function get_manufacture(callback){
+	var vType='ALL',vID='';
+	if(callback == 'instquote_maker'){
+		vType = 'CATEGORY';
+		vID = $("#instquote_category").val();
+	}
 	var callback="#"+callback;
+	
 	$.ajax({
-		url:prefix+'/home/get_manufacture_detail/ALL',
+		url:prefix+'/home/get_manufacture_detail/'+vType+'/'+vID,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -481,9 +487,9 @@ function get_instant_country(){
 function get_instant_category(){
 	get_categories("instquote_category");
 }
-function get_instant_maker(){
+$('#instquote_category').on('change',function(){
 	get_manufacture("instquote_maker");
-}
+});
 function get_instant_variant(){
 	get_variant("instquote_variant");
 }

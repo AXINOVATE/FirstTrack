@@ -67,9 +67,10 @@
 			$vresult['status']="Failed";
 			$manufactureID= $this->input->post('manufactureID');	
 			$manufactureName= $this->input->post('manufactureName');
+			$category= $this->input->post('category');
 			$vType= $this->input->post('vType');			
 			$rndS=$this->home_model->randStrGen();
-			$query = $this->db->query("CALL usp_insUpdManufatureDetail('".$vType."','".$manufactureID."','".$manufactureName."',@vresult)");
+			$query = $this->db->query("CALL usp_insUpdManufatureDetail('".$vType."','".$manufactureID."','".$manufactureName."','".$category."',@vresult)");
 			$query2=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			mysqli_next_result($this->db->conn_id);	
 			if ($query2[0][$rndS] == "Success"){
