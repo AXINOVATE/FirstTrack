@@ -416,7 +416,7 @@ if($pageName=='Bodytype'){
 											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><img src="<?php echo $prefix;?>/'+data[i]['coverImage']+'" alt="'+data[i]['productName']+'"></a>'+
 										'</div>'+
 										'<div class="col-md-6 col-sm-6">'+
-											'<a href="<?php echo $prefix;?>/home/details'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
+											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
 											'<ul class="product-variant">'+
 												'<li><i class="fa fa-car"></i>&nbsp; '+data[i]['body_type']+'</li>'+
 												'<li><i class="fa fa-cog"></i>&nbsp; '+data[i]['transmission']+'</li>'+

@@ -31,13 +31,13 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
-						<img id="item-img" src="<?php if(count($colors) > 0)if(file_exists($prefix.'/'.$colors[0]->colorImage))echo $prefix.'/'.$colors[0]->colorImage;else echo $prefix.'/assets/images/no-image.png';?>">
+						<img id="item-img" src="<?php if(count($colors) > 0)if(($colors[0]->colorImage)!='') echo $prefix.'/'.$colors[0]->colorImage; else echo $prefix.'/assets/images/no-image.png';?>">
 						<div class="item-colors text-right">
 							<span>Colors &nbsp;</span>
 							<input type="hidden" id="d_color" value="<?php echo $colorID; ?>">
 							<ul class="pull-right">
 								<?php foreach($colors as $c){ ?>
-								<li <?php if($colorID == $c->colorID)echo 'class="active"';?>><div style="background-color:<?php echo $c->colorCode; ?>;" data-img="<?php if(file_exists($prefix.'/'.$c->colorImage))echo $c->colorImage;else echo '/assets/images/no-image.png';?>" data-id="<?php echo $c->colorID; ?>"></div></li>
+								<li <?php if($colorID == $c->colorID)echo 'class="active"';?>><div style="background-color:<?php echo $c->colorCode; ?>;" data-img="<?php if(($c->colorImage)!='')echo $c->colorImage;else echo '/assets/images/no-image.png';?>" data-id="<?php echo $c->colorID; ?>"></div></li>
 								<?php } ?>
 							</ul>
 						</div>
