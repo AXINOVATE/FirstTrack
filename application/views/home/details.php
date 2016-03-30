@@ -31,8 +31,12 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
-
-						<img id="item-img" src="<?php if(count($colors) > 0)if(($colors[0]->colorImage)!='') echo $prefix.'/'.$colors[0]->colorImage; else echo $prefix.'/assets/images/no-image.png';?>">
+						<?php $colorImage = ''; 
+							foreach($colors as $c)
+								if($colorID == $c->colorID)
+									$colorImage = $c->colorImage;
+						?>
+						<img id="item-img" src="<?php if(count($colors) > 0)if(($colorImage)!='') echo $prefix.'/'.$colorImage; else echo $prefix.'/assets/images/no-image.png';?>">
 
 						<div class="item-colors text-right">
 							<span>Colors &nbsp;</span>

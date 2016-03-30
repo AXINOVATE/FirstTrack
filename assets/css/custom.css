@@ -339,7 +339,7 @@ body{font-family:Century Gothic !important;}
 /* end product edit css */
 
 /*Details Page css starts */
-.item-img{border:1px solid #EEE;padding:10px;text-align: center;display: inline-block;}
+.item-img{border:1px solid #EEE;padding:10px;text-align: center;display: inline-block;width: 100%;}
 .item-img img{width:100%;margin-bottom:5px; height: 212px;}
 .item-name .fa{color:#DC5452;}
 .item-location{ display: inline-block; width: 100%;}
