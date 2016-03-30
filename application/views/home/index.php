@@ -27,6 +27,7 @@ $prefix=$this->config->item('prefix');
 	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 	
 	@media (min-width: 767px){
 		.types{  min-height: 340px;}
+		.banner-img {width: 100%;height: 345px;}
 	}
 	</style>
 	
