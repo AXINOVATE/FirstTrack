@@ -113,6 +113,10 @@ $prefix=$this->config->item('prefix');
 						html+='<option value="'+data[i]['productID']+'">'+data[i]['productName']+'</option>';
 					}
 					$("#product").html(html);
+					 $('.select2').select2({
+						placeholder: "Select",
+						allowClear: true
+					});
 				});
 			}
 		});
@@ -132,7 +136,7 @@ $prefix=$this->config->item('prefix');
 							'<td class="vVariant" data-id="'+data[i]['variantID']+'">'+data[i]['variantName']+'</td>'+
 							'<td class="vColor text-center" data-id="'+data[i]['colorID']+'"><div style="background-color:'+data[i]['colorCode']+';"></div></td>'+
 							'<td><input type="text" class="vqty" value="'+data[i]['quantity']+'"></td>'+
-							'<td><input type="text" class="vExShowroomPrie" value="'+data[i]['exShowroomPrice']+'"></td>'+
+							'<td><input type="text" class="vExShowroomPrie" value="'+data[i]['exShowroomPrice']+'" disabled></td>'+
 							'<td><input type="text" class="vInsurance" value="'+data[i]['insurance']+'"></td>'+
 							'<td><input type="text" class="vRTO" value="'+data[i]['RTO']+'"></td>'+
 							'<td><input type="text" class="vRoadTax" value="'+data[i]['roadTax']+'"></td>'+
@@ -145,13 +149,19 @@ $prefix=$this->config->item('prefix');
 				});
 			}
 		});
+		$('body').on('keyup', '#variants input', function() {
+			$("#variants tr").each(function(){
+				var obj= $(this);
+				$(".vOnRoadPrice", obj).val(parseFloat(parseFloat($(".vExShowroomPrie", obj).val())+parseFloat($(".vInsurance", obj).val())+parseFloat($(".vRTO", obj).val())+parseFloat($(".vRoadTax", obj).val())+parseFloat($(".vHandlingCharges", obj).val())));
+			}); 
+		});
 		$('#save').on('click',function(){
 			var product = $('#product').val();
 			var userID = "<?php echo $userID;?>";
 			var contents = [];var i=0;var error=0;;
 			$("input","#variants").css({"border": "1px solid grey"});
 			$("input","#variants").each(function(){
-				if($(this).val() == ""){
+				if($(this).val() == "" || $(this).val() == 0){
 					$(this).css({"border": "2px solid red"});
 					error++;
 				}
@@ -171,7 +181,8 @@ $prefix=$this->config->item('prefix');
 					data[9] = parseInt($(".vWaitingDays", obj).val());
 					contents[i++] = data;
 				});
-				
+				$("#save").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+				$("#save").attr('disabled','disabled');
 				$.ajax({
 					url:'<?php echo $prefix;?>/home/adding_dealer_products',
 					type:'POST',

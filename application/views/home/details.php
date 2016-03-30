@@ -105,9 +105,9 @@ $prefix=$this->config->item('prefix');
 								<option value=""></option>
 								<?php foreach($locations as $l){ ?>
 								<?php if($l['cityName'] == $cityName){ ?>
-								<option value="<?php echo $l['cityID'];?>" selected><?php echo $l['cityName'];?></option>
+								<option value="<?php echo $l['cityName'];?>" selected><?php echo $l['cityName'];?></option>
 								<?php }else{?>
-								<option value="<?php echo $l['cityID'];?>"><?php echo $l['cityName'];?></option>
+								<option value="<?php echo $l['cityName'];?>"><?php echo $l['cityName'];?></option>
 								<?php } } ?>
 							</select>
 						</div>
@@ -156,13 +156,17 @@ $prefix=$this->config->item('prefix');
 				</div>
 			</div>
 			<div class="row mt-10">
-				<div class="col-md-12">
-					<div class="item-benfit"> <div class="pull-left">Benfits buying from nayagaadi </div> <img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px"></div>
-					<div class="item-benfits">Benfits 1 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer1))echo $offers->offer1;?> </span></div>
-					<div class="item-benfits">Benfits 2 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer2))echo $offers->offer2;?> </span></div>
-					<div class="item-benfits">Benfits 3 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer3))echo $offers->offer3;?> </span></div>
-					<div class="item-benfits">Benfits 4 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer4))echo $offers->offer4;?> </span></div>
-					<div class="item-benfits">Benfits 5 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer5))echo $offers->offer5;?> </span></div>
+				<div class="col-md-5">
+					<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px" class="pull-left">
+					<div class="item-offer">Offer 1 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer1))echo $offers->offer1;?></span></div>
+					<div class="item-offer">Offer 2 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer2))echo $offers->offer2;?></span></div>
+				</div>
+				<div class="col-md-7">
+					<div class="item-benfit">Benfits buying from nayagaadi </div>
+					<div class="item-benfits">Reduced Waiting Period to an extent.</div>
+					<div class="item-benfits">Personalized Service and Delivery at the Door Step of the Customer.</div>
+					<div class="item-benfits">20 % Discounts on Accessories.</div>
+					<div class="item-benfits">Discounts on other Benefits - 30% Discount on Apple A Doctor Services</div>
 				</div>
 			</div>
 			<div class="row mt-10 hide">

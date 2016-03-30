@@ -1150,10 +1150,10 @@ class Home_model extends CI_Model{
 					<COLORID>".$d[1]."</COLORID>
 					<OFFER1>".$d[2]."</OFFER1>
 					<OFFER2>".$d[3]."</OFFER2>
-					<OFFER3>".$d[4]."</OFFER3>
-					<OFFER4>".$d[5]."</OFFER4>
-					<OFFER5>".$d[6]."</OFFER5>
-					<OFFER6>".$d[7]."</OFFER6>
+					<OFFER3></OFFER3>
+					<OFFER4></OFFER4>
+					<OFFER5></OFFER5>
+					<OFFER6></OFFER6>
 					<STATUS>P</STATUS>
 				</RECORD>";
 			}

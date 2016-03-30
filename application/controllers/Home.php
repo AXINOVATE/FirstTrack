@@ -81,10 +81,10 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/upcoming_list',$data);
 	}
-	public function details($slug="",$variantID="",$locationID="",$dealerID="",$colorID=""){
+	public function details($slug="",$variantID="",$location="",$dealerID="",$colorID=""){
 		
 		$variantID = isset($_GET['variant']) ? $_GET['variant'] : '';
-		$locationID = isset($_GET['location']) ? $_GET['location'] : '';
+		$location = isset($_GET['location']) ? $_GET['location'] : '';
 		$dealerID = isset($_GET['dealer']) ? $_GET['dealer'] : '';
 		$colorID = isset($_GET['color']) ? $_GET['color'] : '';
 		
@@ -104,8 +104,10 @@ class Home extends CI_Controller {
 			echo 'Invalid URL';
 		}
 		$cityName = 'Bangalore';
-		if($this->session->userdata("cityID"))
+		if($this->session->userdata("cityID") && $location == '')
 			$cityName = $this->session->userdata("cityID");
+		else if($location != '')
+			$cityName = $location;
 		$data['cityName'] = $cityName;
 		$data['basic'] = $this->home_model->getProducts("SPB","",$productID);
 		if($data['basic']){
@@ -135,7 +137,7 @@ class Home extends CI_Controller {
 			$data['locations'] = $this->home_model->getCity();
 			
 			$data['variantID'] = $variantID;
-			$data['locationID'] = $locationID;
+			$data['location'] = $location;
 			$data['dealerID'] = $dealerID;
 			$data['colorID'] = $colorID;
 			$data['productID'] = $productID;
@@ -143,7 +145,7 @@ class Home extends CI_Controller {
 			
 			//echo $dealerID = $data['dealers'][0]->userID;
 			
-			//var_dump($data['videos']);exit();
+			//var_dump($data['offers']);exit();
 			$this->load->view('home/details',$data);
 		}
 	}

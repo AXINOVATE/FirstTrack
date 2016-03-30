@@ -20,6 +20,7 @@ $prefix=$this->config->item('prefix');
 		.variants thead{ color: #fff; background-color: #027CD5;}
 		.variants input{ width:100px;padding:0px 2px;}
 		.variants .vColor div{ display:inline-block;width:20px;height:20px;}
+		textarea{width:100%;}
 	</style>
 </head>
 <body>
@@ -68,10 +69,6 @@ $prefix=$this->config->item('prefix');
 						<th>Color</th>
 						<th>Offer1</th>
 						<th>Offer2</th>
-						<th>Offer3</th>
-						<th>Offer4</th>
-						<th>Offer5</th>
-						<th>Offer6</th>
 					</tr>
 				</thead>
 				<tbody id="variants">
@@ -130,12 +127,8 @@ $prefix=$this->config->item('prefix');
 						html+='<tr>'+
 							'<td class="vVariant" data-id="'+data[i]['variantID']+'">'+data[i]['variantName']+'</td>'+
 							'<td class="vColor text-center" data-id="'+data[i]['colorID']+'"><div style="background-color:'+data[i]['colorCode']+';"></div></td>'+
-							'<td><input type="text" class="vOffer1" value="'+data[i]['offer1']+'"></td>'+
-							'<td><input type="text" class="vOffer2" value="'+data[i]['offer2']+'"></td>'+
-							'<td><input type="text" class="vOffer3" value="'+data[i]['offer3']+'"></td>'+
-							'<td><input type="text" class="vOffer4" value="'+data[i]['offer4']+'"></td>'+
-							'<td><input type="text" class="vOffer5" value="'+data[i]['offer5']+'"></td>'+
-							'<td><input type="text" class="vOffer6" value="'+data[i]['offer6']+'"></td>'+
+							'<td><textarea class="vOffer1">'+data[i]['offer1']+'</textarea></td>'+
+							'<td><textarea class="vOffer2">'+data[i]['offer2']+'</textarea></td>'+
 						'</tr>';
 					}
 					$("#variants").html(html);
@@ -146,8 +139,8 @@ $prefix=$this->config->item('prefix');
 			var product = $('#product').val();
 			var userID = "<?php echo $userID;?>";
 			var contents = [];var i=0;var error=0;;
-			$("input","#variants").css({"border": "1px solid grey"});
-			$("input","#variants").each(function(){
+			$("textarea","#variants").css({"border": "1px solid grey"});
+			$("textarea","#variants").each(function(){
 				if($(this).val() == ""){
 					$(this).css({"border": "2px solid red"});
 					error++;
@@ -158,12 +151,8 @@ $prefix=$this->config->item('prefix');
 					var data = [];var obj= $(this);
 					data[0] = $(".vVariant", obj).data('id');
 					data[1] = $(".vColor", obj).data('id');
-					data[2] = parseInt($(".vOffer1", obj).val());
-					data[3] = parseFloat($(".vOffer2", obj).val());
-					data[4] = parseFloat($(".vOffer3", obj).val());
-					data[5] = parseFloat($(".vOffer4", obj).val());
-					data[6] = parseFloat($(".vOffer5", obj).val());
-					data[7] = parseFloat($(".vOffer6", obj).val());
+					data[2] = $(".vOffer1", obj).val();
+					data[3] = $(".vOffer2", obj).val();
 					contents[i++] = data;
 				});
 				
