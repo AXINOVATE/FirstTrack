@@ -164,7 +164,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						for($i=0; $i<=3; $i++){
 							$activeClass = '';
 							if($i==0){$activeClass='active';}
-							echo '<li class="'.$activeClass.'"><a href="#tab'.($i+1).'" data-toggle="tab">'.substr($getShowcaseProducts[$i]['showcaseTitle'], 0, 20).'</a></li>';
+							echo '<li class="show-img '.$activeClass.'"><a id = "show_img_'.$i.'" href="#tab'.($i+1).'" data-toggle="tab">'.substr($getShowcaseProducts[$i]['showcaseTitle'], 0, 20).'</a></li>';
 						}
 					?>
 					</ul>
@@ -296,9 +296,18 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		alert(bikeid);
 		
 	});
-	$('a[data-toggle="tab"]').hover(function (e) {
-		 var target = $(e.target).attr("href");			 // activated tab
-		 $('.nav-tabs a[href="'+target+'"]').tab('show');
+	$('a[data-toggle="tab"]').hover(function () {
+		$('.show-img').removeClass("active");
+		 var target = $(this).attr("href");			 // activated tab
+		 var id = $(this).attr('id');
+		 //alert(target);
+		// setTimeout(function(){
+		 //$('.nav-tabs a[href="'+target+'"]').tab('show');
+		 $('.show-img').removeClass("active");
+		 $('.tab-pane').removeClass("active");
+		 $('#'+id).tab('show');
+		 //},200);
+		 
 	});
 	
 </script>
