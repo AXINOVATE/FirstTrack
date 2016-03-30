@@ -29,6 +29,11 @@ $prefix=$this->config->item('prefix');
 		.types{  min-height: 340px;}
 		.banner-img {width: 100%;height: 345px;}
 	}
+	.hybrid .nav-tabs>li.active>a, .hybrid .nav-tabs>li.active>a:focus, .hybrid .nav-tabs>li.active>a:hover{
+		    color: #fff !important;
+    background-color: #F9D133 !important;
+    border-bottom: 5px solid #F9D133 !important;
+	}
 	</style>
 	
 	
@@ -290,6 +295,10 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		bikeid= $(this).attr("data-bikebodyTypeID");
 		alert(bikeid);
 		
+	});
+	$('a[data-toggle="tab"]').hover(function (e) {
+		 var target = $(e.target).attr("href");			 // activated tab
+		 $('.nav-tabs a[href="'+target+'"]').tab('show');
 	});
 	
 </script>
