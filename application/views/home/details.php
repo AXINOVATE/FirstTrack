@@ -78,10 +78,10 @@ $prefix=$this->config->item('prefix');
 							<select class="select2" style="width:145px;" id="d_variant">
 								<option value=""></option>
 								<?php foreach($variants as $v){ ?>
-								<?php if($v->variantID == $variantID){ ?>
-								<option value="<?php echo $v->variantID;?>" selected><?php echo $v->variantName;?></option>
+								<?php if($v->slugName == $slug){ ?>
+								<option value="<?php echo $v->slugName;?>" selected><?php echo $v->variantName;?></option>
 								<?php }else{?>
-								<option value="<?php echo $v->variantID;?>"><?php echo $v->variantName;?></option>
+								<option value="<?php echo $v->slugName;?>"><?php echo $v->variantName;?></option>
 								<?php } } ?>
 							</select> 
 						</div>
@@ -113,7 +113,11 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 					</div>
-					<div class="row">
+					<?php if(!empty($dealers)){ ?>
+					<?php $priceCheck = 0; if(isset($prices->onRoadPrice)) $priceCheck = $prices->onRoadPrice;	?>
+					<h3 class="<?php if($priceCheck != 0)echo 'hide';?>">Prices are not avaialable at this dealers </h3>
+						
+					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
 						<div class="col-md-6 col-sm-6 br-right">
 							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo $prices->onRoadPrice;?> </span> On-Road Price </div>
 						</div>
@@ -127,12 +131,15 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="row mt-10">
 						<div class="col-md-12 item-action">
-							<button class="btn" id="buy_now_btn">Buy Now</button>
+							<button class="btn <?php if($priceCheck == 0)echo 'hide';?>" id="buy_now_btn">Buy Now</button>
 							<button class="btn">Advance Booking</button>
 							<button class="btn">Buy Later</button>
 							<button class="btn">Book Test Drive</button>
 						</div>
 					</div>
+					<?php }else{ ?>
+						<h3>No dealers available</h3>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="row mt-10">
@@ -336,8 +343,9 @@ $prefix=$this->config->item('prefix');
 		var variantID = $("#d_variant").val();
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
-		if(variantID != "" && dealerID != "" && colorID != ""){
-			window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
+		if(variantID != ""){
+			//window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
+			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID;
 		}
 	});
 	$("#buy_now_btn").on('click',function(){

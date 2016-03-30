@@ -92,30 +92,40 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		
-		$data['slug'] = $slug;
-		$data['basic'] = $this->home_model->getProducts("SPB","",$slug);
+		//$data['slug'] = $slug;
+		
+		$slugData = $this->home_model->getProducts("SLUG","","","","","",$slug);
+		//var_dump($slugData);exit();
+		if($slugData){
+			$variantID = $slugData->variantID;
+			$productID = $slugData->productID;
+		}else{
+			echo 'Invalid URL';
+		}
+
+		$data['basic'] = $this->home_model->getProducts("SPB","",$productID);
 		if($data['basic']){
-			$data['variants'] = $this->home_model->getProducts("LPV","",$slug);
+			$data['variants'] = $this->home_model->getProducts("LPV","",$productID);
 			if($variantID =="" && isset($data['variants'][0]->variantID))
 				$variantID = $data['variants'][0]->variantID;
 			
-			$data['data'] = $this->home_model->getProducts("SPV","",$slug,$variantID);
+			$data['data'] = $this->home_model->getProducts("SPV","",$productID,$variantID);
 			
-			$data['colors'] = $this->home_model->getProducts("LPC","",$slug,$variantID);
+			$data['colors'] = $this->home_model->getProducts("LPC","",$productID,$variantID);
 			if($colorID =="" && isset($data['colors'][0]->colorID))
 				$colorID = $data['colors'][0]->colorID;
 			
-			$data['dealers'] = $this->home_model->getProducts("LPD","",$slug,$variantID);
+			$data['dealers'] = $this->home_model->getProducts("LPD","",$productID,$variantID);
 			if($dealerID =="" && isset($data['dealers'][0]->userID))
 				$dealerID = $data['dealers'][0]->userID;
 			
-			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$slug,$variantID,$colorID);
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID);
 			
-			$data['features'] = $this->home_model->getProducts('Features',"",$slug,$variantID);
-			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$slug,$variantID);
-			$data['photos'] = $this->home_model->getProducts('Photo',"",$slug,$variantID);
-			$data['videos'] = $this->home_model->getProducts('Video',"",$slug,$variantID);
-			$data['cities'] = $this->home_model->getProducts('getCities',"",$slug,$variantID);
+			$data['features'] = $this->home_model->getProducts('Features',"",$productID,$variantID);
+			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID);
+			$data['photos'] = $this->home_model->getProducts('Photo',"",$productID,$variantID);
+			$data['videos'] = $this->home_model->getProducts('Video',"",$productID,$variantID);
+			$data['cities'] = $this->home_model->getProducts('getCities',"",$productID,$variantID);
 			
 			$data['locations'] = $this->manage_products_model->location_detail("LIST_ON_CITY",$this->config->item("default_country_id"));
 			
@@ -123,6 +133,7 @@ class Home extends CI_Controller {
 			$data['locationID'] = $locationID;
 			$data['dealerID'] = $dealerID;
 			$data['colorID'] = $colorID;
+			$data['productID'] = $productID;
 			$data['slug'] = $slug;
 			
 			//echo $dealerID = $data['dealers'][0]->userID;

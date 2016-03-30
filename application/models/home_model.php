@@ -945,7 +945,7 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	function getProducts($type,$userID="",$productID="",$variantID="",$productType="",$manufactureID=""){
+	function getProducts($type,$userID="",$productID="",$variantID="",$productType="",$manufactureID="",$slug=""){
 		$xml = "<ROOT>
 				<HEADER>
 					<USERID>".$userID."</USERID>
@@ -953,12 +953,13 @@ class Home_model extends CI_Model{
 					<VARIANTID>".$variantID."</VARIANTID>
 					<PRODUCTTYPE>".$productType."</PRODUCTTYPE>
 					<MANUFACTUREID>".$manufactureID."</MANUFACTUREID>
+					<SLUG>".$slug."</SLUG>
 				</HEADER>
 			</ROOT>";
 		//echo "CALL usp_getProducts('".$type."','".$xml."')";
 		$qry = $this->db->query('CALL usp_getProducts("'.$type.'","'.$xml.'")');
 		mysqli_next_result($this->db->conn_id);
-		if($type == 'SP' || $type == 'SPV' || $type == 'SPB' || $type == 'Features' || $type == 'SOFFER')
+		if($type == 'SP' || $type == 'SPV' || $type == 'SPB' || $type == 'Features' || $type == 'SOFFER' || $type == 'SLUG')
 			return $qry->row();
 		else
 			return $qry->result();
