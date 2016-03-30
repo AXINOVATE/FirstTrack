@@ -112,7 +112,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<?php foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-											<a href="'.$prefix.'/home/searchList/categorytype/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
+											<a href="'.$prefix.'/home/searchList/category/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
 												<center>
 													<img src="'.$more['imgPath'].'" style="width:100%; height:55px;" alt="'.$more['categoryName'].'" />
 													<div class="car-type-name">'.$more['categoryName'].'</div>
