@@ -243,14 +243,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="col-md-6">
 						<select class="form-control mb-10" id="gpi_city" name="gpi_city" style="width:100%;" >
-							<option value="">-- Select State --</option>
-							
-						</select>
-					</div>
-					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;" >
 							<option value="">-- Select City --</option>
-							
 						</select>
 					</div>
 					<div class="col-md-6">
@@ -260,10 +253,12 @@ $prefix=$this->config->item('prefix');
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_make" name="gpi_make" style="width:100%;" >
-							<option value="">-- Select Make --</option>
+						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;" >
+							<option value="">-- Select Maker --</option>
+							
 						</select>
 					</div>
+					
 					<div class="col-md-6">
 						<select class="form-control mb-10" id="gpi_model" name="gpi_model" style="width:100%;" >
 							<option value="">-- Select Model --</option>
