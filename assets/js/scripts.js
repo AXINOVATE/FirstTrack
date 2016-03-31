@@ -1008,8 +1008,17 @@ function get_particular_model(manufacture_control_name,model_control_name){
 $('#ProformaInvoicePDF').on('click' , function(){
 	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
 	//window.open(prefix+'/home/get_Proforma_Invoice_pdf', '_blank');	
-		//get_Proforma_Invoice_pdf();
+	get_Proforma_Invoice_pdf();
 });
+$('#get_Proforma_Invoice_pdf_download').on('click',function(){
+	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
+	get_proforma_invoice();
+	
+});
+function get_proforma_invoice(){
+	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
+	$('#get_Proforma_Invoice_pdf').submit();
+}
 /*
 function getProformaInvoicePdf(){	
 	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');	
@@ -1017,8 +1026,8 @@ function getProformaInvoicePdf(){
 }
 */
 function get_Proforma_Invoice_pdf(){
-	//$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
-	//$('#get_Proforma_Invoice_pdf').submit();	
+	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
+	$('#get_Proforma_Invoice_pdf').submit();	
 }
 
 /*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/
