@@ -52,7 +52,7 @@
 	$('#test-drive,#test-drive1').on('click', function(){		
 		get_rtd_cities();
 		get_rtd_categories();					
-		get_rtd_manufacture();
+		//get_rtd_manufacture();
 		get_rtd_dealerName();
 		//get_rtd_varient();
 	});
@@ -66,7 +66,7 @@
 	$('#GetProformaInvoice').on('click' , function(){
 		get_gpi_cities();
 		get_gpi_categories();					
-		get_gpi_manufacture();
+		//get_gpi_manufacture();
 		//get_gpi_varient();
 		
 	});
@@ -106,7 +106,7 @@
 	$("#vehicle-loan,#vehicle-loan1").on('click',function(){
 		get_vehlone_cities(); 
 		get_vehlone_categories();
-		get_vehlone_manufacture();
+		//get_vehlone_manufacture();
 		get_vehlone_dealerName();
 		//get_vehlone_varient();
 	});
@@ -127,7 +127,7 @@
 	$("#corporate-deal,#corporate-deal1").on('click',function(){
 		get_corp_cities();
 		get_corp_categories();
-		get_corp_manufacture();
+		//get_corp_manufacture();
 		//get_corp_varient();
 	});
 	
@@ -145,13 +145,13 @@
 	$("#on-road-assistance,#on-road-assistance1").on('click',function(){
 		get_road_cities();
 		get_road_categories();
-		get_road_manufacture();
+		//get_road_manufacture();
 		//get_road_varient();
 	});
 	$("#get_instant_quote_popup").on('click',function(){
 		get_instant_country();
 		get_instant_category();
-		get_instant_maker();
+		//get_instant_maker();
 		get_instant_dealerName();
 		//get_instant_variant();
 		get_all_country("instquote_country");
@@ -294,8 +294,12 @@ function get_variant(callback,id){
 		$(callback).html(html);
 	});
 }
-function get_manufacture(callback){
-	var vType='ALL',vID='';
+function get_manufacture(callback,vID){
+	if(vID==''){
+		var vType='ALL';
+	}else{
+		var vType='ALL_C';
+	}
 	var callback="#"+callback;
 	var html="";
 	$.ajax({
@@ -352,9 +356,9 @@ function get_gpi_cities(){
 function get_gpi_categories(){
 	get_categories("gpi_category");
 }
-function get_gpi_manufacture(){
-	get_manufacture("gpi_maker");
-}
+$("#gpi_category").on('change',function(){
+	get_manufacture("gpi_maker",$(this).val());
+});
 $("#gpi_model").on('change',function(){
 	get_variant("gpi_variant",$(this).val());
 });
@@ -366,9 +370,12 @@ function get_vehlone_cities(){
 function get_vehlone_categories(){
 	get_categories("vehlone_category");
 }
-function get_vehlone_manufacture(){
+$("#vehlone_category").on('change',function(){
+	get_manufacture("vehlone_maker",$(this).val());
+});
+/*function get_vehlone_manufacture(){
 	get_manufacture("vehlone_maker");
-}
+}*/
 function get_vehlone_dealerName(){
 	get_dealerName("vehlone_dealerName");
 }
@@ -380,7 +387,6 @@ $("#vehlone_maker").on('change',function(){
 });
 $("#vehlone_model").on('change',function(){	
 	get_variant("vehlone_variant", $(this).val());
-	return false;
 });
 function save_vehicle_loan(){
 	var fullname=$("#vehlone_username").val();
@@ -443,9 +449,12 @@ function get_corp_cities(){
 function get_corp_categories(){
 	get_categories("corp_category");
 }
-function get_corp_manufacture(){
-	get_manufacture("corp_maker");
-}
+/*function get_corp_manufacture(){
+	//get_manufacture("corp_maker");
+}*/
+$("#corp_category").on('change',function(){
+	get_manufacture("corp_maker",$(this).val());
+});
 $("#corp_model").on('change',function(){
 	get_variant("corp_variant",$(this).val());
 });
@@ -520,9 +529,12 @@ function get_instant_country(){
 function get_instant_category(){
 	get_categories("instquote_category");
 }
-function get_instant_maker(){
+/*function get_instant_maker(){
 	get_manufacture("instquote_maker");
-}
+}*/
+$("#instquote_category").on('change',function(){
+	get_manufacture("instquote_maker", $(this).val());
+});
 $("#instquote_model").on('change',function(){
 	get_variant("instquote_variant", $(this).val());
 });
@@ -625,7 +637,7 @@ $("#abModel").on('change',function(){
 	get_variant("abVariant",$(this).val());
 });
 function get_manufacture_adv(){
-	get_manufacture("abMaker");
+	get_manufacture("abMaker",'');
 }
 function adv_get_cities(){	
 	$.ajax({
@@ -725,9 +737,12 @@ function get_rtd_cities(){
 function get_rtd_categories(){
 	get_categories("RTD_Category");
 }
-function get_rtd_manufacture(){
+/*function get_rtd_manufacture(){
 	get_manufacture("RTD_Maker");
-}
+}*/
+$("#RTD_Category").on('change',function(){
+	get_manufacture("RTD_Maker",$(this).val());
+});
 function get_rtd_dealerName(){
 	get_dealerName("RTD_Dealer_Name");
 }
@@ -776,9 +791,12 @@ function get_road_cities(){
 function get_road_categories(){
 	get_categories("boraCategory");
 }
-function get_road_manufacture(){
+/*function get_road_manufacture(){
 	get_manufacture("boraMaker");
-}
+}*/
+$("#boraCategory").on('change',function(){
+	get_manufacture("boraMaker", $(this).val());
+});
 $("#boraModel").on('change',function(){
 	get_variant("boraVarient", $(this).val());
 });
@@ -861,7 +879,7 @@ function get_insurance_cities(){
 }
 
 function get_insurance_manufacture(){
-	get_manufacture("insurance_maker");
+	get_manufacture("insurance_maker",'');
 }
 $("#insurance_maker").on('change',function(){	
 	get_particular_model("insurance_maker","insurance_model");		
