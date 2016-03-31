@@ -33,13 +33,15 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<div class="container">
-			<div class="row">
+		 
+			<div class="row locate-dealer-form">
+			<form class="form-horizontal" id="locate-dealer">
 				<div class="col-md-6 col-md-offset-2">
 				   <form class="form-horizontal">
 					  <div class="form-group required">
 						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
 						<div class="col-md-6">
-						   <select class="form-control entity-type select2" id="all-brand" style="width:100%;">
+						   <select class="form-control entity-type select2" id="all-brand"   va_req="true"style="width:100%;">
 							
 						   </select>
 						</div>
@@ -51,7 +53,7 @@ $prefix=$this->config->item('prefix');
 					  <div class="form-group required">
 						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Vehicle</label>
 						<div class="col-md-6">
-						   <select class="form-control entity-type select2" id="all-vehicle" style="width:100%;">
+						   <select class="form-control entity-type select2" id="all-vehicle"   va_req="true"style="width:100%;">
 							
 						   </select>
 						</div>
@@ -63,7 +65,7 @@ $prefix=$this->config->item('prefix');
 					  <div class="form-group required">
 						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">City</label>
 						<div class="col-md-6">
-						   <select class="form-control entity-type select2" id="all-vehicle-city" style="width:100%;">
+						   <select class="form-control entity-type select2" id="all-vehicle-city"   va_req="true" style="width:100%;">
 							
 						   </select>
 						</div>
@@ -75,7 +77,7 @@ $prefix=$this->config->item('prefix');
 					  <div class="form-group required">
 						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Location</label>
 						<div class="col-md-6">
-						   <select class="form-control entity-type select2 " id="dealer-location" style="width:100%;">
+						   <select class="form-control entity-type select2 " id="dealer-location"   va_req="true" style="width:100%;">
 							
 						   </select>
 						</div>
@@ -85,13 +87,17 @@ $prefix=$this->config->item('prefix');
 					<div class= "mt-29 col-md-offset-5">
 						<a href="#" class="search-btn"  id="locate-a-dealer">Locate a Dealer </a>
 					</div>
+					
+				</div>
+				<div class="col-md-12 no-result text-center">
 				</div>
 			</div>
 			<div class="" style="" >
 				<div class="" style="margin-top:45px;" id="delar-info-box">
 					
 				</div>
-			</div>			  
+			</div>
+           		
 		</div>
 	</div>	
 <?php echo $footer; ?>
@@ -100,6 +106,7 @@ $prefix=$this->config->item('prefix');
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
 
 
 
@@ -119,6 +126,7 @@ $prefix=$this->config->item('prefix');
 		});
 		
 		$('document').ready(function(){
+			
 		 get_locate_dealer_manufacture();
 		 get_locate_dealer_location();
 		});
@@ -164,15 +172,27 @@ $prefix=$this->config->item('prefix');
 	
 	
 		$('#locate-a-dealer').on('click',function(){
-			
-            var loc_id=$('#dealer-location').val();	
+			$(".no-result").html('');
+			$('#delar-info-box').html('');
+			$("#locate-a-dealer").html('');
+			$(".locate-dealer-form .text-danger").remove();
+		var text_error = '<span class="text-danger"> This field is required </span>',error=0;
+		if($('#all-brand').val() == ""){$('#all-brand').parent().parent().append(text_error);error++;}
+		if($('#all-vehicle').val() == ""){$('#all-vehicle').parent().parent().append(text_error);error++;}
+		if($('#all-vehicle-city').val() == ""){$('#all-vehicle-city').parent().parent().append(text_error);error++;}
+		if($('#dealer-location').val() == ""){$('#dealer-location').parent().parent().append(text_error);error++;}
+		if(error == 0){
+			$("#locate-a-dealer").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+			$("#locate-a-dealer").attr('disabled','disabled');
+			var loc_id=$('#dealer-location').val();	
 			$.ajax({
 				url:prefix+'/home/locate_a_dealer',
 				type:'POST',
 				processData: true,
 				dataType:'JSON',
 				data:{'loc_id':loc_id}
-			}).done(function(data){
+			}).success(function(data){
+				if(data.length>0){
 				var html='';
 				for(i=0;i<data.length;i++){
 					html+='<div class="col-md-3 col-sm-4 col-xs-12 mb-10">'+
@@ -180,8 +200,21 @@ $prefix=$this->config->item('prefix');
 						'<div class="dealer-name" id="dealers name">'+data[i].firstName+data[i].lastName+'</div>'+'<div class="dealer-address" id="dealers_address">'+data[i].addressLine1+'<br>'+data[i].addressLine2 +'<br>'+data[i].location+'<br>'+data[i].phone+'</div>'+'</div>'+'</div>';
 				}
 				$('#delar-info-box').html(html);
+				$("#locate-a-dealer").html('Locate a Dealer');
+				}
+				else{
+				     
+					$(".no-result").html('<h4 class="mt-30">No Result Found!</h4>');
+					$("#locate-a-dealer").html('Locate a Dealer');
+					$("#locate-a-dealer").attr('disabled',false);
+				}
+					
+				
 			});
+		} 
 		});
+		
+		
 		
 	</script>
 </body>
