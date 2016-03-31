@@ -633,5 +633,7 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->getUsers($vType,$userID,"",$this->config->item('dealer_role')));
 	}
 
-
+	public function get_particular_location_detail(){
+		echo json_encode($this->home_model->get_particular_location_detail());
+	}
 }

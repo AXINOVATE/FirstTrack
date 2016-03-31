@@ -34,55 +34,66 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<div class="row">
-			<div class="col-md-6 col-md-offset-2">
-			   <form class="form-horizontal">
-							  <div class="form-group required">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
-								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="all-brand" style="width:100%;">
-									
-								   </select>
-								</div>
-							  </div>
-				</form>
-			  </div>
-			  <div class="col-md-6 col-md-offset-2">
-			   <form class="form-horizontal">
-							  <div class="form-group required">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Vehicle</label>
-								<div class="col-md-6">
-								   <select class="form-control entity-type select2" id="all-vehicle" style="width:100%;">
-									
-								   </select>
-								</div>
-							  </div>
-				</form>
-			  </div>
-			  
-			  <div class="col-md-6 col-md-offset-2">
-			   <form class="form-horizontal">
-							  <div class="form-group required">
-								<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Location</label>
-								<div class="col-md-6">
-								   <select class="form-control entity-type select2 " id="dealer-location" style="width:100%;">
-									
-								   </select>
-								</div>
-							  </div>
-							    
-				</form>
-				<div class= "mt-29 col-md-offset-5">
-					<a href="#" class="search-btn"  id="locate-a-dealer">Locate a Dealer </a>
+				<div class="col-md-6 col-md-offset-2">
+				   <form class="form-horizontal">
+					  <div class="form-group required">
+						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Brand</label>
+						<div class="col-md-6">
+						   <select class="form-control entity-type select2" id="all-brand" style="width:100%;">
+							
+						   </select>
+						</div>
+					  </div>
+					</form>
 				</div>
-			  </div>
-		</div>
-		<div class="" style="" >
-			<div class="" style="margin-top:45px;" id="delar-info-box">
-				
+				<div class="col-md-6 col-md-offset-2">
+				   <form class="form-horizontal">
+					  <div class="form-group required">
+						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Vehicle</label>
+						<div class="col-md-6">
+						   <select class="form-control entity-type select2" id="all-vehicle" style="width:100%;">
+							
+						   </select>
+						</div>
+					  </div>
+					</form>
+				</div>
+				<div class="col-md-6 col-md-offset-2">
+				   <form class="form-horizontal">
+					  <div class="form-group required">
+						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">City</label>
+						<div class="col-md-6">
+						   <select class="form-control entity-type select2" id="all-vehicle-city" style="width:100%;">
+							
+						   </select>
+						</div>
+					  </div>
+					</form>
+				</div>
+				<div class="col-md-6 col-md-offset-2">
+				   <form class="form-horizontal">
+					  <div class="form-group required">
+						<label for="inputEmail3" class="col-sm-4 col-xs-12 control-label col-md-6">Location</label>
+						<div class="col-md-6">
+						   <select class="form-control entity-type select2 " id="dealer-location" style="width:100%;">
+							
+						   </select>
+						</div>
+					  </div>
+						
+					</form>
+					<div class= "mt-29 col-md-offset-5">
+						<a href="#" class="search-btn"  id="locate-a-dealer">Locate a Dealer </a>
+					</div>
+				</div>
 			</div>
-        </div>			  
-	</div>
-</div>	
+			<div class="" style="" >
+				<div class="" style="margin-top:45px;" id="delar-info-box">
+					
+				</div>
+			</div>			  
+		</div>
+	</div>	
 <?php echo $footer; ?>
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
@@ -104,8 +115,9 @@ $prefix=$this->config->item('prefix');
 			alert('preserve attached java script data!');
 		});
 		$('#myTab').tabCollapse();
-			
+		
 		});
+		
 		$('document').ready(function(){
 		 get_locate_dealer_manufacture();
 		 get_locate_dealer_location();

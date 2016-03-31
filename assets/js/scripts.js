@@ -133,8 +133,8 @@
 	
 	
 	$("#locate-dealer,#locate-dealer1").on('click',function(){
-		
 		get_locate_dealer_manufacture();
+		get_locate_dealer_city();
 		
 	});
 	
@@ -740,6 +740,37 @@ function save_advance_booking(){
 		});
 }
 /* Advanced Booking End Starts Here */
+
+/* ----------------locate dealer--------------------*/
+
+
+function get_locate_dealer_manufacture(){
+	get_manufacture("all-brand");
+	get_cities("all-vehicle-city");
+}
+
+$('#all-vehicle-city').on('change',function(){
+	var VehicleCityID= $(this,'#all-vehicle-city').val();
+	$.ajax({
+		url:prefix+'/home/get_particular_location_detail',
+		type:'POST',
+		processData: true,
+		dataType:'JSON',
+		data:{'VehicleCityID':VehicleCityID}
+	}).done(function(data){
+		var html ,i;
+		var len=data.length;
+		$('#dealer-location').html('');
+		html = "<option value=''>-- Select vechile--</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+ data[i].locationID +"' >"+data[i].location+"</option>";
+		}
+		$('#dealer-location').append(html);
+	});
+	
+});
+/* ----------------locate dealer  end--------------------*/
+
 /* Requist For Test Drive Starts Here */
 function get_rtd_cities(){
 	get_cities("RTD_City");
@@ -998,14 +1029,7 @@ function get_Proforma_Invoice_pdf(){
 
 
 
-/* ----------------locate dealer--------------------*/
 
-
-function get_locate_dealer_manufacture(){
-	get_manufacture("all-brand");
-}
-
-/* ----------------locate dealer  end--------------------*/
 
 
 

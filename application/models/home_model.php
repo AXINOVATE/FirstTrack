@@ -661,7 +661,12 @@ class Home_model extends CI_Model{
 		return $query->result_array();		
 
 	}
-
+	public function get_particular_location_detail(){
+		$VehicleCityID= $this->input->post('VehicleCityID');		
+		$query =$this->db->query("select location,locationID from tbl_locations_detail where cityID='".$VehicleCityID."'");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 
 	public function getCompareInfo($vType, $catID, $makerID, $modelID){
 		$retvalue = array();
