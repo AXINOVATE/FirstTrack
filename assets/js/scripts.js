@@ -287,7 +287,7 @@ function get_variant(callback,id){
 		dataType:'JSON'
 	}).done(function(data){
 		var len=data.length;
-		html += "<option value=''>-- Select Varient --</option>";
+		html += "<option value=''>-- Select Variant --</option>";
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].variantID+"' >"+data[i].variantName+"</option>";
 		}
