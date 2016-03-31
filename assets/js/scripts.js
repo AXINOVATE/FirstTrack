@@ -360,6 +360,9 @@ function get_gpi_categories(){
 $("#gpi_category").on('change',function(){
 	get_manufacture("gpi_maker",$(this).val());
 });
+$("#gpi_maker").on('change',function(){
+	get_dealerName("gpi_dealer_name",$(this).val());
+});
 $("#gpi_model").on('change',function(){
 	get_variant("gpi_variant",$(this).val());
 });
