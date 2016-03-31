@@ -53,7 +53,7 @@
 		get_rtd_cities();
 		get_rtd_categories();					
 		//get_rtd_manufacture();
-		get_rtd_dealerName();
+		//get_rtd_dealerName();
 		//get_rtd_varient();
 	});
 	$('#adv-book,#adv-book1').on('click', function(){	
@@ -107,7 +107,7 @@
 		get_vehlone_cities(); 
 		get_vehlone_categories();
 		//get_vehlone_manufacture();
-		get_vehlone_dealerName();
+		//get_vehlone_dealerName();
 		//get_vehlone_varient();
 	});
 	$('#insurance-save').on('click' ,function(){
@@ -152,7 +152,7 @@
 		get_instant_country();
 		get_instant_category();
 		//get_instant_maker();
-		get_instant_dealerName();
+		//get_instant_dealerName();
 		//get_instant_variant();
 		get_all_country("instquote_country");
 		get_categories("instquote_category");
@@ -316,10 +316,11 @@ function get_manufacture(callback,vID){
 		$(callback).html(html);
 	});
 }
-function get_dealerName(callback){
+function get_dealerName(callback,mID){
 	var callback="#"+callback;
+	if(mID==''){var vType='RLIST';}else{var vType='DEALER-M';}
 	$.ajax({
-		url:prefix+'/home/get_dealer/RLIST',
+		url:prefix+'/home/get_dealer/'+vType+'/'+mID,
 		type:'POST',
 		processData: true,
 		dataType:'JSON'
@@ -376,9 +377,12 @@ $("#vehlone_category").on('change',function(){
 /*function get_vehlone_manufacture(){
 	get_manufacture("vehlone_maker");
 }*/
-function get_vehlone_dealerName(){
+/*function get_vehlone_dealerName(){
 	get_dealerName("vehlone_dealerName");
-}
+}*/
+$("#vehlone_maker").on('change',function(){	
+	get_dealerName("vehlone_dealerName",$(this).val());	
+});
 $("#vehlone_dealerName").on('change',function(){	
 	get_dealerLocation("vehlone_dealerLocation",$(this).val());	
 });
@@ -538,9 +542,12 @@ $("#instquote_category").on('change',function(){
 $("#instquote_model").on('change',function(){
 	get_variant("instquote_variant", $(this).val());
 });
-function get_instant_dealerName(){
+$("#instquote_maker").on('change',function(){
+	get_dealerName("instquote_dealerName", $(this).val());
+});
+/*function get_instant_dealerName(){
 	get_dealerName("instquote_dealerName");
-}
+}*/
 $('#instquote_country').on('change',function(){
 	var country_id=$(this).val();
 	$.ajax({
@@ -743,9 +750,12 @@ function get_rtd_categories(){
 $("#RTD_Category").on('change',function(){
 	get_manufacture("RTD_Maker",$(this).val());
 });
-function get_rtd_dealerName(){
+/*function get_rtd_dealerName(){
 	get_dealerName("RTD_Dealer_Name");
-}
+}*/
+$("#RTD_Maker").on('change',function(){
+	get_dealerName("RTD_Dealer_Name",$(this).val());
+});
 $("#RTD_Dealer_Name").on('change',function(){
 	get_dealerLocation("RTD_Dealer_Location",$(this).val());
 });

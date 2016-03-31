@@ -254,8 +254,6 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-6">
 						<select class="form-control mb-10" id="gpi_make" name="gpi_make" style="width:100%;" >
 							<option value="">-- Select Make --</option>
-							<option value="1">Maruti</option>
-							<option value="2">Hero</option>
 						</select>
 					</div>
 					<div class="col-md-6">
@@ -273,9 +271,6 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-6">
 						<select class="form-control mb-10" id="gpi_dealer_name" name="gpi_dealer_name" style="width:100%;" >
 							<option value="">-- Select Dealer Name -- </option>
-							<option value="1">Maruti</option>
-							<option value="2">Hero</option>
-							<option value="3">Maruti</option>
 							
 						</select>
 					</div>
@@ -393,16 +388,12 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Dealer_Name" id="RTD_Dealer_Name">
 							<option value="">-- Select Dealer Name --</option>
-							<option value="1">Hero</option>
-							<option value="2">Suzuki</option>
 							
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control mb-10" style="width:100%;" va_req="true" name="RTD_Dealer_Location" id="RTD_Dealer_Location">
-							<option value="">-- Select Dealer Location --</option>	
-							<option value="1">Bangalore</option>
-							<option value="2">HsrLayout</option>							
+							<option value="">-- Select Dealer Location --</option>						
 						</select>
 					</div>
 					<div class="col-md-12">
