@@ -135,7 +135,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-							<input type="text" class="form-control" va_req="true" placeholder="Username" name="abFullName" aria-describedby="basic-addon1" va_err="abFullNameError" />
+							<input type="text" class="form-control" va_req="true" placeholder="Full Name" name="abFullName" aria-describedby="basic-addon1" va_err="abFullNameError" />
 							</div>
 							<div class="text-danger" id="abFullNameError"></div>
 						</div>
@@ -175,6 +175,7 @@ $prefix=$this->config->item('prefix');
 							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="abModel" id="abModel">
 								<option value="">-- Select Model --</option>
 							</select>
+							
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10" style="width:100%;" va_req="true" name="abVariant" id="abVariant">
@@ -319,7 +320,7 @@ $prefix=$this->config->item('prefix');
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-							<input type="text" name="RTD_Full_Name" id="RTD_Full_Name" va_req="true" class="form-control" placeholder="Username" aria-describedby="basic-addon1" va_err="RTD_Full_NameError" />
+							<input type="text" name="RTD_Full_Name" id="RTD_Full_Name" va_req="true" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" va_err="RTD_Full_NameError" />
 							</div>
 							<div class="text-danger" id="RTD_Full_NameError"></div>
 						</div>
@@ -466,19 +467,19 @@ $prefix=$this->config->item('prefix');
 						<div class="form-group">
 							<label for="address" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<input type="text" class="form-control" id="vehlone_address" va_req="true" name="vehlone_address" placeholder="residential address" />
+								<input type="text" class="form-control" id="vehlone_address" va_req="true" name="vehlone_address" placeholder="Office or Residential address" />
 							</div>
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="vehlone_booking_amount" style="width:100%;" name="vehlone_booking_amount"  va_req="true">
-								<option value="">-- Have you Paid Booking Amount  --</option>
+								<option value="">-- Have you Paid Booking Amount --</option>
 								<option value="Paid" >yes</option>
 								<option value="Not Paid" >no</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" va_req="true" id="vehlone_preference_bank" name="vehlone_preference_bank" style="width:100%;">
-								<option value="">-- Any Preference to Specific Bank ?  --</option>
+								<option value="">-- Any Preference to Specific Bank ? --</option>
 								<option value="HDFC" >HDFC</option>
 								<option value="KOTAK" >KOTAK</option>
 								<option value="ICICI" >ICICI</option>
@@ -505,7 +506,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_cust_type" va_req="true" name="vehlone_cust_type" style="width:100%;">
-								<option value="">-- customer type --</option>
+								<option value="">-- Customer type --</option>
 								<option value="Salaried" >Salaried</option>
 								<option value="Self Employed" >Self Employed</option>
 								<option value="Partnership-Pvt Ltd –Public Ltd Co" >Partnership-Pvt Ltd –Public Ltd Co</option>
@@ -513,7 +514,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_loan_amount" va_req="true" name="vehlone_loan_amount" style="width:100%;">
-								<option value="">-- loan amount --</option>
+								<option value="">-- Loan Amount --</option>
 								<option value="Less than 1 Lakh" >Less than 1 Lakh</option>
 								<option value="1-2 Lakhs" >1-2 Lakhs</option>
 								<option value="3 to 5 Lakhs" >3 to 5 Lakhs</option>
@@ -537,7 +538,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_purchase_time" va_req="true" name="vehlone_purchase_time" style="width:100%;">
-								<option value="">-- Purchase Time Frame  --</option>
+								<option value="">-- Purchase Time Frame --</option>
 								<option value="Immediate" >Immediate</option>
 								<option value="1-2 weeks" >1-2 weeks</option>
 								<option value="3-4 weeks" > 3-4 weeks</option>
@@ -652,12 +653,17 @@ $prefix=$this->config->item('prefix');
 						<div class="form-group">
 							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<input type="text" class="form-control"  va_req="true" id="corp_address" name="corp_address" placeholder="office or residential address" />
+								<input type="text" class="form-control"  va_req="true" id="corp_address" name="corp_address" placeholder="Office or Residential address" />
 							</div>
 						</div>
 						<div class="col-md-4">
 							<select class="form-control mb-10" id="corp_city"  va_req="true" style="width:100%;">
 								<option value="">-- Select City --</option>
+							</select>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<select class="form-control mb-10" id="corp_category"  va_req="true" style="width:100%;">
+								<option value="">-- Select Category --</option>
 							</select>
 						</div>
 						<div class="col-md-4">
@@ -675,17 +681,13 @@ $prefix=$this->config->item('prefix');
 								<option value="">-- Select Variant --</option>
 							</select>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="corp_category"  va_req="true" style="width:100%;">
-								<option value="">-- Select Category --</option>
-							</select>
-						</div>
+						
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="corp_quality_of_vehicle"  va_req="true" name="corp_quality_of_vehicle" placeholder="quantity of vechiles" />
+							<input type="text" class="form-control" id="corp_quality_of_vehicle"  va_req="true" name="corp_quality_of_vehicle" placeholder="Quantity of vehicles" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="corp_customerType"  va_req="true" style="width:100%;">
-								<option value="">--Customer Type --</option>
+								<option value="">-- Customer Type --</option>
 								<option value="Proprietary" >Proprietary</option>
 								<option value="LLP" > LLP</option>
 								<option value="Joint Venture" > Joint Venture</option>
@@ -740,10 +742,10 @@ $prefix=$this->config->item('prefix');
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control"  va_req="true" id="corp_best_time_to_call" name="corp_best_time_to_call" placeholder="what is the best time to call you?" />
+							<input type="text" class="form-control"  va_req="true" id="corp_best_time_to_call" name="corp_best_time_to_call" placeholder="What is the best time to call you?" />
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control"  va_req="true" id="corp_salary_account" name="corp_salary_account" placeholder="which bank you have salary account?" />
+							<input type="text" class="form-control"  va_req="true" id="corp_salary_account" name="corp_salary_account" placeholder="On which bank you have salary account?" />
 						</div>
 						<div class="col-md-12">
 							<label for="comment">Any specific comment</label>
@@ -811,6 +813,14 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
+							<div class="col-md-6 col-sm-9 col-xs-12">
+								<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
+									<option value="">-- Select Maker --</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
 							<div class="col-md-6 col-sm-9 col-xs-12">
 								<select class="form-control mb-10" id="insurance_model" va_req="true" style="width:100%;">
@@ -826,14 +836,7 @@ $prefix=$this->config->item('prefix');
 								</select>
 							</div>
 						</div>					
-						<div class="form-group">
-							<label for="city" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
-							<div class="col-md-6 col-sm-9 col-xs-12">
-								<select class="form-control mb-10" id="insurance_city"  va_req="true" style="width:100%;">
-									<option value="">-- Select City --</option>
-								</select>
-							</div>
-						</div>
+						
 						<div class="form-group">
 							<label for="Expiry_Date" class="col-md-3 col-sm-3 col-xs-12 control-label">
 								Preferred Time <span class="form-man"> * </span>
@@ -853,13 +856,13 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>	
 						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
-								<option value="">-- Select Maker --</option>
+							<select class="form-control mb-10" id="insurance_city"  va_req="true" style="width:100%;">
+								<option value="">-- Select City --</option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="insurance_use" va_req="true" style="width:100%;">
-								<option value="">-- personal use or Commercial use --</option>
+								<option value="">-- Personal use or Commercial use --</option>
 								<option value="White Board" >White Board</option>
 								<option value="Yellow Board" >Yellow Board</option>
 							</select>
@@ -1033,44 +1036,44 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="col-md-4">
 						<select class="form-control mb-10" id="boraUse"   va_req="true" name="boraUse"style="width:100%;">
-							<option value="">-- personal use or commercial use  --</option>
+							<option value="">-- Personal use or commercial use --</option>
 							<option value="White Board" >White Board</option>
 							<option value="Yellow Board" > Yellow Board</option>
 						</select>
 					</div>
 					<div class="col-md-4">
 						<select class="form-control mb-10" id="boraPlan" va_req="true" name="boraPlan"style="width:100%;">
-							<option value="">-- Are you looking--</option>
+							<option value="">-- Are you looking for --</option>
 							<option value="Individual plan" > Individual plan</option>
 							<option value="Corporate Plan" > Corporate Plan </option>
 						</select>
 					</div>
 					<div class="col-md-4">
 						<select class="form-control mb-10" id="boraPurchase"   va_req="true" name="boraPurchase"style="width:100%;">
-							<option value="">--Bulk Purchase for Corporates  --</option>
+							<option value="">-- Bulk Purchase for Corporates --</option>
 							<option value="yes" >yes</option>
 							<option value="no" >no</option>
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control mb-10" id="boraRoadcompanies"  va_req="true" name="boraRoadcompanies"style="width:100%;">
-							<option value="">-list of on road companies--</option>
+							<option value="">-- List of on road companies--</option>
 							<option value="abc" >abc </option>
 							<option value="abcd" >abcd  </option>
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control mb-10" id="boraPackage"  va_req="true" name="boraPackage"style="width:100%;">
-							<option value="">Types of On Road Assistance Packages</option>
+							<option value="">-- Types of On Road Assistance Packages --</option>
 							<option value="yes" >yes</option>
 							<option value="no" >no</option>
 						</select>
 					</div>
 					<div class="col-md-4 ">
-						<input type="text" class="form-control mb-10" id="boraPackbenifits"  va_req="true" name="boraPackbenifits" placeholder="packge benifits" />
+						<input type="text" class="form-control mb-10" id="boraPackbenifits"  va_req="true" name="boraPackbenifits" placeholder="Package benefits" />
 					</div>
 					<div class="col-md-4 ">
-						<input type="text" class="form-control mb-10" id="boraPackcost"  va_req="true"name="boraPackcost" placeholder="cost of the packege" />
+						<input type="text" class="form-control mb-10" id="boraPackcost"  va_req="true"name="boraPackcost" placeholder="Cost of the package" />
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control entity-type  mb-10"   va_req="true" name="boraTimeframe"id="boraTimeframe" style="width:100%;">
@@ -1084,7 +1087,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<select class="form-control entity-type" id="boraPaymentdetails" va_req="true" name="boraPaymentdetails"style="width:100%;">
-							<option value="">--payment details --</option>
+							<option value="">-- Payment details --</option>
 							<option value="NEFT" >NEFT</option>
 							<option value="IMPS" >IMPS</option>
 							<option value="CASH" >CASH</option>
@@ -1093,7 +1096,7 @@ $prefix=$this->config->item('prefix');
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4">
-						<input type="text" class="form-control" id="boraTimecall" name="boraTimecall" va_req="true" placeholder="what is the best time to call you?" />
+						<input type="text" class="form-control" id="boraTimecall" name="boraTimecall" va_req="true" placeholder="What is the best time to call you?" />
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<label for="comment">Any specific comment</label>

@@ -73,12 +73,8 @@
 	
 
 	$('document').ready(function(){
-		$('#abModel').html('');
 	});
 	
-	$('document').ready(function(){
-		$('#boraModel').html('');
-	});
 	
 	$('#abMaker').on('change',function(){	
 		get_particular_model("abMaker","abModel");		
