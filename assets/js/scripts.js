@@ -342,7 +342,7 @@ function get_dealerLocation(callback,id){
 		dataType:'JSON'
 	}).done(function(data){
 		var len=data.length;
-		html = "<option value=''>-- Select Dealer Name --</option>";
+		html = "<option value=''>-- Select Dealer Location --</option>";
 		for(i=0;i<len;i++){
 			html += "<option value='"+data[i].locationID+"' >"+data[i].location+"</option>";
 		}
