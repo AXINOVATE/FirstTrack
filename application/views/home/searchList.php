@@ -50,7 +50,7 @@ if($pageName=='Bodytype'){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="mt-0 mb-20"><?php echo $pageName; ?></h3>
+					<h3 class="mt-0 mb-20" id="fullPageName"><?php echo $fullPageName; ?></h3>
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="filter-manufacture">
@@ -62,10 +62,10 @@ if($pageName=='Bodytype'){
 						</div>
 						<center>
 							<select class="form-control select2" id="search_category" style="width:95%;">
-								<option value='ALL' selected>ALL</option>
+								<option value='ALL' selected data-name="ALL">ALL</option>
 								<?php 
 									foreach($categoryDetails as $CD){
-										echo "<option value='".$CD['categoryID']."'";
+										echo "<option value='".$CD['categoryID']."' data-name='".$CD['categoryName']."'";
 										if($pageName=='Category'){
 											if($typeID==$CD['categoryID']){
 												echo "selected";
@@ -312,6 +312,8 @@ if($pageName=='Bodytype'){
 	});
 	$("#search_category").on('change',function(){
 		$('#bodyTypeID').val('');
+		var fpageName=$(this).find(':selected').data('name');
+		$("#fullPageName").text(fpageName);
 		getData();
 	});
 	$("#search_manufacture").on('change',function(){
@@ -395,6 +397,8 @@ if($pageName=='Bodytype'){
 					   var sum=[];
 					   var variantName=[];
 					   var slugName=[];
+					   var fuelType=[];
+					   var transmission=[];
 						for(var j=0;j<data1.length;j++){
 							if(data1[j]['productID']==data[i]['productID']){
 								if($.inArray(data1[j]['variantID'],vID1)<0){
@@ -402,8 +406,20 @@ if($pageName=='Bodytype'){
 									sum[sum.length]=data1[j]['exShowroomPrice'];
 									variantName[variantName.length]=data1[j]['variantName'];
 									slugName[slugName.length]=data1[j]['slugName'];
+									if($.inArray(data[j]['fuelType'],fuelType)<0){
+										fuelType[fuelType.length]=data[j]['fuelType'];
+									}
+									if($.inArray(data[j]['transmission'],transmission)<0){
+										transmission[transmission.length]=data[j]['transmission'];
+									}
 								}else{
 									sum[sum.length]=data1[j]['exShowroomPrice'];
+									if($.inArray(data[j]['fuelType'],fuelType)<0){
+										fuelType[fuelType.length]=data[j]['fuelType'];
+									}
+									if($.inArray(data[j]['transmission'],transmission)<0){
+										transmission[transmission.length]=data[j]['transmission'];
+									}
 								}
 							}
 						}
@@ -420,9 +436,9 @@ if($pageName=='Bodytype'){
 											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
 											'<ul class="product-variant">'+
 												'<li><i class="fa fa-car"></i>&nbsp; '+data[i]['body_type']+'</li>'+
-												'<li><i class="fa fa-cog"></i>&nbsp; '+data[i]['transmission']+'</li>'+
+												'<li><i class="fa fa-cog"></i>&nbsp; '+transmission+'</li>'+
 												'<li><i class="fa fa-clock-o"></i>&nbsp; '+data[i]['mileage']+' kmpl</li>'+
-												'<li><i class="fa fa-filter"></i>&nbsp; '+data[i]['fuelType']+'</li>'+
+												'<li><i class="fa fa-filter"></i>&nbsp; '+fuelType+'</li>'+
 											'</ul>'+
 										'</div>'+
 										'<div class="col-md-3 col-sm-3 text-center">'+
