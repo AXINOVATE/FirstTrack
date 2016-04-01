@@ -37,7 +37,7 @@ $prefix=$this->config->item('prefix');
 						   <li> <a href = "#signup_tab" data-toggle = "tab"> Signup </a></li>
 						</ul>
 
-						<div id = "myTabContent" class = "tab-content">
+						<div id = "myTabContent" class = "tab-content mb-20">
 
 						   <div class="tab-pane fade in active" id="login_tab">
 								<form class="form-horizontal" method="post" action="#" onsubmit="return false;" role="login" id="login_form">

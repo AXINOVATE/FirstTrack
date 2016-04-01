@@ -31,6 +31,8 @@ hr.style-eight {
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
+				<div class="col-md-2 col-sm-1 hidden-xs"></div>
+				<div class="col-md-8 col-sm-10 col-xs-12">
 				<form id="dealer_form" method="POST" action="#" onSubmit="return false;">
 					<h2><center>Signup Page for Dealers </center></h2>
 					<hr class="style-eight"/>
@@ -103,6 +105,7 @@ hr.style-eight {
 					</div>
 					<button class="btn btn-default btn-primary pull-right" id="register_btn">Signup <i class="fa fa-arrow-right pl-5" ></i></button>
 				</form>
+				</div>
 			</div>
 		</section>
 	</div>

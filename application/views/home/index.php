@@ -62,16 +62,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightblue" id="cars">
 								<div>
 									<center>
-										<img src="<?php echo $assetsPath;?>/images/car.png" class="cat-img" alt="car" />
-										<div style="font-size:14px; margin-bottom:10px;">Car</div>
+										<img src="<?php echo $prefix.'/'.$Car[0]['imgPath'];?>" class="cat-img" alt="car" />
+										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Car[0]['categoryName']; ?></div>
 									</center>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">							
 								<div>
 									<center>
-										<img src="<?php echo $assetsPath;?>/images/bike.png" class="cat-img" alt="car">
-										<div style="font-size:14px; margin-bottom:10px;">Bike</div>
+										<img src="<?php echo $prefix.'/'.$Bike[0]['imgPath'];?>" class="cat-img" alt="bike">
+										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Bike[0]['categoryName']; ?></div>
 									</center>
 								</div>
 							</div>
