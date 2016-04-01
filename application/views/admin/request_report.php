@@ -281,7 +281,7 @@ $prefix=$this->config->item('prefix');
 					text: 'Saved Successfully',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location="<?php echo $prefix;?>/admin/request_list/"+page;},1000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',

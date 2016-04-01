@@ -597,6 +597,16 @@ $("#instquote_maker").on('change',function(){
 		$("#instquote_model").html(html);
 	});
 });
+
+function numComma(x){
+	x=x.toString();
+	var lastThree = x.substring(x.length-3);
+	var otherNumbers = x.substring(0,x.length-3);
+	if(otherNumbers != '')
+		lastThree = ',' + lastThree;
+	var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+	return res;
+}
 function save_instant_quote(){
 	var vType="INSERT";
 	var countryID=$("#instquote_country").val();
@@ -621,30 +631,30 @@ function save_instant_quote(){
 		if(data.length>0){	
 			for(i=0;i<data.length;i++){
 				html += '<div class="col-md-6 col-sm-6 col-xs-12 b-rt-bt">'+
-							'<h2><font color="red"><i class="fa fa-inr"></i>'+data[i]['onRoadPrice']+'</font></h2><h3><font color="black">On-Road-Price</font></h3>'+
+							'<h2><font color="red"><i class="fa fa-inr"></i>'+numComma(Math.round(data[i]['onRoadPrice']))+'</font></h2><h3><font color="black">On-Road-Price</font></h3>'+
 						'</div>'+
 						'<div class="col-md-6 col-sm-6 col-xs-12">'+
 							'<table class="instant_quote_table mt-10">'+
 								'<tbody style="color: black;"> '+
 									'<tr>'+
 										'<td class="">Ex-showroom: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+data[i]['exShowroomPrice']+'</td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['exShowroomPrice']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Insurance: </td>'+
-										'<td class=""><i class="fa fa-inr"></i> '+data[i]['insurance']+'</td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['insurance']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">RTO: </td>'+
-										'<td class=""><i class="fa fa-inr"></i> '+data[i]['RTO']+'</td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['RTO']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Road Tax: </td>'+
-										'<td class=""><i class="fa fa-inr"></i> '+data[i]['roadTax']+'</td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['roadTax']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Other Handling Charges: </td>'+
-										'<td class=""><i class="fa fa-inr"></i> '+data[i]['handlingOtherCharges']+'</td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['handlingOtherCharges']))+'</td>'+
 									'</tr>'+
 								'</tbody>'+
 							'</table>'+

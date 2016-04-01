@@ -24,7 +24,9 @@ $prefix=$this->config->item('prefix');
 	.c-dashboard .fa{color: #cf0202; font-size: 40px;}
 	.c-dashboard .title{font-size: 22px; font-weight: 600; margin: 15px 0px;color: #737373;}
 	.c-dashboard .count{font-size: 22px; color: #737373;}
-	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 	
+	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 
+
+	.bodytype-img{margin-top: 10px; width:75%; height:45px;}
 	@media (min-width: 767px){
 		.types{  min-height: 340px;}
 		.banner-img {width: 100%;height: 345px;}
@@ -93,7 +95,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 										<a href="'.$prefix.'/home/searchList/bodytype/'.$car['bodyTypeID'].'" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
-										<img src="'.$car['body_type_img'].'" style="width:90px;height:60px;" alt="'.$car['body_type'].'" />
+										<img src="'.$car['body_type_img'].'" alt="'.$car['body_type'].'" class="bodytype-img"/>
 										<div class="car-type-name">'.$car['body_type'].'</div>
 										</center>							
 										</div></a>
@@ -109,7 +111,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 										<a href="'.$prefix.'/home/searchList/bodytype/'.$bike['bodyTypeID'].'" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
-										<img src="'.$bike['body_type_img'].'" style="width:90px;height:60px;" alt="'.$bike['body_type'].'" />
+										<img src="'.$bike['body_type_img'].'" alt="'.$bike['body_type'].'" class="bodytype-img"/>
 										<div class="car-type-name">'.$bike['body_type'].'</div>
 										</center>
 										</div></a>
@@ -125,7 +127,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 											<a href="'.$prefix.'/home/searchList/category/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
 												<center>
-													<img src="'.$more['imgPath'].'" style="width:100%; height:55px;" alt="'.$more['categoryName'].'" />
+													<img src="'.$more['imgPath'].'" style="width:100%; height:35px; " alt="'.$more['categoryName'].'" />
 													<div class="car-type-name">'.$more['categoryName'].'</div>
 												</center>
 											</div></a>

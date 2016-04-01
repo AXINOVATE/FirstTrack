@@ -18,7 +18,7 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<style type="text/css">
 		.picture-color-edit >tr>td>img{text-align:center !important;}
-		#image_file_msg>img{padding: 20px !important;width: 86% !important;border-radius: 6px !important;height:210px !important;max-width:none !important;}
+		
 	</style>
 </head>
 <body>
@@ -94,7 +94,7 @@ $prefix=$this->config->item('prefix');
 							<div class="col-md-6">
 								<h6>Picture Preview</h6>
 								<div class=" col-md-12 col-sm-12 col-xs-12 Picture-Preview  border-all-lite ">
-								  <div id="image_file_msg" class="files"><?php if(count($editbodyTypeDetails) > 0 ){ echo "<img src='".$prefix."/".$editbodyTypeDetails[0]['body_type_img']."' class='img-rounded img-responsive Picture-Preview' alt='Image' width='80%' height='210'>";} ?></div>
+								  <div id="image_file_msg" class="files"><?php if(count($editbodyTypeDetails) > 0 ){ echo "<img src='".$prefix."/".$editbodyTypeDetails[0]['body_type_img']."' class='img-rounded img-responsive Picture-Preview' alt='Image' style='width:200px; height:auto;' >";} ?></div>
 								  <!--<img src="<?php echo $assetsPath;?>/images/baner-car.png" class="img-rounded img-responsive Picture-Preview" alt="Cinque Terre" width="80%" height="210"> -->
 								</div>
 								<button class="btn btn-default btn-primary pull-right" id="save_body_type" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save </button>

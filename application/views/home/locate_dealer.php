@@ -128,7 +128,6 @@ $prefix=$this->config->item('prefix');
 		 get_locate_dealer_location();
 		});
 		$('#all-brand').on('change',function(){	
-		    
 	        var brand_id=$(this,'#all-brand').val();
 				$.ajax({
 					url:prefix+'/home/get_particular_vechile',
@@ -182,12 +181,13 @@ $prefix=$this->config->item('prefix');
 			$("#locate-a-dealer").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
 			$("#locate-a-dealer").attr('disabled','disabled');
 			var loc_id=$('#dealer-location').val();	
+			var brandID=$('#all-brand').val();	
 			$.ajax({
 				url:prefix+'/home/locate_a_dealer',
 				type:'POST',
 				processData: true,
 				dataType:'JSON',
-				data:{'loc_id':loc_id}
+				data:{'loc_id':loc_id,'brandID':brandID}
 			}).success(function(data){
 				if(data.length>0){
 				var html='';

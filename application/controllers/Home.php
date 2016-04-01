@@ -449,7 +449,6 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->get_location());
 	}
 	public function locate_a_dealer(){
-		
 		echo json_encode($this->home_model->locate_a_dealer());
 	}
 	public function getBodyTypeEach($BodyType){

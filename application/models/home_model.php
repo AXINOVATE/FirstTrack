@@ -659,7 +659,12 @@ class Home_model extends CI_Model{
 	}
 	public function locate_a_dealer(){
 	    $locid=$this->input->post("loc_id");
-		$query=$this->db->query("select   distinct TUD.firstName,TUD.lastName,TUD.phone,TUD.addressLine1,TUD.addressLine2,TLD.location from tbl_userDetails  TUD INNER JOIN  tbl_locations_detail TLD ON TUD.locationID=TLD.locationID where TLD.locationID='".$locid."'");
+	    $brandID=$this->input->post("brandID");
+		$query=$this->db->query("SELECT DISTINCT(TUD.userID),TUD.firstName,TUD.lastName,TUD.phone,TUD.addressLine1,TUD.addressLine2,
+									TLD.location FROM tbl_userDetails TUD 
+									INNER JOIN  tbl_locations_detail TLD ON TUD.locationID=TLD.locationID
+									INNER JOIN tbl_productBasic PB ON TUD.manufacture = PB.manufacturerID
+								WHERE TLD.locationID='".$locid."' AND PB.manufacturerID='".$brandID."'");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}

@@ -2,7 +2,7 @@
 Core script to handle form validation
 **/
 var xu_validation = function () {
-	var prefix = '';
+	var prefix = '/FirstTrack';
 	var form_validation = function(form_id, success_function){
 		var error=0;
 		$('form'+form_id+' :input, form'+form_id+' :input[type="textarea"], form'+form_id+' :input[type="checkbox"], form'+form_id+' :input[type="radio"]').each(function(data){
@@ -572,7 +572,7 @@ var xu_validation = function () {
 		form_submit: function (form_id, success_function){
 			$('.va_error').remove();
 			$('.va_form_error').remove();
-			$(form_id).append('<div class="disable_div" style="position:absolute; top:0; left:0; width: 100%; height:100%; z-index:2; opacity:0.4; filter: alpha(opacity = 50); background-color:#949292;"><img style="position: absolute;top:45%;left:45%;width: 100px;" src="'+prefix+'/assets/img/loader.gif" /></div>');
+			$(form_id).append('<div class="disable_div" style="position:absolute; top:0; left:0; width: 100%; height:100%; z-index:2; opacity:0.4; filter: alpha(opacity = 50); background-color:#949292;"><img style="position: absolute;top:45%;left:45%;width: 100px;" src="'+prefix+'/assets/images/loader.gif" /></div>');
 			form_validation(form_id, success_function);
 		},
 		fileupload: function(prefix, source, type, ajax_url, accept_files){

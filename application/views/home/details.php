@@ -18,7 +18,9 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		
-	.model-body div{}
+	#specifications ul>li{overflow: auto;}
+	#specifications ul>li>b{float: left; width: 50%;}
+	
 	</style>
 </head>
 <body>
@@ -158,9 +160,11 @@ $prefix=$this->config->item('prefix');
 			</div>
 			<div class="row mt-10">
 				<div class="col-md-5">
+					<?php if(count($offers)){?>
 					<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px" class="pull-left">
 					<div class="item-offer">Offer 1 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer1))echo $offers->offer1;?></span></div>
 					<div class="item-offer">Offer 2 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer2))echo $offers->offer2;?></span></div>
+					<?php } ?>
 				</div>
 				<div class="col-md-7">
 					<div class="item-benfit">Benfits buying from nayagaadi </div>
@@ -208,20 +212,20 @@ $prefix=$this->config->item('prefix');
 									<ul>
 										<li><div>Engine Type</div><b><?php if(isset($data->engineType)) echo $data->engineType;?></b></li>
 										<li><div>Displacement (CC)</div><b><?php if(isset($data->displacement)) echo $data->displacement;?></b></li>
-										<li><div>No. of Cylinders</div><b><?php if(isset($data->noOfCylinders)) echo $data->noOfCylinders;?></b></li>
+										<li><div>No. of Cylinders</div><b><?php if(isset($data->noOfCylinders)) echo round($data->noOfCylinders);?></b></li>
 										<li><div>Power (BHP)</div><b><?php if(isset($data->powerBHP)) echo $data->powerBHP;?></b></li>
-										<li><div>Power (RPM)</div><b><?php if(isset($data->powerRPM)) echo $data->powerRPM;?></b></li>
+										<li><div>Power (RPM)</div><b><?php if(isset($data->powerRPM)) echo round($data->powerRPM);?></b></li>
 										<li><div>Torque (Nm)</div><b><?php if(isset($data->torqueNm)) echo $data->torqueNm;?></b></li>
-										<li><div>Torque (RPM)</div><b><?php if(isset($data->torqueRPM)) echo $data->torqueRPM;?></b></li>
+										<li><div>Torque (RPM)</div><b><?php if(isset($data->torqueRPM)) echo round($data->torqueRPM);?></b></li>
 									</ul>
 									<div class="specs-title">Dimensions</div>
 									<ul>
-										<li><div>Length (mm)</div><b><?php if(isset($data->productLength)) echo $data->productLength;?></b></li>
-										<li><div>Width (mm)</div><b><?php if(isset($data->productWidth)) echo $data->productWidth;?></b></li>
-										<li><div>Height (mm)</div><b><?php if(isset($data->productHeight)) echo $data->productHeight;?></b></li>
-										<li><div>Ground Clearance</div><b><?php if(isset($data->groundClearance)) echo $data->groundClearance;?></b></li>
-										<li><div>Wheelbase</div><b><?php if(isset($data->wheelBase)) echo $data->wheelBase;?></b></li>
-										<li><div>Seat Capacity</div><b><?php if(isset($data->seatingCapacity)) echo $data->seatingCapacity;?></b></li>
+										<li><div>Length (mm)</div><b><?php if(isset($data->productLength)) echo round($data->productLength);?></b></li>
+										<li><div>Width (mm)</div><b><?php if(isset($data->productWidth)) echo round($data->productWidth);?></b></li>
+										<li><div>Height (mm)</div><b><?php if(isset($data->productHeight)) echo round($data->productHeight);?></b></li>
+										<li><div>Ground Clearance</div><b><?php if(isset($data->groundClearance)) echo round($data->groundClearance);?></b></li>
+										<li><div>Wheelbase</div><b><?php if(isset($data->wheelBase)) echo round($data->wheelBase);?></b></li>
+										<li><div>Seat Capacity</div><b><?php if(isset($data->seatingCapacity)) echo round($data->seatingCapacity);?></b></li>
 										<li><div>Minimum Turning Radius (metre)</div><b><?php if(isset($data->minimumTurningRadius)) echo $data->minimumTurningRadius;?></b></li>
 									</ul>
 								</div>
@@ -239,7 +243,7 @@ $prefix=$this->config->item('prefix');
 									<ul>
 										<li><div>Fuel Type</div><b><?php if(isset($data->fueltype)) echo $data->fueltype;?></b></li>
 										<li><div>Mileage (kmpl)</div><b><?php if(isset($data->mileage)) echo $data->mileage;?></b></li>
-										<li><div>No. of Gears</div><b><?php if(isset($data->noOfGears)) echo $data->noOfGears;?></b></li>
+										<li><div>No. of Gears</div><b><?php if(isset($data->noOfGears)) echo round($data->noOfGears);?></b></li>
 										<li><div>Fuel Tank Capacity (litres)</div><b><?php if(isset($data->fuelTankCapacity)) echo $data->fuelTankCapacity;?></b></li>
 										<li><div>Front Suspension</div><b><?php if(isset($data->frontSuspension)) echo $data->frontSuspension;?></b></li>
 										<li><div>Rear Suspension</div><b><?php if(isset($data->rearSuspension)) echo $data->rearSuspension;?></b></li>
