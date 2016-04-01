@@ -36,18 +36,20 @@ $prefix=$this->config->item('prefix');
 					<label>Category</label>
 					<select class="form-control select2" style="width:100%;" name="category" id="category">
 						<option value=""></option>
-						<?php foreach($categories as $ca){ ?>
+						<option value="<?php if(isset($details->productCategory)){echo $details->productCategory; }?>"><?php if(isset($details->categoryName)){echo $details->categoryName; }?></option>
+						<?php /* foreach($categories as $ca){ ?>
 						<option value="<?php echo $ca['categoryID'];?>"><?php echo $ca['categoryName'];?></option>
-						<?php } ?>
+						<?php } */ ?>
 					</select>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
-					<label>Manufcture</label>
+					<label>Manufacture</label>
 					<select class="form-control select2" style="width:100%;" name="maker" id="manufacture">
 						<option value=""></option>
-						<?php foreach($manufactures as $m){ ?>
+						<option value="<?php if(isset($details->manufacture)){ echo $details->manufacture; }?>"><?php if(isset($details->manufactureName)){ echo $details->manufactureName; }?></option>
+						<?php /* foreach($manufactures as $m){ ?>
 						<option value="<?php echo $m['manufactureID'];?>"><?php echo $m['manufactureName'];?></option>
-						<?php } ?>
+						<?php } */ ?>
 					</select>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">

@@ -38,18 +38,20 @@ $prefix=$this->config->item('prefix');
 					<label>Category</label>
 					<select class="form-control select2" style="width:100%;" name="category" id="category">
 						<option value=""></option>
-						<?php foreach($categories as $ca){ ?>
+						<option value="<?php if(isset($details->productCategory)){echo $details->productCategory; }?>"><?php if(isset($details->categoryName)){echo $details->categoryName; }?></option>
+						<?php /*foreach($categories as $ca){ ?>
 						<option value="<?php echo $ca['categoryID'];?>"><?php echo $ca['categoryName'];?></option>
-						<?php } ?>
+						<?php } */ ?>
 					</select>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
-					<label>Manufcture</label>
+					<label>Manufacture</label>
 					<select class="form-control select2" style="width:100%;" name="maker" id="manufacture">
 						<option value=""></option>
-						<?php foreach($manufactures as $m){ ?>
+						<option value="<?php if(isset($details->manufacture)){ echo $details->manufacture; }?>"><?php if(isset($details->manufactureName)){ echo $details->manufactureName; }?></option>
+						<?php /* foreach($manufactures as $m){ ?>
 						<option value="<?php echo $m['manufactureID'];?>"><?php echo $m['manufactureName'];?></option>
-						<?php } ?>
+						<?php } */ ?>
 					</select>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
@@ -140,12 +142,12 @@ $prefix=$this->config->item('prefix');
 			var userID = "<?php echo $userID;?>";
 			var contents = [];var i=0;var error=0;;
 			$("textarea","#variants").css({"border": "1px solid grey"});
-			$("textarea","#variants").each(function(){
+		/*	$("textarea","#variants").each(function(){
 				if($(this).val() == ""){
 					$(this).css({"border": "2px solid red"});
 					error++;
 				}
-			});
+			});	*/
 			if(error == 0 && product !="" && userID != ""){
 				$("#variants tr").each(function(){
 					var data = [];var obj= $(this);
