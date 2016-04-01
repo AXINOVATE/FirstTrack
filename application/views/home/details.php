@@ -13,7 +13,8 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
-	<link href="<?php echo $assetsPath;?>/css/bootstrap-switch.min.css" type="text/css" rel="stylesheet">	
+	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-datepicker.min.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-timepicker.min.css" type="text/css" />
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		
@@ -83,7 +84,7 @@ $prefix=$this->config->item('prefix');
 					<div class="item-location mb-10">
 						<div class="col-md-4 col-sm-5 col-xs-12 no-padding">
 							<span class="pull-left">Variant &nbsp; </span>
-							<select class="select2" style="width:145px;" id="d_variant">
+							<select class="select2 sl" style="width:145px;" id="d_variant">
 								<option value=""></option>
 								<?php foreach($variants as $v){ ?>
 								<?php if($v->slugName == $slug){ ?>
@@ -95,13 +96,13 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 no-padding hide">
 							<span class="pull-left">Usage Type &nbsp; </span>
-							<select class="select2" style="width:145px;">
+							<select class="select2 sl" style="width:145px;">
 								<option value=""></option>
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 no-padding">
 							<span class="pull-left">Location &nbsp; </span>
-							<select class="select2" style="width:145px;" id="d_location">
+							<select class="select2 sl" style="width:145px;" id="d_location">
 								<option value=""></option>
 								<?php foreach($locations as $l){ ?>
 								<?php if($l['cityName'] == $cityName){ ?>
@@ -113,7 +114,7 @@ $prefix=$this->config->item('prefix');
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 no-padding">
 							<span class="pull-left">Dealer &nbsp; </span>
-							<select class="select2" style="width:145px;" id="d_dealer">
+							<select class="select2 sl" style="width:145px;" id="d_dealer">
 								<option value=""></option>
 								<?php foreach($dealers as $d){ ?>
 								<option value="<?php echo $d->userID;?>" <?php if($d->userID == $dealerID)echo 'selected';?>><?php echo $d->firstName.' '.$d->lastName;?></option>
@@ -343,22 +344,24 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/jquery.easypiechart.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/jquery.ui.widget.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/highlight.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/photo-gallery.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/main.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();	
 		$('#myTab').tabCollapse();
 		$('.chart').easyPieChart({
 			size:'40',
 			scaleColor:false,
 			easing: 'easeOutBounce'
 		});
-		$("select").select2({placeholder:"Select.."});
+		$(".sl").select2({placeholder:"Select.."});
 	});
 	$(".item-colors li").on('click',function(){
 		var img = $(this).find('div').data('img');

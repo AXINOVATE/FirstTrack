@@ -17,7 +17,6 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">	
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/plugin/file-upload/css/jquery.fileupload.css" type="text/css" />
 	<style type="text/css">
 		.form-group.required .control-label:after {
   content:"*";
@@ -103,8 +102,9 @@ $prefix=$this->config->item('prefix');
 <?php echo $footer; ?>
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
 
@@ -114,15 +114,12 @@ $prefix=$this->config->item('prefix');
 
 	<script>
 		$('document').ready(function(){
-			 $('.select2').select2({
+			$('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
             });
-			 $('button').on('click', function(){
-			alert('preserve attached java script data!');
-		});
-		$('#myTab').tabCollapse();
-		
+			$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+			$('.inpt-timepicker').timepicker();	
 		});
 		
 		$('document').ready(function(){

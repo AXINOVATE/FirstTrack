@@ -282,9 +282,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		$(this).addClass('bg-lightblue');
 		$('.cat-box').addClass('bg-lightgrey');
 	});
+	$('document').ready(function(){
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();	
+	});
 	
-	$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
-	$('.inpt-timepicker').timepicker();	
 	
 	$('.body-type-detail').on('click', function(){		
 		$('.body-type-detail').removeClass('bg-yellow-active');
