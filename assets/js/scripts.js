@@ -134,9 +134,9 @@
 		alert('hello');
 	});*/
 	
-	$('#by-on-road-assistance').on('click' ,function(){
+	/*$('#by-on-road-assistance').on('click' ,function(){
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
-	});
+	});*/
 	
 	
 	$("#on-road-assistance,#on-road-assistance1").on('click',function(){
