@@ -1,7 +1,13 @@
-<?php
+﻿<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix');
+if(($this->session->userdata('cityID'))!=''){
+	$cityName = $this->session->userdata('cityID');
+}
+else{
+	$cityName = "Bangalore";
+}
 ?>
 <input type="hidden" data-prefix="<?php echo $prefix;?>" id="prefix">
 <div class="top-content-container hidden-xs" >
@@ -14,7 +20,7 @@ $prefix=$this->config->item('prefix');
 				<div class="header-top">
 					<ul style="display:block; float:right;">
 						<li class="dropdown border-none-r user-options"  id="city-option" style="border-right:none;">
-							<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i><span id="location"><?php $cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore"; echo $cityName;?></span><span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-map-marker" style="color:#FFD400;"></i><span id="location"><?php echo $cityName;?></span><span class="caret"></span></a>
 							<ul class="dropdown-menu" id="city-option-detail">
 						
 							</ul>

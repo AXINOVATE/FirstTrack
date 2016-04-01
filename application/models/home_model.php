@@ -540,7 +540,13 @@ class Home_model extends CI_Model{
 		$dealerID='';
 		$orderBy='';
 		$emissionStandard='';
-		$cityName = !empty($this->session->userdata('cityID')) ?  $this->session->userdata('cityID') : "Bangalore";
+		if(($this->session->userdata('cityID'))!=''){
+			$cityName = $this->session->userdata('cityID');
+		}
+		else{
+			$cityName = "Bangalore";
+		}
+		// $cityName = if(isset($this->session->userdata('cityID'))) ?   : "";
 		if($page=='bodytype' || $page=='categorytype'){
 			$trendsTypeID=$id;
 		}
