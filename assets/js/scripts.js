@@ -1043,7 +1043,7 @@ $('#drop_a_query_btn').on('click' ,function(){
 	xu_validation.form_submit('#drop_a_query_form','save_dropAQuery');		
 });
 function save_dropAQuery(){
-	alert('hi');
+	
 	var fullname=$("#dq_fullName").val();
 	var phone=$("#dq_phone").val();
 	var email=$("#dq_emailID").val();
