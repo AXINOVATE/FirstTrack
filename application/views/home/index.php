@@ -297,8 +297,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	$('.particular-bike-detail').on('click',function(){
 		var bikeid;
 		bikeid= $(this).attr("data-bikebodyTypeID");
-		alert(bikeid);
-		
 	});
 	$('a[data-toggle="tab"]').hover(function () {
 		$('.show-img').removeClass("active");

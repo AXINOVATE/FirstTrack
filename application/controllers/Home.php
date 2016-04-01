@@ -46,11 +46,16 @@ class Home extends CI_Controller {
 			$data['typeID'] = '';
 			if($page=='bodytype' || $page=='category' || $page=='list'){
 				$data['getTType'] = $this->manage_products_model->getTrendType('ALL');
+				if($page=='bodytype'){
+					$data['bodyTypeDetails']=$this->manage_products_model->getBodyTypeDetails("ONE",$id);
+					$data['fullPageName']=ucfirst($page).' - '.$data['bodyTypeDetails'][0]['body_type'];
+				}
 				$data['getTID'] = '';
 				$data['trendsTypeID']='';
 				$data['typeID'] = $id;
 			}
 			else{
+				$data['fullPageName'] = ucfirst($page);
 				$data['getTID'] = $this->manage_products_model->getTrendType('GTID',ucfirst($page));
 				$data['trendsTypeID']=$data['getTID'][0]['trendsTypeID'];
 			}
