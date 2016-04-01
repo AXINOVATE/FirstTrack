@@ -1223,6 +1223,47 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
+	function get_Proforma_Invoice_pdf(){
+		$vStatus ="Faild";
+		$proformaInvoiceID='';
+		$gpi_fullname = $this->input->post('gpi_fullname');
+		$gpi_phone = $this->input->post('gpi_phone');
+		$gpi_emailID = $this->input->post('gpi_emailID');
+		$gpi_Address = $this->input->post('gpi_address');
+		$gpi_cityID = $this->input->post('gpi_city');
+		$gpi_categoryID = $this->input->post('gpi_category');
+		$gpi_makerID = $this->input->post('gpi_maker');
+		$gpi_modelID = $this->input->post('gpi_model');
+		$gpi_variantID = $this->input->post('gpi_variant');
+		$gpi_dealer_nameID = $this->input->post('gpi_dealer_name');
+		$gpi_CheckBox = $this->input->post('gpi_CheckBox');
+		$xml = "<ROOT>
+				<HEADER>
+					<GPIFULLNAME>".$gpi_fullname."</GPIFULLNAME>
+					<GPIPHONE>".$gpi_phone."</GPIPHONE>
+					<GPIEMAILID>".$gpi_emailID."</GPIEMAILID>
+					<GPIADDRESS>".$gpi_Address."</GPIADDRESS>
+					<GPICITYID>".$gpi_cityID."</GPICITYID>
+					<GPICATEGORYID>".$gpi_categoryID."</GPICATEGORYID>
+					<GPIMAKERID>".$gpi_makerID."</GPIMAKERID>
+					<GPIMODELID>".$gpi_modelID."</GPIMODELID>
+					<GPIVARIANTID>".$gpi_variantID."</GPIVARIANTID>
+					<GPIDEALERNAMEID>".$gpi_dealer_nameID."</GPIDEALERNAMEID>
+					<GPIAGREE>".$gpi_CheckBox."</GPIAGREE>
+				</HEADER>
+			</ROOT>";
+			$VType="INSERT";
+		$this->db->query('CALL usp_insUpdProformaInvoice("'.$VType.'","'.$xml.'",@vStatus,@proformaInvoiceID)');
+		$query=$this->db->query("SELECT @vStatus as status,@proformaInvoiceID as proformaInvoiceID")->result_array();
+		return  $query;
+		
+	}
+	function get_Proforma_Invoice($invoiceID){
+		$vType="ALL";
+		$query =$this->db->query('CALL usp_getProformaInvoice("'.$vType.'","'.$invoiceID.'")');
+		mysqli_next_result($this->db->conn_id);		
+		return $query->result_array();
+	}
 
 }
 
