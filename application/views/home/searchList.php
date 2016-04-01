@@ -312,8 +312,11 @@ if($pageName=='Bodytype'){
 	});
 	$("#search_category").on('change',function(){
 		$('#bodyTypeID').val('');
-		var fpageName=$(this).find(':selected').data('name');
-		$("#fullPageName").text(fpageName);
+		var pageNames='<?php echo $pageName; ?>';
+		if(pageNames=='Bodytype' || pageNames == 'Category'){
+			var fpageName=$(this).find(':selected').data('name');
+			$("#fullPageName").text(fpageName);
+		}
 		getData();
 	});
 	$("#search_manufacture").on('change',function(){
@@ -376,6 +379,7 @@ if($pageName=='Bodytype'){
 		var power=$("#ex6").val();
 		var trendsTypeID=$("#trendTypeID").val();
 		var orderBy=$("#orderBy").val();
+		$("#showing").text("Loading.....");
 		$.ajax({
 			url:'<?php echo $prefix; ?>/home/getTrendData/ALL',
 			dataType:'JSON',
