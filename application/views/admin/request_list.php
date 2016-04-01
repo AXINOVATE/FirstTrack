@@ -74,8 +74,13 @@ $prefix=$this->config->item('prefix');
 								<th class="hidden-xs">Request No</th>
 								<th>Requester Name</th>
 								<th>Phone</th>													
-								<th class="hidden-xs">Email</th>													
-								<th>Vehicle Variant</th>													
+								<th class="hidden-xs">Email</th>
+								<?php if($page=='DropAQuery'){
+									?>
+									<th>Query</th>
+								<?php } else{?>
+								<th>Vehicle Variant</th>
+								<?php } ?>																
 								<th>Status</th>													
 							</tr>
 						</thead>
@@ -87,7 +92,12 @@ $prefix=$this->config->item('prefix');
 										<td><a href="<?php echo $prefix;?>/admin/request_report/<?php echo $page."/".$D['UID']; ?>"><?php echo $D['fullName']; ?></a></td>
 										<td><?php echo $D['phone']; ?></td>
 										<td class="hidden-xs"><?php echo $D['email']; ?></td>
+										<?php if($page=='DropAQuery'){
+											?>
+											<td><?php echo $D['query']; ?></td>
+										<?php } else{?>
 										<td><?php echo $D['variantName']; ?></td>
+										<?php } ?>
 										<td><?php echo $D['status']; ?></td>
 										
 									</tr>
@@ -119,6 +129,10 @@ $prefix=$this->config->item('prefix');
 			myUrl="<?php echo $prefix;?>/admin/getRoadAssistanceRequest/"+vType;
 		}else if(page=='APInsurance'){
 			myUrl="<?php echo $prefix;?>/admin/getApplyForInsuranceRequest/"+vType;
+		}else if(page=='RoadTest'){
+			myUrl="<?php echo $prefix;?>/admin/getRoadTestRequest/"+vType;
+		}else if(page=='DropAQuery'){
+			myUrl="<?php echo $prefix;?>/admin/getDropAQueryRequest/"+vType;
 		}
 		$.ajax({
 			url:myUrl,

@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
+//var_dump($details); exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,17 +84,19 @@ $prefix=$this->config->item('prefix');
 						<?php echo $details[0]['phone'];?>
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
-						City:
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
-						<?php echo $details[0]['cityName'];?>
-					</div>
-					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Email-id:
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['email'];?>
 					</div>
+					<?php if($page!='DropAQuery'){?>
+					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
+						City:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['cityName'];?>
+					</div>
+					
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Maker:
 					</div>
@@ -112,12 +115,21 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['variantName'];?>
 					</div>
+					<?php }	?>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Received Date:
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['createdDateTime'];?>
 					</div>
+					<?php if($page=='DropAQuery'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Query:
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-12 mt-10 mb-10">
+						<?php echo $details[0]['query'];?>
+					</div>
+					<?php }	?>
 				</div>
 				<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">
@@ -154,7 +166,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 				</div>
 			</form>
-			<div class="row">
+		<!--	<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mt-30">
 					<div class="page-title">My Requests</div>
 					<hr class="mt-0"></hr>
@@ -233,7 +245,7 @@ $prefix=$this->config->item('prefix');
 						</tbody>
 					</table>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<!-- Body content ends here -->	

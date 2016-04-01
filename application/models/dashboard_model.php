@@ -39,6 +39,11 @@ class Dashboard_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+	public function getDropAQueryRequest($vType,$dID=''){		
+		$query = $this->db->query("CALL usp_getDropAQuery('".$vType."','".$dID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 	public function updateRequestReport(){		
 		$vresult['status'] = "Failed";
 		$xml ="<ROOT>
@@ -70,6 +75,8 @@ class Dashboard_model extends CI_Model{
 			$myQuery="CALL usp_insUpdApplyInsurance('".$xml."',@vresult)";
 		}elseif($page=="RoadTest"){
 			$myQuery="CALL usp_insUpdRequestTestDrive('".$vType."','".$xml."',@vresult)";
+		}elseif($page=="DropAQuery"){
+			$myQuery="CALL usp_insUpdDropAQuery('".$xml."',@vresult)";
 		}
 		$rndS=$this->home_model->randStrGen();
 		$query = $this->db->query($myQuery);

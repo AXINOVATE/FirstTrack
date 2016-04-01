@@ -126,38 +126,49 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($DropAQueryCount as $DAQ){
+							$totalDropAQueryRequest = $DAQ['totalCount'];
+							if($DAQ['openedCount']==null) $DAQ['openedCount']="0";
+							if($DAQ['progressCount']==null) $DAQ['progressCount']="0";
+							if($DAQ['closedCount']==null) $DAQ['closedCount']="0";
+							$totalDropAQueryOpenedRequest = $DAQ['openedCount'];
+							$totalDropAQueryProgressRequest = $DAQ['progressCount'];
+							$totalDropAQueryClosedRequest = $DAQ['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Query
+						<a href="<?php echo $prefix; ?>/admin/request_list/DropAQuery">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Query
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalDropAQueryRequest; ?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>140</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalDropAQueryOpenedRequest; ?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalDropAQueryProgressRequest; ?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalDropAQueryClosedRequest; ?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>20</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>60</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>60</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
