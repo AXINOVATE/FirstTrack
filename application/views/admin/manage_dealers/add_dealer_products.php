@@ -82,7 +82,7 @@ $prefix=$this->config->item('prefix');
 					
 				</tbody>
 			</table>
-			<button class="btn btn-primary pull-right" id="save" style="width:150px;border-radius:0px;"> Save </button>
+			<button class="btn btn-primary pull-right" id="save" style="width:150px;border-radius:0px;"> Save</button>
 		</section>
 	</div>
 		
