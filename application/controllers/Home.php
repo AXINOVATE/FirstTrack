@@ -344,13 +344,42 @@ class Home extends CI_Controller {
 	}
 	
 	public function get_Proforma_Invoice_pdf(){
-		$data['gpi_fullname'] = $this->input->post('gpi_fullname');
-		$data['gpi_phone'] = $this->input->post('gpi_phone');
-		$data['gpi_emailID'] = $this->input->post('gpi_emailID');
-		$data['gpi_Address'] = $this->input->post('gpi_Address');
+		$VresultStatus =$this->home_model->get_Proforma_Invoice_pdf();
+		if ($VresultStatus[0]['status']=="Successfully"){
+			$invoiceID=$VresultStatus[0]['proformaInvoiceID'];
+			$data['proformaInvoice']=$this->home_model->get_Proforma_Invoice($invoiceID);
+			$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);
+			$pdfFilePath = base_url()."Proforma_Invoice.pdf";
+			
+			//load mPDF library
+			$this->load->library('m_pdf');
+			//actually, you can pass mPDF parameter on this load() function
+			$pdf = $this->m_pdf->load();
+			//generate the PDF!
+			//var_dump($html);
+			$pdf->WriteHTML($html);
+			//offer it to user via browser download! (The PDF won't be saved on your server HDD)
+			//$pdf->Output($pdfFilePath,'I');
+			$pdf->Output($pdfFilePath, "I");
+			//$pdf->Output($pdfFilePath,'I');
+		}
+		/*
+		//var_dump($_POST); exit();
+		$data['proformaInvoice']=$this->home_model->get_Proforma_Invoice("1317dc48-f805-11e5-8594-74867ad2fb90");
+		/*$data['gpi_fullname'] = "full name";
+		$data['gpi_phone'] = "Phone ";
+		$data['gpi_emailID'] = "Email ID ";
+		$data['gpi_Address'] = "Address";
 		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
 		$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);
 		//echo htmlspecialchars($html);exit();
+		$pdfFilePath = "assets/upload/pdf";
+			if(!is_dir($pdfFilePath))
+				mkdir($pdfFilePath,0777);
+			$pdfFilePath = "assets/upload/pdf";
+			if(!is_dir($pdfFilePath))
+				mkdir($pdfFilePath,0777);
+			chmod($pdfFilePath,0777);
 		$pdfFilePath = "Proforma_Invoice.pdf";
 		//load mPDF library
 		$this->load->library('m_pdf');
@@ -358,8 +387,10 @@ class Home extends CI_Controller {
 		$pdf = $this->m_pdf->load();
 		//generate the PDF!
 		$pdf->WriteHTML($html);
+		$pdf->SetDisplayMode('fullpage');
 		//offer it to user via browser download! (The PDF won't be saved on your server HDD)
-		$pdf->Output();
+		$pdf->Output($pdfFilePath,"D");*/
+		
 	}
 	public function get_Proforma_Invoice_pdf_download(){
 		$data['company_name'] ="PRERANA MOTORS(P) LTD.,";
@@ -372,7 +403,7 @@ class Home extends CI_Controller {
 		//generate the PDF!
 		$pdf->WriteHTML($html);
 		//offer it to user via browser download! (The PDF won't be saved on your server HDD)		
-		$pdf->Output($pdf,'D');
+		$pdf->Output($pdfFilePath,'D');
 	}
 	function edit_dealer_info(){
 		$pageData['currentPage'] = '';

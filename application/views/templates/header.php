@@ -219,7 +219,7 @@ else{
 				
 						
 				<div class="modal-body">
-					<form class="form-horizontal"  target="_blank" onsubmit="return false" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf" name="get_Proforma_Invoice_pdf" role="form"  method="POST" id="get_Proforma_Invoice_pdf">
+					<form class="form-horizontal"  target="_blank" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf"   name="get_Proforma_Invoice_pdf" method="post" onsubmit="return false"  role="form"   id="get_Proforma_Invoice_pdf" >
 					<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 					<div class="col-md-7 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
@@ -249,44 +249,44 @@ else{
 						<textarea class="form-control" rows="3" va_req="true" id="gpi_address" name="gpi_address" placeholder="Address"></textarea>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_city" name="gpi_city" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_city" name="gpi_city" style="width:100%;" va_req="true">
 							<option value="">-- Select City --</option>
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_category" name="gpi_category" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_category" name="gpi_category" style="width:100%;"  va_req="true">
 							<option value="">-- Select Category --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_maker" name="gpi_maker" style="width:100%;"  va_req="true">
 							<option value="">-- Select Maker --</option>
 							
 						</select>
 					</div>
 					
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_model" name="gpi_model" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_model" name="gpi_model" style="width:100%;"  va_req="true">
 							<option value="">-- Select Model --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_variant" name="gpi_variant" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_variant" name="gpi_variant" style="width:100%;"  va_req="true">
 							<option value="">-- Select Variant --</option>
 							
 						</select>
 					</div>
 					<div class="col-md-6">
-						<select class="form-control mb-10" id="gpi_dealer_name" name="gpi_dealer_name" style="width:100%;" >
+						<select class="form-control mb-10" id="gpi_dealer_name" name="gpi_dealer_name" style="width:100%;"  va_req="true">
 							<option value="">-- Select Dealer Name -- </option>
 							
 						</select>
 					</div>
 					
 					<div class="col-md-12">
-						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="" style="float:left;">
+						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agreed" style="float:left;" id="gpi_CheckBox" name="gpi_CheckBox" va_req="true" />
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
 							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
@@ -295,10 +295,10 @@ else{
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<div class="col-md-6">
-							<a href="#" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</a>
+							<button type="submit" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</button>
 							</div>
-							<div class="col-md-6">
-							<button type="submit" id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" formtarget="_blank" >Print</button>
+							<div class="col-md-6">							
+							<button type="submit"  id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</button>
 							</div>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
