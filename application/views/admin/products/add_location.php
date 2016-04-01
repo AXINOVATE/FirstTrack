@@ -143,7 +143,7 @@ $prefix=$this->config->item('prefix');
 								<td>'.$LD["countryName"].'</td>
 								<td class="hidden-xs">'.$LD["stateName"].'</td>
 								<td class="hidden-xs">'.$LD["cityName"].'</td>
-								<td><a href="'.$prefix.'/home/add_location/'.$LD["locationID"].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="javascript:void();" class="delete-box-color delete-location font-size-16" data-lid="'.$LD["locationID"].'"><i class="fa fa-trash-o picture-padding-right-10" ></i><span class="hidden-xs" >Delete</span></a></td>
+								<td><a href="'.$prefix.'/admin/add_location/'.$LD["locationID"].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp <a href="javascript:void();" class="delete-box-color delete-location font-size-16" data-lid="'.$LD["locationID"].'"><i class="fa fa-trash-o picture-padding-right-10" ></i><span class="hidden-xs" >Delete</span></a></td>
 								
 							</tr>';
 								}

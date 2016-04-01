@@ -146,16 +146,15 @@
 		//get_road_varient();
 	});
 	$("#get_instant_quote_popup").on('click',function(){
+		$("#get-instant-quote-div").html('');
+		$("#get-instant-quote-div").css('background-color','');
 		get_instant_country();
 		get_instant_category();
-		//get_instant_maker();
-		//get_instant_dealerName();
-		//get_instant_variant();
 		get_all_country("instquote_country");
 		get_categories("instquote_category");
-		//get_variant("instquote_variant");
 	});
 	$('#get_instant_quote_form_save').on('click' ,function(){
+		$("#get-instant-quote-div").html('');
 		xu_validation.form_submit('#get_instant_quote_form','save_instant_quote');		
 	});
 })(jQuery);
@@ -431,7 +430,7 @@ function save_vehicle_loan(){
 				text: 'Saved Successfully',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
@@ -617,21 +616,48 @@ function save_instant_quote(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
-		}else{
-			$.gritter.add({
-				title: 'Failed',
-				text: 'Failed To Save',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
+		var html = "";
+		$('.disable_div').remove();
+		if(data.length>0){	
+			for(i=0;i<data.length;i++){
+				html += '<div class="col-md-6 col-sm-6 col-xs-12 b-rt-bt">'+
+							'<h2><font color="red"><i class="fa fa-inr"></i>'+data[i]['onRoadPrice']+'</font></h2><h3><font color="black">On-Road-Price</font></h3>'+
+						'</div>'+
+						'<div class="col-md-6 col-sm-6 col-xs-12">'+
+							'<table class="instant_quote_table mt-10">'+
+								'<tbody style="color: black;"> '+
+									'<tr>'+
+										'<td class="">Ex-showroom: </td>'+
+										'<td class="" ><i class="fa fa-inr"></i> '+data[i]['exShowroomPrice']+'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td class="">Insurance: </td>'+
+										'<td class=""><i class="fa fa-inr"></i> '+data[i]['insurance']+'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td class="">RTO: </td>'+
+										'<td class=""><i class="fa fa-inr"></i> '+data[i]['RTO']+'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td class="">Road Tax: </td>'+
+										'<td class=""><i class="fa fa-inr"></i> '+data[i]['roadTax']+'</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td class="">Other Handling Charges: </td>'+
+										'<td class=""><i class="fa fa-inr"></i> '+data[i]['handlingOtherCharges']+'</td>'+
+									'</tr>'+
+								'</tbody>'+
+							'</table>'+
+						'</div>';
+			}
 		}
+		else{
+			html += '<div class="col-md-12 col-sm-12 col-xs-12">'+
+							'<h4><font color="black">No results found!</font></h4>'+
+						'</div>';
+		}
+		$("#get-instant-quote-div").css('background-color','#ffffff');
+		$("#get-instant-quote-div").html(html);
 	});
 }
 /*---------------------GET INSTANCE QUOTE POPUP ENDS --------------*/

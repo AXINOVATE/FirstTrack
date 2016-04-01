@@ -445,6 +445,7 @@ class Home_model extends CI_Model{
 	}
 	public function add_InstantQuotes(){
 		$vresult['status'] = "Failed";
+		$checkedBy = "";
 		$xml ="<ROOT>
 					<HEADER>";
 		$countryID = $this->input->post('countryID');
@@ -456,6 +457,9 @@ class Home_model extends CI_Model{
 		$variantID = $this->input->post('variantID');
 		$dealerName = $this->input->post('dealerName');
 		$termsandconditions = $this->input->post('termsandconditions');
+		if($this->session->userdata('userID')!=''){
+			$checkedBy = $this->session->userdata('userID');
+		}
 		$vType = $this->input->post('vType');
 		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
 						<COUNTRYID>".$countryID."</COUNTRYID>
@@ -467,19 +471,21 @@ class Home_model extends CI_Model{
 						<VARIANTID>".$variantID."</VARIANTID>
 						<DEALERNAME>".$dealerName."</DEALERNAME>
 						<TERMSANDCONDITIONS>".$termsandconditions."</TERMSANDCONDITIONS>
+						<CHECKEDBY>".$checkedBy."</CHECKEDBY>
 					</HEADER>
 				</ROOT>";
-			$rndS=$this->randStrGen();
+			//$rndS=$this->randStrGen();
 			$query = $this->db->query("CALL usp_insUpdInstantQuote('".$xml."',@vresult)");
-			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			//$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
-			if ($query1[0][$rndS] == "Success"){
+			return $query->result_array();
+			/*if ($query1[0][$rndS] == "Success"){
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
 				return $vresult;
-			}
+			}	*/
 	}
 	
 	public function add_dropAQuery(){

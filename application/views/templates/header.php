@@ -1187,42 +1187,8 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</form>
-					<div  class="col-md-12 "id="get-instant-quote-div"  style="display:none;  background-color:#ffffff;margin-top:20px;" > 
-						<div class="col-md-6" >
-							<h1><font color="red"><i class="fa fa-inr"></i>&nbsp; 3,18,939</font><h5><h2><font color="black">On-Road-Price</font></h5>
-						</div>
-						<div class="col-md-6"style="border-left: 1px solid #ccc;">
-							<table>
-								<thead>
-									<tr>
-										<th class="col-md-9"></th>
-										<th class="col-md-3"></th>
-									</tr>
-								</thead>
-								<tbody style="color: black; font-size:20px;"> 
-									<tr>
-										<td class="">Ex-showroom:</td>
-										<td class="" ><i class="fa fa-inr"></i> 2,73,594</td>
-									</tr>
-									<tr>
-										<td class="">Insurance:</td>
-										<td class=""><i class="fa fa-inr"></i>2,73,594</td>
-									</tr>
-									<tr>
-										<td class="">RTO:</td>
-										<td class=""><i class="fa fa-inr"></i>2,73,594</td>
-									</tr>
-									<tr>
-										<td class="">Road Tax:</td>
-										<td class=""><i class="fa fa-inr"></i>2,73,594</td>
-									</tr>
-									<tr>
-										<td class="">Other Handling Charges:</td>
-										<td class=""><i class="fa fa-inr"></i>2,73,594</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+					<div  class="col-md-12 col-sm-12 col-xs-12 mt-20" id="get-instant-quote-div"> 
+						
 					</div>
 				</div>
 			</div>
