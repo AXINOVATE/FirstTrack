@@ -424,7 +424,8 @@ function save_vehicle_loan(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
+		if(data.status == "Success"){
+             $('#vehicle-loan-modal').modal('hide');			
 			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},10000);
 		}else{
@@ -503,6 +504,7 @@ function save_corporate_deals(){
 		dataType:'JSON'
 	}).done(function(data){
 		if(data.status == "Success"){	
+		  $('#corporate-deal-modal').modal('hide');	
 			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},1000);
 		}else{
@@ -825,6 +827,7 @@ function Request_TestDrive_Save(){
 		}).done(function(data){
 			
 			if(data == "Success"){	
+			    $('#test-drive-modal').modal('hide');	
 				$("#thanks-message").modal();
 				setTimeout(function(){window.location.reload();},1000);
 			}else{
@@ -894,6 +897,7 @@ function save_by_on_road_assistance(){
 		dataType:'JSON'
 		}).done(function(data){
 			if(data.status == "Success"){
+				$('#road-assistance-modal').modal('hide');	
 				$("#thanks-message").modal();
 			  
 			setTimeout(function(){window.location.reload();},1000);
@@ -975,7 +979,8 @@ function save_apply_for_insurance(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
+		if(data.status == "Success"){
+             $('#apply-insurance-modal').modal('hide');			
 			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},1000);
 		}else{
@@ -1054,12 +1059,9 @@ function save_dropAQuery(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Thank You',
-				text: 'We will get back to you soon!',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+		if(data.status == "Success"){
+           $('#drop-a-query-modal').modal('hide');				
+			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},1000);
 		}else{
 			$.gritter.add({
