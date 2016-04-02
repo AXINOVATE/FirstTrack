@@ -434,7 +434,7 @@ function save_vehicle_loan(){
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -506,14 +506,14 @@ function save_corporate_deals(){
 		if(data.status == "Success"){	
 		  $('#corporate-deal-modal').modal('hide');	
 			$("#thanks-message").modal();
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -751,14 +751,14 @@ function save_advance_booking(){
 		}).done(function(data){			
 			if(data == "Success"){	
 				$("#thanks-message").modal();
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 		});
 }
@@ -829,14 +829,14 @@ function Request_TestDrive_Save(){
 			if(data == "Success"){	
 			    $('#test-drive-modal').modal('hide');	
 				$("#thanks-message").modal();
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 		});
 
@@ -900,14 +900,14 @@ function save_by_on_road_assistance(){
 				$('#road-assistance-modal').modal('hide');	
 				$("#thanks-message").modal();
 			  
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 			
 		});
@@ -982,14 +982,14 @@ function save_apply_for_insurance(){
 		if(data.status == "Success"){
              $('#apply-insurance-modal').modal('hide');			
 			$("#thanks-message").modal();
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -1062,14 +1062,14 @@ function save_dropAQuery(){
 		if(data.status == "Success"){
            $('#drop-a-query-modal').modal('hide');				
 			$("#thanks-message").modal();
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
