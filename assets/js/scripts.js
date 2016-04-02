@@ -424,12 +424,9 @@ function save_vehicle_loan(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+		if(data.status == "Success"){
+             $('#vehicle-loan-modal').modal('hide');			
+			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
@@ -437,7 +434,7 @@ function save_vehicle_loan(){
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -507,19 +504,16 @@ function save_corporate_deals(){
 		dataType:'JSON'
 	}).done(function(data){
 		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
+		  $('#corporate-deal-modal').modal('hide');	
+			$("#thanks-message").modal();
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -756,19 +750,15 @@ function save_advance_booking(){
 			data:$('#Advance-Booking').serialize()
 		}).done(function(data){			
 			if(data == "Success"){	
-				$.gritter.add({
-					title: 'Success',
-					text: 'Saved Successfully',
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
-				setTimeout(function(){window.location.reload();},1000);
+				$("#thanks-message").modal();
+				setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 		});
 }
@@ -837,19 +827,16 @@ function Request_TestDrive_Save(){
 		}).done(function(data){
 			
 			if(data == "Success"){	
-				$.gritter.add({
-					title: 'Success',
-					text: 'Saved Successfully',
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
-				setTimeout(function(){window.location.reload();},1000);
+			    $('#test-drive-modal').modal('hide');	
+				$("#thanks-message").modal();
+				setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 		});
 
@@ -909,20 +896,18 @@ function save_by_on_road_assistance(){
 		processData: true,
 		dataType:'JSON'
 		}).done(function(data){
-			if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
+			if(data.status == "Success"){
+				$('#road-assistance-modal').modal('hide');	
+				$("#thanks-message").modal();
+			  
+			setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
 					text: 'Failed To Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
-				setTimeout(function(){window.location.reload();},1000);
+				setTimeout(function(){window.location.reload();},10000);
 			}
 			
 		});
@@ -946,7 +931,9 @@ function save_road_assistance(){
 /*-------------------road assistance popup-----------------*/
 
 
-
+function openthankmodal(){
+	$('#thanks-message').modal('open');
+}
 
 /*------------------- apply for insurance Popup Starts Here -----------------*/
 
@@ -992,20 +979,17 @@ function save_apply_for_insurance(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
+		if(data.status == "Success"){
+             $('#apply-insurance-modal').modal('hide');			
+			$("#thanks-message").modal();
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }
@@ -1043,36 +1027,18 @@ function get_particular_model(manufacture_control_name,model_control_name){
 
 $('#ProformaInvoicePDF').on('click' , function(){
 	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
-	//window.open(prefix+'/home/get_Proforma_Invoice_pdf', '_blank');	
-	get_Proforma_Invoice_pdf();
 });
-$('#get_Proforma_Invoice_pdf_download').on('click',function(){
+$('#get_Proforma_Invoice_pdf_download').on('click' , function(){
 	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
-	get_proforma_invoice();
-	
 });
-function get_proforma_invoice(){
-	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
-	$('#get_Proforma_Invoice_pdf').submit();
-}
-/*
-function getProformaInvoicePdf(){	
-	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');	
-	//return false;
-}
-*/
+
 function get_Proforma_Invoice_pdf(){
-	$('#get_Proforma_Invoice_pdf').attr('onSubmit','');
-	$('#get_Proforma_Invoice_pdf').submit();	
+	$('#get_Proforma_Invoice_pdf').attr('onSubmit','return true');
+	
+	//$('#get_Proforma_Invoice_pdf').submit();
 }
 
 /*-------------------  get_Proforma_Invoice_pdf  end code -----------------*/
-
-
-
-
-
-
 
 /* Start of Drop a Query Form*/
 $('#drop_a_query_btn').on('click' ,function(){
@@ -1093,20 +1059,17 @@ function save_dropAQuery(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Thank You',
-				text: 'We will get back to you soon!',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
-			setTimeout(function(){window.location.reload();},1000);
+		if(data.status == "Success"){
+           $('#drop-a-query-modal').modal('hide');				
+			$("#thanks-message").modal();
+			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
 				title: 'Failed',
 				text: 'Failed To Save',
 				class_name: 'gritter-info gritter-center' + 'gritter-light'
 			});
-			setTimeout(function(){window.location.reload();},1000);
+			setTimeout(function(){window.location.reload();},10000);
 		}
 	});
 }

@@ -293,7 +293,7 @@ $prefix=$this->config->item('prefix');
 										  </tr>
 										</tbody>
 									</table>
-									 <button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+									 <button class="btn btn-default btn-primary pull-right" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
 								</div>
 								</div>
 							</div>

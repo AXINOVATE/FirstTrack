@@ -64,7 +64,7 @@ $prefix=$this->config->item('prefix');
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mb-10" style="text-align: right;" id="whiteBoard-btn" data-yel="">
-					
+
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 					<table class="table table-bordered variants">

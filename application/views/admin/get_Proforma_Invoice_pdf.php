@@ -165,19 +165,16 @@ $prefix=$this->config->item('prefix');
 </head>
 <body>
 	<!-- Header starts here -->
-	<table class="" style="width:100%;">
+	<table class="" style="width:80%;">
 		<tr><center>
 			<td style="width:80mm;">
 			
-			<center>	<h1 class="heading">PRERANA MOTORS(P) LTD.,</h1></center>
+			<center>	<h1 class="heading">NAYAGAADI</h1></center>
 				<h2 class="heading">
 					NO 14 ,SLN ROAD ,BANGALORE-560027<br />
-					Pn No:42435524<br />
-					Region , Country<br />
-					 
-					Website : www.website.com<br />
-					E-mail : info@website.com<br />
-					Phone : +1 - 123456789
+					Website : http://www.nayagaadi.com/<br />
+					E-mail : info@nayagaadi.com<br />
+					Phone : +919900151719
 				</h2>
 			</td></center>
 		</tr>
@@ -194,53 +191,54 @@ $prefix=$this->config->item('prefix');
     <table class="heading" style="width:100%;">
         <tr>
             <td style="width:80mm;">
-                <h1 class="heading"> Name :<?php echo $gpi_phone;?></h1>
-                <h2 class="heading">
-                    123 Happy Street<br />
-                    Phone :<?php echo $gpi_phone;?> <br />
-                    Email ID :<?php echo $gpi_emailID;?> <br />                     
+                <h1 class="heading"> Name :<?php echo $proformaInvoice[0]['fullname'];?></h1>
+                <h2 class="heading">                    
+                    Phone :<?php echo $proformaInvoice[0]['phone'];?> <br />
+                    Email ID :<?php echo $proformaInvoice[0]['emailID'];?> <br />                     
                    Address : <br/>
-				   <?php echo $gpi_Address;?> 
+				   <?php echo $proformaInvoice[0]['address'];?> 
                 </h2>
             </td>
             <td rowspan="2" valign="top" align="right" style="padding:3mm;">
                 <table>
-                    <tr><td>Invoice No : </td><td>11-12-17</td></tr>
-                    <tr><td>Dated : </td><td>20-March-2016</td></tr>
+                    <tr><td>Invoice No : </td><td><?php echo $proformaInvoice[0]['billNo'];?></td></tr>
+                    <tr><td>Dated : </td><td><?php echo date('D-M-Y',strtotime($proformaInvoice[0]['invoiceDate']));?></td></tr> 
                     <tr><td>Currency : </td><td>IND</td></tr>
                 </table>
             </td>
         </tr>
         <tr>
             <td>
-                <b>Buyer</b> :<br />
-                Client Name<br />
-            Client Address
-                <br />
-                City - Pincode , Country<br />
+				<h5>Delar Detail</h5>
+                 <h6 class="heading">    
+					Name :<?php echo $proformaInvoice[0]['firstName'];?> <br />
+					LastName :<?php echo $proformaInvoice[0]['lastName'];?> <br />
+                    Phone :<?php echo $proformaInvoice[0]['phone'];?> <br />                                      
+                    Address : <br/>
+				   <?php echo $proformaInvoice[0]['addressLine1'];?> </br>
+				   <?php echo $proformaInvoice[0]['addressLine2'];?> <br/>
+				   PinCode<?php echo $proformaInvoice[0]['zipCode'];?>				   
+                </h6>
             </td>
         </tr>
     </table>
-         
-         
     <div id="content">
         <div id="invoice_body">
             <table>
             <tr style="background:#eee;">
                 <td style="width:8%;"><b>Sl. No.</b></td>
-                <td><b>Product</b></td>
+                <td><b>Description</b></td>
                 <td style="width:15%;"><b>Quantity</b></td>
                 <td style="width:15%;"><b>Rate</b></td>
                 <td style="width:15%;"><b>Total</b></td>
             </tr>
             </table>
-             
             <table>
             <tr>
                 <td style="width:8%;">1</td>
-                <td style="text-align:left; padding-left:10px;">Engine oil<br />Description :Engine oil </td>
-                <td class="mono" style="width:15%;">1</td><td style="width:15%;" class="mono">2500.00</td>
-                <td style="width:15%;" class="mono">2500.00</td>
+                <td style="text-align:left; padding-left:10px;"><pre><?php echo $proformaInvoice[0]['productName'];?> </pre></td>
+                <td class="mono" style="width:15%;">1</td><td style="width:15%;" class="mono"><pre><?php echo $proformaInvoice[0]['exShowroomPrice'];?> </pre></td>
+                <td style="width:15%;" class="mono"><pre><?php echo $proformaInvoice[0]['exShowroomPrice'];?> </pre></td>
             </tr>         
             <tr>
                 <td colspan="3"></td>
@@ -251,20 +249,10 @@ $prefix=$this->config->item('prefix');
             <tr>
                 <td colspan="3"></td>
                 <td>Total :</td>
-                <td class="mono">2500.00</td>
+                <td class="mono"><pre><?php echo $proformaInvoice[0]['exShowroomPrice'];?> </pre></td>
             </tr>
         </table>
-        </div>
-        <div id="invoice_total">
-           <br>
-            <table>				
-                <tr>
-                    <td style="text-align:left; padding-left:10px;">two thousand five hundred</td>
-                    <td style="width:15%;">RS</td>
-                    <td style="width:15%;" class="mono">2500.00</td>
-                </tr>
-            </table>
-        </div>
+        </div>       
         <table style="width:100%; height:35mm;">
             <tr>
                 <td style="width:65%;" valign="top">

@@ -121,7 +121,7 @@ $prefix=$this->config->item('prefix');
 						  <div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-							   <a class="btn btn-default btn-primary pull-right" id="location-save" name="location_save" ><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </a>
+							   <a class="btn btn-default btn-primary pull-right" id="location-save" name="location_save" ><i class="fa fa-floppy-o padding-right-8" ></i>Save</a>
 							</div>
 						  </div>
 						</div>

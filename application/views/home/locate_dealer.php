@@ -96,7 +96,6 @@ $prefix=$this->config->item('prefix');
 					
 				</div>
 			</div>
-           		
 		</div>
 	</div>	
 <?php echo $footer; ?>

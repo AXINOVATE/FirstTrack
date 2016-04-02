@@ -1196,7 +1196,7 @@ $prefix=$this->config->item('prefix');
 															<div class="form-group">
 																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
 																<div class="col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right" id="dmData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																	<button class="btn btn-default btn-primary pull-right" id="dmData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
 																</div>
 															</div>
 														</div>

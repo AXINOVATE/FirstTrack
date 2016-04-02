@@ -50,7 +50,7 @@ if($pageName=='Bodytype'){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="mt-0 mb-20"><?php echo $pageName; ?></h3>
+					<h3 class="mt-0 mb-20" id="fullPageName"><?php echo $fullPageName; ?></h3>
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="filter-manufacture">
@@ -62,10 +62,10 @@ if($pageName=='Bodytype'){
 						</div>
 						<center>
 							<select class="form-control select2" id="search_category" style="width:95%;">
-								<option value='ALL' selected>ALL</option>
+								<option value='ALL' selected data-name="ALL">ALL</option>
 								<?php 
 									foreach($categoryDetails as $CD){
-										echo "<option value='".$CD['categoryID']."'";
+										echo "<option value='".$CD['categoryID']."' data-name='".$CD['categoryName']."'";
 										if($pageName=='Category'){
 											if($typeID==$CD['categoryID']){
 												echo "selected";
@@ -185,6 +185,7 @@ if($pageName=='Bodytype'){
 						<div class="filter-heading mb-10">
 							DEALER NAME <i class="fa fa-minus"></i>
 						</div>
+						<div id="dealerDetailsCheck">
 						<?php 
 							foreach($dealerDetails as $DD){
 								?>
@@ -194,6 +195,7 @@ if($pageName=='Bodytype'){
 							<?php
 							}
 						?>
+						</div>
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
@@ -312,6 +314,17 @@ if($pageName=='Bodytype'){
 	});
 	$("#search_category").on('change',function(){
 		$('#bodyTypeID').val('');
+		var pageNames='<?php echo $pageName; ?>';
+		if(pageNames=='Bodytype' || pageNames == 'Category'){
+			var fpageName=$(this).find(':selected').data('name');
+			$("#fullPageName").text(fpageName);
+			var id=$(this).val();
+			if(id=='ALL'){
+				id='';
+			}
+			get_manufacture('search_manufacture',id);
+			get_dealerName('dealerDetailsCheck',id);
+		}
 		getData();
 	});
 	$("#search_manufacture").on('change',function(){
@@ -374,6 +387,7 @@ if($pageName=='Bodytype'){
 		var power=$("#ex6").val();
 		var trendsTypeID=$("#trendTypeID").val();
 		var orderBy=$("#orderBy").val();
+		$("#showing").text("Loading.....");
 		$.ajax({
 			url:'<?php echo $prefix; ?>/home/getTrendData/ALL',
 			dataType:'JSON',
@@ -395,6 +409,8 @@ if($pageName=='Bodytype'){
 					   var sum=[];
 					   var variantName=[];
 					   var slugName=[];
+					   var fuelType=[];
+					   var transmission=[];
 						for(var j=0;j<data1.length;j++){
 							if(data1[j]['productID']==data[i]['productID']){
 								if($.inArray(data1[j]['variantID'],vID1)<0){
@@ -402,8 +418,20 @@ if($pageName=='Bodytype'){
 									sum[sum.length]=data1[j]['exShowroomPrice'];
 									variantName[variantName.length]=data1[j]['variantName'];
 									slugName[slugName.length]=data1[j]['slugName'];
+									if($.inArray(data[j]['fuelType'],fuelType)<0){
+										fuelType[fuelType.length]=data[j]['fuelType'];
+									}
+									if($.inArray(data[j]['transmission'],transmission)<0){
+										transmission[transmission.length]=data[j]['transmission'];
+									}
 								}else{
 									sum[sum.length]=data1[j]['exShowroomPrice'];
+									if($.inArray(data[j]['fuelType'],fuelType)<0){
+										fuelType[fuelType.length]=data[j]['fuelType'];
+									}
+									if($.inArray(data[j]['transmission'],transmission)<0){
+										transmission[transmission.length]=data[j]['transmission'];
+									}
 								}
 							}
 						}
@@ -420,9 +448,9 @@ if($pageName=='Bodytype'){
 											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
 											'<ul class="product-variant">'+
 												'<li><i class="fa fa-car"></i>&nbsp; '+data[i]['body_type']+'</li>'+
-												'<li><i class="fa fa-cog"></i>&nbsp; '+data[i]['transmission']+'</li>'+
+												'<li><i class="fa fa-cog"></i>&nbsp; '+transmission+'</li>'+
 												'<li><i class="fa fa-clock-o"></i>&nbsp; '+data[i]['mileage']+' kmpl</li>'+
-												'<li><i class="fa fa-filter"></i>&nbsp; '+data[i]['fuelType']+'</li>'+
+												'<li><i class="fa fa-filter"></i>&nbsp; '+fuelType+'</li>'+
 											'</ul>'+
 										'</div>'+
 										'<div class="col-md-3 col-sm-3 text-center">'+
@@ -458,6 +486,45 @@ if($pageName=='Bodytype'){
 			$("#table_data").html(html);
 		});
 	}
+	function get_manufacture(callback,vID){
+	if(vID==''){
+		var vType='ALL';
+	}else{
+		var vType='ALL_C';
+	}
+	var callback="#"+callback;
+	var html="";
+	$.ajax({
+		url:prefix+'/home/get_manufacture_detail/'+vType+'/'+vID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html += "<option value='ALL'>ALL</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].manufactureID+"' >"+data[i].manufactureName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
+function get_dealerName(callback,mID){
+	var callback="#"+callback;
+	if(mID==''){var vType='RLIST';}else{var vType='DEALER-C';}
+	$.ajax({
+		url:prefix+'/home/get_dealer/'+vType+'/'+mID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "";
+		for(i=0;i<len;i++){
+			 html +="<div class='checkbox'><label><input type='checkbox' name='dealerID' class='dealerID' value='"+data[i].userID+"'>"+data[i].firstName+" "+data[i].lastName+"</label></div>";
+		}
+		$(callback).html(html);
+	});
+}
 			
 </script>
 </body>
