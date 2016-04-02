@@ -88,12 +88,13 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/upcoming_list',$data);
 	}
-	public function details($slug="",$variantID="",$location="",$dealerID="",$colorID=""){
+	public function details($slug="",$variantID="",$dealerID="",$colorID="",$location="",$board=""){
 		
 		$variantID = isset($_GET['variant']) ? $_GET['variant'] : '';
 		$location = isset($_GET['location']) ? $_GET['location'] : '';
 		$dealerID = isset($_GET['dealer']) ? $_GET['dealer'] : '';
 		$colorID = isset($_GET['color']) ? $_GET['color'] : '';
+		$board = isset($_GET['board']) ? $_GET['board'] : 'White-board';
 		
 		$pageData['currentPage'] = 'LIST';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -132,10 +133,9 @@ class Home extends CI_Controller {
 			if($dealerID =="" && isset($data['dealers'][0]->userID))
 				$dealerID = $data['dealers'][0]->userID;
 			
-			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID);
-			
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID,$board);
 			$data['features'] = $this->home_model->getProducts('Features',"",$productID,$variantID);
-			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID);
+			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID,$colorID,$board);
 			$data['photos'] = $this->home_model->getProducts('Photo',"",$productID,$variantID);
 			$data['videos'] = $this->home_model->getProducts('Video',"",$productID,$variantID);
 			$data['cities'] = $this->home_model->getProducts('getCities',"",$productID,$variantID);
@@ -149,6 +149,7 @@ class Home extends CI_Controller {
 			$data['colorID'] = $colorID;
 			$data['productID'] = $productID;
 			$data['slug'] = $slug;
+			$data['board'] = $board;
 			
 			//echo $dealerID = $data['dealers'][0]->userID;
 			

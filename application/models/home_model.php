@@ -1079,7 +1079,7 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	function getDealerProducts($type,$userID,$productID="",$variantID="",$colorID=""){
+	function getDealerProducts($type,$userID,$productID="",$variantID="",$colorID="",$board=""){
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>".$type."</ACTIONTYPE>
@@ -1087,6 +1087,7 @@ class Home_model extends CI_Model{
 					<PRODUCTID>".$productID."</PRODUCTID>
 					<VARIANTID>".$variantID."</VARIANTID>
 					<COLORID>".$colorID."</COLORID>
+					<BOARD>".$board."</BOARD>
 				</HEADER>
 			</ROOT>";
 		$qry = $this->db->query('CALL usp_getDealerProducts("'.$xml.'")');

@@ -63,7 +63,14 @@ $prefix=$this->config->item('prefix');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star-o"></i>
+							<div style="float:right;">	
+								<select class="select2 sl" style="width:145px;" id="d_board">
+									<option value="White-board" <?php if($board=='' || $board=='White-board') echo 'selected';?> >White-board</option>
+									<option value="Yellow-board"<?php if($board=='Yellow-board') echo 'selected';?>>Yellow-board</option>
+								</select>
+							</div>
 						</div>
+						
 						<div class="col-md-3 col-sm-2 col-xs-6 item-share">
 							<div class="dropdown">
 							  <div data-toggle="dropdown"><i class="fa fa-share-alt"></i></div>
@@ -376,14 +383,15 @@ $prefix=$this->config->item('prefix');
 		$("#d_color").val(id);
 		$("#d_color").trigger('change');
 	});
-	$("#d_variant,#d_dealer,#d_color,#d_location").on("change",function(){
+	$("#d_variant,#d_dealer,#d_color,#d_location,#d_board").on("change",function(){
 		var variantID = $("#d_variant").val();
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
 		var locationID = $("#d_location").val();
+		var board = $("#d_board").val();
 		if(variantID != ""){
 			//window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
-			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID;
+			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID+"&board="+board;
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
