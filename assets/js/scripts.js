@@ -425,11 +425,7 @@ function save_vehicle_loan(){
 		dataType:'JSON'
 	}).done(function(data){
 		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},10000);
 		}else{
 			$.gritter.add({
@@ -507,11 +503,7 @@ function save_corporate_deals(){
 		dataType:'JSON'
 	}).done(function(data){
 		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},1000);
 		}else{
 			$.gritter.add({
@@ -756,11 +748,7 @@ function save_advance_booking(){
 			data:$('#Advance-Booking').serialize()
 		}).done(function(data){			
 			if(data == "Success"){	
-				$.gritter.add({
-					title: 'Success',
-					text: 'Saved Successfully',
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
+				$("#thanks-message").modal();
 				setTimeout(function(){window.location.reload();},1000);
 			}else{
 				$.gritter.add({
@@ -837,11 +825,7 @@ function Request_TestDrive_Save(){
 		}).done(function(data){
 			
 			if(data == "Success"){	
-				$.gritter.add({
-					title: 'Success',
-					text: 'Saved Successfully',
-					class_name: 'gritter-info gritter-center' + 'gritter-light'
-				});
+				$("#thanks-message").modal();
 				setTimeout(function(){window.location.reload();},1000);
 			}else{
 				$.gritter.add({
@@ -909,12 +893,9 @@ function save_by_on_road_assistance(){
 		processData: true,
 		dataType:'JSON'
 		}).done(function(data){
-			if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+			if(data.status == "Success"){
+				$("#thanks-message").modal();
+			  
 			setTimeout(function(){window.location.reload();},1000);
 			}else{
 				$.gritter.add({
@@ -946,7 +927,9 @@ function save_road_assistance(){
 /*-------------------road assistance popup-----------------*/
 
 
-
+function openthankmodal(){
+	$('#thanks-message').modal('open');
+}
 
 /*------------------- apply for insurance Popup Starts Here -----------------*/
 
@@ -993,11 +976,7 @@ function save_apply_for_insurance(){
 		dataType:'JSON'
 	}).done(function(data){
 		if(data.status == "Success"){	
-			$.gritter.add({
-				title: 'Success',
-				text: 'Saved Successfully',
-				class_name: 'gritter-info gritter-center' + 'gritter-light'
-			});
+			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},1000);
 		}else{
 			$.gritter.add({

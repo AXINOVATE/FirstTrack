@@ -197,7 +197,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" id="advance-booking" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn"  data-toggle="modal" id="advance-booking" style="background-color:#F9D133;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -419,7 +419,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" id="Request_TestDrive" name="Request_TestDrive" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" id="Request_TestDrive"  data-toggle="modal" name="Request_TestDrive" style="background-color:#F9D133;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -605,7 +605,7 @@ else{
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="#" id="btn_apply_vehicle_loan" class="search-btn" style="background-color:#F9D133;" >Submit</a>
+								<a href="#" id="btn_apply_vehicle_loan"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;" >Submit</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 							</div>
 						</div>
@@ -767,7 +767,7 @@ else{
 						</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" id="corp_save_data" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" data-toggle="modal"  id="corp_save_data" style="background-color:#F9D133;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</form>
@@ -959,7 +959,7 @@ else{
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="#"  id="insurance-save" class="search-btn" style="background-color:#F9D133;" >Submit</a>
+								<a href="#"  id="insurance-save"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;" >Submit</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 							</div>
 						</div>
@@ -1117,7 +1117,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" id="by-on-road-assistance" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" data-toggle="modal"  id="by-on-road-assistance" style="background-color:#F9D133;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -1266,6 +1266,18 @@ else{
 		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback/ Ask the Experts </br><b>+919900151719</b></span>
 	</a>
 </div>
-	
+	<div class="modal fade thanks-modals " id="thanks-message" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+		 <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <p style="font-size:20px;"><i class="fa fa-check-circle"style="font-size:20px;color:green;"></i> &nbsp;<strong>Submitted Sucessfully</strong></p><br>
+		  <p style="font-size:15px;"><strong>Thank you!! Our NAYAGAADI Team will get back to you soon</strong></p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 	
  
