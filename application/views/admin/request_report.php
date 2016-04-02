@@ -122,6 +122,338 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['createdDateTime'];?>
 					</div>
+					<?php if($page=='VehicleLoan'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Address:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['address'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Dealer Name:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['firstName'].' '.$details[0]['lastName'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Dealer Location:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['location'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Booking Amount:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['bookingAmount'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preference Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['preferenceBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						PAN:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['PAN'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Customer Type:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['customerType'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Amount:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanAmount'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Duration:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanDuration'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Purchase Time:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['purchaseTime'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Annual Income:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['annualIncome'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Bank Location:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['bankLocation'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Time To Call:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['timeToCall'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Salary Account Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['salaryAccountBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Comment:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['comment'];?>
+					</div>
+					<?php } ?>
+					<?php if($page=='Corporate'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Address:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['address'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Vehicle Quantity:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['quantityOfVehicle'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Customer Type:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['customerType'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Need Loan:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['needLoan'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Amount:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanAmount'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Duration:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanDuration'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preference Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['preferenceBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Purchase Time:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['purchaseTime'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Time To Call:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['timeToCall'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Salary Account Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['salaryAccountBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						comment:
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-12 mt-10 mb-10">
+						<?php echo $details[0]['comment'];?>
+					</div>
+					<?php } ?>
+					<?php if($page=='APInsurance'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preferred Date:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['prefereed_date'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preferred Time:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['prefereed_time'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Use Mode:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['usemode'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Customer Type:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['customerType'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Need Loan:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['needLoan'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Amount:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanAmount'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Loan Duration:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['loanDuration'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Purchase Time:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['purchaseTime'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preference Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['preferenceBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Salary Account Bank:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['salaryAccountBank'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Comment:
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-12 mt-10 mb-10">
+						<?php echo $details[0]['comment'];?>
+					</div>
+					<?php } ?>
+					<?php if($page=='RoadTest'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Dealer Name:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['firstName'].' '.$details[0]['lastName'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Dealer Location:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['location'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preferred Date:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['rtdPreferredDate'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Preferred Time:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['rtdPreferredTime'];?>
+					</div>
+					<?php }	?>
+					<?php if($page=='RASSISTANCE'){?>
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
+							Use Mode:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['usemode'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Plan:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['plan'];?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Purchase For Corporates:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['purchase_for_corporates'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							List Of Roadcompanies:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['list_of_roadcompanies'];?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Type Of Road Assistance Package:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['types_of_road_assistance_pckage'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Package Benifits:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['packagebenifits'];?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Package Cost:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['packagecost'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Purchase Timeframe:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['purchase_timeframe'];?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Payment Details:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['paymentdetails'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Best Time For Call:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['best_time_for_call'];?>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Comment:
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-12 mt-10 mb-10">
+						<?php echo $details[0]['comment'];?>
+					</div>
+					<?php }	?>
 					<?php if($page=='DropAQuery'){?>
 					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
 						Query:

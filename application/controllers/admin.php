@@ -106,6 +106,7 @@ class Admin extends CI_Controller {
 			$data['counts'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getDropAQueryRequest('ONE',$id);
 		}
+		//var_dump($data['details']);exit();
 		$this->load->view('admin/request_report',$data);
 	}
 	public function add_location($locationID=''){

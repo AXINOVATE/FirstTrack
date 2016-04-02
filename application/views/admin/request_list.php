@@ -145,9 +145,13 @@ $prefix=$this->config->item('prefix');
 				html += '<tr><td class="hidden-xs">'+data[i]['requestNo']+'</td>'+
 							'<td><a href="<?php echo $prefix;?>/admin/request_report/<?php echo $page; ?>/'+data[i]['UID']+'">'+data[i]['fullName']+'</a></td>'+
 							'<td>'+data[i]['phone']+'</td>'+
-							'<td class="hidden-xs">'+data[i]['email']+'</td>'+
-							'<td>'+data[i]['variantName']+'</td>'+
-							'<td>'+data[i]['status']+'</td>'+
+							'<td class="hidden-xs">'+data[i]['email']+'</td>';
+							if(page=='DropAQuery'){
+								html +='<td>'+data[i]['query']+'</td>';
+							}else{
+							html +='<td>'+data[i]['variantName']+'</td>';
+							}
+							html +='<td>'+data[i]['status']+'</td>'+
 						'</tr>';
 			}
 			$("#table_data").html(html);
