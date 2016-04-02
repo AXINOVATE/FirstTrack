@@ -1012,6 +1012,7 @@ class Home_model extends CI_Model{
 		//echo "CALL usp_getProducts('".$type."','".$xml."')";
 		$qry = $this->db->query('CALL usp_getProducts("'.$type.'","'.$xml.'")');
 		mysqli_next_result($this->db->conn_id);
+		//var_dump($qry->result()); exit();
 		if($type == 'SP' || $type == 'SPV' || $type == 'SPB' || $type == 'Features' || $type == 'SOFFER' || $type == 'SLUG')
 			return $qry->row();
 		else
@@ -1022,25 +1023,28 @@ class Home_model extends CI_Model{
 		$productID = $this->input->post('productID');
 		$userID = $this->input->post('userID');
 		$data = $this->input->post('data');
+		$yelBoard = $this->input->post('yelBoard');
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
 					<PRODUCTID>".$productID."</PRODUCTID>
 					<USERID>".$userID."</USERID>
 					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+					<YELBOARD>".$yelBoard."</YELBOARD>
 				</HEADER>";
 			foreach($data as $d){
 				$xml.="<RECORD>
 					<VARIANTID>".$d[0]."</VARIANTID>
-					<COLORID>".$d[1]."</COLORID>
-					<QUANTITY>".$d[2]."</QUANTITY>
-					<EXSHOWROOMPRICE>".$d[3]."</EXSHOWROOMPRICE>
-					<INSURANCE>".$d[4]."</INSURANCE>
-					<RTO>".$d[5]."</RTO>
-					<ROADTAX>".$d[6]."</ROADTAX>
-					<HANDLINGCHARGES>".$d[7]."</HANDLINGCHARGES>
-					<ONROADPRICE>".$d[8]."</ONROADPRICE>
-					<WAITINGDAYS>".$d[9]."</WAITINGDAYS>
+					<NUMBERPLATE>".$d[1]."</NUMBERPLATE>
+					<COLORID>".$d[2]."</COLORID>
+					<QUANTITY>".$d[3]."</QUANTITY>
+					<EXSHOWROOMPRICE>".$d[4]."</EXSHOWROOMPRICE>
+					<INSURANCE>".$d[5]."</INSURANCE>
+					<RTO>".$d[6]."</RTO>
+					<ROADTAX>".$d[7]."</ROADTAX>
+					<HANDLINGCHARGES>".$d[8]."</HANDLINGCHARGES>
+					<ONROADPRICE>".$d[9]."</ONROADPRICE>
+					<WAITINGDAYS>".$d[10]."</WAITINGDAYS>
 					<STATUS>P</STATUS>
 				</RECORD>";
 			}
@@ -1190,19 +1194,22 @@ class Home_model extends CI_Model{
 		$productID = $this->input->post('productID');
 		$userID = $this->input->post('userID');
 		$data = $this->input->post('data');
+		$yelBoard = $this->input->post('yelBoard');
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
 					<PRODUCTID>".$productID."</PRODUCTID>
 					<USERID>".$userID."</USERID>
 					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
+					<YELBOARD>".$yelBoard."</YELBOARD>
 				</HEADER>";
 			foreach($data as $d){
 				$xml.="<RECORD>
 					<VARIANTID>".$d[0]."</VARIANTID>
-					<COLORID>".$d[1]."</COLORID>
-					<OFFER1>".$d[2]."</OFFER1>
-					<OFFER2>".$d[3]."</OFFER2>
+					<NUMBERPLATE>".$d[1]."</NUMBERPLATE>
+					<COLORID>".$d[2]."</COLORID>
+					<OFFER1>".$d[3]."</OFFER1>
+					<OFFER2>".$d[4]."</OFFER2>
 					<OFFER3></OFFER3>
 					<OFFER4></OFFER4>
 					<OFFER5></OFFER5>

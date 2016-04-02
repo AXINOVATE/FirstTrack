@@ -540,10 +540,11 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		//var_dump($data['details']); exit();
 		if(count($data['details']) > 0){
 			$data['userID'] = $userID;
-			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
-			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			//$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			//$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
 			$this->load->view('admin/manage_dealers/add_dealer_products',$data);
 		}else{
 			echo 'Page not found';
@@ -557,8 +558,8 @@ class Home extends CI_Controller {
 		//var_dump($data['details']); exit();
 		if(count($data['details']) > 0){
 			$data['userID'] = $userID;
-			$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
-			$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			//$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
+			//$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
 			$this->load->view('admin/manage_dealers/add_dealer_offer_products',$data);
 		}else{
 			echo 'Page not found';

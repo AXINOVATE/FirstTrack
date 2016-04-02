@@ -19,7 +19,7 @@ $prefix=$this->config->item('prefix');
 		.variants tbody{background-color:#F1F1F1;}
 		.variants thead{ color: #fff; background-color: #027CD5;}
 		.variants input{ width:100px;padding:0px 2px;}
-		.variants .vColor div{ display:inline-block;width:20px;height:20px;}
+		.variants .vColor div, .variants .vBoard div{ display:inline-block;width:20px;height:20px;}
 		textarea{width:100%;}
 	</style>
 </head>
@@ -64,20 +64,28 @@ $prefix=$this->config->item('prefix');
 					<button class="btn btn-primary" id="getProducts" style="width:40%;border-radius:0px;">Get Products</button>
 				</div>
 			</div>
-			<table class="table table-bordered variants">
-				<thead>
-					<tr>
-						<th>Variant</th>
-						<th>Color</th>
-						<th>Offer1</th>
-						<th>Offer2</th>
-					</tr>
-				</thead>
-				<tbody id="variants">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12 mb-10" style="text-align: right;" id="whiteBoard-btn" data-yel="">
 					
-				</tbody>
-			</table>
-			<button class="btn btn-primary pull-right" id="save" style="width:150px;border-radius:0px;"> Save </button>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+					<table class="table table-bordered variants">
+						<thead>
+							<tr>
+								<th>Variant</th>
+								<th>Board</th>
+								<th>Color</th>
+								<th>Offer1</th>
+								<th>Offer2</th>
+							</tr>
+						</thead>
+						<tbody id="variants">
+							
+						</tbody>
+					</table>
+					<button class="btn btn-primary pull-right" id="save" style="width:150px;border-radius:0px;"> Save </button>
+				</div>
+			</div>
 		</section>
 	</div>
 		
@@ -124,21 +132,47 @@ $prefix=$this->config->item('prefix');
 					data:{'productID':product,'userID':userID},
 					dataType:'JSON'
 				}).success(function(data){
-					var html = '';
+					var html = ''; var divColor = '#ffffff'; var k=0;
 					for(var i=0;i<data.length;i++){
-						html+='<tr>'+
+						if(data[i]['boards']=='Yellow-board'){
+							divColor = '#FFD400';
+							k++;
+						}
+						html+='<tr class="'+data[i]['boards']+'-row">'+
 							'<td class="vVariant" data-id="'+data[i]['variantID']+'">'+data[i]['variantName']+'</td>'+
+							'<td class="vBoard" data-id="'+data[i]['boards']+'"><div style="background-color:'+divColor+';"></div></td>'+
 							'<td class="vColor text-center" data-id="'+data[i]['colorID']+'"><div style="background-color:'+data[i]['colorCode']+';"></div></td>'+
 							'<td><textarea class="vOffer1">'+data[i]['offer1']+'</textarea></td>'+
 							'<td><textarea class="vOffer2">'+data[i]['offer2']+'</textarea></td>'+
 						'</tr>';
 					}
 					$("#variants").html(html);
+					if(k==0){
+						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="yellowBoard">Need Yellow-board?</a>');
+					}
+					else{
+						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="remYellowBoard">Remove Yellow-board?</a>');
+					}
 				});
 			}
 		});
+		$(document).on("click","#yellowBoard",function(){
+			$("#whiteBoard-btn").attr('data-yel','Yes');
+			$('#yellowBoard').parent().html('<a href="javascript:void(0)" id="remYellowBoard">Remove Yellow-board?</a>');
+			var clonedItem = $('tbody>tr').clone();
+			clonedItem.find('.vBoard').attr("data-id", "Yellow-board");
+			clonedItem.find('.vBoard').parent().attr("class", "Yellow-board-row");
+			clonedItem.find('.vBoard>div').css("background-color", "#FFD400");
+			clonedItem.appendTo("#variants");
+		});
+		$(document).on("click","#remYellowBoard",function(){
+			$("#whiteBoard-btn").attr('data-yel','No');
+			$('#remYellowBoard').parent().html('<a href="javascript:void(0)" id="yellowBoard">Need Yellow-board?</a>');
+			$('#variants').find('.Yellow-board-row').remove();
+		});
 		$('#save').on('click',function(){
 			var product = $('#product').val();
+			var yelBoard = $('#whiteBoard-btn').attr('data-yel');
 			var userID = "<?php echo $userID;?>";
 			var contents = [];var i=0;var error=0;;
 			$("textarea","#variants").css({"border": "1px solid grey"});
@@ -152,16 +186,17 @@ $prefix=$this->config->item('prefix');
 				$("#variants tr").each(function(){
 					var data = [];var obj= $(this);
 					data[0] = $(".vVariant", obj).data('id');
-					data[1] = $(".vColor", obj).data('id');
-					data[2] = $(".vOffer1", obj).val();
-					data[3] = $(".vOffer2", obj).val();
+					data[1] = $(".vBoard", obj).data('id');
+					data[2] = $(".vColor", obj).data('id');
+					data[3] = $(".vOffer1", obj).val();
+					data[4] = $(".vOffer2", obj).val();
 					contents[i++] = data;
 				});
 				
 				$.ajax({
 					url:'<?php echo $prefix;?>/home/adding_dealer_products_offer',
 					type:'POST',
-					data:{'productID':product,'userID':userID,'data':contents},
+					data:{'productID':product,'userID':userID,'data':contents,'yelBoard':yelBoard},
 					dataType:'JSON'
 				}).done(function(data){
 					if(data.status == "Success"){	
