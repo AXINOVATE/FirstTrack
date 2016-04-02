@@ -601,26 +601,33 @@ class Home_model extends CI_Model{
 			//$xml1 .= "<SEATS>";
 			if($seatCapacity!=''){
 				$seatCap=explode(',',$seatCapacity);
-				
-				if(end($seatCap)=='6'){
+				$seatStr = min($seatCap);
+				$xml1 .= "<SEATCAPACITY>".$seatStr."</SEATCAPACITY>";
+				/*if(end($seatCap)=='6'){
 					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
 					array_pop($seatCap);
-					$seatStr = implode(",",$seatCap);
+					$seatStr = min($seatCap);
 					if($seatStr!=''){
 						$seatStr = $seatStr;
 					}
 					else{
-						$seatStr = 0;
+						$seatStr = 6;
 					}
 					$xml1 .= "<SEATCAPACITY>".$seatStr."</SEATCAPACITY>";
 				}
 				else{
 					$xml1 .= "<SEATCAPACITY>6</SEATCAPACITY>";
-					$xml1 .= "<SEATCAPACITY>".$seatCapacity."</SEATCAPACITY>";
-				}
+					$seatStr = min($seatCap);
+					if($seatStr!=''){
+						$seatStr = $seatStr;
+					}
+					else{
+						$seatStr = 6;
+					}
+					$xml1 .= "<SEATCAPACITY>".$seatStr."</SEATCAPACITY>";
+				}	*/
 			}
 			else{
-				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
 				$xml1 .= "<SEATCAPACITY>0</SEATCAPACITY>";
 			}
 			

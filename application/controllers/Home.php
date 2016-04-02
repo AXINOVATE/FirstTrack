@@ -46,6 +46,7 @@ class Home extends CI_Controller {
 			$data['typeID'] = '';
 			if($page=='bodytype' || $page=='category' || $page=='list'){
 				$data['getTType'] = $this->manage_products_model->getTrendType('ALL');
+				$data['fullPageName']=ucfirst($page);
 				if($page=='bodytype'){
 					$data['bodyTypeDetails']=$this->manage_products_model->getBodyTypeDetails("ONE",$id);
 					$data['fullPageName']=ucfirst($page).' - '.$data['bodyTypeDetails'][0]['body_type'];

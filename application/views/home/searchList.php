@@ -185,6 +185,7 @@ if($pageName=='Bodytype'){
 						<div class="filter-heading mb-10">
 							DEALER NAME <i class="fa fa-minus"></i>
 						</div>
+						<div id="dealerDetailsCheck">
 						<?php 
 							foreach($dealerDetails as $DD){
 								?>
@@ -194,6 +195,7 @@ if($pageName=='Bodytype'){
 							<?php
 							}
 						?>
+						</div>
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
@@ -316,6 +318,12 @@ if($pageName=='Bodytype'){
 		if(pageNames=='Bodytype' || pageNames == 'Category'){
 			var fpageName=$(this).find(':selected').data('name');
 			$("#fullPageName").text(fpageName);
+			var id=$(this).val();
+			if(id=='ALL'){
+				id='';
+			}
+			get_manufacture('search_manufacture',id);
+			get_dealerName('dealerDetailsCheck',id);
 		}
 		getData();
 	});
@@ -478,6 +486,45 @@ if($pageName=='Bodytype'){
 			$("#table_data").html(html);
 		});
 	}
+	function get_manufacture(callback,vID){
+	if(vID==''){
+		var vType='ALL';
+	}else{
+		var vType='ALL_C';
+	}
+	var callback="#"+callback;
+	var html="";
+	$.ajax({
+		url:prefix+'/home/get_manufacture_detail/'+vType+'/'+vID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html += "<option value='ALL'>ALL</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].manufactureID+"' >"+data[i].manufactureName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
+function get_dealerName(callback,mID){
+	var callback="#"+callback;
+	if(mID==''){var vType='RLIST';}else{var vType='DEALER-C';}
+	$.ajax({
+		url:prefix+'/home/get_dealer/'+vType+'/'+mID,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = "";
+		for(i=0;i<len;i++){
+			 html +="<div class='checkbox'><label><input type='checkbox' name='dealerID' class='dealerID' value='"+data[i].userID+"'>"+data[i].firstName+" "+data[i].lastName+"</label></div>";
+		}
+		$(callback).html(html);
+	});
+}
 			
 </script>
 </body>
