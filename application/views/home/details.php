@@ -387,10 +387,10 @@ $prefix=$this->config->item('prefix');
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
-		var variantID = $("#d_variant").val();
+		var variantID = '<?php echo $variantID; ?>';
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
-		var productID = '<?php echo $slug; ?>';
+		var productID = '<?php echo $productID; ?>';
 		if(variantID != "" && dealerID != "" && colorID != ""){
 			$.ajax({
 				url:'<?php echo $prefix;?>/home/creating_checkout',
