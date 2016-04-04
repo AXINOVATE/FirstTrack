@@ -153,9 +153,13 @@ $prefix=$this->config->item('prefix');
 					<div class="row mt-10">
 						<div class="col-md-12 item-action">
 							<button class="btn <?php if($priceCheck == 0)echo 'hide';?>" id="buy_now_btn">Buy Now</button>
-							<button class="btn">Advance Booking</button>
+							<a id="adv-book1" class="btn" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
+								Advance Booking
+							</a>
 							<button class="btn">Buy Later</button>
-							<button class="btn">Book Test Drive</button>
+							<a id="test-drive1" class="btn" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
+								Book Test Drive
+							</a>
 						</div>
 					</div>
 					
@@ -399,11 +403,13 @@ $prefix=$this->config->item('prefix');
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
 		var productID = '<?php echo $productID; ?>';
+		var cityName = $("#d_location").val();
+		var board = $("#d_board").val();
 		if(variantID != "" && dealerID != "" && colorID != ""){
 			$.ajax({
 				url:'<?php echo $prefix;?>/home/creating_checkout',
 				type:'POST',
-				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID},
+				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
 				dataType:'JSON'
 			}).success(function(data){
 				window.location="<?php echo $prefix;?>/home/checkout";

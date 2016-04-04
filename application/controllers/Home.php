@@ -133,9 +133,9 @@ class Home extends CI_Controller {
 			if($dealerID =="" && isset($data['dealers'][0]->userID))
 				$dealerID = $data['dealers'][0]->userID;
 			
-			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID,$board);
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID,$board,$cityName);
 			$data['features'] = $this->home_model->getProducts('Features',"",$productID,$variantID);
-			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID,$colorID,$board);
+			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID,$colorID,$board,$cityName);
 			$data['photos'] = $this->home_model->getProducts('Photo',"",$productID,$variantID);
 			$data['videos'] = $this->home_model->getProducts('Video',"",$productID,$variantID);
 			$data['cities'] = $this->home_model->getProducts('getCities',"",$productID,$variantID);
@@ -295,10 +295,12 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		
 		$cart = $this->session->userdata('cart');
+		//var_dump($cart); exit();
 		if(count($cart)>0){
 			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
 			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
-			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
+			
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID'],$cart['board'],$cart['cityName']);
 			
 			if(isset($data['prices']->onRoadPrice))
 				$cart['unitPrice'] = floatval($data['prices']->onRoadPrice);
@@ -320,6 +322,8 @@ class Home extends CI_Controller {
 		$cart['variantID'] = $this->input->post('variantID');
 		$cart['dealerID'] = $this->input->post('dealerID');
 		$cart['colorID'] = $this->input->post('colorID');
+		$cart['board'] = $this->input->post('board');
+		$cart['cityName'] = $this->input->post('cityName');
 		$cart['qty'] = 1;
 		$cart['unitPrice'] = 0;
 		$cart['shippingPrice'] = 0;
