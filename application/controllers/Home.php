@@ -682,4 +682,14 @@ class Home extends CI_Controller {
 	public function get_particular_location_detail(){
 		echo json_encode($this->home_model->get_particular_location_detail());
 	}
+	public function siteMap(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['category'] = $this->home_model->category_list();
+		$data['manufacture']=$this->home_model->manufacture_list();
+		$data['productBasic']=$this->home_model->product_basic_detail();
+		$data['productDetail'] = $this->home_model->get_all_product_details();
+		$this->load->view('home/sitemap',$data);
+	}
 }

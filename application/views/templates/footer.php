@@ -129,7 +129,7 @@ $prefix=$this->config->item('prefix');
 
 					<ul class="list-unstyled">
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=information/contact">Contact Us</a></li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=information/sitemap">Site Map</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/siteMap" id="site-map">Site Map</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=product/manufacturer">Brands</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=affiliate/account">Affiliates</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=product/special">Specials</a></li>
