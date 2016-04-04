@@ -98,7 +98,7 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-12">
 					<ul>
 						<li class="heading">About Company :</li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/About%20Us">About Us</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/Aboutus">About Us</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Investors">Investors</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Media">Media</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Testimonials">Testimonials</a></li>

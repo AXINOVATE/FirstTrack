@@ -658,6 +658,12 @@ class Home extends CI_Controller {
 	public function profile_update(){
 		echo json_encode($this->home_model->updateUserDetails($this->input->post('userID'),$this->input->post('firstName'),$this->input->post('lastName'),$this->input->post('profilePic'),$this->input->post('countryID'),$this->input->post('stateID'),$this->input->post('cityID'),$this->input->post('address1'),$this->input->post('address2'),$this->input->post('locationID'),$this->input->post('zipCode'),$this->input->post('phone'),$this->input->post('sEmail'),$this->input->post('sPhone'),$this->input->post('productCategory'),$this->input->post('manufacture'),$this->input->post('authDealer'),$this->input->post('status')));
 	}
+	public function aboutus(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/aboutus',$data);
+	}
 	public function dealer_registration(){
 		echo json_encode($this->home_model->dealer_registration());
 	}
