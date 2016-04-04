@@ -573,12 +573,6 @@ else{
 							</select>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="loan" name="loan" placeholder="Loan Amount" />
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-							<input type="text" class="form-control" id="bank" name="bank" placeholder="Bank Name" />
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 							<input type="text" class="form-control" id="vehlone_annual" name="vehlone_annual" placeholder="Annual Income"  va_req="true"/>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
@@ -1279,5 +1273,5 @@ else{
       </div>
     </div>
   </div>
-	
+
  
