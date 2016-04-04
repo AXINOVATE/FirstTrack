@@ -81,30 +81,38 @@ class Admin extends CI_Controller {
 			$data['Name'] = "Corporate Deals ";
 			$data['counts'] = $this->dashboard_model->getCorporateDetailsRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getCorporateDetailsRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getCorporateDetailsRequest('RESPONDS',$id);
 		}elseif($page=='VehicleLoan'){
 			$data['Name'] = "Vehicle Loan ";
 			$data['counts'] = $this->dashboard_model->getVehicleLoanRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getVehicleLoanRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getVehicleLoanRequest('RESPONDS',$id);
+			//var_dump($data['respondDetails']);exit();
 		}elseif($page=='AdvanceBooking'){
 			$data['Name'] = "Advance Booking ";
 			$data['counts'] = $this->dashboard_model->getAdvanceBookingRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getAdvanceBookingRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getAdvanceBookingRequest('RESPONDS',$id);
 		}elseif($page=='RASSISTANCE'){
 			$data['Name'] = "Road Assistance ";
 			$data['counts'] = $this->dashboard_model->getRoadAssistanceRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getRoadAssistanceRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getRoadAssistanceRequest('RESPONDS',$id);
 		}elseif($page=='APInsurance'){
 			$data['Name'] = "Apply For Insurance ";
 			$data['counts'] = $this->dashboard_model->getApplyForInsuranceRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getApplyForInsuranceRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getApplyForInsuranceRequest('RESPONDS',$id);
 		}elseif($page=='RoadTest'){
 			$data['Name'] = "Road Test Drive ";
 			$data['counts'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getRoadTestRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getRoadTestRequest('RESPONDS',$id);
 		}elseif($page=='DropAQuery'){
 			$data['Name'] = "Drop A Query";
 			$data['counts'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getDropAQueryRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getDropAQueryRequest('RESPONDS',$id);
 		}
 		//var_dump($data['details']);exit();
 		$this->load->view('admin/request_report',$data);

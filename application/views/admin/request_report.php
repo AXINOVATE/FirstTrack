@@ -70,6 +70,7 @@ $prefix=$this->config->item('prefix');
 			</div>
 			<form class="form-horizontal" name="request_report_form" role="form"  method="POST" id="request_report_form" submit="return false">
 				<input type="hidden" id="re_UID" name="re_UID" value="<?php echo $details[0]['UID']; ?>">
+				<input type="hidden" id="requestNo" name="requestNo" value="<?php echo $details[0]['requestNo'];?>">
 				<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Requester Name:
@@ -463,20 +464,20 @@ $prefix=$this->config->item('prefix');
 					</div>
 					<?php }	?>
 				</div>
-				<div class="row">
+				<!--<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">
 						Description
 					</div>
 					<div class="col-md-7 col-sm-7 col-xs-12 mb-10 mt-10">
-						<textarea type="text" class="form-control" name="re_desc" id="re_desc" va_req="true"><?php echo $details[0]['description'];?></textarea>
+						<textarea type="text" class="form-control" name="re_desc" id="re_desc" va_req="true"></textarea>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">
 						Respond
 					</div>
 					<div class="col-md-7 col-sm-7 col-xs-12 mb-10 mt-10">
-						<textarea type="text" class="form-control" name="re_respond" id="re_respond" va_req="true"><?php echo $details[0]['respond'];?></textarea>
+						<textarea type="text" class="form-control" name="re_respond" id="re_respond" va_req="true" <?php if($details[0]['status']=='Closed'){echo "readonly";}?>></textarea>
 					</div>
 				</div>
 				<div class="row">
@@ -484,7 +485,7 @@ $prefix=$this->config->item('prefix');
 						&nbsp;
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-12 mb-10 mt-10">
-						<select class="form-control entity-type select2" name="re_status" id="re_status"  va_req="true" style="width:100%;">
+						<select class="form-control entity-type select2" <?php if($details[0]['status']=='Closed'){echo "disabled";}?> name="re_status" id="re_status"  va_req="true" style="width:100%;">
 							<option value="" <?php if($details[0]['status']==''){echo 'selected';}?>>--Select Status--</option>
 							<option value="In-progress" <?php if($details[0]['status']=='In-progress'){echo 'selected';}?> >In-Progress</option>
 							<option value="Closed" <?php if($details[0]['status']=='Closed'){echo 'selected';}?> >Closed</option>
@@ -498,7 +499,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 				</div>
 			</form>
-		<!--	<div class="row">
+			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mt-30">
 					<div class="page-title">My Requests</div>
 					<hr class="mt-0"></hr>
@@ -517,16 +518,16 @@ $prefix=$this->config->item('prefix');
 						</thead>
 						<tbody>
 							<tr>
-								<td class="hidden-xs">REQ0001</td>
-								<td>20 Feb 2016</td>
-								<td>Test Drive</td>
-								<td>In-progress</td>
+								<td class="hidden-xs"><?php echo $details[0]['requestNo'];?></td>
+								<td><?php echo $details[0]['createdDateTime'];?></td>
+								<td><?php echo $Name;?></td>
+								<td><?php echo $details[0]['status'];?></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<div class="row">
+			<!--<div class="row">
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">
 					Respond
 				</div>
@@ -536,10 +537,10 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">
 					<a href="javascript:void(0)" class="search-btn" >Save</a>
 				</div>
-			</div>
+			</div> -->
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mt-30">
-					<div class="page-title">History of Road Test Request - REQ00001</div>
+					<div class="page-title">History of <?php echo $Name;?> Request - <?php echo $details[0]['requestNo'];?></div>
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
@@ -555,29 +556,22 @@ $prefix=$this->config->item('prefix');
 							</tr>
 						</thead>
 						<tbody>
+						<?php 
+							foreach($respondDetails as $RD){
+								?>
 							<tr>
-								<td>Agent</td>
-								<td>20 Feb 2016</td>
-								<td>In-Progress</td>
-								<td class="hidden-xs">Thank you. We will confirm the time in 30 mins.</td>
-								
+								<td><?php echo $RD['firstName'].' '.$RD['lastName']; ?></td>
+								<td><?php echo $RD['respondDate']; ?></td>
+								<td><?php echo $RD['respondStatus']; ?></td>
+								<td class="hidden-xs"><?php echo $RD['respodMessage']; ?></td>
 							</tr>
-							<tr>
-								<td>Agent</td>
-								<td>20 Feb 2016</td>
-								<td>In-Progress</td>
-								<td class="hidden-xs">We got the time at 3pm on 25th Feb 2016. Is that ok for you?</td>
-							</tr>
-							<tr>
-								<td>Jay Prakash</td>
-								<td>20 Feb 2016</td>
-								<td>In-Progress</td>
-								<td class="hidden-xs">Yes. That is fine.</td>
-							</tr>
+						<?php 
+							}
+						?>
 						</tbody>
 					</table>
 				</div>
-			</div> -->
+			</div> 
 		</div>
 	</div>
 	<!-- Body content ends here -->	
@@ -587,17 +581,17 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
-	$('.request-count-box').on('click', function(){
+	/*$('.request-count-box').on('click', function(){
 		$('.request-count-box').removeClass('bg-yellow');
 		$(this).addClass('bg-yellow');
-	});
+	});*/
 	$('#btn_request_report').on('click' ,function(){
 		xu_validation.form_submit('#request_report_form','save_request_report');		
 	});
 	function save_request_report(){
 		var page='<?php echo $page;?>';
 		var myUrl='<?php echo $prefix;?>/admin/updateRequestReport';
-		var description = $("#re_desc").val();
+		var requestNo = $("#requestNo").val();
 		var respond = $("#re_respond").val();
 		var status = $("#re_status").val();
 		var UID = $("#re_UID").val();
@@ -605,7 +599,7 @@ $prefix=$this->config->item('prefix');
 			url:myUrl,
 			dataType:'JSON',
 			type:'POST',
-			data:{'vType':'UPDATE','description':description,'respond':respond,'status':status,'UID':UID,'page':page}
+			data:{'vType':'UPDATE','requestNo':requestNo,'respond':respond,'status':status,'UID':UID,'page':page}
 		}).done(function(data){
 			if(data.status == "Success"){	
 				$.gritter.add({

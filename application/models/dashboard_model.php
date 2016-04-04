@@ -49,14 +49,14 @@ class Dashboard_model extends CI_Model{
 		$xml ="<ROOT>
 					<HEADER>";
 		$vType = $this->input->post('vType');
-		$description = $this->input->post('description');
+		$requestNo = $this->input->post('requestNo');
 		$respond = $this->input->post('respond');
 		$status = $this->input->post('status');
 		$UID = $this->input->post('UID');
 		$userID = $this->session->userdata('userID');
 		$page=$this->input->post("page");
 		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
-						<DESCRIPTION>".$description."</DESCRIPTION>
+						<REQUESTNO>".$requestNo."</REQUESTNO>
 						<RESPOND>".$respond."</RESPOND>
 						<UID>".$UID."</UID>
 						<USERID>".$userID."</USERID>
