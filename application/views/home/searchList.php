@@ -223,7 +223,7 @@ if($pageName=='Bodytype'){
 						  <label><input type="checkbox" class="emissionStandard" value="BS-VII">BS VII</label>
 						</div>
 					</div>
-					<div class="filter-powersteering">
+					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
 							POWER STEERING <i class="fa fa-minus"></i>
 						</div>
