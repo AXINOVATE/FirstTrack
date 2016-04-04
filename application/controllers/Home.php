@@ -50,6 +50,7 @@ class Home extends CI_Controller {
 				if($page=='bodytype'){
 					$data['bodyTypeDetails']=$this->manage_products_model->getBodyTypeDetails("ONE",$id);
 					$data['fullPageName']=ucfirst($page).' - '.$data['bodyTypeDetails'][0]['body_type'];
+					$data['categoryID']=$data['bodyTypeDetails'][0]['categoryID'];
 				}
 				$data['getTID'] = '';
 				$data['trendsTypeID']='';
@@ -65,6 +66,8 @@ class Home extends CI_Controller {
 			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
 			$data['categories']= $this->home_model->getTrendData('Category','');
 			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
+			//var_dump($data['categories']);
+			//exit();
 			$this->load->view('home/searchList',$data);
 		}
 		else{

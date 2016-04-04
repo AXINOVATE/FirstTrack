@@ -126,9 +126,9 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/select2.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
 <script>
 	$('document').ready(function(){
 		getMakers('<?php echo $catID[0]['categoryID'];?>');
@@ -151,7 +151,8 @@ $prefix=$this->config->item('prefix');
 	$('.c-compare').on('click', function(){
 		$('.c-compare').removeClass('bg-blue');
 		var catID = $(this).attr('data-catID');
-		
+		var car='<?php echo $catID[0]['categoryID'];?>';
+		var bike='<?php echo $catID[1]['categoryID'];?>';
 		$('#categoryID').val(catID);
 		$(this).addClass('bg-blue');
 		$('.select2').val('');
@@ -172,7 +173,13 @@ $prefix=$this->config->item('prefix');
 		$('.selMaker').trigger("change");
 		$('.selModel').trigger("change");
 		//$('.selVariant').trigger("change");
-		$('.news-thumbnail-img').attr('src','<?php echo $assetsPath;?>/images/default-no-car.png');
+		if(catID==car){
+			$('.news-thumbnail-img').attr('src','<?php echo $assetsPath;?>/images/default-no-car.png');
+		}else if(catID==bike){
+			$('.news-thumbnail-img').attr('src','<?php echo $assetsPath;?>/images/default-no-bike.png');
+		}else{
+			$('.news-thumbnail-img').attr('src','<?php echo $assetsPath;?>/images/default-no-car.png');
+		}
 		$('.compare-title').html('No vehicle selected yet');
 	});
 	function getMakers(catID){

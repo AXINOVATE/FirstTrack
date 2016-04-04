@@ -17,8 +17,10 @@ function convertNum($n) {
 	return number_format($n);
 }
 $bodyTypeID = "";
+$catID = "";
 if($pageName=='Bodytype'){
 	$bodyTypeID = $typeID;
+	$catID=$categoryID;
 }
 ?>
 <!DOCTYPE html>
@@ -68,6 +70,10 @@ if($pageName=='Bodytype'){
 										echo "<option value='".$CD['categoryID']."' data-name='".$CD['categoryName']."'";
 										if($pageName=='Category'){
 											if($typeID==$CD['categoryID']){
+												echo "selected";
+											}
+										}else if($pageName=='Bodytype'){
+											if($catID==$CD['categoryID']){
 												echo "selected";
 											}
 										} 
@@ -272,11 +278,10 @@ if($pageName=='Bodytype'){
 	<!-- Footer end -->
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
@@ -296,6 +301,15 @@ if($pageName=='Bodytype'){
 		$("#ex4").slider({tooltip: 'always'});
 		$("#ex5").slider({tooltip: 'always'});
 		$("#ex6").slider({tooltip: 'always'});
+		if($('#bodyTypeID').val() !=''){
+			//$("#search_category").trigger('change');
+			var id=$("#search_category").val();
+			if(id=='ALL'){
+				id='';
+			}
+			get_manufacture1('search_manufacture',id);
+			get_dealerName1('dealerDetailsCheck',id);
+		}
 	});		
 	$("#ex1").change(function(){
 		getData();
@@ -322,8 +336,8 @@ if($pageName=='Bodytype'){
 			if(id=='ALL'){
 				id='';
 			}
-			get_manufacture('search_manufacture',id);
-			get_dealerName('dealerDetailsCheck',id);
+			get_manufacture1('search_manufacture',id);
+			get_dealerName1('dealerDetailsCheck',id);
 		}
 		getData();
 	});
@@ -346,11 +360,20 @@ if($pageName=='Bodytype'){
 		getData();
 	});
 	$(".trType").click(function(){
-		$("#trendTypeID").val($(this).data("id"));
+		if($("#trendTypeID").val()==''){
+			$("#trendTypeID").val($(this).data("id"));
+		}else{
+			$("#trendTypeID").val('');
+		}
 		getData();
 	});
 	$("#orderByPrice").click(function(){
-		$("#orderBy").val($(this).val());
+		var pr=$("#orderBy").val();
+		if(pr=='No'){
+			$("#orderBy").val('Price');
+		}else{
+			$("#orderBy").val('No');
+		}
 		getData();
 	});
 	$(".emissionStandard").click(function(){
@@ -486,7 +509,7 @@ if($pageName=='Bodytype'){
 			$("#table_data").html(html);
 		});
 	}
-	function get_manufacture(callback,vID){
+	function get_manufacture1(callback,vID){
 	if(vID==''){
 		var vType='ALL';
 	}else{
@@ -508,7 +531,7 @@ if($pageName=='Bodytype'){
 		$(callback).html(html);
 	});
 }
-function get_dealerName(callback,mID){
+function get_dealerName1(callback,mID){
 	var callback="#"+callback;
 	if(mID==''){var vType='RLIST';}else{var vType='DEALER-C';}
 	$.ajax({
