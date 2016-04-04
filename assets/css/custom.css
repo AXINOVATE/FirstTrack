@@ -1,7 +1,7 @@
 *{ padding:0;margin:0;}
 body{font-family:Century Gothic !important;}
 .body-container{margin-bottom:45px;}
-.top-content-container{background-color:#0a3151;height:85px;position:relative; }
+.top-content-container{background-color:#0a3151;height:85px;position:relative; margin-top: -20px;}
 .border-right-all{border-right: 1px solid #BFBFBF; }.display-inline-block-all{display:inline-block !important;}
 .top-location-img{width:20%;}
 .header-top>ul>li>a i{padding-right:6px; color:white; font-size:16px;}
