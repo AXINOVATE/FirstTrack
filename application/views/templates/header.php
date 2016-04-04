@@ -364,7 +364,7 @@ else{
 						</div>
 						<div class="col-md-2 pl-0">
 							<div class="input-group bootstrap-timepicker timepicker">
-								<input   va_req="true"  name="RTD_Pre_Time" id="RTD_Pre_Time" type="text" class="form-control input-small inpt-timepicker" value="" va_err="RTD_Pre_TimeError">
+								<input va_req="true"  name="RTD_Pre_Time" id="RTD_Pre_Time" type="text" class="form-control input-small inpt-timepicker" value="" va_err="RTD_Pre_TimeError">
 							</div>
 							<div class="text-danger" id="RTD_Pre_TimeError"></div>
 						</div>

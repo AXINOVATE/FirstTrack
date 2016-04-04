@@ -46,6 +46,9 @@ body{font-family:Century Gothic !important;}
 .user-options>ul{left:initial;right:0px;min-width:100px; z-index: 1001; padding:0px;border-radius:0px;background-color:#027cd5;color:#FFF;}
 .user-options>ul>li a{color:#FFF;}
 .user-options>ul>li a:hover{background-color:#AB851F;color:#FFF;}
+
+.bootstrap-timepicker-widget.dropdown-menu.open {display: inline-block; z-index: 99999 !important;}
+.inpt-timepicker{margin-top: 4px;}
 /* media query */
 @media only screen and (min-width: 1025px) and (max-width:1200px){
 	.header-top>ul>li{padding-left:7px;padding-right:7px;}
