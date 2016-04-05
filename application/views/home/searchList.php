@@ -565,61 +565,72 @@ function get_dealerName1(callback,mID){
 }
 $('#minimize-category').on('click',function(){
         $('#select-category').slideToggle();
-		
-		//$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle')
-		$('#minimize-category').toggleClass('fa fa-minus fa fa-plus')
+		$('#minimize-category').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-price').on('click',function(){
         $('#slider-example').slideToggle();
+		$('#minimize-price').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-manufacture').on('click',function(){
         $('#select-manufacture').slideToggle();
+		$('#minimize-manufacture').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-fuel').on('click',function(){
         $('#select-fuel').slideToggle();
+		$('#minimize-fuel').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-milage').on('click',function(){
         $('#slider-milage').slideToggle();
+		$('#minimize-milage').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-transmission').on('click',function(){
         $('#select-transmission').slideToggle();
+		$('#minimize-transmission').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-seating-capacity').on('click',function(){
         $('.seating-capacity').slideToggle();
+		$('#minimize-seating-capacity').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-engine-capacity').on('click',function(){
         $('#engine-slider').slideToggle();
+		$('#minimize-engine-capacity').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#manufacture-year').on('click',function(){
         $('#slider-manufacture-year').slideToggle();
+		$('#manufacture-year').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-wating-period').on('click',function(){
         $('#slider-wating').slideToggle();
+		$('#minimize-wating-period').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-dealer-name').on('click',function(){
         $('#dealerDetailsCheck').slideToggle();
+		$('#minimize-dealer-name').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-emission-standard').on('click',function(){
         $('#emission-standard').slideToggle();
+		$('#minimize-emission-standard').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-power-stearing').on('click',function(){
         $('#power-stearing').slideToggle();
+		$('#minimize-power-stearing').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 	$('#minimize-power').on('click',function(){
         $('#slider-power').slideToggle();
+		$('#minimize-power').toggleClass('fa fa-minus fa fa-plus');
 		
     });
 			
