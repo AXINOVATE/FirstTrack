@@ -207,6 +207,7 @@ class Home extends CI_Controller {
 		//	var_dump($data['variants2']); 
 		//	var_dump($data['variants3']); 
 		//	exit();
+		//var_dump($data);
 			$this->load->view('home/detailed_comparison',$data);
 		}
 	}
@@ -577,16 +578,21 @@ class Home extends CI_Controller {
 			echo 'Page not found';
 		}
 	}
-	public function add_dealer_products($userID=""){
+	public function add_dealer_products($userID="",$variantID="",$colorID=""){
 		$pageData['currentPage'] = 'MANAGE DEALERS';
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['details'] = $this->home_model->getUsers("SP",$userID);
-		//var_dump($data['details']); exit();
+		//var_dump($data['details']); //exit();
 		if(count($data['details']) > 0){
 			$data['userID'] = $userID;
 			//$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
 			//$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
+			if($variantID !='' && $colorID!=''){
+				$data['editVariants'] = $this->home_model->get_edit_dealer_products("Variants-One",$variantID,$colorID);
+				//var_dump($data['editVariants']);
+				//exit();
+			}
 			$this->load->view('admin/manage_dealers/add_dealer_products',$data);
 		}else{
 			echo 'Page not found';
@@ -694,5 +700,8 @@ class Home extends CI_Controller {
 		$data['productBasic']=$this->home_model->product_basic_detail();
 		$data['productDetail'] = $this->home_model->get_all_product_details();
 		$this->load->view('home/sitemap',$data);
+	}
+	public function get_edit_dealer_products($vType,$variantID='',$colorID=''){
+		echo json_encode($this->home_model->get_edit_dealer_products($vType,$variantID,$colorID));
 	}
 }

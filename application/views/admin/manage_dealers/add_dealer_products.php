@@ -2,6 +2,42 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
+$productID="";
+$variantID="";
+$variantName="";
+$colorName="";
+$colorID="";
+$colorCode="";
+$exShowroomPrice="";
+$insurance="";
+$roadTax="";
+$RTO="";
+$handlingOtherCharges="";
+$onRoadPrice="";
+$waitingPeriodDays="";
+$quantity="";
+$boards="";
+$manufacturerID="";
+$categoryID="";
+if(isset($editVariants)){
+	$productID=$editVariants[0]['productID'];
+	$variantID=$editVariants[0]['variantID'];
+	$variantName=$editVariants[0]['variantName'];
+	$colorName=$editVariants[0]['colorName'];
+	$colorID=$editVariants[0]['colorID'];
+	$colorCode=$editVariants[0]['colorCode'];
+	$exShowroomPrice=$editVariants[0]['exShowroomPrice'];
+	$insurance=$editVariants[0]['insurance'];
+	$roadTax=$editVariants[0]['roadTax'];
+	$RTO=$editVariants[0]['RTO'];
+	$handlingOtherCharges=$editVariants[0]['handlingOtherCharges'];
+	$onRoadPrice=$editVariants[0]['onRoadPrice'];
+	$waitingPeriodDays=$editVariants[0]['waitingPeriodDays'];
+	$quantity=$editVariants[0]['quantity'];
+	$boards=$editVariants[0]['boards'];
+	$manufacturerID=$editVariants[0]['manufacturerID'];
+	$categoryID=$editVariants[0]['categoryID'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +72,7 @@ $prefix=$this->config->item('prefix');
 					<label>Category</label>
 					<select class="form-control select2" style="width:100%;" name="category" id="category">
 						<option value=""></option>
-						<option value="<?php if(isset($details->productCategory)){echo $details->productCategory; }?>"><?php if(isset($details->categoryName)){echo $details->categoryName; }?></option>
+						<option value="<?php if(isset($details->productCategory)){echo $details->productCategory; }?>" <?php if(isset($details->productCategory)){if($categoryID==$details->productCategory){ echo "selected";} }?> ><?php if(isset($details->categoryName)){echo $details->categoryName; }?></option>
 						<?php /* foreach($categories as $ca){ ?>
 						<option value="<?php echo $ca['categoryID'];?>"><?php echo $ca['categoryName'];?></option>
 						<?php } */ ?>
@@ -46,7 +82,7 @@ $prefix=$this->config->item('prefix');
 					<label>Manufacture</label>
 					<select class="form-control select2" style="width:100%;" name="maker" id="manufacture">
 						<option value=""></option>
-						<option value="<?php if(isset($details->manufacture)){ echo $details->manufacture; }?>"><?php if(isset($details->manufactureName)){ echo $details->manufactureName; }?></option>
+						<option value="<?php if(isset($details->manufacture)){ echo $details->manufacture; }?>" <?php if(isset($details->manufacture)){ if($manufacturerID==$details->manufacture){ echo "selected";} }?> ><?php if(isset($details->manufactureName)){ echo $details->manufactureName; }?></option>
 						<?php /* foreach($manufactures as $m){ ?>
 						<option value="<?php echo $m['manufactureID'];?>"><?php echo $m['manufactureName'];?></option>
 						<?php } */ ?>
@@ -81,7 +117,6 @@ $prefix=$this->config->item('prefix');
 								<th>Handling Charges & Others</th>
 								<th>On Road Price</th>
 								<th>Waiting Period (days)</th>
-								
 							</tr>
 						</thead>
 						<tbody id="variants">
@@ -102,13 +137,57 @@ $prefix=$this->config->item('prefix');
 <!-- Bootstrap -->
 
 	<script>
+	var check='';
 		$('document').ready(function(){
 			 $('.select2').select2({
                 placeholder: "Select",
                 allowClear: true
             });
+			var manufactureID='<?php echo $manufacturerID; ?>';
+			var categoryID='<?php echo $categoryID; ?>';
+			if(categoryID !='' && manufactureID !=''){
+				$('#manufacture').trigger('change');
+					var variantID='<?php echo $variantID; ?>';
+					var colorID='<?php echo $colorID; ?>';
+				$.ajax({
+					url:'<?php echo $prefix;?>/home/get_edit_dealer_products/Variants-One/'+variantID+'/'+colorID,
+					type:'POST',
+					data:{},
+					dataType:'JSON'
+				}).success(function(data){
+					var html = ''; var divColor = '#ffffff'; var k=0;
+					for(var i=0;i<data.length;i++){
+						if(data[i]['boards']=='Yellow-board'){
+							divColor = '#FFD400';
+							k++;
+						}
+						html+='<tr class="'+data[i]['boards']+'-row">'+
+							'<td class="vVariant" data-id="'+data[i]['variantID']+'">'+data[i]['variantName']+'</td>'+
+							'<td class="vBoard" data-id="'+data[i]['boards']+'"><div style="background-color:'+divColor+';"></div></td>'+
+							'<td class="vColor text-center" data-id="'+data[i]['colorID']+'"><div style="background-color:'+data[i]['colorCode']+';"></div></td>'+
+							'<td><input type="text" class="vqty" value="'+data[i]['quantity']+'"></td>'+
+							'<td><input type="text" class="vExShowroomPrie" value="'+data[i]['exShowroomPrice']+'" disabled></td>'+
+							'<td><input type="text" class="vInsurance" value="'+data[i]['insurance']+'"></td>'+
+							'<td><input type="text" class="vRTO" value="'+data[i]['RTO']+'"></td>'+
+							'<td><input type="text" class="vRoadTax" value="'+data[i]['roadTax']+'"></td>'+
+							'<td><input type="text" class="vHandlingCharges" value="'+data[i]['handlingOtherCharges']+'"></td>'+
+							'<td><input type="text" class="vOnRoadPrice" value="'+data[i]['onRoadPrice']+'"></td>'+
+							'<td><input type="text" class="vWaitingDays" value="'+data[i]['waitingPeriodDays']+'"></td>'+
+						'</tr>';
+					}
+					$("#variants").html(html);
+					if(k==0){
+						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="yellowBoard">Need Yellow-board?</a>');
+					}
+					else{
+						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="remYellowBoard">Remove Yellow-board?</a>');
+					}
+				});
+			}
 		});
+		
 		$('#manufacture,#category').on('change',function(){
+			var check='<?php echo $productID;?>';
 			var category = $('#category').val();
 			var manufacture = $('#manufacture').val();
 			if(category != "" && manufacture != ""){
@@ -120,7 +199,11 @@ $prefix=$this->config->item('prefix');
 				}).success(function(data){
 					var html = '<option value=""></option>';
 					for(var i=0;i<data.length;i++){
-						html+='<option value="'+data[i]['productID']+'">'+data[i]['productName']+'</option>';
+						if(check==data[i]['productID']){
+							html+='<option value="'+data[i]['productID']+'" selected>'+data[i]['productName']+'</option>';
+						}else{
+							html+='<option value="'+data[i]['productID']+'">'+data[i]['productName']+'</option>';
+						}
 					}
 					$("#product").html(html);
 					 $('.select2').select2({

@@ -51,11 +51,37 @@
 	});
 	
 	$('#test-drive,#test-drive1').on('click', function(){		
-		get_rtd_cities();
-		get_rtd_categories();					
-		//get_rtd_manufacture();
-		//get_rtd_dealerName();
-		//get_rtd_varient();
+		var PageName=$(this).data('page');
+		if(PageName=='comparison'){
+			var VariantID=$(this).data('vid');
+			var catid=$(this).data('catid');
+			var manid=$(this).data('manid');
+			var prodid=$(this).data('prodid');
+			get_rtd_cities();
+			get_categories("RTD_Category");
+			setTimeout(function() {
+			 $("#RTD_Category").val(catid);
+			 $("#RTD_Category").trigger('change');
+			 }, 500);
+			setTimeout(function() {
+			 $("#RTD_Maker").val(manid);
+			 $("#RTD_Maker").trigger('change');
+			}, 1000);
+			setTimeout(function() {
+			 $("#RTD_Model").val(prodid);
+			 $("#RTD_Model").trigger('change');
+			}, 1500);
+			setTimeout(function() {
+			 $("#RTD_Variant").val(VariantID);
+			 $("#RTD_Variant").trigger('change');
+			}, 2000);
+		}else{	
+			get_rtd_cities();
+			get_rtd_categories();				
+			//get_rtd_manufacture();
+			//get_rtd_dealerName();
+			//get_rtd_varient();
+		}
 	});
 	$('#adv-book,#adv-book1').on('click', function(){	
 		adv_getCatDetails();
