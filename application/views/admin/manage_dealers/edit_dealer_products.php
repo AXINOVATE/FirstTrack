@@ -34,13 +34,13 @@ $prefix=$this->config->item('prefix');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
 					<label>Category</label>
-					<select class="form-control select2" style="width:100%;" name="category" id="category">
+					<select class="form-control select2" style="width:100%;" name="category" id="category" disabled>
 						<option value="<?php if(isset($details->productCategory)){echo $details->productCategory; }?>" selected ><?php if(isset($details->categoryName)){echo $details->categoryName; }?></option>
 					</select>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
 					<label>Manufacture</label>
-					<select class="form-control select2" style="width:100%;" name="maker" id="manufacture">
+					<select class="form-control select2" style="width:100%;" name="maker" id="manufacture" disabled>
 						<option value="<?php if(isset($details->manufacture)){ echo $details->manufacture; }?>" selected><?php if(isset($details->manufactureName)){ echo $details->manufactureName; }?></option>
 						<?php /* foreach($manufactures as $m){ ?>
 						<option value="<?php echo $m['manufactureID'];?>"><?php echo $m['manufactureName'];?></option>
@@ -49,18 +49,13 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-10">
 					<label>Products</label>
-					<select class="form-control select2" style="width:100%;" id="product">
-						<option value="<?php if(isset($data->productID)){ echo $data->productID; }?>" selected><?php if(isset($data->productName)){ echo $data->productName; }?></option>
+					<select class="form-control select2" style="width:100%;" id="product" disabled>
+						<option value="<?php echo $data[0]->productID; ?>" selected><?php echo $data[0]->productName; ?></option>
 					</select>
-				</div>
-				<div class="col-md-12 col-sm-6 col-xs-12 mt-10 mb-10 text-center">
-					<button class="btn btn-primary" id="getProducts" style="width:40%;border-radius:0px;">Get Products</button>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12 mb-10" style="text-align: right;" id="whiteBoard-btn" data-yel="">
-
-				</div>
+				
 				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 					<table class="table table-bordered variants">
 						<thead>
@@ -80,7 +75,28 @@ $prefix=$this->config->item('prefix');
 							</tr>
 						</thead>
 						<tbody id="variants">
-							
+						<?php	
+						$divColor = '#ffffff'; $k=0;
+						foreach($data as $d){
+							if($d->boards=='Yellow-board'){
+								$divColor = '#FFD400';
+							}
+							echo 
+							'<tr class="'.$d->boards.'-row">
+								<td class="vVariant" data-id="'.$d->variantID.'">'.$d->variantName.'</td>
+								<td class="vBoard" data-id="'.$d->boards.'"><div style="background-color:'.$divColor.';"></div></td>
+								<td class="vColor text-center" data-id="'.$d->colorID.'"><div style="background-color:'.$d->colorCode.';"></div></td>
+								<td><input type="text" class="vqty" value="'.$d->quantity.'"></td>
+								<td><input type="text" class="vExShowroomPrie" value="'.$d->exShowroomPrice.'" disabled></td>
+								<td><input type="text" class="vInsurance" value="'.$d->insurance.'"></td>
+								<td><input type="text" class="vRTO" value="'.$d->RTO.'"></td>
+								<td><input type="text" class="vRoadTax" value="'.$d->roadTax.'"></td>
+								<td><input type="text" class="vHandlingCharges" value="'.$d->handlingOtherCharges.'"></td>
+								<td><input type="text" class="vOnRoadPrice" value="'.$d->onRoadPrice.'"></td>
+								<td><input type="text" class="vWaitingDays" value="'.$d->waitingPeriodDays.'"></td>
+							</tr>';
+						}
+						?>
 						</tbody>
 					</table>
 					<button class="btn btn-primary pull-right" id="save" style="width:150px;border-radius:0px;"> Save </button>
@@ -103,82 +119,7 @@ $prefix=$this->config->item('prefix');
                 allowClear: true
             });
 		});
-		$('#manufacture,#category').on('change',function(){
-			var category = $('#category').val();
-			var manufacture = $('#manufacture').val();
-			if(category != "" && manufacture != ""){
-				$.ajax({
-					url:'<?php echo $prefix;?>/home/getProducts/PLIST',
-					type:'POST',
-					data:{'category':category,'manufacture':manufacture},
-					dataType:'JSON'
-				}).success(function(data){
-					var html = '<option value=""></option>';
-					for(var i=0;i<data.length;i++){
-						html+='<option value="'+data[i]['productID']+'">'+data[i]['productName']+'</option>';
-					}
-					$("#product").html(html);
-					 $('.select2').select2({
-						placeholder: "Select",
-						allowClear: true
-					});
-				});
-			}
-		});
-		$('#getProducts').on('click',function(){
-			var product = $('#product').val();
-			var userID = '<?php echo $userID; ?>';
-			if(product != ""){
-				$.ajax({
-					url:'<?php echo $prefix;?>/home/getProducts/LVARIANTS',
-					type:'POST',
-					data:{'productID':product,'userID':userID},
-					dataType:'JSON'
-				}).success(function(data){
-					var html = ''; var divColor = '#ffffff'; var k=0;
-					for(var i=0;i<data.length;i++){
-						if(data[i]['boards']=='Yellow-board'){
-							divColor = '#FFD400';
-							k++;
-						}
-						html+='<tr class="'+data[i]['boards']+'-row">'+
-							'<td class="vVariant" data-id="'+data[i]['variantID']+'">'+data[i]['variantName']+'</td>'+
-							'<td class="vBoard" data-id="'+data[i]['boards']+'"><div style="background-color:'+divColor+';"></div></td>'+
-							'<td class="vColor text-center" data-id="'+data[i]['colorID']+'"><div style="background-color:'+data[i]['colorCode']+';"></div></td>'+
-							'<td><input type="text" class="vqty" value="'+data[i]['quantity']+'"></td>'+
-							'<td><input type="text" class="vExShowroomPrie" value="'+data[i]['exShowroomPrice']+'" disabled></td>'+
-							'<td><input type="text" class="vInsurance" value="'+data[i]['insurance']+'"></td>'+
-							'<td><input type="text" class="vRTO" value="'+data[i]['RTO']+'"></td>'+
-							'<td><input type="text" class="vRoadTax" value="'+data[i]['roadTax']+'"></td>'+
-							'<td><input type="text" class="vHandlingCharges" value="'+data[i]['handlingOtherCharges']+'"></td>'+
-							'<td><input type="text" class="vOnRoadPrice" value="'+data[i]['onRoadPrice']+'"></td>'+
-							'<td><input type="text" class="vWaitingDays" value="'+data[i]['waitingPeriodDays']+'"></td>'+
-						'</tr>';
-					}
-					$("#variants").html(html);
-					if(k==0){
-						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="yellowBoard">Need Yellow-board?</a>');
-					}
-					else{
-						$("#whiteBoard-btn").html('<a href="javascript:void(0)" id="remYellowBoard">Remove Yellow-board?</a>');
-					}
-				});
-			}
-		});
-		$(document).on("click","#yellowBoard",function(){
-			$("#whiteBoard-btn").attr('data-yel','Yes');
-			$('#yellowBoard').parent().html('<a href="javascript:void(0)" id="remYellowBoard">Remove Yellow-board?</a>');
-			var clonedItem = $('tbody>tr').clone();
-			clonedItem.find('.vBoard').attr("data-id", "Yellow-board");
-			clonedItem.find('.vBoard').parent().attr("class", "Yellow-board-row");
-			clonedItem.find('.vBoard>div').css("background-color", "#FFD400");
-			clonedItem.appendTo("#variants");
-		});
-		$(document).on("click","#remYellowBoard",function(){
-			$("#whiteBoard-btn").attr('data-yel','No');
-			$('#remYellowBoard').parent().html('<a href="javascript:void(0)" id="yellowBoard">Need Yellow-board?</a>');
-			$('#variants').find('.Yellow-board-row').remove();
-		});
+		
 		$('body').on('keyup', '#variants input', function() {
 			$("#variants tr").each(function(){
 				var obj= $(this);
@@ -187,7 +128,7 @@ $prefix=$this->config->item('prefix');
 		});
 		$('#save').on('click',function(){
 			var product = $('#product').val();
-			var yelBoard = $('#whiteBoard-btn').attr('data-yel');
+			var yelBoard = $('.vBoard').attr('data-id');
 			var userID = "<?php echo $userID;?>";
 			var contents = [];var i=0;var error=0;;
 			$("input","#variants").css({"border": "1px solid grey"});

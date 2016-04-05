@@ -598,7 +598,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['details'] = $this->home_model->getUsers("SP",$userID);
 		$data['data'] = $this->home_model->getDealerProducts("LISTONE",$vid);
-		var_dump($data['data']); exit();
+		//var_dump($data['data']); exit();
 		if(count($data['details']) > 0 && count($data['data']) > 0){
 			$data['userID'] = $userID;
 			$this->load->view('admin/manage_dealers/edit_dealer_products',$data);
@@ -682,6 +682,7 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->dealer_registration());
 	}
 	public function adding_dealer_products(){
+		//var_dump($_POST); exit();
 		echo json_encode($this->home_model->adding_dealer_products());
 	}
 	
