@@ -34,7 +34,7 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-12">
 					<h3 class="mt-0 mb-20">Upcoming</h3>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3">				
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
 							SELECT CATEGORY <i class="fa fa-minus"></i>
@@ -289,12 +289,15 @@ $prefix=$this->config->item('prefix');
 			placeholder: "Select",
 			allowClear: true
 		});
+		
 		$("#ex1").slider({tooltip: 'always'});
 		$("#ex2").slider({tooltip: 'always'});
 		$("#ex3").slider({tooltip: 'always'});
 		$("#ex4").slider({tooltip: 'always'});
 		$("#ex5").slider({tooltip: 'always'});
 		$("#ex6").slider({tooltip: 'always'});
+		
+    });
 	});
 </script>
 </body>

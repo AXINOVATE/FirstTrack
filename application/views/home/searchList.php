@@ -54,13 +54,13 @@ if($pageName=='Bodytype'){
 				</div>
 				<div class="col-md-3 col-sm-3">
 					<div class="filter-manufacture">
-						<div class="filter-heading mb-10">
-							SELECT CATEGORY <i class="fa fa-minus"></i>
+						<div class="filter-heading mb-10">						
+							SELECT CATEGORY <i class="fa fa-minus minimize-all" id="minimize-category"></i>
 							<input type="hidden" id="bodyTypeID" name="bodyTypeID" value="<?php echo $bodyTypeID; ?>"/>
 							<input type="hidden" id="trendTypeID" name="trendTypeID" value="<?php echo $trendsTypeID; ?>"/>
 							<input type="hidden" id="orderBy" name="orderBy" value=""/>
 						</div>
-						<center>
+						<center id="select-category">
 							<select class="form-control select2" id="search_category" style="width:95%;">
 								<option value='ALL' selected data-name="ALL">ALL</option>
 								<?php 
@@ -79,17 +79,17 @@ if($pageName=='Bodytype'){
 					</div>
 					<div class="filter-price">
 						<div class="filter-heading">
-							PRICE RANGE <i class="fa fa-minus"></i>
+							PRICE RANGE <i class="fa fa-minus"id="minimize-price" ></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example"id="slider-example">
 							<input id="ex1" type="text" class="span2" data-slider-min="<?php echo $categories[0]['Minsum']; ?>" data-slider-max="<?php echo $categories[0]['Maxsum']; ?>" data-slider-step="5" data-slider-value="[<?php echo $categories[0]['Minsum'].','.$categories[0]['Maxsum']; ?>]"/>
 						</div>
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							SELECT MANUFACTURERS <i class="fa fa-minus"></i>
+							SELECT MANUFACTURERS <i class="fa fa-minus" id="minimize-manufacture"></i>
 						</div>
-						<center>
+						<center id="select-manufacture">
 							<select class="form-control select2" id="search_manufacture" style="width:95%;">
 								<option value='ALL' selected>ALL</option>
 								<?php 
@@ -102,9 +102,9 @@ if($pageName=='Bodytype'){
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							SELECT FUEL TYPE <i class="fa fa-minus"></i>
+							SELECT FUEL TYPE <i class="fa fa-minus" id="minimize-fuel"></i>
 						</div>
-						<center>
+						<center id="select-fuel">
 							<select class="form-control select2" id="search_fuelType" style="width:95%;">
 								<option value="ALL">ALL</option>
 								<option value="Petrol">Petrol</option>
@@ -117,73 +117,77 @@ if($pageName=='Bodytype'){
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							SELECT TRANSMISSION <i class="fa fa-minus"></i>
+							SELECT TRANSMISSION <i class="fa fa-minus" id="minimize-transmission"></i>
 						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="transmission[]" class="transmission" value="Manual">Manual</label>
+						<div id="select-transmission">
+						<div class="checkbox" id="">
+						  <label><input type="checkbox" name="transmission[]"  class="transmission" value="Manual">Manual</label>
 						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="transmission[]" class="transmission" value="Automatic">Automatic</label>
+						<div class="checkbox" id="">
+						  <label><input type="checkbox" name="transmission[]"  class="transmission" value="Automatic">Automatic</label>
+						</div>
 						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading">
-							MILEAGE <i class="fa fa-minus"></i>
+							MILEAGE <i class="fa fa-minus" id="minimize-milage"></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example" id="slider-milage">
 							<input id="ex2" type="text" class="span2" data-slider-min="<?php echo $categories[0]['minMileage']; ?>" data-slider-max="<?php echo $categories[0]['maxMileage']; ?>" data-slider-step="1" data-slider-value="[<?php echo $categories[0]['minMileage'].','.$categories[0]['maxMileage']; ?>]"/>
 						</div>
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							SEATING CAPACITY <i class="fa fa-minus"></i>
+							SEATING CAPACITY <i class="fa fa-minus" id="minimize-seating-capacity"></i>
 						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="1">1</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="2">2</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="3">3</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="4">4</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="5">5</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="6">6 or more</label>
+						<div class="seating-capacity">
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="1">1</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="2">2</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="3">3</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="4">4</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="5">5</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" name="seatCapacity[]" class="seatCapacity" value="6">6 or more</label>
+							</div>
 						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading">
-							ENGINE CAPACITY <i class="fa fa-minus"></i>
+							ENGINE CAPACITY <i class="fa fa-minus" id="minimize-engine-capacity"></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example" id="engine-slider">
 							<input id="ex3" type="text" class="span2" data-slider-min="<?php echo $categories[0]['minDisplacement']; ?>" data-slider-max="<?php echo $categories[0]['maxDisplacement']; ?>" data-slider-step="10" data-slider-value="[<?php echo $categories[0]['minDisplacement']; ?>,<?php echo $categories[0]['maxDisplacement']; ?>]"/>
 						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading">
-							MANUFACTURING YEAR <i class="fa fa-minus"></i>
+							MANUFACTURING YEAR <i class="fa fa-minus" id="manufacture-year"></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example"id="slider-manufacture-year">
 							<input id="ex4" type="text" class="span2" data-slider-min="1999" data-slider-max="2016" data-slider-step="1" data-slider-value="[1999,2016]"/>
 						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading">
-							WAITING PERIOD <i class="fa fa-minus"></i>
+							WAITING PERIOD <i class="fa fa-minus" id="minimize-wating-period"></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example"id="slider-wating">
 							<input id="ex5" type="text" class="span2" data-slider-min="<?php echo $categories[0]['minWaitingPeriod']; ?>" data-slider-max="<?php echo $categories[0]['maxWaitingPeriod']; ?>" data-slider-step="1" data-slider-value="[<?php echo $categories[0]['minWaitingPeriod']; ?>,<?php echo $categories[0]['maxWaitingPeriod']; ?>]"/>
 						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading mb-10">
-							DEALER NAME <i class="fa fa-minus"></i>
+							DEALER NAME <i class="fa fa-minus"id="minimize-dealer-name"></i>
 						</div>
 						<div id="dealerDetailsCheck">
 						<?php 
@@ -199,46 +203,50 @@ if($pageName=='Bodytype'){
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							EMISSION STANDARD <i class="fa fa-minus"></i>
+							EMISSION STANDARD <i class="fa fa-minus"id="minimize-emission-standard"></i>
 						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-I">BS I</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-II">BS II</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-III">BS III</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-IV">BS IV</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-V">BS V</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-VI">BS VI</label>
-						</div>
-						<div class="checkbox">
-						  <label><input type="checkbox" class="emissionStandard" value="BS-VII">BS VII</label>
+						<div id="emission-standard">
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-I">BS I</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-II">BS II</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-III">BS III</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-IV">BS IV</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-V">BS V</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-VI">BS VI</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" class="emissionStandard" value="BS-VII">BS VII</label>
+							</div>
 						</div>
 					</div>
 					<div class="filter-manufacture">
 						<div class="filter-heading mb-10">
-							POWER STEERING <i class="fa fa-minus"></i>
+							POWER STEERING <i class="fa fa-minus"id="minimize-power-stearing"></i>
 						</div>
+						<div id="power-stearing">
 						<div class="checkbox">
 						  <label><input type="checkbox" class="power_streering" name="power_streering[]" value="Yes">Yes</label>
 						</div>
 						<div class="checkbox">
 						  <label><input type="checkbox" class="power_streering" name="power_streering[]" value="No">No</label>
 						</div>
+						</div>
 					</div>
 					<div class="filter-mileage">
 						<div class="filter-heading">
-							POWER<i class="fa fa-minus"></i>
+							POWER<i class="fa fa-minus" id="minimize-power"></i>
 						</div>
-						<div class="slider-example">
+						<div class="slider-example" id="slider-power">
 							<input id="ex6" type="text" class="span2" data-slider-min="<?php echo $categories[0]['minPower']; ?>" data-slider-max="<?php echo $categories[0]['maxPower']; ?>" data-slider-step="5" data-slider-value="[<?php echo $categories[0]['minPower']; ?>,<?php echo $categories[0]['maxPower']; ?>]"/>
 						</div>
 					</div>
@@ -296,6 +304,7 @@ if($pageName=='Bodytype'){
 		$("#ex4").slider({tooltip: 'always'});
 		$("#ex5").slider({tooltip: 'always'});
 		$("#ex6").slider({tooltip: 'always'});
+		//$('#search_category').hide();
 	});		
 	$("#ex1").change(function(){
 		getData();
@@ -312,6 +321,11 @@ if($pageName=='Bodytype'){
 	$("#ex6").change(function(){
 		getData();
 	});
+	
+		
+        
+    
+	
 	$("#search_category").on('change',function(){
 		$('#bodyTypeID').val('');
 		var pageNames='<?php echo $pageName; ?>';
@@ -525,6 +539,62 @@ function get_dealerName(callback,mID){
 		$(callback).html(html);
 	});
 }
+$('#minimize-category').on('click',function(){
+        $('#select-category').slideToggle();
+		
+    });
+	$('#minimize-price').on('click',function(){
+        $('#slider-example').slideToggle();
+		
+    });
+	$('#minimize-manufacture').on('click',function(){
+        $('#select-manufacture').slideToggle();
+		
+    });
+	$('#minimize-fuel').on('click',function(){
+        $('#select-fuel').slideToggle();
+		
+    });
+	$('#minimize-milage').on('click',function(){
+        $('#slider-milage').slideToggle();
+		
+    });
+	$('#minimize-transmission').on('click',function(){
+        $('#select-transmission').slideToggle();
+		
+    });
+	$('#minimize-seating-capacity').on('click',function(){
+        $('.seating-capacity').slideToggle();
+		
+    });
+	$('#minimize-engine-capacity').on('click',function(){
+        $('#engine-slider').slideToggle();
+		
+    });
+	$('#manufacture-year').on('click',function(){
+        $('#slider-manufacture-year').slideToggle();
+		
+    });
+	$('#minimize-wating-period').on('click',function(){
+        $('#slider-wating').slideToggle();
+		
+    });
+	$('#minimize-dealer-name').on('click',function(){
+        $('#dealerDetailsCheck').slideToggle();
+		
+    });
+	$('#minimize-emission-standard').on('click',function(){
+        $('#emission-standard').slideToggle();
+		
+    });
+	$('#minimize-power-stearing').on('click',function(){
+        $('#power-stearing').slideToggle();
+		
+    });
+	$('#minimize-power').on('click',function(){
+        $('#slider-power').slideToggle();
+		
+    });
 			
 </script>
 </body>
