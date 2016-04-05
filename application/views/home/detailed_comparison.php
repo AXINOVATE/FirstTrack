@@ -97,7 +97,7 @@ $prefix=$this->config->item('prefix');
 					<div class="compare-box mt-20 text-center">
 						<h4 class="text-center" id="price_'.$i.'"><i class="fa fa-inr"></i>'.$price.'</h4>
 						
-						<button id="test-drive1" class="comp-book-btn" type="btn" data-toggle="modal" data-target="#test-drive-modal">Book Test Drive</button>
+						<button id="test-drive1" class="comp-book-btn" data-catid="'.$specs[$i-1]['categoryID'].'" data-manid="'.$specs[$i-1]['manufactureID'].'" data-prodid="'.$specs[$i-1]['productID'].'" data-vid="'.$specs[$i-1]['variantID'].'" data-page="comparison" type="btn" data-toggle="modal" data-target="#test-drive-modal">Book Test Drive</button>
 					</div>
 				</div>';
 					$i++;

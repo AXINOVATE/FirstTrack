@@ -209,6 +209,7 @@ class Home extends CI_Controller {
 		//	var_dump($data['variants2']); 
 		//	var_dump($data['variants3']); 
 		//	exit();
+		//var_dump($data);
 			$this->load->view('home/detailed_comparison',$data);
 		}
 	}
@@ -707,5 +708,8 @@ class Home extends CI_Controller {
 		$data['productBasic']=$this->home_model->product_basic_detail();
 		$data['productDetail'] = $this->home_model->get_all_product_details();
 		$this->load->view('home/sitemap',$data);
+	}
+	public function get_edit_dealer_products($vType,$variantID='',$colorID=''){
+		echo json_encode($this->home_model->get_edit_dealer_products($vType,$variantID,$colorID));
 	}
 }

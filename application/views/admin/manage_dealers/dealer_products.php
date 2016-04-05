@@ -59,7 +59,7 @@ $prefix=$this->config->item('prefix');
 					<td class="vColor"><div style="background-color:<?php echo $d->colorCode; ?>;"></div></td>
 					<td><?php echo $d->quantity; ?></td>
 					<td><?php echo $d->waitingPeriodDays; ?></td>
-					<td><a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>/" class=""><i class="fa fa-pencil"></i> Edit</a></td>
+					<td><a href="<?php echo $prefix;?>/home/edit_dealer_products/<?php echo $d->ID;?>/" class=""><i class="fa fa-pencil"></i> Edit</a></td>
 				  </tr>
 			  <?php } ?>
 			</tbody>

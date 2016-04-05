@@ -735,6 +735,8 @@ class Home_model extends CI_Model{
 				$retvalue[$i]['Headlamp']=$row->Headlamp;
 				$retvalue[$i]['productName']=$row->productName;
 				$retvalue[$i]['manufactureName']=$row->manufactureName;
+				$retvalue[$i]['manufactureID']=$row->manufactureID;
+				$retvalue[$i]['categoryID']=$row->categoryID;
 				$retvalue[$i]['exShowroomPrice']=$this->convertNum(round($row->exShowroomPrice));
 				$retvalue[$i++]['coverImage']=$row->coverImage;
 			}
@@ -1056,7 +1058,6 @@ class Home_model extends CI_Model{
 				</RECORD>";
 			}
 		$xml.="</ROOT>";
-		
 		$vMessage = mt_rand();$vStatus = mt_rand();
 		//echo 'CALL usp_insUpdDealerProducts("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
 		$this->db->query('CALL usp_insUpdDealerProducts("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
@@ -1302,6 +1303,18 @@ class Home_model extends CI_Model{
 		inner join tbl_manufacture tm on tm.manufactureID = tpb.manufacturerID");
 		mysqli_next_result($this->db->conn_id);		
 		return $query->result_array();
+	}
+	function get_edit_dealer_products($vType,$variantID="",$colorID=""){
+	$xml = "<ROOT>
+				<HEADER>
+					<VARIANTID>".$variantID."</VARIANTID>
+					<COLORID>".$colorID."</COLORID>
+				</HEADER>
+			</ROOT>";
+		//echo "CALL usp_getProducts('".$type."','".$xml."')";
+		$qry = $this->db->query('CALL usp_getProducts("'.$vType.'","'.$xml.'")');
+		mysqli_next_result($this->db->conn_id);
+		return $qry->result_array();
 	}
 
 }
