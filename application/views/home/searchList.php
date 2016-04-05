@@ -566,6 +566,9 @@ function get_dealerName1(callback,mID){
 $('#minimize-category').on('click',function(){
         $('#select-category').slideToggle();
 		
+		//$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle')
+		$('#minimize-category').toggleClass('fa fa-minus fa fa-plus')
+		
     });
 	$('#minimize-price').on('click',function(){
         $('#slider-example').slideToggle();
