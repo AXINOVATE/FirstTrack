@@ -3,14 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
 
-//echo $specs[0]['variantID']."<br/>";
-//echo $specs[1]['variantID']."<br/>";
-//echo $specs[2]['variantID']."<br/>";
-//var_dump($specs);
-//var_dump($variants1);
-//var_dump($variants2);
-//var_dump($variants3);
-//exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -236,6 +228,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script>
 	$('document').ready(function(){

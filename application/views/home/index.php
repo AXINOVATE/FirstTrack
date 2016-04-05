@@ -36,6 +36,7 @@ $prefix=$this->config->item('prefix');
     background-color: #F9D133 !important;
     border-bottom: 5px solid #F9D133 !important;
 	}
+	
 	</style>
 	
 	
@@ -287,9 +288,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	$('document').ready(function(){
 		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
 		$('.inpt-timepicker').timepicker();	
+		
 	});
-	
-	
+	$('#RTD_Pre_Time').timepicker();
 	$('.body-type-detail').on('click', function(){		
 		$('.body-type-detail').removeClass('bg-yellow-active');
 		$(this,'.body-type-detail').addClass('bg-yellow-active');

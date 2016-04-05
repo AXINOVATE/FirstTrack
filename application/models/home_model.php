@@ -1280,6 +1280,29 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);		
 		return $query->result_array();
 	}
+	function get_all_product_details(){
+		$query =$this->db->query("select tpd.variantID,tpd.variantName,tpd.productID,tpd.fueltype from tbl_productDetails tpd
+		inner join tbl_productBasic tpb on tpb.productID = tpd.productID");
+		mysqli_next_result($this->db->conn_id);		
+		return $query->result_array();
+	}
+	function category_list(){
+		$query=$this->db->query("select categoryID,categoryName from tbl_category");
+		mysqli_next_result($this->db->conn_id);		
+		return $query->result_array();
+	}
+	function manufacture_list(){
+		$query=$this->db->query("select tc.categoryID,tc.categoryName , tm.manufactureID,tm.manufactureName from tbl_category tc 
+		left join tbl_manufacture tm on tm.categoryID = tc.categoryID");
+		mysqli_next_result($this->db->conn_id);		
+		return $query->result_array();
+	}
+	function product_basic_detail(){
+		$query=$this->db->query("select tm.manufactureID,tpb.productID,tpb.productName FROM tbl_productBasic tpb
+		inner join tbl_manufacture tm on tm.manufactureID = tpb.manufacturerID");
+		mysqli_next_result($this->db->conn_id);		
+		return $query->result_array();
+	}
 
 }
 

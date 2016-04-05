@@ -50,6 +50,7 @@ class Home extends CI_Controller {
 				if($page=='bodytype'){
 					$data['bodyTypeDetails']=$this->manage_products_model->getBodyTypeDetails("ONE",$id);
 					$data['fullPageName']=ucfirst($page).' - '.$data['bodyTypeDetails'][0]['body_type'];
+					$data['categoryID']=$data['bodyTypeDetails'][0]['categoryID'];
 				}
 				$data['getTID'] = '';
 				$data['trendsTypeID']='';
@@ -63,11 +64,10 @@ class Home extends CI_Controller {
 			
 			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
 			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
-			//$data['trendDetails']= $this->home_model->getTrendData('ALL',$data['trendsTypeID'],$page,$id);
 			$data['categories']= $this->home_model->getTrendData('Category','');
 			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
-			
-			//var_dump($data['trendDetails']); exit();
+			//var_dump($data['categories']);
+			//exit();
 			$this->load->view('home/searchList',$data);
 		}
 		else{
@@ -684,5 +684,15 @@ class Home extends CI_Controller {
 
 	public function get_particular_location_detail(){
 		echo json_encode($this->home_model->get_particular_location_detail());
+	}
+	public function siteMap(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['category'] = $this->home_model->category_list();
+		$data['manufacture']=$this->home_model->manufacture_list();
+		$data['productBasic']=$this->home_model->product_basic_detail();
+		$data['productDetail'] = $this->home_model->get_all_product_details();
+		$this->load->view('home/sitemap',$data);
 	}
 }
