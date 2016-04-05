@@ -2,6 +2,25 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
+//var_dump($dealers); 
+//echo $prices->onRoadPrice;
+//exit();
+function indianCurrencyNumberFormat($rupee) {
+    $explore_remaining_units = "";
+    if (strlen($rupee) > 3) {
+        $last_three_digits = substr($rupee, strlen($rupee) - 3, strlen($rupee));
+        $remaining_units = substr($rupee, 0, strlen($rupee) - 3); 
+        $remaining_units = (strlen($remaining_units) % 2 == 1) ? "0".$remaining_units : $remaining_units; 
+        $split_rupee = str_split($remaining_units, 2);
+        for ($i = 0; $i < sizeof($split_rupee); $i++) {
+          $explore_remaining_units .= (($i == 0) ? ( (int) $split_rupee[$i] . "," ) : ( $split_rupee[$i] . "," ));  
+        }
+        $formatted_rupee = $explore_remaining_units.$last_three_digits;
+    } else {
+        $formatted_rupee = $rupee;
+    }
+    return $formatted_rupee; 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,14 +159,14 @@ $prefix=$this->config->item('prefix');
 					<?php }else{ ?>	
 					<div class="row <?php if($priceCheck == 0)echo 'hide';?>">						
 						<div class="col-md-6 col-sm-6 br-right">
-							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo round($prices->onRoadPrice);?> </span> On-Road Price </div>
+							<div class="item-price"><span ><i class="fa fa-inr"></i> <?php if(isset($prices->onRoadPrice))echo indianCurrencyNumberFormat(round($prices->onRoadPrice));?> </span> On-Road Price </div>
 						</div>
 						<div class="col-md-6 col-sm-6">
-							<div class="item-subprice"><span>Ex-Showroom </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->exShowroomPrice))echo $prices->exShowroomPrice;?></div></div>
-							<div class="item-subprice"><span>Insurance </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->insurance))echo $prices->insurance;?> </div></div>
-							<div class="item-subprice"><span>RTO </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->RTO))echo $prices->RTO;?> </div></div>
-							<div class="item-subprice"><span>Road Tax </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->roadTax))echo $prices->roadTax;?> </div></div>
-							<div class="item-subprice"><span>Other Handling Charges </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->handlingOtherCharges))echo $prices->handlingOtherCharges;?> </div></div>
+							<div class="item-subprice"><span>Ex-Showroom </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->exShowroomPrice))echo indianCurrencyNumberFormat(round($prices->exShowroomPrice));?></div></div>
+							<div class="item-subprice"><span>Insurance </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->insurance))echo indianCurrencyNumberFormat(round($prices->insurance));?> </div></div>
+							<div class="item-subprice"><span>RTO </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->RTO))echo indianCurrencyNumberFormat(round($prices->RTO));?> </div></div>
+							<div class="item-subprice"><span>Road Tax </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->roadTax))echo indianCurrencyNumberFormat(round($prices->roadTax));?> </div></div>
+							<div class="item-subprice"><span>Other Handling Charges </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->handlingOtherCharges))echo indianCurrencyNumberFormat(round($prices->handlingOtherCharges));?> </div></div>
 						</div>
 					</div>
 					<div class="row mt-10">
@@ -171,11 +190,13 @@ $prefix=$this->config->item('prefix');
 			</div>
 			<div class="row mt-10">
 				<div class="col-md-5">
-					<?php if(count($offers)){?>
+					<?php 
+					if(count($offers)){
+					if($offers->offer1!=''){?>
 					<img src="<?php echo $prefix; ?>/assets/images/special-offer-image.png" width="60px" class="pull-left">
 					<div class="item-offer">Offer 1 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer1))echo $offers->offer1;?></span></div>
 					<div class="item-offer">Offer 2 <hr class="mb-5 mt-5"> <span><?php if(isset($offers->offer2))echo $offers->offer2;?></span></div>
-					<?php } ?>
+					<?php }} ?>
 				</div>
 				<div class="col-md-7">
 					<div class="item-benfit">Benfits buying from nayagaadi </div>
@@ -365,6 +386,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery.ui.widget.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/highlight.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/photo-gallery.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {

@@ -519,7 +519,7 @@ if($pageName=='Bodytype'){
 				var result="Showing 1-"+totalCount+" of "+totalCount;
 				$("#showing").html(result);
 			}else{
-				$("#showing").html("No result Found");
+				$("#showing").html("No Result Found");
 			}
 			$("#table_data").html(html);
 		});

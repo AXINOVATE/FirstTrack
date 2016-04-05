@@ -125,7 +125,8 @@ class Home extends CI_Controller {
 			
 			$data['data'] = $this->home_model->getProducts("SPV","",$productID,$variantID);
 			
-			$data['colors'] = $this->home_model->getProducts("LPC","",$productID,$variantID);
+			$data['colors'] = $this->home_model->getProducts("LPC","",$productID,$variantID,$board);
+			//var_dump($data['colors']);exit();
 			if($colorID =="" && isset($data['colors'][0]->colorID))
 				$colorID = $data['colors'][0]->colorID;
 			
@@ -134,6 +135,7 @@ class Home extends CI_Controller {
 				$dealerID = $data['dealers'][0]->userID;
 			
 			$data['prices'] = $this->home_model->getDealerProducts("SP",$dealerID,$productID,$variantID,$colorID,$board,$cityName);
+			//var_dump($data['prices']);exit();
 			$data['features'] = $this->home_model->getProducts('Features',"",$productID,$variantID);
 			$data['offers'] = $this->home_model->getProducts('SOFFER',$dealerID,$productID,$variantID,$colorID,$board,$cityName);
 			$data['photos'] = $this->home_model->getProducts('Photo',"",$productID,$variantID);
@@ -582,12 +584,23 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['details'] = $this->home_model->getUsers("SP",$userID);
-		//var_dump($data['details']); exit();
 		if(count($data['details']) > 0){
 			$data['userID'] = $userID;
-			//$data['categories'] = $this->manage_products_model->getCategoryDetails("ALL");
-			//$data['manufactures'] = $this->manage_products_model->getManufatureDetails("ALL");
 			$this->load->view('admin/manage_dealers/add_dealer_products',$data);
+		}else{
+			echo 'Page not found';
+		}
+	}
+	public function edit_dealer_products($userID="",$vid=""){
+		$pageData['currentPage'] = 'MANAGE DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['details'] = $this->home_model->getUsers("SP",$userID);
+		$data['data'] = $this->home_model->getDealerProducts("LISTONE",$vid);
+		var_dump($data['data']); exit();
+		if(count($data['details']) > 0 && count($data['data']) > 0){
+			$data['userID'] = $userID;
+			$this->load->view('admin/manage_dealers/edit_dealer_products',$data);
 		}else{
 			echo 'Page not found';
 		}

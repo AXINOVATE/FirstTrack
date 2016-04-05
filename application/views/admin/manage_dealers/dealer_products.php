@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +31,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<section class="container">
 			<h3> Dealer Products - <?php if(isset($details->firstName)){echo $details->firstName.' '.$details->lastName; }?>
-			<a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right  ml-10">Add products</a><a href="<?php echo $prefix;?>/home/add_dealer_offer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add Offers</a>
+			<a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right  ml-10">Add Products</a><a href="<?php echo $prefix;?>/home/add_dealer_offer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add Offers</a>
 			</h3>
 			<hr>
 			<table class="table table-bordered dealer-products">
@@ -38,6 +39,7 @@ $prefix=$this->config->item('prefix');
 			  <tr>
 				<th>Product</th>
 				<th>Variant</th>
+				<th>Boards</th>
 				<th>Color</th>
 				<th>Qty</th>
 				<th>Waiting Period (days)</th>
@@ -45,14 +47,19 @@ $prefix=$this->config->item('prefix');
 			  </tr>
 			</thead>
 			<tbody>
-			  <?php foreach($data as $d){ ?>
+			  <?php foreach($data as $d){ 
+					$boards = '<div style="background-color:#ffffff; width:30px; float:left;">&nbsp;</div>';
+					if($d->boards=='Yellow-board'){
+						$boards = '<div style="background-color:#FFD400; width:30px; float:left;">&nbsp;</div>';
+					}?>
 				  <tr>
 					<td><?php echo $d->productName; ?></td>
 					<td><?php echo $d->variantName; ?></td>
+					<td><?php echo $boards.'&nbsp;board'; ?></td>
 					<td class="vColor"><div style="background-color:<?php echo $d->colorCode; ?>;"></div></td>
 					<td><?php echo $d->quantity; ?></td>
 					<td><?php echo $d->waitingPeriodDays; ?></td>
-					<td><a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class=""><i class="fa fa-pencil"></i> Edit</a></td>
+					<td><a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>/" class=""><i class="fa fa-pencil"></i> Edit</a></td>
 				  </tr>
 			  <?php } ?>
 			</tbody>
