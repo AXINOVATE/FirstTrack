@@ -1282,8 +1282,8 @@ class Home_model extends CI_Model{
 		return $query->result_array();
 	}
 	function get_all_product_details(){
-		$query =$this->db->query("select tpd.variantID,tpd.variantName,tpd.productID,tpd.fueltype from tbl_productDetails tpd
-		inner join tbl_productBasic tpb on tpb.productID = tpd.productID");
+		$query =$this->db->query("select tpd.variantID,tpd.variantName,tpd.productID,tpd.fueltype,tpdm.slugName from tbl_productDetails tpd
+		inner join tbl_productBasic tpb on tpb.productID = tpd.productID inner join tbl_productDM tpdm on tpdm.variantID= tpd.variantID");
 		mysqli_next_result($this->db->conn_id);		
 		return $query->result_array();
 	}

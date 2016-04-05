@@ -98,7 +98,7 @@ $prefix=$this->config->item('prefix');
 														<ul class="product-Details">
 															<?php foreach($productDetail as $productDetails ) { 
 																if($productBasics['productID'] == $productDetails['productID']){?>
-																<li ><h6><a href=""><?php echo $productDetails['variantName'].''.$productDetails['fueltype'];?> </a></h6> </li>
+																<li ><h6><a href="<?php echo $prefix;?>/home/details/<?php echo $productDetails['slugName']; ?>"><?php echo $productDetails['variantName'].''.$productDetails['fueltype'];?> </a></h6> </li>
 																<?php }
 															} ?>
 														</ul>
