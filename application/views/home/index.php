@@ -22,9 +22,9 @@ $prefix=$this->config->item('prefix');
 	.body-type-detail:hover,.car-type-name:hover { background-color:#F9D133; color:#000; }
 	.body-type-detail { text-decoration:none !importent; }
 	.c-dashboard .fa{color: #cf0202; font-size: 40px;}
-	.c-dashboard .title{font-size: 22px; font-weight: 600; margin: 15px 0px;color: #737373;}
-	.c-dashboard .count{font-size: 22px; color: #737373;}
-	.c-dashboard .c-border{border: 1px solid #027cd5; height: 180px; padding:24px 0px; } 
+	.c-dashboard .title{font-size: 18px; font-weight: 600; color: #737373;}
+	.c-dashboard .count{font-size: 32px; color: #737373;margin: 15px 0px;}
+	
 
 	.bodytype-img{margin-top: 10px; width:75%; height:45px;}
 	@media (min-width: 767px){
@@ -228,39 +228,48 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					</a>
 				</div>
 			</div>
-			<div class="row mt-10 text-center c-dashboard">
-				<h2 class="mb-20">Nayagaadi dashboard</h2>
-				<div class="col-md-3 col-sm-6 col-sm-6 mb-10">
-					<div class="c-border">
-						<i class="fa fa-paper-plane"></i>
-						<div class="title">NO. OF BRANDS </div>
-						<span class="count">50</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-sm-6 mb-10">
-					<div class="c-border">
-						<i class="fa fa-truck"></i>
-						<div class="title">NO OF MODELS </div>
-						<span class="count">300</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-sm-6 mb-10">
-					<div class="c-border">
-						<i class="fa fa-tag"></i>
-						<div class="title">NO OF VARIANTS </div>
-						<span class="count">500</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-sm-6 mb-10">
-					<div class="c-border">
-						<i class="fa fa-tag"></i>
-						<div class="title">NO. OF VEHICLES </div>
-						<span class="count">1000</span>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
+	<section class="dashboard-section" style="background-color:#666666;">	
+		<div class="container">
+			<div class="row mt-10 text-center c-dashboard">
+				<h2 class="home-page-title">Nayagaadi dashboard</h2>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<center>
+						<div class="c-border">
+							<?php echo $Brands[0]['brands']; ?>
+							<p>No. Of Brands</p>
+						</div>
+					</center>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<center>
+						<div class="c-border">
+							<?php echo $Brands[0]['models']; ?>
+							<p>No. Of Models</p>
+						</div>
+					</center>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<center>
+						<div class="c-border">
+							<?php echo $Brands[0]['variants']; ?>
+							<p>No. Of Variants</p>
+						</div>
+					</center>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<center>
+						<div class="c-border">
+							<?php echo $Brands[0]['vehicles']; ?>
+							<p>No. Of Vehicles</p>
+						</div>
+					</center>
+				</div>
+				
+			</div>
+		</div>
+	</section>
 	<!-- Body content ends here -->	
 	
 	<!-- Footer start -->
@@ -312,6 +321,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		 //},200);
 		 
 	});
+	$( document ).ready(function() {
+    
+});
 	
 </script>
 </body>

@@ -1316,6 +1316,16 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $qry->result_array();
 	}
+	function getTotalBrand(){
+		$query =$this->db->query("SELECT COUNT(DISTINCT(M.manufactureID)) AS brands, 
+								COUNT(DISTINCT(PB.productID)) AS models, COUNT(DISTINCT(PD.variantID)) AS variants, SUM(ROUND(quantity)) AS vehicles
+								 FROM tbl_manufacture M 
+								 INNER JOIN tbl_productBasic PB ON M.manufactureID=PB.manufacturerID
+								 INNER JOIN tbl_productDetails PD ON PB.productID=PD.productID
+								 INNER JOIN tbl_dealerProducts DP ON PD.variantID=DP.variantID;");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 
 }
 

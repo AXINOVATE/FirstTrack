@@ -10,23 +10,19 @@ $prefix=$this->config->item('prefix');
 				<div class="col-sm-3 col-xs-12">
 					<h4>Services</h4>
 					<ul>
-						<li><a href="http://www.nayagaadi.com/Advanced%20Bookings">Advanced Bookings </a> </li>
-						<li><a href="http://www.nayagaadi.com/Test%20Drive">Test Drive </a> </li>
-						<li><a href="http://www.nayagaadi.com/Pooja%20Service">Pooja Service  </a> </li>
-						<li><a href="http://www.nayagaadi.com/Pickup-And-Drop">Pickup and Drop Service </a> </li>
-						<li><a href="http://www.nayagaadi.com/Fancy%20Number%20Request">Fancy Number Request </a> </li>
-						<li><a href="http://www.nayagaadi.com/Roadside%20Assistance%20-24*7%20Service">Roadside Assistance -24*7 Service  </a> </li>
-						<li><a href="http://www.nayagaadi.com/Job%20Listings">Job Listings </a> </li>
-						<li><a href="http://www.nayagaadi.com/alerts">Alerts/ Remainder Services</a> </li>
-						<li><a href="http://www.nayagaadi.com/enroll-as-driver">Enroll as Driver  </a> </li>
-						<li><a href="http://www.nayagaadi.com/Referral%20Services">Referral Services </a> </li>
+						<li><a href="#" data-toggle="modal" data-target="#adv-book-modal" id="adv-book">Advanced Bookings </a> </li>
+						<li><a href="#" data-toggle="modal" data-target="#test-drive-modal" id="test-drive">Test Drive </a> </li>
+						<li><a href ="#" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply for Vehicle Loan</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">Buy on Road Assistance</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-3 col-xs-12">
 					<h4>Finance</h4>
 					<ul>
-						<li><a href="http://www.nayagaadi.com/Finance%20apply%20for%20loan">Apply For Loan </a> </li>
-						<li><a href="http://www.nayagaadi.com/Apply%20For%20Insurance">Apply For Insurance </a> </li>
+						<li><a href="#" data-toggle="modal" data-target="#vehicle-loan-modal" id="vehicle-loan">Apply For Loan </a> </li>
+						<li><a href="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply For Insurance </a> </li>
 						<li><a href="http://www.btis.in/fines" target="_blank">Pay UR Dues </a> </li>
 					</ul>
 					<h4>Useful links</h4>
@@ -51,9 +47,10 @@ $prefix=$this->config->item('prefix');
 				<div class="col-sm-3 col-xs-12">
 					<h4>Tools</h4>
 					<ul>
-						<li><a href="http://www.nayagaadi.com/EMI%20Calculator">EMI Calculator </a> </li>
+						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator </a> </li>
 						<li><a href="http://www.nayagaadi.com/index.php?route=information/instant-on-road-price">Instant On Road Price </a> </li>
-						<li><a href="http://www.nayagaadi.com/index.php?route=information/service-cost-analyser">Service Cost Analyser </a> </li>  
+						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyser </a> </li> 
+                         <li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate A Dealer </a> </li> 						
 						<li><a href="http://www.nayagaadi.com/index.php?route=product/compare">Compare Vehicles </a> </li>
 						<li><a href="http://www.nayagaadi.com/index.php?route=account/order">Track UR Order  </a> </li>
 					</ul>
@@ -161,13 +158,16 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-4">
 					<div class="f-btn"><i class="fa fa-download"></i> Download Brochure</div>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 				<div class="col-md-4">
 					<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" style="text-decoration:none;">
 					<div class="f-btn"><i class="fa fa-pencil-square-o"></i> Drop a query</div>
 					</a>
 				</div>
 				<div class="col-md-4">
-					<div class="f-btn"><i class="fa fa-comment"></i> Chat with us</div>
+					
 				</div>
 			</div>
 		</div>
