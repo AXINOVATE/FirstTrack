@@ -714,4 +714,10 @@ class Home extends CI_Controller {
 	public function get_edit_dealer_products($vType,$variantID='',$colorID=''){
 		echo json_encode($this->home_model->get_edit_dealer_products($vType,$variantID,$colorID));
 	}
+	public function mediaPage(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('home/mediapage',$data);
+	}
 }
