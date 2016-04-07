@@ -54,11 +54,19 @@ function indianCurrencyNumberFormat($rupee) {
 				<div class="col-md-5 col-sm-12">
 					<div class="item-img">
 						<?php $colorImage = ''; 
-							foreach($colors as $c)
-								if($colorID == $c->colorID)
+							foreach($colors as $c){
+								if($colorID == $c->colorID){
 									$colorImage = $c->colorImage;
+									if($colorImage=='' || $colorImage==' ' || $colorImage=='assets/upload/products/'){
+										$colorImage = $prefix.'/assets/images/no-image.png';
+									}
+									else{
+										$colorImage = $prefix.$colorImage;
+									}
+								}
+							}
 						?>
-						<img id="item-img" src="<?php if(count($colors) > 0)if(($colorImage)!='') echo $prefix.'/'.$colorImage; else echo $prefix.'/assets/images/no-image.png';?>">
+						<img id="item-img" src="<?php if(count($colors) > 0)if(($colorImage)!='') echo $colorImage; else echo $prefix.'/assets/images/no-image.png';?>">
 
 						<div class="item-colors text-right">
 							<span>Colors &nbsp;</span>

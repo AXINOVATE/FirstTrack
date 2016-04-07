@@ -477,10 +477,17 @@ if($pageName=='Bodytype'){
 						var max=convertNum(Math.max.apply(Math, sum));
 						//Math.min.apply(Math, sum)+' - '+Math.max.apply(Math, sum)+
 						totalCount++;
+						var imgPath = "";
+						if(data[i]['coverImage']=='' || data[i]['coverImage']==' ' || data[i]['coverImage']=='assets/upload/products/'){
+							imgPath = '<?php echo base_url();?>assets/images/no-image.png';
+						}
+						else{
+							imgPath = '<?php echo base_url();?>'+data[i]['coverImage'];
+						}
 						html += '<div class="product-car">'+
 									'<div class="row">'+
 										'<div class="col-md-3 col-sm-3">'+
-											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><img src="<?php echo $prefix;?>/'+data[i]['coverImage']+'" alt="'+data[i]['productName']+'"></a>'+
+											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><img src="'+imgPath+'" alt="'+data[i]['productName']+'"></a>'+
 										'</div>'+
 										'<div class="col-md-6 col-sm-6">'+
 											'<a href="<?php echo $prefix;?>/home/details/'+slugName[0]+'"><h4>'+data[i]['productName']+'</h4></a>'+
