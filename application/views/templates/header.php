@@ -843,16 +843,18 @@ else{
 							</label>
 							<div class="col-md-4 col-sm-5 col-xs-12 pr-0">
 								<div class="input-group date datepicker no-padding">
-									<input type="text" class="form-control" va_req="true" name="insurance_date" id="insurance_date" value="">
+									<input type="text" class="form-control" va_req="true" va_err="insurance_dateError" name="insurance_date" id="insurance_date" value="">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 									</span>
 								</div>
+								<div class="text-danger" id="insurance_dateError"></div>
 							</div>
 							<div class="col-md-2 col-sm-4 col-xs-12 pl-0">
 								<div class="input-group bootstrap-timepicker timepicker">
-									<input  type="text"  name="reg_time" va_req="true"  name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
+									<input  type="text"  name="reg_time" va_req="true" va_err="insurance_timeError" name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
 								</div>
+								<div class="text-danger" id="insurance_timeError"></div>
 							</div>
 						</div>	
 						<div class="col-md-4 col-sm-4 col-xs-4">

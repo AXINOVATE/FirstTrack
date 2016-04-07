@@ -139,6 +139,16 @@
 	$("#apply-for-insurance,#apply-for-insurance1").on('click',function(){
 		get_insurance_cities();
 		get_insurance_manufacture();
+		$("#insurance_loan_amount").hide();
+		$("#insurance_duration").hide();
+		$("#insurance_time_frame").hide();
+		$("#insurance_preferd_bank").hide();
+		$("#insurance_bank_account").hide();
+		$("#insurance_loan_amount").removeAttr('va_req','false');
+		$("#insurance_duration").removeAttr('va_req','false');
+		$("#insurance_time_frame").removeAttr('va_req','false');
+		$("#insurance_preferd_bank").removeAttr('va_req','false');
+		$("#insurance_bank_account").removeAttr('va_req','false');
 		//get_insurance_varient();
 	});
 	
@@ -150,6 +160,12 @@
 	$("#corporate-deal,#corporate-deal1").on('click',function(){
 		get_corp_cities();
 		get_corp_categories();
+		$("#corp_loan_amount").hide();
+		$("#corp_loan_duration").hide();
+		$("#corp_pref_bank").hide();
+		$("#corp_loan_amount").removeAttr('va_req','false');
+		$("#corp_loan_duration").removeAttr('va_req','false');
+		$("#corp_pref_bank").removeAttr('va_req','false');
 		//get_corp_manufacture();
 		//get_corp_varient();
 	});
@@ -499,6 +515,23 @@ $("#corp_maker").on('change',function(){
 		}
 		$("#corp_model").html(html);
 	});
+});
+$("#corp_needloan").on('change',function(){
+	if($(this).val()=="No"){
+		$("#corp_loan_amount").hide();
+		$("#corp_loan_duration").hide();
+		$("#corp_pref_bank").hide();
+		$("#corp_loan_amount").removeAttr('va_req','false');
+		$("#corp_loan_duration").removeAttr('va_req','false');
+		$("#corp_pref_bank").removeAttr('va_req','false');
+	}else{
+		$("#corp_loan_amount").show();
+		$("#corp_loan_duration").show();
+		$("#corp_pref_bank").show();
+		$("#corp_loan_amount").attr('va_req','true');
+		$("#corp_loan_duration").attr('va_req','true');
+		$("#corp_pref_bank").attr('va_req','true');
+	}
 });
 function save_corporate_deals(){
 	var fullname=$("#corp_fullname").val();
@@ -975,6 +1008,31 @@ $("#insurance_maker").on('change',function(){
 });
 $("#insurance_model").on('change',function(){	
 	get_variant("insurance_variant", $(this).val());	
+});
+$("#insurance_need_loan").on('change',function(){
+	if($(this).val()=="No"){
+		$("#insurance_loan_amount").hide();
+		$("#insurance_duration").hide();
+		$("#insurance_time_frame").hide();
+		$("#insurance_preferd_bank").hide();
+		$("#insurance_bank_account").hide();
+		$("#insurance_loan_amount").removeAttr('va_req','false');
+		$("#insurance_duration").removeAttr('va_req','false');
+		$("#insurance_time_frame").removeAttr('va_req','false');
+		$("#insurance_preferd_bank").removeAttr('va_req','false');
+		$("#insurance_bank_account").removeAttr('va_req','false');
+	}else{
+		$("#insurance_loan_amount").show();
+		$("#insurance_duration").show();
+		$("#insurance_time_frame").show();
+		$("#insurance_preferd_bank").show();
+		$("#insurance_bank_account").show();
+		$("#insurance_loan_amount").attr('va_req','true');
+		$("#insurance_duration").attr('va_req','true');
+		$("#insurance_time_frame").attr('va_req','true');
+		$("#insurance_preferd_bank").attr('va_req','true');
+		$("#insurance_bank_account").attr('va_req','true');
+	}
 });
 function save_apply_for_insurance(){
 	var vType="INSERT";
