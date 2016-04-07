@@ -658,23 +658,23 @@ function save_instant_quote(){
 								'<tbody style="color: black;"> '+
 									'<tr>'+
 										'<td class="">Ex-showroom: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['exShowroomPrice']))+'</td>'+
+										'<td style="text-align:right;" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['exShowroomPrice']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Insurance: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['insurance']))+'</td>'+
+										'<td style="text-align:right;" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['insurance']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">RTO: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['RTO']))+'</td>'+
+										'<td style="text-align:right;" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['RTO']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Road Tax: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['roadTax']))+'</td>'+
+										'<td style="text-align:right;" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['roadTax']))+'</td>'+
 									'</tr>'+
 									'<tr>'+
 										'<td class="">Other Handling Charges: </td>'+
-										'<td class="" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['handlingOtherCharges']))+'</td>'+
+										'<td style="text-align:right;" ><i class="fa fa-inr"></i> '+numComma(Math.round(data[i]['handlingOtherCharges']))+'</td>'+
 									'</tr>'+
 								'</tbody>'+
 							'</table>'+

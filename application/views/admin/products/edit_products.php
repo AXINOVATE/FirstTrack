@@ -45,7 +45,7 @@ $prefix=$this->config->item('prefix');
 								  <!-- Nav tabs -->
 								  <ul id="myTab" class="nav  nav-tabs1" role="tablist">
 									<li role="presentation" class="active product-panel-heading"><a href="#Basic-Details" aria-controls="home" role="tab" data-toggle="tab">Basic Details</a></li>
-									<li role="presentation"><a href="#Picture-color" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
+									<li role="presentation"><a href="#Picture-color" id="Picture-color_h" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
 									<li role="presentation"><a href="#Pricing" aria-controls="Pricing" role="tab" data-toggle="tab">Pricing</a></li>
 									<li role="presentation"><a href="#Specification" aria-controls="Specification" role="tab" data-toggle="tab">Specification</a></li>
 									<li role="presentation"><a href="#Features" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
@@ -212,7 +212,8 @@ $prefix=$this->config->item('prefix');
 															<div class="form-group">
 																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
 																<div class="col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right" id="basicData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																	<button class="btn btn-default btn-primary pull-right proceed" id="" type="submit" data-next="#Picture-color" data-current="#Basic-Details" ><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+																	
 																</div>
 															</div>
 														</div>
@@ -270,7 +271,7 @@ $prefix=$this->config->item('prefix');
 															<div class="form-group">
 																<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label"></label>
 																<div class="col-md-6 col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right" id="colorsData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																	<button class="btn btn-default btn-primary pull-right" id="colorsData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 																</div>
 															</div>
 														</div>
@@ -379,7 +380,7 @@ $prefix=$this->config->item('prefix');
 														<div class="form-group">
 															<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label"></label>
 															<div class="col-md-7 col-sm-6 col-xs-12 ">
-																<button class="btn btn-default btn-primary pull-right" id="priceData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
+																<button class="btn btn-default btn-primary pull-right" id="priceData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 															</div>
 														</div>
 													</div>
@@ -724,7 +725,7 @@ $prefix=$this->config->item('prefix');
 															<div class="form-group">
 																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
 																<div class="col-sm-6 col-xs-12 float-right ">
-																	<button class="btn btn-default btn-primary pull-right" id="specData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																	<button class="btn btn-default btn-primary pull-right" id="specData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 																</div>
 															</div>
 														</div>
@@ -948,7 +949,7 @@ $prefix=$this->config->item('prefix');
 														<div class="form-group float-right">
 															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
 															<div class="col-sm-6 col-xs-12 float-right">
-																<button class="btn btn-default btn-primary pull-right" id="featureData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+																<button class="btn btn-default btn-primary pull-right" id="featureData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 															</div>
 														</div>
 													</div>
@@ -1001,7 +1002,7 @@ $prefix=$this->config->item('prefix');
 													  <div class="form-group">
 														<label for="inputPassword3" class="col-md-12 col-sm-12 col-xs-12 control-label"></label>
 														<div class="col-md-12 col-sm-12 col-xs-12 ">
-														  <button class="btn btn-default btn-primary pull-right" id="photoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+														  <button class="btn btn-default btn-primary pull-right" id="photoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 														</div>
 													  </div>
 														
@@ -1091,7 +1092,7 @@ $prefix=$this->config->item('prefix');
 													  <div class="form-group">
 														<label for="inputPassword3" class="col-md-12 col-sm-12 col-xs-12 control-label"></label>
 														<div class="col-md-12 col-sm-12 col-xs-12 ">
-														  <button class="btn btn-default btn-primary pull-right" id="videoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save & Next </button>
+														  <button class="btn btn-default btn-primary pull-right" id="videoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 														</div>
 													  </div>
 														
@@ -1196,7 +1197,7 @@ $prefix=$this->config->item('prefix');
 															<div class="form-group">
 																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
 																<div class="col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right" id="dmData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i>Save</button>
+																	<button class="btn btn-default btn-primary pull-right" id="dmData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
 																</div>
 															</div>
 														</div>
@@ -1244,6 +1245,26 @@ $prefix=$this->config->item('prefix');
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#color_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload2', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload3', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
+		});
+		$(".proceed").on('click',function(e){
+			$(".text-danger").remove();
+			var next = $(this).data("next");
+			var current = $(this).data("current");
+			
+			var error = 0;
+			$(current+" .form-control").each(function(){
+				if($(this).val() == ""){
+					error++;
+					$(this).parent().append('<span class="text-danger">This field is required</span>');
+				}
+			});
+			if(current == "#shipping" && !$("#shipping input[type=checkbox]").is(":checked")){
+				$("#shipping input[type=checkbox]").parent().append('<br> <span class="text-danger">This field is required</span>');
+				error++;
+			}
+			if(error == 0)
+				$(next+"_h").trigger("click");
+			
 		});
 		$("#basicData-btn").click(function(){
 			xu_validation.form_submit('#productBasicData','save_basicData');
