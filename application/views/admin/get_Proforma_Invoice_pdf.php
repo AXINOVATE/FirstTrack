@@ -165,10 +165,16 @@ $prefix=$this->config->item('prefix');
 </head>
 <body>
 	<!-- Header starts here -->
-	<table class="" style="width:80%;">
-		<tr><center>
-			<td style="width:80mm;">
+	<div id="wrapper">
+	<table class="" style="width:100%;">
+		<tr>
 			
+		</tr>
+		<tr><center>
+			<td style="width:20mm;border-right:none;padding-left:30px;margin-top:-5px;background-color:#337ab7;">
+				<img width="45%" height="10%" src="<?php echo $assetsPath;?>/images/logo.png" alt="logo"></img>				
+			</td>
+			<td style="width:80mm;">
 			<center>	<h1 class="heading">NAYAGAADI</h1></center>
 				<h2 class="heading">
 					NO 14 ,SLN ROAD ,BANGALORE-560027<br />
@@ -179,6 +185,7 @@ $prefix=$this->config->item('prefix');
 			</td></center>
 		</tr>
 	</table>
+	</div>
 	<!-- Header ends here -->
 	
 	<!-- Body content starts here -->

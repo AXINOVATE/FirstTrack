@@ -1114,10 +1114,12 @@ $('#ProformaInvoicePDF').on('click' , function(){
 });
 $('#get_Proforma_Invoice_pdf_download').on('click' , function(){
 	xu_validation.form_submit('#get_Proforma_Invoice_pdf','get_Proforma_Invoice_pdf');
+	setTimeout(function(){window.location.reload();},10000);
 });
 
 function get_Proforma_Invoice_pdf(){
 	$('#get_Proforma_Invoice_pdf').attr('onSubmit','return true');
+	setTimeout(function(){window.location.reload();},10000);
 	
 	//$('#get_Proforma_Invoice_pdf').submit();
 }
