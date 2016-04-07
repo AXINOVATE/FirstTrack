@@ -50,7 +50,7 @@
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
 	
-	$('#test-drive,#test-drive1').on('click', function(){		
+	$('#test-drive,#test-drive1,#test-drive2,#test-drive3').on('click', function(){		
 		var PageName=$(this).data('page');
 		if(PageName=='comparison'){
 			var VariantID=$(this).data('vid');
@@ -62,19 +62,19 @@
 			setTimeout(function() {
 			 $("#RTD_Category").val(catid);
 			 $("#RTD_Category").trigger('change');
-			 }, 500);
+			 }, 1000);
 			setTimeout(function() {
 			 $("#RTD_Maker").val(manid);
 			 $("#RTD_Maker").trigger('change');
-			}, 1000);
+			}, 1500);
 			setTimeout(function() {
 			 $("#RTD_Model").val(prodid);
 			 $("#RTD_Model").trigger('change');
-			}, 1500);
+			}, 2000);
 			setTimeout(function() {
 			 $("#RTD_Variant").val(VariantID);
 			 $("#RTD_Variant").trigger('change');
-			}, 2000);
+			}, 2500);
 		}else{	
 			get_rtd_cities();
 			get_rtd_categories();				

@@ -184,7 +184,7 @@ $prefix=$this->config->item('prefix');
 	});
 	function getMakers(catID){
 		$.ajax({
-			url:'<?php echo $prefix;?>/home/getCompareInfo/makers/'+catID+'',
+			url:'<?php echo $prefix;?>/home/getCompareInfo/makers/'+catID,
 			type:'POST',
 			processData: true,
 			dataType:'JSON'
@@ -192,7 +192,7 @@ $prefix=$this->config->item('prefix');
 			var html="";
 			html += '<option value=""></option>';
 			for(var i=0;i<data.length;i++){
-				html += '<option value="'+data[i]['manufacturerID']+'">'+data[i]['manufactureName']+'</option>';
+				html += '<option value="'+data[i]['manufactureID']+'">'+data[i]['manufactureName']+'</option>';
 			}
 			$('#selMaker1').html(html);
 			$('#selMaker2').html(html);
@@ -203,8 +203,6 @@ $prefix=$this->config->item('prefix');
 		var catID = $('#categoryID').val();
 		var makerID = $(this).val();
 		var model = $(this).attr('data-model');
-		//var modelList = $('#'+model).val();
-		//alert(makerID);
 		$.ajax({
 			url:'<?php echo $prefix;?>/home/getCompareInfo/models/'+catID+'/'+makerID,
 			type:'POST',
@@ -223,8 +221,6 @@ $prefix=$this->config->item('prefix');
 		var catID = $('#categoryID').val();
 		var modelID = $(this).val();
 		var variant = $(this).attr('data-variant');
-		//var modelList = $('#'+model).val();
-		//alert(makerID);
 		$.ajax({
 			url:'<?php echo $prefix;?>/home/getCompareInfo/variants/'+catID+'/'+modelID,
 			type:'POST',
@@ -242,16 +238,21 @@ $prefix=$this->config->item('prefix');
 	$('.selVariant').on('change',function(){
 		var catID = $('#categoryID').val();
 		var variantID = $(this).val();
-		
 		var vID = $(this).attr('id');
-		
 		$.ajax({
 			url:'<?php echo $prefix;?>/home/getCompareInfo/variantsImg/'+catID+'/'+variantID,
 			type:'POST',
 			processData: true,
 			dataType:'JSON'
 		}).done(function(data){
-			$('#'+vID+'_img').attr('src','<?php echo $prefix;?>/'+data[0]['Image']);
+			var imgPath = "";
+			if(data[0]['Image']=='' || data[0]['Image']==' ' || data[0]['Image']=='assets/upload/products/'){
+				imgPath = '<?php echo base_url();?>assets/images/no-image.png';
+			}
+			else{
+				imgPath = '<?php echo base_url();?>'+data[0]['Image'];
+			}
+			$('#'+vID+'_img').attr('src',imgPath);
 			$('#'+vID+'_name').html(data[0]['vehicleName']);
 		});	
 	});

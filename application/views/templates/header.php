@@ -14,7 +14,7 @@ else{
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3">
-				<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"></a>
+				<a href="<?php echo base_url();?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"></a>
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
@@ -1015,6 +1015,12 @@ else{
 						</select>
 					</div>
 					<div class="col-md-4">
+						<select class="form-control mb-10" id="boraCategory"  va_req="true" name="boraCategory" style="width:100%;">
+							<option value="">-- Select Category --</option>
+							
+						</select>
+					</div>
+					<div class="col-md-4">
 						<select class="form-control mb-10" id="boraMaker"   va_req="true" name="boraMaker" style="width:100%;">
 							<option value="">-- Select Maker --</option>
 						</select>
@@ -1027,12 +1033,6 @@ else{
 					<div class="col-md-4">
 						<select class="form-control mb-10" id="boraVarient"  va_req="true" name="boraVarient" style="width:100%;">
 							<option value="">-- Select Variant --</option>
-							
-						</select>
-					</div>
-					<div class="col-md-4">
-						<select class="form-control mb-10" id="boraCategory"  va_req="true" name="boraCategory" style="width:100%;">
-							<option value="">-- Select Category --</option>
 							
 						</select>
 					</div>

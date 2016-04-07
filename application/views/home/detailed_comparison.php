@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +37,13 @@ $prefix=$this->config->item('prefix');
 				<?php
 				$price = 0; $i=1;
 				foreach($specs as $sp){
+					$imgPath = "";
+					if($sp['coverImage']=='' || $sp['coverImage']==' ' || $sp['coverImage']=='assets/upload/products/'){
+						$imgPath = base_url().'assets/images/no-image.png';
+					}
+					else{
+						$imgPath = base_url().$sp['coverImage'];
+					}
 					$price = $sp['exShowroomPrice'];
 				echo '
 				<div class="col-md-4 col-sm-4 col-xs-4 mb-10" style="border-right: 1px solid #dfdfdf;">
@@ -92,12 +98,12 @@ $prefix=$this->config->item('prefix');
 						}
 						echo '
 						</div>
-						<img src="'.$prefix.'/'.$sp['coverImage'].'" alt="'.$sp['productName'].' '.$sp['variantName'].'" class="news-thumbnail-img mb-20" id="img_'.$i.'"/>
+						<img src="'.$imgPath.'" alt="'.$sp['productName'].' '.$sp['variantName'].'" class="news-thumbnail-img mb-20" id="img_'.$i.'"/>
 					</div>
 					<div class="compare-box mt-20 text-center">
 						<h4 class="text-center" id="price_'.$i.'"><i class="fa fa-inr"></i>'.$price.'</h4>
 						
-						<button id="test-drive1" class="comp-book-btn" data-catid="'.$specs[$i-1]['categoryID'].'" data-manid="'.$specs[$i-1]['manufactureID'].'" data-prodid="'.$specs[$i-1]['productID'].'" data-vid="'.$specs[$i-1]['variantID'].'" data-page="comparison" type="btn" data-toggle="modal" data-target="#test-drive-modal">Book Test Drive</button>
+						<button id="test-drive'.$i.'" class="comp-book-btn" data-catid="'.$specs[$i-1]['categoryID'].'" data-manid="'.$specs[$i-1]['manufactureID'].'" data-prodid="'.$specs[$i-1]['productID'].'" data-vid="'.$specs[$i-1]['variantID'].'" data-page="comparison" type="btn" data-toggle="modal" data-target="#test-drive-modal">Book Test Drive</button>
 					</div>
 				</div>';
 					$i++;
@@ -393,8 +399,21 @@ $prefix=$this->config->item('prefix');
 			html += '</tbody>';	
 			for(var i=1; i<=data.length; i++){
 				$('#productName_'+i).html(data[(i-1)]['productName']+' '+data[(i-1)]['variantName']);
-				$('#img_'+i).attr('src','<?php echo $prefix;?>/'+data[(i-1)]['coverImage']);
+				var imgPath = "";
+				if(data[(i-1)]['coverImage']=='' || data[(i-1)]['coverImage']==' ' || data[(i-1)]['coverImage']=='assets/upload/products/'){
+					imgPath = '<?php echo base_url();?>assets/images/no-image.png';
+				}
+				else{
+					imgPath = '<?php echo base_url();?>'+data[(i-1)]['coverImage'];
+				}
+				$('#img_'+i).attr('src',imgPath);
 				$('#price_'+i).html('<i class="fa fa-inr"></i> '+data[(i-1)]['exShowroomPrice']);
+				
+				$('#test-drive'+i).attr('data-catid',data[(i-1)]['categoryID']);
+				$('#test-drive'+i).attr('data-manid',data[(i-1)]['manufactureID']);
+				$('#test-drive'+i).attr('data-prodid',data[(i-1)]['productID']);
+				$('#test-drive'+i).attr('data-vid',data[(i-1)]['variantID']);
+				$('#test-drive'+i).attr('data-page',data[(i-1)]['comparison']);
 			}
 			$('#compare_specs').html(html);
 		});
