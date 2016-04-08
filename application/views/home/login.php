@@ -58,9 +58,17 @@ $prefix=$this->config->item('prefix');
 									</div>
 									<button class="btn" id="login_btn">Login</button>
 									<div>
-										Forgot Password ? <a href="javascript:void(0);"> Click here </a> to reset password
+										Forgot Password ? <a href="javascript:void(0);" id="forget_password"> Click here </a> to reset password
 									</div>
 								</form>
+								<div id="forget_password_blog">
+									<form class="form-horizontal hide" method="post" action="#" onsubmit="return false;" role="forget_password" id="forget_password_form">
+										<div class="input-group mt-10">
+											<div class="input-group-addon"><i class="fa fa-user"></i></div>
+											<input type="text" class="form-control" id="forget_password_email" name="forget_password_email" placeholder="Email">
+										</div>
+									</form>
+								</div>
 						   </div>
 						   
 						   <div class="tab-pane fade" id="signup_tab">
@@ -193,6 +201,9 @@ $prefix=$this->config->item('prefix');
 				
 			});
 		}
+	});
+	$("#forget_password").click(function(){
+		$("#forget_password_blog").show();
 	});
 </script>
 	
