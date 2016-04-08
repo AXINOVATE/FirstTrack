@@ -200,6 +200,9 @@ class Admin extends CI_Controller {
 		//var_dump($data['getProductsBasic']); exit();
 		$this->load->view('admin/products/edit_products',$data);
 	}
+	public function getProductInfo($vType,$varID=''){
+		echo json_encode($this->manage_products_model->getProducts($vType,$varID));
+	}
 	public function edit_productColors($varID="",$id=""){
 		if($varID!='' && $id!=''){
 			$pageData['currentPage'] = 'MANAGE PRODUCT';

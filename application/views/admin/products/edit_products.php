@@ -45,13 +45,13 @@ $prefix=$this->config->item('prefix');
 								  <!-- Nav tabs -->
 								  <ul id="myTab" class="nav  nav-tabs1" role="tablist">
 									<li role="presentation" class="active product-panel-heading"><a href="#Basic-Details" aria-controls="home" role="tab" data-toggle="tab">Basic Details</a></li>
-									<li role="presentation"><a href="#Picture-color" id="Picture-color_h" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
-									<li role="presentation"><a href="#Pricing" aria-controls="Pricing" role="tab" data-toggle="tab">Pricing</a></li>
-									<li role="presentation"><a href="#Specification" aria-controls="Specification" role="tab" data-toggle="tab">Specification</a></li>
-									<li role="presentation"><a href="#Features" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
-									<li role="presentation"><a href="#Photos" aria-controls="Photos" role="tab" data-toggle="tab">Photos</a></li>
-									<li role="presentation"><a href="#Videos" aria-controls="Videos" role="tab" data-toggle="tab">Videos</a></li>
-									<li role="presentation"><a href="#DM" aria-controls="DM" role="tab" data-toggle="tab">DM</a></li>
+									<li role="presentation"><a href="#Picture-color" id="Picture-color_tab" aria-controls="profile" role="tab" data-toggle="tab">Picture & Colors</a></li>
+									<li role="presentation"><a href="#Pricing" id="Pricing_tab" aria-controls="Pricing" role="tab" data-toggle="tab">Pricing</a></li>
+									<li role="presentation"><a href="#Specification" id="Specification_tab" aria-controls="Specification" role="tab" data-toggle="tab">Specification</a></li>
+									<li role="presentation"><a href="#Features" id="Features_tab" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+									<li role="presentation"><a href="#Photos" id="Photos_tab" aria-controls="Photos" role="tab" data-toggle="tab">Photos</a></li>
+									<li role="presentation"><a href="#Videos" id="Videos_tab" aria-controls="Videos" role="tab" data-toggle="tab">Videos</a></li>
+									<li role="presentation"><a href="#DM" id="DM_tab" aria-controls="DM" role="tab" data-toggle="tab">DM</a></li>
 								  </ul>
 									<div>
 									<input type="hidden" id="variantID" value="<?php if(count($getProductsBasic) > 0 ){ echo $getProductsBasic[0]['variantID'];} ?>">
@@ -60,7 +60,7 @@ $prefix=$this->config->item('prefix');
 								  <!-- Tab panes -->
 									<div class="tab-content">
 										<div role="tabpanel" class="tab-pane active" id="Basic-Details">
-											<form class="form-horizontal" name="productBasicData" role="form"  method="POST" id="productBasicData"  onsubmit="return false">
+											<form class="form-horizontal" name="productBasicData" role="form"  method="POST" id="productBasicData"  onsubmit="return false" data-btn="">
 												
 												<div class="row">
 													<div class="col-md-6 ">
@@ -206,14 +206,15 @@ $prefix=$this->config->item('prefix');
 														</div>
 													</div>
 													<div class="col-md-12">
-														<div class="col-md-4"></div>
-														<div class="col-md-4"></div>
-														<div class="col-md-4">
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-6 col-sm-8 col-xs-12">
 															<div class="form-group">
-																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
-																<div class="col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right proceed" id="" type="submit" data-next="#Picture-color" data-current="#Basic-Details" ><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
-																	
+																<div class="col-md-6 col-sm-6 col-xs-12">
+																	<button class="btn btn-default btn-primary pull-right basicData-btn" id="basicData-btn1" data-id="saveNext" type="submit" data-next="#Picture-color" data-current="#Basic-Details" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																</div>
+																<div class="col-md-6 col-sm-6 col-xs-12">
+																	<button class="btn btn-default btn-primary basicData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
 																</div>
 															</div>
 														</div>
@@ -224,7 +225,7 @@ $prefix=$this->config->item('prefix');
 										<!-- end tab 1 -->
 										<div role="tabpanel" class="tab-pane" id="Picture-color">
 											<div class="row">
-												<form class="form-horizontal" name="productColorData" role="form"  method="POST" id="productColorData"  onsubmit="return false">
+												<form class="form-horizontal" name="productColorData" role="form"  method="POST" id="productColorData"  onsubmit="return false" data-btn="">
 													<div class="col-md-6 col-sm-6 col-xs-12">									 
 														<div class="form-group">
 															<label for="contestLogo" class="col-md-4 col-sm-4 col-xs-12 control-label">
@@ -265,13 +266,16 @@ $prefix=$this->config->item('prefix');
 														</div>
 													</div>	
 													<div class="col-md-12 col-sm-12 col-xs-12">
-														<div class="col-md-4 col-sm-3 hidden-2"></div>
-														<div class="col-md-4 col-sm-3 hidden-2"></div>
-														<div class="col-md-4 col-sm-6 hidden-8">
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-6 col-sm-8 col-xs-12">
 															<div class="form-group">
-																<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label"></label>
-																<div class="col-md-6 col-sm-6 col-xs-12 ">
-																	<button class="btn btn-default btn-primary pull-right" id="colorsData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+																<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																	<button class="btn btn-default btn-primary pull-right colorsData-btn" id="colorsData-btn1" data-id="saveNext" type="submit" data-next="#Pricing" data-current="#Picture-color" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																	<!--button class="btn btn-default btn-primary pull-right" id="colorsData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+																</div>
+																<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																	<button class="btn btn-default btn-primary colorsData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
 																</div>
 															</div>
 														</div>
@@ -284,25 +288,7 @@ $prefix=$this->config->item('prefix');
 															<th class="hidden-xs">Color Code</th>
 															<th>Action</th>													
 														</thead>
-														<tbody>
-															<?php
-															if(count($getProductsColors)){
-																foreach($getProductsColors as $gpc){
-																	echo '
-															<tr>
-																<td>'.$gpc['colorName'].'</td>
-																<td class="hidden-xs">'.$gpc['colorCode'].'</td>
-																<td>
-																	<a href="'.$prefix.'/admin/edit_productColors/'.$gpc['variantID'].'/'.$gpc['colorID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
-																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delColors" data-id="'.$gpc['colorID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
-																</td>
-															</tr>
-																	';
-																}
-															}
-															else{
-																echo '<tr><td colspan="3">No colors added for this product yet.</td></tr>';
-															}?>
+														<tbody id="productColors">
 															
 														</tbody>
 													</table>
@@ -313,7 +299,7 @@ $prefix=$this->config->item('prefix');
 										<!-- end tab 2 -->
 										<div role="tabpanel" class="tab-pane" id="Pricing">
 											<div class="row">
-												<form class="form-horizontal" name="productPriceData" role="form"  method="POST" id="productPriceData"  onsubmit="return false">
+												<form class="form-horizontal" name="productPriceData" role="form"  method="POST" id="productPriceData"  onsubmit="return false" data-btn="">
 													<div class="col-md-6 col-sm-6 col-xs-12">
 														<div class="form-group">
 															<label for="pcolorName" class="col-md-4 col-sm-4 col-xs-12 control-label">Color Name</label>
@@ -378,9 +364,12 @@ $prefix=$this->config->item('prefix');
 															</div>
 														</div>
 														<div class="form-group">
-															<label for="inputPassword3" class="col-md-4 col-sm-4 col-xs-12 control-label"></label>
-															<div class="col-md-7 col-sm-6 col-xs-12 ">
-																<button class="btn btn-default btn-primary pull-right" id="priceData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+															<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary pull-right priceData-btn" id="priceData-btn1" data-id="saveNext" type="submit" data-next="#Specification" data-current="#Pricing" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																<!--button class="btn btn-default btn-primary pull-right" id="priceData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+															</div>
+															<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary priceData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
 															</div>
 														</div>
 													</div>
@@ -393,28 +382,8 @@ $prefix=$this->config->item('prefix');
 															<th class="hidden-xs">Price</th>
 															<th>Action</th>													
 														</thead>
-														<tbody>
-															<?php
-															$totalPrice = 0;
-															if(count($getProductsPrices)){
-																foreach($getProductsPrices as $gpp){
-																	$totalPrice = $gpp['exShowroomPrice']+$gpp['insurance']+$gpp['RTO']+$gpp['roadTax']+$gpp['handlingCharges'];
-																	echo '
-															<tr>
-																<td>'.$gpp['colorName'].'</td>
-																<td>'.$gpp['cityName'].'</td>
-																<td class="hidden-xs">'.$totalPrice.'</td>
-																<td>
-																	<a href="'.$prefix.'/admin/edit_productPrices/'.$gpp['variantID'].'/'.$gpp['priceID'].'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp 
-																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPrices" data-id="'.$gpp['priceID'].'""><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
-																</td>
-															</tr>
-																	';
-																}
-															}
-															else{
-																echo '<tr><td colspan="4">No prices added for this product yet.</td></tr>';
-															}?>
+														<tbody id="productPrices">
+															
 														</tbody>
 													</table>
 												</div>
@@ -422,7 +391,7 @@ $prefix=$this->config->item('prefix');
 										</div>
 										<!-- end tab 3 -->
 										<div role="tabpanel" class="tab-pane" id="Specification">
-											<form class="" name="productSpecData" role="form"  method="POST" id="productSpecData"  onsubmit="return false">
+											<form class="" name="productSpecData" role="form"  method="POST" id="productSpecData"  onsubmit="return false" data-btn="">
 												<div class="row">
 													<div class="col-md-6 col-sm-6 col-xs-12">
 														<div class="specs-div" >
@@ -719,13 +688,16 @@ $prefix=$this->config->item('prefix');
 														</div>
 													</div>
 													<div class="col-md-12 col-sm-12 col-xs-12">
-														<div class="col-md-4 col-sm-4 col-xs-3"></div>
-														<div class="col-md-4 col-sm-4 col-xs-3"></div>
-														<div class="col-md-4 col-sm-4 col-xs-6">
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-3 col-sm-2 hidden-xs"></div>
+														<div class="col-md-6 col-sm-8 col-xs-12">
 															<div class="form-group">
-																<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
-																<div class="col-sm-6 col-xs-12 float-right ">
-																	<button class="btn btn-default btn-primary pull-right" id="specData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+																<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																	<button class="btn btn-default btn-primary pull-right specData-btn" id="specData-btn1" data-id="saveNext" type="submit" data-next="#Features" data-current="#Specification" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																	<!--button class="btn btn-default btn-primary pull-right" id="specData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+																</div>
+																<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																	<button class="btn btn-default btn-primary specData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
 																</div>
 															</div>
 														</div>
@@ -736,7 +708,7 @@ $prefix=$this->config->item('prefix');
 										<div role="tabpanel" class="tab-pane" id="Features">
 											
 											<div class="row">
-												<form class="" name="productFeatureData" role="form"  method="POST" id="productFeatureData"  onsubmit="return false">
+												<form class="" name="productFeatureData" role="form"  method="POST" id="productFeatureData"  onsubmit="return false" data-btn="">
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<div class="specs-div" >
 														<div class="specs-title">Safety & security features</div>
@@ -943,13 +915,16 @@ $prefix=$this->config->item('prefix');
 													</div>
 												</div>
 												<div class="col-md-12">
-													<div class="col-md-4 col-sm-4 col-xs-2"></div>
-													<div class="col-md-4 col-sm-4 col-xs-2"></div>
-													<div class="col-md-4 col-sm-4 col-xs-8">
-														<div class="form-group float-right">
-															<label for="inputPassword3" class="col-sm-4 col-xs-12 control-label"></label>
-															<div class="col-sm-6 col-xs-12 float-right">
-																<button class="btn btn-default btn-primary pull-right" id="featureData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-6 col-sm-8 col-xs-12">
+														<div class="form-group">
+															<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary pull-right featureData-btn" id="featureData-btn1" data-id="saveNext" type="submit" data-next="#Photos" data-current="#Features" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																<!--button class="btn btn-default btn-primary pull-right" id="featureData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+															</div>
+															<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary featureData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
 															</div>
 														</div>
 													</div>
@@ -961,7 +936,7 @@ $prefix=$this->config->item('prefix');
 										<!-- end tab 5 -->
 										<div role="tabpanel" class="tab-pane" id="Photos">
 											<div class="row">
-												<form class="form-horizontal" name="productPhotoData" role="form"  method="POST" id="productPhotoData"  onsubmit="return false">
+												<form class="form-horizontal" name="productPhotoData" role="form"  method="POST" id="productPhotoData"  onsubmit="return false" data-btn="">
 												<div class="col-md-6 col-sm-6 col-xs-12">										 
 													<div class="form-group" id="title_cover_image">
 														<label for="" class="col-md-4 col-sm-4 col-xs-12 control-label">
@@ -996,16 +971,18 @@ $prefix=$this->config->item('prefix');
 													</div>
 												</div>	
 												<div class="col-md-12 col-sm-12 col-xs-12">
-													<div class="col-md-4 col-sm-3 col-xs-2"></div>
-													<div class="col-md-4 col-sm-3 col-xs-2"></div>
-													<div class="col-md-4 col-sm-6 col-xs-8">
-													  <div class="form-group">
-														<label for="inputPassword3" class="col-md-12 col-sm-12 col-xs-12 control-label"></label>
-														<div class="col-md-12 col-sm-12 col-xs-12 ">
-														  <button class="btn btn-default btn-primary pull-right" id="photoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-6 col-sm-8 col-xs-12">
+														<div class="form-group">
+															<div class="col-md-6 col-sm-12 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary pull-right photoData-btn" id="photoData-btn1" data-id="saveNext" type="submit" data-next="#Videos" data-current="#Photos" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																<!--button class="btn btn-default btn-primary pull-right" id="photoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+															</div>
+															<div class="col-md-6 col-sm-12 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary photoData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
+															</div>
 														</div>
-													  </div>
-														
 													</div>
 												</div>
 												</form>
@@ -1018,29 +995,7 @@ $prefix=$this->config->item('prefix');
 														<th class="hidden-xs">Title</th>
 														<th>Action</th>													
 														</thead>
-														<tbody>
-															<?php
-															if(count($getProductsPhotos)){
-																foreach($getProductsPhotos as $gpph){
-																	echo '
-															<tr>
-																<td>
-																	<center>
-																		<img src="'.$prefix.'/'.$gpph['filePath'].'" class="img-rounded img-responsive " alt="'.$gpph['fileTitle'].'" style="width:90px; height:auto;" />
-																	</center>
-																</td>
-																<td class="hidden-xs">'.$gpph['fileTitle'].'</td>
-																<td>
-																	<!--a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a-->  
-																	<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPhoto" data-id="'.$gpph['fileID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
-																</td>
-															</tr>
-																	';
-																}
-															}
-															else{
-																echo '<tr><td colspan="3">No photos added for this product yet.</td></tr>';
-															}?>
+														<tbody id="productPhotos">
 															
 														</tbody>
 													</table>
@@ -1051,7 +1006,7 @@ $prefix=$this->config->item('prefix');
 										<!-- end tab 6 -->
 										<div role="tabpanel" class="tab-pane" id="Videos">
 											<div class="row">
-												<form class="form-horizontal" name="productVideoData" role="form"  method="POST" id="productVideoData"  onsubmit="return false">
+												<form class="form-horizontal" name="productVideoData" role="form"  method="POST" id="productVideoData"  onsubmit="return false" data-btn="">
 												<div class="col-md-6 col-sm-6 col-xs-12">										 
 													<div class="form-group">
 														<label for="" class="col-md-4 col-sm-4 col-xs-12 control-label">
@@ -1086,15 +1041,18 @@ $prefix=$this->config->item('prefix');
 													</div>
 												</div>	
 												<div class="col-md-12 col-sm-12 col-xs-12">
-													<div class="col-md-4 col-sm-3 col-xs-2"></div>
-													<div class="col-md-4 col-sm-3 col-xs-2"></div>
-													<div class="col-md-4 col-sm-6 col-xs-8">
-													  <div class="form-group">
-														<label for="inputPassword3" class="col-md-12 col-sm-12 col-xs-12 control-label"></label>
-														<div class="col-md-12 col-sm-12 col-xs-12 ">
-														  <button class="btn btn-default btn-primary pull-right" id="videoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-3 col-sm-2 hidden-xs"></div>
+													<div class="col-md-6 col-sm-8 col-xs-12">
+														<div class="form-group">
+															<div class="col-md-6 col-sm-12 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary pull-right videoData-btn" id="videoData-btn1" data-id="saveNext" type="submit" data-next="#DM" data-current="#Videos" ><i class="fa fa-floppy-o padding-right-8" ></i> Save & Next</button>
+																<!--button class="btn btn-default btn-primary pull-right" id="videoData-btn" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save</button-->
+															</div>
+															<div class="col-md-6 col-sm-12 col-xs-12 mb-10">
+																<button class="btn btn-default btn-primary videoData-btn" data-id="saveExit" type="submit"><i class="fa fa-floppy-o padding-right-8" ></i> Save & Exit</button>
+															</div>
 														</div>
-													  </div>
 														
 													</div>
 												</div>
@@ -1109,29 +1067,7 @@ $prefix=$this->config->item('prefix');
 															<th>Video</th>
 															<th>Action</th>													
 														</thead>
-														<tbody>
-															<?php
-																if(count($getProductsVideos)){
-																	foreach($getProductsVideos as $gpv){
-																		echo '
-																<tr>
-																	<td>
-																		<center>
-																			'.$gpv['fileTitle'].'
-																		</center>
-																	</td>
-																	<td>
-																		<!--a href="#" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a--> 
-																		<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delVideo" data-id="'.$gpv['fileID'].'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>
-																	</td>
-																</tr>
-																		';
-																	}
-																}
-																else{
-																	echo '<tr><td colspan="2">No videos added for this product yet.</td></tr>';
-																}?>
-																
+														<tbody id="productVideos">
 															
 														</tbody>
 	 
@@ -1240,39 +1176,27 @@ $prefix=$this->config->item('prefix');
                 placeholder: "Select",
                 allowClear: true
             });
+			getProductColors();
+			getProductPrices();
+			getProductPhotos();
+			getProductVideos();
 			$('#myTab').tabCollapse();
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#color_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload2', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload3', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 		});
-		$(".proceed").on('click',function(e){
-			$(".text-danger").remove();
-			var next = $(this).data("next");
-			var current = $(this).data("current");
-			
-			var error = 0;
-			$(current+" .form-control").each(function(){
-				if($(this).val() == ""){
-					error++;
-					$(this).parent().append('<span class="text-danger">This field is required</span>');
-				}
-			});
-			if(current == "#shipping" && !$("#shipping input[type=checkbox]").is(":checked")){
-				$("#shipping input[type=checkbox]").parent().append('<br> <span class="text-danger">This field is required</span>');
-				error++;
-			}
-			if(error == 0)
-				$(next+"_h").trigger("click");
-			
-		});
-		$("#basicData-btn").click(function(){
+		
+		$(".basicData-btn").click(function(){
+			var btnSel = $(this).attr('data-id');
+			$('#productBasicData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productBasicData','save_basicData');
 		});
 		function save_basicData(){
 			var vType='Basic';
 			var variantID=$("#variantID").val();
-			
+			var btnSelected = $('#productBasicData').attr('data-btn');
+			//alert(btnSelected);
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
 				data: $('#productBasicData').serialize(),
@@ -1286,7 +1210,13 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						$('#Picture-color_tab').trigger("click");
+					}
 				}
 				else if(data.status == "Does not exist"){	
 					$.gritter.add({
@@ -1303,15 +1233,17 @@ $prefix=$this->config->item('prefix');
 					});
 					setTimeout(function(){window.location.reload();},1000);
 				}
-			});
+			});		
 		}
-		$("#colorsData-btn").click(function(){
+		$(".colorsData-btn").click(function(){
+			var btnSel = $(this).attr('data-id');
+			$('#productColorData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productColorData','save_colorsData');
 		});
 		function save_colorsData(){
 			var vType='Colors';
 			var variantID=$("#variantID").val();
-			
+			var btnSelected = $('#productColorData').attr('data-btn');
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
 				data: $('#productColorData').serialize(),
@@ -1325,7 +1257,14 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						getProductColors();
+						$('#Pricing_tab').trigger("click");
+					}
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1337,13 +1276,15 @@ $prefix=$this->config->item('prefix');
 			});
 		}
 		
-		$("#priceData-btn").click(function(){
+		$(".priceData-btn").click(function(){
+			var btnSel = $(this).attr('data-id');
+			$('#productPriceData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productPriceData','save_priceData');
 		});
 		function save_priceData(){
 			var vType='Prices';
 			var variantID=$("#variantID").val();
-			
+			var btnSelected = $('#productPriceData').attr('data-btn');
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
 				data: $('#productPriceData').serialize(),
@@ -1357,7 +1298,14 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						getProductPrices();
+						$('#Specification_tab').trigger("click");
+					}
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1369,13 +1317,15 @@ $prefix=$this->config->item('prefix');
 			});
 		}
 		
-		$("#specData-btn").click(function(){
+		$(".specData-btn").click(function(){
+			var btnSel = $(this).attr('data-id');
+			$('#productSpecData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productSpecData','save_specData');
 		});
 		function save_specData(){
 			var vType='Specification';
 			var variantID=$("#variantID").val();
-			
+			var btnSelected = $('#productSpecData').attr('data-btn');
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
 				data: $('#productSpecData').serialize(),
@@ -1389,7 +1339,13 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						$('#Features_tab').trigger("click");
+					}
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1400,11 +1356,13 @@ $prefix=$this->config->item('prefix');
 				}
 			});
 		}
-		$("#featureData-btn").click(function(){
+		$(".featureData-btn").click(function(){
 			$('input[type=checkbox]').each(function(data){
 				var stateValue = $(this).is(":checked") ? 'Yes' : 'No';
 				$(this).attr('value', stateValue);
 			});
+			var btnSel = $(this).attr('data-id');
+			$('#productFeatureData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productFeatureData','save_featureData');
 		});
 		function save_featureData(){
@@ -1433,6 +1391,7 @@ $prefix=$this->config->item('prefix');
 			var speakers = $("#speakers").val();
 			var tripMeter = $("#tripMeter").val();
 			var pillionSeat = $("#pillionSeat").val();
+			var btnSelected = $('#productFeatureData').attr('data-btn');
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
 				data: {'airbags':airbags, 'passengerAirbags':passengerAirbags, 'sideAirbags':sideAirbags, 'ABS':ABS, 'centralLocking':centralLocking, 'childSafetyLock':childSafetyLock, 'rearParkingCensor':rearParkingCensor, 'rearParkingCamera':rearParkingCamera, 'powerSteering':powerSteering, 'adjustablePowerSteering':adjustablePowerSteering, 'fogLamps':fogLamps, 'lowFuelIndicator':lowFuelIndicator, 'AC':AC, 'heater':heater, 'headlampBeamAdjustor':headlampBeamAdjustor, 'cruiseControl':cruiseControl, 'steeringMountedAudio':steeringMountedAudio, 'frontArmRest':frontArmRest, 'rearArmRest':rearArmRest, 'musicSystem':musicSystem, 'speakers':speakers, 'tripMeter':tripMeter, 'pillionSeat':pillionSeat},
@@ -1446,7 +1405,13 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						$('#Photos_tab').trigger("click");
+					}
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1457,26 +1422,32 @@ $prefix=$this->config->item('prefix');
 				}
 			});
 		}
-		$("#photoData-btn").click(function(){
+		$(".photoData-btn").click(function(){
 			$('#fileTypeName').attr('value','Photo');
+			var btnSel = $(this).attr('data-id');
+			$('#productPhotoData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productPhotoData','save_pnvData');
 		});
-		$("#videoData-btn").click(function(){
+		$(".videoData-btn").click(function(){
 			$('#fileTypeName').attr('value','Video');
+			var btnSel = $(this).attr('data-id');
+			$('#productVideoData').attr('data-btn',btnSel);
 			xu_validation.form_submit('#productVideoData','save_pnvData');
 		});
 		function save_pnvData(){
 			var vType=$('#fileTypeName').val();
 			var variantID=$("#variantID").val();
 			var fileType = vType;
-			var fileTitle = "", filePath = "";
+			var fileTitle = "", filePath = "", btnSelected= "";
 			if(fileType=='Photo'){
 				fileTitle = $('#fileTitle').val();
 				filePath = $('#image_file_path2').val();
+				btnSelected = $('#productPhotoData').attr('data-btn');
 			}
 			if(fileType=='Video'){
 				fileTitle = $('#fileTitle1').val();
 				filePath = $('#image_file_path3').val();
+				btnSelected = $('#productVideoData').attr('data-btn');
 			}
 			$.ajax({
 				url:'<?php echo $prefix;?>/admin/insUpdProducts/'+vType+'/'+variantID,
@@ -1491,7 +1462,20 @@ $prefix=$this->config->item('prefix');
 						text: 'Saved Successfully',
 						class_name: 'gritter-info gritter-center' + 'gritter-light'
 					});
-					setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					if(btnSelected=='saveExit'){
+						setTimeout(function(){window.location="<?php echo $prefix;?>/admin/add_products";},1000);
+					}
+					else{
+						$('.disable_div').remove();
+						if(fileType=='Photo'){
+							getProductPhotos();
+							$('#Videos_tab').trigger("click");
+						}
+						if(fileType=='Video'){
+							getProductVideos();
+							$('#DM_tab').trigger("click");
+						}
+					}
 				}else{
 					$.gritter.add({
 						title: 'Failed',
@@ -1570,6 +1554,126 @@ $prefix=$this->config->item('prefix');
 					});
 					setTimeout(function(){window.location.reload();},1000);
 				}
+			});
+		}
+		function getProductColors(){
+			var vType='Colors';
+			var variantID=$("#variantID").val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/getProductInfo/'+vType+'/'+variantID,
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				var html="";
+				if(data.length>0){	
+					for(var i=0;i<data.length;i++){
+						html += '<tr>'+
+									'<td>'+data[i]['colorName']+'</td>'+
+									'<td class="hidden-xs">'+data[i]['colorCode']+'</td>'+
+									'<td>'+
+										'<a href="<?php echo $prefix;?>/admin/edit_productColors/'+data[i]['variantID']+'/'+data[i]['colorID']+'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp'+
+										'<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delColors" data-id="'+data[i]['colorID']+'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>'+
+									'</td>'+
+								'</tr>';
+					}
+				}
+				else{
+					html += '<tr><td colspan="3">No colors added for this product yet.</td></tr>';
+				}
+				$('#productColors').html(html);
+			});
+		}
+		function getProductPrices(){
+			var vType='Prices';
+			var variantID=$("#variantID").val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/getProductInfo/'+vType+'/'+variantID,
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				var html="";
+				if(data.length>0){	
+					for(var i=0;i<data.length;i++){
+						var totalPrice = 0;
+						totalPrice = data[i]['exShowroomPrice']+data[i]['insurance']+data[i]['RTO']+data[i]['roadTax']+data[i]['handlingCharges'];
+						html += '<tr>'+
+									'<td>'+data[i]['colorName']+'</td>'+
+									'<td>'+data[i]['cityName']+'</td>'+
+									'<td class="hidden-xs">'+totalPrice+'</td>'+
+									'<td>'+
+										'<a href="<?php echo $prefix;?>/admin/edit_productPrices/'+data[i]['variantID']+'/'+data[i]['priceID']+'" class="font-size-16"><i class="fa fa-pencil-square-o picture-padding-right-10 font-size-16"></i><span class="hidden-xs padding-right-10 font-size-16">Edit</span></a> &nbsp &nbsp'+
+										'<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPrices" data-id="'+data[i]['priceID']+'""><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>'+
+									'</td>'+
+								'</tr>';
+					}
+				}
+				else{
+					html += '<tr><td colspan="4">No prices added for this product yet.</td></tr>';
+				}											
+				$('#productPrices').html(html);
+			});
+		}
+		function getProductPhotos(){
+			var vType='Photo';
+			var variantID=$("#variantID").val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/getProductInfo/'+vType+'/'+variantID,
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				var html="";
+				if(data.length>0){	
+					for(var i=0;i<data.length;i++){
+						html += '<tr>'+
+									'<td>'+
+										'<center>'+
+											'<img src="<?php echo $prefix;?>/'+data[i]['filePath']+'" class="img-rounded img-responsive " alt="'+data[i]['fileTitle']+'" style="width:90px; height:auto;" />'+
+										'</center>'+
+									'</td>'+
+									'<td class="hidden-xs">'+data[i]['fileTitle']+'</td>'+
+									'<td>'+
+										'<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delPhoto" data-id="'+data[i]['fileID']+'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>'+
+									'</td>'+
+								'</tr>';
+					}
+				}
+				else{
+					html += '<tr><td colspan="3">No photos added for this product yet.</td></tr>';
+				}											
+				$('#productPhotos').html(html);
+			});
+		}
+		function getProductVideos(){
+			var vType='Video';
+			var variantID=$("#variantID").val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/admin/getProductInfo/'+vType+'/'+variantID,
+				type:'POST',
+				processData: true,
+				dataType:'JSON'
+			}).done(function(data){
+				var html="";
+				if(data.length>0){	
+					for(var i=0;i<data.length;i++){
+						html += '<tr>'+
+									'<td>'+
+										'<center>'+
+											+data[i]['fileTitle']+
+										'</center>'+
+									'</td>'+
+									'<td>'+
+										'<a href="javascript:void(0)" class="delete-box-color font-size-16 del-item" data-item="delVideo" data-id="'+data[i]['fileID']+'"><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a>'+
+									'</td>'+
+								'</tr>';
+					}
+				}
+				else{
+					html += '<tr><td colspan="2">No videos added for this product yet.</td></tr>';
+				}											
+				$('#productVideos').html(html);
 			});
 		}
 	</script>
