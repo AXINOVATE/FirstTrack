@@ -782,169 +782,186 @@ else{
 				
 				<div class="modal-body">
 					<form class="form-horizontal" name="Apply_for_insurance" role="form"  method="POST" id="Apply-for-insurance" submit="return false">
-						<div class="form-group">
-							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-							<div class="col-md-6 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-									<input type="text" class="form-control" id="insurance_fullname"  va_req="true" name="insurance_fullname" placeholder="Full Name" va_err="insurance_fullnameError" />
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+									<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+										<div class="input-group">
+											<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+											<input type="text" class="form-control" id="insurance_fullname"  va_req="true" name="insurance_fullname" placeholder="Full Name" va_err="insurance_fullnameError" />
+										</div>
+										<div class="text-danger" id="insurance_fullnameError"></div>
+									</div>
+								</div>					
+							</div>	
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+									<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+										<div class="input-group">
+											<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+											<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true" placeholder="9164545924" va_err="insurance_phoneError" />
+										</div>
+										<div class="text-danger" id="insurance_phoneError"></div>
+									</div>
 								</div>
-								<div class="text-danger" id="insurance_fullnameError"></div>
 							</div>
-						</div>					
-						<div class="form-group">
-							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-							<div class="col-md-6 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-									<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true" placeholder="9164545924" va_err="insurance_phoneError" />
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+									<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+										<div class="input-group">
+											<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+											<input type="text" class="form-control" id="insurance_email" name="insurance_email"  va_req="true"va_email="true" placeholder="smishra10002gmail" va_err="insurance_emailError" />
+										</div>
+										<div class="text-danger" id="insurance_emailError"></div>
+									</div>
 								</div>
-								<div class="text-danger" id="insurance_phoneError"></div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-							<div class="col-md-6 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-									<input type="text" class="form-control" id="insurance_email" name="insurance_email"  va_req="true"va_email="true" placeholder="smishra10002gmail" va_err="insurance_emailError" />
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
+											<option value="">-- Select Maker --</option>
+										</select>
+									</div>
 								</div>
-								<div class="text-danger" id="insurance_emailError"></div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Maker</label>
-							<div class="col-md-6 col-sm-9 col-xs-12">
-								<select class="form-control mb-10" id="insurance_maker" va_req="true" style="width:100%;">
-									<option value="">-- Select Maker --</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
-							<div class="col-md-6 col-sm-9 col-xs-12">
-								<select class="form-control mb-10" id="insurance_model" va_req="true" style="width:100%;">
-									<option value="">-- Select Model --</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
-							<div class="col-md-6 col-sm-9 col-xs-12">
-								<select class="form-control mb-10" id="insurance_variant" va_req="true" style="width:100%;">
-									<option value="">-- Select Variant --</option>
-								</select>
-							</div>
-						</div>					
-						
-						<div class="form-group">
-							<label for="Expiry_Date" class="col-md-3 col-sm-3 col-xs-12 control-label">
-								Preferred Time <span class="form-man"> * </span>
-							</label>
-							<div class="col-md-4 col-sm-5 col-xs-12 pr-0">
-								<div class="input-group date datepicker no-padding">
-									<input type="text" class="form-control" va_req="true" va_err="insurance_dateError" name="insurance_date" id="insurance_date" value="">
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="model" class="col-md-3 col-sm-3 col-xs-12 control-label">Model</label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<select class="form-control mb-10" id="insurance_model" va_req="true" style="width:100%;">
+											<option value="">-- Select Model --</option>
+										</select>
+									</div>
 								</div>
-								<div class="text-danger" id="insurance_dateError"></div>
 							</div>
-							<div class="col-md-2 col-sm-4 col-xs-12 pl-0">
-								<div class="input-group bootstrap-timepicker timepicker">
-									<input  type="text"  name="reg_time" va_req="true" va_err="insurance_timeError" name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
-								</div>
-								<div class="text-danger" id="insurance_timeError"></div>
-							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="variant" class="col-md-3 col-sm-3 col-xs-12 control-label">Variant</label>
+									<div class="col-md-9 col-sm-9 col-xs-12">
+										<select class="form-control mb-10" id="insurance_variant" va_req="true" style="width:100%;">
+											<option value="">-- Select Variant --</option>
+										</select>
+									</div>
+								</div>					
+							</div>					
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="Expiry_Date" class="col-md-3 col-sm-3 col-xs-12 control-label">
+										Preferred Time <span class="form-man"> * </span>
+									</label>
+									<div class="col-md-5 col-sm-5 col-xs-7 pr-0">
+										<div class="input-group date datepicker no-padding">
+											<input type="text" class="form-control" va_req="true" va_err="insurance_dateError" name="insurance_date" id="insurance_date" value="">
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+										<div class="text-danger" id="insurance_dateError"></div>
+									</div>
+									<div class="col-md-4 col-sm-4 col-xs-5 pl-0">
+										<div class="input-group bootstrap-timepicker timepicker">
+											<input  type="text"  name="reg_time" va_req="true" va_err="insurance_timeError" name="insurance_time" id="insurance_time" type="text" class="form-control input-small inpt-timepicker" value="">
+										</div>
+										<div class="text-danger" id="insurance_timeError"></div>
+									</div>
+								</div>	
+							</div>	
 						</div>	
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_city"  va_req="true" style="width:100%;">
-								<option value="">-- Select City --</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_use" va_req="true" style="width:100%;">
-								<option value="">-- Personal use or Commercial use --</option>
-								<option value="White Board" >White Board</option>
-								<option value="Yellow Board" >Yellow Board</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_customer_type" va_req="true" style="width:100%;">
-								<option value="">-- Customer Type --</option>
-								<option value="Proprietary" >Proprietary</option>
-								<option value="LLP" >LLP</option>
-								<option value="Joint Venture" >Joint Venture</option>
-								<option value="Partnership-Pvt Ltd" >Partnership-Pvt Ltd</option>
-								<option value="Public Ltd Co" >Public Ltd Co</option>
-							</select>
-						</div>
-					
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_need_loan" va_req="true" style="width:100%;">
-								<option value="">-- Do you also need Loan --</option>
-								<option value="Yes" >Yes</option>
-								<option value="No" >No</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_loan_amount" va_req="true" style="width:100%;">
-								<option value="">-- What is the Loan Amount Looking --</option>
-								<option value="5 to 10 Laks" >5 to 10 Laks</option>
-								<option value="10 laks to 15 Laks" >10 laks to 15 Laks</option>
-								<option value="15 to 20 Laks" >15 to 20 Laks</option>
-								<option value="20 to 50 Laks" >20 to 50 Laks</option>
-								<option value="50 Laks and Above" >50 Laks and Above</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_duration" va_req="true" style="width:100%;">
-								<option value="">-- Loan Duration --</option>
-								<option value="1 Year" >1 Year</option>
-								<option value="2 Year" >2 Year</option>
-								<option value="3 Year" >3 Year</option>
-								<option value="4 Year" >4 Year</option>
-								<option value="5 Year" >5 Year</option>
-								<option value="6 Year and Above" >6 Year and Above</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_time_frame" va_req="true" style="width:100%;">
-								<option value="">-- Purchase Time Frame --</option>
-								<option value="Immediate" >Immediate</option>
-								<option value="1-2 weeks" >1-2 weeks</option>
-								<option value="3-4 weeks" >3-4 weeks</option>
-								<option value="4 to 8 weeks" >4 to 8 weeks</option>
-								<option value="10 weeks and Above" >10 weeks and Above</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_preferd_bank" va_req="true" style="width:100%;">
-								<option value="">-- Preference to Specific Bank --</option>
-								<option value="HDFC" >HDFC</option>
-								<option value="KOTAK" >KOTAK</option>
-								<option value="ICICI" >ICICI</option>
-								<option value="YES" >YES</option>
-								<option value="AXIS" >AXIS </option>
-								<option value="Other" >Other</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="insurance_bank_account"  va_req="true" style="width:100%;">
-								<option value="">-- Which bank you have Current Account --</option>
-								<option value="HDFC" >HDFC</option>
-								<option value="KOTAK" >KOTAK</option>
-								<option value="ICICI" >ICICI</option>
-								<option value="YES" >YES</option>
-								<option value="AXIS" >AXIS </option>
-								<option value="Other" >Other</option>
-								
-							</select>
-						</div>
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_city"  va_req="true" style="width:100%;">
+									<option value="">-- Select City --</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_use" va_req="true" style="width:100%;">
+									<option value="">-- Personal use or Commercial use --</option>
+									<option value="White Board" >White Board</option>
+									<option value="Yellow Board" >Yellow Board</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_customer_type" va_req="true" style="width:100%;">
+									<option value="">-- Customer Type --</option>
+									<option value="Proprietary" >Proprietary</option>
+									<option value="LLP" >LLP</option>
+									<option value="Joint Venture" >Joint Venture</option>
+									<option value="Partnership-Pvt Ltd" >Partnership-Pvt Ltd</option>
+									<option value="Public Ltd Co" >Public Ltd Co</option>
+								</select>
+							</div>
 						
-						<div class="col-md-12">
-							<label for="comment">Any specific comment</label>
-							<textarea class="form-control" rows="2" id="insurance_comment" va_req="true"></textarea>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_need_loan" va_req="true" style="width:100%;">
+									<option value="">-- Do you also need Loan --</option>
+									<option value="Yes" >Yes</option>
+									<option value="No" >No</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_loan_amount" va_req="true" style="width:100%;">
+									<option value="">-- What is the Loan Amount Looking --</option>
+									<option value="5 to 10 Laks" >5 to 10 Laks</option>
+									<option value="10 laks to 15 Laks" >10 laks to 15 Laks</option>
+									<option value="15 to 20 Laks" >15 to 20 Laks</option>
+									<option value="20 to 50 Laks" >20 to 50 Laks</option>
+									<option value="50 Laks and Above" >50 Laks and Above</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_duration" va_req="true" style="width:100%;">
+									<option value="">-- Loan Duration --</option>
+									<option value="1 Year" >1 Year</option>
+									<option value="2 Year" >2 Year</option>
+									<option value="3 Year" >3 Year</option>
+									<option value="4 Year" >4 Year</option>
+									<option value="5 Year" >5 Year</option>
+									<option value="6 Year and Above" >6 Year and Above</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_time_frame" va_req="true" style="width:100%;">
+									<option value="">-- Purchase Time Frame --</option>
+									<option value="Immediate" >Immediate</option>
+									<option value="1-2 weeks" >1-2 weeks</option>
+									<option value="3-4 weeks" >3-4 weeks</option>
+									<option value="4 to 8 weeks" >4 to 8 weeks</option>
+									<option value="10 weeks and Above" >10 weeks and Above</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_preferd_bank" va_req="true" style="width:100%;">
+									<option value="">-- Preference to Specific Bank --</option>
+									<option value="HDFC" >HDFC</option>
+									<option value="KOTAK" >KOTAK</option>
+									<option value="ICICI" >ICICI</option>
+									<option value="YES" >YES</option>
+									<option value="AXIS" >AXIS </option>
+									<option value="Other" >Other</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control mb-10" id="insurance_bank_account"  va_req="true" style="width:100%;">
+									<option value="">-- Which bank you have Current Account --</option>
+									<option value="HDFC" >HDFC</option>
+									<option value="KOTAK" >KOTAK</option>
+									<option value="ICICI" >ICICI</option>
+									<option value="YES" >YES</option>
+									<option value="AXIS" >AXIS </option>
+									<option value="Other" >Other</option>
+									
+								</select>
+							</div>
+							
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<label for="comment">Any specific comment</label>
+								<textarea class="form-control" rows="2" id="insurance_comment" va_req="true"></textarea>
+							</div>				
 						</div>				
 						<div class="form-group">
 							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agree" id="insurance_agree"  style="float:left;">

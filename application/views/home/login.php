@@ -132,6 +132,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script type="text/javascript">
 	function checkemail(email){
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
