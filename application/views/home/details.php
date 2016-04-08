@@ -61,7 +61,7 @@ function indianCurrencyNumberFormat($rupee) {
 										$colorImage = $prefix.'/assets/images/no-image.png';
 									}
 									else{
-										$colorImage = $prefix.$colorImage;
+										$colorImage = $prefix.'/'.$colorImage;
 									}
 								}
 							}

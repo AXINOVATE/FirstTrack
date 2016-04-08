@@ -204,7 +204,7 @@ var prefix=$("#prefix").data("prefix");
 
 
 /* --------------------- Common Function Starts  --------------------------*/
-var path = '/FirstTrack';
+
 function getStates(data,callback,selectValue){
 	var callback="#"+callback;
 	$.ajax({

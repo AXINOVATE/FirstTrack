@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'dbuserNG.db.10816696.hostedresource.com';
 $db['default']['username'] = 'dbuserNG';
-$db['default']['password'] = 'Axin@12345';
+$db['default']['password'] = 'NayaGaadi@123';
 $db['default']['database'] = 'dbuserNG';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
