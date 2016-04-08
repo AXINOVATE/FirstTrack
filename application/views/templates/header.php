@@ -1204,7 +1204,7 @@ else{
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Drop a Query</h4>
+					<h4 class="text-center modal-title">Request for callback</h4>
 				</div>
 				<div class="modal-body">	
 					<form class="form-horizontal" name="drop_a_query_form" role="form"  method="POST" id="drop_a_query_form" submit="return false">				
@@ -1247,7 +1247,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="javascript:void(0)" class="search-btn" id="drop_a_query_btn" style="background-color:#F9D133;" >Save</a>
+							<a href="javascript:void(0)" class="search-btn" id="drop_a_query_btn" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 						</div>
 					</div>
 				</div>
@@ -1259,7 +1259,7 @@ else{
 	
 <div class="sticky" id="sticky">
 	<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" id="dq_open" style="text-decoration:none;">
-		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback/ Ask the Experts </br><b>+919900151719</b></span>
+		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback </br><b>+919900151719</b></span>
 	</a>
 </div>
 	<div class="modal fade thanks-modals " id="thanks-message" role="dialog">

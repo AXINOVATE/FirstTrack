@@ -30,13 +30,14 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<h4 class="text-center <?php if($this->session->flashdata('registerStatus'))echo 'text-success';else echo 'text-danger';?>"><?php echo $this->session->flashdata('registerMessage');?></h4>
+			<center><h2>Log in to NayaGaadi</h2></center>
 			<div class="login mt-65">
 				<div class="row br-1">
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<ul id = "myTab" class = "nav nav-tabs mt-10">
-						   <li class = "active"> <a href = "#login_tab" data-toggle = "tab"> Login </a></li>
-						   <li> <a href = "#signup_tab" data-toggle = "tab"> Signup </a></li>
+						   <li class = "active"> <a href = "#login_tab" data-toggle = "tab"> Login (Existing User)</a></li>
+						   <li> <a href = "#signup_tab" data-toggle = "tab"> Signup (New Users)</a></li>
 						</ul>
 
 						<div id = "myTabContent" class = "tab-content mb-20">
