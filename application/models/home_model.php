@@ -1326,7 +1326,26 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
-
+	function resetPassword($vType){
+		$retValue['status'] = "Failed";
+		$vResult = $this->randStrGen();
+		$vID = $this->randStrGen();
+		$emailID = $this->input->post('mail');
+		$query =$this->db->query('CALL usp_resetPassword("'.$vType.'","'.$emailID.'",@result,@id)');
+		mysqli_next_result($this->db->conn_id);		
+		$qry = $this->db->query("SELECT @result as ".$vResult.",@id as ".$vID);
+		if($vType=='FORGET'){
+			$val=$qry->result_array();
+			if($val[0][$vResult]=='Success'){
+				$retValue['status']='Success';
+				$content='NayaGaadi Password Reset<br><a href="'.base_url().'home/resetMyPassword/RESET/'.$val[0][$vID].'">Click Here to Reset password';
+				$this->send_email('elanthirayan.m@axinovate.com',$emailID,'','NayaGaadi Password Reset',$content);
+			}else{
+				$retValue['status']='Email id not exist';
+			}
+		}
+		return $retValue;
+	}
 }
 
 ?>

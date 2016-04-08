@@ -720,4 +720,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/mediapage',$data);
 	}
+	public function resetPassword($vType){
+		echo json_encode($this->home_model->resetPassword($vType));
+	}
 }

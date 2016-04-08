@@ -58,15 +58,17 @@ $prefix=$this->config->item('prefix');
 									</div>
 									<button class="btn" id="login_btn">Login</button>
 									<div>
-										Forgot Password ? <a href="javascript:void(0);" id="forget_password"> Click here </a> to reset password
+										Forgot Password ? <a href="#" id="forget_password"> Click here </a> to reset password
 									</div>
 								</form>
-								<div id="forget_password_blog">
-									<form class="form-horizontal hide" method="post" action="#" onsubmit="return false;" role="forget_password" id="forget_password_form">
+								<div id="forget_password_blog" style="display:none">
+									<form class="form-horizontal " method="post" action="#" onsubmit="return false;" role="forget_password" id="forget_password_form">
 										<div class="input-group mt-10">
 											<div class="input-group-addon"><i class="fa fa-user"></i></div>
 											<input type="text" class="form-control" id="forget_password_email" name="forget_password_email" placeholder="Email">
 										</div>
+										<button class="btn" id="reset_password">Reset Password</button>
+										<div class="resultReset"></div>
 									</form>
 								</div>
 						   </div>
@@ -205,6 +207,28 @@ $prefix=$this->config->item('prefix');
 	});
 	$("#forget_password").click(function(){
 		$("#forget_password_blog").show();
+	});
+	$("#reset_password").click(function(){
+		var error=0;
+		var text;
+		$(".login .text-danger").remove();
+		if(!checkemail($("#forget_password_email").val())){$("#forget_password_email").parent().parent().append('<span class="text-danger"> Invalid email </span>');error++;}
+		if(error==0){
+			var mail=$("#forget_password_email").val();
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/resetPassword/FORGET/',
+				data:{'mail':mail},
+				type:'POST',
+				dataType:'JSON'
+			}).success(function(data){
+				if(data.status=='Success'){
+					text="<span class='text-danger' style='color:green;'>Email sent Successfully</span>";
+				}else{
+					text="<span class='text-danger'> Email does not exist</span>";
+				}
+				$(".resultReset").html(text);
+			});
+		}
 	});
 </script>
 	
