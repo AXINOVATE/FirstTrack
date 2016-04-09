@@ -777,7 +777,6 @@ class Home_model extends CI_Model{
 		$row = $qry->row();
 		if($row){
 			$password = $this->decrypt_password($row->password, $password);
-			
 			if($password == $row->password){
 				$this->session->set_userdata('login',true);
 				$this->session->set_userdata('userID',$row->userID);
@@ -1328,20 +1327,35 @@ class Home_model extends CI_Model{
 	}
 	function resetPassword($vType){
 		$retValue['status'] = "Failed";
+		$newPassword='';
 		$vResult = $this->randStrGen();
 		$vID = $this->randStrGen();
-		$emailID = $this->input->post('mail');
-		$query =$this->db->query('CALL usp_resetPassword("'.$vType.'","'.$emailID.'",@result,@id)');
-		mysqli_next_result($this->db->conn_id);		
+		if($vType=='FORGET'){
+			$emailID = $this->input->post('mail');
+			$query =$this->db->query('CALL usp_resetPassword("'.$vType.'","'.$emailID.'","'.$newPassword.'",@result,@id)');
+		}elseif($vType=='RESET'){
+			$id = $this->input->post('id');
+			$password = $this->input->post('password');
+			$newPassword = $this->encrypt_password($password);
+			$query =$this->db->query('CALL usp_resetPassword("'.$vType.'","'.$id.'","'.$newPassword.'",@result,@id)');
+		}
+		mysqli_next_result($this->db->conn_id);	
 		$qry = $this->db->query("SELECT @result as ".$vResult.",@id as ".$vID);
 		if($vType=='FORGET'){
 			$val=$qry->result_array();
 			if($val[0][$vResult]=='Success'){
 				$retValue['status']='Success';
-				$content='NayaGaadi Password Reset<br><a href="'.base_url().'home/resetMyPassword/RESET/'.$val[0][$vID].'">Click Here to Reset password';
+				$content='NayaGaadi Password Reset<br><a href="'.base_url().'home/resetMyPassword/RESET/'.$val[0][$vID].'">Click Here to Reset password</a>';
 				$this->send_email('elanthirayan.m@axinovate.com',$emailID,'','NayaGaadi Password Reset',$content);
 			}else{
 				$retValue['status']='Email id not exist';
+			}
+		}elseif($vType=='RESET'){
+			$val=$qry->result_array();
+			if($val[0][$vResult]=='Success'){
+				$retValue['status']='Success';
+				$content='NayaGaadi Password Reseted Successfully';
+				$this->send_email('elanthirayan.m@axinovate.com',$emailID,'','NayaGaadi Password Reset',$content);
 			}
 		}
 		return $retValue;

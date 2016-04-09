@@ -723,4 +723,9 @@ class Home extends CI_Controller {
 	public function resetPassword($vType){
 		echo json_encode($this->home_model->resetPassword($vType));
 	}
+	public function resetMyPassword($vType,$id){
+		$data['vType']=$vType;
+		$data['id']=$id;
+		$this->load->view('home/resetMyPassword',$data);
+	}
 }
