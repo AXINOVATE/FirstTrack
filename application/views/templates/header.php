@@ -55,10 +55,16 @@ else{
 				</div>
 				<div class="row">
 					<div class="col-md-10 col-sm-9 col-xs-12">
-						<div class="input-group">
-							<input type="text" class="form-control no-border-radius-all " placeholder="Find your vehicle here" aria-describedby="basic-addon2" />
-							<span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
-						</div>	
+						<div class="typeahead-container">
+							<div class="typeahead-field">
+								<span class="typeahead-query">
+									<div class="input-group">
+										<input type="search" class="form-control no-border-radius-all" id="searchGlobal" name="query" placeholder="Find your vehicle here" aria-describedby="basic-addon2" autocomplete="off" />
+										<span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
+									</div>	
+								</span>
+							</div>
+						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-12">
 						<a href="#" class="cart-btn">

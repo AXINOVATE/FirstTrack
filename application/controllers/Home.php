@@ -77,6 +77,45 @@ class Home extends CI_Controller {
 		
 		
 	}
+	public function search(){
+		if($page=='list' || $page=='latest' || $page=='upcoming' || $page=='popular' || $page=='bodytype' || $page=='category'){
+			$pageData['currentPage'] = strtoupper($page);
+			$data['header'] = $this->load->view('templates/header',$pageData,true);
+			$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+			$data['pageName'] = ucfirst($page);
+			$data['typeID'] = '';
+			if($page=='bodytype' || $page=='category' || $page=='list'){
+				$data['getTType'] = $this->manage_products_model->getTrendType('ALL');
+				$data['fullPageName']=ucfirst($page);
+				if($page=='bodytype'){
+					$data['bodyTypeDetails']=$this->manage_products_model->getBodyTypeDetails("ONE",$id);
+					$data['fullPageName']=ucfirst($page).' - '.$data['bodyTypeDetails'][0]['body_type'];
+					$data['categoryID']=$data['bodyTypeDetails'][0]['categoryID'];
+				}
+				$data['getTID'] = '';
+				$data['trendsTypeID']='';
+				$data['typeID'] = $id;
+			}
+			else{
+				$data['fullPageName'] = ucfirst($page);
+				$data['getTID'] = $this->manage_products_model->getTrendType('GTID',ucfirst($page));
+				$data['trendsTypeID']=$data['getTID'][0]['trendsTypeID'];
+			}
+			
+			$data['categoryDetails']= $this->manage_products_model->getCategoryDetails('ALL');
+			$data['manufactureDetails']= $this->manage_products_model->getManufatureDetails('ALL');
+			$data['categories']= $this->home_model->getTrendData('Category','');
+			$data['dealerDetails']= $this->home_model->getUsers('DEALER');
+			//var_dump($data['categories']);
+			//exit();
+			$this->load->view('home/searchList',$data);
+		}
+		else{
+			echo 'Page not found';
+		}
+		
+		
+	}
 	public function popular(){
 		$pageData['currentPage'] = 'POPULAR';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -160,12 +199,7 @@ class Home extends CI_Controller {
 			$this->load->view('home/details',$data);
 		}
 	}
-	public function search(){
-		$pageData['currentPage'] = 'SEARCH';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('home/search',$data);
-	}
+	
 	public function news(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -722,5 +756,13 @@ class Home extends CI_Controller {
 	}
 	public function resetPassword($vType){
 		echo json_encode($this->home_model->resetPassword($vType));
+	}
+	public function get_typehead_names(){
+		$query = (isset($_POST['query'])) ? strtolower($_POST['query']) : null;
+		//echo $query;exit();
+		if (!isset($query)) {
+			die('Invalid query.');
+		}
+		echo json_encode($this->home_model->get_typehead_names($query));
 	}
 }
