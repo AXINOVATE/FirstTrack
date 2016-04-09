@@ -84,20 +84,21 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['phone'];?>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Email-id:
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['email'];?>
 					</div>
-					<?php if($page!='DropAQuery'){?>
+					<?php if($page!='DropAQuery' && $page!='booking'){?>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						City:
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['cityName'];?>
 					</div>
-					
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Maker:
 					</div>
@@ -459,8 +460,70 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
 						Query:
 					</div>
-					<div class="col-md-10 col-sm-10 col-xs-12 mt-10 mb-10">
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['query'];?>
+					</div>
+					<?php }	?>
+					<?php if($page=='booking'){?>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Product Name:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['productName'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Variant Name:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['variantName'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Color Name:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['colorName'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Quantity:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['quantity'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Unit Price:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['unitPrice'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Shipping Cost:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['shippingCost'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Total Price:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['totalPrice'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Payment Method:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['paymentMethod'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Transaction Details:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['transactionDetails'];?>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+						Shipping Choice:
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+						<?php echo $details[0]['shippingChoice'];?>
 					</div>
 					<?php }	?>
 				</div>

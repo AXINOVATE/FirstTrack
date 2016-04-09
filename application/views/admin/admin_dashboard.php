@@ -357,6 +357,52 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($bookingCount as $BC){
+							$totalbookingCountRequest = $BC['totalCount'];
+							if($BC['openedCount']==null) $BC['openedCount']="0";
+							if($BC['progressCount']==null) $BC['progressCount']="0";
+							if($BC['closedCount']==null) $BC['closedCount']="0";
+							$totalbookingCountOpenedRequest = $BC['openedCount'];
+							$totalbookingCountProgressRequest = $BC['progressCount'];
+							$totalbookingCountClosedRequest = $BC['closedCount'];
+					} ?>
+					<center>	
+						<a href="<?php echo $prefix; ?>/admin/request_list/booking">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Booking Requests
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalbookingCountRequest;?></h5>
+										<p>Total Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalbookingCountOpenedRequest;?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalbookingCountProgressRequest;?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalbookingCountClosedRequest;?></h5>
+										<p>Closed</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</center>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
 					<center>	
 						<div class="big-box">
 							<center>

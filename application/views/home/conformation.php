@@ -30,6 +30,7 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-12">
 					<div class="success-box text-center mt-30">
 						<h2 class="text-success"><i class="fa fa-check-circle"></i> YOUR ORDER HAS BEEN PLACED!</h2>
+						<h2 class="text-success">YOUR TRACK ORDER NO IS : <?php echo $this->session->userdata('reqNo');?> </h2>
 						<p>Your order has been successfully processed!</p>
 						<p>If you have any questions please contact store owner.</p>
 						<p>Thanks for shopping online!</p>

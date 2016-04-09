@@ -1151,11 +1151,11 @@ class Home_model extends CI_Model{
 				</HEADER>
 			</ROOT>";
 		
-		$vID = mt_rand();$vMessage = mt_rand();$vStatus = mt_rand();
+		$vID = mt_rand();$vMessage = mt_rand();$vStatus = mt_rand();$vrequestNO = mt_rand();
 		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
-		$this->db->query('CALL usp_insUpdBookings("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.')');
+		$this->db->query('CALL usp_insUpdBookings("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.',@'.$vrequestNO.')');
 		mysqli_next_result($this->db->conn_id);
-		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status");
+		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status,@".$vrequestNO." as requestNo");
 		$row = $qry->row();
 		//Creating pdf
 		//$this->create_pdf();
@@ -1164,10 +1164,12 @@ class Home_model extends CI_Model{
 			if($row->status){
 				$retvalue['message'] = 'Booked Successfully';
 				$retvalue['bookingID'] = $row->ID;
+				$retvalue['requestNo'] = $row->requestNo;
 				$retvalue['status'] = true;
 			}else{
 				$retvalue['status'] = false;
 				$retvalue['message'] = $row->message;
+				$retvalue['requestNo'] = null;
 			}
 		}
 		else{
@@ -1183,6 +1185,7 @@ class Home_model extends CI_Model{
 			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
 			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
 			$data['cart'] = $this->session->userdata('cart');
+			$data['reqNo']=$this->session->userdata('reqNo');
 		}
 		$html=$this->load->view('home/invoice',$data,true);	
 		 $userName = $this->session->userdata('name');

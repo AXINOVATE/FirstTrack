@@ -133,6 +133,8 @@ $prefix=$this->config->item('prefix');
 			myUrl="<?php echo $prefix;?>/admin/getRoadTestRequest/"+vType;
 		}else if(page=='DropAQuery'){
 			myUrl="<?php echo $prefix;?>/admin/getDropAQueryRequest/"+vType;
+		}else if(page=='booking'){
+			myUrl="<?php echo $prefix;?>/admin/getBookingRequest/"+vType;
 		}
 		$.ajax({
 			url:myUrl,

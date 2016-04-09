@@ -30,7 +30,7 @@ else{
 						<?php } ?>
 						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/home/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
 						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i>Track Order</a></li>
+						<li><a href="<?php echo $prefix;?>/home/track_order"><i class="fa fa-map-marker"></i>Track Order</a></li>
 						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
 						<?php if($this->session->userdata('login')){ ?>
 							<li class="dropdown border-none-r user-options">
@@ -85,7 +85,7 @@ else{
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
 				<li><a href ="#" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" id="GetProformaInvoice" class="pd-tp-3">Pro forma Invoice</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" id="GetProformaInvoice" class="pd-tp-3">Proforma Invoice</a></li>
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
 				
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
@@ -130,7 +130,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Advance Booking</h4>
 				</div>
 				
@@ -197,7 +197,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn"  data-toggle="modal" id="advance-booking" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn"  data-toggle="modal" id="advance-booking" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -213,8 +213,8 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Get Proforma Invoice </h4>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+					<h4 class="text-center modal-title">NayaGaadi Industry's First Instant Proforma Invoice </h4>
 				</div>
 				
 						
@@ -295,10 +295,10 @@ else{
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
 							<div class="col-md-6">
-							<button type="submit" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;" >Download</button>
+							<button type="submit" id="get_Proforma_Invoice_pdf_download" class="search-btn col-md-6" style="background-color:#F9D133;font-size:18px;padding:6px;" >Download</button>
 							</div>
 							<div class="col-md-6">							
-							<button type="submit"  id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;" >Print</button>
+							<button type="submit"  id="ProformaInvoicePDF" class="search-btn col-md-6" style="background-color:#F9D133;font-size:18px;padding:6px;" >Print</button>
 							</div>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
@@ -316,7 +316,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Request for Test Drive</h4>
 				</div>
 				<div class="modal-body">	
@@ -419,7 +419,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" id="Request_TestDrive"  data-toggle="modal" name="Request_TestDrive" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" id="Request_TestDrive"  data-toggle="modal" name="Request_TestDrive" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -435,7 +435,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Vehicle Loan</h4>
 				</div>
 				<div class="modal-body">
@@ -599,7 +599,7 @@ else{
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="#" id="btn_apply_vehicle_loan"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;" >Submit</a>
+								<a href="#" id="btn_apply_vehicle_loan"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 							</div>
 						</div>
@@ -615,7 +615,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Corporate Deals</h4>
 				</div>
 				<div class="modal-body">
@@ -761,7 +761,7 @@ else{
 						</div>
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" data-toggle="modal"  id="corp_save_data" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" data-toggle="modal"  id="corp_save_data" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</form>
@@ -776,7 +776,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Apply for Insurance</h4>
 				</div>
 				
@@ -972,7 +972,7 @@ else{
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="#"  id="insurance-save"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;" >Submit</a>
+								<a href="#"  id="insurance-save"  data-toggle="modal" class="search-btn" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 							</div>
 						</div>
@@ -990,7 +990,7 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
 					<h4 class="text-center modal-title">Buy on Road Assistance</h4>
 				</div>
 				
@@ -1130,7 +1130,7 @@ else{
 					<div class="form-group">
 						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 						<div class="col-md-4 col-sm-4 col-xs-12">
-							<a href="#" class="search-btn" data-toggle="modal"  id="by-on-road-assistance" style="background-color:#F9D133;" >Submit</a>
+							<a href="#" class="search-btn" data-toggle="modal"  id="by-on-road-assistance" style="background-color:#F9D133;font-size:18px;" >Submit</a>
 							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 						</div>
 					</div>
@@ -1146,8 +1146,8 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Get Instant Quote</h4>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+					<h4 class="text-center modal-title">NayaGaadi's Instant Quote</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" name="get_instant_quote_form" role="form"  method="POST" id="get_instant_quote_form" submit="return false">
@@ -1200,7 +1200,7 @@ else{
 						<div class="form-group">
 							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<a href="#"  class="search-btn" id="get_instant_quote_form_save" style="background-color:#F9D133;" >Get Instant Quote</a>
+								<a href="#"  class="search-btn" id="get_instant_quote_form_save" style="background-color:#F9D133;font-size: 18px;" >Get Instant Quote</a>
 								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
 								
 							</div>
@@ -1220,8 +1220,8 @@ else{
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="text-center modal-title">Request for callback</h4>
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+					<h4 class="text-center modal-title">Request for Callback</h4>
 				</div>
 				<div class="modal-body">	
 					<form class="form-horizontal" name="drop_a_query_form" role="form"  method="POST" id="drop_a_query_form" submit="return false">				

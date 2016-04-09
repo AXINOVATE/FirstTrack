@@ -12,10 +12,10 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		.lbl{line-height: 40px;
-    text-align: right;}
+		.lbl{ text-align: right;}
 	.item-features>ul>li{width:190px;}
 	.trns{background-color:#DDD;padding:10px;min-height:170px;width:100%;}
 	#conformation{display:inline-block;}
@@ -50,7 +50,7 @@ $prefix=$this->config->item('prefix');
 						   <li> <a href = "#delivery" data-toggle = "tab" id="delivery_h"> Delivery Address </a></li>
 						   <li> <a href = "#payment" data-toggle = "tab" id="payment_h"> Payment Method </a></li>
 						   <li> <a href = "#shipping" data-toggle = "tab" id="shipping_h"> Shipping Details </a></li>
-						   <li> <a href = "#conformation" data-toggle = "tab" id="conformation_h"> Order Conformation </a></li>
+						   <li> <a href = "#conformation" data-toggle = "tab" id="conformation_h"> Order Confirmation </a></li>
 						</ul>
 					
 						<div id = "myTabContent" class = "tab-content" style="background-color:#FFF;">
@@ -129,17 +129,28 @@ $prefix=$this->config->item('prefix');
 									<div class="col-md-10 mt-10">
 										<input type="text" class="form-control" placeholder="" id="s_address2">
 									</div>
-									<div class="col-md-2 lbl mt-10">City</div>
+									<div class="col-md-2 lbl mt-10">Country</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="s_city">
+										<select class="form-control select2" id="s_country" style="width:95%;">
+											<?php 
+												foreach($countries as $country){
+													echo "<option value='".$country['countryID']."'>".$country['countryName']."</option>";
+												}
+											?>
+										</select>
+										<!--<input type="text" class="form-control" placeholder="" id="s_country">-->
 									</div>
 									<div class="col-md-2 lbl mt-10">State</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="s_state">
+										<select class="form-control select2" id="s_state" style="width:95%;">
+										</select>
+										<!-- <input type="text" class="form-control" placeholder="" id="s_state">-->
 									</div>
-									<div class="col-md-2 lbl mt-10">Country</div>
+									<div class="col-md-2 lbl mt-10">City</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="s_country">
+										<select class="form-control select2" id="s_city" style="width:95%;">
+										</select>
+										<!--<input type="text" class="form-control" placeholder="" id="s_city">-->
 									</div>
 									<div class="col-md-2 lbl mt-10">Postal Code</div>
 									<div class="col-md-4 mt-10">
@@ -166,17 +177,28 @@ $prefix=$this->config->item('prefix');
 									<div class="col-md-10 mt-10">
 										<input type="text" class="form-control" placeholder="" id="d_address2">
 									</div>
-									<div class="col-md-2 lbl mt-10">City</div>
+									<div class="col-md-2 lbl mt-10">Country</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="d_city">
+										<select class="form-control select2" id="d_country" style="width:95%;">
+											<?php 
+												foreach($countries as $country){
+													echo "<option value='".$country['countryID']."'>".$country['countryName']."</option>";
+												}
+											?>
+										</select>
+										<!--<input type="text" class="form-control" placeholder="" id="d_country">-->
 									</div>
 									<div class="col-md-2 lbl mt-10">State</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="d_state">
+										<select class="form-control select2" id="d_state" style="width:95%;">
+										</select>
+										<!-- <input type="text" class="form-control" placeholder="" id="d_state">-->
 									</div>
-									<div class="col-md-2 lbl mt-10">Country</div>
+									<div class="col-md-2 lbl mt-10">City</div>
 									<div class="col-md-4 mt-10">
-										<input type="text" class="form-control" placeholder="" id="d_country">
+										<select class="form-control select2" id="d_city" style="width:95%;">
+										</select>
+										<!--<input type="text" class="form-control" placeholder="" id="d_city">-->
 									</div>
 									<div class="col-md-2 lbl mt-10">Postal Code</div>
 									<div class="col-md-4 mt-10">
@@ -256,7 +278,7 @@ $prefix=$this->config->item('prefix');
 										<input type="radio" name="delivery_choices" value="SHOW_ROOM_PICKUP"> Showroom Pick up
 									</div>
 									<div class="col-md-12 mt-20">
-										<input type="checkbox" class="pl-20"> I have read and agreed to the NayaGaadi and Manufacturer terms and conditions
+										<input type="checkbox" class="pl-20"> I have read and agreed to the NayaGaadi and Manufacturer <a href="http://www.nayagaadi.com/Terms%20and%20conditions" target="_blank">terms and conditions</a>
 									</div>
 								</div>
 								<div class="row mt-10">
@@ -297,7 +319,7 @@ $prefix=$this->config->item('prefix');
 							</div>
 							<div class="row mt-10">
 								<div class="col-md-4 pull-right mt-30">
-									<button class="btn" id="conform">Conform</button>
+									<button class="btn" id="conform">Confirm</button>
 								</div>
 							</div>
 						</div>
@@ -314,9 +336,14 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#myTab').tabCollapse();
+		$('.select2').select2({
+			placeholder: "Select",
+			allowClear: true
+		});
 	});
 	function checkemail(email){
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -395,7 +422,7 @@ $prefix=$this->config->item('prefix');
 				dataType:'JSON'
 			}).success(function(data){
 				if(data.status)
-					window.location='<?php echo $prefix;?>/home/conformation';
+					window.location='<?php echo $prefix;?>/home/conformation/'+data.requestNo;
 			});
 		}
 	});
@@ -423,9 +450,21 @@ $prefix=$this->config->item('prefix');
 		if($("#same_address").is(":checked")){
 			$("#d_address1").val($("#s_address1").val());
 			$("#d_address2").val($("#s_address2").val());
-			$("#d_city").val($("#s_city").val());
-			$("#d_state").val($("#s_state").val());
-			$("#d_country").val($("#s_country").val());
+			//$("#d_city").val($("#s_city").val());
+			//$("#d_state").val($("#s_state").val());
+			//$("#d_country").val($("#s_country").val());
+			setTimeout(function() {
+			 $("#d_country").val($("#s_country").val());
+			 $("#d_country").trigger('change');
+			 }, 1000);
+			setTimeout(function() {
+			 $("#d_state").val($("#s_state").val());
+			 $("#d_state").trigger('change');
+			 }, 2500);
+			setTimeout(function() {
+			 $("#d_city").val($("#s_city").val());
+			 $("#d_city").trigger('change');
+			 }, 3500);
 			$("#d_zip_code").val($("#s_zip_code").val());
 		}else{
 			$("#d_address1").val('');
@@ -499,6 +538,55 @@ $("input[name=payment]").on('click',function(){
 		$("#dd_cash").removeClass("hide");
 	}
 });
+$("#s_country").on("change",function(){
+	var id=$(this).val();
+	get_states('s_state',id);
+});
+$("#s_state").on("change",function(){
+	var id=$(this).val();
+	get_cities('s_city',id);
+});
+$("#d_country").on("change",function(){
+	var id=$(this).val();
+	get_states('d_state',id);
+});
+$("#d_state").on("change",function(){
+	var id=$(this).val();
+	get_cities('d_city',id);
+});
+function get_states(callback,id){
+	callback='#'+callback;
+	$.ajax({
+		url:prefix+'/home/location_detail/PSTATE/'+id,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = '<option value=""></option>';
+		for(i=0;i<len;i++){
+				html += "<option value='"+data[i].stateID+"' >"+data[i].stateName+"</option>";
+		}
+		$(callback).html(html);
+	});
+	
+}
+function get_cities(callback,id){
+	callback = '#'+callback;
+	$.ajax({
+		url:prefix+'/home/location_detail/PCITY/'+id,
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var len=data.length;
+		html = '<option value=""></option>';
+		for(i=0;i<len;i++){
+				html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
+		}
+		$(callback).html(html);
+	});
+}
 </script>
 </body>
 </html>

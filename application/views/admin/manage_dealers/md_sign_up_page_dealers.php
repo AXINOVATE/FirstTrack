@@ -23,7 +23,7 @@ hr.style-eight {
 
 </style>
 </head>
-<body>
+<body style="background-color:#EFEFEF;">
 	<!-- Header starts here -->
 	<?php echo $header;?>
 	<!-- Header ends here -->
@@ -122,6 +122,13 @@ hr.style-eight {
 		}
 		return 0;
 	}
+	function checkPhone(phone){
+		var filter = /^([0-9]{12})$/;
+		if (/^([0-9]{12})$/.test(phone)){
+			return 1;
+		}
+		return 0;
+	}
 		$(document).ready(function() {
 			$('#categories').select2({placeholder: "Select category"});
 			$('#manufacture').select2({placeholder: "Select manufacturer"});
@@ -136,6 +143,7 @@ hr.style-eight {
 		var text_error = '<span class="text-danger"> This field is required </span>',error=0;
 		$("#dealer_form .form-control").each(function(){if($(this).val() == ""){$(this).parent().append(text_error);error++;}});
 		if(!checkemail($("#userEmail").val()) && $("#userEmail").val() != ""){$("#userEmail").parent().append('<span class="text-danger"> Invalid email </span>');error++;}
+		if(!checkPhone($("#userPhone").val()) && $("#userPhone").val() != ""){$("#userPhone").parent().append('<span class="text-danger"> Invalid phone </span>');error++;}
 		if($("#password").val().length < 7 && $("#password").val() != ""){$("#password").parent().append('<span class="text-danger"> This field should contain 6 characters minimum </span>');error++;}
 		
 		if(error == 0){

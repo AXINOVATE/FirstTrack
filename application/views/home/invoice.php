@@ -9,6 +9,13 @@
 		<div>
 			<div style=" background-color: #0a3151; padding: 10px;">
 				<img src="<?php echo $prefix;?>/assets/images/logo.png">
+				<?php 
+				if($reqNo !='' || $reqNo = null){
+						echo "<div style='text-align:right;color:#fff;'>
+								Track Order No is : ".$reqNo."
+							</div>";
+				}
+			?>
 			</div>
 			<br>
 			<table width="100%" style="border-spacing: 0px;">

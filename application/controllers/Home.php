@@ -22,6 +22,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('home_model');
 		$this->load->model('manage_products_model');
+		$this->load->model('dashboard_model');
 		//$this->load->database();	
 	}
 
@@ -317,6 +318,7 @@ class Home extends CI_Controller {
 		//var_dump($data['cart']);exit();
 		//echo $this->session->userdata('cart_product_id');
 		//var_dump($data['prices']);exit();
+		$data['countries'] = $this->manage_products_model->location_detail("COUNTRY");
 		$this->load->view('home/checkout',$data);
 	}
 	function creating_checkout(){
@@ -345,10 +347,12 @@ class Home extends CI_Controller {
 	function booking(){
 		echo json_encode($this->home_model->booking());
 	}
-	public function conformation(){
+	public function conformation($reqNo=''){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$data['reqNo'] = $reqNo;
+		$this->session->set_userdata('reqNo',$reqNo);
 		$data['path'] = $this->home_model->create_pdf();
 		$this->load->view('home/conformation',$data);
 	}
@@ -727,5 +731,14 @@ class Home extends CI_Controller {
 		$data['vType']=$vType;
 		$data['id']=$id;
 		$this->load->view('home/resetMyPassword',$data);
+	}
+	public function track_order(){
+		$pageData['currentPage'] = 'Compare';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['requests']=$this->dashboard_model->getTrackOrderDetail('ALL',$this->session->userdata('userID'));
+		$this->load->view('home/track_order',$data);
+	}
+	public function get_track_order($vType,$id=''){
+		echo json_encode($this->dashboard_model->getTrackOrderDetail($vType,$id));
 	}
 }

@@ -34,6 +34,7 @@ class Admin extends CI_Controller {
 		$data['applyForInsuranceCount'] = $this->dashboard_model->getApplyForInsuranceRequest('COUNTS','');
 		$data['roadTestCount'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
 		$data['DropAQueryCount'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
+		$data['bookingCount'] = $this->dashboard_model->getBookingRequest('COUNTS','');
 		$this->load->view('admin/admin_dashboard',$data);
 	}
 	public function request_list($page)
@@ -69,6 +70,10 @@ class Admin extends CI_Controller {
 			$data['Name'] = "Drop A Query";
 			$data['counts'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getDropAQueryRequest('ALL','');
+		}elseif($page=='booking'){
+			$data['Name'] = "Booking";
+			$data['counts'] = $this->dashboard_model->getBookingRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getBookingRequest('ALL','');
 		}
 		$this->load->view('admin/request_list',$data);
 	}
@@ -113,6 +118,11 @@ class Admin extends CI_Controller {
 			$data['counts'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getDropAQueryRequest('ONE',$id);
 			$data['respondDetails'] = $this->dashboard_model->getDropAQueryRequest('RESPONDS',$id);
+		}elseif($page=='booking'){
+			$data['Name'] = "Booking";
+			$data['counts'] = $this->dashboard_model->getBookingRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getBookingRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getBookingRequest('RESPONDS',$id);
 		}
 		//var_dump($data['details']);exit();
 		$this->load->view('admin/request_report',$data);
@@ -301,5 +311,8 @@ class Admin extends CI_Controller {
 	}
 	public function delProducts(){
 		echo json_encode($this->manage_products_model->delProducts());
+	}
+	public function getBookingRequest($vType,$BID=''){
+		echo json_encode($this->dashboard_model->getBookingRequest($vType,$BID));
 	}
 }
