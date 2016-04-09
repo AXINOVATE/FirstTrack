@@ -36,7 +36,6 @@ $prefix=$this->config->item('prefix');
     background-color: #F9D133 !important;
     border-bottom: 5px solid #F9D133 !important;
 	}
-	
 	</style>
 	
 	

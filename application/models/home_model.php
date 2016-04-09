@@ -1362,12 +1362,13 @@ class Home_model extends CI_Model{
 	}
 	public function get_typehead_names($key){
 		$retvalue=array();$i=0;
-		$query=$this->db->query("SELECT productID,productName,variantID,variantName FROM vw_productList WHERE (productName LIKE '%".$key."%' OR manufactureName LIKE '%".$key."%' OR variantName LIKE '%".$key."%') GROUP BY variantID ORDER BY productName LIMIT 0,8");
+		$query=$this->db->query("SELECT productID,productName,variantID,variantName,slugName FROM vw_productList WHERE (productName LIKE '%".$key."%' OR manufactureName LIKE '%".$key."%' OR variantName LIKE '%".$key."%') GROUP BY variantID ORDER BY productName DESC LIMIT 0,8");
 		foreach($query->result() as $row){
 			$retvalue[$i]['productID']= $row->productID;
-			$retvalue[$i]['productName']= str_replace(' ','-',$row->productName);
+			$retvalue[$i]['productName']= $row->productName;
 			$retvalue[$i]['variantID']= $row->variantID;
-			$retvalue[$i++]['variantName']= str_replace(' ','-',$row->variantName);
+			$retvalue[$i]['slugName']= $row->slugName;
+			$retvalue[$i++]['variantName']= $row->productName.' '.$row->variantName;
 		}
 		return $retvalue;
 	}

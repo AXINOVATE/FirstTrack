@@ -1166,10 +1166,10 @@ $('#searchGlobal').typeahead({
 	minLength: 2,
 	order: "asc",
 	dynamic: true,
-	delay: 1000,
+	delay: 500,
 	backdrop: false,
 	display: "variantName",
-	template: '<span class="name">{{variantName}}</span>',
+	template: '<span class="variantName">{{variantName}}</span>',
 	source: {
 		user: {
 			url: [{
@@ -1185,7 +1185,7 @@ $('#searchGlobal').typeahead({
 	},
 	callback: {
 		onClick: function (node, a, obj, e) {
-			window.location=prefix+'/search?q='+obj['productName']+'-'+obj['variantName'];
+			window.location=prefix+'/home/details/'+obj['slugName'];
 		}
 	},
 	debug: true
