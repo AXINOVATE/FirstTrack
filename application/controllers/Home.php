@@ -765,4 +765,9 @@ class Home extends CI_Controller {
 		}
 		echo json_encode($this->home_model->get_typehead_names($query));
 	}
+	public function resetMyPassword($vType,$id){
+		$data['vType']=$vType;
+		$data['id']=$id;
+		$this->load->view('home/resetMyPassword',$data);
+	}
 }
