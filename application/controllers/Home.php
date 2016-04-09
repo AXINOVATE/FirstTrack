@@ -161,12 +161,7 @@ class Home extends CI_Controller {
 			$this->load->view('home/details',$data);
 		}
 	}
-	public function search(){
-		$pageData['currentPage'] = 'SEARCH';
-		$data['header'] = $this->load->view('templates/header',$pageData,true);
-		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$this->load->view('home/search',$data);
-	}
+	
 	public function news(){
 		$pageData['currentPage'] = 'NEWS';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
@@ -726,6 +721,14 @@ class Home extends CI_Controller {
 	}
 	public function resetPassword($vType){
 		echo json_encode($this->home_model->resetPassword($vType));
+	}
+	public function get_typehead_names(){
+		$query = (isset($_POST['query'])) ? strtolower($_POST['query']) : null;
+		//echo $query;exit();
+		if (!isset($query)) {
+			die('Invalid query.');
+		}
+		echo json_encode($this->home_model->get_typehead_names($query));
 	}
 	public function resetMyPassword($vType,$id){
 		$data['vType']=$vType;

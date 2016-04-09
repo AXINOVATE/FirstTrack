@@ -49,6 +49,11 @@ body{font-family:Century Gothic !important;}
 
 .bootstrap-timepicker-widget.dropdown-menu.open {display: inline-block; z-index: 99999 !important;}
 .inpt-timepicker{margin-top: 4px;}
+.typeahead-result{position:absolute; width: 78%;}
+.typeahead-result>ul {width: 100%; margin-top: 1px; font-size: 14px; text-align: left; list-style: none; -webkit-background-clip: padding-box; background-clip: padding-box;}
+.typeahead-result>ul>.active>a{background-color:#e7e7e7 !important;}
+.typeahead-result>ul>li>a { display: block; padding: 10px 0; white-space: normal; text-decoration: none; color: #333; clear: both; background-color: #fff; position: relative; z-index: 99999;}
+.typeahead-result .variantName { margin: 0 10px;}
 /* media query */
 @media only screen and (min-width: 1025px) and (max-width:1200px){
 	.header-top>ul>li{padding-left:7px;padding-right:7px;}

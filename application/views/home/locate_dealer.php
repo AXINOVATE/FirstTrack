@@ -17,6 +17,7 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">	
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/select2.min.css" type="text/css" />
+	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		.form-group.required .control-label:after {
   content:"*";
@@ -104,12 +105,10 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-<script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
-
-
-
-<!-- Bootstrap -->
+<script src="<?php echo $assetsPath; ?>/js/jquery.typeahead.min.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
+<script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 
 	<script>
 		$('document').ready(function(){

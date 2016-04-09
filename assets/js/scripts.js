@@ -1160,3 +1160,34 @@ function save_dropAQuery(){
 	});
 }
 /* End of Drop a Query Form*/
+
+/* Header Search Starts Here	*/
+$('#searchGlobal').typeahead({
+	minLength: 2,
+	order: "asc",
+	dynamic: true,
+	delay: 500,
+	backdrop: false,
+	display: "variantName",
+	template: '<span class="variantName">{{variantName}}</span>',
+	source: {
+		user: {
+			url: [{
+				type: "POST",
+				url: prefix+"/home/get_typehead_names",
+				data: {
+					apiKey: "35e8959af42d73e1e172c2a2992f34f1",
+					query: "{{query}}"
+				},
+				process: function (data) { return data; }
+			}, 	]
+		},
+	},
+	callback: {
+		onClick: function (node, a, obj, e) {
+			window.location=prefix+'/home/details/'+obj['slugName'];
+		}
+	},
+	debug: true
+});
+/* Header Search Ends Here	*/

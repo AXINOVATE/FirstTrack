@@ -36,7 +36,6 @@ $prefix=$this->config->item('prefix');
     background-color: #F9D133 !important;
     border-bottom: 5px solid #F9D133 !important;
 	}
-	
 	</style>
 	
 	
@@ -280,6 +279,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery.typeahead.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 
@@ -321,10 +321,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		 //},200);
 		 
 	});
-	$( document ).ready(function() {
-    
-});
-	
 </script>
 </body>
 </html>
