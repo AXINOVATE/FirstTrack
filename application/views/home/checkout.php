@@ -307,6 +307,7 @@ $prefix=$this->config->item('prefix');
 											<li>Mileage : <?php if(isset($data->mileage))echo $data->mileage.' kmpl';?></li>
 											<li>Fuel : <?php if(isset($data->fueltype))echo $data->fueltype;?></li>
 											<li>Transmission : <?php if(isset($data->transmission))echo $data->transmission;?></li>
+											<li>Color Name : <?php if(isset($data->colorName))echo $data->colorName;?></li>
 										</ul>
 									</li>
 									<li><input type="text" value="1" id="quantity" style="width: 35px;text-align: center;"></li>

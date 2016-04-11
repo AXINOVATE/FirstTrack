@@ -18,6 +18,23 @@
 			?>
 			</div>
 			<br>
+			<table width="100%" style="border-spacing: 0px;font-size:24;">
+				<tr style="background-color: #F7F7F7;">
+					<td width="300px" style="border-right:0px;text-align:left;">Customer Name</td>
+					<td style="border-right:0px;">Address1</td>
+					<td style="border-right:0px;">Address2</td>
+					<td style="border-right:0px;">Phone</td>
+					<td>Email</td>
+				</tr>
+				<tr>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['firstName']))echo $userData[0]['firstName'].' '.$userData[0]['lastName'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['addressLine1']))echo $userData[0]['addressLine1'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['addressLine2']))echo $userData[0]['addressLine2'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['phone']))echo $userData[0]['phone'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['email']))echo $userData[0]['email'];?></td>
+					
+				</tr>
+			</table><br>
 			<table width="100%" style="border-spacing: 0px;">
 				<tr style="background-color: #F7F7F7;">
 					<td width="300px" style="border-right:0px;text-align:left;">Product Name</td>
@@ -37,6 +54,7 @@
 							<li>Mileage : <?php if(isset($data->mileage))echo $data->mileage.' kmpl';?></li>
 							<li>Fuel : <?php if(isset($data->fueltype))echo $data->fueltype;?></li>
 							<li>Transmission : <?php if(isset($data->transmission))echo $data->transmission;?></li>
+							<li>Color Name : <?php if(isset($data->colorName))echo $data->colorName;?></li>
 						</ul>
 					</td>
 					

@@ -67,9 +67,16 @@ else{
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-12">
-						<a href="#" class="cart-btn">
+						<a href="<?php echo $prefix; ?>/home/cart" class="cart-btn">
 							<i class="fa fa-shopping-cart"></i>  Cart 
-							<span class="cart-item">0</span>
+							<?php if($this->session->userdata('login') ==true){ 
+								if($this->session->userdata('totalOnCart')==0){
+									
+								}else{
+									echo '<span class="cart-item">'.$this->session->userdata('totalOnCart').'</span>';
+									}
+								}
+							?>
 						</a>
 					</div>
 				</div>

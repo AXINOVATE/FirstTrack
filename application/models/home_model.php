@@ -784,6 +784,8 @@ class Home_model extends CI_Model{
 				$this->session->set_userdata('email',$row->email);
 				$this->session->set_userdata('roleID',$row->defaultRoleID);
 				$this->session->set_userdata('roleName',$row->roleName);
+				$totalCount=count($this->getCartDetails('ALL',$row->userID));
+				$this->session->set_userdata('totalOnCart',$totalCount);
 				$retvalue['message'] = 'Logged in successfully';
 				$retvalue['status'] = true;
 			}else{
@@ -1164,6 +1166,7 @@ class Home_model extends CI_Model{
 			if($row->status){
 				$retvalue['message'] = 'Booked Successfully';
 				$retvalue['bookingID'] = $row->ID;
+				$this->session->set_userdata('bookingIDToUpdate',$row->ID);
 				$retvalue['requestNo'] = $row->requestNo;
 				$retvalue['status'] = true;
 			}else{
@@ -1182,8 +1185,12 @@ class Home_model extends CI_Model{
 		$cart = $this->session->userdata('cart');
 		if(count($cart)>0){
 			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
-			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
+			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);
 			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
+			$xml1="<ROOT><HEADER><ACTIONTYPE>GETBOOKINGUSER</ACTIONTYPE><BOOKINGID>".$this->session->userdata('bookingIDToUpdate')."</BOOKINGID></HEADER></ROOT>";
+			$query=$this->db->query('CALL usp_getUsers("'.$xml1.'")');
+			mysqli_next_result($this->db->conn_id);
+			$data['userData']=$query->result_array();
 			$data['cart'] = $this->session->userdata('cart');
 			$data['reqNo']=$this->session->userdata('reqNo');
 		}
@@ -1193,7 +1200,12 @@ class Home_model extends CI_Model{
 		//checkign the path exists
 		if (!is_dir($path)) {mkdir($path,0777);}
 		
-		$pdfFilePath = $path.$userName.date('dmyhmi').".pdf";
+		$pdfFilePath = $path.$userName.date('dmyhms').".pdf";
+		$xml="<ROOT><HEADER><ACTIONTYPE>UPDF</ACTIONTYPE><PDFLINK>".$pdfFilePath."</PDFLINK><UID>".$this->session->userdata('bookingIDToUpdate')."</UID></HEADER></ROOT>";
+		$qu=$this->db->query('CALL usp_UpdateBookingRequest("'.$xml.'",@vresult)');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @vresult");
+		$row = $qry->row();
 		$this->load->library('m_pdf');
 		$pdf = $this->m_pdf->load();
 		$pdf->WriteHTML($html);
@@ -1374,6 +1386,19 @@ class Home_model extends CI_Model{
 			$retvalue[$i++]['variantName']= $row->productName.' '.$row->variantName;
 		}
 		return $retvalue;
+	}
+	public function ins_updCart($xml){
+		$query=$this->db->query("call usp_insUpdCart('".$xml."',@result,@total)");
+		mysqli_next_result($this->db->conn_id);		
+		$query1=$this->db->query("select @result as status,@total as total");
+		$query2=$query1->result_array();
+		$this->session->set_userdata('totalOnCart',$query2[0]['total']);
+		return $query1->result_array();
+	}
+	public function getCartDetails($vType,$id=''){
+		$query=$this->db->query("call usp_getCartDetails('".$vType."','".$id."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
 	}
 }
 

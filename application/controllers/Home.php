@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 	}
 
 		
-	public function index(){		
+	public function index(){
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
@@ -298,7 +298,7 @@ class Home extends CI_Controller {
 		//var_dump($cart); exit();
 		if(count($cart)>0){
 			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
-			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID']);
+			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);
 			
 			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID'],$cart['board'],$cart['cityName']);
 			
@@ -344,6 +344,8 @@ class Home extends CI_Controller {
 	}
 	public function conformation($reqNo=''){
 		$pageData['currentPage'] = '';
+		$totalCount=count($this->home_model->getCartDetails('ALL',$this->session->userdata('userID')));
+		$this->session->set_userdata('totalOnCart',$totalCount);
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$data['reqNo'] = $reqNo;
@@ -743,5 +745,62 @@ class Home extends CI_Controller {
 	}
 	public function get_track_order($vType,$id=''){
 		echo json_encode($this->dashboard_model->getTrackOrderDetail($vType,$id));
+	}
+	public function getCartDetails($vType,$id=''){
+		echo json_encode($this->home_model->getCartDetails($vType,$id));
+	}
+	public function cart(){
+		$pageData['currentPage'] = 'Cart';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		if($this->session->userdata('login') == true){
+			$data['cartDetails']=$this->home_model->getCartDetails('ALL',$this->session->userdata('userID'));
+		}else{
+			//var_dump($this->session->userdata('wishList'));
+			//exit();
+		}
+		$this->load->view('home/cart',$data);
+	}
+	public function creating_checkout_wishList(){
+		if($this->session->userdata('login') ==true){
+			$unitPrice;
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$this->input->post('dealerID'),$this->input->post('productID'),$this->input->post('variantID'),$this->input->post('colorID'),$this->input->post('board'),$this->input->post('cityName'));
+			
+			if(isset($data['prices']->onRoadPrice))
+				$unitPrice = floatval($data['prices']->onRoadPrice);
+			
+			$shippingPrice = 0;
+			$totalPrice = floatval((1*$unitPrice)+0);
+			$xml = "<ROOT><HEADER><TYPE>INSERT</TYPE><USERID>".$this->session->userdata('userID')."</USERID><PRODUCTID>".$this->input->post('productID')."</PRODUCTID><VARIANTID>".$this->input->post('variantID')."</VARIANTID><DEALERID>".$this->input->post('dealerID')."</DEALERID><COLORID>".$this->input->post('colorID')."</COLORID><BOARD>".$this->input->post('board')."</BOARD><CITYNAME>".$this->input->post('cityName')."</CITYNAME><QUANTITY>1</QUANTITY><UNITPRICE>".$unitPrice."</UNITPRICE><SHIPPINGPRICE>0</SHIPPINGPRICE><TOTALPRICE>".$totalPrice."</TOTALPRICE></HEADER></ROOT>";
+			echo json_encode($this->home_model->ins_updCart($xml));
+		}else{
+			$wishList=Array();
+			$i=0;
+			if($this->session->userdata('wishList')!=''){
+				$i=count($this->session->userdata('wishList'));
+				$wishList=$this->session->userdata('wishList');
+			}
+			else{
+				//$wishList
+			}
+			//echo $i; exit();
+			$wishList[$i]['productID'] = $this->input->post('productID');
+			$wishList[$i]['variantID'] = $this->input->post('variantID');
+			$wishList[$i]['dealerID'] = $this->input->post('dealerID');
+			$wishList[$i]['colorID'] = $this->input->post('colorID');
+			$wishList[$i]['board'] = $this->input->post('board');
+			$wishList[$i]['cityName'] = $this->input->post('cityName');
+			$wishList[$i]['qty'] = 1;
+			
+			$wishList[$i]['unitPrice'] = 0;
+			$wishList[$i]['shippingPrice'] = 0;
+			$wishList[$i]['totalPrice'] = 0;
+			$this->session->set_userdata('wishList',$wishList);
+			echo json_encode(true);
+		}
+		//var_dump($wishList);
+	}
+	public function deleteCart($vType,$vCartID){
+		$xml = "<ROOT><HEADER><TYPE>".$vType."</TYPE><USERID>".$this->session->userdata('userID')."</USERID><CARTID>".$vCartID."</CARTID></HEADER></ROOT>";
+		echo json_encode($this->home_model->ins_updCart($xml));
 	}
 }

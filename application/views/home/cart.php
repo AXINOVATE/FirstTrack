@@ -30,83 +30,63 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	<div class="body-container">
 		<div class="container">
-			<!--<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="page-title">Track Order Request - TR123</div>
-					<hr class="mt-0"></hr>
-				</div>
-			</div> -->
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mt-30">
-					<div class="page-title">My Requests</div>
+					<div class="page-title">My Cart</div>
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
 			<?php 
 					$loginStatus=$this->session->userdata('login');
 					if($loginStatus =='' || $loginStatus == null){
-						echo "<tr><td>Please Login to track the orders<td><tr>";
+						echo "<tr><td>Please Login to view items in your cart<td><tr>";
 					}else{
+						if(count($cartDetails) <= 0 ){
+							echo "Kindly add some items to your cart";
+						}else{
+									
 			?>
 			<div class="row">
 				<div class="col-md-12 col-sm-13 col-xs-12 mt-10 mb-10">
 					<table class="table table-bordered">
 						<thead class="bg-lightblue">
 							<tr>
-								<th>Request No</th>
 								<th>Product Name</th>
 								<th>Variant Name</th>
-								<th>Request Date</th>
-								<th class="hidden-xs">PDF Link</th>													
-								<th>Status</th>													
+								<th>Color Name</th>
+								<th>Total Price</th>												
+								<th>Quantity</th>													
+								<th>Board</th>													
+								<th>Action</th>													
 							</tr>
 						</thead>
 						<tbody>
 							<?php 
-								foreach($requests as $REQ){
-									$date = date_create($REQ['dateTime']);
-									$date = date_format($date,"jS \of M Y");
-									?>
-								<tr>
-									<td><a href="#" class="track_request" data-id="<?php echo $REQ['bookingID']; ?>"><?php echo $REQ['requestNo']; ?></a></td>
-									<td><?php echo $REQ['productName']; ?></td>
-									<td><?php echo $REQ['variantName']; ?></td>
-									<td><?php echo $date; ?></td>
-									<td class="hidden-xs"><a target="_blank" href="<?php echo $prefix.'/'.$REQ['pdfLink']; ?>" >Download Here</a></td>
-									<td><?php echo $REQ['reqStatus']; ?></td>
+								if($this->session->userdata('login')==true){
+									foreach($cartDetails as $CD){
+										?>
+										<tr>
+									<td><a href="#" data-productID="<?php echo $CD['productID'];?>" data-variantID="<?php echo $CD['variantID'];?>" data-dealerID="<?php echo $CD['dealerID'];?>" data-colorID="<?php echo $CD['colorID'];?>" data-board="<?php echo $CD['board'];?>" data-cityName="<?php echo $CD['cityName'];?>" class="goFromCart"><?php echo $CD['productName']; ?></a></td>
+									<td><?php echo $CD['variantName']; ?></td>
+									<td><?php echo $CD['colorName']; ?></td>
+									<td><?php echo $CD['totalPrice']; ?></td>
+									<td><?php echo $CD['qty']; ?></td>
+									<td><?php echo $CD['board']; ?></td>
+									<td><center><a href="#" class="deleteCart" data-id="<?php echo $CD['cartID']; ?>"><i class="fa fa-trash"></i></a></center></td>
 								</tr>
-							<?php }
-							?>
+									<?php
+									}
+								}else{
+									echo "login";
+								}
+									?>
 							
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<?php } ?>
-			<div id="track_history">
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12 mt-30">
-						<div class="page-title">History of Track Request - <span id="trNo">No data</span></div>
-						<hr class="mt-0"></hr>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 col-sm-13 col-xs-12 mt-10 mb-10">
-						<table class="table table-bordered">
-							<thead class="bg-lightblue">
-								<tr>
-									<th>Responded By</th>
-									<th>Respond Date</th>
-									<th>Status</th>													
-									<th class="hidden-xs">Respond Message</th>													
-								</tr>
-							</thead>
-							<tbody id="trackData">
-							</tbody>
-						</table>
-					</div>
-				</div> 
-			</div>
+			<?php } 
+					}?>
 		</div>
 	</div>
 	<!-- Body content ends here -->	
@@ -117,30 +97,35 @@ $prefix=$this->config->item('prefix');
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>	
 	$(document).ready(function() {
-		$("#track_history").hide();
+		
 	});
-	$(".track_request").click(function(){
-		var bID=$(this).data('id');
-		$("#trNo").text('No Data');
+	$(".deleteCart").click(function(){
+		var delID=$(this).data('id');
 		$.ajax({
-			url:'<?php echo $prefix; ?>/home/get_track_order/GET/'+bID,
-			dataType:'JSON',
-			type:'POST',
-		}).done(function(data){
-			var len=data.length;
-			var html='';
-			for(var i=0;i<len;i++){
-				html +='<tr>'+
-							'<td>'+data[i].firstName+'</td>'+
-							'<td>'+data[i].respondDate+'</td>'+
-							'<td>'+data[i].status+'</td>'+
-							'<td class="hidden-xs">'+data[i].respodMessage+'</td>'+
-						'</tr>'+
-						$("#trNo").text(data[i].requestNo);
-			}
-			$("#trackData").html(html);
-			$("#track_history").show();
-		}); 
+				url:'<?php echo $prefix;?>/home/deleteCart/DELETE/'+delID,
+				type:'POST',
+				dataType:'JSON'
+			}).success(function(data){
+				if(data[0].status=='Success')
+					window.location.reload();
+			});
+	});
+	$(".goFromCart").click(function(){
+		var productID=$(this).data('productid');
+		var variantID=$(this).data('variantid');
+		var dealerID=$(this).data('dealerid');
+		var colorID=$(this).data('colorid');
+		var cityName=$(this).data('cityname');
+		var board=$(this).data('board');
+		$.ajax({
+				url:'<?php echo $prefix;?>/home/creating_checkout',
+				type:'POST',
+				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+				dataType:'JSON'
+			}).success(function(data){
+				if(data)
+					window.location='<?php echo $prefix;?>/home/checkout';
+			});
 	});
 </script>
 </body>

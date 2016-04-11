@@ -2,7 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix'); 
-//var_dump($dealers); 
+//$this->session->unset_userdata('wishList');
+//exit();
+//$i =0;
+//if($this->session->userdata('wishList')!=''){
+	//$i = count($this->session->userdata('wishList'));
+//}
+//var_dump($this->session->userdata('wishList')); 
 //echo $prices->onRoadPrice;
 //exit();
 function indianCurrencyNumberFormat($rupee) {
@@ -184,7 +190,7 @@ function indianCurrencyNumberFormat($rupee) {
 							<a id="adv-book1" class="btn" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
 								Advance Booking
 							</a>
-							<button class="btn">Buy Later</button>
+							<button class="btn" id="buy_later_btn">Buy Later</button>
 							<a id="test-drive1" class="btn" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
 								Book Test Drive
 							</a>
@@ -379,7 +385,29 @@ function indianCurrencyNumberFormat($rupee) {
 	</div>
 	<!-- Body content ends here -->	
 	
-	
+	<!-- Modal -->
+  <div class="modal fade" id="myCartModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Added To Cart</h4>
+        </div>
+        <div class="modal-body">
+          <p>Successfully Added to cart</p>
+          <p>Please wait to reload....</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 	
 	<!-- Footer start -->
 	<?php echo $footer; ?>
@@ -432,7 +460,39 @@ function indianCurrencyNumberFormat($rupee) {
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
+		$('#myCartModal').modal('show');
 		var variantID = '<?php echo $variantID; ?>';
+		var dealerID = $("#d_dealer").val();
+		var colorID = $("#d_color").val();
+		var productID = '<?php echo $productID; ?>';
+		var cityName = $("#d_location").val();
+		var board = $("#d_board").val();
+		if(variantID != "" && dealerID != "" && colorID != ""){
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
+				type:'POST',
+				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+				dataType:'JSON'
+			}).success(function(data){
+				var variantID = '<?php echo $variantID; ?>';
+				var dealerID = $("#d_dealer").val();
+				var colorID = $("#d_color").val();
+				var productID = '<?php echo $productID; ?>';
+				var cityName = $("#d_location").val();
+				var board = $("#d_board").val();
+				if(variantID != "" && dealerID != "" && colorID != ""){
+					$.ajax({
+						url:'<?php echo $prefix;?>/home/creating_checkout',
+						type:'POST',
+						data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+						dataType:'JSON'
+					}).success(function(data){
+						window.location="<?php echo $prefix;?>/home/checkout";
+					});
+				}
+			});
+		}
+		/*var variantID = '<?php echo $variantID; ?>';
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
 		var productID = '<?php echo $productID; ?>';
@@ -446,6 +506,25 @@ function indianCurrencyNumberFormat($rupee) {
 				dataType:'JSON'
 			}).success(function(data){
 				window.location="<?php echo $prefix;?>/home/checkout";
+			});
+		}*/
+	});
+	$("#buy_later_btn").on('click',function(){
+		$('#myCartModal').modal('show');
+		var variantID = '<?php echo $variantID; ?>';
+		var dealerID = $("#d_dealer").val();
+		var colorID = $("#d_color").val();
+		var productID = '<?php echo $productID; ?>';
+		var cityName = $("#d_location").val();
+		var board = $("#d_board").val();
+		if(variantID != "" && dealerID != "" && colorID != ""){
+			$.ajax({
+				url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
+				type:'POST',
+				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+				dataType:'JSON'
+			}).success(function(data){
+				window.location.reload();
 			});
 		}
 	});
