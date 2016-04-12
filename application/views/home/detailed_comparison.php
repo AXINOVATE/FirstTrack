@@ -46,8 +46,13 @@ $prefix=$this->config->item('prefix');
 						$imgPath = base_url().$sp['coverImage'];
 					}
 					$price = $sp['exShowroomPrice'];
+					if($i==3){
+						$st='';
+					}else{
+						$st="border-right: 1px solid #dfdfdf;";
+					}
 				echo '
-				<div class="col-md-4 col-sm-4 col-xs-4 mb-10" style="border-right: 1px solid #dfdfdf;">
+				<div class="col-md-4 col-sm-4 col-xs-4 mb-10" style="'.$st.'">
 					<div class="compare-box" style="border-bottom: 1px solid #dfdfdf;">
 						<div class="comp-car-title text-center" id="productName_'.$i.'">'.$sp['productName'].' '.$sp['variantName'].'</div>
 						<div class="mb-20">';

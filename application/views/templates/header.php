@@ -14,7 +14,7 @@ else{
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3">
-				<a href="<?php echo base_url();?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"></a>
+				<a href="<?php echo base_url();?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"><span style="color: #fff;font-size: 10px;">Mera Time | Mera Choice | Mera Price</span></a>
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
@@ -114,12 +114,12 @@ else{
 
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
 				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/review';?>" class="pd-tp-3">Review</a></li>
-				<li><a href="#blog" class="pd-tp-3">Blogs</a></li>
+				<li><a href="https://nayagaadi.wordpress.com/" target="_blank" class="pd-tp-3">Blogs</a></li>
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
-						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
+						<!--<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>-->
 						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate a Dealer</a></li>
 					</ul>
 				</li>

@@ -397,7 +397,6 @@ function indianCurrencyNumberFormat($rupee) {
         </div>
         <div class="modal-body">
           <p>Successfully Added to cart</p>
-          <p>Please wait to reload....</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
