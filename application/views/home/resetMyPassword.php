@@ -106,7 +106,7 @@ $prefix=$this->config->item('prefix');
 				dataType:'JSON'
 			}).success(function(data){
 				if(data.status=='Success'){
-					text="<span class='text-danger' style='color:green;'>Reset Successfully <a href='<?php echo $prefix; ?>'>Click here to go home</a></span>";
+					text="<span class='text-danger' style='color:green;'>Reset Successfully <a href='<?php echo base_url();?>'>Click here to go home</a></span>";
 				}else{
 					text="<span class='text-danger' style='color:red;'>Try Again Later or Link Expired</span>";
 				}

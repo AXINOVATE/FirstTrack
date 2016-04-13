@@ -1370,7 +1370,7 @@ class Home_model extends CI_Model{
 			if($val[0][$vResult]=='Success'){
 				$retValue['status']='Success';
 				$content='NayaGaadi Password Reseted Successfully';
-				$this->send_email('elanthirayan.m@axinovate.com',$val[0][$vID],'','NayaGaadi Password Reset',$content);
+				$this->send_email('elanthirayan.m@axinovate.com',$val[0][$vID],'','NayaGaadi Password Reset Successfully',$content);
 			}
 		}
 		return $retValue;
