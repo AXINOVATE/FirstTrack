@@ -453,40 +453,44 @@ else{
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" name="apply_for_vehicle_loan" role="form"  method="POST" id="apply_for_vehicle_loan" submit="return false">
-						<div class="form-group">
-							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-									<input type="text" class="form-control" id="vehlone_username" va_req="true" name="vehlone_username" placeholder="Full Name" va_err="vehlone_usernameError" />
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+										<input type="text" class="form-control" id="vehlone_username" va_req="true" name="vehlone_username" placeholder="Full Name" va_err="vehlone_usernameError" />
+									</div>
+									<div class="text-danger" id="vehlone_usernameError"></div>
 								</div>
-								<div class="text-danger" id="vehlone_usernameError"></div>
+							</div>
+							<div class="form-group">
+								<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone" placeholder="9164545924" va_err="vehlone_phoneError" />
+									</div>
+									<div class="text-danger" id="vehlone_phoneError"></div>
+								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-									<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone" placeholder="9164545924" va_err="vehlone_phoneError" />
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+										<input type="text" class="form-control" id="vehlone_email" va_req="true" va_email="true" name="vehlone_email" placeholder="smishra10002gmail" va_err="vehlone_emailError" />
+									</div>
+									<div class="text-danger" id="vehlone_emailError"></div>
 								</div>
-								<div class="text-danger" id="vehlone_phoneError"></div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-									<input type="text" class="form-control" id="vehlone_email" va_req="true" va_email="true" name="vehlone_email" placeholder="smishra10002gmail" va_err="vehlone_emailError" />
+							<div class="form-group">
+								<label for="address" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<input type="text" class="form-control" id="vehlone_address" va_req="true" name="vehlone_address" placeholder="Office or Residential address" />
 								</div>
-								<div class="text-danger" id="vehlone_emailError"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="address" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<input type="text" class="form-control" id="vehlone_address" va_req="true" name="vehlone_address" placeholder="Office or Residential address" />
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -633,40 +637,44 @@ else{
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" name="corporate_deals_form" role="form"  method="POST" id="corporate_deals_form" submit="return false">
-						<div class="form-group">
-							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
-									<input type="text" class="form-control" va_req="true" id="corp_fullname" name="corp_fullname" placeholder="Full name" va_err="corp_fullnameError" />
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-user"></i></div>
+										<input type="text" class="form-control" va_req="true" id="corp_fullname" name="corp_fullname" placeholder="Full name" va_err="corp_fullnameError" />
+									</div>
+									<div class="text-danger" id="corp_fullnameError"></div>
 								</div>
-								<div class="text-danger" id="corp_fullnameError"></div>
+							</div>
+							<div class="form-group">
+								<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
+										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone" placeholder="1234567890" va_err="corp_phoneError" />
+									</div>
+									<div class="text-danger" id="corp_phoneError"></div>
+								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-									<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone" placeholder="1234567890" va_err="corp_phoneError" />
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<div class="input-group">
+										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
+										<input type="text" class="form-control"  va_req="true" va_email="true" id="corp_email" name="corp_email" placeholder="abcd@gmail.com" va_err="corp_emailError" />
+									</div>
+									<div class="text-danger" id="corp_emailError"></div>
 								</div>
-								<div class="text-danger" id="corp_phoneError"></div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<div class="input-group">
-									<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-envelope"></i></div>
-									<input type="text" class="form-control"  va_req="true" va_email="true" id="corp_email" name="corp_email" placeholder="abcd@gmail.com" va_err="corp_emailError" />
+							<div class="form-group">
+								<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
+								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+									<input type="text" class="form-control"  va_req="true" id="corp_address" name="corp_address" placeholder="Office or Residential address" />
 								</div>
-								<div class="text-danger" id="corp_emailError"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
-							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
-								<input type="text" class="form-control"  va_req="true" id="corp_address" name="corp_address" placeholder="Office or Residential address" />
 							</div>
 						</div>
 						<div class="col-md-4">
