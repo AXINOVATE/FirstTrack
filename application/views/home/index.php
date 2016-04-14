@@ -36,6 +36,9 @@ $prefix=$this->config->item('prefix');
     background-color: #F9D133 !important;
     border-bottom: 5px solid #F9D133 !important;
 	}
+	.hybrid .nav-tabs>li.active {
+		background-color: #F9D133;
+	}
 	</style>
 	
 	
@@ -236,7 +239,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<center>
 						<div class="c-border">
-							<?php echo $Brands[0]['brands']; ?>
+							<span class="counter"><?php echo $Brands[0]['brands']; ?></span>
 							<p>No. Of Brands</p>
 						</div>
 					</center>
@@ -244,7 +247,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<center>
 						<div class="c-border">
-							<?php echo $Brands[0]['models']; ?>
+							<span class="counter"><?php echo $Brands[0]['models']; ?></span>
 							<p>No. Of Models</p>
 						</div>
 					</center>
@@ -252,7 +255,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<center>
 						<div class="c-border">
-							<?php echo $Brands[0]['variants']; ?>
+							<span class="counter"><?php echo $Brands[0]['variants']; ?></span>
 							<p>No. Of Variants</p>
 						</div>
 					</center>
@@ -260,7 +263,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<center>
 						<div class="c-border">
-							<?php echo $Brands[0]['vehicles']; ?>
+							<span class="counter"><?php echo $Brands[0]['vehicles']; ?></span>
 							<p>No. Of Vehicles</p>
 						</div>
 					</center>
@@ -282,6 +285,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script src="<?php echo $assetsPath; ?>/js/jquery.typeahead.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery.counterup.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/waypoints.min.js" type="text/javascript"></script>
 
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
@@ -297,6 +302,10 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	$('document').ready(function(){
 		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
 		$('.inpt-timepicker').timepicker();	
+		$('.counter').counterUp({
+			delay: 10,
+			time: 2000
+		});
 		
 	});
 	$('#RTD_Pre_Time').timepicker();
