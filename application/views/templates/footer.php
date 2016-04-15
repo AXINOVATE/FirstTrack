@@ -4,7 +4,7 @@ $assetsPath=$this->config->item('asset_path');
 $prefix=$this->config->item('prefix');
 ?>
 <footer style="margin-bottom:28px;">
-	<section style="background-color:#F9D133;padding:10px 0px;">
+	<!--section style="background-color:#F9D133;padding:10px 0px;">
 		<div class="container">
 			<div class="row f-links">
 				<div class="col-sm-3 col-xs-12">
@@ -16,7 +16,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href ="#" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
 						<li><a href ="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
 						<li><a href ="#" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">Buy on Road Assistance</a></li> -->
-						<li><a href ="http://www.nayagaadi.com/Pooja%20Service" target="_blank">Pooja Service</a></li>
+						<!--li><a href ="http://www.nayagaadi.com/Pooja%20Service" target="_blank">Pooja Service</a></li>
 						<li><a href ="http://www.nayagaadi.com/Roadside%20Assistance%20-24*7%20Service" target="_blank">Roadside Assistance -24*7 Service</a></li>
 						<li><a href ="http://www.nayagaadi.com/Referral%20Services" target="_blank">Referral Services</a></li>
 					</ul>
@@ -28,14 +28,14 @@ $prefix=$this->config->item('prefix');
 						<li><a href="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply For Insurance </a> </li>
 						<li><a href="http://www.btis.in/fines" target="_blank">Pay UR Dues </a> </li>
 					</ul> -->
-					<h4>Useful links</h4>
+					<!--h4>Useful links</h4>
 					<ul>
 						<li><a href="https://www.cibil.com/online/credit-score-check.do" target="_blank">Know your Credit Score </a> </li>
 						<li><a href="http://www.nayagaadi.com/Nayagaadi-Experience">NayaGaadi Experience</a> </li>
 						<!--<li><a href="https://www.cibil.com/xpressacquire" target="_blank">Apply Loan Credit Card</a> </li>
 						<li><a href="http://www.nayagaadi.com/discounts-codes">Discount Codes</a> </li>
 						<li><a href="http://www.nayagaadi.com/Gallery">Gallery </a> </li> -->
-					</ul>
+					<!--/ul>
 				</div>
 				<div class="col-sm-3 col-xs-12">
 					<!--<h4>Self Help</h4>
@@ -46,7 +46,7 @@ $prefix=$this->config->item('prefix');
 						<li><a href="#">Reviews / Ratings </a> </li>
 						<li><a href="#">Industry Latest News / updates</a></li>
 					</ul> -->
-				</div>
+				<!--/div>
 				<div class="col-sm-3 col-xs-12">
 					<!--<h4>Tools</h4>
 					<ul>
@@ -57,18 +57,25 @@ $prefix=$this->config->item('prefix');
 						<li><a href="http://www.nayagaadi.com/index.php?route=product/compare">Compare Vehicles </a> </li>
 						<li><a href="http://www.nayagaadi.com/index.php?route=account/order">Track UR Order  </a> </li>
 					</ul> -->
-				</div>
+				<!--/div>
 			</div>
 		</div>
-	</section>
+	</section-->
 	<section style="background-color:#666666;padding:15px 0px;">
 		<div class="container">
 			<div class="row f-desc">
-				<div class="col-md-6">
-					<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/nlogo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"></a>
-					<p>NayaGaadi.com is India's first Online market place for all the Brand New Vehicles ( Autos, Bikes, Scooters, Cars, Cycles, Buses, Lorries, Tractors, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV's etc ) to buy online.</p>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="row">
+						<div class="col-md-2 col-sm-3 col-xs-3 mt-10">
+							<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/favicon.png" class="img-responsive" alt="LOGO"></a>
+						</div>
+						<div class="col-md-10 col-sm-9 col-xs-9 mt-10">
+							<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive " alt="LOGO"></a>
+							<p>NayaGaadi.com is India's first Online market place for all the Brand New Vehicles ( Autos, Bikes, Scooters, Cars, Cycles, Buses, Lorries, Tractors, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV's etc ) to buy online.</p>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-3 col-xs-12">
 					<h4>Newsletter Signup</h4>
 					<p>Enter your email and we'll send you updates and interesting offers from NayaGaadi.</p>
 					<div class="input-group">
@@ -76,7 +83,7 @@ $prefix=$this->config->item('prefix');
 						<input type="text" placeholder="Enter your email here">
 					</div>
 				</div>
-				<div class="col-md-3 f-social" style="margin-top:35px;">
+				<div class="col-md-3  col-sm-3 col-xs-12 f-social" style="margin-top:35px;">
 					<h4>Follow us</h4>
 					<ul>
 						<li><a class="facebook" href="https://www.facebook.com/NayaGaadi" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>

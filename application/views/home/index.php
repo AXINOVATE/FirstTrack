@@ -39,6 +39,7 @@ $prefix=$this->config->item('prefix');
 	.hybrid .nav-tabs>li.active {
 		background-color: #F9D133;
 	}
+	
 	</style>
 	
 	
@@ -232,10 +233,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			</div>
 		</div>
 	</div>
+	<!-- Start of Dashboard section-->
 	<section class="dashboard-section" style="background-color:#666666;">	
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
-				<h2 class="home-page-title">Nayagaadi dashboard</h2>
+				<h2 class="home-page-title">Nayagaadi <span style="color:#027cd5;">Dashboard</span></h2>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<center>
 						<div class="c-border">
@@ -272,6 +274,202 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			</div>
 		</div>
 	</section>
+	<!-- End of Dashboard section-->
+	
+	<!-- Start of Benefits section-->
+	<section class="dashboard-section" style="background-color:#F9D133;">	
+		<div class="container">
+			<div class="row mt-10 text-center c-dashboard">
+				<div class="col-md-12 col-sm-12 col-xs-12">	
+					<h2 class="home-page-title" style="color:#027cd5;">What <span class="txt_white">Nayagaadi Benefits</span> You Get?</h2>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/one.png" alt="one" /></center>
+						<center class="mt-7"><div class="blue-box-text">Reduced Waiting Period to an extent</div></center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/two.png" alt="two" /></center>
+						<center class="mt-7"><div class="blue-box-text">Personalized Service and Delivery at the Door Step of the Customer</div></center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/three.png" alt="three" /></center>
+						<center class="mt-7"><div class="blue-box-text">20 % Discounts on Accessories.</div></center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/four.png" alt="four" /></center>
+						<center class="mt-7"><div class="blue-box-text">Discounts on other Benefits - 30% Discount on Apple A Doctor Services</div></center>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End of Benefits section-->
+	
+	<!-- Start of Carousel section-->
+	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">	
+		<div class="dark-shade"></div>
+		<div class="container">
+			<br>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+				<!--ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol-->
+
+			<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+				
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End of Carousel section-->
+	
+	<!-- Start of Feedbacks section-->
+	<section class="dashboard-section" style="background-color:#F9D133;">	
+		<div class="container">
+			<div class="row mt-10 text-center c-dashboard">
+				<div class="col-md-12 col-sm-12 col-xs-12">	
+					<h2 class="home-page-title" style="color:#027cd5;">Customer <span class="txt_white">Feedbacks</span></h2>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%; overflow:hidden;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic1.jpg" alt="pic1" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Adele</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic2.jpg" alt="pic2" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Karen</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic3.jpg" alt="pic3" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Jonathan</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 hidden-sm col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic4.jpg" alt="pic4" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Carey</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End of Feedbacks section-->
+	
 	<!-- Body content ends here -->	
 	
 	<!-- Footer start -->

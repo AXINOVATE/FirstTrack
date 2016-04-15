@@ -143,7 +143,29 @@ $prefix=$this->config->item('prefix');
 																	<!-- The file input field used as target for the file upload widget -->
 																	<input class="fileupload" id="image_upload" type="file" name="files" message="image_file_msg" pro_path="image_progress" save_path="image_file_path">
 																</span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="brochure_file_path" class="col-md-4 col-sm-4 col-xs-12 control-label">
+																Brochure <span class="form-man"> * </span>
+															</label>
+															<div class="col-md-6 col-sm-5 col-xs-10">
+																<input type="hidden" name="brochure" id="brochure_file_path" value="<?php if($getProductsBasic[0]['brochure']!='') echo $getProductsBasic[0]['brochure']; ?>" va_req="true"/>
 																
+																<div id="progress1" class="progress">
+																	<div id="file_progress" class="progress-bar progress-bar-success"></div>
+																</div>
+																<span>Upload pdf files only</span>
+																
+															</div>
+															<div class="col-md-2 col-sm-2 col-xs-2">
+																<span class="fa fa-folder-open img-thumnile-bg circle_icon fileinput-button file_upload_btn" target="">
+																	<!-- The file input field used as target for the file upload widget -->
+																	<input class="fileupload" id="file_upload" type="file" name="files" message="file_msg" pro_path="file_progress" save_path="brochure_file_path">
+																</span>
+															</div>
+															<div class="col-md-12 col-sm-12 col-xs-12 mt-10">
+																<div id="file_msg" class="files"><?php if(isset($getProductsBasic[0]['brochure'])){ if($getProductsBasic[0]['brochure']!='')echo substr($getProductsBasic[0]['brochure'],23);} ?></div>
 															</div>
 														</div>
 													</div>
@@ -1185,6 +1207,7 @@ $prefix=$this->config->item('prefix');
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#color_upload', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload2', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 			xu_validation.fileupload('<?php echo $prefix;?>/', '#image_upload3', 'image', '<?php echo $prefix;?>/admin/upload_files/image',/(\.|\/)(<?php foreach($this->config->item('ext_img') as $img_type){echo $img_type.'|';} ?>~~)$/i);
+			xu_validation.fileupload('<?php echo $prefix;?>/', '#file_upload', 'files', '<?php echo $prefix;?>/admin/upload_files/files',/(\.|\/)(<?php foreach($this->config->item('ext_files') as $img_type){echo $img_type.'|';} ?>~~)$/i);
 		});
 		
 		$(".basicData-btn").click(function(){

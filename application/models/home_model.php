@@ -133,6 +133,23 @@ class Home_model extends CI_Model{
 			} 
 			else {$path= 'Failed: '.$extension.' Format Not supported';}
 		}
+		else if($type=='files'){
+			$allowedExts = $this->config->item('ext_files');
+			$temp = explode(".", $file["name"]);
+			$extension = end($temp);
+			$uid =1;
+			if($uploaddir==''){$uploaddir = $this->config->item('upload_path_category');}
+				if (!is_dir($uploaddir)) {mkdir($uploaddir,0777);}
+			if (in_array($extension, $allowedExts)) {
+				if ($file["error"] > 0){$path= 'Failed: error in file';} 
+				else{
+					$path=$uploaddir.$d.$file["name"];
+					if(move_uploaded_file($file["tmp_name"],$path)){$path= $path;}
+					else{$path= 'Failed: File cant move';}
+				}
+			} 
+			else {$path= 'Failed: '.$extension.' Format Not supported';}
+		}
 		else if($type=='scorm'){
 			$allowedExts = $this->config->item('ext_scorm');
 			$temp = explode(".", $file["name"]);

@@ -295,6 +295,7 @@
 				$xml .= "<OVERVIEW>".$this->input->post('overview')."</OVERVIEW>";
 				$xml .= "<PRODUCTRATING>".$this->input->post('productRating')."</PRODUCTRATING>";
 				$xml .= "<NAYAGAADIRATING>".$this->input->post('nayagaadiRating')."</NAYAGAADIRATING>";
+				$xml .= "<BROCHURE>".$this->input->post('brochure')."</BROCHURE>";
 			}
 			if($type=='Colors' || $type=='ColorsOne'){
 				$xml .= "<COLORNAME>".$this->input->post('colorName')."</COLORNAME>";

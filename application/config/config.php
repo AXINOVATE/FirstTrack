@@ -380,6 +380,7 @@ $config['default_country_id'] = '70f17564-e43f-11e5-8594-74867ad2fb90';
 $config['asset_path'] 		= '/FirstTrack/assets';
 $config['prefix'] 		= '/FirstTrack';
 $config['ext_img'] = array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tiff', 'svg'); //Images
+$config['ext_files'] = array('pdf'); //Brochures
 $config['ext_document'] = array('xls','xlsx'); //Document
 $config['upload_path_category'] = 'assets/upload/category/';
 /* End of file config.php */
