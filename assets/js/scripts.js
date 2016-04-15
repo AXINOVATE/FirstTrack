@@ -1247,7 +1247,34 @@ $('#brochure_submit').on('click' ,function(){
 	xu_validation.form_submit('#brochure_download_form','save_brochure_download_form');		
 });
 function save_brochure_download_form(){
-	alert("hi");
+	var vType="INSERT";
+	$.ajax({
+		url:prefix+'/home/add_download_brochure/'+vType,
+		data: $('#brochure_download_form').serialize(),
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		var html = "";
+		$('.disable_div').remove();
+		if(data.length>0){	
+			if(data[0]['brochure']!='' && data[0]['brochure']!=null){
+				var url = prefix+'/'+data[0]['brochure'];
+				window.open(url, '_blank');
+				setTimeout(function(){window.location.reload();},1500);
+			}
+			else{
+				html += '<h4><font color="black">No results found!</font></h4>';
+				$("#BrochureData").removeClass('hide');
+				$("#BrochureData").html(html);
+			}
+		}
+		else{
+			html += '<h4><font color="black">No results found!</font></h4>';
+			$("#BrochureData").removeClass('hide');
+			$("#BrochureData").html(html);
+		}
+	});
 }
 
 /* Brochure Download Ends Here */

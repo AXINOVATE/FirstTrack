@@ -806,4 +806,8 @@ class Home extends CI_Controller {
 	public function insUpdCreditPoints(){
 		echo json_encode($this->home_model->insUpdCreditPoints());
 	}
+	public function add_download_brochure($vType){
+		//var_dump($_POST); exit();
+		echo json_encode($this->home_model->add_download_brochure($vType));
+	}
 }

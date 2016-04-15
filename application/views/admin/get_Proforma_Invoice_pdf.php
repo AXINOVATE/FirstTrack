@@ -220,7 +220,7 @@ $prefix=$this->config->item('prefix');
                  <h6 class="heading">    
 					Name :<?php echo $proformaInvoice[0]['firstName'];?> <br />
 					LastName :<?php echo $proformaInvoice[0]['lastName'];?> <br />
-                    Phone :<?php echo $proformaInvoice[0]['phone'];?> <br />                                      
+                    Phone :<?php echo $proformaInvoice[0]['dealerPhone'];?> <br />                                      
                     Address : <br/>
 				   <?php echo $proformaInvoice[0]['addressLine1'];?> </br>
 				   <?php echo $proformaInvoice[0]['addressLine2'];?> <br/>

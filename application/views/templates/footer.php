@@ -278,6 +278,9 @@ $prefix=$this->config->item('prefix');
 							</div>
 						</div>
 					</form>
+					<div class="col-md-12 col-sm-12 col-xs-12 hide text-center" id="BrochureData">
+					
+					</div>
 				</div>
 			</div>
 		</div>

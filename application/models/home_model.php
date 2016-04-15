@@ -6,6 +6,7 @@ class Home_model extends CI_Model{
 	 **/
 	public function __construct(){
 		parent::__construct();
+		date_default_timezone_set('Asia/Kolkata');
 		//$this->load->database();
 	}
 /**
@@ -1441,6 +1442,42 @@ class Home_model extends CI_Model{
 			$retValue['status']='Success';
 		}
 		return $retValue;
+	}
+	public function add_download_brochure($vType){
+		$vresult['status'] = "Failed";
+		$xml ="<ROOT>
+					<HEADER>";
+		$brochureFullName = $this->input->post('brochureFullName');
+		$brochurephone = $this->input->post('brochurephone');
+		$brochureemailID = $this->input->post('brochureemailID');
+		$brochureCountry = $this->input->post('brochureCountry');
+		$brochureState = $this->input->post('brochureState');
+		$brochureCity = $this->input->post('brochureCity');
+		$brochureCategory = $this->input->post('brochureCategory');
+		$brochureMaker = $this->input->post('brochureMaker');
+		$brochureModel = $this->input->post('brochureModel');
+		$brochureVariant = $this->input->post('brochureVariant');
+		$brochureFurtherAssistance = $this->input->post('brochureFurtherAssistance');
+		$brochureTermsConditions = $this->input->post('brochureTermsConditions');
+		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
+				<BROCHUREFULLNAME>".$brochureFullName."</BROCHUREFULLNAME>
+				<BROCHUREPHONE>".$brochurephone."</BROCHUREPHONE>
+				<BROCHUREEMAILID>".$brochureemailID."</BROCHUREEMAILID>
+				<BROCHURECOUNTRY>".$brochureCountry."</BROCHURECOUNTRY>
+				<BROCHURESTATE>".$brochureState."</BROCHURESTATE>
+				<BROCHURECITY>".$brochureCity."</BROCHURECITY>
+				<BROCHURECATEGORY>".$brochureCategory."</BROCHURECATEGORY>
+				<BROCHUREMAKER>".$brochureMaker."</BROCHUREMAKER>
+				<BROCHUREMODEL>".$brochureModel."</BROCHUREMODEL>
+				<BROCHUREVARIANT>".$brochureVariant."</BROCHUREVARIANT>
+				<BROCHUREFURTHERASSISTANCE>".$brochureFurtherAssistance."</BROCHUREFURTHERASSISTANCE>
+				<BROCHURETERMSCONDITIONS>".$brochureTermsConditions."</BROCHURETERMSCONDITIONS>
+				<REQUESTEDTIME>".date('Y-m-d H:i:s')."</REQUESTEDTIME>
+			</HEADER>
+		</ROOT>";
+			$query = $this->db->query("CALL usp_insUpdDownloadBrochure('".$xml."',@vresult)");
+			mysqli_next_result($this->db->conn_id);	
+			return $query->result_array();
 	}
 }
 
