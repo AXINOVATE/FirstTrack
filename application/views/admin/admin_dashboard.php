@@ -448,6 +448,30 @@ $prefix=$this->config->item('prefix');
 						</a>
 					</center>
 				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+					<center>	
+						<a href="<?php echo $prefix; ?>/admin/request_list/brochure">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Download Brochure
+									</div>
+								</center>
+								<?php 
+									 foreach($brochureCount as $BC){
+										 ?>
+										<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+											<div class="request-count-box">
+												<h5><?php echo $BC['total']; ?></h5>
+												<p><?php echo $BC['categoryName']; ?></p>
+											</div>
+										</div> 
+								<?php  }
+								?>
+							</div>
+						</a>
+					</center>
+				</div>
 			</div>
 			
 		</div>

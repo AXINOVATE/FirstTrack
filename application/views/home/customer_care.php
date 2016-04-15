@@ -31,17 +31,55 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4>24x7 Customer Care</h4>
+					<h4><strong>Office Address</strong></h4>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
-					<div class="news-box">
+					<!--<div class="news-box">
 						Request for Call back / Ask the Experts +919900151719
-					</div>
-					
+					</div>-->
+					<h5>NayaGaadi Online Marketplace Pvt. Ltd,</h5>
+					<h5>S03-403, Smondoville, Neo Town,</h5>
+					<h5>Electronic City Phase-I,</h5>
+					<h5>Bangalore – 560 100, India.</h5>
+					<h5>Mob : +91-9900-151719</h5>
+					<h5>E Mail : <a href="mailto:Contact@NayaGaadi.com">Contact@NayaGaadi.com</a></h5>			
 				</div>
-				
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h4><strong>For Investments / Business Proposals:</strong></h4>
+					<h5>Pls. send the details to <a href="mailto:Business@NayaGaadi.com">Business@NayaGaadi.com</a></h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h4><strong>For Sales, Enquires and Customer support:</strong></h4>
+					<h5>Pls. send email to <a href="mailto:Support@NayaGaadi.com">Support@NayaGaadi.com</a>, our representative will get in touch with you to assist you asap.</a></h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h3>WELCOME !</h3>
+					<h5>Have a question? Suggestions, Ideas Or feedback? Or Even Want to know more about us? Pls. Write in, we would be happy to hear from you ..</a></h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h4><a href="mailto:Welcome@NayaGaadi.com">Welcome@NayaGaadi.com</a></h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h4><strong>Working Hours:</strong></h4>
+					<h5>Currently we are providing E Mail or Telephone / Mobile support only during the standard working hours from 9:00 am to 6:00 pm IST ( Indian Standard Time). Limited support is provided during the Holidays or Govt Holidays.</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h5><strong>Disclaimer:</strong> Kindly do not send any defamatory, infringing, obscene, indecent, discriminatory or unlawful material or information. NayaGaadi Online Marketplaces Pvt. Ltd, reserves the right to remove without notice any content received from users.</h5>
+				</div>
 			</div>
 		</div>
 	</div>

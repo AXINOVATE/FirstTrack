@@ -34,7 +34,21 @@ $prefix=$this->config->item('prefix');
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
+			<div class="row">
 			<?php 
+			if($page=='brochure'){
+				$yellowClass=" bg-yellow";
+				foreach($counts as $C){ ?>
+					<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
+						<div class="request-count-box <?php echo $yellowClass; ?>">
+							<h5><?php echo $C['total']; ?></h5>
+						<p><?php echo $C['categoryName']; ?></p>
+						</div>
+					</div>
+				<?php 
+				$yellowClass="";
+				}
+			}else{
 				foreach($counts as $count){
 					$totalCount = $count['totalCount'];
 					$openedCount = $count['openedCount'];
@@ -42,7 +56,6 @@ $prefix=$this->config->item('prefix');
 					$closedCount = $count['closedCount'];
 				}
 			?>
-			<div class="row">
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box bg-yellow">
 						<h5><?php echo $totalCount; ?></h5>
@@ -67,6 +80,7 @@ $prefix=$this->config->item('prefix');
 						<p>Closed</p>
 					</div>
 				</div>
+			<?php } ?>
 			</div>
 			<form class="form-horizontal" name="request_report_form" role="form"  method="POST" id="request_report_form" submit="return false">
 				<input type="hidden" id="re_UID" name="re_UID" value="<?php echo $details[0]['UID']; ?>">
@@ -119,6 +133,32 @@ $prefix=$this->config->item('prefix');
 						<?php echo $details[0]['variantName'];?>
 					</div>
 					<?php } }	?>
+					<?php if($page=='brochure'){?>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Category Name:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['categoryName'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Country Name:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['countryName'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							State Name:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['stateName'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Further Assistance:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['furtherAssistance'];?>
+						</div>
+					<?php } ?>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Received Date:
 					</div>
@@ -565,6 +605,7 @@ $prefix=$this->config->item('prefix');
 							<?php echo $details[0]['lookingFor'];?>
 						</div>
 					<?php } ?>
+					
 				</div>
 				<!--<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">

@@ -36,6 +36,7 @@ class Admin extends CI_Controller {
 		$data['DropAQueryCount'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 		$data['bookingCount'] = $this->dashboard_model->getBookingRequest('COUNTS','');
 		$data['creditPointCount'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
+		$data['brochureCount'] = $this->dashboard_model->getBrochureDownload('COUNTS','');
 		$this->load->view('admin/admin_dashboard',$data);
 	}
 	public function request_list($page)
@@ -76,9 +77,13 @@ class Admin extends CI_Controller {
 			$data['counts'] = $this->dashboard_model->getBookingRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getBookingRequest('ALL','');
 		}elseif($page=='creditPoints'){
-			$data['Name'] = "Booking";
+			$data['Name'] = "Credit Points";
 			$data['counts'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getCreditPointRequest('ALL','');
+		}elseif($page=='brochure'){
+			$data['Name'] = "Brochure Download";
+			$data['counts'] = $this->dashboard_model->getBrochureDownload('COUNTS','');
+			$data['details'] = $this->dashboard_model->getBrochureDownload('CAT','');
 		}
 		$this->load->view('admin/request_list',$data);
 	}
@@ -133,6 +138,11 @@ class Admin extends CI_Controller {
 			$data['counts'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getCreditPointRequest('ONE',$id);
 			$data['respondDetails'] = $this->dashboard_model->getCreditPointRequest('RESPONDS',$id);
+		}elseif($page=='brochure'){
+			$data['Name'] = "Credit Points";
+			$data['counts'] = $this->dashboard_model->getBrochureDownload('COUNTS','');
+			$data['details'] = $this->dashboard_model->getBrochureDownload('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getBrochureDownload('RESPONDS',$id);
 		}
 		//var_dump($data['details']);exit();
 		$this->load->view('admin/request_report',$data);
@@ -327,5 +337,8 @@ class Admin extends CI_Controller {
 	}
 	public function getCreditPointRequest($vType,$cRID=''){
 		echo json_encode($this->dashboard_model->getCreditPointRequest($vType,$cRID));
+	}
+	public function getBrochureDownload($vType,$cID=''){
+		echo json_encode($this->dashboard_model->getBrochureDownload($vType,$cID));
 	}
 }

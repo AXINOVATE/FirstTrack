@@ -81,6 +81,8 @@ class Dashboard_model extends CI_Model{
 			$myQuery="CALL usp_UpdateBookingRequest('".$xml."',@vresult)";
 		}elseif($page=="creditPoints"){
 			$myQuery="CALL usp_insUpdCreditPoints('".$xml."',@vresult)";
+		}elseif($page=="brochure"){
+			$myQuery="CALL usp_insUpdDownloadBrochure('".$xml."',@vresult)";
 		}
 		$rndS=$this->home_model->randStrGen();
 		$query = $this->db->query($myQuery);
@@ -106,6 +108,11 @@ class Dashboard_model extends CI_Model{
 	}
 	public function getCreditPointRequest($vType,$cRID=''){		
 		$query = $this->db->query("CALL usp_getCreditPoints('".$vType."','".$cRID."')");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
+	public function getBrochureDownload($vType,$cID=''){		
+		$query = $this->db->query("CALL usp_getBrochureDownload('".$vType."','".$cID."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}

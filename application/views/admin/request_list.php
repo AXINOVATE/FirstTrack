@@ -27,11 +27,13 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<div class="container">
 			<?php 
-				foreach($counts as $count){
-					$totalCount = $count['totalCount'];
-					$openedCount = $count['openedCount'];
-					$progressCount = $count['progressCount'];
-					$closedCount = $count['closedCount'];
+				if($page=='brochure'){}else{
+					foreach($counts as $count){
+						$totalCount = $count['totalCount'];
+						$openedCount = $count['openedCount'];
+						$progressCount = $count['progressCount'];
+						$closedCount = $count['closedCount'];
+					}
 				}
 			?>
 			<div class="row">
@@ -40,6 +42,28 @@ $prefix=$this->config->item('prefix');
 					<hr class="mt-0"></hr>
 				</div>
 			</div>
+			<?php if($page=='brochure'){
+				?>
+			<div class="row">
+				<?php 
+					$yellowClass=" bg-yellow";
+				foreach($counts as $c){
+					?>
+				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
+					<div class="request-count-box <?php echo $yellowClass; ?>" data-id="<?php echo $c['categoryID']; ?>" data-req="CAT">
+						<h5><?php echo $c['total']; ?></h5>
+						<p><?php echo $c['categoryName']; ?></p>
+					</div>
+				</div>	
+				<?php
+				$yellowClass="";
+				}
+					?>
+			</div>
+			
+			<?php
+			}else{
+				?>
 			<div class="row">
 				<div class="col-md-2 col-sm-3 col-xs-6 mt-10 mb-10">
 					<div class="request-count-box bg-yellow" data-req="ALL">
@@ -66,6 +90,7 @@ $prefix=$this->config->item('prefix');
 					</div>
 				</div>
 			</div>
+			<?php } ?>
 			<div class="row">
 				<div class="col-md-12 col-sm-13 col-xs-12 mt-10 mb-10">
 					<table class="table table-bordered">
@@ -141,6 +166,9 @@ $prefix=$this->config->item('prefix');
 			myUrl="<?php echo $prefix;?>/admin/getBookingRequest/"+vType;
 		}else if(page=='creditPoints'){
 			myUrl="<?php echo $prefix;?>/admin/getCreditPointRequest/"+vType;
+		}else if(page=='brochure'){
+			var id=$(this).data("id");
+			myUrl="<?php echo $prefix;?>/admin/getBrochureDownload/"+vType+'/'+id;
 		}
 		$.ajax({
 			url:myUrl,
