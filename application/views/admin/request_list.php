@@ -78,7 +78,9 @@ $prefix=$this->config->item('prefix');
 								<?php if($page=='DropAQuery'){
 									?>
 									<th>Query</th>
-								<?php } else{?>
+								<?php }elseif($page=='creditPoints'){
+									
+								} else{?>
 								<th>Vehicle Variant</th>
 								<?php } ?>																
 								<th>Status</th>													
@@ -95,7 +97,9 @@ $prefix=$this->config->item('prefix');
 										<?php if($page=='DropAQuery'){
 											?>
 											<td><?php echo $D['query']; ?></td>
-										<?php } else{?>
+										<?php }elseif($page=='creditPoints'){
+											
+										} else{?>
 										<td><?php echo $D['variantName']; ?></td>
 										<?php } ?>
 										<td><?php echo $D['status']; ?></td>
@@ -135,6 +139,8 @@ $prefix=$this->config->item('prefix');
 			myUrl="<?php echo $prefix;?>/admin/getDropAQueryRequest/"+vType;
 		}else if(page=='booking'){
 			myUrl="<?php echo $prefix;?>/admin/getBookingRequest/"+vType;
+		}else if(page=='creditPoints'){
+			myUrl="<?php echo $prefix;?>/admin/getCreditPointRequest/"+vType;
 		}
 		$.ajax({
 			url:myUrl,
@@ -150,6 +156,8 @@ $prefix=$this->config->item('prefix');
 							'<td class="hidden-xs">'+data[i]['email']+'</td>';
 							if(page=='DropAQuery'){
 								html +='<td>'+data[i]['query']+'</td>';
+							}else if(page=='creditPoints'){
+								
 							}else{
 							html +='<td>'+data[i]['variantName']+'</td>';
 							}

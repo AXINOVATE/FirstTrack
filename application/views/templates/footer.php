@@ -159,7 +159,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="f-btn"><i class="fa fa-download"></i> Download Brochure</div>
+					<div class="f-btn"><a href ="#" data-toggle="modal" data-target="#download_brochure_modal" id="download_brochure"><i class="fa fa-download"></i> Download Brochure</a></div>
 				</div>
 				<div class="col-md-3">
 					
@@ -175,3 +175,104 @@ $prefix=$this->config->item('prefix');
 			</div>
 		</div>
 	</div>
+<!-- Modal starts here  Download Brochure-->
+	<div class="modal fade blue-modals" id="download_brochure_modal" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+					<h4 class="text-center modal-title">Download Brochure</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" name="brochure_download_form" role="form"  method="POST" id="brochure_download_form" submit="return false">
+					<div class="form-group">
+						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+							<input type="text" class="form-control" va_req="true" placeholder="Full Name" name="brochureFullName" aria-describedby="basic-addon1" va_err="brochureFullNameError" />
+							</div>
+							<div class="text-danger" id="brochureFullNameError"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Mobile No</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="brochurephone" name="brochurephone" placeholder="eg. 9874563110" va_err="brochurephoneError" />					
+							</div>
+							<div class="text-danger" id="brochurephoneError"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+							<input type="text" class="form-control" va_req="true" va_email="true"  id="brochureemailID" name="brochureemailID" placeholder="tony@gmail.com" va_err="brochureemailIDError" />				
+							</div>
+							<div class="text-danger" id="brochureemailIDError"></div>
+						</div>
+					</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureCountry" id="brochureCountry">
+								<option value="" >-- Select Country --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureState" id="brochureState">
+								<option value="" >-- Select State --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureCity" id="brochureCity">
+								<option value="" >-- Select City --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureCategory" id="brochureCategory">
+								<option value="" >-- Select Category --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureMaker" id="brochureMaker">
+								<option value="">-- Select Maker --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10"  style="width:100%;" va_req="true" name="brochureModel" id="brochureModel">
+								<option value="">-- Select Model --</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10" style="width:100%;" va_req="true" name="brochureVariant" id="brochureVariant">
+								<option value="">-- Select Variant --</option>								
+							</select>
+						</div>
+						<div class="col-md-4">
+							<select class="form-control mb-10" style="width:100%;" va_req="true" name="brochureFurtherAssistance" id="brochureFurtherAssistance">
+								<option value="">-- Do You Need further Assistance --</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					   <div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="brochureTermsConditions" id="brochureTermsConditions" >
+							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a href="#" class="search-btn"  data-toggle="modal" id="brochure_submit" style="background-color:#F9D133;font-size:18px;" >Submit</a>
+								<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal ends here -->

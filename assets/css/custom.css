@@ -554,7 +554,7 @@ body{font-family:Century Gothic !important;}
 
 
 /* Modal Popups CSS starts here */
-	.blue-modals .modal-header{background-color: #0a3151; color: white !important;}
+	.blue-modals .modal-header{background-color: #0050CC; color: white !important;}
 	.blue-modals .modal-header .close{color: white !important; font-size: 30px !important;opacity:1 !impmortant;}
 	.blue-modals .modal-body{background-color: #027cd5; color: white !important; overflow:auto;}
 	.blue-modals .modal-footer{background-color: #027cd5; color: white !important;}
@@ -603,5 +603,5 @@ body{font-family:Century Gothic !important;}
 	.b-rt-bt{border: none; border-bottom: 1px solid #dfdfdf;}
 }
 @media (min-width: 767px){
-	.modal-lg{margin-top:85px;}
+	.modal-lg{margin-top:120px;}
 }

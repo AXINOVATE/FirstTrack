@@ -403,38 +403,49 @@ $prefix=$this->config->item('prefix');
 					</center>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-12 mb-30">
+				<?php foreach($creditPointCount as $CP){
+							$totalcreditPointCountRequest = $CP['totalCount'];
+							if($CP['openedCount']==null) $CP['openedCount']="0";
+							if($CP['progressCount']==null) $CP['progressCount']="0";
+							if($CP['closedCount']==null) $CP['closedCount']="0";
+							$totalcreditPointCountOpenedRequest = $CP['openedCount'];
+							$totalcreditPointCountProgressRequest = $CP['progressCount'];
+							$totalcreditPointCountClosedRequest = $CP['closedCount'];
+					} ?>
 					<center>	
-						<div class="big-box">
-							<center>
-								<div class="big-box-header">
-									Downloaded Brochures
+						<a href="<?php echo $prefix; ?>/admin/request_list/creditPoints">
+							<div class="big-box">
+								<center>
+									<div class="big-box-header">
+										Know your credits
+									</div>
+								</center>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalcreditPointCountRequest; ?></h5>
+										<p>Total Request</p>
+									</div>
 								</div>
-							</center>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>200</h5>
-									<p>Total Request</p>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalcreditPointCountOpenedRequest;?></h5>
+										<p>New Request</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalcreditPointCountProgressRequest; ?></h5>
+										<p>In-progress</p>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
+									<div class="request-count-box">
+										<h5><?php echo $totalcreditPointCountClosedRequest; ?></h5>
+										<p>Closed</p>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>70</h5>
-									<p>New Request</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>80</h5>
-									<p>In-progress</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">
-								<div class="request-count-box">
-									<h5>50</h5>
-									<p>Closed</p>
-								</div>
-							</div>
-						</div>
+						</a>
 					</center>
 				</div>
 			</div>

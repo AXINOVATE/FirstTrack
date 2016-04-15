@@ -99,6 +99,7 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['cityName'];?>
 					</div>
+					<?php if($page !='creditPoints'){?>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Maker:
 					</div>
@@ -117,7 +118,7 @@ $prefix=$this->config->item('prefix');
 					<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
 						<?php echo $details[0]['variantName'];?>
 					</div>
-					<?php }	?>
+					<?php } }	?>
 					<div class="col-md-2 col-sm-2 col-xs-6 mt-10 mb-10">
 						Received Date:
 					</div>
@@ -526,6 +527,44 @@ $prefix=$this->config->item('prefix');
 						<?php echo $details[0]['shippingChoice'];?>
 					</div>
 					<?php }	?>
+					<?php if($page=='creditPoints'){?>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Date of Birth:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['dob'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							PAN Number:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['panNumber'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Name as in PAN:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['nameAsInPan'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Address:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['address'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Occupation:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['occupation'];?>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 mt-10 mb-10">
+							Looking For:
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 mt-10 mb-10">
+							<?php echo $details[0]['lookingFor'];?>
+						</div>
+					<?php } ?>
 				</div>
 				<!--<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-10 mt-10">

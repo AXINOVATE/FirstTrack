@@ -803,4 +803,7 @@ class Home extends CI_Controller {
 		$xml = "<ROOT><HEADER><TYPE>".$vType."</TYPE><USERID>".$this->session->userdata('userID')."</USERID><CARTID>".$vCartID."</CARTID></HEADER></ROOT>";
 		echo json_encode($this->home_model->ins_updCart($xml));
 	}
+	public function insUpdCreditPoints(){
+		echo json_encode($this->home_model->insUpdCreditPoints());
+	}
 }

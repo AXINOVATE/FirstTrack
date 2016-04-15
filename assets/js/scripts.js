@@ -97,6 +97,10 @@
 		//get_gpi_varient();
 		
 	});
+	$('#download_brochure').on('click' , function(){
+		get_all_country("brochureCountry");
+		get_categories("brochureCategory");
+	});
 	
 
 	$('document').ready(function(){
@@ -1191,3 +1195,100 @@ $('#searchGlobal').typeahead({
 	debug: true
 });
 /* Header Search Ends Here	*/
+
+/* Brochure Download Starts Here */
+
+$("#brochureCountry").on("change",function(){
+	var country_id=$(this).val();
+	$.ajax({
+		url:prefix+'/home/get_particular_states',
+		type:'POST',
+		processData: true,
+		dataType:'JSON',
+		data:{'country_id':country_id}
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select State --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].stateID+"' >"+data[i].stateName+"</option>";
+		}
+		$("#brochureState").html(html);
+	});
+});
+$("#brochureState").on("change",function(){
+	var states_id=$(this).val();
+	$.ajax({
+		url:prefix+'/home/get_particular_city',
+		type:'POST',
+		processData: true,
+		dataType:'JSON',
+		data:{'states_id':states_id}
+	}).done(function(data){
+		var len=data.length;
+		html = "<option value=''>-- Select City --</option>";
+		for(i=0;i<len;i++){
+			html += "<option value='"+data[i].cityID+"' >"+data[i].cityName+"</option>";
+		}
+		$("#brochureCity").html(html);
+	});
+});
+$("#brochureCategory").on("change",function(){
+	var id=$(this).val();
+	get_manufacture("brochureMaker",id);
+});
+$("#brochureMaker").on("change",function(){
+	get_particular_model("brochureMaker","brochureModel");
+});
+$("#brochureModel").on("change",function(){
+	var id=$(this).val();
+	get_variant("brochureVariant",id);
+});
+$('#brochure_submit').on('click' ,function(){
+	xu_validation.form_submit('#brochure_download_form','save_brochure_download_form');		
+});
+function save_brochure_download_form(){
+	alert("hi");
+}
+
+/* Brochure Download Ends Here */
+
+/*Credit Points Starts Here */
+
+$("#credit_points_submit").click(function(){
+	xu_validation.form_submit('#credit_points_form','save_credit_points_form');		
+});
+function save_credit_points_form(){
+	var firstName = $("#credit_points_FirstName").val();
+	var lastName = $("#credit_points_LastName").val();
+	var emailID = $("#credit_points_emailID").val();
+	var phone = $("#credit_points_phone").val();
+	var city = $("#credit_points_city").val();
+	var date = $("#credit_points_date").val();
+	var panNumber = $("#credit_points_pan_number").val();
+	var namePanNumber = $("#credit_points_name_pan_number").val();
+	var address = $("#credit_points_address").val();
+	var occupation = $("#credit_points_occupation").val();
+	var lookingFor = $("#credit_points_lookingfor").val();
+	var termsAndConditions = $("#credit_points_TermsConditions").val();
+	var vType = "INSERT";
+	$.ajax({
+		url:prefix+'/home/insUpdCreditPoints/',
+		data:{'vType':vType,'firstName':firstName,'lastName':lastName,'emailID':emailID,'phone':phone,'city':city,'date':date,'panNumber':panNumber,'namePanNumber':namePanNumber,'address':address,'occupation':occupation,'lookingFor':lookingFor,'termsAndConditions':termsAndConditions},
+		type:'POST',
+		processData: true,
+		dataType:'JSON'
+	}).done(function(data){
+		if(data.status == "Success"){		
+			$("#thanks-message").modal();
+			setTimeout(function(){window.location.reload();},10000);
+		}else{
+			$.gritter.add({
+				title: 'Failed',
+				text: 'Failed To Save',
+				class_name: 'gritter-info gritter-center' + 'gritter-light'
+			});
+			setTimeout(function(){window.location.reload();},10000);
+		}
+	});
+}
+/*Credit Points Ends Here */

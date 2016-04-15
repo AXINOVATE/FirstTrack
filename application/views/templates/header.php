@@ -132,6 +132,7 @@ else{
 						<li><a href ="#" data-toggle="modal" data-target="#corporate-deal-modal" id="corporate-deal">Corporate Deals</a></li>
 						<li><a href ="#" data-toggle="modal" data-target="#apply-insurance-modal" id="apply-for-insurance">Apply for Insurance</a></li>
 						<li><a href ="#" data-toggle="modal" data-target="#road-assistance-modal" id="on-road-assistance">Buy on Road Assistance</a></li>
+						<li><a href ="#" data-toggle="modal" data-target="#credit_points-modal" id="credit_points">Know your credit points</a></li>
 					</ul>
 				</li>
 			</ul> 
@@ -1294,7 +1295,137 @@ else{
 		</div>
 	</div>
 	<!-- Drop a query modal ends here -->
-	
+	<!-- Credit Points starts here -->
+	<div class="modal fade blue-modals" id="credit_points-modal" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+					<h4 class="text-center modal-title">Know your credit points</h4>
+				</div>
+				
+				<div class="modal-body">
+					<form class="form-horizontal" name="credit_points_form" role="form"  method="POST" id="credit_points_form" submit="return false">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">First Name</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+								<input type="text" class="form-control" va_req="true" placeholder="First Name" name="credit_points_FirstName" id="credit_points_FirstName" aria-describedby="basic-addon1" va_err="credit_points_FirstNameError" />
+								</div>
+								<div class="text-danger" id="credit_points_FirstNameError"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Last Name</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+								<input type="text" class="form-control" va_req="true" placeholder="Last Name" name="credit_points_LastName" aria-describedby="basic-addon1" id="credit_points_LastName" va_err="credit_points_LastNameError" />
+								</div>
+								<div class="text-danger" id="credit_points_LastNameError"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+								<input type="text" class="form-control" va_req="true" va_email="true"  id="credit_points_emailID" name="credit_points_emailID" placeholder="tony@gmail.com" va_err="credit_points_emailIDError" />				
+								</div>
+								<div class="text-danger" id="credit_points_emailIDError"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_phone" name="credit_points_phone" placeholder="eg. 9874563110" va_err="credit_points_phoneError" />					
+								</div>
+								<div class="text-danger" id="credit_points_phoneError"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">City</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+								<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-map-marker"></i></span>
+								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_city" name="credit_points_city" placeholder="eg. Bangalore" va_err="credit_points_cityError" />					
+								</div>
+								<div class="text-danger" id="credit_points_phoneError"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label for="Expiry_Date" class="col-md-3 col-sm-3 col-xs-12 control-label">
+								Date of Birth
+							</label>
+							<div class="col-md-9 col-sm-9 col-xs-12 pr-0">
+								<div class="input-group date datepicker no-padding">
+									<input type="text" class="form-control" va_req="true" va_err="credit_points_dateError" name="credit_points_date" id="credit_points_date" value="">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+								<div class="text-danger" id="credit_points_dateError"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ">
+						<input type="text" class="form-control mb-10" id="credit_points_pan_number"  va_req="true" name="credit_points_pan_number" placeholder="PAN Number" />
+					</div>
+					<div class="col-md-4 ">
+						<input type="text" class="form-control mb-10" id="credit_points_name_pan_number"  va_req="true" name="credit_points_name_pan_number" placeholder="Name as in PAN Number" />
+					</div>
+					<div class="col-md-4 ">
+						<input type="text" class="form-control mb-10" id="credit_points_address"  va_req="true" name="credit_points_address" placeholder="Address" />
+					</div>
+					<div class="col-md-4">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="credit_points_occupation" id="credit_points_occupation">
+							<option value="">-- What is your occupation ? --</option>	
+							<option value="Salaried">Salaried</option>
+							<option value="Self Employed (Business)">Self Employed (Business)</option>
+							<option value="Self Employed (Professional)">Self Employed (Professional)</option>
+							<option value="Retired">Retired</option>
+							<option value="House Wife">House Wife</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<select class="form-control mb-10" style="width:100%;" va_req="true" name="credit_points_lookingfor" id="credit_points_lookingfor">
+							<option value="">-- What are you Looking for ? --</option>	
+							<option value="Credit Score">Credit Score</option>
+							<option value="Solutions to CIBIL Problems">Solutions to CIBIL Problems</option>
+							<option value="Personal Loans">Personal Loans</option>
+							<option value="Vehicle Loans">Vehicle Loans</option>
+						</select>
+					</div>
+					   <div class="col-md-12">
+						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="credit_points_TermsConditions" id="credit_points_TermsConditions" >
+						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+						</div>
+						</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<a href="#" class="search-btn"  data-toggle="modal" id="credit_points_submit" style="background-color:#F9D133;font-size:18px;" >Submit</a>
+							<!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+						</div>
+					</div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- Credit Points ends here -->
 <div class="sticky" id="sticky">
 	<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" id="dq_open" style="text-decoration:none;">
 		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback </br><b>+919900151719</b></span>

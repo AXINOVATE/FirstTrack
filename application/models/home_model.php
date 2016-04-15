@@ -1361,7 +1361,7 @@ class Home_model extends CI_Model{
 			if($val[0][$vResult]=='Success'){
 				$retValue['status']='Success';
 				$content='NayaGaadi Password Reset<br><a href="'.base_url().'home/resetMyPassword/RESET/'.$val[0][$vID].'">Click Here to Reset password</a>';
-				$this->send_email('elanthirayan.m@axinovate.com',$emailID,'','NayaGaadi Password Reset',$content);
+				$this->send_email('sales@nayagaadi.com',$emailID,'','NayaGaadi Password Reset',$content);
 			}else{
 				$retValue['status']='Email id not exist';
 			}
@@ -1370,7 +1370,7 @@ class Home_model extends CI_Model{
 			if($val[0][$vResult]=='Success'){
 				$retValue['status']='Success';
 				$content='NayaGaadi Password Reseted Successfully';
-				$this->send_email('elanthirayan.m@axinovate.com',$val[0][$vID],'','NayaGaadi Password Reset Successfully',$content);
+				$this->send_email('sales@nayagaadi.com',$val[0][$vID],'','NayaGaadi Password Reset Successfully',$content);
 			}
 		}
 		return $retValue;
@@ -1399,6 +1399,31 @@ class Home_model extends CI_Model{
 		$query=$this->db->query("call usp_getCartDetails('".$vType."','".$id."')");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
+	}
+	public function insUpdCreditPoints(){
+		$retValue['status']="Failed";
+		$vType=$this->input->post('vType');
+		$firstName=$this->input->post('firstName');
+		$lastName=$this->input->post('lastName');
+		$emailID=$this->input->post('emailID');
+		$phone=$this->input->post('phone');
+		$city=$this->input->post('city');
+		$date=$this->input->post('date');
+		$panNumber=$this->input->post('panNumber');
+		$namePanNumber=$this->input->post('namePanNumber');
+		$address=$this->input->post('address');
+		$occupation=$this->input->post('occupation');
+		$lookingFor=$this->input->post('lookingFor');
+		$termsAndConditions=$this->input->post('termsAndConditions');
+		$xml = "<ROOT><HEADER><ACTIONTYPE>".$vType."</ACTIONTYPE><FIRSTNAME>".$firstName."</FIRSTNAME><LASTNAME>".$lastName."</LASTNAME><EMAILID>".$emailID."</EMAILID><PHONE>".$phone."</PHONE><CITY>".$city."</CITY><DATE>".$date."</DATE><PANNUMBER>".$panNumber."</PANNUMBER><NAMEASPANNUMBER>".$namePanNumber."</NAMEASPANNUMBER><ADDRESS>".$address."</ADDRESS><OCCUPATION>".$occupation."</OCCUPATION><LOOKINGFOR>".$lookingFor."</LOOKINGFOR><TERMSANDCONDITIONS>".$termsAndConditions."</TERMSANDCONDITIONS><STATUS>Opened</STATUS></HEADER></ROOT>";
+		$query=$this->db->query("call usp_insUpdCreditPoints('".$xml."',@result)");
+		mysqli_next_result($this->db->conn_id);
+		$query1=$this->db->query("select @result as status");
+		$qRe=$query1->result_array();
+		if($qRe[0]['status']=='Success'){
+			$retValue['status']='Success';
+		}
+		return $retValue;
 	}
 }
 

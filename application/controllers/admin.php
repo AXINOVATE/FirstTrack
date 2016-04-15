@@ -35,6 +35,7 @@ class Admin extends CI_Controller {
 		$data['roadTestCount'] = $this->dashboard_model->getRoadTestRequest('COUNTS','');
 		$data['DropAQueryCount'] = $this->dashboard_model->getDropAQueryRequest('COUNTS','');
 		$data['bookingCount'] = $this->dashboard_model->getBookingRequest('COUNTS','');
+		$data['creditPointCount'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
 		$this->load->view('admin/admin_dashboard',$data);
 	}
 	public function request_list($page)
@@ -74,6 +75,10 @@ class Admin extends CI_Controller {
 			$data['Name'] = "Booking";
 			$data['counts'] = $this->dashboard_model->getBookingRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getBookingRequest('ALL','');
+		}elseif($page=='creditPoints'){
+			$data['Name'] = "Booking";
+			$data['counts'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getCreditPointRequest('ALL','');
 		}
 		$this->load->view('admin/request_list',$data);
 	}
@@ -123,6 +128,11 @@ class Admin extends CI_Controller {
 			$data['counts'] = $this->dashboard_model->getBookingRequest('COUNTS','');
 			$data['details'] = $this->dashboard_model->getBookingRequest('ONE',$id);
 			$data['respondDetails'] = $this->dashboard_model->getBookingRequest('RESPONDS',$id);
+		}elseif($page=='creditPoints'){
+			$data['Name'] = "Credit Points";
+			$data['counts'] = $this->dashboard_model->getCreditPointRequest('COUNTS','');
+			$data['details'] = $this->dashboard_model->getCreditPointRequest('ONE',$id);
+			$data['respondDetails'] = $this->dashboard_model->getCreditPointRequest('RESPONDS',$id);
 		}
 		//var_dump($data['details']);exit();
 		$this->load->view('admin/request_report',$data);
@@ -314,5 +324,8 @@ class Admin extends CI_Controller {
 	}
 	public function getBookingRequest($vType,$BID=''){
 		echo json_encode($this->dashboard_model->getBookingRequest($vType,$BID));
+	}
+	public function getCreditPointRequest($vType,$cRID=''){
+		echo json_encode($this->dashboard_model->getCreditPointRequest($vType,$cRID));
 	}
 }
