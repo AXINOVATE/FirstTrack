@@ -325,7 +325,7 @@ $prefix=$this->config->item('prefix');
 							<div class="big-box">
 								<center>
 									<div class="big-box-header">
-										By On Road Assistance
+										Buy On Road Assistance
 									</div>
 								</center>
 								<div class="col-md-6 col-sm-6 col-xs-6 mt-10 mb-10">

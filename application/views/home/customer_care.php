@@ -31,7 +31,7 @@ $prefix=$this->config->item('prefix');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4><strong>Office Address</strong></h4>
+					<h3><strong>Office Address</strong></h3>
 				</div>
 			</div>
 			<div class="row">
@@ -39,30 +39,30 @@ $prefix=$this->config->item('prefix');
 					<!--<div class="news-box">
 						Request for Call back / Ask the Experts +919900151719
 					</div>-->
-					<h5>NayaGaadi Online Marketplace Pvt. Ltd,</h5>
-					<h5>S03-403, Smondoville, Neo Town,</h5>
-					<h5>Electronic City Phase-I,</h5>
-					<h5>Bangalore – 560 100, India.</h5>
-					<h5>Mob : +91-9900-151719</h5>
-					<h5>E Mail : <a href="mailto:Contact@NayaGaadi.com">Contact@NayaGaadi.com</a></h5>			
+					<h4>NayaGaadi Online Marketplace Pvt. Ltd,</h4>
+					<h4>S03-403, Smondoville, Neo Town,</h4>
+					<h4>Electronic City Phase-I,</h4>
+					<h4>Bangalore – 560 100, India.</h4>
+					<h4>Mob : +91-9900-151719</h4>
+					<h4>E Mail : <a href="mailto:Contact@NayaGaadi.com">Contact@NayaGaadi.com</a></h4>			
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4><strong>For Investments / Business Proposals:</strong></h4>
-					<h5>Pls. send the details to <a href="mailto:Business@NayaGaadi.com">Business@NayaGaadi.com</a></h5>
+					<h3><strong>For Investments / Business Proposals:</strong></h3>
+					<h4>Pls. send the details to <a href="mailto:Business@NayaGaadi.com">Business@NayaGaadi.com</a></h4>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4><strong>For Sales, Enquires and Customer support:</strong></h4>
-					<h5>Pls. send email to <a href="mailto:Support@NayaGaadi.com">Support@NayaGaadi.com</a>, our representative will get in touch with you to assist you asap.</a></h5>
+					<h3><strong>For Sales, Enquires and Customer support:</strong></h3>
+					<h4>Pls. send email to <a href="mailto:Support@NayaGaadi.com">Support@NayaGaadi.com</a>, our representative will get in touch with you to assist you asap.</a></h4>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<h3>WELCOME !</h3>
-					<h5>Have a question? Suggestions, Ideas Or feedback? Or Even Want to know more about us? Pls. Write in, we would be happy to hear from you ..</a></h5>
+					<h4>Have a question? Suggestions, Ideas Or feedback? Or Even Want to know more about us? Pls. Write in, we would be happy to hear from you ..</a></h4>
 				</div>
 			</div>
 			<div class="row">
@@ -72,13 +72,13 @@ $prefix=$this->config->item('prefix');
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h4><strong>Working Hours:</strong></h4>
-					<h5>Currently we are providing E Mail or Telephone / Mobile support only during the standard working hours from 9:00 am to 6:00 pm IST ( Indian Standard Time). Limited support is provided during the Holidays or Govt Holidays.</h5>
+					<h3><strong>Working Hours:</strong></h3>
+					<h4>Currently we are providing E Mail or Telephone / Mobile support only during the standard working hours from 9:00 am to 6:00 pm IST ( Indian Standard Time). Limited support is provided during the Holidays or Govt Holidays.</h4>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h5><strong>Disclaimer:</strong> Kindly do not send any defamatory, infringing, obscene, indecent, discriminatory or unlawful material or information. NayaGaadi Online Marketplaces Pvt. Ltd, reserves the right to remove without notice any content received from users.</h5>
+					<h4><strong>Disclaimer:</strong> Kindly do not send any defamatory, infringing, obscene, indecent, discriminatory or unlawful material or information. NayaGaadi Online Marketplaces Pvt. Ltd, reserves the right to remove without notice any content received from users.</h4>
 				</div>
 			</div>
 		</div>

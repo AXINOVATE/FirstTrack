@@ -7,7 +7,7 @@ $prefix=$this->config->item('prefix');
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3">
-				<a href="<?php echo base_url();?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive logo-img hidden-xs" alt="LOGO"></a>
+				<a href="<?php echo base_url();?>"><img src="<?php echo $assetsPath;?>/images/logo.png" style="margin-top: 1px;"class="img-responsive logo-img hidden-xs" alt="LOGO"><span style="color: #fff;font-size: 10px;">Mera Time | Mera Choice | Mera Price</span></a>
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-9">				
 				<div class="header-top">
