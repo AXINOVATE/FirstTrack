@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
 $prefix=$this->config->item('prefix');
 ?>
+<input type="hidden" data-prefix="<?php echo $prefix;?>" id="prefix">
 <div class="top-content-container hidden-xs" >
 	<div class="container">
 		<div class="row">

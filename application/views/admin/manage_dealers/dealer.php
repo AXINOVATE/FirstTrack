@@ -135,6 +135,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery.typeahead.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
 	<script>
 	function checkemail(email){
