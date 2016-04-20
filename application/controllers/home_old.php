@@ -31,9 +31,10 @@ class Home extends CI_Controller {
 		$pageData['currentPage'] = 'HOME';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
-		$data['Car'] = $this->home_model->getBodyTypeEach('Car');		
-		$data['Bike'] = $this->home_model->getBodyTypeEach('Bike');		
-		$data['More'] = $this->home_model->getBodyTypeEach('More');
+		$data['Car'] = $this->home_model->getBodyTypeEach('Car');
+		//var_dump($data['Car']); exit();
+		$data['Bike'] = $this->home_model->getBodyTypeEach('Bike');
+		$data['More'] = $this->home_model->getBodyTypeEach('More');		
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$data['Brands'] = $this->home_model->getTotalBrand();
 		$this->load->view('home/index',$data);
@@ -646,7 +647,7 @@ class Home extends CI_Controller {
 	}
 
 	public function register(){
-		echo json_encode($this->home_model->register($this->input->post('name'),$this->input->post('email'),$this->input->post('password'),$this->input->post('phone'),'User'));
+		echo json_encode($this->home_model->register($this->input->post('name'),$this->input->post('email'),$this->input->post('password'),$this->input->post('phone'), 'User'));
 	}
 	public function dealers_signup(){
 		$pageData['currentPage'] = '';
@@ -809,6 +810,7 @@ class Home extends CI_Controller {
 		//var_dump($_POST); exit();
 		echo json_encode($this->home_model->add_download_brochure($vType));
 	}
+	
 	public function faq(){
 		$pageData['currentPage'] = '';
 		$data['header'] = $this->load->view('templates/header',$pageData,true);

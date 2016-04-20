@@ -177,10 +177,12 @@ $prefix=$this->config->item('prefix');
 			<td style="width:80mm;">
 			<center>	<h1 class="heading">NAYAGAADI</h1></center>
 				<h2 class="heading">
-					NO 14 ,SLN ROAD ,BANGALORE-560027<br />
-					Website : http://www.nayagaadi.com/<br />
-					E-mail : info@nayagaadi.com<br />
-					Phone : +919900151719
+					 NayaGaadi Online Marketplace Pvt Ltd.,<br />
+					S05-403, Neo Town, Electronic City Phase -1,<br /> Bangalore – 560 100.<br />
+                    Office Mobile No : +91-9900-151719,<br />
+					Website :www.NayaGaadi.com<br />
+					E-mail : Customercare@NayaGaadi.com<br />
+					
 				</h2>
 			</td></center>
 		</tr>
@@ -193,7 +195,7 @@ $prefix=$this->config->item('prefix');
 	
 	<div id="wrapper">
      
-    <p style="text-align:center; font-weight:bold; padding-top:5mm;">INVOICE</p>
+    <p style="text-align:center; font-weight:bold; padding-top:5mm;">PROFORMA INVOICE</p>
     <br />
     <table class="heading" style="width:100%;">
         <tr>
@@ -210,7 +212,7 @@ $prefix=$this->config->item('prefix');
                 <table>
                     <tr><td>Invoice No : </td><td><?php echo $proformaInvoice[0]['billNo'];?></td></tr>
                     <tr><td>Dated : </td><td><?php echo date('D-M-Y',strtotime($proformaInvoice[0]['invoiceDate']));?></td></tr> 
-                    <tr><td>Currency : </td><td>IND</td></tr>
+                    <tr><td>Currency : </td><td>INR</td></tr>
                 </table>
             </td>
         </tr>
@@ -265,14 +267,14 @@ $prefix=$this->config->item('prefix');
                 <td style="width:65%;" valign="top">
                     Payment Information :<br />
                     Please make cheque payments payable to : <br />
-                    <b>ABC Corp</b>
+                    <b><?php echo $proformaInvoice[0]['firstName'];?></b>
                     <br /><br />
                     The Invoice is payable within 7 days of issue.<br /><br />
                 </td>
                 <td>
                 <div id="box">
                     E &amp; O.E.<br />
-                    For ABC Corp<br /><br /><br /><br />
+                    For <?php echo $proformaInvoice[0]['firstName'];?><br /><br /><br /><br />
                     Authorised Signatory
                 </div>
                 </td>
@@ -291,13 +293,20 @@ $prefix=$this->config->item('prefix');
 		<tr style="border:none;" >
 			<td style="border:none;">
 				<ol class="mt-condition" style="margin-bottom:10px">
-				  <li style="margin-bottom:10px">The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
-				  <li style="margin-bottom:10px">This website uses cookies to monitor browsing preferences. If you do allow cookies to be used, the following personal information may be stored by us for use by third parties: [insert list of information].</li>
-				  <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
-				  <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
-				  <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
-				  <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
-				  <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
+				  <li style="margin-bottom:10px">Above prices are current Ex-showroom prices. Buyers will have to pay prices prevailing at the time of delivery.</li>
+				  <li style="margin-bottom:10px">Optionals, accessories, insurance, registration, taxes, levies etc will be charged extra as applicable.</li>
+				  <li>Prices are for current specification and subject to change without notice.</li>
+				  <li>Prices and additional charges as above will have to paid completely, to conclude the sales.</li>
+				  <li>Payment for all the above items will be by demand drafts, favoring the Dealer, payable at the buying city. Outstation cheques will not be accepted.</li>
+				  <li>Delivery will be effected after three days of completion of finance documentation, submission of PDC’s, approval and disbursement of loan etc.</li>
+				  <li>Acceptance of Advance / Deposits by seller is merely an indication of an intension to sell and does not result into a contract of sale.</li>
+				  <li>All disputes arising between the parties here to shall be referred to arbitration according to the arbitration laws of the country.</li>
+				  <li>Only the courts of that city shall have jurisdiction in any proceedings relating to this contract.</li>
+				  <li>The company shall not be liable due to any prevention, hindrance, or delay in manufacture, delivery of vehicles or accessories / optional due to shortage of materials, strike, riot, civit commotion, accident, machinery breakdown, government policies, acts of god and nature and all events beyond the control of the company.</li>
+				  <li>The seller shall have a general lien on goods for all moneys due to seller from buyer on account of this or other transaction.</li>
+				  <li>All Taxes as applicable.</li>
+				  <li>This is to inform all our esteemed customers that any advance payments for purchase of vehicles made by them to use are own liability and our Principals or Manufacturer are in no way, implicitly responsible for any vicarious liability for the advance or delivery of vehicles there of, as they deal with us on a principal to Principal basis.</li>
+				  <li>No interest will be paid in case of cancellation of order.</li>
 				</ol>  
 
 			</td>
@@ -310,6 +319,7 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 	<script>
+	
 	</script>
 </body>
 </html>

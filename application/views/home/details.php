@@ -46,6 +46,9 @@ function indianCurrencyNumberFormat($rupee) {
 		
 	#specifications ul>li{overflow: auto;}
 	#specifications ul>li>b{float: left; width: 50%;}
+	.display-inline-img{
+		display: inline-block !important;
+	}
 	
 	</style>
 </head>
@@ -228,12 +231,12 @@ function indianCurrencyNumberFormat($rupee) {
 			</div>
 			<div class="row mt-10">
 				<div class="col-md-12">
-					<div class="item-feature"> <b>Engine</b> <hr class="mb-5 mt-5"> <?php if(isset($data->engineType))echo $data->engineType;?> </div>
-					<div class="item-feature"> <b>Displacement</b> <hr class="mb-5 mt-5"> <?php if(isset($data->displacement))echo $data->displacement.' CC';?> </div>
-					<div class="item-feature"> <b>Max Power</b> <hr class="mb-5 mt-5"> <?php if(isset($data->powerBHP))echo $data->powerBHP.' bhp @ '.$data->powerRPM.' rpm';?> </div>
-					<div class="item-feature"> <b>Mileage</b> <hr class="mb-5 mt-5">  <?php if(isset($data->mileage))echo $data->mileage.' kmpl';?> </div>
-					<div class="item-feature"> <b>Fuel</b> <hr class="mb-5 mt-5"> <?php if(isset($data->fueltype))echo $data->fueltype;?> </div>
-					<div class="item-feature"> <b>Transmission</b> <hr class="mb-5 mt-5"> <?php if(isset($data->transmission))echo $data->transmission;?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/engine2.png" alt="engine" class="img-responsive display-inline-img" ></img> &nbsp &nbsp <span>  Engine </span></b> <hr class="mb-5 mt-5"> <?php if(isset($data->engineType))echo $data->engineType;?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/Displacement1.png" alt="engine" class="img-responsive display-inline-img" ></img> &nbsp &nbsp  Displacement</b> <hr class="mb-5 mt-5"> <?php if(isset($data->displacement))echo $data->displacement.' CC';?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/MaxPower.png" alt="engine" class="img-responsive display-inline-img" ></img> &nbsp &nbsp  Max Power</b> <hr class="mb-5 mt-5"> <?php if(isset($data->powerBHP))echo $data->powerBHP.' bhp @ '.$data->powerRPM.' rpm';?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/mileage_fuel.png" alt="engine" class="img-responsive display-inline-img" ></img>  &nbsp &nbsp  Mileage</b> <hr class="mb-5 mt-5">  <?php if(isset($data->mileage))echo $data->mileage.' kmpl';?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/Fuel12.png" alt="engine" class="img-responsive display-inline-img" ></img> &nbsp &nbsp  Fuel</b> <hr class="mb-5 mt-5"> <?php if(isset($data->fueltype))echo $data->fueltype;?> </div>
+					<div class="item-feature"> <b> <img src="<?php echo $assetsPath?>/images/transmition.png" alt="engine" class="img-responsive display-inline-img" ></img>  &nbsp &nbsp  Transmission</b> <hr class="mb-5 mt-5"> <?php if(isset($data->transmission))echo $data->transmission;?> </div>
 				</div>
 			</div>
 			<div class="row mt-10">

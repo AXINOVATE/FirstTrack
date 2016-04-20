@@ -106,13 +106,12 @@ $prefix=$this->config->item('prefix');
 					<ul>
 						<li class="heading">About Company :</li>
 						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/Aboutus">About Us</a></li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Investors">Investors</a></li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Media">Media</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/investors">Investors</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/media">Media</a></li>
 						<!--<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Testimonials">Testimonials</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Careers">Careers</a></li> -->
 						<!-- <li><a style="color:#333333" href="http://www.nayagaadi.com/index.php?route=information/contact">Contact US</a></li>-->
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/FAQ">FAQ</a></li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=information/information&amp;information_id=96">Feedback-Suggestions</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/faq">FAQ</a></li>						
 					</ul>
 					<!--<ul class="list-unstyled">
 						<li class="heading">Partners :</li>
@@ -125,17 +124,17 @@ $prefix=$this->config->item('prefix');
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=affiliate/account">Affiliates</a> </li>   
 					</ul> -->
 					<ul class="list-unstyled">
-						<li class="heading">Policies :</li>
-						<li><a style="color:#ffffff" href="http://nayagaadi.com/%20Delivery%20Policy">Delivery Policy </a> </li>
-						<li><a style="color:#ffffff" href="http://nayagaadi.com/Policy">Privacy Policy </a> </li>
-						<li><a style="color:#ffffff" href="http://nayagaadi.com/payment%20policy">Payment Policy </a> </li>
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Terms%20and%20conditions">Terms &amp; Conditions  </a> </li>
-						<li><a style="color:#ffffff" href="http://nayagaadi.com/Visitor%20Agreement">Visitor Agreement Policy </a> </li>
-						<li><a style="color:#ffffff" href="http://nayagaadi.com/Infringement%20Policy">Infringement Policy|</a> </li>
+						<li class="heading">Policies :</li>						
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/delivery_policy">Delivery Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/privacy_policy">Privacy Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/payment_policy">Payment Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/terms_condition">Terms &amp; Conditions  </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/visitor_agreement_policy">Visitor Agreement Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/infringement_policy">Infringement Policy|</a> </li>
 					</ul>
 
 					<ul class="list-unstyled">
-						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=information/contact">Contact Us</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/customer_care">Contact Us</a></li>
 						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/siteMap" id="site-map">Site Map</a></li>
 						<!--<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=product/manufacturer">Brands</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=affiliate/account">Affiliates</a></li>

@@ -39,6 +39,45 @@ $prefix=$this->config->item('prefix');
 	.hybrid .nav-tabs>li.active {
 		background-color: #F9D133;
 	}
+	.span1 {
+		display: block;
+		margin-top: -27px;
+		margin-bottom: 15px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('<?php echo $assetsPath;?>/images/break-pointed-bg.png');
+	}
+	.span1-white {
+		display: block;
+		margin-top: -27px;
+		margin-bottom: 15px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('<?php echo $assetsPath;?>/images/break-pointed-bg-inverse.png');
+	}
+	.img-underline{
+		 background-image: url('<?php echo $assetsPath;?>/images/undeline1.png');
+		 background-position: center;
+		 background-repeat: no-repeat;
+		 padding:12px;
+	}
+	.img-underline1{
+		 background-image: url('<?php echo $assetsPath;?>/images/arrows-black.png');
+		 background-position: center;
+		 background-repeat: no-repeat;
+		 padding:12px;
+	}
+	.img-underline-white{
+		 background-image: url('<?php echo $assetsPath;?>/images/dash-bord-view.png');
+		 background-position: center;
+		 background-repeat: no-repeat;
+		 padding:12px;
+	}
+	#flip-this {
+	width: 100%;
+    height: 170px;
+    margin: 0 auto;
+	}
 	
 	</style>
 	
@@ -69,7 +108,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 								<div>
 									<center>
 										<img src="<?php echo $prefix.'/'.$Car[0]['imgPath'];?>" class="cat-img" alt="car" />
-										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Car[0]['categoryName']; ?></div>
+										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Car[0]['categoryName']; ?></div> 
 									</center>
 								</div>
 							</div>
@@ -77,7 +116,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 								<div>
 									<center>
 										<img src="<?php echo $prefix.'/'.$Bike[0]['imgPath'];?>" class="cat-img" alt="bike">
-										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Bike[0]['categoryName']; ?></div>
+										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Bike[0]['categoryName']; ?></div> 
 									</center>
 								</div>
 							</div>
@@ -238,37 +277,86 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
 				<h2 class="home-page-title">Nayagaadi <span style="color:#027cd5;">Dashboard</span></h2>
+				<span class="span1-white"><i class="img-underline-white"></i></span>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
-					<center>
-						<div class="c-border">
-							<span class="counter"><?php echo $Brands[0]['brands']; ?></span>
-							<p>No. Of Brands</p>
+					<div id="flip-this" class="flip-horizontal"> 
+						<div class="front"> 
+							<center>
+								<div class="c-border">
+									<span class="counter"><?php echo $Brands[0]['brands']; ?></span>
+									<p>No. Of Brands</p>
+								</div>
+							</center>
 						</div>
-					</center>
+						<div class="back">
+							<center>
+								<div class="c-border">
+									<img src="<?php echo $assetsPath;?>/images/car-brands.png" alt="pic1" class="img-responsive" style="width: 42%;" >
+									<p>No. Of Brands</p>
+								</div>
+							</center>
+						</div> 
+					</div> 
+				</div>				
+				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+					<div id="flip-this" class="flip-horizontal"> 
+						<div class="front"> 
+							<center>
+								<div class="c-border">
+									<span class="counter"><?php echo $Brands[0]['models']; ?></span>
+									<p>No. Of Models</p>
+								</div>
+							</center>
+						</div>
+						<div class="back">
+							<center>
+								<div class="c-border">
+									<img src="<?php echo $assetsPath;?>/images/car-models.png" alt="pic1" class="img-responsive" style="width: 42%;" >
+									<p>No. Of Models</p>
+								</div>
+							</center>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
-					<center>
-						<div class="c-border">
-							<span class="counter"><?php echo $Brands[0]['models']; ?></span>
-							<p>No. Of Models</p>
+					<div id="flip-this" class="flip-horizontal"> 
+						<div class="front"> 
+							<center>
+								<div class="c-border">
+									<span class="counter"><?php echo $Brands[0]['variants']; ?></span>
+									<p>No. Of Variants</p>
+								</div>
+							</center>
 						</div>
-					</center>
+						<div class="back">
+							<center>
+								<div class="c-border">
+									<img src="<?php echo $assetsPath;?>/images/car-variant.png" alt="pic1" class="img-responsive" style="width: 42%;" >
+									<p>No. Of Variants </p>
+								</div>
+							</center>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
-					<center>
-						<div class="c-border">
-							<span class="counter"><?php echo $Brands[0]['variants']; ?></span>
-							<p>No. Of Variants</p>
+					<div id="flip-this" class="flip-horizontal"> 
+						<div class="front"> 
+							<center>
+								<div class="c-border">
+									<span class="counter"><?php echo $Brands[0]['vehicles']; ?></span>
+									<p>No. Of Vehicles</p>
+								</div>
+							</center>
 						</div>
-					</center>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
-					<center>
-						<div class="c-border">
-							<span class="counter"><?php echo $Brands[0]['vehicles']; ?></span>
-							<p>No. Of Vehicles</p>
+						<div class="back">
+							<center>
+								<div class="c-border">
+									<img src="<?php echo $assetsPath;?>/images/car-madel1.png" alt="pic1" class="img-responsive" style="width: 42%;" >
+									<p>No. Of Vehicles</p>
+								</div>
+							</center>
 						</div>
-					</center>
+					</div>
 				</div>
 				
 			</div>
@@ -281,7 +369,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
-					<h2 class="home-page-title" style="color:#027cd5;">What <span class="txt_white">Nayagaadi Benefits</span> You Get?</h2>
+					<h2 class="home-page-title" style="color:#027cd5;">What <span class="txt_white">Nayagaadi Benefits</span> You Get?</h2>	
+					<span class="span1"><i class="img-underline1"></i></span>
+		
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<div class="blue-box">
@@ -314,8 +404,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<!-- End of Benefits section-->
 	
 	<!-- Start of Carousel section-->
-	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">	
-		<div class="dark-shade"></div>
+	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">		
+		<div class="dark-shade">	</div>		
 		<div class="container">
 			<br>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -328,7 +418,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				</ol-->
 
 			<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
+				<div class="carousel-inner" role="listbox">					
 					<div class="item active">
 						<center>
 							<div class="car-owner-feedback">
@@ -419,6 +509,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
 					<h2 class="home-page-title" style="color:#027cd5;">Customer <span class="txt_white">Feedbacks</span></h2>
+					<span class="span1"><i class="img-underline"></i></span>
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
 					<div style="width:100%; overflow:hidden;">
@@ -485,6 +576,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/jquery.counterup.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/waypoints.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery.flip.min.js" type="text/javascript"></script>
 
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
@@ -528,6 +620,15 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		 //},200);
 		 
 	});
+	$(function(){
+    	$(".flip-horizontal").flip({
+  			trigger: 'hover'
+		});
+		$(".flip-vertical").flip({
+			axis: 'x',
+  			trigger: 'hover'
+		});
+    });
 </script>
 </body>
 </html>

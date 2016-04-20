@@ -97,6 +97,20 @@
 		//get_gpi_varient();
 		
 	});
+	$('#gpi_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#gpi_phone').val().length;		
+		if( mobile_no > 9){
+			$('#gpi_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}else{
+				$('#gpi_phoneError').html('');	
+				$('#gpi_phoneError').hide();				
+			}
+	  })
+	  .on("cut copy paste",function(e){
+		e.preventDefault();
+	});
 	$('#download_brochure').on('click' , function(){
 		get_all_country("brochureCountry");
 		get_categories("brochureCategory");
@@ -1319,3 +1333,5 @@ function save_credit_points_form(){
 	});
 }
 /*Credit Points Ends Here */
+
+

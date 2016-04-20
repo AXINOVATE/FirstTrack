@@ -779,7 +779,7 @@ class Home_model extends CI_Model{
 		return number_format($n);
 	}
 
-	public function login($userName,$password){
+	public function login($userName, $password){
 		$retvalue = array();
 		$xml = "<ROOT>
 				<HEADER>
