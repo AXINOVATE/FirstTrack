@@ -655,7 +655,7 @@ else{
 								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 									<div class="input-group">
 										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone" placeholder="1234567890" va_err="corp_phoneError" />
+										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone"  value="+91" placeholder="1234567890" va_err="corp_phoneError" />
 									</div>
 									<div class="text-danger" id="corp_phoneError"></div>
 								</div>

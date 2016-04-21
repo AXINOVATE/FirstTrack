@@ -35,11 +35,77 @@
 		}).done();
 	});
 	
+	/*  phone number validation start here for all pop up*/
+	$('#abphone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#abphone').val().length;		
+		if( mobile_no > 9){
+			$('#abphoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#RTD_Phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#RTD_Phone').val().length;		
+		if( mobile_no > 9){
+			$('#RTD_PhoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#vehlone_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#vehlone_phone').val().length;		
+		if( mobile_no > 9){
+			$('#vehlone_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#corp_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#corp_phone').val().length;		
+		if( mobile_no > 9){
+			$('#corp_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#insurance_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#insurance_phone').val().length;		
+		if( mobile_no > 9){
+			$('#insurance_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#boraPhone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#boraPhone').val().length;		
+		if( mobile_no > 9){
+			$('#boraPhoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#credit_points_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#credit_points_phone').val().length;		
+		if( mobile_no > 9){
+			$('#credit_points_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
+	  $('#buylater-phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#buylater-phone').val().length;		
+		if( mobile_no > 9){
+			$('#buylater-phone').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
 	
-	
+	/*  phone number validation ends here for all pop up*/
 	//for tooltip
 	$('[data-toggle="tooltip"]').tooltip();
-	$('#advance-booking').on('click' ,function(){		
+	$('#advance-booking').on('click' ,function(){
+		
 		xu_validation.form_submit('#Advance-Booking','save_advance_booking');		
 	});
 
@@ -103,9 +169,6 @@
 		if( mobile_no > 9){
 			$('#gpi_phoneError').html('Only 10 Digit Number Accept');
 			return false
-			}else{
-				$('#gpi_phoneError').html('');	
-				$('#gpi_phoneError').hide();				
 			}
 	  })
 	  .on("cut copy paste",function(e){

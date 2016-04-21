@@ -1508,8 +1508,8 @@ class Home_model extends CI_Model{
 				<BUYLATERCITYID>".$buyLaterCity."</BUYLATERCITYID>
 				<BUYLATERMARKERID>".$buyLaterMaker."</BUYLATERMARKERID>
 				<BUYLATERMODELID>".$buyLaterModel."</BUYLATERMODELID>
-				<BUYLATERVARIANTID>".$buyLaterVariant."</BUYLATERVARIANTID>
 				<BUYLATERTC>".$buyLaterTermsConditions."</BUYLATERTC>
+				<BUYLATERVARIANTID>".$buyLaterVariant."</BUYLATERVARIANTID>
 				<BUYLATERSTATUS>"."UNFOLLOW"."</BUYLATERSTATUS>				
 			</HEADER>
 			</ROOT>";
