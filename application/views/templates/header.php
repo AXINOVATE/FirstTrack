@@ -522,12 +522,22 @@ else{
 							<select class="form-control mb-10" id="vehlone_category" va_req="true" name="vehlone_category" style="width:100%;">
 								<option value="">-- Select Category --</option>
 							</select>
-						</div>
+						</div>	
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_maker" va_req="true" name="vehlone_maker" style="width:100%;">
 								<option value="">-- Select Maker --</option>
 							</select>
 						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<select class="form-control mb-10" id="vehlone_model" va_req="true" name="vehlone_model"  style="width:100%;">
+								<option value="">-- Select Model --</option>
+							</select>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<select class="form-control mb-10" id="vehlone_variant" va_req="true" name="vehlone_variant" style="width:100%;">
+								<option value="">-- Select Variant --</option>
+							</select>
+						</div>						
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control entity-type select2 mb-10" id="vehlone_cust_type" va_req="true" name="vehlone_cust_type" style="width:100%;">
 								<option value="">-- Customer type --</option>
@@ -570,16 +580,7 @@ else{
 								<option value="10 weeks and Above" > 10 weeks and Above</option>
 							</select>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="vehlone_model" va_req="true" name="vehlone_model"  style="width:100%;">
-								<option value="">-- Select Model --</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<select class="form-control mb-10" id="vehlone_variant" va_req="true" name="vehlone_variant" style="width:100%;">
-								<option value="">-- Select Variant --</option>
-							</select>
-						</div>
+						
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<select class="form-control mb-10" id="vehlone_dealerName" va_req="true" name="vehlone_dealerName" style="width:100%;">
 								<option value="">-- Select Dealer Name --</option>

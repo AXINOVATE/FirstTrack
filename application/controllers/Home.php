@@ -293,7 +293,7 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		
 		$cart = $this->session->userdata('cart');
-		//var_dump($cart); exit();
+		
 		if(count($cart)>0){
 			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
 			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);

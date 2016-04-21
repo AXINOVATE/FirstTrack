@@ -506,7 +506,7 @@ $prefix=$this->config->item('prefix');
 			});
 		}
 	});
-	$("#register_btn").on('click',function(){
+	$("#register_btn").on('click',function(){		
 		//Validations
 		$("#signup_tab .text-danger").remove();
 		var text_error = '<span class="text-danger"> This field is required </span>',error=0;

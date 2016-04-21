@@ -189,6 +189,7 @@ function indianCurrencyNumberFormat($rupee) {
 					</div>
 					<div class="row mt-10">
 						<div class="col-md-12 item-action">
+							 
 							<button class="btn <?php if($priceCheck == 0)echo 'hide';?>" id="buy_now_btn">Buy Now</button>
 							<a id="adv-book1" class="btn" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
 								Advance Booking
@@ -399,7 +400,7 @@ function indianCurrencyNumberFormat($rupee) {
 				</div>
 				
 				<div class="modal-body">
-					<form class="form-horizontal" name="Advance_Booking" role="form"  method="POST" id="Advance-Booking" submit="return false">
+					<form class="form-horizontal" name="buyLater" role="form"  method="POST" id="buyLater" submit="return false">
 					<div class="form-group">
 						<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
@@ -558,7 +559,7 @@ function indianCurrencyNumberFormat($rupee) {
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
-		$('#myCartModal').modal('show');
+		$('#myCartModal1').modal('show');
 		var variantID = '<?php echo $variantID; ?>';
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
