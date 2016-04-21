@@ -876,4 +876,12 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->insUpdBuyLaterModel());
 
 	}
+	public function news_detail(){
+		$pageData['currentPage'] = 'NEWS';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		//$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_DETAIL',$id);
+		//var_dump($data['getShowcaseProducts']); exit();
+		$this->load->view('news/news_detail',$data);
+	}
 }

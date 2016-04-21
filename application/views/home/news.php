@@ -17,7 +17,10 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		
+	.content-hide-all{
+		height:31px;
+		overflow: hidden !important;
+	}
 	
 	</style>
 </head>
@@ -42,7 +45,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -54,7 +57,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -65,7 +68,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -77,7 +80,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -88,7 +91,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. 
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -100,7 +103,401 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news1.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							Factory Ready for Track Day
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
