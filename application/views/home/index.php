@@ -209,7 +209,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						for($i=0; $i<=3; $i++){
 							$activeClass = '';
 							if($i==0){$activeClass='active';}
-							echo '<li class="show-img '.$activeClass.'"><a id = "show_img_'.$i.'" href="#tab'.($i+1).'" data-toggle="tab">'.substr($getShowcaseProducts[$i]['showcaseTitle'], 0, 20).'</a></li>';
+							echo '<li class="show-img text-center '.$activeClass.'"><a id = "show_img_'.$i.'" href="#tab'.($i+1).'" data-toggle="tab">'.substr($getShowcaseProducts[$i]['showcaseTitle'], 0, 20).'</a></li>';
 						}
 					?>
 					</ul>
@@ -276,7 +276,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<section class="dashboard-section" style="background-color:#666666;">	
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
-				<h2 class="home-page-title">Nayagaadi <span style="color:#027cd5;">Dashboard</span></h2>
+				<h2 class="home-page-title">NayaGaadi <span style="color:#027cd5;">Dashboard</span></h2>
 				<span class="span1-white"><i class="img-underline-white"></i></span>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<div id="flip-this" class="flip-horizontal"> 
@@ -284,7 +284,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<span class="counter"><?php echo $Brands[0]['brands']; ?></span>
-									<p>No. Of Brands</p>
+									<p>Brands</p>
 								</div>
 							</center>
 						</div>
@@ -292,7 +292,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<img src="<?php echo $assetsPath;?>/images/car-brands.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>No. Of Brands</p>
+									<p>Brands</p>
 								</div>
 							</center>
 						</div> 
@@ -304,7 +304,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<span class="counter"><?php echo $Brands[0]['models']; ?></span>
-									<p>No. Of Models</p>
+									<p>Models</p>
 								</div>
 							</center>
 						</div>
@@ -312,7 +312,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<img src="<?php echo $assetsPath;?>/images/car-models.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>No. Of Models</p>
+									<p>Models</p>
 								</div>
 							</center>
 						</div>
@@ -324,7 +324,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<span class="counter"><?php echo $Brands[0]['variants']; ?></span>
-									<p>No. Of Variants</p>
+									<p>Variants</p>
 								</div>
 							</center>
 						</div>
@@ -332,7 +332,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<img src="<?php echo $assetsPath;?>/images/car-variant.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>No. Of Variants </p>
+									<p>Variants </p>
 								</div>
 							</center>
 						</div>
@@ -344,7 +344,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<span class="counter"><?php echo $Brands[0]['vehicles']; ?></span>
-									<p>No. Of Vehicles</p>
+									<p>Vehicles</p>
 								</div>
 							</center>
 						</div>
@@ -352,7 +352,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="c-border">
 									<img src="<?php echo $assetsPath;?>/images/car-madel1.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>No. Of Vehicles</p>
+									<p>Vehicles</p>
 								</div>
 							</center>
 						</div>
@@ -365,43 +365,151 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<!-- End of Dashboard section-->
 	
 	<!-- Start of Benefits section-->
-	<section class="dashboard-section" style="background-color:#F9D133;">	
+	<section class="dashboard-section" style="background-color:#A0A0A0;">	
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
-					<h2 class="home-page-title" style="color:#027cd5;">What <span class="txt_white">Nayagaadi Benefits</span> You Get?</h2>	
+					<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white">NayaGaadi <span style="color:#027cd5;">     Benefits</span> </span> </h2>	
 					<span class="span1"><i class="img-underline1"></i></span>
 		
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/one.png" alt="one" /></center>
-						<center class="mt-7"><div class="blue-box-text">Reduced Waiting Period to an extent</div></center>
+						<center><img src="<?php echo $assetsPath;?>/images/redius-hand.png" alt="one" /></center>
+						<center class="mt-7"><div class="blue-box-text">Independent and Expert advice at zero cost.</div></center>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/two.png" alt="two" /></center>
-						<center class="mt-7"><div class="blue-box-text">Personalized Service and Delivery at the Door Step of the Customer</div></center>
+						<center><img src="<?php echo $assetsPath;?>/images/map.png" alt="two" /></center>
+						<center class="mt-7"><div class="blue-box-text">No Obligation, Multiple Free Test Ride at your Door Step.</div></center>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/three.png" alt="three" /></center>
-						<center class="mt-7"><div class="blue-box-text">20 % Discounts on Accessories.</div></center>
+						<center><img src="<?php echo $assetsPath;?>/images/main-discount.png" alt="three" /></center>
+						<center class="mt-7"><div class="blue-box-text">Fully registered Vehicle Delivered at your Door Step.</div></center>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/four.png" alt="four" /></center>
-						<center class="mt-7"><div class="blue-box-text">Discounts on other Benefits - 30% Discount on Apple A Doctor Services</div></center>
+						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center class="mt-7"><div class="blue-box-text">  Hassle free Vehicle Loan documentation at your Door step</div></center>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center class="mt-7"><div class="blue-box-text"> Freedom to select your preferred Insurance</div></center>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+					<div class="blue-box">
+						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center class="mt-7"><div class="blue-box-text">Reduced waiting Period.</div></center>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text">  Discount on Accessories and Value Add Products.</div></center>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text">Extra Free Services.</div></center>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text"> Discounts on On-Road assistance Packages.</div></center>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text"> Simple, Transparent and Hassle free Services.</div></center>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text"> All new vehicles under one roof.</div></center>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
+						<div class="blue-box">
+							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center class="mt-7"><div class="blue-box-text">White Board and Yellow Board Vehicles in a click. </div></center>
+						</div>
+					</div>
+				</div>
+		</div>
+	</section>
+	<!-- End of Benefits section-->
+	
+	<!-- Start of Feedbacks section-->
+	<section class="dashboard-section" style="background-color:#B1B1B1;">	
+		<div class="container">
+			<div class="row mt-10 text-center c-dashboard">
+				<div class="col-md-12 col-sm-12 col-xs-12">	
+					<h2 class="home-page-title txt_white" >Customer <span style="color:#027cd5;">Feedback</span></h2>
+					<span class="span1"><i class="img-underline"></i></span>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%; overflow:hidden;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic1.jpg" alt="pic1" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Adele</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic2.jpg" alt="pic2" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Karen</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic3.jpg" alt="pic3" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Jonathan</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-3 hidden-sm col-xs-12 mb-20">
+					<div style="width:100%;">
+						<center>
+							<img src="<?php echo $assetsPath;?>/images/pic4.jpg" alt="pic4" width="100%" height="100%">
+							<div class="user-info">
+								<h4 class="usr-scr txt-bluecolor"><b>Carey</b></h4>
+								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+							</div>
+						</center>
 					</div>
 				</div>
 				
 			</div>
 		</div>
 	</section>
-	<!-- End of Benefits section-->
+	<!-- End of Feedbacks section-->
 	
 	<!-- Start of Carousel section-->
 	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">		
@@ -502,64 +610,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		
 	</section>
 	<!-- End of Carousel section-->
-	
-	<!-- Start of Feedbacks section-->
-	<section class="dashboard-section" style="background-color:#F9D133;">	
-		<div class="container">
-			<div class="row mt-10 text-center c-dashboard">
-				<div class="col-md-12 col-sm-12 col-xs-12">	
-					<h2 class="home-page-title" style="color:#027cd5;">Customer <span class="txt_white">Feedbacks</span></h2>
-					<span class="span1"><i class="img-underline"></i></span>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
-					<div style="width:100%; overflow:hidden;">
-						<center>
-							<img src="<?php echo $assetsPath;?>/images/pic1.jpg" alt="pic1" width="100%" height="100%">
-							<div class="user-info">
-								<h4 class="usr-scr txt-bluecolor"><b>Adele</b></h4>
-								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
-					<div style="width:100%;">
-						<center>
-							<img src="<?php echo $assetsPath;?>/images/pic2.jpg" alt="pic2" width="100%" height="100%">
-							<div class="user-info">
-								<h4 class="usr-scr txt-bluecolor"><b>Karen</b></h4>
-								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
-					<div style="width:100%;">
-						<center>
-							<img src="<?php echo $assetsPath;?>/images/pic3.jpg" alt="pic3" width="100%" height="100%">
-							<div class="user-info">
-								<h4 class="usr-scr txt-bluecolor"><b>Jonathan</b></h4>
-								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-md-3 hidden-sm col-xs-12 mb-20">
-					<div style="width:100%;">
-						<center>
-							<img src="<?php echo $assetsPath;?>/images/pic4.jpg" alt="pic4" width="100%" height="100%">
-							<div class="user-info">
-								<h4 class="usr-scr txt-bluecolor"><b>Carey</b></h4>
-								<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
-							</div>
-						</center>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End of Feedbacks section-->
 	
 	<!-- Body content ends here -->	
 	

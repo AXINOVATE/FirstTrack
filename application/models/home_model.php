@@ -1458,27 +1458,28 @@ class Home_model extends CI_Model{
 		$brochureModel = $this->input->post('brochureModel');
 		$brochureVariant = $this->input->post('brochureVariant');
 		$brochureFurtherAssistance = $this->input->post('brochureFurtherAssistance');
-		$brochureTermsConditions = $this->input->post('brochureTermsConditions');
-		$xml .= "<ACTIONTYPE>".$vType."</ACTIONTYPE>
-				<BROCHUREFULLNAME>".$brochureFullName."</BROCHUREFULLNAME>
-				<BROCHUREPHONE>".$brochurephone."</BROCHUREPHONE>
-				<BROCHUREEMAILID>".$brochureemailID."</BROCHUREEMAILID>
-				<BROCHURECOUNTRY>".$brochureCountry."</BROCHURECOUNTRY>
-				<BROCHURESTATE>".$brochureState."</BROCHURESTATE>
-				<BROCHURECITY>".$brochureCity."</BROCHURECITY>
-				<BROCHURECATEGORY>".$brochureCategory."</BROCHURECATEGORY>
-				<BROCHUREMAKER>".$brochureMaker."</BROCHUREMAKER>
-				<BROCHUREMODEL>".$brochureModel."</BROCHUREMODEL>
-				<BROCHUREVARIANT>".$brochureVariant."</BROCHUREVARIANT>
-				<BROCHUREFURTHERASSISTANCE>".$brochureFurtherAssistance."</BROCHUREFURTHERASSISTANCE>
-				<BROCHURETERMSCONDITIONS>".$brochureTermsConditions."</BROCHURETERMSCONDITIONS>
-				<REQUESTEDTIME>".date('Y-m-d H:i:s')."</REQUESTEDTIME>
-			</HEADER>
-		</ROOT>";
+		$brochureTermsConditions = $this->input->post('brochureTermsConditions');			
+		$xml .= "	<ACTIONTYPE>".$vType."</ACTIONTYPE>
+					<BROCHUREFULLNAME>".$brochureFullName."</BROCHUREFULLNAME>
+					<BROCHUREPHONE>".$brochurephone."</BROCHUREPHONE>
+					<BROCHUREEMAILID>".$brochureemailID."</BROCHUREEMAILID>
+					<BROCHURECOUNTRY>".$brochureCountry."</BROCHURECOUNTRY>
+					<BROCHURESTATE>".$brochureState."</BROCHURESTATE>
+					<BROCHURECITY>".$brochureCity."</BROCHURECITY>
+					<BROCHURECATEGORY>".$brochureCategory."</BROCHURECATEGORY>
+					<BROCHUREMAKER>".$brochureMaker."</BROCHUREMAKER>
+					<BROCHUREMODEL>".$brochureModel."</BROCHUREMODEL>
+					<BROCHUREVARIANT>".$brochureVariant."</BROCHUREVARIANT>
+					<BROCHUREFURTHERASSISTANCE>".$brochureFurtherAssistance."</BROCHUREFURTHERASSISTANCE>
+					<BROCHURETERMSCONDITIONS>".$brochureTermsConditions."</BROCHURETERMSCONDITIONS>
+					<REQUESTEDTIME>".date('Y-m-d H:i:s')."</REQUESTEDTIME>
+				</HEADER>
+			</ROOT>";
 			$query = $this->db->query("CALL usp_insUpdDownloadBrochure('".$xml."',@vresult)");
 			mysqli_next_result($this->db->conn_id);	
 			return $query->result_array();
 	}
+
 	public function get_buylaterdetail()
 	{
 		$query=$this->db->query("select TBL.buyLaterFullname,TBL.buyLaterPhone,TBL.buyLaterAddress,TBL.buyLateremailID,TBL.buyLaterModel,TBL.buyLaterTermsConditions,TBL.createdDateTime,TP.productName,PC.variantName,TM.manufactureName from tbl_buyLater TBL
@@ -1487,6 +1488,37 @@ class Home_model extends CI_Model{
 			  inner  JOIN tbl_productDetails PC on PC.variantID=TBL.buyLaterVariant");
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
+	}
+	public function insUpdBuyLaterModel(){
+		$vType="INSERT";
+		$buyLaterFullname = $this->input->post('buy_later_fullname');
+		$buyLaterPhone = $this->input->post('buylater_phone');
+		$buyLaterAddress = $this->input->post('buy_address');
+		$buyLateremailID = $this->input->post('buy_later_emailID');
+		$buyLaterCity = $this->input->post('buylaterCity');
+		$buyLaterMaker = $this->input->post('buylaterMaker');
+		$buyLaterModel = $this->input->post('buylaterModel');
+		$buyLaterVariant = $this->input->post('buylaterVariant');
+		$buyLaterTermsConditions = $this->input->post('buylaterTermsConditions');
+		$xml = "<ROOT><HEADER>
+				<BUYLATERFULLNAME>".$buyLaterFullname."</BUYLATERFULLNAME>
+				<BUYLATERPHONE>".$buyLaterPhone."</BUYLATERPHONE>
+				<BUYLATERADDRESS>".$buyLaterAddress."</BUYLATERADDRESS>
+				<BUYLATEREMAILID>".$buyLateremailID."</BUYLATEREMAILID>
+				<BUYLATERCITYID>".$buyLaterCity."</BUYLATERCITYID>
+				<BUYLATERMARKERID>".$buyLaterMaker."</BUYLATERMARKERID>
+				<BUYLATERMODELID>".$buyLaterModel."</BUYLATERMODELID>
+				<BUYLATERVARIANTID>".$buyLaterVariant."</BUYLATERVARIANTID>
+				<BUYLATERTC>".$buyLaterTermsConditions."</BUYLATERTC>
+				<BUYLATERSTATUS>"."UNFOLLOW"."</BUYLATERSTATUS>				
+			</HEADER>
+			</ROOT>";
+			$query = $this->db->query("CALL usp_insUpdBuylater('".$vType."','".$xml."',@vresult)");
+			
+			mysqli_next_result($this->db->conn_id);	
+			var_dump($query );exit();
+			return $query->result_array();
+
 	}
 }
 

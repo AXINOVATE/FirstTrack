@@ -68,10 +68,11 @@ $prefix=$this->config->item('prefix');
 					<div class="row">
 						<div class="col-md-2 col-sm-3 col-xs-3 mt-10">
 							<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/favicon.png" class="img-responsive" alt="LOGO"></a>
+							
 						</div>
 						<div class="col-md-10 col-sm-9 col-xs-9 mt-10">
-							<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive " alt="LOGO"></a>
-							<p>NayaGaadi.com is India's first Online market place for all the Brand New Vehicles ( Autos, Bikes, Scooters, Cars, Cycles, Buses, Lorries, Tractors, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV's etc ) to buy online.</p>
+							<a href="<?php echo $prefix;?>"><img src="<?php echo $assetsPath;?>/images/logo.png" class="img-responsive " alt="LOGO"></a><span style="color: #fff;font-size: 12px;">Mera Time | Mera Choice | Mera Price</span>
+							<p class="mt-5">NayaGaadi.com is India's first Online market place for all the Brand New Vehicles ( Autos, Bikes, Scooters, Cars, Cycles, Buses, Lorries, Tractors, Passenger Vehicles, Commercial vehicles, Utility Vehicles, SUV's, MUV's etc ) to buy online.</p>
 						</div>
 					</div>
 				</div>

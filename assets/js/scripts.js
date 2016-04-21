@@ -410,6 +410,9 @@ function get_dealerLocation(callback,id){
 function get_gpi_cities(){
 	get_cities("gpi_city");
 }
+function get_buylater_cities(){
+	get_cities("buylaterCity");
+}
 function get_gpi_categories(){
 	get_categories("gpi_category");
 }
@@ -753,6 +756,9 @@ $("#abModel").on('change',function(){
 function get_manufacture_adv(){
 	get_manufacture("abMaker",'');
 }
+function get_manufacture_buy_later(){
+	get_manufacture("buylaterMaker",'');
+}
 function adv_get_cities(){	
 	$.ajax({
 		url:prefix+'/services/get_city',
@@ -1024,6 +1030,15 @@ function get_insurance_manufacture(){
 $("#insurance_maker").on('change',function(){	
 	get_particular_model("insurance_maker","insurance_model");		
 });
+/* buy later model on change maker*/
+$("#buylaterMaker").on('change',function(){	
+	get_particular_model("buylaterMaker","buylaterModel");		
+});
+
+$("#buylaterModel").on('change',function(){	
+	get_variant("buylaterVariant", $(this).val());	
+});
+/* buy later model on change maker*/
 $("#insurance_model").on('change',function(){	
 	get_variant("insurance_variant", $(this).val());	
 });
@@ -1333,9 +1348,29 @@ function save_credit_points_form(){
 	});
 }
 /*Credit Points Ends Here */
-
-
-
-
-
-
+/*Buy Later start Here */
+$("#buy-later").on('click',function(){
+	xu_validation.form_submit('#buyLater','savebuyLater_Detail');	
+});
+function savebuyLater_Detail(){
+	$.ajax({
+			url:prefix+'/home/savebuyLater_Detail',
+			dataType:'JSON',
+			type:'POST',
+			data:$('#buyLater').serialize()
+		}).done(function(data){
+			if(data == "Success"){	
+			    $('#myCartModal').modal('hide');	
+				$("#thanks-message").modal();
+				setTimeout(function(){window.location.reload();},10000);
+			}else{
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To Save',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location.reload();},10000);
+			}
+		});
+}
+/*End Buy Later start Here */

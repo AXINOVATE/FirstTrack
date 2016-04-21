@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
-$prefix=$this->config->item('prefix'); 
+$prefix=$this->config->item('prefix');
 //$this->session->unset_userdata('wishList');
 //exit();
 //$i =0;
@@ -389,7 +389,8 @@ function indianCurrencyNumberFormat($rupee) {
 	<!-- Body content ends here -->	
 	
 	<!-- Modal -->
-  <div class="modal fade blue-modals" id="myCartModal" role="dialog">
+
+  <div class="modal fade blue-modals" id="myCartModal2" role="dialog">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -480,6 +481,29 @@ function indianCurrencyNumberFormat($rupee) {
 			</div>
 		</div>
 	</div>
+
+ 
+
+ <div class="modal fade" id="myCartModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Added To Cart</h4>
+        </div>
+        <div class="modal-body">
+          <p>Successfully Added to cart</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
   
 </div>
 	
@@ -584,23 +608,36 @@ function indianCurrencyNumberFormat($rupee) {
 		}*/
 	});
 	$("#buy_later_btn").on('click',function(){
-		$('#myCartModal').modal('show');
-		var variantID = '<?php echo $variantID; ?>';
-		var dealerID = $("#d_dealer").val();
-		var colorID = $("#d_color").val();
-		var productID = '<?php echo $productID; ?>';
-		var cityName = $("#d_location").val();
-		var board = $("#d_board").val();
-		if(variantID != "" && dealerID != "" && colorID != ""){
-			$.ajax({
-				url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
-				type:'POST',
-				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
-				dataType:'JSON'
-			}).success(function(data){
-				window.location.reload();
-			});
-		}
+		
+			<?php
+				if($this->session->userdata('login') != TRUE){
+			?>
+				get_buylater_cities();
+				get_manufacture_buy_later();
+	              
+				$('#myCartModal2').modal('show');
+			<?php } ?>
+			<?php
+				if($this->session->userdata('login') == TRUE){
+			?>
+				$('#myCartModal1').modal('show');
+				var variantID = '<?php echo $variantID; ?>';
+				var dealerID = $("#d_dealer").val();
+				var colorID = $("#d_color").val();
+				var productID = '<?php echo $productID; ?>';
+				var cityName = $("#d_location").val();
+				var board = $("#d_board").val();
+				if(variantID != "" && dealerID != "" && colorID != ""){
+					$.ajax({
+						url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
+						type:'POST',
+						data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+						dataType:'JSON'
+					}).success(function(data){
+						window.location.reload();
+					});
+				}
+			<?php } ?>
 	});
 </script>
 </body>
