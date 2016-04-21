@@ -63,6 +63,7 @@ $prefix=$this->config->item('prefix');
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage users <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">Users</a></li>
+						<li><a href ="<?php echo $prefix;?>/home/buylater_details">Future-Order-Details</a></li>
 					</ul>
 				</li>
 				<?php }else if($this->session->userdata('roleName') == $this->config->item('dealer_role')){ ?>

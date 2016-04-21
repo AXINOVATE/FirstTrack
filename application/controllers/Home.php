@@ -864,4 +864,11 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/infringement_policy',$data);
 	}
+	public function buylater_details(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['buylaterdetails']=$this->home_model->get_buylaterdetail();
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('admin/buylater_details',$data);
+	}
 }

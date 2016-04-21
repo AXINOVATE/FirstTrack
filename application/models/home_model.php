@@ -1479,6 +1479,15 @@ class Home_model extends CI_Model{
 			mysqli_next_result($this->db->conn_id);	
 			return $query->result_array();
 	}
+	public function get_buylaterdetail()
+	{
+		$query=$this->db->query("select TBL.buyLaterFullname,TBL.buyLaterPhone,TBL.buyLaterAddress,TBL.buyLateremailID,TBL.buyLaterModel,TBL.buyLaterTermsConditions,TBL.createdDateTime,TP.productName,PC.variantName,TM.manufactureName from tbl_buyLater TBL
+				inner  JOIN tbl_manufacture TM on TM.manufactureID=TBL.buyLaterMaker
+			  inner  JOIN tbl_productBasic TP on TP.manufacturerID=TBL.buyLaterMaker
+			  inner  JOIN tbl_productDetails PC on PC.variantID=TBL.buyLaterVariant");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 }
 
 ?>
