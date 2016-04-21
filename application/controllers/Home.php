@@ -90,7 +90,6 @@ class Home extends CI_Controller {
 		$this->load->view('home/upcoming_list',$data);
 	}
 	public function details($slug="",$variantID="",$dealerID="",$colorID="",$location="",$board=""){
-		
 		$variantID = isset($_GET['variant']) ? $_GET['variant'] : '';
 		$location = isset($_GET['location']) ? $_GET['location'] : '';
 		$dealerID = isset($_GET['dealer']) ? $_GET['dealer'] : '';
@@ -863,5 +862,8 @@ class Home extends CI_Controller {
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('home/infringement_policy',$data);
+	}
+	public function savebuyLater_Detail(){
+		echo json_encode($this->home_model->insUpdBuyLaterModel());
 	}
 }

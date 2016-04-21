@@ -59,7 +59,7 @@ else{
 							<div class="typeahead-field">
 								<span class="typeahead-query">
 									<div class="input-group">
-										<input type="search" class="form-control no-border-radius-all" id="searchGlobal" name="query" placeholder="Find your vehicle here" aria-describedby="basic-addon2" autocomplete="off" />
+										<input type="search" class="form-control no-border-radius-all" id="searchGlobal" name="query" placeholder="Find your new vehicle here" aria-describedby="basic-addon2" autocomplete="off" />
 										<span class=" btn input-group-addon no-border-radius-all input-group-addon1" id="basic-addon2">Search</span>
 									</div>	
 								</span>
@@ -114,7 +114,7 @@ else{
 
 				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
 				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/review';?>" class="pd-tp-3">Review</a></li>
-				<li><a href="https://nayagaadi.wordpress.com/" target="_blank" class="pd-tp-3">Blogs</a></li>
+				<li><a href="https://nayagaadi.wordpress.com/" target="_blank" class="pd-tp-3">Blog</a></li>
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -1428,7 +1428,7 @@ else{
 	<!-- Credit Points ends here -->
 <div class="sticky" id="sticky">
 	<a href ="javascript:void(0)" data-toggle="modal" data-target="#drop-a-query-modal" id="dq_open" style="text-decoration:none;">
-		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback </br><b>+919900151719</b></span>
+		<span id="sticky-btn" data-open="false" class="sticky-btn">Request for Callback </br></span>
 	</a>
 </div>
 	<div class="modal fade thanks-modals " id="thanks-message" role="dialog">

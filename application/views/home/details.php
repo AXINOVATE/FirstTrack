@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
-$prefix=$this->config->item('prefix'); 
+$prefix=$this->config->item('prefix');
 //$this->session->unset_userdata('wishList');
 //exit();
 //$i =0;
@@ -389,7 +389,99 @@ function indianCurrencyNumberFormat($rupee) {
 	<!-- Body content ends here -->	
 	
 	<!-- Modal -->
-  <div class="modal fade" id="myCartModal" role="dialog">
+ <div class="modal fade blue-modals" id="myCartModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+   <div class="modal-content">
+    <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal" style="opacity:1 !important;">&times;</button>
+     <h4 class="text-center modal-title">Buy later</h4>
+    </div>
+    
+    <div class="modal-body">
+     <form class="form-horizontal" name="buyLater" role="form"  method="POST" id="buyLater" submit="return false">
+     <div class="form-group">
+      <label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
+      <div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+       <div class="input-group">
+       <span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
+       <input type="text" class="form-control" va_req="true" placeholder="Full Name" name="buy_later_fullname" aria-describedby="basic-addon1" va_err="buylaterFullNameError" />
+       </div>
+       <div class="text-danger" id="buylaterFullNameError"></div>
+      </div>
+     </div>
+     <div class="form-group">
+      <label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Phone</label>
+      <div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+       <div class="input-group">
+       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+       <input type="Text" class="form-control"  va_req="true" va_num="true" id="buylater_phone" name="buylater_phone" placeholder="eg. 9874563110" va_err="buy-later-phone" />     
+       </div>
+       <div class="text-danger" id="buy-later-phone"></div>
+      </div>
+     </div>
+     <div class="form-group">
+      <label for="phone" class="col-md-3 col-sm-3 col-xs-12 control-label">Address</label>
+      <div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+       <div class="input-group">
+       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+       <input type="Text" class="form-control"  va_req="true" va_num="true" id="buy_address" name="buy_address" placeholder="eg. " va_err="buy-address-Error" />     
+       </div>
+       <div class="text-danger" id="buy-address-Error"></div>
+      </div>
+     </div>
+
+     <div class="form-group">
+      <label for="emailID" class="col-md-3 col-sm-3 col-xs-12 control-label">Email-id</label>
+      <div class="col-md-9 col-sm-9 col-xs-12 mb-10">
+       <div class="input-group">
+       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+       <input type="text" class="form-control" va_req="true" va_email="true"  id="buy_later_emailID" name="buy_later_emailID" placeholder="tony@gmail.com" va_err="buylater-emailIDError" />    
+       </div>
+       <div class="text-danger" id="buylater-emailIDError"></div>
+      </div>
+     </div>
+      <div class="col-md-4">
+       <select class="form-control mb-10"  style="width:100%;" va_req="true" name="buylaterCity" id="buylaterCity">
+        <option value="" >-- Select City --</option>
+       </select>
+      </div>
+      <div class="col-md-4">
+       <select class="form-control mb-10"  style="width:100%;" va_req="true" name="buylaterMaker" id="buylaterMaker">
+        <option value="">-- Select Maker --</option>
+       </select>
+      </div>
+      <div class="col-md-4">
+       <select class="form-control mb-10"  style="width:100%;" va_req="true" name="buylaterModel" id="buylaterModel">
+        <option value="">-- Select Model --</option>
+       </select>
+       
+      </div>
+      <div class="col-md-4">
+       <select class="form-control mb-10" style="width:100%;" va_req="true" name="buylaterVariant" id="buylaterVariant">
+        <option value="">-- Select Variant --</option>        
+       </select>
+      </div>
+        <div class="col-md-12">
+      <input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="buylaterTermsConditions" id="buylaterTermsConditions" >
+      <div class="col-md-11 col-sm-11 col-xs-10 mb-10">
+       I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+      </div>
+      </div>
+     <div class="form-group">
+      <label for="" class="col-md-4 col-sm-4 hidden-xs"> &nbsp; </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+       <a href="#" class="search-btn"  data-toggle="modal" id="buy-later" style="background-color:#F9D133;font-size:18px;" >Submit</a>
+       <!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+      </div>
+     </div>
+     </form>
+    </div>
+    
+   </div>
+  </div>
+ </div>
+
+ <div class="modal fade" id="myCartModal1" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -512,23 +604,36 @@ function indianCurrencyNumberFormat($rupee) {
 		}*/
 	});
 	$("#buy_later_btn").on('click',function(){
-		$('#myCartModal').modal('show');
-		var variantID = '<?php echo $variantID; ?>';
-		var dealerID = $("#d_dealer").val();
-		var colorID = $("#d_color").val();
-		var productID = '<?php echo $productID; ?>';
-		var cityName = $("#d_location").val();
-		var board = $("#d_board").val();
-		if(variantID != "" && dealerID != "" && colorID != ""){
-			$.ajax({
-				url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
-				type:'POST',
-				data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
-				dataType:'JSON'
-			}).success(function(data){
-				window.location.reload();
-			});
-		}
+		
+			<?php
+				if($this->session->userdata('login') != TRUE){
+			?>
+				get_buylater_cities();
+				get_manufacture_buy_later();
+	              
+				$('#myCartModal').modal('show');
+			<?php } ?>
+			<?php
+				if($this->session->userdata('login') == TRUE){
+			?>
+				$('#myCartModal1').modal('show');
+				var variantID = '<?php echo $variantID; ?>';
+				var dealerID = $("#d_dealer").val();
+				var colorID = $("#d_color").val();
+				var productID = '<?php echo $productID; ?>';
+				var cityName = $("#d_location").val();
+				var board = $("#d_board").val();
+				if(variantID != "" && dealerID != "" && colorID != ""){
+					$.ajax({
+						url:'<?php echo $prefix;?>/home/creating_checkout_wishList',
+						type:'POST',
+						data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
+						dataType:'JSON'
+					}).success(function(data){
+						window.location.reload();
+					});
+				}
+			<?php } ?>
 	});
 </script>
 </body>
