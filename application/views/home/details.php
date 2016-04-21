@@ -406,7 +406,7 @@ function indianCurrencyNumberFormat($rupee) {
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa fa-user"></i></span>
-							<input type="text" class="form-control" va_req="true" placeholder="Full Name" name="buy-later-fullname" aria-describedby="basic-addon1" va_err="buylaterFullNameError" />
+							<input type="text" class="form-control" va_req="true" placeholder="Full Name" name="buy_later_fullname" aria-describedby="basic-addon1" va_err="buylaterFullNameError" />
 							</div>
 							<div class="text-danger" id="buylaterFullNameError"></div>
 						</div>
@@ -416,7 +416,7 @@ function indianCurrencyNumberFormat($rupee) {
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buylater-phone" name="buylater-phone" placeholder="eg. 9874563110" va_err="buylater-phone" />					
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buylater_phone" name="buylater_phone" placeholder="eg. 9874563110" va_err="buylater-phone" />					
 							</div>
 							<div class="text-danger" id="buylater-phone"></div>
 						</div>
@@ -426,7 +426,7 @@ function indianCurrencyNumberFormat($rupee) {
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buy-address" name="buy-address" placeholder="eg. " va_err="abphoneError" />					
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buy_address" name="buy_address" placeholder="eg. " va_err="abphoneError" />					
 							</div>
 							<div class="text-danger" id="abphoneError"></div>
 						</div>
@@ -437,7 +437,7 @@ function indianCurrencyNumberFormat($rupee) {
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-							<input type="text" class="form-control" va_req="true" va_email="true"  id="abemailID" name="abemailID" placeholder="tony@gmail.com" va_err="buylater-emailIDError" />				
+							<input type="text" class="form-control" va_req="true" va_email="true"  id="buy_later_emailID" name="buy_later_emailID" placeholder="tony@gmail.com" va_err="buylater-emailIDError" />				
 							</div>
 							<div class="text-danger" id="buylateremailIDError"></div>
 						</div>
