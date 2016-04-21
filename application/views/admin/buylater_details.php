@@ -39,6 +39,7 @@ $prefix=$this->config->item('prefix');
 				<th>model</th>
 				<th>varient</th>
 				<th>date</th>
+				<th>Action</th>
 			  </tr>
 			</thead>
 			<tbody>
@@ -53,6 +54,7 @@ $prefix=$this->config->item('prefix');
 					<td><?php echo $d['productName'];?></td>
 					<td><?php echo $d['variantName'];?></td>
 					<td><?php echo $d['createdDateTime'];?></td>
+					<td><a href="#" class="delete-box-color  delete-buy-later font-size-16" data-id="<?php echo $d['buyLaterID']; ?>" ><i class="fa fa-trash-o picture-padding-right-10"></i><span class="hidden-xs">Delete</span></a></td>
 				  </tr>
 				   <?php } ?>
 			</tbody>
@@ -65,7 +67,35 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
 	<script>
-	
+	  $(".delete-buy-later").click(function(){
+		var buylaterId=$(this).data('id');
+		alert(buylaterId);
+		var vType='DELETE';
+		$.ajax({
+			url:'<?php echo $prefix;?>/home/delete_buy_later_details/',
+			data:{'buylaterId':buylaterId},
+			type:'POST',
+			processData: true,
+			dataType:'JSON'
+		}).done(function(data){
+			if(data.status == "sucess deleted"){	
+				$.gritter.add({
+					title: 'Success',
+					text: 'delete Successfully',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location="<?php echo $prefix;?>/home/buylater_details";},500);
+			}else{
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To delete',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				setTimeout(function(){window.location="<?php echo $prefix;?>/home/buylater_details";},500);
+			}
+		});
+	});
+	  
 	</script>
 </body>
 </html>

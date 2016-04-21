@@ -17,7 +17,17 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
-		
+		.know-more{
+			
+			width: 43%;
+			height: 30px;
+			line-height: 15px;
+			color: white;
+			font-size: 12px;
+			padding-left: 12px;
+			border-radius: 4px;
+			background-color: blue !important;
+		}
 	
 	</style>
 </head>
@@ -44,6 +54,7 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 					
 				</div>
@@ -56,6 +67,7 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
@@ -67,6 +79,7 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 					
 				</div>
@@ -79,6 +92,7 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
@@ -90,6 +104,7 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. 
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 					
 				</div>
@@ -102,6 +117,415 @@ $prefix=$this->config->item('prefix');
 						<div class="news-brief">
 							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
 						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<img src="<?php echo $assetsPath;?>/images/car-news2.jpg" alt="" class="news-thumbnail-img"/>
+						<div class="news-title">
+							A Sport Utility for Family
+						</div>
+						<div class="news-brief">
+							Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.
+						</div>
+						<center><a href="<?php echo $prefix;?>/home/review_detail/" class="btn know-more bg-bluecolor">Reivew more</a><center>
 					</div>
 				</div>
 			</div>

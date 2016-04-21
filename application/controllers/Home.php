@@ -871,9 +871,20 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('admin/buylater_details',$data);
 	}
+	public function delete_buy_later_details(){
+		$buylaterId=$this->input->post('buylaterId');
+		echo json_encode($this->home_model->delete_buy_later_details($buylaterId));
+	}
 
 	public function savebuyLater_Detail(){
 		echo json_encode($this->home_model->insUpdBuyLaterModel());
 
 	}
+	public function review_detail(){
+		$pageData['currentPage'] = '';
+		$data['header'] = $this->load->view('templates/header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
+		$this->load->view('review/review_detail',$data);
+	}
+	
 }
