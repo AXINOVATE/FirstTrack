@@ -178,6 +178,7 @@ body{font-family:Century Gothic !important;}
 	.c-dashboard .c-border>p{font-size:14px;}
 	.fd .dark-shade {height:439px;}
 	.carousel-inner > .item > img, .carousel-inner > .item > a > img {  width: 360px !important; height:235px !important; margin: auto; }
+	
 	.car-owner-feedback{color: #fff; height:120px; width:95%; font-size: 14px; overflow:hidden; line-height:18px;}
 	.car-owner-name{color: white; width:95%; font-size:16px;}
 	.car-owner-vehicle{color: #FFD400; width:95%; font-weight:600;  font-size:15px;}

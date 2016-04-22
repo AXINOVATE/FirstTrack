@@ -69,8 +69,7 @@ $prefix=$this->config->item('prefix');
 	<script>
 	  $(".delete-buy-later").click(function(){
 		var buylaterId=$(this).data('id');
-		alert(buylaterId);
-		var vType='DELETE';
+		
 		$.ajax({
 			url:'<?php echo $prefix;?>/home/delete_buy_later_details/',
 			data:{'buylaterId':buylaterId},
@@ -78,7 +77,7 @@ $prefix=$this->config->item('prefix');
 			processData: true,
 			dataType:'JSON'
 		}).done(function(data){
-			if(data.status == "sucess deleted"){	
+			if(data == "sucess deleted"){	
 				$.gritter.add({
 					title: 'Success',
 					text: 'delete Successfully',

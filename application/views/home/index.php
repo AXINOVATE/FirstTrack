@@ -78,10 +78,7 @@ $prefix=$this->config->item('prefix');
     height: 170px;
     margin: 0 auto;
 	}
-	
 	</style>
-	
-	
 	<!--Start of Zopim Live Chat Script-->
 <script type="text/javascript">
 window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -456,14 +453,34 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<!-- Start of how nayagaadi work section -->
 	<section class="dashboard-section" style="background-color:#666666;">	
 		<div class="container">
-			<div class="row mt-10 text-center c-dashboard">
-				<div class="col-md-12 col-sm-12 col-xs-12">	
-					<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white"> How NayaGaadi <span style="color:#027cd5;">     Works</span> </span> </h2>	
-					<span class="span1"><i class="img-underline1"></i></span>
-				</div>
-					<div class="col-md-12">
-						<img src="<?php echo $assetsPath;?>/images/how naya gaadi work2.png" class="img-responsive" style="width:1200px;"alt="four" />
+			<div id="myCarousel-2" class="carousel slide carousel2" data-ride="carousel">
+				<div class="row mt-10 text-center c-dashboard">
+					<div class="col-md-12 col-sm-12 col-xs-12">	
+						<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white"> How NayaGaadi <span style="color:#027cd5;">     Works</span> </span> </h2>	
+						<span class="span1"><i class="img-underline1"></i></span>
 					</div>
+					<div class="col-md-12" >
+								<div class="carousel-inner" role="listbox">					
+										<div class="item active">
+											<img src="<?php echo $assetsPath;?>/images/how naya gaadi work2.png" class="img-responsive img-crausal" style="width:1200px !important;"alt="four" />
+										</div>
+											<div class="item">
+												<img src="<?php echo $assetsPath;?>/images/how naya gaadi works.jpg" class="img-responsive img-crausal"  style="width:1200px !important;"alt="four" />
+											</div>
+								</div>
+											<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel-2" role="button" 
+										data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="#myCarousel-2" role="button" 
+									data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -623,7 +640,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				</a>
 			</div>
 		</div>
-		
 	</section>
 	<!-- End of Carousel section-->
 	
