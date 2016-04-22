@@ -817,6 +817,7 @@ class Home_model extends CI_Model{
 		return $retvalue;
 	}
 	public function register($name,$email,$password,$phone="",$role="User",$login=false){
+		
 		$retvalue = array();
 		$pwd = $this->encrypt_password($password);
 		
@@ -1201,7 +1202,11 @@ class Home_model extends CI_Model{
 	}
 	public function create_pdf(){
 		$cart = $this->session->userdata('cart');
+		$user_detail=$this->session->userdata('userID');
+		//var_dump($cart);exit();
+		var_dump($user_detail);exit();
 		if(count($cart)>0){
+			
 			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
 			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);
 			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);

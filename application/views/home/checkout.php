@@ -318,12 +318,13 @@ $prefix=$this->config->item('prefix');
 								<div class="cart-total">Sub Total : <span id="subTotal"> Rs <?php if(isset($cart['unitPrice']))echo $cart['unitPrice']*$cart['qty'];?> </span></div>
 								<div class="cart-total">Free Shipping : <span> Rs <?php if(isset($cart['shippingPrice']))echo $cart['shippingPrice'];?> </span></div>
 								<div class="cart-total"><b> Total : <span id="totalPrice"> Rs <?php if(isset($cart['totalPrice']))echo $cart['totalPrice'];?> </span></b></div>
-							</div>
 							<div class="row mt-10">
 								<div class="col-md-4 pull-right mt-30">
 									<button class="btn" id="conform">Confirm</button>
 								</div>
 							</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -528,8 +529,24 @@ $prefix=$this->config->item('prefix');
 					$("#userEmail").parent().parent().append('<span class="text-danger"> This email is already exists in system. Please try forgot password to retrive the password </span>');
 					$("#register_btn").html('Signup');
 					$("#register_btn").attr('disabled',false);
-				}else{
-					window.location.reload();
+					
+				}else{	
+					$.ajax({
+						url:'<?php echo $prefix;?>/home/login_check',
+						type:'POST',
+						data:{'username':$('#userEmail').val(),'password':$('#password').val()},
+						dataType:'JSON'
+					}).success(function(data){
+						$(".login .text-danger").remove();
+						if(data.status){
+							window.location.reload();
+						}				
+						else{
+							$("#login_tab").prepend('<div class="text-danger mt-10">Invalid username or password </div>');
+							$("#login_btn").html('Login');
+							$("#login_btn").attr('disabled',false);
+						}
+					});
 				}
 				
 			});

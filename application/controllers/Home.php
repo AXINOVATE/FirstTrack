@@ -90,6 +90,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/upcoming_list',$data);
 	}
 	public function details($slug="",$variantID="",$dealerID="",$colorID="",$location="",$board=""){
+		//var_dump($slug);exit();
 		$variantID = isset($_GET['variant']) ? $_GET['variant'] : '';
 		$location = isset($_GET['location']) ? $_GET['location'] : '';
 		$dealerID = isset($_GET['dealer']) ? $_GET['dealer'] : '';
