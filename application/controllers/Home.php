@@ -343,7 +343,9 @@ class Home extends CI_Controller {
 	}
 	public function conformation($reqNo=''){
 		$pageData['currentPage'] = '';
+		//var_dump($this->session->userdata('userID'));
 		$totalCount=count($this->home_model->getCartDetails('ALL',$this->session->userdata('userID')));
+		//var_dump($totalCount);exit();
 		$this->session->set_userdata('totalOnCart',$totalCount);
 		$data['header'] = $this->load->view('templates/header',$pageData,true);
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);

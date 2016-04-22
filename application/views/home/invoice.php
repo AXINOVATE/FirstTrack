@@ -27,11 +27,11 @@
 					<td>Email</td>
 				</tr>
 				<tr>
-					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['firstName']))echo $userData[0]['firstName'].' '.$userData[0]['lastName'];?></td>
-					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['addressLine1']))echo $userData[0]['addressLine1'];?></td>
-					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['addressLine2']))echo $userData[0]['addressLine2'];?></td>
-					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['phone']))echo $userData[0]['phone'];?></td>
-					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($userData[0]['email']))echo $userData[0]['email'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($customer_shipping_address[0]['firstName']))echo $customer_shipping_address[0]['firstName'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($customer_shipping_address[0]['shippingAddress1']))echo $customer_shipping_address[0]['shippingAddress1'];?><br><?php echo $customer_shipping_address[0]['shippingAddress2'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($customer_shipping_address[0]['deliveryAddress1']))echo $customer_shipping_address[0]['deliveryAddress1'];?><br><?php echo $customer_shipping_address[0]['deliveryAddress2'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($customer_shipping_address[0]['phone']))echo $customer_shipping_address[0]['phone'];?></td>
+					<td width="300px" style="border-top:0px;border-right:0px;"><?php if(isset($customer_shipping_address[0]['email']))echo $customer_shipping_address[0]['email'];?></td>
 					
 				</tr>
 			</table><br>

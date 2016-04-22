@@ -1174,6 +1174,7 @@ class Home_model extends CI_Model{
 		
 		$vID = mt_rand();$vMessage = mt_rand();$vStatus = mt_rand();$vrequestNO = mt_rand();
 		//echo 'CALL usp_insUpdUsers("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
+		//var_dump('CALL usp_insUpdBookings("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.',@'.$vrequestNO.')');exit();
 		$this->db->query('CALL usp_insUpdBookings("'.$xml.'",@'.$vID.',@'.$vMessage.',@'.$vStatus.',@'.$vrequestNO.')');
 		mysqli_next_result($this->db->conn_id);
 		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status,@".$vrequestNO." as requestNo");
@@ -1204,30 +1205,41 @@ class Home_model extends CI_Model{
 		$cart = $this->session->userdata('cart');
 		$user_detail=$this->session->userdata('userID');
 		//var_dump($cart);exit();
-		var_dump($user_detail);exit();
-		if(count($cart)>0){
-			
-			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
-			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);
-			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
-			$xml1="<ROOT><HEADER><ACTIONTYPE>GETBOOKINGUSER</ACTIONTYPE><BOOKINGID>".$this->session->userdata('bookingIDToUpdate')."</BOOKINGID></HEADER></ROOT>";
-			$query=$this->db->query('CALL usp_getUsers("'.$xml1.'")');
-			mysqli_next_result($this->db->conn_id);
-			$data['userData']=$query->result_array();
-			$data['cart'] = $this->session->userdata('cart');
-			$data['reqNo']=$this->session->userdata('reqNo');
-		}
-		$html=$this->load->view('home/invoice',$data,true);	
-		 $userName = $this->session->userdata('name');
+		//var_dump($user_detail);exit();	
+		
+		$data = array();
+		$userName = $this->session->userdata('name');
 		$path = 'assets/invoice/';
 		//checkign the path exists
 		if (!is_dir($path)) {mkdir($path,0777);}
 		
 		$pdfFilePath = $path.$userName.date('dmyhms').".pdf";
 		$xml="<ROOT><HEADER><ACTIONTYPE>UPDF</ACTIONTYPE><PDFLINK>".$pdfFilePath."</PDFLINK><UID>".$this->session->userdata('bookingIDToUpdate')."</UID></HEADER></ROOT>";
-		$qu=$this->db->query('CALL usp_UpdateBookingRequest("'.$xml.'",@vresult)');
+		//var_dump($xml);exit();
 		mysqli_next_result($this->db->conn_id);
-		$qry = $this->db->query("SELECT @vresult");
+		$this->db->query('CALL usp_UpdateBookingRequest("'.$xml.'", @vresult)');
+		mysqli_next_result($this->db->conn_id);
+		$qry = $this->db->query("SELECT @vresult");			
+		//var_dump($data['customer_shipping_address']);exit();
+		$query1=$this->db->query('select tba.shippingAddress1,tba.shippingAddress2,tba.deliveryAddress1,tba.deliveryAddress2,tba.deliveryZipCode,tu.userName,tu.email,tud.firstName,tud.phone from tbl_bookingAddresses tba inner join tbl_users tu on tu.userID=tba.userID inner join tbl_userDetails tud on tud.userID=tba.userID where tba.userID="'.$user_detail.'"');
+			mysqli_next_result($this->db->conn_id);
+			$data['customer_shipping_address']=$query1->result_array();
+		if(count($cart)>0){
+			$data['basic'] = $this->home_model->getProducts("SPB","",$cart['productID']);
+			$data['data'] = $this->home_model->getProducts("SPV","",$cart['productID'],$cart['variantID'],$cart['colorID']);
+			$data['prices'] = $this->home_model->getDealerProducts("SP",$cart['dealerID'],$cart['productID'],$cart['variantID'],$cart['colorID']);
+			$xml1="<ROOT><HEADER><ACTIONTYPE>GETBOOKINGUSER</ACTIONTYPE><BOOKINGID>".$this->session->userdata('bookingIDToUpdate')."</BOOKINGID><USERID1>".$user_detail."</USERID1></HEADER></ROOT>";
+			//var_dump($xml1);exit();
+			$query=$this->db->query('CALL usp_getUsers("'.$xml1.'")');
+			mysqli_next_result($this->db->conn_id);
+			$data['userData']=$query->result_array();
+			//var_dump($data['userData']);exit();
+			$data['cart'] = $this->session->userdata('cart');
+			$data['reqNo']=$this->session->userdata('reqNo');
+			
+		}		
+		 
+		$html=$this->load->view('home/invoice',$data,true);	
 		$row = $qry->row();
 		$this->load->library('m_pdf');
 		$pdf = $this->m_pdf->load();
@@ -1419,8 +1431,13 @@ class Home_model extends CI_Model{
 		return $query1->result_array();
 	}
 	public function getCartDetails($vType,$id=''){
+		//var_dump($vType);
+		//var_dump($id);exit();
+		//var_dump("call usp_getCartDetails('".$vType."','".$id."')");exit();
 		$query=$this->db->query("call usp_getCartDetails('".$vType."','".$id."')");
 		mysqli_next_result($this->db->conn_id);
+		//var_dump($query);exit();
+		//var_dump($query->result_array());exit();
 		return $query->result_array();
 	}
 	public function insUpdCreditPoints(){
