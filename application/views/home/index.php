@@ -462,7 +462,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<span class="span1"><i class="img-underline1"></i></span>
 				</div>
 					<div class="col-md-12">
-						<img src="<?php echo $assetsPath;?>/images/how naya gaadi works.jpg" class="img-responsive" style="width:1200px;"alt="four" />
+						<img src="<?php echo $assetsPath;?>/images/how naya gaadi work2.png" class="img-responsive" style="width:1200px;"alt="four" />
 					</div>
 			</div>
 		</div>
