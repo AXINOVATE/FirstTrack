@@ -416,7 +416,7 @@ function indianCurrencyNumberFormat($rupee) {
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buylater_phone" name="buylater_phone" placeholder="eg. 9874563110" va_err="buylater-phone" />					
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="buylater_phone" name="buylater_phone" value="+91-" placeholder="eg. 9874563110" va_err="buylater-phone" />					
 							</div>
 							<div class="text-danger" id="buylater-phone"></div>
 						</div>
@@ -527,6 +527,14 @@ function indianCurrencyNumberFormat($rupee) {
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 
 <script type="text/javascript">
+$('#buylater_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#buylater_phone').val().length;		
+		if( mobile_no > 9){
+			$('#buylater-phone').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
 	$(document).ready(function() {
 		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
 		$('.inpt-timepicker').timepicker();	

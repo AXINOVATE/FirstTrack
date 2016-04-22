@@ -100,6 +100,14 @@
 			return false
 			}
 	  });
+	   $('#dq_phone').keypress(function(e) {
+		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
+		var mobile_no=  $('#dq_phone').val().length;		
+		if( mobile_no > 9){
+			$('#dq_phoneError').html('Only 10 Digit Number Accept');
+			return false
+			}
+	  });
 	
 	/*  phone number validation ends here for all pop up*/
 	//for tooltip

@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'dbuserNG.db.10816696.hostedresource.com';
-$db['default']['username'] = 'dbuserNG';
-$db['default']['password'] = 'NayaGaadi@123';
+$db['default']['hostname'] = '128.199.141.229';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'Root@678';
 $db['default']['database'] = 'dbuserNG';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

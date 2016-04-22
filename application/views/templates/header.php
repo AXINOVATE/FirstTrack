@@ -165,7 +165,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="Text" class="form-control"  va_req="true" va_num="true" id="abphone" name="abphone" placeholder="eg. 9874563110" va_err="abphoneError" />					
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="abphone" name="abphone" value="+91-" placeholder="eg. 9874563110" va_err="abphoneError" />					
 							</div>
 							<div class="text-danger" id="abphoneError"></div>
 						</div>
@@ -246,7 +246,7 @@ else{
 					<div class="col-md-7 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" va_req="true" id="gpi_phone" name="gpi_phone" placeholder="eg. 9874563110" va_err="gpi_phoneError" />					
+							<input type="text" class="form-control" va_req="true" id="gpi_phone" name="gpi_phone" value="+91-" placeholder="eg. 9874563110" va_err="gpi_phoneError" />					
 						</div>
 						<div class="text-danger" id="gpi_phoneError"></div>
 					</div>
@@ -350,7 +350,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" va_req="true" name="RTD_Phone" id="RTD_Phone" placeholder="eg. 9874563110" va_err="RTD_PhoneError" />					
+							<input type="text" class="form-control" va_req="true" name="RTD_Phone" id="RTD_Phone"  value="+91-" placeholder="eg. 9874563110" va_err="RTD_PhoneError" />					
 							</div>
 							<div class="text-danger" id="RTD_PhoneError"></div>
 						</div>
@@ -470,7 +470,7 @@ else{
 								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 									<div class="input-group">
 										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone" placeholder="9164545924" va_err="vehlone_phoneError" />
+										<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone" value="+91-" placeholder="9164545924" va_err="vehlone_phoneError" />
 									</div>
 									<div class="text-danger" id="vehlone_phoneError"></div>
 								</div>
@@ -655,7 +655,7 @@ else{
 								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 									<div class="input-group">
 										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone"  value="+91" placeholder="1234567890" va_err="corp_phoneError" />
+										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone"  value="+91-" value="+91-" placeholder="1234567890" va_err="corp_phoneError" />
 									</div>
 									<div class="text-danger" id="corp_phoneError"></div>
 								</div>
@@ -824,7 +824,7 @@ else{
 									<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 										<div class="input-group">
 											<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-											<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true" placeholder="9164545924" va_err="insurance_phoneError" />
+											<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true" value="+91-" placeholder="9164545924" va_err="insurance_phoneError" />
 										</div>
 										<div class="text-danger" id="insurance_phoneError"></div>
 									</div>
@@ -1034,7 +1034,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-								<input type="text" class="form-control" id="boraPhone"  va_req="true" name="boraPhone" placeholder="9164545924" va_err="boraPhoneError" />
+								<input type="text" class="form-control" id="boraPhone"  va_req="true" name="boraPhone" value="+91-" placeholder="9164545924" va_err="boraPhoneError" />
 							</div>
 							<div class="text-danger" id="boraPhoneError"></div>
 						</div>
@@ -1263,7 +1263,7 @@ else{
 						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">							
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-								<input type="text" class="form-control" va_req="true" name="dq_phone" id="dq_phone" placeholder="eg. 9874563110" va_err="dq_phoneError" />					
+								<input type="text" class="form-control" va_req="true" name="dq_phone" id="dq_phone" value="+91-" placeholder="eg. 9874563110"   maxlength="10" va_err="dq_phoneError" />					
 							</div>
 							<div class="text-danger" id="dq_phoneError"></div>
 						</div>
@@ -1345,7 +1345,7 @@ else{
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 								<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_phone" name="credit_points_phone" placeholder="eg. 9874563110" va_err="credit_points_phoneError" />					
+								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_phone" name="credit_points_phone" value="+91-" placeholder="eg. 9874563110" va_err="credit_points_phoneError" />					
 								</div>
 								<div class="text-danger" id="credit_points_phoneError"></div>
 							</div>

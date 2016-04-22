@@ -393,19 +393,19 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center><img src="<?php echo $assetsPath;?>/images/money (2).png" alt="four" /></center>
 						<center class="mt-7"><div class="blue-box-text">  Hassle free Vehicle Loan documentation at your Door step</div></center>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center><img src="<?php echo $assetsPath;?>/images/insurance.jpg" alt="four" /></center>
 						<center class="mt-7"><div class="blue-box-text"> Freedom to select your preferred Insurance</div></center>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 					<div class="blue-box">
-						<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+						<center><img src="<?php echo $assetsPath;?>/images/calendar.png" alt="four" /></center>
 						<center class="mt-7"><div class="blue-box-text">Reduced waiting Period.</div></center>
 					</div>
 				</div>
@@ -414,13 +414,13 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<div class="row">
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/discount-all.png" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text">  Discount on Accessories and Value Add Products.</div></center>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/services.jpg" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text">Extra Free Services.</div></center>
 						</div>
 					</div>
@@ -432,19 +432,19 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/hammer.png" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text"> Simple, Transparent and Hassle free Services.</div></center>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/new.png" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text"> All new vehicles under one roof.</div></center>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/icon-discount-all.png" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/transport.png" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text">White Board and Yellow Board Vehicles in a click. </div></center>
 						</div>
 					</div>
@@ -452,6 +452,22 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		</div>
 	</section>
 	<!-- End of Benefits section-->
+	
+	<!-- Start of how nayagaadi work section -->
+	<section class="dashboard-section" style="background-color:#666666;">	
+		<div class="container">
+			<div class="row mt-10 text-center c-dashboard">
+				<div class="col-md-12 col-sm-12 col-xs-12">	
+					<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white"> How NayaGaadi <span style="color:#027cd5;">     Works</span> </span> </h2>	
+					<span class="span1"><i class="img-underline1"></i></span>
+				</div>
+					<div class="col-md-12">
+						<img src="<?php echo $assetsPath;?>/images/how naya gaadi works.jpg" class="img-responsive" style="width:1200px;"alt="four" />
+					</div>
+			</div>
+		</div>
+	</section>
+	<!-- end of how nayagaadi work section -->
 	
 	<!-- Start of Feedbacks section-->
 	<section class="dashboard-section" style="background-color:#B1B1B1;">	
