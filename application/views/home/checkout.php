@@ -376,8 +376,7 @@ $prefix=$this->config->item('prefix');
 			$("#totalPrice").html('Rs '+parseFloat((data.qty*data.unitPrice)+data.shippingPrice));
 		});
 	});
-	$("#conform").on('click',function(){
-		alert('dfdfds');
+	$("#conform").on('click',function(){		
 		$(".text-danger").remove();
 		var error = 0;
 		$("#billing .form-control").each(function(){
