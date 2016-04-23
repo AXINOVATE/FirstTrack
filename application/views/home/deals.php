@@ -102,6 +102,279 @@ $prefix=$this->config->item('prefix');
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/bookFlightHotel.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Book a Flight + Hotel
+							<p>And Save More</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 31, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/cashbackOnHotels.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Get Upto 60% Off + 100% Cashback
+							<p>+use 25% ecash(No Limits) on Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/awesomeOffer.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Awesome Threesome Offer
+							<p>On Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/bookFlightHotel.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Book a Flight + Hotel
+							<p>And Save More</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 31, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/cashbackOnHotels.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Get Upto 60% Off + 100% Cashback
+							<p>+use 25% ecash(No Limits) on Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/awesomeOffer.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Awesome Threesome Offer
+							<p>On Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/bookFlightHotel.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Book a Flight + Hotel
+							<p>And Save More</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 31, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/cashbackOnHotels.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Get Upto 60% Off + 100% Cashback
+							<p>+use 25% ecash(No Limits) on Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/awesomeOffer.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Awesome Threesome Offer
+							<p>On Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/bookFlightHotel.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Book a Flight + Hotel
+							<p>And Save More</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 31, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/cashbackOnHotels.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Get Upto 60% Off + 100% Cashback
+							<p>+use 25% ecash(No Limits) on Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="javascript:void(0)" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 mb-10">
+					<div class="news-box">
+						<div style="margin: -10px -10px 0px -10px;">
+							<img src="<?php echo $assetsPath;?>/images/awesomeOffer.jpg" alt="" class="news-thumbnail-img"/>
+						</div>
+						<div class="deal-title">
+							Awesome Threesome Offer
+							<p>On Domestic Hotels</p>
+						</div>
+						<div class="row mt-10">
+							<div class="col-md-7 col-sm-7 col-xs-12 deal-validity">
+								Validity:
+								<p>Mar 21, 2016</p>
+							</div>
+							<div class="col-md-5 col-sm-5 col-xs-12">
+								<a href="http://www.carandbike.com/tata-cars/tiago" class="deal-view-btn">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 	<!-- Body content ends here -->	

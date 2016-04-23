@@ -1376,12 +1376,14 @@ class Home_model extends CI_Model{
 		return $query->result_array();
 	}
 	function resetPassword($vType){
+		
 		$retValue['status'] = "Failed";
 		$newPassword='';
 		$vResult = $this->randStrGen();
 		$vID = $this->randStrGen();
+		//var_dump('CALL usp_resetPassword("'.$vType.'","'.$emailID.'","'.$newPassword.'",@result,@id)');exit();
 		if($vType=='FORGET'){
-			$emailID = $this->input->post('mail');
+			$emailID = $this->input->post('mail');			
 			$query =$this->db->query('CALL usp_resetPassword("'.$vType.'","'.$emailID.'","'.$newPassword.'",@result,@id)');
 		}elseif($vType=='RESET'){
 			$id = $this->input->post('id');

@@ -1430,14 +1430,14 @@ function savebuyLater_Detail(){
 			type:'POST',
 			data:$('#buyLater').serialize()
 		}).done(function(data){
-			if(data == "Success"){	
+			if(data.Status == "Success"){	
 			    $('#myCartModal').modal('hide');	
 				$("#thanks-message").modal();
 				setTimeout(function(){window.location.reload();},10000);
 			}else{
 				$.gritter.add({
 					title: 'Failed',
-					text: 'Failed To Save',
+					text: 'Save',
 					class_name: 'gritter-info gritter-center' + 'gritter-light'
 				});
 				setTimeout(function(){window.location.reload();},10000);
