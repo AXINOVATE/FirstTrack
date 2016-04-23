@@ -219,7 +219,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="test-drive1" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/test-drive.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/request test drive.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Request for<br/>Test Drive</div>
 						</center>
 					</div>
@@ -227,7 +227,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="adv-book1" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/adv-booking.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/advance booking.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Advance<br/>Booking</div>
 						</center>
 					</div>
@@ -235,7 +235,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="vehicle-loan1" href ="javascript:void(0)" data-toggle="modal" data-target="#vehicle-loan-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/vehicle-loan.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/vechile-loan.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Apply for<br/>Vehicle Loan</div>
 						</center>
 					</div>
@@ -243,7 +243,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="corporate-deal1" href ="javascript:void(0)" data-toggle="modal" data-target="#corporate-deal-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/corporate-deals.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/corporate-deal.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Corporate<br/>Deals</div>
 						</center>
 					</div>
@@ -251,7 +251,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="apply-insurance1" href ="javascript:void(0)" data-toggle="modal" data-target="#apply-insurance-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/apply-insurance.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/insurance.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Apply for<br/>Insurance</div>
 						</center>
 					</div>
@@ -260,7 +260,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="on-road-assistance1" href ="javascript:void(0)" data-toggle="modal" data-target="#road-assistance-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
-							<img src="<?php echo $assetsPath;?>/images/road-assistance.png" class="mt-10" width="50%" alt="car" />
+							<img src="<?php echo $assetsPath;?>/images/buy-on-road.png" class="mt-10" width="50%" alt="car" />
 							<div class="car-type-name">Buy On Road <br/> Assistance </div>
 						</center>
 					</div>
@@ -417,7 +417,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
 						<div class="blue-box">
-							<center><img src="<?php echo $assetsPath;?>/images/services.jpg" alt="four" /></center>
+							<center><img src="<?php echo $assetsPath;?>/images/extra-services.png" alt="four" /></center>
 							<center class="mt-7"><div class="blue-box-text">Extra Free Services.</div></center>
 						</div>
 					</div>
