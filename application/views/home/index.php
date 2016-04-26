@@ -911,7 +911,7 @@ var date = new Date();
 		});
 		$('#RTD_Pre_date').datepicker({ 
 			startDate: new Date() 
-		});
+		});	
 		$('#credit_points_date').datepicker({
         format: 'mm-dd-yyyy',
         endDate: d,       

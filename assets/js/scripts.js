@@ -124,7 +124,10 @@
 		xu_validation.form_submit('#By-on-road-assistance','save_by_on_road_assistance');		
 	});
 	
-	$('#test-drive,#test-drive1,#test-drive2,#test-drive3').on('click', function(){		
+	$('#test-drive,#test-drive1,#test-drive2,#test-drive3').on('click', function(){	
+         $('#RTD_Pre_date').datepicker({ 
+			startDate: new Date() 
+		});	
 		var PageName=$(this).data('page');
 		if(PageName=='comparison'){
 			var VariantID=$(this).data('vid');

@@ -371,7 +371,7 @@ else{
 							<div class="input-group date datepicker no-padding">
 								<input type="text" class="form-control" va_req="true" name="RTD_Pre_date" id="RTD_Pre_date" value="" va_err="RTD_Pre_dateError"/>
 								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
+									<span class="glyphicon glyphicon-calendar "></span>
 								</span>
 							</div>
 							<div class="text-danger" id="RTD_Pre_dateError"></div>
