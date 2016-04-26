@@ -85,6 +85,13 @@ $prefix=$this->config->item('prefix');
     border-radius: 50%;
     background-color: red;
     padding: 2px;
+	}	
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 18px !important;
+	padding:5px !important;
 	}
 	</style>
 	<!--Start of Zopim Live Chat Script-->
@@ -789,7 +796,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="item active">
 						<center>
 							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
 							</div>
 						</center>
 						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
@@ -806,7 +813,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="item">
 						<center>
 							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
 							</div>
 						</center>
 						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
@@ -823,7 +830,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="item">
 						<center>
 							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
 							</div>
 						</center>
 						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
@@ -840,7 +847,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="item">
 						<center>
 							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through Zipzapwheels and enjoy with the quality of service.
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
 							</div>
 						</center>
 						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
