@@ -31,7 +31,7 @@ hr.style-eight {
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
-				<div class="col-md-4 col-sm-2 col-xs-12">
+				<div class="col-md-8 col-sm-6 col-xs-12">
 					<div class="">
 						<h2><center>Join NayaGaadi Dealer </center></h2>
 					</div>
@@ -45,7 +45,7 @@ hr.style-eight {
 						<p class="mb-20"><i class="fa fa-check"></i>&nbsp  <b>India's first Online Marketplace for all brand new vehicles. Get benefitted.</b></p>
 					</div>
 				</div>
-				<div class="col-md-8 col-sm-10 col-xs-12">
+				<div class="col-md-4 col-sm-6 col-xs-12">
 				<form id="dealer_form" method="POST" action="#" onSubmit="return false;">
 					<h2><center>Signup Page for Dealers </center></h2>
 					<hr class="style-eight"/>
@@ -59,7 +59,7 @@ hr.style-eight {
 					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="text" class="form-control" name="address2" placeholder="Area">
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="countryID" id="country" onChange="getStates(this,'state','');">
 							<option value=""></option>
 							<?php foreach($countries as $c){ ?>
@@ -67,34 +67,34 @@ hr.style-eight {
 							<?php } ?>
 						</select>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="stateID" id="state" onChange="getCities(this,'cities','');">
 							<option value=""></option>
 						</select>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="cityID" id="cities" onChange="getLocations(this,'locations','');">
 							<option value=""></option>
 						</select>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="locationID" id="locations">
 							<option value=""></option>
 						</select>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="text" class="form-control" name="phone" placeholder="Contact Number" id="userPhone">
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="text" class="form-control" name="email" placeholder="Email" id="userEmail">
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="text" class="form-control" name="contactPerson" placeholder="Contact Person">
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<input type="password" class="form-control" name="password" placeholder="Password" id="password">
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="category" id="categories">
 							<option value=""></option>
 							<?php foreach($categories as $ca){ ?>
@@ -102,7 +102,7 @@ hr.style-eight {
 							<?php } ?>
 						</select>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
 						<select class="form-control select2" style="width:100%;" name="maker" id="manufacture">
 							<option value=""></option>
 							<?php foreach($manufactures as $m){ ?>
