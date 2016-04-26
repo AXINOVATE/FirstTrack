@@ -975,7 +975,7 @@ class Home_model extends CI_Model{
 			$data['dealerNmae'] = $name ;
 			$content=$this->load->view('admin/email_notification',$data,true);					 	
 			//echo $content;exit();
-			$this->send_email('sales@nayagaadi.com',$email,'','NayaGaadi Password Reset',$content);
+			$this->send_email('sales@nayagaadi.com',$email,'','Dealer / OEM Sign up Request.',$content);
 		}
 		return $retvalue;
 	}
@@ -1563,11 +1563,7 @@ class Home_model extends CI_Model{
 		
 		$query=$this->db->query("call usp_userActivationorDelete('".$VTYPE."','".$userID."',@Status)");
 		$query1=$this->db->query("select @Status as status");
-		mysqli_next_result($this->db->conn_id);	
-		$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
-		mysqli_next_result($this->db->conn_id);	
-		$user_email->result_array();
-		//echo $user_email[0]['VemailID'];exit();		
+		mysqli_next_result($this->db->conn_id);			
 		//var_dump($query1->result_array())	;exit();	
 		$status=$query1->result_array();	
 		//var_dump($status)	;exit();	
@@ -1576,8 +1572,12 @@ class Home_model extends CI_Model{
 				//$content=$this->load->view('admin/email_notification',$data,true);	
 				//$data = Array();
 				//$content=$this->load->view('templates/email_notification',$data,true);
+				$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
+				mysqli_next_result($this->db->conn_id);	
+				$user_email = $user_email->result_array();
+				//echo $user_email[0]['VemailID'];exit();		
 				$content='<h1>Your Account Activated Successfully Kindly Log In Nayagaadi Page </h1>';
-				$this->send_email('sales@nayagaadi.com',$user_email,'','NayaGaadi Dealer Account Activated Successfully',$content);
+				$this->send_email('sales@nayagaadi.com',$user_email[0]['VemailID'],'','NayaGaadi Dealer Account Activated Successfully',$content);
 			}
 		return $status;
 	}

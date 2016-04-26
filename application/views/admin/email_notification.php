@@ -19,11 +19,11 @@ $prefix=$this->config->item('prefix');
 					<!-- content -->
 					<div class="content" style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 100%; line-height: 1.6em; display: block; max-width: 600px; margin: 0 auto; padding: 0;">
 						<table style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 0;"><tr style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"> 
-							<td style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"> 
-								<p style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><h1>Hello <?php echo $dealerNmae;?>,</h1></p>
-								<p style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><h2>Subject: Dealer / OEM Sign up Request .</h2></p> 
+							<td style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">							
 								<h4 style="font-family: "Century Gothic !important", Helvetica, Arial, "Century Gothic !important", sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Thank you for visiting NayaGaadi.com, India’s first Online Marketplace for all brand new vehicles.</h4>
-								<h2 style="font-family: "Century Gothic !important", Helvetica, Arial, "Century Gothic !important", sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Dear Partner, </br>Greetings</h2>
+								<h2 style="font-family: "Century Gothic !important", Helvetica, Arial, "Century Gothic !important", sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Dear <?php echo $dealerNmae;?>, 
+									<p style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"></br>Greetings</p>
+								</h2>
 								<p style="font-family: "Century Gothic !important", "Century Gothic !important",  font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">
 								We would like to thank you for requesting to On Board NayaGaadi Dealer platform. One of our customer care member would coordinate in fulfilling the request.
 								</br>
