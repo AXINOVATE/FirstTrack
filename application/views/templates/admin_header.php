@@ -52,12 +52,12 @@ $prefix=$this->config->item('prefix');
 					</ul>
 				</li>
 				<li class="dropdown <?php if($currentPage == 'DEALERS' || $currentPage == 'DEALER_PRODUCTS')echo 'active';?>">
-					<a href="<?php echo $prefix;?>/home/dealers" class="pd-tp-3"> Manage Dealers </a>
-					<!--a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>
+					<a href="<?php echo $prefix;?>/home/dealers" class="pd-tp-3 dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage Dealers <span class="caret"></span></a>
+					<!--a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>-->
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo $prefix;?>/home/add_dealer">Add Dealers</a></li>
-						<li><a href="<?php echo $prefix;?>/home/dealer_products">Dealer Products</a></li>
-					</ul-->
+						<li><a href="<?php echo $prefix;?>/home/activation_deactivation_dealers">Activation / Deactivation Dealers</a></li>
+						<!-- <li><a href="<?php echo $prefix;?>/home/dealer_products">Dealer Products</a></li> -->
+					</ul>
 				</li>
 				<li class="dropdown <?php if($currentPage == 'USERS')echo 'active';?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage users <span class="caret"></span></a>

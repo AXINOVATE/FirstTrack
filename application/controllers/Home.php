@@ -899,6 +899,18 @@ class Home extends CI_Controller {
 		$data['footer'] = $this->load->view('templates/footer',$pageData,true);
 		$this->load->view('review/review_detail',$data);
 	}
+	function activation_deactivation_dealers(){
+		$pageData['currentPage'] = 'DEALERS';
+		$data['header'] = $this->load->view('templates/admin_header',$pageData,true);
+		$data['footer'] = $this->load->view('templates/footer',$pageData,true);		
+		$data['details'] = $this->home_model->getUsers("ACTIVATIONDEALER","","",$this->config->item('dealer_role'));
+		//var_dump($data['details']);exit();
+		$this->load->view('admin/manage_dealers/activation_deactivation_dealers',$data);
+	}
+	public function activation_deactivation_particular_dealers($userID=""){
+		$VTYPE=$this->input->post('dealer_status');			
+		echo json_encode($this->home_model->activation_deactivation_particular_dealers($userID,$VTYPE));
+	}
 	
 
 }

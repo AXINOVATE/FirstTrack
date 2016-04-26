@@ -816,8 +816,7 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	public function register($name,$email,$password,$phone="",$role="User",$login=false){
-		
+	public function register($name,$email,$password,$phone="",$role="User",$login=false){		
 		$retvalue = array();
 		$pwd = $this->encrypt_password($password);
 		
@@ -839,6 +838,7 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		$qry = $this->db->query("SELECT @".$vID." as ID,@".$vMessage." as message,@".$vStatus." as status");
 		$row = $qry->row();
+		//var_dump($row);exit();
 		
 		if($row){
 			if($row->status){
@@ -847,9 +847,9 @@ class Home_model extends CI_Model{
 				$retvalue['message'] = 'Registered Successfully';
 				$retvalue['userID'] = $row->ID;
 				$retvalue['status'] = true;
-				//Logging 
+				/*Logging 
 				if($login)
-					$this->login($email,$password);
+					$this->login($email,$password);*/
 			}else{
 				$this->session->set_flashdata('registerMessage', 'Please try again later.');
 				$this->session->set_flashdata('registerStatus', false);
@@ -968,9 +968,14 @@ class Home_model extends CI_Model{
 		$role = 'Dealer';
 		
 		$retvalue = $this->register($name,$email,$password,$phone,$role,$login);
-		if($retvalue['status']){
+		//var_dump($retvalue['status']);exit();
+		if($retvalue['status']){			
 			$retvalue = $this->updateUserDetails($retvalue['userID'],$name,"","",$countryID,$stateID,$cityID,$address1,$address2,$locationID,"",$phone,"","",$productCategory,$manufacture,$authDealer,"P");
-			$this->login($email,$password);
+			//$this->login($email,$password);
+			$data['dealerNmae'] = $name ;
+			$content=$this->load->view('admin/email_notification',$data,true);					 	
+			//echo $content;exit();
+			$this->send_email('sales@nayagaadi.com',$email,'','NayaGaadi Password Reset',$content);
 		}
 		return $retvalue;
 	}
@@ -1547,6 +1552,36 @@ class Home_model extends CI_Model{
 		$query=$this->db->query(" delete from tbl_buyLater where buyLaterID='".$buylaterId."'");
 		return "sucess deleted";
 	}
+	public function  activation_deactivation_particular_dealers($userID,$VTYPE)
+	{	if($VTYPE=="D"){
+			$VTYPE="ACTIVATION";
+		}elseif($VTYPE=="P"){
+			$VTYPE="DEACTIVATION";
+		}elseif ($VTYPE=="DELETE")	{
+			$VTYPE="DELETE";
+		}
+		
+		$query=$this->db->query("call usp_userActivationorDelete('".$VTYPE."','".$userID."',@Status)");
+		$query1=$this->db->query("select @Status as status");
+		mysqli_next_result($this->db->conn_id);	
+		$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
+		mysqli_next_result($this->db->conn_id);	
+		$user_email->result_array();
+		//echo $user_email[0]['VemailID'];exit();		
+		//var_dump($query1->result_array())	;exit();	
+		$status=$query1->result_array();	
+		//var_dump($status)	;exit();	
+			if($status[0]['status'] == 'ACTIVATION'){				
+				//$data['dealerNmae'] = '' ;
+				//$content=$this->load->view('admin/email_notification',$data,true);	
+				//$data = Array();
+				//$content=$this->load->view('templates/email_notification',$data,true);
+				$content='<h1>Your Account Activated Successfully Kindly Log In Nayagaadi Page </h1>';
+				$this->send_email('sales@nayagaadi.com',$user_email,'','NayaGaadi Dealer Account Activated Successfully',$content);
+			}
+		return $status;
+	}
+	
 }
 
 ?>

@@ -159,7 +159,7 @@ hr.style-eight {
 					$("#userEmail").parent().append('<span class="text-danger"> This email is already exists in system. Please try forgot password to retrive the password </span>');
 					$("#register_btn").html('Signup');
 					$("#register_btn").attr('disabled',false);
-				}else{
+				}else{					
 					window.location.reload();
 				}
 				
