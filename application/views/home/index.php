@@ -85,6 +85,13 @@ $prefix=$this->config->item('prefix');
     border-radius: 50%;
     background-color: red;
     padding: 2px;
+	}	
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 18px !important;
+	padding:5px !important;
 	}
 	</style>
 	<!--Start of Zopim Live Chat Script-->
