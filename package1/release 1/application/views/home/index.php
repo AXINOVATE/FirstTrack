@@ -382,7 +382,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	<section class="dashboard-section" style="background-color:grey;">	
 		<div class="container">
 			<div class="row mt-10 text-center c-dashboard">
-				<h2 class="home-page-title">NayaGaadi <span style="color:#027cd5;">Product Dashboard</span></h2>
+				<h2 class="home-page-title">NayaGaadi <span style="color:#027cd5;">Category Dashboard</span></h2>
 				<span class="span1-white"><i class="img-underline-white"></i></span>
 				<div class="col-md-3 col-sm-3 col-xs-12 mb-20">
 					<div id="flip-this" class="flip-horizontal"> 
@@ -390,7 +390,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<span class="counter"><?php echo $Products[0]['products']; ?></span>
-									<p>Bike</p>
+									<p>Bikes</p>
 								</div>
 							</center>
 						</div>
@@ -398,7 +398,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<img src="<?php echo $assetsPath;?>/images/bike2.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>Bike</p>
+									<p>Bikes</p>
 								</div>
 							</center>
 						</div> 
@@ -410,7 +410,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<span class="counter"><?php echo $Products[1]['products']; ?></span>
-									<p>Scooter</p>
+									<p>Scooters</p>
 								</div>
 							</center>
 						</div>
@@ -418,7 +418,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<img src="<?php echo $assetsPath;?>/images/scooter2 (2).png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>Scooter</p>
+									<p>Scooters</p>
 								</div>
 							</center>
 						</div>
@@ -430,7 +430,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<span class="counter"><?php echo $Products[2]['products']; ?></span>
-									<p>Car</p>
+									<p>Cars</p>
 								</div>
 							</center>
 						</div>
@@ -438,7 +438,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<img src="<?php echo $assetsPath;?>/images/car-models.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>car </p>
+									<p>cars</p>
 								</div>
 							</center>
 						</div>
@@ -450,7 +450,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<span class="counter"><?php echo $Products[3]['products']; ?></span>
-									<p>Auto</p>
+									<p>Autos</p>
 								</div>
 							</center>
 						</div>
@@ -458,7 +458,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<center>
 								<div class="p-border">
 									<img src="<?php echo $assetsPath;?>/images/auto2.png" alt="pic1" class="img-responsive" style="width: 42%;" >
-									<p>Auto</p>
+									<p>Autos</p>
 								</div>
 							</center>
 						</div>
