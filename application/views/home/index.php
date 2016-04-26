@@ -78,6 +78,14 @@ $prefix=$this->config->item('prefix');
     height: 170px;
     margin: 0 auto;
 	}
+	.next-prev-button{
+		
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    padding: 2px;
+	}
 	</style>
 	<!--Start of Zopim Live Chat Script-->
 <script type="text/javascript">
@@ -219,9 +227,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<a id="test-drive1" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
+						<div class="imge-service">
 							<img src="<?php echo $assetsPath;?>/images/request test drive.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name">Request for<br/>Test Drive</div>
-						</center>
+						</div>	
+							<div class="car-type-name" >Request for<br/>Test Drive</div>
+					</center>
 					</div>
 					</a>
 					<a id="adv-book1" href ="javascript:void(0)" data-toggle="modal" data-target="#adv-book-modal">
@@ -465,18 +475,18 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 											<img src="<?php echo $assetsPath;?>/images/how naya gaadi work2.png" class="img-responsive img-crausal" style="width:1200px !important;"alt="four" />
 										</div>
 											<div class="item">
-												<img src="<?php echo $assetsPath;?>/images/how naya gaadi works.jpg" class="img-responsive img-crausal"  style="width:1200px !important;"alt="four" />
+												<img src="<?php echo $assetsPath;?>/images/how naya gaadi work2.png" class="img-responsive img-crausal" style="width:1200px !important;"alt="four" />
 											</div>
 								</div>
 											<!-- Left and right controls -->
-								<a class="left carousel-control" href="#myCarousel-2" role="button" 
+								<a class="left carousel-control " href="#myCarousel-2" role="button" 
 										data-slide="prev">
-									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									<span class="glyphicon glyphicon-chevron-left next-prev-button" aria-hidden="true"></span>
 									<span class="sr-only">Previous</span>
 								</a>
-								<a class="right carousel-control" href="#myCarousel-2" role="button" 
+								<a class="right carousel-control " href="#myCarousel-2" role="button" 
 									data-slide="next">
-									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									<span class="glyphicon glyphicon-chevron-right next-prev-button" aria-hidden="true"></span>
 									<span class="sr-only">Next</span>
 								</a>
 					</div>
@@ -544,6 +554,130 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	</section>
 	<!-- End of Feedbacks section-->
 	
+	<!---  start section Seller/Dealer : OEM-Manufacturer Testimonials-->
+	
+	<section class="dashboard-section" style="background-color:#B1B1B1;">	
+		<div class="container">
+		<div id="myCarousel-3" class="carousel slide carousel2" data-ride="carousel">
+			<div class="row mt-10 text-center c-dashboard">
+				<div class="col-md-12 col-sm-12 col-xs-12">	
+					<h2 class="home-page-title txt_white" >Seller:Dealer/OEM-Manufacturer  <span style="color:#027cd5;">Testimonials</span></h2>
+					<span class="span1"><i class="img-underline"></i></span>
+				</div>
+				<div class="carousel-inner" role="listbox">
+				<div class="item active">
+				  <div class="row">
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%; overflow:hidden;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic1.jpg" alt="pic1" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Adele</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic2.jpg" alt="pic2" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Karen</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic3.jpg" alt="pic3" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Jonathan</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 hidden-sm col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic4.jpg" alt="pic4" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Carey</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="item ">
+				  <div class="row">
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%; overflow:hidden;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic1.jpg" alt="pic1" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Adele</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic2.jpg" alt="pic2" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Karen</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic3.jpg" alt="pic3" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Jonathan</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div class="col-md-3 hidden-sm col-xs-12 mb-20">
+						<div style="width:100%;">
+							<center>
+								<img src="<?php echo $assetsPath;?>/images/pic4.jpg" alt="pic4" width="100%" height="100%">
+								<div class="user-info">
+									<h4 class="usr-scr txt-bluecolor"><b>Carey</b></h4>
+									<div class="started-title">My habit is to test drive any car in mid size comes into Market. At last, I ended with Punto and now, I am completely happy with my Italian Beauty.</div>
+								</div>
+							</center>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+				</div>
+					<a class="left carousel-control" href="#myCarousel-3" role="button" 
+											data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left next-prev-button" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+					</a>
+								<a class="right carousel-control" href="#myCarousel-3" role="button" 
+									data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right next-prev-button" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+			</div>
+		</div>
+		</div>
+	</section>
+	<!---  End section Seller/Dealer : OEM-Manufacturer Testimonials-->
 	<!-- Start of Carousel section-->
 	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">		
 		<div class="dark-shade">	</div>		
@@ -631,11 +765,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
 				<!-- Left and right controls -->
 				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-chevron-left next-prev-button" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
 				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-chevron-right next-prev-button" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>

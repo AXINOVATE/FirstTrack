@@ -112,10 +112,10 @@ function indianCurrencyNumberFormat($rupee) {
 							<div class="dropdown">
 							  <div data-toggle="dropdown"><i class="fa fa-share-alt"></i></div>
 							  <ul class="dropdown-menu">
-								<li><a href="#">Facebook</a></li>
+								<li><a href="https://www.facebook.com/NayaGaadi">Facebook</a></li>
 								<li><a href="#">Google+</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Linkedin</a></li>
+								<li><a href="https://twitter.com/nayagaadi">Twitter</a></li>
+								<li><a href="http://in.linkedin.com/in/NayaGaadi">Linkedin</a></li>
 							  </ul>
 							</div>
 						</div>
@@ -187,6 +187,7 @@ function indianCurrencyNumberFormat($rupee) {
 							<div class="item-subprice"><span>Other Handling Charges </span>: <div class="pull-right"><i class="fa fa-inr"></i> <?php if(isset($prices->handlingOtherCharges))echo indianCurrencyNumberFormat(round($prices->handlingOtherCharges));?> </div></div>
 						</div>
 					</div>
+					 
 					<div class="row mt-10">
 						<div class="col-md-12 item-action">
 							 
@@ -559,6 +560,7 @@ $('#buylater_phone').keypress(function(e) {
 		var variantID = $("#d_variant").val();
 		var dealerID = $("#d_dealer").val();
 		var colorID = $("#d_color").val();
+		alert(colorID);
 		var locationID = $("#d_location").val();
 		var board = $("#d_board").val();
 		if(variantID != ""){
