@@ -1380,6 +1380,11 @@ class Home_model extends CI_Model{
 		mysqli_next_result($this->db->conn_id);
 		return $query->result_array();
 	}
+	function getTotalProducts(){
+		$query =$this->db->query("select count(PB.productID) AS products ,categoryName from tbl_category TC LEFT JOIN tbl_productBasic PB ON PB.productType=TC.categoryID group by TC.categoryID;");
+		mysqli_next_result($this->db->conn_id);
+		return $query->result_array();
+	}
 	function resetPassword($vType){
 		
 		$retValue['status'] = "Failed";

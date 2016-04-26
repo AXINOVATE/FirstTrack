@@ -36,6 +36,8 @@ class Home extends CI_Controller {
 		$data['More'] = $this->home_model->getBodyTypeEach('More');
 		$data['getShowcaseProducts'] = $this->manage_products_model->getProducts('SHOWCASE_ACTIVE','');
 		$data['Brands'] = $this->home_model->getTotalBrand();
+		$data['Products'] = $this->home_model->getTotalProducts();
+		
 		$this->load->view('home/index',$data);
 	}
 	public function searchList($page,$id=""){

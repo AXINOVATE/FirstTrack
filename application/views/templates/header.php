@@ -205,7 +205,7 @@ else{
 					   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="abTermsConditions" id="abTermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 						</div>
 					<div class="form-group">
@@ -302,7 +302,7 @@ else{
 					<div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agreed" style="float:left;" id="gpi_CheckBox" name="gpi_CheckBox" va_req="true" />
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
@@ -427,7 +427,7 @@ else{
 					<div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox"  value="agreed" style="float:left;" va_req="true" name="RTD_agree" id="RTD_agree">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
@@ -611,7 +611,7 @@ else{
 							<div class="col-md-12">
 								<input type="checkbox" class="col-md-1 col-sm-1 col-xs-2" name="vehlone_termsandconditions" id="vehlone_termsandconditions" value="agreed" style="float:left;"  va_req="true">
 								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 								</div>
 							</div>
 						</div>
@@ -778,7 +778,7 @@ else{
 							<div class="col-md-12">
 								<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" name="corp_termsadnconditions" va_req="true" id="corp_termsadnconditions" value="agreed" style="float:left;">
 								<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+									I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 								</div>
 							</div>
 						</div>
@@ -989,7 +989,7 @@ else{
 						<div class="form-group">
 							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agree" id="insurance_agree"  style="float:left;">
 							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 							</div>
 						</div>
 						<div class="form-group">
@@ -1147,7 +1147,7 @@ else{
 					<div class="form-group">
 						<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" value="agreed"  va_req="true" id="boraAgree" name="boraAgree"style="float:left;">
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="‘I agree to Terms & Conditions’ before submitting the record. ( Here is the TEXT for Terms and Conditions : I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer  vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 					</div>
 					<div class="form-group">
@@ -1217,7 +1217,7 @@ else{
 						<div class="col-md-12">
 							<input class="col-md-1 col-sm-1 col-xs-2" type="checkbox" id="instquote_termandconditions" name="instquote_termandconditions" value="agreed" style="float:left;" va_req="true" />
 							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer  vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 							</div>
 						</div>
 						<div class="form-group">
@@ -1410,7 +1410,7 @@ else{
 					   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="credit_points_TermsConditions" id="credit_points_TermsConditions" >
 						<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+							I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing OEM-Manufacturer vehicles, products and services. I also agree to receive such and any other marketing & product related communication from OEM-Manufacturer, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 						</div>
 						</div>
 					<div class="form-group">
