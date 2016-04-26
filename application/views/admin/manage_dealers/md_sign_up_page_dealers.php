@@ -31,7 +31,20 @@ hr.style-eight {
 	<div class="body-container">
 		<section class="container">
 			<div class="row">
-				<div class="col-md-2 col-sm-1 hidden-xs"></div>
+				<div class="col-md-4 col-sm-2 col-xs-12">
+					<div class="">
+						<h2><center>Join NayaGaadi Dealer </center></h2>
+					</div>
+					<hr class="style-eight"/>
+					<div class="">
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp <b> Build your Own Brand online.</b></p>
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp  <b>Increase Trust and Visibility in the marketplace.</b></p>
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp  <b>Get your Inventory visible to all the customers.</b></p>
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp <b> Manage you inventory quickly and on the GO !!</b></p>
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp  <b>Get 24x7 customer care and dealer support.</b></p>
+						<p class="mb-20"><i class="fa fa-check"></i>&nbsp  <b>India's first Online Marketplace for all brand new vehicles. Get benefitted.</b></p>
+					</div>
+				</div>
 				<div class="col-md-8 col-sm-10 col-xs-12">
 				<form id="dealer_form" method="POST" action="#" onSubmit="return false;">
 					<h2><center>Signup Page for Dealers </center></h2>

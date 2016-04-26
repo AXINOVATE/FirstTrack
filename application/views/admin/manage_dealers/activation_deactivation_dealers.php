@@ -17,6 +17,11 @@ $prefix=$this->config->item('prefix');
 	<style type="text/css">
 	thead{ color: #fff; background-color: #027CD5;}
 	tbody{background-color:#F9F9F9;}
+	.btn-default:hover,.btn-default:active {
+		color: #FFF;
+		background-color: #027CD5;
+		border-color: #ccc;
+	}
 </style>
 </head>
 <body>
@@ -63,6 +68,8 @@ $prefix=$this->config->item('prefix');
 	<script>
 	$('.dealer-activation').on('click' ,function(){		
 		var dealer_status= $(this).attr('data-dealerStatus');
+		$(".dealer-activation").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+		$(".dealer-activation").attr('disabled','disabled');
 		$.ajax({
 				url:'<?php echo $prefix;?>/home/activation_deactivation_particular_dealers/<?php echo $d->userID; ?>',
 				type:'POST',
