@@ -8,4 +8,4 @@ Date 	: 26-04-2016
 Purpose : for store the userid
 */
 ALTER TABLE `tbl_bookingAddresses` 
-CHANGE COLUMN `userID` `userID` VARCHAR(36) NULL DEFAULT NULL AFTER `bookingID`;
+add COLUMN `userID` VARCHAR(36) NULL DEFAULT NULL AFTER `bookingID`;

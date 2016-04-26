@@ -8,7 +8,7 @@ Date 	: 26-04-2016
 Purpose : for tracking the source and to note out hit has come from any ADD
 */
 /* usp_insUpdBuylater Procedure Creation */
-DROP PROCEDURE `usp_userActivationorDelete`;
+DROP PROCEDURE IF EXISTS `usp_userActivationorDelete`;
 DELIMITER $$
 CREATE  PROCEDURE `usp_userActivationorDelete`(vType varchar(35),vUserId varchar(36),out vStatus varchar(50))
 BEGIN
