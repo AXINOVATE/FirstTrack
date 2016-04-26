@@ -888,6 +888,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
+
+var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+    
 	
 	$('.cat-box').on('mouseover', function(){
 		var id = $(this).attr('id');		
@@ -904,6 +909,13 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			delay: 10,
 			time: 2000
 		});
+		$('#RTD_Pre_date').datepicker({ 
+			startDate: new Date() 
+		});
+		$('#credit_points_date').datepicker({
+        format: 'mm-dd-yyyy',
+        endDate: d,       
+    });
 		
 	});
 	$('#RTD_Pre_Time').timepicker();
