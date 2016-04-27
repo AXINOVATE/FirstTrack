@@ -55,6 +55,7 @@ $prefix=$this->config->item('prefix');
 					<a href="<?php echo $prefix;?>/home/dealers" class="pd-tp-3 dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Manage Dealers <span class="caret"></span></a>
 					<!--a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Dealers <span class="caret"></span></a>-->
 					<ul class="dropdown-menu">
+						<li><a href="<?php echo $prefix;?>/home/dealers">Manage Dealers</a></li>
 						<li><a href="<?php echo $prefix;?>/home/activation_deactivation_dealers">Activation / Deactivation Dealers</a></li>
 						<!-- <li><a href="<?php echo $prefix;?>/home/dealer_products">Dealer Products</a></li> -->
 					</ul>

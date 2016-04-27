@@ -16,13 +16,13 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
 	<style type="text/css">
 		.picture-color-edit >tr>td>img{text-align:center !important;}
-hr.style-eight {
-             height: 10px;
-              border: 1;
-          background: #F9D133;
-}
+		hr.style-eight {
+					 height: 10px;
+					  border: 1;
+				  background: #F9D133;
+		}
 
-</style>
+	</style>
 </head>
 <body>
 	<!-- Header starts here -->
@@ -40,6 +40,10 @@ hr.style-eight {
 				
 				<div class="row">
 					<input type="hidden" name="userID" value="<?php echo $userID;?>">
+					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
+						<label>Dealer Bank A/C Name</label>
+						<input type="text" class="form-control" name="dealeracname" value="<?php if(isset($bank->dealerBankAccountName))echo $bank->dealerBankAccountName;?>" placeholder="Bank Name"/>
+					</div>					
 					<div class="col-md-6 col-sm-6 col-xs-12 mb-10">
 						<label>Bank Name</label>
 						<input type="text" class="form-control" name="bankName" value="<?php if(isset($bank->bankName))echo $bank->bankName;?>" placeholder="Bank Name"/>
@@ -79,18 +83,25 @@ hr.style-eight {
 						<label>Dealer Address</label>
 						<textarea type="text" rows="4" class="form-control" name="address" placeholder="Dealer Address"><?php if(isset($bank->address))echo $bank->address;?></textarea>
 					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 mb-10">
+						<label>Terms and Conditions</label>
+						<textarea type="text" rows="8" class="form-control" name="termandcondition" placeholder="Terms and Conditions"><?php if(isset($bank->termandcondition))echo $bank->termandcondition;?></textarea>
+					</div>
 				</div>			
-				<button class="btn btn-default btn-primary pull-right" id="update_btn">Update</button>
+				<button class="btn btn-default btn-primary pull-right" id="dealer_update_btn">Update</button>
 			</form>
 		</section>
 	</div>
-<script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
+
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 	<script>
-	$("#update_btn").on('click',function(){
+	$("#dealer_update_btn").on('click',function(){
+		
+		//alert('dfsdfsd');exit();
 		//Validations
 		$(".text-danger").remove();
 		var text_error = '<span class="text-danger"> This field is required </span>',error=0;
@@ -98,13 +109,14 @@ hr.style-eight {
 		if(error == 0){
 			$("#update_btn").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
 			$("#update_btn").attr('disabled','disabled');
+			//alert('sfdfdsfs');exit();
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/bank_update',
+				url:'<?php echo $prefix;?>/home/ssss',
 				type:'POST',
 				data:$('#bank_form').serialize(),
 				dataType:'JSON'
 			}).success(function(data){
-				window.location.reload();
+				//window.location.reload();
 			});
 		}
 	});

@@ -36,6 +36,7 @@ $prefix=$this->config->item('prefix');
 			<table class="table table-bordered dealer-products">
 			<thead>
 			  <tr>
+				<th>S.no</th>
 				<th>Dealer Name</th>
 				<th>Category</th>
 				<th>Manufacture</th>
@@ -45,13 +46,14 @@ $prefix=$this->config->item('prefix');
 			  </tr>
 			</thead>
 			<tbody>
-			  <?php foreach($details as $d){ ?>
+			  <?php $i =1 ; foreach($details as $d){ ?>
 				  <tr>
+					<td><?php echo $i++; ?></td>
 					<td><?php echo $d->firstName.' '.$d->lastName; ?></td>
 					<td><?php echo $d->categoryName; ?></td>
 					<td><?php echo $d->manufactureName; ?></td>
 					<td><?php echo $d->location; ?></td>
-					<td><?php echo $d->status; ?></td>
+					<td><?php if($d->status =='P'){$dealer_status="Activate";echo $dealer_status;}else{$dealer_status="Deactivate";echo $dealer_status;} ?></td>
 					<td>
 					<a  href="#" data-VuserID="<?php echo $d->userID; ?>" data-dealerStatus="<?php if($d->status =='P'){$dealer_status="Deactivate";echo "P";}else{$dealer_status="Activate";echo "D";}?>" class=" dealer-activation btn btn-default"><i class="fa fa-pencil"></i> <?php echo $dealer_status ?></a></td>
 				  </tr>
@@ -68,8 +70,7 @@ $prefix=$this->config->item('prefix');
 	<script>
 	$('.dealer-activation').on('click' ,function(){		
 		var dealer_status= $(this).attr('data-dealerStatus');
-		var dealer_userID= $(this).attr('data-VuserID');
-		alert(dealer_userID);
+		var dealer_userID= $(this).attr('data-VuserID');		
 		$(this).html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
 		$(this).attr('disabled','disabled');
 		$.ajax({

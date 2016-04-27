@@ -568,6 +568,7 @@ class Home extends CI_Controller {
 		}
 	}
 	function bank_update(){
+		echo'sdfsfsdfdsfsdfsd';exit();
 		echo json_encode($this->home_model->bank_update());
 	}
 	function dealer_products($userID=""){
@@ -912,6 +913,10 @@ class Home extends CI_Controller {
 	public function activation_deactivation_particular_dealers($userID=""){
 		$VTYPE=$this->input->post('dealer_status');			
 		echo json_encode($this->home_model->activation_deactivation_particular_dealers($userID,$VTYPE));
+	}
+	public function ssss(){
+		
+		echo'sdsadasda';exit();
 	}
 	
 
