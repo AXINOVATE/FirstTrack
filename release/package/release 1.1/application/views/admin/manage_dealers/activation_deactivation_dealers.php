@@ -53,7 +53,7 @@ $prefix=$this->config->item('prefix');
 					<td><?php echo $d->location; ?></td>
 					<td><?php echo $d->status; ?></td>
 					<td>
-					<a  href="#" data-VuserID="<?php echo $d->userID; ?>" data-dealerStatus="<?php if($d->status =='P'){$dealer_status="Deactivate";echo "P";}else{$dealer_status="Activate";echo "D";}?>" class=" dealer-activation btn btn-default"><i class="fa fa-pencil"></i> <?php echo $dealer_status ?></a></td>
+					<a  href="#" data-dealerStatus="<?php if($d->status =='P'){$dealer_status="Deactivate";echo "P";}else{$dealer_status="Activate";echo "D";}?>" class=" dealer-activation btn btn-default"><i class="fa fa-pencil"></i> <?php echo $dealer_status ?></a></td>
 				  </tr>
 			  <?php } ?>
 			</tbody>
@@ -68,12 +68,10 @@ $prefix=$this->config->item('prefix');
 	<script>
 	$('.dealer-activation').on('click' ,function(){		
 		var dealer_status= $(this).attr('data-dealerStatus');
-		var dealer_userID= $(this).attr('data-VuserID');
-		alert(dealer_userID);
-		$(this).html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
-		$(this).attr('disabled','disabled');
+		$(".dealer-activation").html('Please wait... <i class="fa fa-spinner fa-pulse"></i>');
+		$(".dealer-activation").attr('disabled','disabled');
 		$.ajax({
-				url:'<?php echo $prefix;?>/home/activation_deactivation_particular_dealers/'+dealer_userID,
+				url:'<?php echo $prefix;?>/home/activation_deactivation_particular_dealers/<?php echo $d->userID; ?>',
 				type:'POST',
 				data:{'dealer_status':dealer_status},
 				dataType:'JSON'

@@ -910,7 +910,8 @@ class Home extends CI_Controller {
 		$this->load->view('admin/manage_dealers/activation_deactivation_dealers',$data);
 	}
 	public function activation_deactivation_particular_dealers($userID=""){
-		$VTYPE=$this->input->post('dealer_status');			
+		$VTYPE=$this->input->post('dealer_status');		
+		//var_dump($VTYPE);exit();	
 		echo json_encode($this->home_model->activation_deactivation_particular_dealers($userID,$VTYPE));
 	}
 	

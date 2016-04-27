@@ -1579,8 +1579,9 @@ class Home_model extends CI_Model{
 				//$content=$this->load->view('templates/email_notification',$data,true);
 				$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
 				mysqli_next_result($this->db->conn_id);	
-				$user_email = $user_email->result_array();
-				//echo $user_email[0]['VemailID'];exit();		
+				$user_email1 = $user_email->result_array();
+				var_dump($user_email1[0]['VemailID']);exit();		
+				echo $user_email1[0]['VemailID'];exit();		
 				$content='<h1>Your Account Activated Successfully Kindly Log In Nayagaadi Page </h1>';
 				$this->send_email('sales@nayagaadi.com',$user_email[0]['VemailID'],'','NayaGaadi Dealer Account Activated Successfully',$content);
 			}

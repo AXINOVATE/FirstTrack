@@ -899,7 +899,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 var date = new Date();
         var d = new Date();        
         d.setDate(date.getDate());
-    
 	
 	$('.cat-box').on('mouseover', function(){
 		var id = $(this).attr('id');		
