@@ -979,8 +979,9 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	function bank_update(){
+	function bank_update(){				
 		$userID = $this->input->post('userID');
+		$dealeracname = $this->input->post('dealeracname');
 		$bankName = $this->input->post('bankName');
 		$accountNumber = $this->input->post('accountNumber');
 		$accountType = $this->input->post('accountType');
@@ -990,11 +991,13 @@ class Home_model extends CI_Model{
 		$CIN = $this->input->post('CIN');
 		$PAN = $this->input->post('PAN');
 		$address = $this->input->post('address');
+		$termandcondition = $this->input->post('termandcondition');
 		
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
 					<USERID>".$userID."</USERID>
+					<DEALERACNAME>".$dealeracname."</DEALERACNAME>
 					<BANKNAME>".$bankName."</BANKNAME>
 					<ACCOUNTNUMBER>".$accountNumber."</ACCOUNTNUMBER>
 					<ACCOUNTTYPE>".$accountType."</ACCOUNTTYPE>
@@ -1004,12 +1007,14 @@ class Home_model extends CI_Model{
 					<CIN>".$CIN."</CIN>
 					<PAN>".$PAN."</PAN>
 					<ADDRESS>".$address."</ADDRESS>
+					<TERMSANDCONDITIONS>".$termandcondition."</TERMSANDCONDITIONS>					
 					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
 					<STATUS>P</STATUS>
 				</HEADER>
 			</ROOT>";
 			
 		$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo htmlspecialchars($xml);exit();
 		//echo 'CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
 		$this->db->query('CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
 		mysqli_next_result($this->db->conn_id);
@@ -1580,10 +1585,11 @@ class Home_model extends CI_Model{
 				$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
 				mysqli_next_result($this->db->conn_id);	
 				$user_email1 = $user_email->result_array();
-				var_dump($user_email1[0]['VemailID']);exit();		
-				echo $user_email1[0]['VemailID'];exit();		
-				$content='<h1>Your Account Activated Successfully Kindly Log In Nayagaadi Page </h1>';
-				$this->send_email('sales@nayagaadi.com',$user_email[0]['VemailID'],'','NayaGaadi Dealer Account Activated Successfully',$content);
+				//var_dump($user_email1[0]['VemailID']);exit();		
+				//echo $user_email1[0]['VemailID'];exit();		
+				$content='<h1>Your Account Activated Successfully Kindly Log In Nayagaadi Page </h1><h4><a href="'.base_url().'home/login">Click NayaGaadi /Log In</a></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$user_email1[0]['VemailID'],'','NayaGaadi Dealer Account Activated Successfully',$content);
 			}
 		return $status;
 	}
