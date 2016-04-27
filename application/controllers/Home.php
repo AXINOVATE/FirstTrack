@@ -914,6 +914,8 @@ class Home extends CI_Controller {
 		//var_dump($VTYPE);exit();	
 		echo json_encode($this->home_model->activation_deactivation_particular_dealers($userID,$VTYPE));
 	}
-	
+	public function ssss(){
+		
+	}
 
 }

@@ -92,12 +92,13 @@ $prefix=$this->config->item('prefix');
 			</form>
 		</section>
 	</div>
-
+<script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $assetsPath; ?>/js/bootstrap-tabcollapse.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/scripts.js"></script>
-<script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
+<script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
+
 	<script>
 	$("#dealer_update_btn").on('click',function(){
 		
@@ -111,11 +112,26 @@ $prefix=$this->config->item('prefix');
 			$("#update_btn").attr('disabled','disabled');
 			//alert('sfdfdsfs');exit();
 			$.ajax({
-				url:'<?php echo $prefix;?>/home/ssss',
+				url:'<?php echo $prefix;?>/home/bank_update',
 				type:'POST',
 				data:$('#bank_form').serialize(),
 				dataType:'JSON'
-			}).success(function(data){
+			}).success(function(data){				
+				if(data.status == true){
+					$.gritter.add({
+						title: 'Success',
+						text: 'Saved Successfully',
+						class_name: 'gritter-info gritter-center' + 'gritter-light'
+					});
+					window.location.reload();
+				}else{
+				$.gritter.add({
+					title: 'Failed',
+					text: 'Failed To Save',
+					class_name: 'gritter-info gritter-center' + 'gritter-light'
+				});
+				window.location.reload();
+			}
 				//window.location.reload();
 			});
 		}

@@ -979,8 +979,9 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
-	function bank_update(){
+	function bank_update(){				
 		$userID = $this->input->post('userID');
+		$dealeracname = $this->input->post('dealeracname');
 		$bankName = $this->input->post('bankName');
 		$accountNumber = $this->input->post('accountNumber');
 		$accountType = $this->input->post('accountType');
@@ -990,11 +991,13 @@ class Home_model extends CI_Model{
 		$CIN = $this->input->post('CIN');
 		$PAN = $this->input->post('PAN');
 		$address = $this->input->post('address');
+		$termandcondition = $this->input->post('termandcondition');
 		
 		$xml = "<ROOT>
 				<HEADER>
 					<ACTIONTYPE>INSERT_UPDATE</ACTIONTYPE>
 					<USERID>".$userID."</USERID>
+					<DEALERACNAME>".$dealeracname."</DEALERACNAME>
 					<BANKNAME>".$bankName."</BANKNAME>
 					<ACCOUNTNUMBER>".$accountNumber."</ACCOUNTNUMBER>
 					<ACCOUNTTYPE>".$accountType."</ACCOUNTTYPE>
@@ -1004,12 +1007,14 @@ class Home_model extends CI_Model{
 					<CIN>".$CIN."</CIN>
 					<PAN>".$PAN."</PAN>
 					<ADDRESS>".$address."</ADDRESS>
+					<TERMSANDCONDITIONS>".$termandcondition."</TERMSANDCONDITIONS>					
 					<CREATEDBY>".$this->session->userdata('userID')."</CREATEDBY>
 					<STATUS>P</STATUS>
 				</HEADER>
 			</ROOT>";
 			
 		$vMessage = mt_rand();$vStatus = mt_rand();
+		//echo htmlspecialchars($xml);exit();
 		//echo 'CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')';exit();
 		$this->db->query('CALL usp_insUpdUserBankDetails("'.$xml.'",@'.$vMessage.',@'.$vStatus.')');
 		mysqli_next_result($this->db->conn_id);

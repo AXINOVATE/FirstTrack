@@ -914,10 +914,7 @@ class Home extends CI_Controller {
 		$VTYPE=$this->input->post('dealer_status');			
 		echo json_encode($this->home_model->activation_deactivation_particular_dealers($userID,$VTYPE));
 	}
-	public function ssss(){
-		
-		echo'sdsadasda';exit();
-	}
+	
 	
 
 }

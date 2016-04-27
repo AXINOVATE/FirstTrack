@@ -979,8 +979,11 @@ class Home_model extends CI_Model{
 		}
 		return $retvalue;
 	}
+	function bank_update1(){
+		echo'dsfsdfsd';exit();
+	}
 	function bank_update(){
-		echo 'bank update';exit();
+		echo'sdasdasdasdasdsad';exit();
 		$userID = $this->input->post('userID');
 		$dealeracname = $this->input->post('dealeracname');
 		$bankName = $this->input->post('bankName');
