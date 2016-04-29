@@ -564,7 +564,7 @@ $('#buylater_phone').keypress(function(e) {
 		var board = $("#d_board").val();
 		if(variantID != ""){
 			//window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
-			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID+"&board="+board;
+			window.location="<?php echo $prefix;?>/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID+"&board="+board;
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
@@ -595,7 +595,7 @@ $('#buylater_phone').keypress(function(e) {
 						data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
 						dataType:'JSON'
 					}).success(function(data){
-						window.location="<?php echo $prefix;?>/home/checkout";
+						window.location="<?php echo $prefix;?>/checkout";
 					});
 				}
 			});
@@ -649,6 +649,26 @@ $('#buylater_phone').keypress(function(e) {
 				}
 			<?php } ?>
 	});
+	$('document').ready(function(){
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();	
+		$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
+		});	
+		
+
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
+	});
+	
 </script>
 </body>
 </html>

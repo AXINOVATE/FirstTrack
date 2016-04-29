@@ -12,6 +12,8 @@ $prefix=$this->config->item('prefix');
 	<link href="<?php echo $assetsPath;?>/css/style.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/admin_custom.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $assetsPath;?>/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-datepicker.min.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-timepicker.min.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
 	<style type="text/css">
 		
@@ -86,6 +88,8 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/jquery-1.12.1.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="<?php echo $assetsPath; ?>/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <!-- Bootstrap -->
 	<script>

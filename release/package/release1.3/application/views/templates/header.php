@@ -26,11 +26,11 @@ else{
 							</ul>
 						</li>
 						<?php if(!$this->session->userdata('login')){ ?>
-						<li><a href="<?php echo $prefix;?>/home/dealers_signup"><span>Dealer Signup</span></a></li>
+						<li><a href="<?php echo $prefix;?>/dealers_signup"><span>Dealer Signup</span></a></li>
 						<?php } ?>
-						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/home/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
-						<li><a href="<?php echo $prefix;?>/home/customer_care">24X7 Customer Care</a></li>
-						<li><a href="<?php echo $prefix;?>/home/track_order"><i class="fa fa-map-marker"></i>Track Order</a></li>
+						<li style="background-color:#FFD400;"><a href="<?php echo $prefix;?>/deals" style="color:grey;"><i class="fa fa-tags" style="color:grey;"></i>Deals</a></li>
+						<li><a href="<?php echo $prefix;?>/customer_care">24X7 Customer Care</a></li>
+						<li><a href="<?php echo $prefix;?>/track_order"><i class="fa fa-map-marker"></i>Track Order</a></li>
 						<li><a href="#"><i class="fa fa-bell" style="color:#FFD400;"></i></a></li>
 						<?php if($this->session->userdata('login')){ ?>
 							<li class="dropdown border-none-r user-options">
@@ -40,16 +40,16 @@ else{
 									<li><a href="<?php echo $prefix;?>/admin/admin_dashboard">Admin Panel</a></li>
 									<?php } ?>
 									<?php if($this->session->userdata('roleName') == $this->config->item('dealer_role')){ ?>
-									<li><a href="<?php echo $prefix;?>/home/DEALER_PRODUCTS/<?php echo $this->session->userdata('userID');?>">Profile</a></li>
+									<li><a href="<?php echo $prefix;?>/DEALER_PRODUCTS/<?php echo $this->session->userdata('userID');?>">Profile</a></li>
 									<?php }else{ ?>
-									<li><a href="<?php echo $prefix;?>/home/profile">Profile</a></li>
+									<li><a href="<?php echo $prefix;?>/profile">Profile</a></li>
 									<?php } ?>
-									<li><a href="<?php echo $prefix;?>/home/logout">Logout</a></li>
+									<li><a href="<?php echo $prefix;?>/logout">Logout</a></li>
 								</ul>
 							</li>
 						<?php }else{ ?>
-							<li><a href="<?php echo $prefix;?>/home/login"><span>Signup</span></a></li>
-							<li class="border-none-r"><a href="<?php echo $prefix;?>/home/login">Login</a></li>
+							<li><a href="<?php echo $prefix;?>/login"><span>Signup</span></a></li>
+							<li class="border-none-r"><a href="<?php echo $prefix;?>/login">Login</a></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -67,7 +67,7 @@ else{
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-12">
-						<a href="<?php echo $prefix; ?>/home/cart" class="cart-btn">
+						<a href="<?php echo $prefix; ?>/cart" class="cart-btn">
 							<i class="fa fa-shopping-cart"></i>  Cart 
 							<?php if($this->session->userdata('login') ==true){ 
 								if($this->session->userdata('totalOnCart')==0){
@@ -99,28 +99,28 @@ else{
 			<ul class="nav navbar-nav" id="second-header">
 				<li><a href ="#" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" id="GetProformaInvoice" class="pd-tp-3">Proforma Invoice</a></li>
-				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/compare';?>" class="pd-tp-3">Compare</a></li>
+				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/compare';?>" class="pd-tp-3">Compare</a></li>
 				
 				<li class="dropdown <?php if($currentPage=='LATEST' || $currentPage=='POPULAR' || $currentPage=='UPCOMING'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trends <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/latest">Latest</a></li>
-						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/popular">Popular</a></li>
-						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/home/searchList/upcoming">Upcoming</a></li>
+						<li <?php if($currentPage == 'LATEST')echo 'class="active"';?>><a href="<?php echo $prefix;?>/searchList/latest">Latest</a></li>
+						<li <?php if($currentPage == 'POPULAR')echo 'class="active"';?>><a href="<?php echo $prefix;?>/searchList/popular">Popular</a></li>
+						<li <?php if($currentPage == 'UPCOMING')echo 'class="active"';?>><a href="<?php echo $prefix;?>/searchList/upcoming">Upcoming</a></li>
 					</ul>
 				</li>
 				
 				
 
-				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/news';?>" class="pd-tp-3">News</a></li>
-				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/home/review';?>" class="pd-tp-3">Review</a></li>
+				<li class="<?php if($currentPage=='NEWS'){echo 'active';}?>"><a href="<?php echo $prefix.'/news';?>" class="pd-tp-3">News</a></li>
+				<li class="<?php if($currentPage=='REVIEW'){echo 'active';}?>"><a href="<?php echo $prefix.'/review';?>" class="pd-tp-3">Review</a></li>
 				<li><a href="https://nayagaadi.wordpress.com/" target="_blank" class="pd-tp-3">Blog</a></li>
 				<li class="dropdown <?php if($currentPage=='TOOLS'){echo 'active';}?>">
 					<a href="#" class="dropdown-toggle pd-tp-3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
-						<!--<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>-->
-						<li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate a Dealer</a></li>
+						<li><a href="<?php echo $prefix;?>/emi_calculator">EMI Calculator</a></li>
+						<!--<li><a href="<?php echo $prefix;?>/service_cost_analyzer">Service Cost Analyzer</a></li>-->
+						<li><a href="<?php echo $prefix.'/locate_dealer';?>" id="locate-dealer">Locate a Dealer</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -165,7 +165,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="Text" class="form-control"  va_req="true" va_num="true" id="abphone" name="abphone" value="+91-" placeholder="eg. 9874563110" va_err="abphoneError" />					
+							<input type="Text" class="form-control"  va_req="true" va_num="true" id="abphone" name="abphone"  placeholder="eg. 9874563110" va_err="abphoneError" />					
 							</div>
 							<div class="text-danger" id="abphoneError"></div>
 						</div>
@@ -233,7 +233,7 @@ else{
 				
 						
 				<div class="modal-body">
-					<form class="form-horizontal"  target="_blank" action="<?php echo $prefix;?>/home/get_Proforma_Invoice_pdf"   name="get_Proforma_Invoice_pdf" method="post" onsubmit="return false"  role="form"   id="get_Proforma_Invoice_pdf" >
+					<form class="form-horizontal"  target="_blank" action="<?php echo $prefix;?>/get_Proforma_Invoice_pdf"   name="get_Proforma_Invoice_pdf" method="post" onsubmit="return false"  role="form"   id="get_Proforma_Invoice_pdf" >
 					<label for="fullName" class="col-md-3 col-sm-3 col-xs-12 control-label">Full Name</label>
 					<div class="col-md-7 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
@@ -246,7 +246,7 @@ else{
 					<div class="col-md-7 col-sm-9 col-xs-12 mb-10">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" va_req="true" id="gpi_phone" name="gpi_phone" value="+91-" placeholder="eg. 9874563110" va_err="gpi_phoneError" />					
+							<input type="text" class="form-control" va_req="true" id="gpi_phone" name="gpi_phone"  placeholder="eg. 9874563110" va_err="gpi_phoneError" />					
 						</div>
 						<div class="text-danger" id="gpi_phoneError"></div>
 					</div>
@@ -350,7 +350,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">							
 							<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-							<input type="text" class="form-control" va_req="true" name="RTD_Phone" id="RTD_Phone"  value="+91-" placeholder="eg. 9874563110" va_err="RTD_PhoneError" />					
+							<input type="text" class="form-control" va_req="true" name="RTD_Phone" id="RTD_Phone"   placeholder="eg. 9874563110" va_err="RTD_PhoneError" />					
 							</div>
 							<div class="text-danger" id="RTD_PhoneError"></div>
 						</div>
@@ -370,7 +370,7 @@ else{
 						<div class="col-md-3 pr-0">
 							<div class="input-group date datepicker no-padding">
 								<input type="text" class="form-control" va_req="true" name="RTD_Pre_date" id="RTD_Pre_date" value="" va_err="RTD_Pre_dateError"/>
-								<span class="input-group-addon">
+								<span class="input-group-addon" id="rtd-icon">
 									<span class="glyphicon glyphicon-calendar "></span>
 								</span>
 							</div>
@@ -470,7 +470,7 @@ else{
 								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 									<div class="input-group">
 										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone" value="+91-" placeholder="9164545924" va_err="vehlone_phoneError" />
+										<input type="text" class="form-control" id="vehlone_phone" va_req="true" name="vehlone_phone"  placeholder="9164545924" va_err="vehlone_phoneError" />
 									</div>
 									<div class="text-danger" id="vehlone_phoneError"></div>
 								</div>
@@ -657,7 +657,7 @@ else{
 								<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 									<div class="input-group">
 										<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone"  value="+91-" value="+91-" placeholder="1234567890" va_err="corp_phoneError" />
+										<input type="text" class="form-control"  va_req="true" id="corp_phone" name="corp_phone"   placeholder="1234567890" va_err="corp_phoneError" />
 									</div>
 									<div class="text-danger" id="corp_phoneError"></div>
 								</div>
@@ -826,7 +826,7 @@ else{
 									<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 										<div class="input-group">
 											<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-											<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true" value="+91-" placeholder="9164545924" va_err="insurance_phoneError" />
+											<input type="text" class="form-control" id="insurance_phone" name="insurance_phone"  va_req="true"  placeholder="9164545924" va_err="insurance_phoneError" />
 										</div>
 										<div class="text-danger" id="insurance_phoneError"></div>
 									</div>
@@ -882,7 +882,7 @@ else{
 									<div class="col-md-5 col-sm-5 col-xs-7 pr-0">
 										<div class="input-group date datepicker no-padding">
 											<input type="text" class="form-control" va_req="true" va_err="insurance_dateError" name="insurance_date" id="insurance_date" value="">
-											<span class="input-group-addon">
+											<span class="input-group-addon" id="insurance_date_icon">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</span>
 										</div>
@@ -1036,7 +1036,7 @@ else{
 						<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 							<div class="input-group">
 								<div class="input-group-addon" style="border-radius:0;"><i class="fa fa-phone"></i></div>
-								<input type="text" class="form-control" id="boraPhone"  va_req="true" name="boraPhone" value="+91-" placeholder="9164545924" va_err="boraPhoneError" />
+								<input type="text" class="form-control" id="boraPhone"  va_req="true" name="boraPhone" placeholder="9164545924" va_err="boraPhoneError" />
 							</div>
 							<div class="text-danger" id="boraPhoneError"></div>
 						</div>
@@ -1265,7 +1265,7 @@ else{
 						<div class="col-md-8 col-sm-8 col-xs-12 mb-10">							
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-								<input type="text" class="form-control" va_req="true" name="dq_phone" id="dq_phone" value="+91-" placeholder="eg. 9874563110"   maxlength="10" va_err="dq_phoneError" />					
+								<input type="text" class="form-control" va_req="true" name="dq_phone" id="dq_phone"  placeholder="eg. 9874563110"   maxlength="10" va_err="dq_phoneError" />					
 							</div>
 							<div class="text-danger" id="dq_phoneError"></div>
 						</div>
@@ -1347,7 +1347,7 @@ else{
 							<div class="col-md-9 col-sm-9 col-xs-12 mb-10">
 								<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
-								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_phone" name="credit_points_phone" value="+91-" placeholder="eg. 9874563110" va_err="credit_points_phoneError" />					
+								<input type="Text" class="form-control"  va_req="true" va_num="true" id="credit_points_phone" name="credit_points_phone"  placeholder="eg. 9874563110" va_err="credit_points_phoneError" />					
 								</div>
 								<div class="text-danger" id="credit_points_phoneError"></div>
 							</div>
@@ -1373,8 +1373,8 @@ else{
 							<div class="col-md-9 col-sm-9 col-xs-12 pr-0">
 								<div class="input-group date datepicker no-padding">
 									<input type="text" class="form-control" va_req="true" va_err="credit_points_dateError" name="credit_points_date" id="credit_points_date" value="">
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
+									<span class="input-group-addon" id="calander-icon1">
+										<span class="glyphicon glyphicon-calendar" ></span>
 									</span>
 								</div>
 								<div class="text-danger" id="credit_points_dateError"></div>
