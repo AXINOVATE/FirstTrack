@@ -58,7 +58,25 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/select2.min.js"></script>
 <script src="<?php echo $assetsPath; ?>/js/bootstrap-slider.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-	
+	$('document').ready(function(){
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();	
+		$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
+		});	
+		
+
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
+	});
 </script>
 </body>
 </html>

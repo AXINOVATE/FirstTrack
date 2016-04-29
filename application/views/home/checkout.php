@@ -609,6 +609,30 @@ function get_cities(callback,id){
 		$(callback).html(html);
 	});
 }
+$('document').ready(function(){
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();	
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+
+$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
+		});	
+		
+
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
+	});
+	
 </script>
 </body>
 </html>

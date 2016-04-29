@@ -389,5 +389,25 @@ $prefix=$this->config->item('prefix');
 <script src="<?php echo $assetsPath; ?>/js/scripts.js" type="text/javascript"></script>
 <script src="<?php echo $assetsPath; ?>/js/xu-validation.js" type="text/javascript"></script>
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
+<script>
+$('document').ready(function(){
+		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
+		$('.inpt-timepicker').timepicker();
+$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
+		});	
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
+	});
+	
+</script>
 </body>
 </html>

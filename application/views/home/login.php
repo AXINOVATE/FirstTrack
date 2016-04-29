@@ -149,6 +149,26 @@ $prefix=$this->config->item('prefix');
     $(document).ready(function(){
 		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
 		$('.inpt-timepicker').timepicker();	
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+
+$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
+		});	
+		
+
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
+	
 		$("#login_form").on('submit',function(){
 			$("#login_btn").trigger('click');
 		});

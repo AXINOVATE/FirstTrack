@@ -856,9 +856,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script  src="<?php echo $assetsPath; ?>/gritter/js/jquery.gritter.min.js"type="text/javascript"></script>
 <script>
 
-var date = new Date();
-        var d = new Date();        
-        d.setDate(date.getDate());
+
 	
 	$('.cat-box').on('mouseover', function(){
 		var id = $(this).attr('id');		
@@ -875,14 +873,21 @@ var date = new Date();
 			delay: 10,
 			time: 2000
 		});
-		$('#RTD_Pre_date').datepicker({ 
-			startDate: new Date() 
+		$('#RTD_Pre_date,#rtd-icon').datepicker({ 
+			startDate: new Date()
+			
 		});	
-		$('#credit_points_date').datepicker({
-        format: 'mm-dd-yyyy',
-        endDate: d,       
-    });
 		
+
+		var date = new Date();
+        var d = new Date();        
+        d.setDate(date.getDate());
+		$('#credit_points_date,#calander-icon1').datepicker({
+			 endDate: d,  
+       });
+	   $('#insurance_date,#insurance_date_icon').datepicker({
+			 startDate: new Date() 
+       });
 	});
 	$('#RTD_Pre_Time').timepicker();
 	$('.body-type-detail').on('click', function(){		
