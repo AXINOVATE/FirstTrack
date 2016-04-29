@@ -112,7 +112,7 @@ function indianCurrencyNumberFormat($rupee) {
 							<div class="dropdown">
 							  <div data-toggle="dropdown"><i class="fa fa-share-alt"></i></div>
 							  <ul class="dropdown-menu">
-								<li><a href="https://www.facebook.com/NayaGaadi">Facebook</a></li>
+								<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(base_url($slug));?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Facebook</a></li>
 								<li><a href="#">Google+</a></li>
 								<li><a href="https://twitter.com/nayagaadi">Twitter</a></li>
 								<li><a href="http://in.linkedin.com/in/NayaGaadi">Linkedin</a></li>
