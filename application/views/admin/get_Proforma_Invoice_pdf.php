@@ -227,8 +227,8 @@ $prefix=$this->config->item('prefix');
 				   <?php echo $proformaInvoice[0]['addressLine1'];?> <br />
 				   <?php echo $proformaInvoice[0]['addressLine2'];?> <br/>
 				   PinCode<?php echo $proformaInvoice[0]['zipCode'];?><br />		   
-				   Tin<?php echo $proformaInvoice[0]['TIN'];?><br />				   
-				   Cin<?php echo $proformaInvoice[0]['CIN'];?>				   
+				   Tin:<?php echo $proformaInvoice[0]['TIN'].',';?>				   
+				   Cin:<?php echo $proformaInvoice[0]['CIN'];?>				   
                 </h6>
             </td>
         </tr>
