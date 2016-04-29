@@ -31,7 +31,7 @@ $prefix=$this->config->item('prefix');
 	<div class="body-container">
 		<section class="container">
 			<h3> Dealer Products - <?php if(isset($details->firstName)){echo $details->firstName.' '.$details->lastName; }?>
-			<a href="<?php echo $prefix;?>/home/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right  ml-10">Add Products</a><a href="<?php echo $prefix;?>/home/add_dealer_offer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add Offers</a>
+			<a href="<?php echo $prefix;?>/add_dealer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right  ml-10">Add Products</a><a href="<?php echo $prefix;?>/add_dealer_offer_products/<?php echo $userID;?>" class="btn btn-default btn-primary pull-right">Add Offers</a>
 			</h3>
 			<hr>
 			<table class="table table-bordered dealer-products">
@@ -59,7 +59,7 @@ $prefix=$this->config->item('prefix');
 					<td class="vColor"><div style="background-color:<?php echo $d->colorCode; ?>;"></div></td>
 					<td><?php echo $d->quantity; ?></td>
 					<td><?php echo $d->waitingPeriodDays; ?></td>
-					<td><a href="<?php echo $prefix;?>/home/edit_dealer_products/<?php echo $userID;?>/<?php echo $d->ID;?>" class=""><i class="fa fa-pencil"></i> Edit</a></td>
+					<td><a href="<?php echo $prefix;?>/edit_dealer_products/<?php echo $userID;?>/<?php echo $d->ID;?>" class=""><i class="fa fa-pencil"></i> Edit</a></td>
 				  </tr>
 			  <?php } ?>
 			</tbody>

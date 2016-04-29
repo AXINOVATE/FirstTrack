@@ -30,7 +30,7 @@ $prefix=$this->config->item('prefix');
 		<section class="container">
 			<div class="row">
 				<h4>View Dealers and Products <div class="col-sm-4 col-xs-12 float-right">
-													 <a href="<?php echo $prefix;?>/home/edit_add_dealer_product"> <button class="btn btn-default btn-primary pull-right" type="submit">Add Products </button></a>
+													 <a href="<?php echo $prefix;?>/edit_add_dealer_product"> <button class="btn btn-default btn-primary pull-right" type="submit">Add Products </button></a>
 													</div></h4>
 				
 				<hr>

@@ -309,7 +309,7 @@ if(isset($editVariants)){
 					data:{'productID':product,'userID':userID,'data':contents,'yelBoard':yelBoard},
 					dataType:'JSON'
 				}).success(function(data){
-					window.location = '<?php echo $prefix;?>/home/dealer_products/'+userID;
+					window.location = '<?php echo $prefix;?>/dealer_products/'+userID;
 				});
 			}
 		});

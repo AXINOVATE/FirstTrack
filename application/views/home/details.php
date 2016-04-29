@@ -564,7 +564,7 @@ $('#buylater_phone').keypress(function(e) {
 		var board = $("#d_board").val();
 		if(variantID != ""){
 			//window.location="<?php echo $prefix;?>/home/details/<?php echo $slug; ?>?variant="+variantID+"&dealer="+dealerID+"&color="+colorID;
-			window.location="<?php echo $prefix;?>/home/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID+"&board="+board;
+			window.location="<?php echo $prefix;?>/details/"+variantID+"?dealer="+dealerID+"&color="+colorID+"&location="+locationID+"&board="+board;
 		}
 	});
 	$("#buy_now_btn").on('click',function(){
@@ -595,7 +595,7 @@ $('#buylater_phone').keypress(function(e) {
 						data:{'productID':productID,'variantID':variantID,'dealerID':dealerID,'colorID':colorID,'cityName':cityName,'board':board},
 						dataType:'JSON'
 					}).success(function(data){
-						window.location="<?php echo $prefix;?>/home/checkout";
+						window.location="<?php echo $prefix;?>/checkout";
 					});
 				}
 			});

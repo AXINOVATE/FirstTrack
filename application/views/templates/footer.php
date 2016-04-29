@@ -50,10 +50,10 @@ $prefix=$this->config->item('prefix');
 				<div class="col-sm-3 col-xs-12">
 					<!--<h4>Tools</h4>
 					<ul>
-						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator </a> </li>
+						<li><a href="<?php echo $prefix;?>/emi_calculator">EMI Calculator </a> </li>
 						<li><a href="http://www.nayagaadi.com/index.php?route=information/instant-on-road-price">Instant On Road Price </a> </li>
-						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyser </a> </li> 
-                         <li><a href="<?php echo $prefix.'/home/locate_dealer';?>" id="locate-dealer">Locate A Dealer </a> </li> 						
+						<li><a href="<?php echo $prefix;?>/service_cost_analyzer">Service Cost Analyser </a> </li> 
+                         <li><a href="<?php echo $prefix.'/locate_dealer';?>" id="locate-dealer">Locate A Dealer </a> </li> 						
 						<li><a href="http://www.nayagaadi.com/index.php?route=product/compare">Compare Vehicles </a> </li>
 						<li><a href="http://www.nayagaadi.com/index.php?route=account/order">Track UR Order  </a> </li>
 					</ul> -->
@@ -106,13 +106,13 @@ $prefix=$this->config->item('prefix');
 				<div class="col-md-12">
 					<ul>
 						<li class="heading">About Company :</li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/Aboutus">About Us</a></li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/investors">Investors</a></li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/media">Media</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/Aboutus">About Us</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/investors">Investors</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/media">Media</a></li>
 						<!--<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Testimonials">Testimonials</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/Careers">Careers</a></li> -->
 						<!-- <li><a style="color:#333333" href="http://www.nayagaadi.com/index.php?route=information/contact">Contact US</a></li>-->
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/faq">FAQ</a></li>						
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/faq">FAQ</a></li>						
 					</ul>
 					<!--<ul class="list-unstyled">
 						<li class="heading">Partners :</li>
@@ -126,17 +126,17 @@ $prefix=$this->config->item('prefix');
 					</ul> -->
 					<ul class="list-unstyled">
 						<li class="heading">Policies :</li>						
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/delivery_policy">Delivery Policy </a> </li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/privacy_policy">Privacy Policy </a> </li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/payment_policy">Payment Policy </a> </li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/terms_condition">Terms &amp; Conditions  </a> </li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/visitor_agreement_policy">Visitor Agreement Policy </a> </li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/infringement_policy">Infringement Policy|</a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/delivery_policy">Delivery Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/privacy_policy">Privacy Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/payment_policy">Payment Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/terms_condition">Terms &amp; Conditions  </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/visitor_agreement_policy">Visitor Agreement Policy </a> </li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/infringement_policy">Infringement Policy|</a> </li>
 					</ul>
 
 					<ul class="list-unstyled">
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/customer_care">Contact Us</a></li>
-						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/home/siteMap" id="site-map">Site Map</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/customer_care">Contact Us</a></li>
+						<li><a style="color:#ffffff" href="<?php echo $prefix;?>/siteMap" id="site-map">Site Map</a></li>
 						<!--<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=product/manufacturer">Brands</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=affiliate/account">Affiliates</a></li>
 						<li><a style="color:#ffffff" href="http://www.nayagaadi.com/index.php?route=product/special">Specials</a></li>

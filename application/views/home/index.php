@@ -148,7 +148,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							</div>
 							<?php foreach($Car as $car){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-										<a href="'.$prefix.'/home/searchList/bodytype/'.$car['bodyTypeID'].'" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<a href="'.$prefix.'/searchList/bodytype/'.$car['bodyTypeID'].'" class="particular-car-detail data-carbodyTypeID="'.$car['bodyTypeID'].'" data-carcategoryID="'.$car['categoryID'].'""> <div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
 										<img src="'.$car['body_type_img'].'" alt="'.$car['body_type'].'" class="bodytype-img"/>
 										<div class="car-type-name">'.$car['body_type'].'</div>
@@ -164,7 +164,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							</div>
 							<?php foreach($Bike as $bike){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
-										<a href="'.$prefix.'/home/searchList/bodytype/'.$bike['bodyTypeID'].'" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
+										<a href="'.$prefix.'/searchList/bodytype/'.$bike['bodyTypeID'].'" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
 										<img src="'.$bike['body_type_img'].'" alt="'.$bike['body_type'].'" class="bodytype-img"/>
 										<div class="car-type-name">'.$bike['body_type'].'</div>
@@ -180,7 +180,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							</div>
 							<?php foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
-											<a href="'.$prefix.'/home/searchList/category/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
+											<a href="'.$prefix.'/searchList/category/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
 												<center>
 													<img src="'.$more['imgPath'].'" style="width:100%; height:35px; " alt="'.$more['categoryName'].'" />
 													<div class="car-type-name">'.$more['categoryName'].'</div>
@@ -193,7 +193,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						<div class="">
 							<div class="col-md-12 col-sm-12 col-xs-12 mt-10 mb-10">
 								<div class="mr-m5 ml-m5">
-									<a href="<?php echo $prefix;?>/home/searchList/list" class="search-btn" >Search</a>
+									<a href="<?php echo $prefix;?>/searchList/list" class="search-btn" >Search</a>
 								</div>
 							</div>
 						</div>
@@ -207,7 +207,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							if($i==0){$actClass='in active';}
 							echo '
 							<div class="tab-pane fade '.$actClass.'" id="tab'.($i+1).'">
-								<a href="'.$prefix.'/home/product_news/'.$getShowcaseProducts[$i]['uid'].'">
+								<a href="'.$prefix.'/product_news/'.$getShowcaseProducts[$i]['uid'].'">
 								<center>
 									<img src="'.$prefix.'/'.$getShowcaseProducts[$i]['showcaseImage'].'" class="banner-img" alt="'.$getShowcaseProducts[$i]['showcaseTitle'].'" />
 								</center>

@@ -34,7 +34,7 @@ $prefix=$this->config->item('prefix');
 			<form id="bank_form" method="POST" action="#" onSubmit="return false;">
 				<h3>Bank Information  - <?php if(isset($details->firstName)){echo $details->firstName.' '.$details->lastName; }?></h3>
 				<ul id="myTab" class="nav  nav-tabs1" role="tablist">
-					<li role="presentation" class="product-panel-heading"><a href="<?php echo $prefix;?>/home/dealer/<?php echo $userID;?>">Information</a></li>
+					<li role="presentation" class="product-panel-heading"><a href="<?php echo $prefix;?>/dealer/<?php echo $userID;?>">Information</a></li>
 					<li role="presentation" class="active"><a href="#bank-info" aria-controls="profile" role="tab" data-toggle="tab">Bank Details </a></li>
 				</ul>
 				

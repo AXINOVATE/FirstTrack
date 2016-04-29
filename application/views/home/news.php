@@ -45,7 +45,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -57,7 +57,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -80,7 +80,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -91,7 +91,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -103,7 +103,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -114,7 +114,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -125,7 +125,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -138,7 +138,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -150,7 +150,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -161,7 +161,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -173,7 +173,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -184,7 +184,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -196,7 +196,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -207,7 +207,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -218,7 +218,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -231,7 +231,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -243,7 +243,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -254,7 +254,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -266,7 +266,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -277,7 +277,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -289,7 +289,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -300,7 +300,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -311,7 +311,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -324,7 +324,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -336,7 +336,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -347,7 +347,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -359,7 +359,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -370,7 +370,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -382,7 +382,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -393,7 +393,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -404,7 +404,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -417,7 +417,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -429,7 +429,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car. The first course of action is to review do require your factory seat belts function properly.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -440,7 +440,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -452,7 +452,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -463,7 +463,7 @@ $prefix=$this->config->item('prefix');
 							Factory Ready for Track Day
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p> <span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 					
@@ -475,7 +475,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -486,7 +486,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -497,7 +497,7 @@ $prefix=$this->config->item('prefix');
 							A Sport Utility for Family
 						</div>
 						<div class="news-brief">
-							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/home/news_detail">Read More</a></span>
+							<p class="content-hide-all">Getting Your Car Ready for the Track. Now that you've signed up for a track day with MVP Track Time, you need to prepare your car.</p><span class="padding-5 pull-right"><a href="<?php echo  $prefix?>/news_detail">Read More</a></span>
 						</div>
 					</div>
 				</div>

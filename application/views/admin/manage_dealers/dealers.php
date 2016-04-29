@@ -45,8 +45,8 @@ $prefix=$this->config->item('prefix');
 					<td><?php echo $d->categoryName; ?></td>
 					<td><?php echo $d->manufactureName; ?></td>
 					<td><?php echo $d->location; ?></td>
-					<td><a href="<?php echo $prefix;?>/home/dealer_products/<?php echo $d->userID; ?>" class="btn btn-default"><i class="fa fa-eye"></i> View Products</a>
-					<a href="<?php echo $prefix;?>/home/dealer/<?php echo $d->userID; ?>" class="btn btn-default"><i class="fa fa-pencil"></i> Edit </a></td>
+					<td><a href="<?php echo $prefix;?>/dealer_products/<?php echo $d->userID; ?>" class="btn btn-default"><i class="fa fa-eye"></i> View Products</a>
+					<a href="<?php echo $prefix;?>/dealer/<?php echo $d->userID; ?>" class="btn btn-default"><i class="fa fa-pencil"></i> Edit </a></td>
 				  </tr>
 			  <?php } ?>
 			</tbody>

@@ -32,7 +32,7 @@ $prefix=$this->config->item('prefix');
 				<h3>Dealer Information</h3>
 				<ul id="myTab" class="nav nav-tabs1" role="tablist">
 					<li role="presentation" class="active product-panel-heading"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Information</a></li>
-					<li role="presentation"><a href="<?php echo $prefix;?>/home/bank_details/<?php echo $userID;?>">Bank Details</a></li>
+					<li role="presentation"><a href="<?php echo $prefix;?>/bank_details/<?php echo $userID;?>">Bank Details</a></li>
 				</ul>
 				<div class="row">
 					<input type="hidden" id="userID" name="userID" value="<?php echo $userID;?>">

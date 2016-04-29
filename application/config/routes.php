@@ -37,7 +37,21 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route[''] = 'home';
+$route['home/(:any)'] = 'home/$1';
+$route['home/(:any)/(:any)'] = 'home/$1/$2';
+$route['home/(:any)/(:any)/(:any)'] = 'home/$1/$2/$3';
+$route['home/(:any)/(:any)/(:any)/(:any)'] = 'home/$1/$2/$3/$4';
 
+$route['admin/(:any)'] = 'admin/$1';
+$route['admin/(:any)/(:any)'] = 'admin/$1/$2';
+$route['admin/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3';
+$route['admin/(:any)/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3/$4';
+
+$route['(:any)'] = 'home/$1';
+$route['(:any)/(:any)'] = 'home/$1/$2';
+$route['(:any)/(:any)/(:any)'] = 'home/$1/$2/$3';
+$route['(:any)/(:any)/(:any)/(:any)'] = 'home/$1/$2/$3/$4';
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 

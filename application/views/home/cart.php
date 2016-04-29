@@ -133,7 +133,7 @@ $prefix=$this->config->item('prefix');
 				dataType:'JSON'
 			}).success(function(data){
 				if(data)
-					window.location='<?php echo $prefix;?>/home/checkout';
+					window.location='<?php echo $prefix;?>/checkout';
 			});
 	});
 </script>

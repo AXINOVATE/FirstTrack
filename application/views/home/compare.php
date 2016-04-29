@@ -39,7 +39,7 @@ $prefix=$this->config->item('prefix');
 				</div>
 			</div>
 			<div class="row mt-20">
-				<form class="form-horizontal" action="<?php echo $prefix;?>/home/detailed_comparison" name="compareForm" role="form" method="POST" id="compareForm" onSubmit="return false">
+				<form class="form-horizontal" action="<?php echo $prefix;?>/detailed_comparison" name="compareForm" role="form" method="POST" id="compareForm" onSubmit="return false">
 				<div>
 					<input type="hidden" value="<?php echo $catID[0]['categoryID']?>" id="categoryID" name="categoryID" />
 				</div>

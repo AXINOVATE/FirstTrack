@@ -47,37 +47,37 @@ $prefix=$this->config->item('prefix');
 					</ul>
 					<h4>Compare</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/compare">Compare</a></li>
+						<li><a href="<?php echo $prefix;?>/compare">Compare</a></li>
 					</ul>
 					<h4>Trends</h4>	
 					<ul class="padding-left-30">						
-						<li><a href="<?php echo $prefix;?>/home/searchList/latest">Latest</a></li>
-						<li><a href="<?php echo $prefix;?>/home/searchList/popular">Popular</a></li>
-						<li><a href="<?php echo $prefix;?>/home/searchList/upcoming">Upcoming</a></li>
+						<li><a href="<?php echo $prefix;?>/searchList/latest">Latest</a></li>
+						<li><a href="<?php echo $prefix;?>/searchList/popular">Popular</a></li>
+						<li><a href="<?php echo $prefix;?>/searchList/upcoming">Upcoming</a></li>
 					</ul>
 					<h4>News</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/news">News</a></li>
+						<li><a href="<?php echo $prefix;?>/news">News</a></li>
 					</ul>
 					<h4>Review</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/review">Review</a></li>
+						<li><a href="<?php echo $prefix;?>/review">Review</a></li>
 					</ul>
 					<h4>Blog</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/#blog">Blog</a></li>
+						<li><a href="<?php echo $prefix;?>/#blog">Blog</a></li>
 					</ul>
 					<h4>Tools</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
-						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
-						<li><a href="<?php echo $prefix;?>/home/locate_dealer">Locate dealer</a></li>
+						<li><a href="<?php echo $prefix;?>/emi_calculator">EMI Calculator</a></li>
+						<li><a href="<?php echo $prefix;?>/service_cost_analyzer">Service Cost Analyzer</a></li>
+						<li><a href="<?php echo $prefix;?>/locate_dealer">Locate dealer</a></li>
 					</ul>
 					<h4>Service</h4>	
 					<ul class="padding-left-30">
-						<li><a href="<?php echo $prefix;?>/home/emi_calculator">EMI Calculator</a></li>
-						<li><a href="<?php echo $prefix;?>/home/service_cost_analyzer">Service Cost Analyzer</a></li>
-						<li><a href="<?php echo $prefix;?>/home/locate_dealer">Locate dealer</a></li>
+						<li><a href="<?php echo $prefix;?>/emi_calculator">EMI Calculator</a></li>
+						<li><a href="<?php echo $prefix;?>/service_cost_analyzer">Service Cost Analyzer</a></li>
+						<li><a href="<?php echo $prefix;?>/locate_dealer">Locate dealer</a></li>
 					</ul>
 				</div>
 				<div class="col-md-9">
@@ -98,7 +98,7 @@ $prefix=$this->config->item('prefix');
 														<ul class="product-Details">
 															<?php foreach($productDetail as $productDetails ) { 
 																if($productBasics['productID'] == $productDetails['productID']){?>
-																<li ><h6><a href="<?php echo $prefix;?>/home/details/<?php echo $productDetails['slugName']; ?>"><?php echo $productDetails['variantName'].''.$productDetails['fueltype'];?> </a></h6> </li>
+																<li ><h6><a href="<?php echo $prefix;?>/details/<?php echo $productDetails['slugName']; ?>"><?php echo $productDetails['variantName'].''.$productDetails['fueltype'];?> </a></h6> </li>
 																<?php }
 															} ?>
 														</ul>

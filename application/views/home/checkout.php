@@ -428,7 +428,7 @@ $prefix=$this->config->item('prefix');
 				dataType:'JSON'
 			}).success(function(data){
 				if(data.status)
-					window.location='<?php echo $prefix;?>/home/conformation/'+data.requestNo;
+					window.location='<?php echo $prefix;?>/conformation/'+data.requestNo;
 			});
 		}
 	});
