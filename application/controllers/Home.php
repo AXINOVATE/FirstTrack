@@ -361,21 +361,27 @@ class Home extends CI_Controller {
 		$VresultStatus =$this->home_model->get_Proforma_Invoice_pdf();
 		if ($VresultStatus[0]['status']=="Successfully"){
 			$invoiceID=$VresultStatus[0]['proformaInvoiceID'];
+			//var_dump($invoiceID);exit();
 			$data['proformaInvoice']=$this->home_model->get_Proforma_Invoice($invoiceID);
-			$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);
-			$pdfFilePath = base_url()."Proforma_Invoice.pdf";
-			
-			//load mPDF library
-			$this->load->library('m_pdf');
-			//actually, you can pass mPDF parameter on this load() function
-			$pdf = $this->m_pdf->load();
-			//generate the PDF!
-			//var_dump($html);
-			$pdf->WriteHTML($html);
-			//offer it to user via browser download! (The PDF won't be saved on your server HDD)
-			//$pdf->Output($pdfFilePath,'I');
-			$pdf->Output($pdfFilePath, "I");
-			//$pdf->Output($pdfFilePath,'I');
+			if(count($data['proformaInvoice'])){
+				$html=$this->load->view('admin/get_Proforma_Invoice_pdf',$data,true);
+				$pdfFilePath = base_url()."Proforma_Invoice.pdf";
+				
+				//load mPDF library
+				$this->load->library('m_pdf');
+				//actually, you can pass mPDF parameter on this load() function
+				$pdf = $this->m_pdf->load();
+				//generate the PDF!
+				//var_dump($html);
+				$pdf->WriteHTML($html);
+				//offer it to user via browser download! (The PDF won't be saved on your server HDD)
+				//$pdf->Output($pdfFilePath,'I');
+				$pdf->Output($pdfFilePath, "I");
+				//$pdf->Output($pdfFilePath,'I');
+			}
+			else{
+				echo "No data available as such";
+			}
 		}
 		/*
 		//var_dump($_POST); exit();
