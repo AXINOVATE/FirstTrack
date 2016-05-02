@@ -78,10 +78,9 @@ $prefix=$this->config->item('prefix');
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12">
 					<h4>Newsletter Signup</h4>
-					<p>Enter your email and we'll send you updates and interesting offers from NayaGaadi.</p>
+					<p>Please send your mail to newsletter@NayaGaadi.com and we'll send you updates and interesting offers from NayaGaadi.</p>
 					<div class="input-group">
-						<i class="fa fa-paper-plane"></i>
-						<input type="text" placeholder="Enter your email here">
+						
 					</div>
 				</div>
 				<div class="col-md-3  col-sm-3 col-xs-12 f-social" style="margin-top:35px;">
@@ -267,7 +266,7 @@ $prefix=$this->config->item('prefix');
 					   <div class="col-md-12">
 						<input class="col-md-1 col-sm-1 col-xs-2" va_req="true"  type="checkbox" value="Agreed" style="float:left;" name="brochureTermsConditions" id="brochureTermsConditions" >
 							<div class="col-md-11 col-sm-11 col-xs-10 mb-10">
-								I agree to Nayagaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
+								I agree to NayaGaadi.com <a href="#" style="text-decoration: none !Important; color: #000 !important;" data-toggle="tooltip" data-placement="top" title="I agree to receive calls, e-mail and SMS from NayaGaadi Online Marketplace Private Limited (“NayaGaadi”), its agents, and its dealers on my mobile phone, which are intended to assist me in purchasing Ford vehicles, products and services. I also agree to receive such and any other marketing & product related communication from Ford, its agents, and its dealers until specified otherwise, by me.">Terms & Conditions</a>.
 							</div>
 						</div>
 						<div class="form-group">
