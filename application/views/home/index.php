@@ -739,7 +739,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	</section>
 	<!---  End section Seller/Dealer : OEM-Manufacturer Testimonials-->
 	<!-- Start of Carousel section-->
-	<section class="dashboard-section fd" style="background-color:#666666; background-image: url('<?php echo $assetsPath?>/images/customers-collage.jpg');">		
+	<section class="dashboard-section fd" style="background-color:#666666; background-repeat: no-repeat;background-size: cover; background-position:center;background-image: url('<?php echo $assetsPath?>/images/bikebanner2.jpg'); ">		
 		<div class="dark-shade">	</div>		
 		<div class="container">
 			<br>
@@ -751,7 +751,12 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<li data-target="#myCarousel" data-slide-to="2"></li>
 					<li data-target="#myCarousel" data-slide-to="3"></li>
 				</ol-->
-
+                <div class="col-md-12 col-sm-12 col-xs-12">	
+					<center><h2 class="home-page-title txt_white" >Customization to Suit your Imagination: <span style="color:#027cd5;">Limited Models</span></h2><center>
+					<span class="span1-white"><i class="img-underline-white"></i></span><br>
+					<h4 class="car-owner-feedback" style="margin-top:-12px;margin-bottom:-42px;">NayaGaadi offers you to customize your vehicle as well. Currently customization is offered on only selected models and designs. 
+								Pls. get in touch with NayaGaadi team on how they can assist you.</h4>
+				</div>
 			<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">					
 					<div class="item active">

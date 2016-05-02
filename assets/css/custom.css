@@ -155,7 +155,7 @@ body{font-family:Century Gothic !important;}
 .c-dashboard .p-border:hover{opacity: 1; -moz-transform: scale(1.05); -webkit-transform: scale(1.05);  -o-transform: scale(1.05); -webkit-box-shadow: none; -moz-box-shadow: none;-webkit-transition: -webkit-transform 0.1s ease-in;}
 .c-dashboard .p-border>p{font-size:16px;}
 
-.fd .dark-shade {z-index: 0; text-align: center; font-weight: 300;  position: absolute; width:100%; color: #fff; background-image: url('../images/dark-shade.png'); height:455px;}
+.fd .dark-shade {z-index: 0; text-align: center; font-weight: 300;  position: absolute; width:100%; color: #fff; background-image: url('../images/dark-shade.png'); height:610px;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {  width: 410px !important; height:270px !important; margin: auto; }
 .car-owner-feedback{color: #fff; height:100px; width:80%;}
 .car-owner-name{color: white; width:80%; font-size:17px;}
