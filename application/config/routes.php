@@ -48,6 +48,11 @@ $route['admin/(:any)/(:any)'] = 'admin/$1/$2';
 $route['admin/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3';
 $route['admin/(:any)/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3/$4';
 
+$route['services/(:any)'] = 'services/$1';
+$route['services/(:any)/(:any)'] = 'services/$1/$2';
+$route['services/(:any)/(:any)/(:any)'] = 'services/$1/$2/$3';
+$route['services/(:any)/(:any)/(:any)/(:any)'] = 'services/$1/$2/$3/$4';
+
 $route['(:any)'] = 'home/$1';
 $route['(:any)/(:any)'] = 'home/$1/$2';
 $route['(:any)/(:any)/(:any)'] = 'home/$1/$2/$3';
