@@ -1699,21 +1699,7 @@ $prefix=$this->config->item('prefix');
 				$('#productVideos').html(html);
 			});
 		}
-		$('document').ready(function(){
-		$('.datepicker').datepicker({ format: 'yyyy-mm-dd' });
-		$('.inpt-timepicker').timepicker();	
-		var date = new Date();
-        var d = new Date();        
-        d.setDate(date.getDate());
-
-$('#RTD_Pre_date').datepicker({ 
-			startDate: new Date() 
-		});	
-		$('#credit_points_date').datepicker({
-        format: 'mm-dd-yyyy',
-        endDate: d,       
-    });
-	});
+		
 	</script>
 </body>
 </html>

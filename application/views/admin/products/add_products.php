@@ -104,16 +104,19 @@ $prefix=$this->config->item('prefix');
 						
 						<table class="table table-bordered picture-color-edit">
 							<thead>
+								<th class="col-md-1 col-sm-1 hidden-xs">No.</th>
 								<th class="col-md-2 col-sm-2 col-xs-4">Product Name</th>
 								<th class="col-md-2 col-sm-2 hidden-xs">Manufacturer</th>
 								<th class="col-md-2 col-sm-2 col-xs-3">Variant</th>
 								<th class="col-md-2 col-sm-2 hidden-xs">Body Type</th>	
-								<th class="col-md-4 col-sm-4 col-xs-5">Action</th>													
+								<th class="col-md-3 col-sm-3 col-xs-5">Action</th>													
 							</thead>
 							<tbody align="center">';
+							$i=1;
 								foreach($getProducts as $gp){
 								echo '
 								<tr>
+									<td class="col-md-1 col-sm-1 hidden-xs">'.$i.'</td>
 									<td class="col-md-2 col-sm-2 col-xs-4">'.$gp['productName'].'</td>
 									<td class="col-md-2 col-sm-2 hidden-xs">'.$gp['manufactureName'].'</td>
 									<td class="col-md-2 col-sm-2 col-xs-3">'.$gp['variantName'].'</td> 
@@ -126,6 +129,7 @@ $prefix=$this->config->item('prefix');
 										<a href="javascript:void(0)" class="delete-box-color font-size-16 del-btn" data-id="'.$gp['variantID'].'"><i class="fa fa-trash-o picture-padding-right-5"></i><span class="hidden-xs">Delete</span></a>
 									</td>
 								</tr>';
+									$i++;
 								}
 								echo '
 							</tbody>
