@@ -427,7 +427,111 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	
 
 </section>
+
 	<!-- END of Product wise Dashboard Section-->
+	<!-- Start of Carousel section-->
+	<section class="dashboard-section fd" style="background-color:#666666; background-repeat: no-repeat;background-size: cover; background-position:center;background-image: url('<?php echo $assetsPath?>/images/bikebanner2.jpg'); ">		
+		<div class="dark-shade">	</div>		
+		<div class="container">
+			<br>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+				<!--ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol-->
+                <div class="col-md-12 col-sm-12 col-xs-12">	
+					<center><h2 class="home-page-title txt_white" >Customization to Suit your Imagination: <span style="color:#027cd5;">Limited Models</span></h2><center>
+					<span class="span1-white"><i class="img-underline-white"></i></span><br>
+					<h4 class="car-owner-feedback" style="margin-top:-12px;margin-bottom:-42px;">NayaGaadi offers you to customize your vehicle as well. Currently customization is offered on only selected models and designs. 
+								Pls. get in touch with NayaGaadi team on how they can assist you.</h4>
+				</div>
+			<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">					
+					<div class="item active">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+				
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+
+					<div class="item">
+						<center>
+							<div class="car-owner-feedback">
+								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
+							</div>
+						</center>
+						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
+						<center>
+							<div class="car-owner-name">
+								Mr Rajiv Goel
+							</div>
+							<div class="car-owner-vehicle">
+								Skoda Rapid
+							</div>
+						</center>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left next-prev-button" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right next-prev-button" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</section>
+	<!-- End of Carousel section-->
 	
 	<!-- Start of Benefits section-->
 	<section class="dashboard-section" style="background-color:#A0A0A0;">	
@@ -435,7 +539,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
 					<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white">NayaGaadi <span style="color:#027cd5;">     Benefits</span> </span> </h2>	
-					<span class="span1"><i class="img-underline1"></i></span>
+					<span class="span1-white"><i class="img-underline-white"></i></span>
 		
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 mb-20">
@@ -525,7 +629,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="row mt-10 text-center c-dashboard">
 					<div class="col-md-12 col-sm-12 col-xs-12">	
 						<h2 class="home-page-title" style="color:#027cd5;"><span class="txt_white"> How NayaGaadi <span style="color:#027cd5;">     Works</span> </span> </h2>	
-						<span class="span1"><i class="img-underline1"></i></span>
+						<span class="span1-white"><i class="img-underline-white"></i></span>
 					</div>
 					<div class="col-md-12" >
 								<div class="carousel-inner" role="listbox">					
@@ -560,7 +664,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
 					<h2 class="home-page-title txt_white" >Customer <span style="color:#027cd5;">Feedback</span></h2>
-					<span class="span1"><i class="img-underline"></i></span>
+					<span class="span1-white"><i class="img-underline-white"></i></span>
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-12 mb-20">
 					<div style="width:100%; overflow:hidden;">
@@ -620,7 +724,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<div class="row mt-10 text-center c-dashboard">
 				<div class="col-md-12 col-sm-12 col-xs-12">	
 					<h2 class="home-page-title txt_white" >Seller:Dealer/OEM-Manufacturer  <span style="color:#027cd5;">Testimonials</span></h2>
-					<span class="span1"><i class="img-underline"></i></span>
+					<span class="span1-white"><i class="img-underline-white"></i></span>
 				</div>
 				<div class="carousel-inner" role="listbox">
 				<div class="item active">
@@ -736,109 +840,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		</div>
 	</section>
 	<!---  End section Seller/Dealer : OEM-Manufacturer Testimonials-->
-	<!-- Start of Carousel section-->
-	<section class="dashboard-section fd" style="background-color:#666666; background-repeat: no-repeat;background-size: cover; background-position:center;background-image: url('<?php echo $assetsPath?>/images/bikebanner2.jpg'); ">		
-		<div class="dark-shade">	</div>		
-		<div class="container">
-			<br>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-				<!--ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-				</ol-->
-                <div class="col-md-12 col-sm-12 col-xs-12">	
-					<center><h2 class="home-page-title txt_white" >Customization to Suit your Imagination: <span style="color:#027cd5;">Limited Models</span></h2><center>
-					<span class="span1-white"><i class="img-underline-white"></i></span><br>
-					<h4 class="car-owner-feedback" style="margin-top:-12px;margin-bottom:-42px;">NayaGaadi offers you to customize your vehicle as well. Currently customization is offered on only selected models and designs. 
-								Pls. get in touch with NayaGaadi team on how they can assist you.</h4>
-				</div>
-			<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">					
-					<div class="item active">
-						<center>
-							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
-							</div>
-						</center>
-						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
-						<center>
-							<div class="car-owner-name">
-								Mr Rajiv Goel
-							</div>
-							<div class="car-owner-vehicle">
-								Skoda Rapid
-							</div>
-						</center>
-					</div>
-
-					<div class="item">
-						<center>
-							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
-							</div>
-						</center>
-						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
-						<center>
-							<div class="car-owner-name">
-								Mr Rajiv Goel
-							</div>
-							<div class="car-owner-vehicle">
-								Skoda Rapid
-							</div>
-						</center>
-					</div>
-				
-					<div class="item">
-						<center>
-							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
-							</div>
-						</center>
-						<img src="<?php echo $assetsPath;?>/upload/category/20160401040423Skoda-Superb-2015-Geneva-01.jpg" alt="Chania" />
-						<center>
-							<div class="car-owner-name">
-								Mr Rajiv Goel
-							</div>
-							<div class="car-owner-vehicle">
-								Skoda Rapid
-							</div>
-						</center>
-					</div>
-
-					<div class="item">
-						<center>
-							<div class="car-owner-feedback">
-								It was really a very good experience from the date of enquiry of vehicles to 4 different test drives till the date of delivery of my car, the enthusiasm was same with the entire team. We are very happy with the final deal. One thing which surprised me was that when you organised for the test drive of 4 cars to happen on one single day without any hassles. I really recommend everyone to go through NayaGaadi and enjoy with the quality of service.
-							</div>
-						</center>
-						<img src="<?php echo $assetsPath;?>/upload/category/20160330110351fait.jpg" alt="Chania" />
-						<center>
-							<div class="car-owner-name">
-								Mr Rajiv Goel
-							</div>
-							<div class="car-owner-vehicle">
-								Skoda Rapid
-							</div>
-						</center>
-					</div>
-				</div>
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left next-prev-button" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right next-prev-button" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-	</section>
-	<!-- End of Carousel section-->
 	
 	<!-- Body content ends here -->	
 	
