@@ -247,9 +247,19 @@ class Home_model extends CI_Model{
 			$rndS=$this->randStrGen();
 			$query = $this->db->query("CALL usp_insUpdVehicleLoan('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
+				$content='<h1>You applied for loan successfully </h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$email,'','Apply for vechile Loan',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$email.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
+				$usermessage.='comment:'.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','Apply for vehicle Loan',$usermessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -328,8 +338,19 @@ class Home_model extends CI_Model{
 				$rndS=$this->randStrGen();
 			$query = $this->db->query("CALL usp_insUpdRoadAsistance('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
+			
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
+				$content='<h1>You applied By on Road Assistance </h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$email,'','By on Road Assistance',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$email.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
+				$usermessage.='comment:'.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','By on Road Assistance',$usermessage);
+			
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -390,9 +411,18 @@ class Home_model extends CI_Model{
 			$query = $this->db->query("CALL usp_insUpdCorporateDeals('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
-
+               
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
+				 $content='<h1>you applied for corporate deals  sucessfully</h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$email,'','Corporate Deals',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$email.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
+				$usermessage.='comment:'.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','ADD CORPORATE DEALS',$usermessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -452,9 +482,19 @@ class Home_model extends CI_Model{
 			$query = $this->db->query("CALL usp_insUpdApplyInsurance('".$xml."',@vresult)");
 			$query1=$this->db->query("SELECT @vresult as ".$rndS)->result_array();
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
+			
 
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
+				$content='<h1>Apply for insurance Successfully/h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$email,'','Apply for Insurance',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$email.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
+				$usermessage.='comment:'.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','Apply for Insurance',$usermessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -529,6 +569,15 @@ class Home_model extends CI_Model{
 
 		mysqli_next_result($this->db->conn_id);	
 		if ($query1[0][$rndS] == "Success"){
+			$content='<h1>Drop Query Sucessfully/h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$email,'','Drop Query',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$email.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
+				$usermessage.='Query:'.$query.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','Drop Query',$usermessage);
 			$vresult['status'] = "Success";
 			return $vresult;
 		}else{
@@ -1478,6 +1527,15 @@ class Home_model extends CI_Model{
 		$query1=$this->db->query("select @result as status");
 		$qRe=$query1->result_array();
 		if($qRe[0]['status']=='Success'){
+			$content='<h1>Add credits Point Sucessfully/h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$emailID,'','Know your Credits Points',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$emailID.'<br/><br/>';
+		        $usermessage.='Phone : '.$phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$firstName.'<br/><br/>';
+				$usermessage.='First Name : '.$lastName.'<br/><br/>';
+				$this->send_email($emailID,'sales@nayagaadi.com','Know your Credits Points',$usermessage);
 			$retValue['status']='Success';
 		}
 		return $retValue;
