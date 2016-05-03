@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $assetsPath=$this->config->item('asset_path'); 
-$prefix=$this->config->item('prefix'); 
+$prefix=$this->config->item('prefix');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,20 +15,18 @@ $prefix=$this->config->item('prefix');
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-datepicker.min.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $assetsPath; ?>/css/bootstrap-timepicker.min.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $assetsPath; ?>/gritter/css/jquery.gritter.css">
-	<link href="<?php echo $assetsPath;?>/images/favicon.png" rel="icon" />
+	<link href="<?php echo $assetsPath;?>/img/logo.png" rel="icon" />
 	<style type="text/css">
 	.body-type-detail{ background-color:#fff; }
 	.bg-yellow1{ background-color:#F9D133 !importent; color:#000 !importent; }
 	.body-type-detail:hover,.car-type-name:hover { background-color:#F9D133; color:#000; }
 	.body-type-detail { text-decoration:none !importent; }
-	.c-dashboard .fa{color: #cf0202; font-size: 40px;}
+	.c-dashboard .fa{color: #cf0202; font-size: 40px;}	
 	.c-dashboard .title{font-size: 18px; font-weight: 600; color: #737373;}
 	.c-dashboard .count{font-size: 32px; color: #737373;margin: 15px 0px;}
-	
-
 	.bodytype-img{margin-top: 10px; width:75%; height:45px;}
 	@media (min-width: 767px){
-		.types{  min-height: 340px;}
+		.types{min-height: 245px;display: inline-block;overflow: scroll;height: 245px;}		
 		.banner-img {width: 100%;height: 345px;}
 	}
 	.hybrid .nav-tabs>li.active>a, .hybrid .nav-tabs>li.active>a:focus, .hybrid .nav-tabs>li.active>a:hover{
