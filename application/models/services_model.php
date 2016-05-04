@@ -37,7 +37,8 @@ class Services_model  extends CI_Model{
 				
 				//var_dump($content)	;exit();	
 				$data['dealerName'] = $adfullName;
-				$data['message']='We would like to thank you for placing your request for Advance Booking.  One of our customer care member would coordinate in fulfilling the request.';
+				$data['message']='We would like to thank you for placing your request for Advance Booking.  One of our customer care member would coordinate in fulfilling the request.<br>
+				Again,We Thank you for visiting <a href="NayaGaadi.com">NayaGaadi.com </a>India’s first Online Marketplace for all brand new vehicles.';
 				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
 				$this->send_email('sales@nayagaadi.com',$abemailID,'','Advance Booking Request ',$usermessage);
@@ -105,7 +106,8 @@ class Services_model  extends CI_Model{
 		//var_dump($query);exit();
 			if ($query = "Successfully" ){
 				$data['dealerName'] = $RTD_Full_Name;
-				$data['message']='We would like to thank you for placing a request for Test Drive.  One of our customer support member would coordinate in fulfilling the request.';
+				$data['message']='We would like to thank you for placing a request for Test Drive.  One of our customer support member would coordinate in fulfilling the request.<br>
+				Again,We Thank you for visiting <a href="NayaGaadi.com">NayaGaadi.com</a> India’s first Online Marketplace for all brand new vehicles.';
 				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
 				$this->send_email('sales@nayagaadi.com',$RTD_Email_id,'','Test Ride Request ',$usermessage);

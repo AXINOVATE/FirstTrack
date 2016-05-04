@@ -235,7 +235,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						<div class="imge-service">
 							<img src="<?php echo $assetsPath;?>/images/request test drive.png" class="mt-10" width="50%" alt="car" />
 						</div>	
-							<div class="car-type-name" ><strong>Request for<br/>Test Drive</strong></div>
+							<div class="car-type-name" ><strong>Test Drive</strong></div>
 					</center>
 					</div>
 					</a>
