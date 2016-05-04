@@ -96,7 +96,7 @@ $prefix=$this->config->item('prefix');
          
         #invoice_body
         {
-            height: 149mm;
+            height: 130mm;
         }
          
         #invoice_body , #invoice_total
@@ -165,7 +165,7 @@ $prefix=$this->config->item('prefix');
 </head>
 <body>
 	<!-- Header starts here -->
-	<div id="wrapper">
+	<div id="wrapper1">
 	<table class="" style="width:100%;">
 		<tr>
 			
@@ -193,32 +193,30 @@ $prefix=$this->config->item('prefix');
 	<!-- Body content starts here -->
 	
 	
-	<div id="wrapper">
+	<div id="wrapper1">
      
     <p style="text-align:center; font-weight:bold; padding-top:5mm;">PROFORMA INVOICE</p>
     <br />
+
+	<table class="heading" style="width:100%;">        
+		<tr><td style="width:45mm;">Invoice No : </td><td style="width:54.5mm;"><?php echo $proformaInvoice[0]['billNo'];?></td></tr>
+		<tr><td style="width:45mm;">Dated : </td><td style="width:54.5mm;"><?php echo date('D-M-Y',strtotime($proformaInvoice[0]['invoiceDate']));?></td></tr> 
+		<tr><td style="width:45mm;">Currency : </td><td style="width:54.5mm;">INR</td></tr>		
+	</table>
     <table class="heading" style="width:100%;">
         <tr>
-            <td style="width:80mm;">
+            <td style="width:50mm;">
                 <h1 class="heading"> Name :<?php echo $proformaInvoice[0]['fullname'];?></h1>
                 <h2 class="heading">                    
                     Phone :<?php echo $proformaInvoice[0]['phone'];?> <br />
                     Email ID :<?php echo $proformaInvoice[0]['emailID'];?> <br />                     
                    Address : <br/>
 				   <?php echo $proformaInvoice[0]['address'];?> 
-                </h2>
+                </h2><br>	
+									
             </td>
-            <td rowspan="2" valign="top" align="right" style="padding:3mm;">
-                <table>
-                    <tr><td>Invoice No : </td><td><?php echo $proformaInvoice[0]['billNo'];?></td></tr>
-                    <tr><td>Dated : </td><td><?php echo date('D-M-Y',strtotime($proformaInvoice[0]['invoiceDate']));?></td></tr> 
-                    <tr><td>Currency : </td><td>INR</td></tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-				<h5>Delar Detail</h5>
+			<td style="width:50mm;">
+				<h5>Dealer Details</h5>
                  <h6 class="heading">    
 					Name :<?php echo $proformaInvoice[0]['firstName'];?> <br />
 					LastName :<?php echo $proformaInvoice[0]['lastName'];?> <br />
@@ -226,13 +224,17 @@ $prefix=$this->config->item('prefix');
                     Address : <br/>
 				   <?php echo $proformaInvoice[0]['addressLine1'];?> <br />
 				   <?php echo $proformaInvoice[0]['addressLine2'];?> <br/>
-				   PinCode<?php echo $proformaInvoice[0]['zipCode'];?><br />		   
-				   Tin:<?php echo $proformaInvoice[0]['TIN'].',';?>				   
-				   Cin:<?php echo $proformaInvoice[0]['CIN'];?>				   
-                </h6>
+				   PinCode:-<?php echo $proformaInvoice[0]['zipCode'];?><br />		   
+				   Tin:-<?php echo $proformaInvoice[0]['TIN'].',';?>				   
+				   Cin:-<?php echo $proformaInvoice[0]['CIN'];?>				   
+                </h6>				
             </td>
-        </tr>
+           
+        </tr>    
+		
+		
     </table>
+	
     <div id="content">
         <div id="invoice_body">
             <table>

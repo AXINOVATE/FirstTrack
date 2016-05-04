@@ -32,7 +32,7 @@ body{font-family:Century Gothic !important;}
 .txt_white{color:#ffffff;}
 .pd-tp-3{padding-top:3px !important; padding-bottom:3px !Important;}
 #second-header {width:100%;margin:0 auto; float:none;}
-#second-header>li{height:28px; text-align:center; /* width:11%;  */ min-width: 118px;}
+#second-header>li{height:28px; text-align:center; /* width:11%;  */ min-width: 106px;}
 #second-header>li>a{color:white;}
 #second-header>li>a:hover{color:white;}
 #second-header>.active>a{color:black; background-color:#F9D133; height:28px;}

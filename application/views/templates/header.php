@@ -97,7 +97,8 @@ else{
 		<div class="container">
 			<?php if(!isset($currentPage))$currentPage="";?>
 			<ul class="nav navbar-nav" id="second-header">
-				<li><a href ="#" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Get Instant Quote</a></li>
+				<li><a href ="<?php echo $prefix;?>/searchList/list"  class="pd-tp-3">Buy Now</a></li>
+				<li><a href ="#" data-toggle="modal" data-target="#get-instant-quote" id="get_instant_quote_popup" class="pd-tp-3">Instant Quote</a></li>			
 				<li><a href="#" data-toggle="modal" data-target="#Get-Proforma-Invoice" id="GetProformaInvoice" class="pd-tp-3">Proforma Invoice</a></li>
 				<li class="<?php if($currentPage=='COMPARE'){echo 'active';}?>"><a href="<?php echo $prefix.'/compare';?>" class="pd-tp-3">Compare</a></li>
 				
