@@ -907,6 +907,7 @@ function save_advance_booking(){
 			data:$('#Advance-Booking').serialize()
 		}).done(function(data){			
 			if(data == "Success"){	
+			     $('#adv-book-modal').modal('hide');
 				$("#thanks-message").modal();
 				setTimeout(function(){window.location.reload();},10000);
 			}else{
@@ -1408,7 +1409,8 @@ function save_credit_points_form(){
 		processData: true,
 		dataType:'JSON'
 	}).done(function(data){
-		if(data.status == "Success"){		
+		if(data.status == "Success"){
+			$('#credit_points-modal').modal('hide');
 			$("#thanks-message").modal();
 			setTimeout(function(){window.location.reload();},10000);
 		}else{

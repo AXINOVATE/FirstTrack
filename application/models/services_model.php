@@ -34,21 +34,37 @@ class Services_model  extends CI_Model{
 		$query = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
 		$query=$this->db->query("SELECT @vStatus as status")->row();		
 			if ($query = "Successfully" ){
-				$content='<h1>Advance booking sucessfully/h1><h4></h4>';
-				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$abemailID,'','Advance Booking',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$abemailID.'<br/><br/>';
-		        $usermessage.='Phone : '.$abphone.'<br/><br/>';
-		        $usermessage.='First Name : '.$adfullName.'<br/><br/>';
 				
-				$this->send_email($abemailID,'sales@nayagaadi.com','','Advance Booking',$usermessage);
+				//var_dump($content)	;exit();	
+				$data['dealerName'] = $adfullName;
+				$data['message']='We would like to thank you for placing your request for Advance Booking.  One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$abemailID,'','Advance Booking Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Advance Booking Request</h3>';
+		        $adminmessage.='From : '.$abemailID.'<br/><br/>';
+		        $adminmessage.='Phone : '.$abphone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$adfullName.'<br/><br/>';
+				
+				$this->send_email($abemailID,'smishra1000@rediffmail.com','','Advance Booking Request',$adminmessage);
+				
 				return "Success";
 			}else{
 				return "Failed";
 			}
 	}
-
+		public function send_email($from, $to, $cc, $subject, $message){
+				$this->load->library('Email');
+				$this->email->from($from);
+				$this->email->to($to);
+				$this->email->cc($cc);
+				$this->email->subject($subject);
+				$this->email->message($message);
+				$this->email->send();
+				//echo $this->email->print_debugger();
+				return 1;
+		}
 
 	public function Request_for_TestDrive(){		
 		 $RTD_Full_Name=$this->input->post("RTD_Full_Name");
@@ -88,15 +104,18 @@ class Services_model  extends CI_Model{
 		//$query1= $query[0]['status'];
 		//var_dump($query);exit();
 			if ($query = "Successfully" ){
-				$content='<h1>Request for Test Drive Succesfully/h1><h4></h4>';
+				$data['dealerName'] = $RTD_Full_Name;
+				$data['message']='We would like to thank you for placing a request for Test Drive.  One of our customer support member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$RTD_Email_id,'','Request For Test Drive',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$RTD_Email_id.'<br/><br/>';
-		        $usermessage.='Phone : '.$RTD_Phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$RTD_Full_Name.'<br/><br/>';
+				$this->send_email('sales@nayagaadi.com',$RTD_Email_id,'','Test Ride Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Test Ride Request</h3>';
+		        $adminmessage.='From : '.$RTD_Email_id.'<br/><br/>';
+		        $adminmessage.='Phone : '.$RTD_Phone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$RTD_Full_Name.'<br/><br/>';
+				$this->send_email($RTD_Email_id,'smishra1000@rediffmail.com','','Test Ride Request',$adminmessage);
 				
-				$this->send_email($RTD_Email_id,'sales@nayagaadi.com','','Request For Test Drive',$usermessage);
 				return "Success";
 			}else{
 				return "Failed";

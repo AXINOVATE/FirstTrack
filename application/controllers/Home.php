@@ -813,6 +813,7 @@ class Home extends CI_Controller {
 		echo json_encode($this->home_model->ins_updCart($xml));
 	}
 	public function insUpdCreditPoints(){
+		//echo'dsafadsfdasfsd';exit();
 		echo json_encode($this->home_model->insUpdCreditPoints());
 	}
 	public function add_download_brochure($vType){
