@@ -34,6 +34,15 @@ class Services_model  extends CI_Model{
 		$query = $this->db->query("call usp_insUpdAdvanceBookingDetail('INSERT','$xml',@vStatus)");
 		$query=$this->db->query("SELECT @vStatus as status")->row();		
 			if ($query = "Successfully" ){
+				$content='<h1>Advance booking sucessfully/h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$abemailID,'','Advance Booking',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$abemailID.'<br/><br/>';
+		        $usermessage.='Phone : '.$abphone.'<br/><br/>';
+		        $usermessage.='First Name : '.$adfullName.'<br/><br/>';
+				
+				$this->send_email($abemailID,'sales@nayagaadi.com','','Advance Booking',$usermessage);
 				return "Success";
 			}else{
 				return "Failed";
@@ -79,6 +88,15 @@ class Services_model  extends CI_Model{
 		//$query1= $query[0]['status'];
 		//var_dump($query);exit();
 			if ($query = "Successfully" ){
+				$content='<h1>Request for Test Drive Succesfully/h1><h4></h4>';
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$RTD_Email_id,'','Request For Test Drive',$content);
+				$usermessage=''.'<br/><br/>';
+		        $usermessage.='From : '.$RTD_Email_id.'<br/><br/>';
+		        $usermessage.='Phone : '.$RTD_Phone.'<br/><br/>';
+		        $usermessage.='First Name : '.$RTD_Full_Name.'<br/><br/>';
+				
+				$this->send_email($RTD_Email_id,'sales@nayagaadi.com','','Request For Test Drive',$usermessage);
 				return "Success";
 			}else{
 				return "Failed";
