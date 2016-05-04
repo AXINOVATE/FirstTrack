@@ -264,7 +264,7 @@ class Home_model extends CI_Model{
 				 $adminmessage.='commment : '.$comment.'<br/><br/>';
 				
 				
-				$this->send_email($email,'smishra1000@rediffmail.com','','Vehicle Loan Request',$adminmessage);
+				$this->send_email($email,'sales@nayagaadi.com','','Vehicle Loan Request',$adminmessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -359,7 +359,7 @@ class Home_model extends CI_Model{
 				 $adminmessage.='commment : '.$comment.'<br/><br/>';
 				
 				
-				$this->send_email($email,'smishra1000@rediffmail.com','','Buy On-Road Assistance Request',$adminmessage);
+				$this->send_email($email,'sales@nayagaadi.com','','Buy On-Road Assistance Request',$adminmessage);
 			
 				$vresult['status'] = "Success";
 				return $vresult;
@@ -436,7 +436,7 @@ class Home_model extends CI_Model{
 		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
 		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
 				 $adminmessage.='commment : '.$comment.'<br/><br/>';
-				$this->send_email($email,'smishra1000@rediffmail.com','','Corporate Deal Request',$adminmessage);
+				$this->send_email($email,'sales@nayagaadi.com','','Corporate Deal Request',$adminmessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -511,7 +511,7 @@ class Home_model extends CI_Model{
 		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
 		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
 				 $adminmessage.='commment : '.$comment.'<br/><br/>';
-				$this->send_email($email,'smishra1000@rediffmail.com','','Vehicle Insurance Request',$adminmessage);
+				$this->send_email($email,'sales@nayagaadi.com','','Vehicle Insurance Request',$adminmessage);
 				
 				$vresult['status'] = "Success";
 				return $vresult;
@@ -1272,7 +1272,7 @@ class Home_model extends CI_Model{
 		        $adminmessage.='From : '.$user_email1[0]['VemailID'].'<br/><br/>';
 		        
 				
-				$this->send_email($user_email1[0]['VemailID'],'smishra1000@rediffmail.com','','Customer Order Confirmation ',$adminmessage);
+				$this->send_email($user_email1[0]['VemailID'],'sales@nayagaadi.com','','Customer Order Confirmation ',$adminmessage);
 				
 				
 			}else{
@@ -1568,7 +1568,7 @@ class Home_model extends CI_Model{
 				$adminmessage.='First Name : '.$lastName.'<br/><br/>';
 				
 				
-				$this->send_email($emailID,'smishra1000@rediffmail.com','','Credit Score Request',$adminmessage);
+				$this->send_email($emailID,'sales@nayagaadi.com','','Credit Score Request',$adminmessage);
 			$retValue['status']='Success';
 		}
 		return $retValue;

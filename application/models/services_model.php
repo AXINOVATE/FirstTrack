@@ -47,7 +47,7 @@ class Services_model  extends CI_Model{
 		        $adminmessage.='Phone : '.$abphone.'<br/><br/>';
 		        $adminmessage.='Full Name : '.$adfullName.'<br/><br/>';
 				
-				$this->send_email($abemailID,'smishra1000@rediffmail.com','','Advance Booking Request',$adminmessage);
+				$this->send_email($abemailID,'sales@nayagaadi.com','','Advance Booking Request',$adminmessage);
 				
 				return "Success";
 			}else{
@@ -114,7 +114,7 @@ class Services_model  extends CI_Model{
 		        $adminmessage.='From : '.$RTD_Email_id.'<br/><br/>';
 		        $adminmessage.='Phone : '.$RTD_Phone.'<br/><br/>';
 		        $adminmessage.='Full Name : '.$RTD_Full_Name.'<br/><br/>';
-				$this->send_email($RTD_Email_id,'smishra1000@rediffmail.com','','Test Ride Request',$adminmessage);
+				$this->send_email($RTD_Email_id,'sales@nayagaadi.com','','Test Ride Request',$adminmessage);
 				
 				return "Success";
 			}else{
