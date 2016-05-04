@@ -251,15 +251,20 @@ class Home_model extends CI_Model{
 			//$this->send_email('elanthirayan.m@axinovate.com',$email,'','Request Ticket Rised','Your Vehicle Loan Ticket Raised <br> Ticket Number 123');
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
-				$content='<h1>You applied for loan successfully </h1><h4></h4>';
+				$data['dealerName'] = $fullname;
+				$data['message']='We would like to thank you for placing your request for Vehicle Loan.  One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$email,'','Apply for vechile Loan',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$email.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
-				$usermessage.='comment:'.$comment.'<br/><br/>';
-				$this->send_email($email,'sales@nayagaadi.com','','Apply for vehicle Loan',$usermessage);
+				$this->send_email('sales@nayagaadi.com',$email,'','Vehicle Loan Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Vehicle Loan Request</h3>';
+		        $adminmessage.='From : '.$email.'<br/><br/>';
+		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
+				 $adminmessage.='commment : '.$comment.'<br/><br/>';
+				
+				
+				$this->send_email($email,'sales@nayagaadi.com','','Vehicle Loan Request',$adminmessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -341,15 +346,20 @@ class Home_model extends CI_Model{
 			
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
-				$content='<h1>You applied By on Road Assistance </h1><h4></h4>';
+				$data['dealerName'] = $fullname;
+				$data['message']='We would like to thank you for placing On-Road assistance buy request. One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$email,'','By on Road Assistance',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$email.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
-				$usermessage.='comment:'.$comment.'<br/><br/>';
-				$this->send_email($email,'sales@nayagaadi.com','','By on Road Assistance',$usermessage);
+				$this->send_email('sales@nayagaadi.com',$email,'','Buy On-Road Assistance Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Buy On-Road Assistance Request</h3>';
+		        $adminmessage.='From : '.$email.'<br/><br/>';
+		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
+				 $adminmessage.='commment : '.$comment.'<br/><br/>';
+				
+				
+				$this->send_email($email,'sales@nayagaadi.com','','Buy On-Road Assistance Request',$adminmessage);
 			
 				$vresult['status'] = "Success";
 				return $vresult;
@@ -414,15 +424,19 @@ class Home_model extends CI_Model{
                
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
-				 $content='<h1>you applied for corporate deals  sucessfully</h1><h4></h4>';
+				$data['dealerName'] = $fullname;
+				$data['message']='We would like to thank you for placing Corporate Deal request. One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$email,'','Corporate Deals',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$email.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
-				$usermessage.='comment:'.$comment.'<br/><br/>';
-				$this->send_email($email,'sales@nayagaadi.com','','ADD CORPORATE DEALS',$usermessage);
+				$this->send_email('sales@nayagaadi.com',$email,'','Corporate Deal Request ',$usermessage);
+				
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Corporate Deal Request</h3>';
+		        $adminmessage.='From : '.$email.'<br/><br/>';
+		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
+				 $adminmessage.='commment : '.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','Corporate Deal Request',$adminmessage);
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -486,15 +500,19 @@ class Home_model extends CI_Model{
 
 			mysqli_next_result($this->db->conn_id);	
 			if ($query1[0][$rndS] == "Success"){
-				$content='<h1>Apply for insurance Successfully/h1><h4></h4>';
+				$data['dealerName'] = $fullname;
+				$data['message']='We would like to thank you for placing vehicle Insurance request. One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$email,'','Apply for Insurance',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$email.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
-				$usermessage.='comment:'.$comment.'<br/><br/>';
-				$this->send_email($email,'sales@nayagaadi.com','','Apply for Insurance',$usermessage);
+				$this->send_email('sales@nayagaadi.com',$email,'','Vehicle Insurance Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Vehicle Insurance Request</h3>';
+		        $adminmessage.='From : '.$email.'<br/><br/>';
+		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
+		        $adminmessage.='Full Name : '.$fullname.'<br/><br/>';
+				 $adminmessage.='commment : '.$comment.'<br/><br/>';
+				$this->send_email($email,'sales@nayagaadi.com','','Vehicle Insurance Request',$adminmessage);
+				
 				$vresult['status'] = "Success";
 				return $vresult;
 			}else{
@@ -569,15 +587,6 @@ class Home_model extends CI_Model{
 
 		mysqli_next_result($this->db->conn_id);	
 		if ($query1[0][$rndS] == "Success"){
-			$content='<h1>Drop Query Sucessfully/h1><h4></h4>';
-				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$email,'','Drop Query',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$email.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$fullname.'<br/><br/>';
-				$usermessage.='Query:'.$query.'<br/><br/>';
-				$this->send_email($email,'sales@nayagaadi.com','','Drop Query',$usermessage);
 			$vresult['status'] = "Success";
 			return $vresult;
 		}else{
@@ -1022,6 +1031,7 @@ class Home_model extends CI_Model{
 			$retvalue = $this->updateUserDetails($retvalue['userID'],$name,"","",$countryID,$stateID,$cityID,$address1,$address2,$locationID,"",$phone,"","",$productCategory,$manufacture,$authDealer,"P");
 			//$this->login($email,$password);
 			$data['dealerNmae'] = $name ;
+			$data['message'] = 'We would like to thank you for requesting to On Board NayaGaadi Dealer platform. One of our customer care member would coordinate in fulfilling the request.';
 			$content=$this->load->view('admin/email_notification',$data,true);					 	
 			//echo $content;exit();
 			$this->send_email('sales@nayagaadi.com',$email,'','Dealer / OEM Sign up Request.',$content);
@@ -1248,6 +1258,23 @@ class Home_model extends CI_Model{
 				$this->session->set_userdata('bookingIDToUpdate',$row->ID);
 				$retvalue['requestNo'] = $row->requestNo;
 				$retvalue['status'] = true;
+				$userID=$this->session->userdata('userID');
+				$user_email=$this->db->query("select distinct email as VemailID from tbl_users where userID='".$userID."'");				
+				mysqli_next_result($this->db->conn_id);	
+				$user_email1 = $user_email->result_array();
+				$data['dealerName'] = 'Customer';
+				$data['message']='We would like to thank you for making a order confirmation. One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
+				//var_dump($content)	;exit();	
+				$this->send_email('sales@nayagaadi.com',$user_email1[0]['VemailID'],'','Customer Order Confirmation ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Customer Order Confirmation </h3>';
+		        $adminmessage.='From : '.$user_email1[0]['VemailID'].'<br/><br/>';
+		        
+				
+				$this->send_email($user_email1[0]['VemailID'],'sales@nayagaadi.com','','Customer Order Confirmation ',$adminmessage);
+				
+				
 			}else{
 				$retvalue['status'] = false;
 				$retvalue['message'] = $row->message;
@@ -1507,7 +1534,7 @@ class Home_model extends CI_Model{
 		return $query->result_array();
 	}
 	public function insUpdCreditPoints(){
-		$retValue['status']="Failed";
+		$retValue['status']="Failed";		
 		$vType=$this->input->post('vType');
 		$firstName=$this->input->post('firstName');
 		$lastName=$this->input->post('lastName');
@@ -1522,20 +1549,26 @@ class Home_model extends CI_Model{
 		$lookingFor=$this->input->post('lookingFor');
 		$termsAndConditions=$this->input->post('termsAndConditions');
 		$xml = "<ROOT><HEADER><ACTIONTYPE>".$vType."</ACTIONTYPE><FIRSTNAME>".$firstName."</FIRSTNAME><LASTNAME>".$lastName."</LASTNAME><EMAILID>".$emailID."</EMAILID><PHONE>".$phone."</PHONE><CITY>".$city."</CITY><DATE>".$date."</DATE><PANNUMBER>".$panNumber."</PANNUMBER><NAMEASPANNUMBER>".$namePanNumber."</NAMEASPANNUMBER><ADDRESS>".$address."</ADDRESS><OCCUPATION>".$occupation."</OCCUPATION><LOOKINGFOR>".$lookingFor."</LOOKINGFOR><TERMSANDCONDITIONS>".$termsAndConditions."</TERMSANDCONDITIONS><STATUS>Opened</STATUS></HEADER></ROOT>";
+		//echo html_entity_decode($xml );exit();
 		$query=$this->db->query("call usp_insUpdCreditPoints('".$xml."',@result)");
 		mysqli_next_result($this->db->conn_id);
 		$query1=$this->db->query("select @result as status");
 		$qRe=$query1->result_array();
-		if($qRe[0]['status']=='Success'){
-			$content='<h1>Add credits Point Sucessfully/h1><h4></h4>';
+		if($qRe[0]['status']=='Success'){			
+			    $data['dealerName'] = $firstName.' '.$lastName;
+				$data['message']='We would like to thank you for placing free credit score request. One of our customer care member would coordinate in fulfilling the request.';
+				$usermessage = $this->load->view('admin/email_notification',$data,true);			  
 				//var_dump($content)	;exit();	
-				$this->send_email('sales@nayagaadi.com',$emailID,'','Know your Credits Points',$content);
-				$usermessage=''.'<br/><br/>';
-		        $usermessage.='From : '.$emailID.'<br/><br/>';
-		        $usermessage.='Phone : '.$phone.'<br/><br/>';
-		        $usermessage.='First Name : '.$firstName.'<br/><br/>';
-				$usermessage.='First Name : '.$lastName.'<br/><br/>';
-				$this->send_email($emailID,'sales@nayagaadi.com','Know your Credits Points',$usermessage);
+				$this->send_email('sales@nayagaadi.com',$emailID,'','Credit Score Request ',$usermessage);
+				$adminmessage=''.'<br/><br/>';
+				$adminmessage.='<h3>Credit Score Request</h3>';
+		        $adminmessage.='From : '.$emailID.'<br/><br/>';
+		        $adminmessage.='Phone : '.$phone.'<br/><br/>';
+		        $adminmessage.='First Name : '.$firstName.'<br/><br/>';
+				$adminmessage.='First Name : '.$lastName.'<br/><br/>';
+				
+				
+				$this->send_email($emailID,'sales@nayagaadi.com','','Credit Score Request',$adminmessage);
 			$retValue['status']='Success';
 		}
 		return $retValue;
