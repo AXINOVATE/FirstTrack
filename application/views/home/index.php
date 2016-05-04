@@ -226,7 +226,6 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					
 				</div>
 			</div>
-			
 			<div class="row mt-20">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<a id="test-drive1" href ="javascript:void(0)" data-toggle="modal" data-target="#test-drive-modal">
@@ -243,7 +242,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/advance booking.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name"><strong>Advance<br/>Booking</strong></div>
+							<div class="car-type-name"><strong>Adv.Booking</strong></div>
 						</center>
 					</div>
 					</a>
@@ -251,7 +250,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/vechile-loan.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name"><strong>Apply for<br/>Vehicle Loan</strong></div>
+							<div class="car-type-name"><strong>Vehicle Loan</strong></div>
 						</center>
 					</div>
 					</a>
@@ -259,7 +258,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/corporate-deal.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name"><strong>Corporate<br/>Deals</strong></div>
+							<div class="car-type-name"><strong>Corporate Deals</strong></div>
 						</center>
 					</div>
 					</a>
@@ -267,7 +266,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/insurance.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name"><strong>Apply for<br/>Insurance</strong></div>
+							<div class="car-type-name"><strong>Insurance</strong></div>
 						</center>
 					</div>
 					</a>
@@ -276,7 +275,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="col-md-2 col-sm-2 col-xs-4 border-lt-blue mb-10">
 						<center>
 							<img src="<?php echo $assetsPath;?>/images/buy-on-road.png" class="mt-10" width="50%" alt="car" />
-							<div class="car-type-name"><strong>Buy On Road <br/> Assistance </strong></div>
+							<div class="car-type-name"><strong>Roadside Assistance </strong></div>
 						</center>
 					</div>
 					</a>
