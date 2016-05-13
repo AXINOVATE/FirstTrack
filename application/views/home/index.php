@@ -125,8 +125,10 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<div class="col-md-4 col-sm-4 col-xs-4 cat-box bg-lightgrey" id="bikes">							
 								<div>
 									<center>
+										<?php if(count($Bike)){	?>
 										<img src="<?php echo $prefix.'/'.$Bike[0]['imgPath'];?>" class="cat-img" alt="bike">
-										<div style="font-size:14px; margin-bottom:10px;"><?php echo $Bike[0]['categoryName']; ?></div> 
+										<div style="font-size:14px; margin-bottom:10px;"><?php if(count($Bike))echo $Bike[0]['categoryName']; else echo '&nbsp;' ?></div> 
+										<?php }	?>
 									</center>
 								</div>
 							</div>
@@ -160,7 +162,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 								<h5><b>Body Type</b></h5>
 							</div>
-							<?php foreach($Bike as $bike){
+							<?php 
+							if(count($Bike)){
+								foreach($Bike as $bike){
 								echo'<div class="col-md-6 col-sm-6 col-xs-6 mb-10">
 										<a href="'.$prefix.'/searchList/bodytype/'.$bike['bodyTypeID'].'" class="particular-bike-detail" data-bikebodyTypeID="'.$bike['bodyTypeID'].'" data-bikecategoryID="'.$bike['categoryID'].'"><div class="border-lt-grey ml-m10 mr-m10 body-type-detail">								
 										<center>
@@ -170,13 +174,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 										</div></a>
 									</div>';
 								}
+							}
 							?>					
 						</div>
 						<div class="mt-10 hide types" id="more-div">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 								<h5><b>Other Categories</b></h5>
 							</div>
-							<?php foreach($More as $more){
+							<?php 
+							if(count($More)){
+								foreach($More as $more){
 									echo '<div class="col-md-4 col-sm-4 col-xs-4 mb-10">
 											<a href="'.$prefix.'/searchList/category/'.$more['categoryID'].'" class="particular-more-detail" data-morebodyTypeID="'.$more['bodyTypeID'].'" data-morecategoryID="'.$more['categoryID'].'" ><div class="ml-m10 mr-m10 bg-lightgrey pd-5" style="border: 1px solid #e7e7e7;">
 												<center>
@@ -186,6 +193,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 											</div></a>
 										</div>';
 								}
+							}
 							?>					
 						</div>
 						<div class="">
@@ -198,6 +206,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					</div>
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-12 hybrid">
+					<?php if(count($getShowcaseProducts)){	?>
 					<div id="myTabContent" class="tab-content">
 					<?php
 						for($i=0; $i<=3; $i++){
@@ -223,7 +232,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 						}
 					?>
 					</ul>
-					
+					<?php }	?>
 				</div>
 			</div>
 			<div class="row mt-20">

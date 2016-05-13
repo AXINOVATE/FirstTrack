@@ -1,4 +1,5 @@
-drop procedure if exists`usp_getProformaInvoice`;
+drop procedure if exists `usp_getProformaInvoice`;
+delimiter $$
 CREATE  PROCEDURE `usp_getProformaInvoice`(vType varchar(15),vproformaInvoiceID varchar(36))
 BEGIN
 if (vType ="ALL") then
@@ -11,4 +12,5 @@ select distinct tgpi.fullname,tgpi.phone,tgpi.emailID,tgpi.address,tgpi.invoiceD
 	inner join tbl_productBasic tpbd  on tpbd.productID= tgpi.modelID  
 where tgpi.ProformaInvoiceID=vproformaInvoiceID;
 end if;
-END
+END $$
+delimiter ; 
